@@ -1,0 +1,33 @@
+package com.natsu.backport.client;
+
+import com.natsu.backport.CTBackport;
+import com.natsu.backport.client.render.WindChargeRenderer;
+import com.natsu.backport.common.particles.GustEmitterParticle;
+import com.natsu.backport.common.particles.GustParticle;
+import com.natsu.backport.common.registry.CTBEntities;
+import com.natsu.backport.common.registry.CTBParticles;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.ParticleEngine;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+
+@Mod.EventBusSubscriber(modid = CTBackport.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+public class ClientSetup {
+
+	@SubscribeEvent
+	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(CTBEntities.WIND_CHARGE_ENTITY.get(), WindChargeRenderer::new);
+	}
+	
+	@SubscribeEvent
+	public static void registerParticles(ParticleFactoryRegisterEvent event) {
+		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST.get(), GustParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_LARGE.get(), GustEmitterParticle.LargeProvider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_SMALL.get(), GustEmitterParticle.SmallProvider::new);
+	}
+	
+}
