@@ -71,7 +71,7 @@
       "minecraft:spring_lava"
     ],
     [
-      "yourmodid:cherry_tree",
+      "ctbackport:cherry_tree",
       "minecraft:flower_default",
       "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
