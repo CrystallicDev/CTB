@@ -215,7 +215,7 @@ public class WoodSet implements DefaultSet {
 	@Override
 	public void setRenderTypes() {
 		BlockEntityRenderers.register(signBlockEntity.get(), SignRenderer::new);
-    	WoodType.register(WoodType.create(CTBackport.MODID + ":" + this.name));
+    	//WoodType.register(WoodType.create(CTBackport.MODID + ":" + this.name));
 	}
 
 

@@ -76,9 +76,9 @@
       "ctbackport:pale_moss_patch",
       "ctbackport:pale_moss_carpet",
       "ctbackport:pale_moss_layer",
+      "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_grass_forest"
+      "minecraft:red_mushroom_normal"
     ],
     [
       "minecraft:freeze_top_layer"

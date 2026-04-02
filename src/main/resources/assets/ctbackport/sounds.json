@@ -2,9 +2,9 @@
 	"wind_burst": {
 		"category": "neutral",
 		"sounds": [
-			"name": "sounds/entity/wind_charge/wind_burst1", "stream": false,
-			"name": "sounds/entity/wind_charge/wind_burst2", "stream": false,
-			"name": "sounds/entity/wind_charge/wind_burst3", "stream": false
+			"ctbackport:entity/wind_charge/wind_burst1",
+			"ctbackport:entity/wind_charge/wind_burst2",
+			"ctbackport:entity/wind_charge/wind_burst3" 
 		]
 	}
 }

@@ -1,5 +1,5 @@
 {
-  "feature": "ctbackport:pale_moss_disk",
+  "feature": "ctbackport:pale_moss_carpet",
   "placement": [
     { "type": "minecraft:count", "count": 4 },
     { "type": "minecraft:in_square" },

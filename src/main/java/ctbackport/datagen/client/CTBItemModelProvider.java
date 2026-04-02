@@ -96,8 +96,11 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 	
 	@Override
 	public void handleLeavesSet(LeavesSet set) {
-		// TODO Auto-generated method stub
-		
+		String name = set.name;
+	    withExistingParent(
+	            name + "_leaves",
+	            modLoc("block/" + name + "_leaves")
+	    );
 	}
 
 	@Override
