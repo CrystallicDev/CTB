@@ -28,6 +28,8 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 		handleWoodSet(CTBBlocks.BAMBOO_WOOD);
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
+		handleLeavesSet(CTBBlocks.CHERRY_LEAVES);
+		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		
 		
 		

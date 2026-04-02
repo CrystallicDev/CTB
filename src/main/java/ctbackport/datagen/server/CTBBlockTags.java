@@ -21,6 +21,8 @@ public class CTBBlockTags extends BlockTagsProvider {
     	handle(CTBBlocks.BAMBOO_WOOD);
     	handle(CTBBlocks.PALE_OAK_WOOD);
 		handle(CTBBlocks.PALE_MOSS);
+		handle(CTBBlocks.CHERRY_LEAVES);
+		handle(CTBBlocks.PALE_OAK_LEAVES);
     }
     
     public void handle(DefaultSet set) {

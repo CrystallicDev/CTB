@@ -9,18 +9,39 @@ import com.natsu.backport.utils.sets.StoneDecorationSet;
 import com.natsu.backport.utils.sets.WoodSet;
 
 import ctbackport.datagen.DataGenBlockItemHandler;
+import net.minecraft.advancements.critereon.EnchantmentPredicate;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.RegistryObject;
 
 public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 
+	protected static final LootItemCondition.Builder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item()
+			.hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))));
+	protected static final LootItemCondition.Builder HAS_SHEARS =
+	        MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS));
+	protected static final LootItemCondition.Builder HAS_NO_SILK_TOUCH = HAS_SILK_TOUCH.invert();
+	
 	@Override
 	public void addTables() {
 		handleWoodSet(CTBBlocks.CHERRY_WOOD);
 		handleWoodSet(CTBBlocks.BAMBOO_WOOD);
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
+		handleLeavesSet(CTBBlocks.CHERRY_LEAVES);
+		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC_STAIRS.get());
@@ -61,7 +82,7 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 	
 	@Override
 	public void handleLeavesSet(LeavesSet set) {
-		// TODO Auto-generated method stub
+	    add(set.leaves.get(), block -> createLeavesDrops(block, set.saplingItem));
 		
 	}
 
@@ -75,6 +96,28 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 	public void handleDirtDecorationSet(DirtDecorationSet set) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	
+	private LootTable.Builder createLeavesDrops(Block leavesBlock, Item saplingItem) {
+		LootItemCondition.Builder silkOrShears =
+	            HAS_SILK_TOUCH.or(HAS_SHEARS);
+		
+	    return LootTable.lootTable()
+	            .withPool(LootPool.lootPool()
+	                    .setRolls(ConstantValue.exactly(1))
+	                    .add(LootItem.lootTableItem(leavesBlock)
+	                            .when(silkOrShears))
+	                    .add(LootItem.lootTableItem(saplingItem)
+	                            .when(HAS_NO_SILK_TOUCH)
+	                            .when(BonusLevelTableCondition.bonusLevelFlatChance(
+	                                    Enchantments.BLOCK_FORTUNE,
+	                                    0.05f,   
+	                                    0.0625f,
+	                                    0.083f,  
+	                                    0.1f     // fortune 3
+	                            )))
+	            );
 	}
 	
 }
