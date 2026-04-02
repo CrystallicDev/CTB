@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "side": "ctbackport:block/bamboo_mosaic",
+    "bottom": "ctbackport:block/bamboo_mosaic",
+    "top": "ctbackport:block/bamboo_mosaic"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "ctbackport:block/cherry_slab_top"
+    },
+    "type=bottom": {
+      "model": "ctbackport:block/cherry_slab"
+    },
+    "type=double": {
+      "model": "ctbackport:block/cherry_planks"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+package com.natsu.backport.utils.sets;
+
+import java.lang.reflect.Constructor;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+import javax.annotation.Nullable;
+
+import com.natsu.backport.common.block.CTBBlockFactory;
+import com.natsu.backport.common.item.CTBBlockItemFactory;
+
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.data.tags.TagsProvider.TagAppender;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.grower.OakTreeGrower;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
+
+/**
+ * <p> This class is used to represent a set of leaves.
+ * <p> It creates the following blocks :
+ * <ul>
+ * 	<li><b>{name}_leaves</b>: The original leave block</li>
+ * </ul>
+ * <p> It requires the following textures for DataGen integration</p>
+ * <ul>
+ * 	<li><b>block/{name}_leaves.png</b>: The original leaves texture</li>
+ * </ul>
+ * */
+public class LeavesSet implements DefaultSet {
+
+    public final String name;
+    public final RegistryObject<Block> leaves;
+    
+    /*** The sapling item for this tree type.
+     * Should be tied to an {@link net.minecraft.world.level.block.grower.AbstractTreeGrower}.*/
+    public final Item saplingItem;
+    public final RegistryObject<Item> leavesItem;
+
+    /**
+     * Creates and registers all blocks for this LeavesSet.
+     *
+     * @param name               The base name of the tree type (e.g. {@code "cherry"}).
+     *                           Blocks will be registered as {@code {name}_leaves} and
+     *                           {@code {name}_leaves_layer}.
+     * @param ITEMS              The mod's item DeferredRegister used to register blockitems
+     * @param BLOCKS             The mod's block DeferredRegister used to register leaves and layer.
+     * @param saplingItem        The sapling item for this tree type.
+     */
+    public LeavesSet(
+            String name,
+            DeferredRegister<Item> ITEMS,
+            DeferredRegister<Block> BLOCKS,
+            Item saplingItem,
+            CreativeModeTab tab
+    ) {
+
+        this.name = name;
+        this.saplingItem = saplingItem;
+ 
+        BlockBehaviour.Properties props = BlockBehaviour.Properties
+                .of(Material.LEAVES)
+                .strength(0.1f)
+                .randomTicks()
+                .sound(SoundType.GRASS)
+                .noOcclusion()
+                .noCollission();
+        
+        this.leaves = CTBBlockFactory.makeLeaves(BLOCKS, name+"_leaves");
+        this.leavesItem = CTBBlockItemFactory.blockItem(ITEMS, tab, leaves);
+    }
+
+	@Override
+	public void addBlockTags(Function<TagKey<Block>, TagAppender<Block>> tag) {
+		tag.apply(BlockTags.LEAVES).add(leaves.get());
+		tag.apply(BlockTags.MINEABLE_WITH_HOE).add(leaves.get());
+		tag.apply(BlockTags.PARROTS_SPAWNABLE_ON).add(leaves.get());
+		tag.apply(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE).add(leaves.get());
+	}
+
+	@Override
+	public void setRenderTypes() {
+		ItemBlockRenderTypes.setRenderLayer(leaves.get(), RenderType.cutout());
+	}
+
+	public String getName() {
+		return this.name;
+	}
+}
+

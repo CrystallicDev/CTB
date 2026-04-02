@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "ctbackport:cherry_door",
+    "ctbackport:bamboo_door",
+    "ctbackport:pale_oak_door"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "ctbackport:bamboo_log",
+    "ctbackport:stripped_bamboo_log"
+  ]
+}

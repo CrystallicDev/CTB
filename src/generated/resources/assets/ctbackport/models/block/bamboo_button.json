@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "ctbackport:block/bamboo_planks"
+  }
+}

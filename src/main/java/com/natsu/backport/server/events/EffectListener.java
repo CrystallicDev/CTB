@@ -3,7 +3,6 @@ package com.natsu.backport.server.events;
 import java.util.Random;
 import java.util.Set;
 
-import org.joml.Vector3f;
 
 import com.google.common.collect.Sets;
 import com.natsu.backport.CTBackport;
@@ -16,7 +15,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Silverfish;

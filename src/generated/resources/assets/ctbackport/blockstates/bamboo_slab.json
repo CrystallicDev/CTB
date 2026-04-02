@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "ctbackport:block/bamboo_slab_top"
+    },
+    "type=bottom": {
+      "model": "ctbackport:block/bamboo_slab"
+    },
+    "type=double": {
+      "model": "ctbackport:block/bamboo_planks"
+    }
+  }
+}

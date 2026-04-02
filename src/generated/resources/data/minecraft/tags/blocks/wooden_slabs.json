@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "ctbackport:cherry_slab",
+    "ctbackport:bamboo_slab",
+    "ctbackport:pale_oak_slab"
+  ]
+}

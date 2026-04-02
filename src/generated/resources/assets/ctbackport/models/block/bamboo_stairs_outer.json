@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "side": "ctbackport:block/bamboo_planks",
+    "bottom": "ctbackport:block/bamboo_planks",
+    "top": "ctbackport:block/bamboo_planks"
+  }
+}

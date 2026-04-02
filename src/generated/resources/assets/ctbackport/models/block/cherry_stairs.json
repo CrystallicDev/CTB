@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "ctbackport:block/cherry_planks",
+    "bottom": "ctbackport:block/cherry_planks",
+    "top": "ctbackport:block/cherry_planks"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "ctbackport:cherry_log",
+    "ctbackport:stripped_cherry_log",
+    "ctbackport:stripped_cherry_wood",
+    "ctbackport:cherry_wood"
+  ]
+}

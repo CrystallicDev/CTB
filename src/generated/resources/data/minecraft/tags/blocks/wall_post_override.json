@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "ctbackport:cherry_pressure_plate",
+    "ctbackport:cherry_sign",
+    "ctbackport:cherry_wall_sign",
+    "ctbackport:bamboo_pressure_plate",
+    "ctbackport:bamboo_sign",
+    "ctbackport:bamboo_wall_sign",
+    "ctbackport:pale_oak_pressure_plate",
+    "ctbackport:pale_oak_sign",
+    "ctbackport:pale_oak_wall_sign"
+  ]
+}

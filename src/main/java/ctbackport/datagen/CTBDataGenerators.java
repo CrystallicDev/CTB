@@ -19,7 +19,6 @@ public class CTBDataGenerators {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
-
         DataGenerator gen = event.getGenerator();
         ExistingFileHelper helper = event.getExistingFileHelper();
 

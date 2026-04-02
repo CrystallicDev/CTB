@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:disk",
+  "config": {
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": { "min_inclusive": 2, "max_inclusive": 6 }
+    },
+    "half_height": 0,
+    "targets": [
+      {
+        "state": {
+          "Name": "ctbackport:pale_moss",
+          "Properties": {}
+        },
+        "target": {
+          "type": "minecraft:tag",
+          "tag": "minecraft:dirt"
+        }
+      }
+    ]
+  }
+}

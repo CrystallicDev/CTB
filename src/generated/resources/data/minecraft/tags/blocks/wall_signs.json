@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "ctbackport:cherry_wall_sign",
+    "ctbackport:bamboo_wall_sign",
+    "ctbackport:pale_oak_wall_sign"
+  ]
+}

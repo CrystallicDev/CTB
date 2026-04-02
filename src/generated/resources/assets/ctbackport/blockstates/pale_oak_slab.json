@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "ctbackport:block/pale_oak_slab_top"
+    },
+    "type=bottom": {
+      "model": "ctbackport:block/pale_oak_slab"
+    },
+    "type=double": {
+      "model": "ctbackport:block/pale_oak_planks"
+    }
+  }
+}

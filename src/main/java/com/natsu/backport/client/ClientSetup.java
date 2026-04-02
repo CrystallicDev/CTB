@@ -4,16 +4,20 @@ import com.natsu.backport.CTBackport;
 import com.natsu.backport.client.render.WindChargeRenderer;
 import com.natsu.backport.common.particles.GustEmitterParticle;
 import com.natsu.backport.common.particles.GustParticle;
+import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.common.registry.CTBEntities;
 import com.natsu.backport.common.registry.CTBParticles;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = CTBackport.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientSetup {
@@ -29,5 +33,14 @@ public class ClientSetup {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_LARGE.get(), GustEmitterParticle.LargeProvider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_SMALL.get(), GustEmitterParticle.SmallProvider::new);
 	}
+	
+	@SubscribeEvent
+    public static void onClientSetup(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+        	CTBBlocks.BAMBOO_WOOD.setRenderTypes();
+        	CTBBlocks.CHERRY_WOOD.setRenderTypes();
+        	
+        });
+    }
 	
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "ctbackport:block/default_layer_5",
+  "textures": {
+    "all": "ctbackport:block/pale_moss",
+    "particle": "ctbackport:block/pale_moss"
+  }
+}

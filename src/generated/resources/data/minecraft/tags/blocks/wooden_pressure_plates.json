@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "ctbackport:cherry_pressure_plate",
+    "ctbackport:bamboo_pressure_plate",
+    "ctbackport:pale_oak_pressure_plate"
+  ]
+}

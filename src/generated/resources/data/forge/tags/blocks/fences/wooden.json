@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "ctbackport:cherry_fence",
+    "ctbackport:bamboo_fence",
+    "ctbackport:pale_oak_fence"
+  ]
+}
