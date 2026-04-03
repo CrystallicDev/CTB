@@ -40,12 +40,13 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		handleWoodSet(CTBBlocks.BAMBOO_WOOD);
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
-		handleLeavesSet(CTBBlocks.CHERRY_LEAVES);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC_STAIRS.get());
 		add(CTBBlocks.BAMBOO_MOSAIC_SLAB.get(), createSlabItemTable(CTBBlocks.BAMBOO_MOSAIC_SLAB.get()));
+		
+		add(CTBBlocks.CHERRY_LEAVES.get(), block -> createLeavesDrops(block, Items.OAK_SAPLING));
 	}
 
 	@Override

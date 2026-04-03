@@ -36,7 +36,9 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
-		handleLeavesSet(CTBBlocks.CHERRY_LEAVES);
+		
+
+		add(CTBBlocks.CHERRY_LEAVES.get(), "Feuilles de cerisier");
 	}
 	
 	@Override

@@ -31,36 +31,30 @@
         "type": "minecraft:uniform",
         "value": {
           "min_inclusive": 2,
-          "max_inclusive": 6
+          "max_inclusive": 4
         }
       },
       "branch_start_offset_from_top": {
-        "min_inclusive": -1,
-        "max_inclusive": 1
+        "min_inclusive": -4,
+        "max_inclusive": -3
       },
       "branch_end_offset_from_top": {
         "type": "minecraft:uniform",
         "value": {
-          "min_inclusive": -5,
+          "min_inclusive": -1,
           "max_inclusive": 0
         }
       }
     },
     "foliage_placer": {
       "type": "ctbackport:cherry",
-      "radius": 0,
+      "radius": 4,
       "offset": 0,
-      "height": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": 5,
-          "max_inclusive": 8
-        }
-      },
-      "wide_bottom_layer_hole_chance": 0.08,
+      "height": 5,
+      "wide_bottom_layer_hole_chance": 0.25,
       "corner_hole_chance": 0.25,
-      "hanging_leaves_chance": 0.35,
-      "hanging_leaves_extension_chance": 0.25
+      "hanging_leaves_chance": 0.16666667,
+      "hanging_leaves_extension_chance": 0.33333334
     },
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",

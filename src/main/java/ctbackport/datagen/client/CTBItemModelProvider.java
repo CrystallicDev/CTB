@@ -28,7 +28,6 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 		handleWoodSet(CTBBlocks.BAMBOO_WOOD);
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
-		handleLeavesSet(CTBBlocks.CHERRY_LEAVES);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		
 		
@@ -41,6 +40,11 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 		withExistingParent(CTBBlocks.BAMBOO_MOSAIC_SLAB.getId().getPath(), modLoc("block/" + CTBBlocks.BAMBOO_MOSAIC_SLAB.getId().getPath()));
 
 		withExistingParent(CTBBlocks.BAMBOO_MOSAIC_STAIRS.getId().getPath(), modLoc("block/" + CTBBlocks.BAMBOO_MOSAIC_STAIRS.getId().getPath()));
+		
+		withExistingParent(
+	            "cherry_leaves",
+	            modLoc("block/cherry_leaves")
+	    );
 	}
 
 	@Override

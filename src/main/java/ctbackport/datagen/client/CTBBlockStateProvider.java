@@ -38,8 +38,14 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		handleWoodSet(CTBBlocks.BAMBOO_WOOD);
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
-		handleLeavesSet(CTBBlocks.CHERRY_LEAVES);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
+		
+		ResourceLocation leavesTexture = modLoc("block/cherry_leaves");
+        ModelFile normalModel = models().withExistingParent("cherry_leaves",
+                new ResourceLocation("minecraft", "block/cherry_leaves"))
+                .texture("all", leavesTexture)
+                .texture("particle", leavesTexture);
+        simpleBlock(CTBBlocks.CHERRY_LEAVES.get(), normalModel);
 		
 		simpleBlock(CTBBlocks.BAMBOO_MOSAIC.get());
 

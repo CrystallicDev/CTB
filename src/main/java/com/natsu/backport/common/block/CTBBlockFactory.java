@@ -211,6 +211,13 @@ public class CTBBlockFactory {
             ));
     }
     
+    public static RegistryObject<Block> makeCherryLeaves(DeferredRegister<Block> BLOCKS, String name) {
+        return BLOCKS.register(name,
+            () -> new CherryLeavesBlock(
+                BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
+            ));
+    }
+    
     public static RegistryObject<Block> makeLeaves(DeferredRegister<Block> BLOCKS, String name, BlockBehaviour.Properties props) {
         return BLOCKS.register(name,
             () -> new LeavesBlock(

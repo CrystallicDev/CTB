@@ -44,10 +44,6 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 	@Override
 	public void tick() {
 		super.tick();
-		if (level.isClientSide()) {
-			level.addParticle(CTBParticles.GUST_EMITTER_SMALL.get(), 
-					getX(), getY(), getZ(), 0, 0, 0);
-		}
 	}
 	
 	@Override
@@ -68,16 +64,13 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 			MinecraftForge.EVENT_BUS.post(event);
 			if (!event.isCanceled()) {
 				entity.push(kb.x, kb.y, kb.z);
+				entity.hurtMarked = true;
 			}
 			explodeWind(result.getLocation());
 		}
 	}
 	
 	private void explodeWind(Vec3 pos) {
-		if (level.isClientSide()) {
-			level.addParticle(CTBParticles.GUST_EMITTER_LARGE.get(), 
-					getX(), getY(), getZ(), 0, 0, 0);
-		}
 		AABB area = new AABB(pos, pos).inflate(3.0);
 		List<Entity> entities = level.getEntities(this, area);
 		for (Entity e : entities) {
@@ -86,11 +79,12 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 			WindChargePushEntityEvent event = new WindChargePushEntityEvent(e, this, kb);
 			if (!event.isCanceled()) {
 				e.push(kb.x, kb.y, kb.z);
+				e.hurtMarked = true;
 			}
 		}
 		
 		if (level instanceof ServerLevel serverLevel) {
-			serverLevel.sendParticles(ParticleTypes.POOF, pos.x, pos.y, pos.z, 30, 0.5, 0.5, 0.5, 0.3);
+			serverLevel.sendParticles(CTBParticles.GUST_EMITTER_LARGE.get(), pos.x, pos.y, pos.z, 30, 0.5, 0.5, 0.5, 0.3);
 		}
 		level.playSound(null, pos.x, pos.y, pos.z, CTBSounds.BREEZE_WIND_BURST.get(), SoundSource.NEUTRAL, 1.0f, 1.0f);
 		this.discard();

@@ -11,6 +11,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
+import terrablender.api.ParameterUtils.Continentalness;
+import terrablender.api.ParameterUtils.Depth;
+import terrablender.api.ParameterUtils.Erosion;
+import terrablender.api.ParameterUtils.Humidity;
+import terrablender.api.ParameterUtils.Temperature;
+import terrablender.api.ParameterUtils.Weirdness;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
 
@@ -26,22 +32,22 @@ public class CTBOverworldRegions extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper)
     {
 		this.addBiome(mapper, 
-				Climate.Parameter.span(0.3f, 0.6f),
-				Climate.Parameter.span(0.5f, 1.0f),
-				Climate.Parameter.span(-0.5f, 0.5f),
-				Climate.Parameter.span(-0.3f, 0.3f),
-				Climate.Parameter.span(0.0f, 0.5f),
-				Climate.Parameter.span(-1.0f, 1.0f),
+				Temperature.WARM,
+				Humidity.WET,
+				Continentalness.INLAND,
+				Erosion.EROSION_4,
+				Weirdness.MID_SLICE_NORMAL_ASCENDING,
+				Depth.SURFACE,
 				0,
 				CTBBiomes.CHERRY_GROVE);
 		
 		this.addBiome(mapper, 
-				Climate.Parameter.span(-0.5f, 0.0f),
-				Climate.Parameter.span(-0.3f, 0.3f),
-				Climate.Parameter.span(-0.5f, 0.5f),
-				Climate.Parameter.span(-0.3f, 0.3f),
-				Climate.Parameter.span(0.0f, 0.5f),
-				Climate.Parameter.span(0.6f, 1.0f),
+				Temperature.COOL,
+				Humidity.NEUTRAL,
+				Continentalness.INLAND,
+				Erosion.EROSION_2,
+				Weirdness.MID_SLICE_NORMAL_ASCENDING,
+				Depth.SURFACE,
 				0,
 				CTBBiomes.PALE_GARDEN);
         
