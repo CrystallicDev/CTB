@@ -42,7 +42,7 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		
 		ResourceLocation leavesTexture = modLoc("block/cherry_leaves");
         ModelFile normalModel = models().withExistingParent("cherry_leaves",
-                new ResourceLocation("minecraft", "block/cherry_leaves"))
+                new ResourceLocation("minecraft", "block/leaves"))
                 .texture("all", leavesTexture)
                 .texture("particle", leavesTexture);
         simpleBlock(CTBBlocks.CHERRY_LEAVES.get(), normalModel);
@@ -145,7 +145,6 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		String name = set.name; 
 
 	    ResourceLocation leavesTexture = modLoc("block/" + name + "_leaves");
-	    ResourceLocation leavesFloweredTexture  = modLoc("block/" + name + "_leaves_flowered");
         ModelFile normalModel = models().withExistingParent(name + "_leaves",
                 new ResourceLocation("minecraft", "block/leaves"))
                 .texture("all", leavesTexture)

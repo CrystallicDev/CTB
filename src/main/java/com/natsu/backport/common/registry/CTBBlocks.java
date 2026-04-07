@@ -21,9 +21,10 @@ public class CTBBlocks {
 	public static final WoodSet CHERRY_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "cherry", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final WoodSet BAMBOO_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "bamboo", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final WoodSet PALE_OAK_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "pale_oak", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> CHERRY_LEAVES = CTBBlockFactory.makeCherryLeaves(BLOCKS, "cherry_leaves");
 	public static final LeavesSet PALE_OAK_LEAVES = new LeavesSet("pale_oak", CTBItems.ITEMS, BLOCKS, Items.BIRCH_SAPLING, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final MossSet PALE_MOSS = new MossSet(CTBItems.ITEMS, BLOCKS, "pale", CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+	public static final RegistryObject<Block> CHERRY_LEAVES = CTBBlockFactory.makeCherryLeaves(BLOCKS, "cherry_leaves");
 	
 	// Specific Bamboo Blocks
 	public static final RegistryObject<Block> BAMBOO_MOSAIC = CTBBlockFactory.makePlanks(BLOCKS, "bamboo_mosaic", 2);

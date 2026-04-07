@@ -31,25 +31,75 @@ public class CTBOverworldRegions extends Region {
 	@Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper)
     {
-		this.addBiome(mapper, 
-				Temperature.WARM,
-				Humidity.WET,
-				Continentalness.INLAND,
-				Erosion.EROSION_4,
-				Weirdness.MID_SLICE_NORMAL_ASCENDING,
-				Depth.SURFACE,
-				0,
-				CTBBiomes.CHERRY_GROVE);
+		this.addBiome(mapper,
+			    Temperature.WARM,
+			    Humidity.DRY,
+			    Continentalness.FAR_INLAND,
+			    Erosion.EROSION_1,
+			    Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
+			    Depth.SURFACE,
+			    0,
+			    CTBBiomes.CHERRY_GROVE);
+
+			this.addBiome(mapper,
+			    Temperature.WARM,
+			    Humidity.DRY,
+			    Continentalness.FAR_INLAND,
+			    Erosion.EROSION_1,
+			    Weirdness.HIGH_SLICE_VARIANT_DESCENDING,
+			    Depth.SURFACE,
+			    0,
+			    CTBBiomes.CHERRY_GROVE);
+
+			this.addBiome(mapper,
+			    Temperature.WARM,
+			    Humidity.DRY,
+			    Continentalness.FAR_INLAND,
+			    Erosion.EROSION_2,
+			    Weirdness.MID_SLICE_VARIANT_ASCENDING,
+			    Depth.SURFACE,
+			    0,
+			    CTBBiomes.CHERRY_GROVE);
 		
-		this.addBiome(mapper, 
-				Temperature.COOL,
-				Humidity.NEUTRAL,
-				Continentalness.INLAND,
-				Erosion.EROSION_2,
-				Weirdness.MID_SLICE_NORMAL_ASCENDING,
-				Depth.SURFACE,
-				0,
-				CTBBiomes.PALE_GARDEN);
+		this.addBiome(mapper,
+		    Temperature.COOL,
+		    Humidity.WET,
+		    Continentalness.INLAND,
+		    Erosion.EROSION_2,
+		    Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
+		    Depth.SURFACE,
+		    0,
+		    CTBBiomes.PALE_GARDEN);
+
+		this.addBiome(mapper,
+		    Temperature.COOL,
+		    Humidity.WET,
+		    Continentalness.INLAND,
+		    Erosion.EROSION_2,
+		    Weirdness.MID_SLICE_VARIANT_ASCENDING,
+		    Depth.SURFACE,
+		    0,
+		    CTBBiomes.PALE_GARDEN);
+
+		this.addBiome(mapper,
+		    Temperature.COOL,
+		    Humidity.WET,
+		    Continentalness.INLAND,
+		    Erosion.EROSION_3,
+		    Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
+		    Depth.SURFACE,
+		    0,
+		    CTBBiomes.PALE_GARDEN);
+
+		this.addBiome(mapper,
+		    Temperature.COOL,
+		    Humidity.WET,
+		    Continentalness.INLAND,
+		    Erosion.EROSION_3,
+		    Weirdness.MID_SLICE_VARIANT_ASCENDING,
+		    Depth.SURFACE,
+		    0,
+		    CTBBiomes.PALE_GARDEN);
         
     }
 }

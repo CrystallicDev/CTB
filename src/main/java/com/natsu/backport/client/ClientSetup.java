@@ -2,6 +2,7 @@ package com.natsu.backport.client;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.client.render.WindChargeRenderer;
+import com.natsu.backport.common.particles.CherryParticle;
 import com.natsu.backport.common.particles.GustEmitterParticle;
 import com.natsu.backport.common.particles.GustParticle;
 import com.natsu.backport.common.registry.CTBBlocks;
@@ -32,6 +33,7 @@ public class ClientSetup {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST.get(), GustParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_LARGE.get(), GustEmitterParticle.LargeProvider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_SMALL.get(), GustEmitterParticle.SmallProvider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.CHERRY.get(), CherryParticle.Provider::new);
 	}
 	
 	@SubscribeEvent

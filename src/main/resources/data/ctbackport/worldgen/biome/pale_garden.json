@@ -1,12 +1,12 @@
 {
   "scale": 0.05,
   "effects": {
-    "sky_color": 11400928,
-    "water_fog_color": 329011,
-    "fog_color": 13556760,
-    "water_color": 6135921,
-    "foliage_color": 11973936,
-    "grass_color": 10921648,
+    "sky_color": 12171705,
+    "water_fog_color": 5597568,
+    "fog_color": 8484720,
+    "water_color": 7768221,
+    "foliage_color": 8883574,
+    "grass_color": 7832178,
     "grass_color_modifier": "none",
     "mood_sound": {
       "tick_delay": 6000,
@@ -75,7 +75,6 @@
       "ctbackport:pale_oak_tree",
       "ctbackport:pale_moss_patch",
       "ctbackport:pale_moss_carpet",
-      "ctbackport:pale_moss_layer",
       "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal"

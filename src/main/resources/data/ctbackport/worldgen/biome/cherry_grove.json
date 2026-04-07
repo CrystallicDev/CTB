@@ -1,12 +1,12 @@
 {
   "scale": 0.05,
   "effects": {
-    "sky_color": 13936895,
-    "water_fog_color": 329011,
-    "fog_color": 12246781,
-    "water_color": 4159204,
-    "foliage_color": 16028089,
-    "grass_color": 11917192,
+    "sky_color": 8103167,
+    "water_fog_color": 6141935,
+    "water_color": 6141935,
+    "foliage_color": 11983713,
+    "fog_color": 6840176,
+    "grass_color": 11983713,
     "mood_sound": {
       "tick_delay": 6000,
       "offset": 2,

@@ -6,8 +6,8 @@
       "count": {
         "type": "minecraft:uniform",
         "value": {
-          "min_inclusive": 6,
-          "max_inclusive": 7
+          "min_inclusive": 3,
+          "max_inclusive": 6
         }
       }
     },
@@ -17,6 +17,17 @@
       "max_water_depth": 0
     },
     { "type": "minecraft:heightmap", "heightmap": "OCEAN_FLOOR" },
-    { "type": "minecraft:biome" }
+    { "type": "minecraft:biome" },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [0, -1, 0],
+        "blocks": [
+          "minecraft:grass_block",
+          "minecraft:dirt"
+        ]
+      }
+    }
   ]
 }

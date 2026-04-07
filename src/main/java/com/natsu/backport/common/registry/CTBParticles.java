@@ -13,7 +13,7 @@ public class CTBParticles {
 
 	public static final DeferredRegister<ParticleType<?>> PARTICLES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, CTBackport.MODID);
 	
-	public static final RegistryObject<SimpleParticleType> CHERRY = PARTICLES.register("cherry_leaves", 
+	public static final RegistryObject<SimpleParticleType> CHERRY = PARTICLES.register("cherry_leaves_backport", 
 			() -> new SimpleParticleType(true)
 	);
 	public static final RegistryObject<SimpleParticleType> GUST = PARTICLES.register("gust", 

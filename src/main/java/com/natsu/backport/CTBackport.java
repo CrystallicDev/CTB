@@ -27,9 +27,9 @@ public class CTBackport {
     	CTBSounds.SOUND_EVENTS.register(modEventBus);
     	CTBParticles.PARTICLES.register(modEventBus);
     	CTBBlockEntities.BLOCK_ENTITIES.register(modEventBus);
+    	CTBItems.ITEMS.register(modEventBus);
     	CTBBlocks.BLOCKS.register(modEventBus);
     	CTBEntities.ENTITIES.register(modEventBus);
-    	CTBItems.ITEMS.register(modEventBus);
     	CTBEffects.EFFECTS.register(modEventBus);
     
     	if (!DatagenModLoader.isRunningDataGen()) {

@@ -15,19 +15,19 @@
       "type": "minecraft:simple_state_provider",
       "state": {
         "Name": "ctbackport:pale_oak_leaves",
-        "Properties": { "distance": "1", "persistent": "false" }
+        "Properties": { "distance": "7", "persistent": "false" }
       }
     },
     "trunk_placer": {
       "type": "minecraft:dark_oak_trunk_placer",
-      "base_height": 5,
+      "base_height": 6,
       "height_rand_a": 2,
       "height_rand_b": 1
     },
     "foliage_placer": {
       "type": "minecraft:dark_oak_foliage_placer",
-      "radius": { "type": "minecraft:constant", "value": 2 },
-      "offset": { "type": "minecraft:constant", "value": 0 }
+      "radius": 0,
+      "offset": 0
     },
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
