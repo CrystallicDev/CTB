@@ -129,6 +129,11 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+    
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' 
+    }
 }
 
 dependencies {
@@ -143,7 +148,7 @@ dependencies {
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
-
+	implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.57')
     compileOnly fg.deobf("com.github.glitchfiend:TerraBlender-forge:1.18.2-1.2.0.126")
     runtimeOnly fg.deobf("com.github.glitchfiend:TerraBlender-forge:1.18.2-1.2.0.126")
     // Example mod dependency using a mod jar from ./libs with a flat dir repository

@@ -17,6 +17,7 @@ import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import software.bernie.geckolib3.GeckoLib;
 
 @Mod(CTBackport.MODID)
 public class CTBackport {
@@ -31,6 +32,7 @@ public class CTBackport {
     	CTBBlocks.BLOCKS.register(modEventBus);
     	CTBEntities.ENTITIES.register(modEventBus);
     	CTBEffects.EFFECTS.register(modEventBus);
+    	GeckoLib.initialize();
     
     	if (!DatagenModLoader.isRunningDataGen()) {
         	CTBTrunkPlacers.TRUNK_PLACER_TYPES.register(modEventBus);

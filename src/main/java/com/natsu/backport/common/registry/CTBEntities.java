@@ -1,6 +1,7 @@
 package com.natsu.backport.common.registry;
 
 import com.natsu.backport.CTBackport;
+import com.natsu.backport.common.entity.Creaking;
 import com.natsu.backport.common.entity.WindChargeEntity;
 
 import net.minecraft.world.entity.Entity;
@@ -20,6 +21,10 @@ public class CTBEntities {
 			.clientTrackingRange(4)
 			.updateInterval(10)
 			.build("wind_charge")
+			);
+	
+	public static final RegistryObject<EntityType<Creaking>> CREAKING = ENTITIES.register("creaking", 
+			() -> EntityType.Builder.<Creaking>of(Creaking::new, MobCategory.MONSTER).build("creaking")
 			);
 	
 }

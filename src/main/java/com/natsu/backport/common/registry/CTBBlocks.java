@@ -5,6 +5,7 @@ import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.item.CTBBlockItemFactory;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
+import com.natsu.backport.utils.sets.ResinSet;
 import com.natsu.backport.utils.sets.WoodSet;
 
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,6 +23,7 @@ public class CTBBlocks {
 	public static final WoodSet BAMBOO_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "bamboo", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final WoodSet PALE_OAK_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "pale_oak", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final LeavesSet PALE_OAK_LEAVES = new LeavesSet("pale_oak", CTBItems.ITEMS, BLOCKS, Items.BIRCH_SAPLING, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final ResinSet RESIN = new ResinSet(CTBItems.ITEMS, BLOCKS, "resin", 0, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final MossSet PALE_MOSS = new MossSet(CTBItems.ITEMS, BLOCKS, "pale", CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 	public static final RegistryObject<Block> CHERRY_LEAVES = CTBBlockFactory.makeCherryLeaves(BLOCKS, "cherry_leaves");
@@ -30,6 +32,7 @@ public class CTBBlocks {
 	public static final RegistryObject<Block> BAMBOO_MOSAIC = CTBBlockFactory.makePlanks(BLOCKS, "bamboo_mosaic", 2);
 	public static final RegistryObject<Block> BAMBOO_MOSAIC_STAIRS = CTBBlockFactory.makeStairs(BLOCKS, "bamboo_mosaic_stairs", BAMBOO_MOSAIC, 2);
 	public static final RegistryObject<Block> BAMBOO_MOSAIC_SLAB = CTBBlockFactory.makeSlab(BLOCKS, "bamboo_mosaic_slab", BAMBOO_MOSAIC, 2);
+	public static final RegistryObject<Block> CREAKING_HEART = CTBBlockFactory.makeCreakingHeart(BLOCKS, "creaking_heart");
 	
 	/*public static final Pair<Supplier<StandingSignBlock>, Supplier<WallSignBlock>> CHERRY_SIGN = create("cherry", Material.WOOD, MaterialColor.COLOR_RED, CHERRY_WOOD.woodType);
 	public static final Pair<Supplier<StandingSignBlock>, Supplier<WallSignBlock>> BAMBOO_SIGN = create("bamboo", Material.WOOD, MaterialColor.COLOR_GREEN, BAMBOO_WOOD.woodType);

@@ -292,6 +292,24 @@ public class CTBBlockFactory {
 		            	.strength(strength))
 				);
 	}
+
+	public static RegistryObject<Block> makeCreakingHeart(DeferredRegister<Block> BLOCKS, String name) {
+		return BLOCKS.register(name, () -> new CreakingHeartBlock(null));
+	}
+
+	public static RegistryObject<Block> makeResin(DeferredRegister<Block> BLOCKS, String name, float baseStrength) {
+		return BLOCKS.register(name, () -> 
+			new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)
+					.strength(baseStrength))
+				);
+	}
+
+	public static RegistryObject<Block> makeResinBrick(DeferredRegister<Block> BLOCKS, String name, float baseStrength) {
+		return BLOCKS.register(name, () -> 
+		new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)
+				.strength(baseStrength))
+			);
+	}
 	 
     
 }

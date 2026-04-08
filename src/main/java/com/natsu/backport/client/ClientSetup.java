@@ -1,6 +1,7 @@
 package com.natsu.backport.client;
 
 import com.natsu.backport.CTBackport;
+import com.natsu.backport.client.render.CreakingRenderer;
 import com.natsu.backport.client.render.WindChargeRenderer;
 import com.natsu.backport.common.particles.CherryParticle;
 import com.natsu.backport.common.particles.GustEmitterParticle;
@@ -26,6 +27,7 @@ public class ClientSetup {
 	@SubscribeEvent
 	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(CTBEntities.WIND_CHARGE_ENTITY.get(), WindChargeRenderer::new);
+		event.registerEntityRenderer(CTBEntities.CREAKING.get(), CreakingRenderer::new);
 	}
 	
 	@SubscribeEvent
