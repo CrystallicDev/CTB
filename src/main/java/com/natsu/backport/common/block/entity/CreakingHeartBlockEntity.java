@@ -51,6 +51,7 @@ import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -105,7 +106,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
                     Vec3 vec3 = Vec3.atCenterOf(p_367184_);
                     float f = 0.2F + 0.8F * (100 - p_366884_.emitter) / 100.0F;
                     Vec3 vec31 = vec3.subtract(p_366884_.emitterTarget).scale(f).add(p_366884_.emitterTarget);
-                    BlockPos blockpos = BlockPos.containing(vec31);
+                    BlockPos blockpos = new BlockPos(vec31);
                     float f1 = p_366884_.emitter / 2.0F / 100.0F + 0.5F;
                     serverlevel.playSound(null, blockpos, CTBSounds.CREAKING_HEART_HURT.get(), SoundSource.BLOCKS, f1, 1.0F);
                 }
@@ -143,7 +144,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
                     Optional<Creaking> optional = p_366884_.getCreakingProtector();
                     if (optional.isPresent()) {
                         Creaking creaking = optional.get();
-                        if (!CreakingHeartBlock.isNaturalNight(p_360952_) && !creaking.isPersistenceRequired() || p_366884_.distanceToCreaking() > 34.0 || creaking.playerIsStuckInYou()) {
+                        if (!CreakingHeartBlock.isNaturalNight(p_360952_) && !creaking.isPersistenceRequired() || p_366884_.distanceToCreaking() > 34.0) {
                             p_366884_.removeProtector(null);
                         }
                     }
@@ -258,7 +259,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
                         for (int i = 0; i < j; i++) {
                             this.spreadResin().ifPresent(p_390962_ -> {
                                 this.level.playSound(null, p_390962_, CTBSounds.RESIN_PLACE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                                this.level.gameEvent(GameEvent.BLOCK_PLACE, p_390962_, GameEvent.Context.of(this.getBlockState()));
+                                //this.level.gameEvent(GameEvent.BLOCK_PLACE, p_390962_, GameEvent.Context.of(this.getBlockState())); // No Vibration, idk about TheWildBackport
                             });
                         }
                     }
@@ -300,10 +301,10 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 				if (blockstate.isAir()) {
 					blockstate = CTBBlocks.RESIN.block.get().defaultBlockState();
 				} else if (blockstate.is(Blocks.WATER) && blockstate.getFluidState().isSource()) {
-					blockstate = CTBBlocks.RESIN.block.get().defaultBlockState().setValue(MultifaceBlock.WATERLOGGED, true);
+					blockstate = CTBBlocks.RESIN.block.get().defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, true);
 				}
 
-				if (blockstate.is(CTBBlocks.RESIN.block.get()) && !MultifaceBlock.hasFace(blockstate, opposite)) {
+				if (blockstate.is(CTBBlocks.RESIN.block.get()) && !blockstate.getValue(MultifaceBlock.getFaceProperty(opposite))) {
 					this.level.setBlock(blockpos, blockstate.setValue(MultifaceBlock.getFaceProperty(opposite), true),
 							3);
 					return Optional.of(blockpos); 

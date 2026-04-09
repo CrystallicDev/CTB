@@ -11,6 +11,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
@@ -102,7 +103,6 @@ public class Creaking extends Monster implements IAnimatable {
                 return false;
             }
         }
-        // Pas de coeur lié : vulnérable normalement
         return super.hurt(source, amount);
     }
 
@@ -164,5 +164,11 @@ public class Creaking extends Monster implements IAnimatable {
 	public void setTearingDown() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public void makeSound(@NotNull SoundEvent soundEvent) {
+		if (soundEvent != null) {
+			this.getLevel().playSound(null, this.getOnPos(), soundEvent, SoundSource.HOSTILE, 1.0f, 1.0f);
+		}
 	}
 }

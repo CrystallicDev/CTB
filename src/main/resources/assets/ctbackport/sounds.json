@@ -6,5 +6,47 @@
 			"ctbackport:entity/wind_charge/wind_burst2",
 			"ctbackport:entity/wind_charge/wind_burst3" 
 		]
+	},
+	"creaking_heart_hurt": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:block/creaking_heart/trail1",
+			"ctbackport:block/creaking_heart/trail2",
+			"ctbackport:block/creaking_heart/trail3",
+			"ctbackport:block/creaking_heart/trail4",
+			"ctbackport:block/creaking_heart/trail5",
+			"ctbackport:block/creaking_heart/trail6",
+			"ctbackport:block/creaking_heart/trail7"
+		]
+	},
+	"creaking_heart_spawn": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:block/creaking_heart/creaking_heart_spawnmob"
+		]
+	},
+	"creaking_spawn": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/creaking/creaking_spawn"
+		]
+	},
+	"resin_place": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:block/resin/resin_place1",
+			"ctbackport:block/resin/resin_place2",
+			"ctbackport:block/resin/resin_place3",
+			"ctbackport:block/resin/resin_place4" 
+		]
+	},
+	"creaking_heart_idle": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:block/creaking_heart/creaking_heart_idle1",
+			"ctbackport:block/creaking_heart/creaking_heart_idle2",
+			"ctbackport:block/creaking_heart/creaking_heart_idle3",
+			"ctbackport:block/creaking_heart/creaking_heart_idle4"
+		]
 	}
 }
