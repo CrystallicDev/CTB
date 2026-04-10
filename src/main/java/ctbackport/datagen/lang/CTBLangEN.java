@@ -6,6 +6,7 @@ import com.natsu.backport.common.registry.CTBEffects;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
+import com.natsu.backport.utils.sets.ResinSet;
 import com.natsu.backport.utils.sets.StoneDecorationSet;
 import com.natsu.backport.utils.sets.WoodSet;
 
@@ -30,6 +31,7 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		handleWoodSet(CTBBlocks.CHERRY_WOOD);
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
+		handleResinSet(CTBBlocks.RESIN);
 
 		add(CTBBlocks.CHERRY_LEAVES.get(), "Cherry Leaves");
 	}
@@ -116,6 +118,17 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 	    	if (i < words.length - 1) builder.append(" ");
 	    }
 	    return builder.toString();
+	}
+
+	@Override
+	public void handleResinSet(ResinSet set) {
+		String name = formatSetName(set.getName());
+		add(set.block.get(), name+" Block");
+		add(set.brick.get(), name+" Bricks Block");
+		add(set.brickSlab.get(), name+" Bricks Slab");
+		add(set.brickStairs.get(), name+" Bricks Stairs");
+		add(set.brickWalls.get(), name+" Bricks Wall");
+		add(set.chiseledBrick.get(), "Chiseled "+name+" Bricks");
 	}
 
 }

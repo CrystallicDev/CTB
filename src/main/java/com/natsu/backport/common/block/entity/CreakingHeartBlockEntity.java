@@ -38,6 +38,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -407,7 +408,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
     public int computeAnalogOutputSignal() {
         if (this.creakingInfo != null && !this.getCreakingProtector().isEmpty()) {
             double d0 = this.distanceToCreaking();
-            double d1 = Math.clamp(d0, 0.0, 32.0) / 32.0;
+            double d1 = Mth.clamp(d0, 0.0, 32.0) / 32.0;
             return 15 - (int)Math.floor(d1 * 15.0);
         } else {
             return 0;

@@ -6,12 +6,14 @@ import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
+import com.natsu.backport.utils.sets.ResinSet;
 import com.natsu.backport.utils.sets.StoneDecorationSet;
 import com.natsu.backport.utils.sets.WoodSet;
 
 import ctbackport.datagen.DataGenBlockItemHandler;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
@@ -21,6 +23,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.VariantBlockStateBuilder;
@@ -39,6 +42,10 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
+		handleResinSet(CTBBlocks.RESIN);
+		
+		eyeblossom(CTBBlocks.CLOSED_EYEBLOSSOM.get(), "closed_eyeblossom");
+		eyeblossom(CTBBlocks.OPEN_EYEBLOSSOM.get(), "eye_eyeblossom");
 		
 		ResourceLocation leavesTexture = modLoc("block/cherry_leaves");
         ModelFile normalModel = models().withExistingParent("cherry_leaves",
@@ -165,10 +172,24 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		
 	}
 
+	@Override
+	public void handleResinSet(ResinSet set) {
+		simpleBlock(set.block.get());
+		simpleBlock(set.brick.get());
+		ResourceLocation brickTex = blockTexture(set.brick.get());
+		stairsBlock((StairBlock) set.brickStairs.get(), brickTex);
+		slabBlock((SlabBlock) set.brickSlab.get(), brickTex, brickTex);
+		wallBlock((WallBlock) set.brickWalls.get(), brickTex);
+		simpleBlock(set.chiseledBrick.get());
+	}
+
 	
 	
 	
-	
+	protected void eyeblossom(Block block, String name) {
+		ModelFile model = models().cross(name, modLoc("block/"+name));
+		simpleBlock(block, model);
+	}
 	
 	protected void woodBlock(RotatedPillarBlock block, ResourceLocation texture) {
 	    axisBlock(block, texture, texture);

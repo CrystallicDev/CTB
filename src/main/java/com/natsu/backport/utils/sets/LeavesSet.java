@@ -1,12 +1,6 @@
 package com.natsu.backport.utils.sets;
 
-import java.lang.reflect.Constructor;
-import java.util.List;
-import java.util.Optional;
 import java.util.function.Function;
-import java.util.function.Supplier;
-
-import javax.annotation.Nullable;
 
 import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.item.CTBBlockItemFactory;
@@ -16,15 +10,10 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.tags.TagsProvider.TagAppender;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;

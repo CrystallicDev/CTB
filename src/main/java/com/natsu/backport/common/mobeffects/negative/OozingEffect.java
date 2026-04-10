@@ -8,6 +8,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 public class OozingEffect extends MobEffect {
 
 	public OozingEffect() {
-		super(MobEffectCategory.HARMFUL, 0x5C5C5C);
+		super(MobEffectCategory.HARMFUL, 0x99FFA3);
 	}
 }

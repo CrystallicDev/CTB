@@ -9,6 +9,7 @@ import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
+import com.natsu.backport.utils.sets.ResinSet;
 import com.natsu.backport.utils.sets.StoneDecorationSet;
 import com.natsu.backport.utils.sets.WoodSet;
 
@@ -27,6 +28,7 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		TRANSLATION.put("pale_oak", "chêne_pâle");
 		TRANSLATION.put("bamboo", "bambou");
 		TRANSLATION.put("pale", "pâle");
+		TRANSLATION.put("resin", "résine");
 	}
 
 	@Override
@@ -36,6 +38,7 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
+		handleResinSet(CTBBlocks.RESIN);
 		
 
 		add(CTBBlocks.CHERRY_LEAVES.get(), "Feuilles de cerisier");
@@ -148,6 +151,20 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		
 		char p = Character.toLowerCase(nom.charAt(0));
 		return (p == 'a' || p == 'e' || p == 'i' || p == 'o' || p == 'u' || p == 'h' || p == 'h') ? "d'"+nom : "de "+nom;
+	}
+
+	@Override
+	public void handleResinSet(ResinSet set) {
+		try {
+			add(set.block.get(), "Block "+accordDe(formatSetName(translateSetName(set.getName()), false)));
+			add(set.brick.get(), "Block de briques "+accordDe(formatSetName(translateSetName(set.getName()), false)));
+			add(set.brickSlab.get(), "Dalle de briques "+accordDe(formatSetName(translateSetName(set.getName()), false)));
+			add(set.brickStairs.get(), "Escaliers de briques "+accordDe(formatSetName(translateSetName(set.getName()), false)));
+			add(set.brickWalls.get(), "Mur de briques "+accordDe(formatSetName(translateSetName(set.getName()), false)));
+			add(set.chiseledBrick.get(), "Briques taillées "+accordDe(formatSetName(translateSetName(set.getName()), false)));
+		} catch (MissingTranslationException er) {
+			throw new IllegalStateException(er.getMessage());
+		}
 	}
 
 

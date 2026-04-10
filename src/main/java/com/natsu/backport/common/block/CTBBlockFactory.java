@@ -2,7 +2,11 @@ package com.natsu.backport.common.block;
 
 import java.util.function.Supplier;
 
+import com.natsu.backport.common.block.EyeblossomBlock.Type;
+import com.natsu.salm.block.cristallite.leaves.ParticleSpawningLeavesBlock;
+
 import net.minecraft.core.Holder;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.entity.ai.behavior.Behavior;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.AmethystBlock;
@@ -31,6 +35,8 @@ import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.WoodButtonBlock;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
@@ -211,10 +217,11 @@ public class CTBBlockFactory {
             ));
     }
     
-    public static RegistryObject<Block> makeCherryLeaves(DeferredRegister<Block> BLOCKS, String name) {
+    public static RegistryObject<Block> makeCherryLeaves(DeferredRegister<Block> BLOCKS, String name, RegistryObject<SimpleParticleType> particles) {
         return BLOCKS.register(name,
-            () -> new CherryLeavesBlock(
-                BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
+            () -> new ParticleSpawningLeavesBlock(
+                BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES),
+                particles
             ));
     }
     
@@ -294,7 +301,7 @@ public class CTBBlockFactory {
 	}
 
 	public static RegistryObject<Block> makeCreakingHeart(DeferredRegister<Block> BLOCKS, String name) {
-		return BLOCKS.register(name, () -> new CreakingHeartBlock(null));
+		return BLOCKS.register(name, () -> new CreakingHeartBlock(Properties.copy(Blocks.DARK_OAK_LOG).randomTicks()));
 	}
 
 	public static RegistryObject<Block> makeResin(DeferredRegister<Block> BLOCKS, String name, float baseStrength) {
@@ -309,6 +316,23 @@ public class CTBBlockFactory {
 		new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)
 				.strength(baseStrength))
 			);
+	}
+
+	public static RegistryObject<Block> makeEyeblossom(DeferredRegister<Block> BLOCKS, String name, boolean open) {
+	    return BLOCKS.register(name, () -> {
+	        EyeblossomBlock.Type type = open ? EyeblossomBlock.Type.OPEN : EyeblossomBlock.Type.CLOSED;
+	        return new EyeblossomBlock(type, BlockBehaviour.Properties.copy(Blocks.POPPY)
+	            .noCollission()
+	            .instabreak()
+	            .sound(SoundType.GRASS));
+	    });
+	}
+
+	public static RegistryObject<Block> makeCopperBulb(DeferredRegister<Block> BLOCKS, String name, float baseStrength) {
+		return BLOCKS.register(name, () -> new CopperBulbBlock(Properties.copy(Blocks.COPPER_BLOCK)
+				.lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)
+				.requiresCorrectToolForDrops()
+				));
 	}
 	 
     

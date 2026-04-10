@@ -27,14 +27,14 @@ public class CTBackport {
     	IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
     	CTBSounds.SOUND_EVENTS.register(modEventBus);
     	CTBParticles.PARTICLES.register(modEventBus);
-    	CTBBlockEntities.BLOCK_ENTITIES.register(modEventBus);
-    	CTBItems.ITEMS.register(modEventBus);
-    	CTBBlocks.BLOCKS.register(modEventBus);
-    	CTBEntities.ENTITIES.register(modEventBus);
     	CTBEffects.EFFECTS.register(modEventBus);
+    	CTBBlocks.BLOCKS.register(modEventBus);
+    	CTBItems.ITEMS.register(modEventBus);
+    	CTBBlockEntities.BLOCK_ENTITIES.register(modEventBus);
     	GeckoLib.initialize();
     
     	if (!DatagenModLoader.isRunningDataGen()) {
+        	CTBEntities.ENTITIES.register(modEventBus);
         	CTBTrunkPlacers.TRUNK_PLACER_TYPES.register(modEventBus);
         	CTBFoliagePlacers.FOLIAGE_PLACER_TYPES.register(modEventBus);
         	CTBFeatures.FEATURES.register(modEventBus);

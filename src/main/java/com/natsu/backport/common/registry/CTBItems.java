@@ -24,4 +24,5 @@ public class CTBItems {
 	public static final RegistryObject<Item> BAMBOO_MOSAIC_ITEM = CTBBlockItemFactory.blockItem(ITEMS, CreativeModeTab.TAB_BUILDING_BLOCKS, CTBBlocks.BAMBOO_MOSAIC);
 	public static final RegistryObject<Item> BAMBOO_MOSAIC_STAIRS_ITEM = CTBBlockItemFactory.blockItem(ITEMS, CreativeModeTab.TAB_BUILDING_BLOCKS, CTBBlocks.BAMBOO_MOSAIC_STAIRS);
 	public static final RegistryObject<Item> BAMBOO_MOSAIC_SLAB_ITEM = CTBBlockItemFactory.blockItem(ITEMS, CreativeModeTab.TAB_BUILDING_BLOCKS, CTBBlocks.BAMBOO_MOSAIC_SLAB);
+	public static final RegistryObject<Item> EYEBLOSSOM = CTBBlockItemFactory.blockItem(ITEMS, CreativeModeTab.TAB_BUILDING_BLOCKS, CTBBlocks.CLOSED_EYEBLOSSOM);
 }

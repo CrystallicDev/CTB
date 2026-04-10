@@ -48,5 +48,11 @@
 			"ctbackport:block/creaking_heart/creaking_heart_idle3",
 			"ctbackport:block/creaking_heart/creaking_heart_idle4"
 		]
+	},
+	"copper_bulb_toggle": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:block/copper_bulb/toggle"
+		]
 	}
 }

@@ -2,9 +2,11 @@ package ctbackport.datagen.server;
 
 
 import com.natsu.backport.common.registry.CTBBlocks;
+import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
+import com.natsu.backport.utils.sets.ResinSet;
 import com.natsu.backport.utils.sets.StoneDecorationSet;
 import com.natsu.backport.utils.sets.WoodSet;
 
@@ -16,6 +18,7 @@ import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -41,7 +44,10 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
+		handleResinSet(CTBBlocks.RESIN);
 		
+		add(CTBBlocks.CLOSED_EYEBLOSSOM.get(), createSimpleDrop(CTBItems.EYEBLOSSOM.get()));
+		add(CTBBlocks.OPEN_EYEBLOSSOM.get(), createSimpleDrop(CTBItems.EYEBLOSSOM.get()));
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC_STAIRS.get());
 		add(CTBBlocks.BAMBOO_MOSAIC_SLAB.get(), createSlabItemTable(CTBBlocks.BAMBOO_MOSAIC_SLAB.get()));
@@ -99,6 +105,9 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		
 	}
 	
+	private LootTable.Builder createSimpleDrop(ItemLike block){
+		return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1)).add(LootItem.lootTableItem(block)));
+	}
 	
 	private LootTable.Builder createLeavesDrops(Block leavesBlock, Item saplingItem) {
 		LootItemCondition.Builder silkOrShears =
@@ -119,6 +128,16 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 	                                    0.1f     // fortune 3
 	                            )))
 	            );
+	}
+
+	@Override
+	public void handleResinSet(ResinSet set) {
+		dropSelf(set.block.get());
+		dropSelf(set.brick.get());
+		dropSelf(set.brickSlab.get());
+		dropSelf(set.brickStairs.get());
+		dropSelf(set.brickWalls.get());
+		dropSelf(set.chiseledBrick.get());
 	}
 	
 }

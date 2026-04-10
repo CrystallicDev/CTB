@@ -8,6 +8,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 public class InfestedEffect extends MobEffect {
 
 	public InfestedEffect() {
-		super(MobEffectCategory.HARMFUL, 0x5C5C5C);
+		super(MobEffectCategory.HARMFUL, 0x8C9B8C);
 	}
 }

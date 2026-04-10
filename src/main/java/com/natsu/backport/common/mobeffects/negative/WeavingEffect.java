@@ -8,6 +8,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 public class WeavingEffect extends MobEffect {
 
 	public WeavingEffect() {
-		super(MobEffectCategory.HARMFUL, 0x5C5C5C);
+		super(MobEffectCategory.HARMFUL, 0x78695A);
 	}
 }

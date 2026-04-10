@@ -56,9 +56,9 @@ public class ResinSet implements DefaultSet {
             CreativeModeTab tab) {
 		this.name = name;
 		
-		this.resinItem = ITEMS.register(name, () -> new Item(new Item.Properties()));
+		this.resinItem = ITEMS.register(name+"_clump", () -> new Item(new Item.Properties()));
 		
-		this.block = CTBBlockFactory.makeResin(BLOCKS, name, baseStrength);
+		this.block = CTBBlockFactory.makeResin(BLOCKS, name+"", baseStrength);
 		this.brick = CTBBlockFactory.makeResinBrick(BLOCKS, name+"_bricks", baseStrength + 1.5f);
 		this.brickSlab = CTBBlockFactory.makeSlab(BLOCKS, name+"_bricks_slab", this.brick, baseStrength + 1.5f);
 		this.brickStairs = CTBBlockFactory.makeStairs(BLOCKS, name+"_bricks_stairs", this.brick, baseStrength + 1.5f);

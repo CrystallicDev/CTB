@@ -6,12 +6,16 @@ import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
+import com.natsu.backport.utils.sets.ResinSet;
 import com.natsu.backport.utils.sets.StoneDecorationSet;
 import com.natsu.backport.utils.sets.WoodSet;
 
 import ctbackport.datagen.DataGenBlockItemHandler;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -29,8 +33,10 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
+		handleResinSet(CTBBlocks.RESIN);
 		
-		
+		withExistingParent("open_eyeblossom", "item/generated").texture("layer0", CTBackport.MODID+":block/open_eyeblossom");
+		withExistingParent("closed_eyeblossom", "item/generated").texture("layer0", CTBackport.MODID+":block/closed_eyeblossom");
 		
 		singleTexture(CTBItems.WIND_CHARGE.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
 				modLoc("item/wind_charge"));
@@ -117,6 +123,25 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 	public void handleDirtDecorationSet(DirtDecorationSet set) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void handleResinSet(ResinSet set) {
+		singleTexture(set.resinItem.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
+				modLoc("item/"+set.name+"_clump"));
+		
+		withExistingParent(set.block.getId().getPath(),
+	            modLoc("block/" + set.getName()));
+		withExistingParent(set.brick.getId().getPath(),
+	            modLoc("block/"+set.getName()+"_bricks"));
+		withExistingParent(set.brickStairs.getId().getPath(),
+	            modLoc("block/" + set.getName()+"_bricks_stairs"));
+		withExistingParent(set.brickSlab.getId().getPath(),
+	            modLoc("block/" + set.getName()+"_bricks_slab"));
+	    wallInventory(set.name + "_bricks_wall",
+	    		modLoc("block/" + set.getName()+"_bricks"));
+		withExistingParent(set.chiseledBrick.getId().getPath(),
+	            modLoc("block/chiseled_" + set.getName() + "_brick"));
 	}
 
 
