@@ -46,10 +46,11 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		handleResinSet(CTBBlocks.RESIN);
 		
-		add(CTBBlocks.CLOSED_EYEBLOSSOM.get(), createSimpleDrop(CTBItems.EYEBLOSSOM.get()));
-		add(CTBBlocks.OPEN_EYEBLOSSOM.get(), createSimpleDrop(CTBItems.EYEBLOSSOM.get()));
+		add(CTBBlocks.CLOSED_EYEBLOSSOM.get(), createSimpleDrop(CTBBlocks.CLOSED_EYEBLOSSOM.get()));
+		add(CTBBlocks.OPEN_EYEBLOSSOM.get(), createSimpleDrop(CTBBlocks.CLOSED_EYEBLOSSOM.get()));
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC_STAIRS.get());
+		dropSelf(CTBBlocks.CREAKING_HEART.get());
 		add(CTBBlocks.BAMBOO_MOSAIC_SLAB.get(), createSlabItemTable(CTBBlocks.BAMBOO_MOSAIC_SLAB.get()));
 		
 		add(CTBBlocks.CHERRY_LEAVES.get(), block -> createLeavesDrops(block, Items.OAK_SAPLING));

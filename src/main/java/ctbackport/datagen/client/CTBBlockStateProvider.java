@@ -45,7 +45,7 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		handleResinSet(CTBBlocks.RESIN);
 		
 		eyeblossom(CTBBlocks.CLOSED_EYEBLOSSOM.get(), "closed_eyeblossom");
-		eyeblossom(CTBBlocks.OPEN_EYEBLOSSOM.get(), "eye_eyeblossom");
+		eyeblossom(CTBBlocks.OPEN_EYEBLOSSOM.get(), "open_eyeblossom");
 		
 		ResourceLocation leavesTexture = modLoc("block/cherry_leaves");
         ModelFile normalModel = models().withExistingParent("cherry_leaves",

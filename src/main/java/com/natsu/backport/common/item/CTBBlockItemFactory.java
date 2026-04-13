@@ -23,6 +23,10 @@ public class CTBBlockItemFactory {
 				() -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
 	}
 	
+	public static RegistryObject<Item> blockItem(DeferredRegister<Item> items, CreativeModeTab tab, String name,
+			RegistryObject<Block> block) {
 
+		return items.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
+	}
 	
 }

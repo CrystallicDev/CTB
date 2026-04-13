@@ -63,7 +63,7 @@ public class ResinSet implements DefaultSet {
 		this.brickSlab = CTBBlockFactory.makeSlab(BLOCKS, name+"_bricks_slab", this.brick, baseStrength + 1.5f);
 		this.brickStairs = CTBBlockFactory.makeStairs(BLOCKS, name+"_bricks_stairs", this.brick, baseStrength + 1.5f);
 		this.brickWalls = CTBBlockFactory.makeWall(BLOCKS, name+"_bricks_wall", this.brick, baseStrength + 1.5f);
-		this.chiseledBrick = CTBBlockFactory.makeResinBrick(BLOCKS, "chiseled_"+name+"_brick", baseStrength + 1.5f);
+		this.chiseledBrick = CTBBlockFactory.makeResinBrick(BLOCKS, "chiseled_"+name+"_bricks", baseStrength + 1.5f);
 		
 		this.blockItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.block);
 		this.brickItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.brick);

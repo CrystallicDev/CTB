@@ -141,7 +141,7 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 	    wallInventory(set.name + "_bricks_wall",
 	    		modLoc("block/" + set.getName()+"_bricks"));
 		withExistingParent(set.chiseledBrick.getId().getPath(),
-	            modLoc("block/chiseled_" + set.getName() + "_brick"));
+	            modLoc("block/chiseled_" + set.getName() + "_bricks"));
 	}
 
 

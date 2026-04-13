@@ -31,6 +31,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.registries.RegistryObject;
 
 public class EyeblossomBlock extends FlowerBlock {
 
@@ -65,7 +66,7 @@ public class EyeblossomBlock extends FlowerBlock {
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, Random random) {
         if (this.tryChangingState(state, level, pos, random)) {
-            level.playSound(null, pos, this.type.transform().shortSwitchSound, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.playSound(null, pos, this.type.transform().shortSwitchSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
         }
         super.tick(state, level, pos, random);
     }
@@ -109,26 +110,28 @@ public class EyeblossomBlock extends FlowerBlock {
         return new MobEffectInstance(MobEffects.POISON, 25);
     }
 
-	public enum Type implements StringRepresentable {
-	    OPEN(true, MobEffects.BLINDNESS, 11.0F, CTBSounds.EYEBLOSSOM_OPEN_LONG.get(), CTBSounds.EYEBLOSSOM_OPEN.get(), 16545810),
-	    CLOSED(false, MobEffects.CONFUSION, 7.0F, CTBSounds.EYEBLOSSOM_CLOSE_LONG.get(), CTBSounds.EYEBLOSSOM_CLOSE.get(), 6250335);
-	 
-	    final boolean open;
-	    final MobEffect effect;
-	    final float effectDuration;
-	    final SoundEvent longSwitchSound;
-	    final SoundEvent shortSwitchSound;
-	    private final int particleColor;
-	 
-	    Type(boolean open, MobEffect effect, float effectDuration,
-	         SoundEvent longSwitchSound, SoundEvent shortSwitchSound, int particleColor) {
-	        this.open = open;
-	        this.effect = effect;
-	        this.effectDuration = effectDuration;
-	        this.longSwitchSound = longSwitchSound;
-	        this.shortSwitchSound = shortSwitchSound;
-	        this.particleColor = particleColor;
-	    }
+    public enum Type implements StringRepresentable {
+        OPEN(true, MobEffects.BLINDNESS, 11.0F, CTBSounds.EYEBLOSSOM_OPEN_LONG, CTBSounds.EYEBLOSSOM_OPEN, 16545810),
+        CLOSED(false, MobEffects.CONFUSION, 7.0F, CTBSounds.EYEBLOSSOM_CLOSE_LONG, CTBSounds.EYEBLOSSOM_CLOSE, 6250335);
+
+        final boolean open;
+        final MobEffect effect;
+        final float effectDuration;
+        final RegistryObject<SoundEvent> longSwitchSound;   // ← RegistryObject
+        final RegistryObject<SoundEvent> shortSwitchSound;  // ← RegistryObject
+        private final int particleColor;
+
+        Type(boolean open, MobEffect effect, float effectDuration,
+             RegistryObject<SoundEvent> longSwitchSound,    // ← RegistryObject
+             RegistryObject<SoundEvent> shortSwitchSound,   // ← RegistryObject
+             int particleColor) {
+            this.open = open;
+            this.effect = effect;
+            this.effectDuration = effectDuration;
+            this.longSwitchSound = longSwitchSound;
+            this.shortSwitchSound = shortSwitchSound;
+            this.particleColor = particleColor;
+        }
 	 
 	    public Block block() {
 	        return this.open ? CTBBlocks.OPEN_EYEBLOSSOM.get() : CTBBlocks.CLOSED_EYEBLOSSOM.get();
@@ -171,7 +174,11 @@ public class EyeblossomBlock extends FlowerBlock {
 	    }
 	 
 	    public SoundEvent longSwitchSound() {
-	        return this.longSwitchSound;
+	        return this.longSwitchSound.get();
+	    }
+	    
+	    public SoundEvent shortSwitchSound() {
+	        return this.shortSwitchSound.get();
 	    }
 	 
 	    @Override

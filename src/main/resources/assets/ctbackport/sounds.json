@@ -54,5 +54,25 @@
 		"sounds": [
 			"ctbackport:block/copper_bulb/toggle"
 		]
+	},
+	"eyeblossom_idle": {
+		"category": "ambient",
+		"sounds": []
+	},
+	"eyeblossom_open": {
+		"category": "block",
+		"sounds": []
+	},
+	"eyeblossom_close": {
+		"category": "block",
+		"sounds": []
+	},
+	"eyeblossom_open_long": {
+		"category": "block",
+		"sounds": []
+	},
+	"eyeblossom_close_long": {
+		"category": "block",
+		"sounds": []
 	}
 }
