@@ -11,6 +11,7 @@ import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
 import com.natsu.backport.utils.sets.ResinSet;
 import com.natsu.backport.utils.sets.StoneDecorationSet;
+import com.natsu.backport.utils.sets.WeatherableCopperSet;
 import com.natsu.backport.utils.sets.WoodSet;
 
 import ctbackport.datagen.DataGenBlockItemHandler;
@@ -165,6 +166,30 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		} catch (MissingTranslationException er) {
 			throw new IllegalStateException(er.getMessage());
 		}
+	}
+
+	@Override
+	public void handleCopperSet(WeatherableCopperSet<?, ?> set) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void handleCopperDoorSet(WeatherableCopperSet<?, ?> set) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void handleCopperTrapdoorSet(WeatherableCopperSet<?, ?> set) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

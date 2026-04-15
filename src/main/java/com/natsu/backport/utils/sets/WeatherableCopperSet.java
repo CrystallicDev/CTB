@@ -4,6 +4,7 @@ import java.lang.reflect.Constructor;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import com.natsu.backport.common.item.CTBBlockItemFactory;
 import com.natsu.salm.block.cristallite.vine.VineHeadBase;
 
 import net.minecraft.core.Direction;
@@ -21,6 +22,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class WeatherableCopperSet<Weatherable extends Block, Waxed extends Block> implements DefaultSet {
 
+	public final String name;
+	
 	public final RegistryObject<Block> block;
 	public final RegistryObject<Block> exposedBlock;
 	public final RegistryObject<Block> weatheredBlock;
@@ -31,32 +34,54 @@ public class WeatherableCopperSet<Weatherable extends Block, Waxed extends Block
 	public final RegistryObject<Block> weatheredBlockWaxed;
 	public final RegistryObject<Block> oxidizedBlockWaxed;
 	
-	public WeatherableCopperSet(DeferredRegister<Block> BLOCKS, String blockName, float strength, Class<Weatherable> weatherable, Class<Waxed> waxed) {
-		block = BLOCKS.register(blockName, () -> createWeatherable(weatherable, WeatherState.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(strength)));
-		exposedBlock = BLOCKS.register("exposed"+blockName, () -> createWeatherable(weatherable, WeatherState.EXPOSED, BlockBehaviour.Properties.copy(Blocks.EXPOSED_COPPER).strength(strength)));
-		weatheredBlock = BLOCKS.register("weathered"+blockName, () -> createWeatherable(weatherable, WeatherState.WEATHERED, BlockBehaviour.Properties.copy(Blocks.WEATHERED_COPPER).strength(strength)));
-		oxidizedBlock = BLOCKS.register("oxidized"+blockName, () -> createWeatherable(weatherable, WeatherState.OXIDIZED, BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).strength(strength)));
+	public final RegistryObject<Item> blockItem;
+	public final RegistryObject<Item> exposedBlockItem;
+	public final RegistryObject<Item> weatheredBlockItem;
+	public final RegistryObject<Item> oxidizedBlockItem;
 
-		blockWaxed = BLOCKS.register("waxed_"+blockName, () -> createWaxed(waxed, WeatherState.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(strength)));
-		exposedBlockWaxed = BLOCKS.register("waxed_exposed_"+blockName, () -> createWaxed(waxed, WeatherState.EXPOSED, BlockBehaviour.Properties.copy(Blocks.EXPOSED_COPPER).strength(strength)));
-		weatheredBlockWaxed = BLOCKS.register("waxed_weathered_"+blockName, () -> createWaxed(waxed, WeatherState.WEATHERED, BlockBehaviour.Properties.copy(Blocks.WEATHERED_COPPER).strength(strength)));
-		oxidizedBlockWaxed = BLOCKS.register("waxed_oxidized_"+blockName, () -> createWaxed(waxed, WeatherState.OXIDIZED, BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).strength(strength)));
+	public final RegistryObject<Item> blockWaxedItem;
+	public final RegistryObject<Item> exposedBlockWaxedItem;
+	public final RegistryObject<Item> weatheredBlockWaxedItem;
+	public final RegistryObject<Item> oxidizedBlockWaxedItem;
 	
-		WeatheringCopper.NEXT_BY_BLOCK.get().put(block.get(), exposedBlock.get());
+	public WeatherableCopperSet(DeferredRegister<Block> BLOCKS, DeferredRegister<Item> ITEMS, String blockName, float strength, Class<Weatherable> weatherable, Class<Waxed> waxed) {
+		name = blockName;
+		
+		block = BLOCKS.register(blockName, () -> createWeatherableState(weatherable, WeatherState.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(strength)));
+		exposedBlock = BLOCKS.register("exposed_"+blockName, () -> createWeatherableState(weatherable, WeatherState.EXPOSED, BlockBehaviour.Properties.copy(Blocks.EXPOSED_COPPER).strength(strength)));
+		weatheredBlock = BLOCKS.register("weathered_"+blockName, () -> createWeatherableState(weatherable, WeatherState.WEATHERED, BlockBehaviour.Properties.copy(Blocks.WEATHERED_COPPER).strength(strength)));
+		oxidizedBlock = BLOCKS.register("oxidized_"+blockName, () -> createWeatherableState(weatherable, WeatherState.OXIDIZED, BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).strength(strength)));
+
+		blockWaxed = BLOCKS.register("waxed_"+blockName, () -> createWaxedState(waxed, WeatherState.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(strength)));
+		exposedBlockWaxed = BLOCKS.register("waxed_exposed_"+blockName, () -> createWaxedState(waxed, WeatherState.EXPOSED, BlockBehaviour.Properties.copy(Blocks.EXPOSED_COPPER).strength(strength)));
+		weatheredBlockWaxed = BLOCKS.register("waxed_weathered_"+blockName, () -> createWaxedState(waxed, WeatherState.WEATHERED, BlockBehaviour.Properties.copy(Blocks.WEATHERED_COPPER).strength(strength)));
+		oxidizedBlockWaxed = BLOCKS.register("waxed_oxidized_"+blockName, () -> createWaxedState(waxed, WeatherState.OXIDIZED, BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).strength(strength)));
+	
+		blockItem = CTBBlockItemFactory.blockItem(ITEMS, block);
+		exposedBlockItem = CTBBlockItemFactory.blockItem(ITEMS, exposedBlock);
+		weatheredBlockItem = CTBBlockItemFactory.blockItem(ITEMS, weatheredBlock);
+		oxidizedBlockItem = CTBBlockItemFactory.blockItem(ITEMS, oxidizedBlock);
+		
+		blockWaxedItem = CTBBlockItemFactory.blockItem(ITEMS, blockWaxed);
+		exposedBlockWaxedItem = CTBBlockItemFactory.blockItem(ITEMS, exposedBlockWaxed);
+		weatheredBlockWaxedItem = CTBBlockItemFactory.blockItem(ITEMS, weatheredBlockWaxed);
+		oxidizedBlockWaxedItem = CTBBlockItemFactory.blockItem(ITEMS, oxidizedBlockWaxed);
+		
+		/*WeatheringCopper.NEXT_BY_BLOCK.get().put(block.get(), exposedBlock.get());
 		WeatheringCopper.NEXT_BY_BLOCK.get().put(exposedBlock.get(), weatheredBlock.get());
 		WeatheringCopper.NEXT_BY_BLOCK.get().put(weatheredBlock.get(), oxidizedBlock.get());
 		
 		WeatheringCopper.PREVIOUS_BY_BLOCK.get().put(oxidizedBlock.get(), weatheredBlock.get());
 		WeatheringCopper.PREVIOUS_BY_BLOCK.get().put(weatheredBlock.get(), exposedBlock.get());
-		WeatheringCopper.PREVIOUS_BY_BLOCK.get().put(exposedBlock.get(), block.get());
+		WeatheringCopper.PREVIOUS_BY_BLOCK.get().put(exposedBlock.get(), block.get());*/
 	
 	}
 	
 	
 	public Block createWeatherable(Class<Weatherable> clazz, WeatherState state, Properties properties) {
         try {
-            Constructor<Weatherable> ctor = clazz.getConstructor(WeatherState.class, Properties.class);
-            return ctor.newInstance(state, properties);
+            Constructor<Weatherable> ctor = clazz.getConstructor(Properties.class);
+            return ctor.newInstance(properties);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -64,10 +89,28 @@ public class WeatherableCopperSet<Weatherable extends Block, Waxed extends Block
 	
 	public Block createWaxed(Class<Waxed> clazz, WeatherState state, Properties properties) {
         try {
+            Constructor<Waxed> ctor = clazz.getConstructor(Properties.class);
+            return ctor.newInstance(properties);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+	
+	public Block createWeatherableState(Class<Weatherable> clazz, WeatherState state, Properties properties) {
+        try {
+            Constructor<Weatherable> ctor = clazz.getConstructor(WeatherState.class, Properties.class);
+            return ctor.newInstance(state, properties);
+        } catch (Exception e) {
+        	return createWeatherable(clazz, state, properties);
+        }
+    }
+	
+	public Block createWaxedState(Class<Waxed> clazz, WeatherState state, Properties properties) {
+        try {
             Constructor<Waxed> ctor = clazz.getConstructor(WeatherState.class, Properties.class);
             return ctor.newInstance(state, properties);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            return createWaxed(clazz, state, properties);
         }
     }
 	

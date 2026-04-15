@@ -50,10 +50,6 @@ public class CreakingHeartBlock extends BaseEntityBlock {
     public static final BooleanProperty NATURAL = BooleanProperty.create("natural");
  
 
-    // =========================================================
-    //  isNaturalNight : level.isMoonVisible() n'existe pas en 1.18.2
-    // =========================================================
- 
     public static boolean isNaturalNight(Level level) {
         if (level.isClientSide) return false;
         return !level.isDay() && !level.isRaining()
@@ -65,12 +61,7 @@ public class CreakingHeartBlock extends BaseEntityBlock {
     public void wasExploded(Level level, BlockPos pos, Explosion explosion) {
         if (!(level instanceof ServerLevel serverLevel)) return;
         if (!(level.getBlockEntity(pos) instanceof CreakingHeartBlockEntity heart)) return;
- 
-        // getDamageSource() n'existe pas sur Explosion en 1.18.2, on passe null
         heart.removeProtector(null);
- 
-        // ServerExplosion et getIndirectSourceEntity n'existent pas en 1.18.2
-        // On récupère l'instigateur via getSourceMob() ou getExploder()
         Entity source = explosion.getExploder();
         if (source instanceof Player player) {
             BlockState state = level.getBlockState(pos);

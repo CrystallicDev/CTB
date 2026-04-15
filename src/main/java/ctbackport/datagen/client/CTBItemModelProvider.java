@@ -8,6 +8,7 @@ import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
 import com.natsu.backport.utils.sets.ResinSet;
 import com.natsu.backport.utils.sets.StoneDecorationSet;
+import com.natsu.backport.utils.sets.WeatherableCopperSet;
 import com.natsu.backport.utils.sets.WoodSet;
 
 import ctbackport.datagen.DataGenBlockItemHandler;
@@ -34,6 +35,9 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		handleResinSet(CTBBlocks.RESIN);
+		handleCopperDoorSet(CTBBlocks.COPPER_DOOR);
+		handleCopperTrapdoorSet(CTBBlocks.COPPER_TRAPDOOR);
+		handleCopperSet(CTBBlocks.COPPER_GRATE);
 		
 		withExistingParent("open_eyeblossom", "item/generated").texture("layer0", CTBackport.MODID+":block/open_eyeblossom");
 		withExistingParent("closed_eyeblossom", "item/generated").texture("layer0", CTBackport.MODID+":block/closed_eyeblossom");
@@ -142,6 +146,68 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 	    		modLoc("block/" + set.getName()+"_bricks"));
 		withExistingParent(set.chiseledBrick.getId().getPath(),
 	            modLoc("block/chiseled_" + set.getName() + "_bricks"));
+	}
+
+	@Override
+	public void handleCopperSet(WeatherableCopperSet<?, ?> set) {
+		withExistingParent(set.block.getId().getPath(), mcLoc("block/cube_all")).texture("all",
+				modLoc("block/" + set.name));
+		withExistingParent(set.exposedBlock.getId().getPath(), mcLoc("block/cube_all")).texture("all",
+				modLoc("block/exposed_" + set.name));
+		withExistingParent(set.weatheredBlock.getId().getPath(), mcLoc("block/cube_all")).texture("all",
+				modLoc("block/weathered_" + set.name));
+		withExistingParent(set.oxidizedBlock.getId().getPath(), mcLoc("block/cube_all")).texture("all",
+				modLoc("block/oxidized_" + set.name));
+
+		withExistingParent(set.blockWaxed.getId().getPath(), mcLoc("block/cube_all")).texture("all",
+				modLoc("block/" + set.name));
+		withExistingParent(set.exposedBlockWaxed.getId().getPath(), mcLoc("block/cube_all")).texture("all",
+				modLoc("block/exposed_" + set.name));
+		withExistingParent(set.weatheredBlockWaxed.getId().getPath(), mcLoc("block/cube_all")).texture("all",
+				modLoc("block/weathered_" + set.name));
+		withExistingParent(set.oxidizedBlockWaxed.getId().getPath(), mcLoc("block/cube_all")).texture("all",
+				modLoc("block/oxidized_" + set.name));
+	}
+
+	@Override
+	public void handleCopperDoorSet(WeatherableCopperSet<?, ?> set) {
+		singleTexture(set.block.getId().getPath(), mcLoc("item/generated"), "layer0",
+				modLoc("block/" + set.name + "_bottom"));
+		singleTexture(set.exposedBlock.getId().getPath(), mcLoc("item/generated"), "layer0",
+				modLoc("block/exposed_" + set.name + "_bottom"));
+		singleTexture(set.weatheredBlock.getId().getPath(), mcLoc("item/generated"), "layer0",
+				modLoc("block/weathered_" + set.name + "_bottom"));
+		singleTexture(set.oxidizedBlock.getId().getPath(), mcLoc("item/generated"), "layer0",
+				modLoc("block/oxidized_" + set.name + "_bottom"));
+
+		singleTexture(set.blockWaxed.getId().getPath(), mcLoc("item/generated"), "layer0",
+				modLoc("block/" + set.name + "_bottom"));
+		singleTexture(set.exposedBlockWaxed.getId().getPath(), mcLoc("item/generated"), "layer0",
+				modLoc("block/exposed_" + set.name + "_bottom"));
+		singleTexture(set.weatheredBlockWaxed.getId().getPath(), mcLoc("item/generated"), "layer0",
+				modLoc("block/weathered_" + set.name + "_bottom"));
+		singleTexture(set.oxidizedBlockWaxed.getId().getPath(), mcLoc("item/generated"), "layer0",
+				modLoc("block/oxidized_" + set.name + "_bottom"));
+	}
+
+	@Override
+	public void handleCopperTrapdoorSet(WeatherableCopperSet<?, ?> set) {
+		withExistingParent(set.block.getId().getPath(), modLoc("block/" + set.name + "_bottom"));
+		withExistingParent(set.exposedBlock.getId().getPath(), modLoc("block/exposed_" + set.name + "_bottom"));
+		withExistingParent(set.weatheredBlock.getId().getPath(), modLoc("block/weathered_" + set.name + "_bottom"));
+		withExistingParent(set.oxidizedBlock.getId().getPath(), modLoc("block/oxidized_" + set.name + "_bottom"));
+
+		withExistingParent(set.blockWaxed.getId().getPath(), modLoc("block/" + set.name + "_bottom"));
+		withExistingParent(set.exposedBlockWaxed.getId().getPath(), modLoc("block/exposed_" + set.name + "_bottom"));
+		withExistingParent(set.weatheredBlockWaxed.getId().getPath(),
+				modLoc("block/weathered_" + set.name + "_bottom"));
+		withExistingParent(set.oxidizedBlockWaxed.getId().getPath(), modLoc("block/oxidized_" + set.name + "_bottom"));
+	}
+
+	@Override
+	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

@@ -8,6 +8,7 @@ import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
 import com.natsu.backport.utils.sets.ResinSet;
 import com.natsu.backport.utils.sets.StoneDecorationSet;
+import com.natsu.backport.utils.sets.WeatherableCopperSet;
 import com.natsu.backport.utils.sets.WoodSet;
 
 import ctbackport.datagen.DataGenBlockItemHandler;
@@ -45,6 +46,9 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		handleResinSet(CTBBlocks.RESIN);
+		handleCopperSet(CTBBlocks.COPPER_DOOR);
+		handleCopperSet(CTBBlocks.COPPER_TRAPDOOR);
+		handleCopperSet(CTBBlocks.COPPER_GRATE);
 		
 		add(CTBBlocks.CLOSED_EYEBLOSSOM.get(), createSimpleDrop(CTBBlocks.CLOSED_EYEBLOSSOM.get()));
 		add(CTBBlocks.OPEN_EYEBLOSSOM.get(), createSimpleDrop(CTBBlocks.CLOSED_EYEBLOSSOM.get()));
@@ -139,6 +143,54 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		dropSelf(set.brickStairs.get());
 		dropSelf(set.brickWalls.get());
 		dropSelf(set.chiseledBrick.get());
+	}
+
+	@Override
+	public void handleCopperSet(WeatherableCopperSet<?, ?> set) {
+		dropSelf(set.block.get());
+		dropSelf(set.blockWaxed.get());
+		dropSelf(set.exposedBlock.get());
+		dropSelf(set.exposedBlockWaxed.get());
+		dropSelf(set.weatheredBlock.get());
+		dropSelf(set.weatheredBlockWaxed.get());
+		dropSelf(set.oxidizedBlock.get());
+		dropSelf(set.oxidizedBlockWaxed.get());
+	}
+
+	@Override
+	public void handleCopperDoorSet(WeatherableCopperSet<?, ?> set) {
+		dropSelf(set.block.get());
+		dropSelf(set.blockWaxed.get());
+		dropSelf(set.exposedBlock.get());
+		dropSelf(set.exposedBlockWaxed.get());
+		dropSelf(set.weatheredBlock.get());
+		dropSelf(set.weatheredBlockWaxed.get());
+		dropSelf(set.oxidizedBlock.get());
+		dropSelf(set.oxidizedBlockWaxed.get());
+	}
+
+	@Override
+	public void handleCopperTrapdoorSet(WeatherableCopperSet<?, ?> set) {
+		dropSelf(set.block.get());
+		dropSelf(set.blockWaxed.get());
+		dropSelf(set.exposedBlock.get());
+		dropSelf(set.exposedBlockWaxed.get());
+		dropSelf(set.weatheredBlock.get());
+		dropSelf(set.weatheredBlockWaxed.get());
+		dropSelf(set.oxidizedBlock.get());
+		dropSelf(set.oxidizedBlockWaxed.get());
+	}
+
+	@Override
+	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
+		dropSelf(set.block.get());
+		dropSelf(set.blockWaxed.get());
+		dropSelf(set.exposedBlock.get());
+		dropSelf(set.exposedBlockWaxed.get());
+		dropSelf(set.weatheredBlock.get());
+		dropSelf(set.weatheredBlockWaxed.get());
+		dropSelf(set.oxidizedBlock.get());
+		dropSelf(set.oxidizedBlockWaxed.get());
 	}
 	
 }

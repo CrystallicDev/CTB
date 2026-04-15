@@ -24,6 +24,9 @@ public class CTBBlockTags extends BlockTagsProvider {
 		handle(CTBBlocks.PALE_MOSS);
 		handle(CTBBlocks.PALE_OAK_LEAVES);
 		handle(CTBBlocks.RESIN);
+		handle(CTBBlocks.COPPER_DOOR);
+		handle(CTBBlocks.COPPER_TRAPDOOR);
+		handle(CTBBlocks.COPPER_GRATE);
 				
 		this.tag(BlockTags.LEAVES).add(CTBBlocks.CHERRY_LEAVES.get());
 		this.tag(BlockTags.MINEABLE_WITH_HOE).add(CTBBlocks.CHERRY_LEAVES.get());

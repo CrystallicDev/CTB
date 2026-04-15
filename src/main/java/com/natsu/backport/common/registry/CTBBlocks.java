@@ -6,6 +6,8 @@ import java.util.function.Supplier;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.block.WeatheringCopperDoorBlock;
+import com.natsu.backport.common.block.WeatheringCopperTrapDoorBlock;
+import com.natsu.backport.common.block.WeatheringTransparentBlock;
 import com.natsu.backport.common.item.CTBBlockItemFactory;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
@@ -49,9 +51,9 @@ public class CTBBlocks {
 	public static final RegistryObject<Block> CLOSED_EYEBLOSSOM = registerWithItem(BLOCKS, CTBItems.ITEMS, "eyeblossom_close", CTBBlockFactory.makeEyeblossom(BLOCKS, "eyeblossom_close", false));
 	
 	//Copper Weatherable blocks
-	//public static final WeatherableCopperSet<WeatheringCopperDoorBlock, WaterLoggedTransparentBlock> COPPER_GRATE = new WeatherableCopperSet<WeatheringCopperDoorBlock, WaterLoggedTransparentBlock>(BLOCKS, "copper_grate", 3, WeatheringCopperDoorBlock.class, WaterLoggedTransparentBlock.class);
-	//public static final WeatherableCopperSet<WeatheringCopperDoorBlock, DoorBlock> COPPER_DOOR = new WeatherableCopperSet<WeatheringCopperDoorBlock, DoorBlock>(BLOCKS, "copper_door", 3, WeatheringCopperDoorBlock.class, DoorBlock.class);
-	//public static final WeatherableCopperSet<WeatheringCopperDoorBlock, TrapDoorBlock> COPPER_TRAPDOOR = new WeatherableCopperSet<WeatheringCopperDoorBlock, TrapDoorBlock>(BLOCKS, "copper_trapdoor", 3, WeatheringCopperDoorBlock.class, TrapDoorBlock.class);
+	public static final WeatherableCopperSet<WeatheringTransparentBlock, WaterLoggedTransparentBlock> COPPER_GRATE = new WeatherableCopperSet<WeatheringTransparentBlock, WaterLoggedTransparentBlock>(BLOCKS, CTBItems.ITEMS, "copper_grate", 3, WeatheringTransparentBlock.class, WaterLoggedTransparentBlock.class);
+	public static final WeatherableCopperSet<WeatheringCopperDoorBlock, DoorBlock> COPPER_DOOR = new WeatherableCopperSet<WeatheringCopperDoorBlock, DoorBlock>(BLOCKS, CTBItems.ITEMS, "copper_door", 3, WeatheringCopperDoorBlock.class, DoorBlock.class);
+	public static final WeatherableCopperSet<WeatheringCopperTrapDoorBlock, TrapDoorBlock> COPPER_TRAPDOOR = new WeatherableCopperSet<WeatheringCopperTrapDoorBlock, TrapDoorBlock>(BLOCKS, CTBItems.ITEMS, "copper_trapdoor", 3, WeatheringCopperTrapDoorBlock.class, TrapDoorBlock.class);
 	//public static final RegistryObject<Block> COPPER_BULB = CTBBlockFactory.makeCopperBulb(BLOCKS, "copper_bulb", 3f);
 	
 	private static RegistryObject<Block> registerWithItem(DeferredRegister<Block> blocks, DeferredRegister<Item> items,
