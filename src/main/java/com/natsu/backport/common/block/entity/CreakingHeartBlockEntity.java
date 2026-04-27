@@ -73,6 +73,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
     private static final int MAX_DEPTH = 2;
     private static final int MAX_COUNT = 64;
     private static final int TICKS_GRACE_PERIOD = 30;
+    
     private static final Optional<Creaking> NO_CREAKING = Optional.empty();
     @Nullable
     private Either<Creaking, UUID> creakingInfo;

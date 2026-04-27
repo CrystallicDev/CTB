@@ -3,6 +3,7 @@ package com.natsu.backport.client;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.client.render.CreakingRenderer;
 import com.natsu.backport.client.render.WindChargeRenderer;
+import com.natsu.backport.common.entity.Creaking;
 import com.natsu.backport.common.particles.CherryParticle;
 import com.natsu.backport.common.particles.GustEmitterParticle;
 import com.natsu.backport.common.particles.GustParticle;
@@ -17,6 +18,7 @@ import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -46,5 +48,10 @@ public class ClientSetup {
         	
         });
     }
+	
+	@SubscribeEvent
+	public static void onAttributeCreate(EntityAttributeCreationEvent event) {
+	    event.put(CTBEntities.CREAKING.get(), Creaking.createAttributes().build());
+	}
 	
 }

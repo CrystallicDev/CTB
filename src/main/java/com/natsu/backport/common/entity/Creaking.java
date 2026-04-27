@@ -28,6 +28,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
@@ -38,12 +39,15 @@ public class Creaking extends Monster implements IAnimatable {
 	protected static final AnimationBuilder FLY_ANIM = new AnimationBuilder().addAnimation("move.fly", true);
 	
     @Nullable
+    private boolean isFrozen = true;		// is being looked at ? (avoid permanent raycasts)
     private BlockPos homePos = null;         // linked CreakingHeart 
     private boolean isTransient = false;     // when true, disapear if heart unlinked
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
     private static final String TAG_HOME_POS = "CreakingHomePos";
     private static final String TAG_IS_TRANSIENT = "IsTransient";
- 
+    private int damageTicks = 0;
+
+    
     public Creaking(EntityType<? extends Creaking> type, Level level) {
         super(type, level);
     }
@@ -100,6 +104,7 @@ public class Creaking extends Monster implements IAnimatable {
             BlockEntity be = this.level.getBlockEntity(this.homePos);
             if (be instanceof CreakingHeartBlockEntity heart) {
                 heart.creakingHurt();
+                damageTicks = 10;
                 return false;
             }
         }
@@ -132,23 +137,38 @@ public class Creaking extends Monster implements IAnimatable {
  
 
     @Override
-    public void registerControllers(final AnimationData data) {
-        data.addAnimationController(new AnimationController<>(this, "Anim_name", 5, this::flyAnimController));
+    public void registerControllers(AnimationData data) {
+        data.addAnimationController(
+            new AnimationController<>(this, "controller", 5, this::predicate)
+        );
     }
- 
-    @Override
-    public AnimationFactory getFactory() {
-        return this.factory;
-    }
-    
-    protected <E extends Creaking> PlayState flyAnimController(final AnimationEvent<E> event) {
-        if (event.isMoving()) {
-            event.getController().setAnimation(FLY_ANIM);
 
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if (this.swingTime > 0) {
+            event.getController().setAnimation(
+                new AnimationBuilder().addAnimation("animation.creaking.attack", ILoopType.EDefaultLoopTypes.PLAY_ONCE)
+            );
             return PlayState.CONTINUE;
         }
-
+        if (event.isMoving() && !isFrozen) {
+            event.getController().setAnimation(
+                new AnimationBuilder().addAnimation("animation.creaking.walk", ILoopType.EDefaultLoopTypes.LOOP)
+            );
+            return PlayState.CONTINUE;
+        }
+        if (damageTicks > 0) {
+            damageTicks--;
+            event.getController().setAnimation(
+                new AnimationBuilder().addAnimation("animation.creaking.damage-block", ILoopType.EDefaultLoopTypes.PLAY_ONCE)
+            );
+            return PlayState.CONTINUE;
+        }
         return PlayState.STOP;
+    }
+
+    @Override
+    public AnimationFactory getFactory() {
+        return factory;
     }
 
 	public void tearDown() {

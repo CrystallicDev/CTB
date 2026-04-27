@@ -4,12 +4,15 @@ import com.natsu.backport.common.entity.Creaking;
 import com.natsu.backport.common.entity.model.CreakingModel;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class CreakingRenderer extends GeoEntityRenderer<Creaking>{
+@OnlyIn(value = Dist.CLIENT)
+public class CreakingRenderer extends GeoEntityRenderer<Creaking> {
 
-	public CreakingRenderer(EntityRendererProvider.Context ctx) {
-		super(ctx, new CreakingModel());
-	}
-	
+    public CreakingRenderer(EntityRendererProvider.Context ctx) {
+        super(ctx, new CreakingModel());
+        this.shadowRadius = 0.5f;
+    }
 }
