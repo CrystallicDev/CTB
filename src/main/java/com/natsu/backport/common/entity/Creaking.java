@@ -36,7 +36,6 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class Creaking extends Monster implements IAnimatable {
-	protected static final AnimationBuilder FLY_ANIM = new AnimationBuilder().addAnimation("move.fly", true);
 	
     @Nullable
     private boolean isFrozen = true;		// is being looked at ? (avoid permanent raycasts)
@@ -146,20 +145,20 @@ public class Creaking extends Monster implements IAnimatable {
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (this.swingTime > 0) {
             event.getController().setAnimation(
-                new AnimationBuilder().addAnimation("animation.creaking.attack", ILoopType.EDefaultLoopTypes.PLAY_ONCE)
+                new AnimationBuilder().addAnimation("attack.melee", ILoopType.EDefaultLoopTypes.PLAY_ONCE)
             );
             return PlayState.CONTINUE;
         }
         if (event.isMoving() && !isFrozen) {
             event.getController().setAnimation(
-                new AnimationBuilder().addAnimation("animation.creaking.walk", ILoopType.EDefaultLoopTypes.LOOP)
+                new AnimationBuilder().addAnimation("moove.walk", ILoopType.EDefaultLoopTypes.LOOP)
             );
             return PlayState.CONTINUE;
         }
         if (damageTicks > 0) {
             damageTicks--;
             event.getController().setAnimation(
-                new AnimationBuilder().addAnimation("animation.creaking.damage-block", ILoopType.EDefaultLoopTypes.PLAY_ONCE)
+                new AnimationBuilder().addAnimation("damage.block", ILoopType.EDefaultLoopTypes.PLAY_ONCE)
             );
             return PlayState.CONTINUE;
         }

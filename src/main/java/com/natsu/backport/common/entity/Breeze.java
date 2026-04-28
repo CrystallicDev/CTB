@@ -339,20 +339,20 @@ public class Breeze extends Monster implements IAnimatable {
 
         switch (getBreezeState()) {
             case STATE_SHOOTING:
-                controller.setAnimation(new AnimationBuilder().addAnimation("animation.breeze.shoot", false));
+                controller.setAnimation(new AnimationBuilder().addAnimation("attack.shoot", false));
                 break;
             case STATE_INHALING:
-                controller.setAnimation(new AnimationBuilder().addAnimation("animation.breeze.inhale", false));
+                controller.setAnimation(new AnimationBuilder().addAnimation("moove.inhale", false));
                 break;
             case STATE_SLIDING:
-                controller.setAnimation(new AnimationBuilder().addAnimation("animation.breeze.slide", true));
+                controller.setAnimation(new AnimationBuilder().addAnimation("animation.slide", true));
                 break;
             case STATE_LONG_JUMPING:
-                controller.setAnimation(new AnimationBuilder().addAnimation("animation.breeze.long_jump", false));
+                controller.setAnimation(new AnimationBuilder().addAnimation("moove.jump", false));
                 break;
             case STATE_IDLE:
             default:
-                controller.setAnimation(new AnimationBuilder().addAnimation("animation.breeze.idle", true));
+                controller.setAnimation(new AnimationBuilder().addAnimation("moove.idle", true));
                 break;
         }
         return PlayState.CONTINUE;

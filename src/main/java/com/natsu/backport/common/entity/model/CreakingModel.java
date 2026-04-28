@@ -15,7 +15,7 @@ public class CreakingModel extends AnimatedGeoModel<Creaking> {
 
     @Override
     public ResourceLocation getTextureLocation(Creaking entity) {
-        return new ResourceLocation(CTBackport.MODID, "textures/entity/creaking.png");
+        return new ResourceLocation(CTBackport.MODID, "textures/entity/creaking/creaking.png");
     }
 
     @Override

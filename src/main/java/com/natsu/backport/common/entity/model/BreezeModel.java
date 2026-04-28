@@ -16,7 +16,7 @@ public class BreezeModel extends AnimatedGeoModel<Breeze> {
 
     @Override
     public ResourceLocation getTextureLocation(Breeze entity) {
-        return new ResourceLocation(CTBackport.MODID, "textures/entity/breeze.png");
+        return new ResourceLocation(CTBackport.MODID, "textures/entity/breeze/breeze.png");
     }
 
     @Override
