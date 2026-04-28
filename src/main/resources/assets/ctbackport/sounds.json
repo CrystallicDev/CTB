@@ -74,5 +74,41 @@
 	"eyeblossom_close_long": {
 		"category": "block",
 		"sounds": []
+	},
+	"breeze_shoot": {
+		"category": "block",
+		"sounds": []
+	},
+	"breeze_whirl": {
+		"category": "block",
+		"sounds": []
+	},
+	"breeze_idle_ground": {
+		"category": "block",
+		"sounds": []
+	},
+	"breeze_idle_air": {
+		"category": "block",
+		"sounds": []
+	},
+	"breeze_hurt": {
+		"category": "block",
+		"sounds": []
+	},
+	"breeze_land": {
+		"category": "block",
+		"sounds": []
+	},
+	"breeze_death": {
+		"category": "block",
+		"sounds": []
+	},
+	"breeze_slide": {
+		"category": "block",
+		"sounds": []
+	},
+	"breeze_jump": {
+		"category": "block",
+		"sounds": []
 	}
 }

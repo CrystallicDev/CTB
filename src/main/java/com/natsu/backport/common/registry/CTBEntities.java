@@ -1,7 +1,9 @@
 package com.natsu.backport.common.registry;
 
 import com.natsu.backport.CTBackport;
+import com.natsu.backport.common.entity.Breeze;
 import com.natsu.backport.common.entity.Creaking;
+import com.natsu.backport.common.entity.SulphurCube;
 import com.natsu.backport.common.entity.WindChargeEntity;
 
 import net.minecraft.world.entity.Entity;
@@ -25,6 +27,14 @@ public class CTBEntities {
 	
 	public static final RegistryObject<EntityType<Creaking>> CREAKING = ENTITIES.register("creaking", 
 			() -> EntityType.Builder.<Creaking>of(Creaking::new, MobCategory.MONSTER).build("creaking")
+			);
+	
+	public static final RegistryObject<EntityType<Breeze>> BREEZE = ENTITIES.register("breeze", 
+			() -> EntityType.Builder.<Breeze>of(Breeze::new, MobCategory.MONSTER).build("breeze")
+			);
+	
+	public static final RegistryObject<EntityType<SulphurCube>> SULPHUR_CUBE = ENTITIES.register("sulphur_cube", 
+			() -> EntityType.Builder.<SulphurCube>of(SulphurCube::new, MobCategory.MONSTER).build("sulphur_cube")
 			);
 	
 }

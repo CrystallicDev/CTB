@@ -36,6 +36,10 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 		super(type, world);
 	}
 	
+	public WindChargeEntity(EntityType<? extends WindChargeEntity> entity, double x, double y, double z, Level level) {
+	      super(entity, x, y, z, level);
+	   }
+	
 	public WindChargeEntity(Level world, LivingEntity thrower) {
 		super(CTBEntities.WIND_CHARGE_ENTITY.get(), thrower, world);
 	}

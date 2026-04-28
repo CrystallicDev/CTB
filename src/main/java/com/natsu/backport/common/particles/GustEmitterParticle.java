@@ -41,20 +41,21 @@ public class GustEmitterParticle extends NoRenderParticle {
 	
 	@Override
 	public void tick() {
-		for (int i = 0; i < gustsPerRing; i++) {
-			double angle = (i / (double)gustsPerRing) * Math.PI * 2;
-			double px = this.x * Math.cos(angle) * currentRadius;
-			double pz = this.z * Math.sin(angle) * currentRadius;
-			double vx = Math.cos(angle) * gustSpeed;
-			double vz = Math.sin(angle) * gustSpeed;
-			double vy = (random.nextDouble() - 0.5);
-			
-			this.level.addParticle(CTBParticles.GUST.get(), px, this.y, pz, vx, vy, vz);
-		}
-		this.currentRadius += this.expansionSpeed;
-		if (this.age++ >= this.lifetime) {
-			this.remove();
-		}
+	    for (int i = 0; i < gustsPerRing; i++) {
+	        double angle = (i / (double) gustsPerRing) * Math.PI * 2;
+
+	        double px = this.x + Math.cos(angle) * currentRadius;  
+	        double pz = this.z + Math.sin(angle) * currentRadius;  
+	        double vx = Math.cos(angle) * gustSpeed;
+	        double vz = Math.sin(angle) * gustSpeed;
+	        double vy = (random.nextDouble() - 0.5) * 0.02;        
+
+	        this.level.addParticle(CTBParticles.GUST.get(), px, this.y, pz, vx, vy, vz);
+	    }
+	    this.currentRadius += this.expansionSpeed;
+	    if (this.age++ >= this.lifetime) {
+	        this.remove();
+	    }
 	}
 	
 	@OnlyIn(value = Dist.CLIENT)
