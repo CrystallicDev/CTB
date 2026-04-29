@@ -27,13 +27,13 @@ public class GustEmitterParticle extends NoRenderParticle {
 			this.lifetime = 8;
 			this.currentRadius = 0.5f;
 			this.expansionSpeed = 0.4f;
-			this.gustsPerRing = 24;
+			this.gustsPerRing = 8;
 			this.gustSpeed = 0.08f;
 		} else {
 			this.lifetime = 4;
 			this.currentRadius = 0.2f;
 			this.expansionSpeed = 0.2f;
-			this.gustsPerRing = 12;
+			this.gustsPerRing = 4;
 			this.gustSpeed = 0.05f;
 		}
 		this.isLarge = isLarge;

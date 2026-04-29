@@ -2,6 +2,7 @@ package com.natsu.backport.common.entity;
 
 import javax.annotation.Nullable;
 
+import com.natsu.backport.common.block.entity.CreakingHeartBlockEntity;
 import com.natsu.backport.common.entity.goal.BreezeLongJumpGoal;
 import com.natsu.backport.common.entity.goal.BreezeShootGoal;
 import com.natsu.backport.common.entity.goal.BreezeShootWhenStuckGoal;
@@ -34,6 +35,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
@@ -218,6 +220,14 @@ public class Breeze extends Monster implements IAnimatable {
             CTBSounds.BREEZE_WHIRL.get(),
             this.getSoundSource(), volume, pitch, false
         );
+    }
+    
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        if (!this.level.isClientSide && source == DamageSource.FALL) {
+        	return false;
+        }
+        return super.hurt(source, amount);
     }
 
     @Override

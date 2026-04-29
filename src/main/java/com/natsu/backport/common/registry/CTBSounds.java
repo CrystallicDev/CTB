@@ -38,5 +38,19 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> BREEZE_LAND = SOUND_EVENTS.register("breeze_land", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "breeze_land")));
 	public static final RegistryObject<SoundEvent> BREEZE_JUMP = SOUND_EVENTS.register("breeze_jump", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "breeze_jump")));
 	public static final RegistryObject<SoundEvent> BREEZE_SLIDE = SOUND_EVENTS.register("breeze_slide", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "breeze_slide")));
+
+	public static final RegistryObject<SoundEvent> CREAKING_AMBIENT = null;
+	public static final RegistryObject<SoundEvent> CREAKING_SWAY = null;
+	public static final RegistryObject<SoundEvent> CREAKING_DEATH = null;
+	public static final RegistryObject<SoundEvent> CREAKING_STEP = null;
+	public static final RegistryObject<SoundEvent> CREAKING_TWITCH = null;
+
+	public static final RegistryObject<SoundEvent> CREAKING_ACTIVATE = null;
+
+	public static final RegistryObject<SoundEvent> CREAKING_DEACTIVATE = null;
+
+	public static final RegistryObject<SoundEvent> CREAKING_UNFREEZE = null;
+
+	public static final RegistryObject<SoundEvent> CREAKING_FREEZE = null;
 	
 }
