@@ -34,7 +34,7 @@ public class ClientSetup {
 	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(CTBEntities.WIND_CHARGE_ENTITY.get(), WindChargeRenderer::new);
 		event.registerEntityRenderer(CTBEntities.CREAKING.get(), CreakingRenderer::new);
-		event.registerEntityRenderer(CTBEntities.SULPHUR_CUBE.get(), SulphurCubeRenderer::new);
+		//event.registerEntityRenderer(CTBEntities.SULPHUR_CUBE.get(), SulphurCubeRenderer::new);
 		event.registerEntityRenderer(CTBEntities.BREEZE.get(), BreezeRenderer::new);
 	}
 	
@@ -59,7 +59,7 @@ public class ClientSetup {
 	public static void onAttributeCreate(EntityAttributeCreationEvent event) {
 	    event.put(CTBEntities.CREAKING.get(), Creaking.createAttributes().build());
 	    event.put(CTBEntities.BREEZE.get(), Breeze.createAttributes().build());
-	    event.put(CTBEntities.SULPHUR_CUBE.get(), SulphurCube.createAttributes().build());
+	    //event.put(CTBEntities.SULPHUR_CUBE.get(), SulphurCube.createAttributes().build());
 	}
 	
 }

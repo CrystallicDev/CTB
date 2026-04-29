@@ -32,9 +32,9 @@ public class CTBEntities {
 	public static final RegistryObject<EntityType<Breeze>> BREEZE = ENTITIES.register("breeze", 
 			() -> EntityType.Builder.<Breeze>of(Breeze::new, MobCategory.MONSTER).build("breeze")
 			);
-	
+	/*
 	public static final RegistryObject<EntityType<SulphurCube>> SULPHUR_CUBE = ENTITIES.register("sulphur_cube", 
 			() -> EntityType.Builder.<SulphurCube>of(SulphurCube::new, MobCategory.MONSTER).build("sulphur_cube")
 			);
-	
+	*/
 }

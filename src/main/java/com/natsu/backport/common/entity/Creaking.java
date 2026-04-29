@@ -68,6 +68,15 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class Creaking extends Monster implements IAnimatable {
+	
+    @Nullable
+    private boolean isFrozen = true;		// is being looked at ? (avoid permanent raycasts)
+    private BlockPos homePos = null;         // linked CreakingHeart 
+    private boolean isTransient = false;     // when true, disapear if heart unlinked
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private static final String TAG_HOME_POS = "CreakingHomePos";
+    private static final String TAG_IS_TRANSIENT = "IsTransient";
+    private int damageTicks = 0;
 
     private static final EntityDataAccessor<Boolean> CAN_MOVE =
         SynchedEntityData.defineId(Creaking.class, EntityDataSerializers.BOOLEAN);
