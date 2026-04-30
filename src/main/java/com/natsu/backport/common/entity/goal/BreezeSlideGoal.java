@@ -29,9 +29,9 @@ public class BreezeSlideGoal extends Goal {
     @Override
     public boolean canUse() {
         LivingEntity target = breeze.getTarget();
-        if (target == null || !target.isAlive()) return false;
-        if (!breeze.isOnGround()) return false;
-        if (breeze.isInWaterOrBubble()) return false;
+        if (target == null || !target.isAlive() || !breeze.isOnGround() || breeze.isInWaterOrBubble()) {
+			return false;
+		}
 
         double dist = breeze.distanceTo(target);
         return dist > SLIDE_INNER_RADIUS && dist < SLIDE_OUTER_RADIUS;
@@ -40,7 +40,9 @@ public class BreezeSlideGoal extends Goal {
     @Override
     public boolean canContinueToUse() {
         LivingEntity target = breeze.getTarget();
-        if (target == null || !target.isAlive()) return false;
+        if (target == null || !target.isAlive()) {
+			return false;
+		}
 
         double dist = breeze.distanceTo(target);
         return dist > SLIDE_INNER_RADIUS - 0.5D
@@ -72,7 +74,9 @@ public class BreezeSlideGoal extends Goal {
     @Override
     public void tick() {
         LivingEntity target = breeze.getTarget();
-        if (target == null) return;
+        if (target == null) {
+			return;
+		}
 
         breeze.getLookControl().setLookAt(target, 30F, 30F);
 

@@ -1,9 +1,7 @@
 package com.natsu.backport.client.render;
 
 import com.natsu.backport.common.entity.Breeze;
-import com.natsu.backport.common.entity.Creaking;
 import com.natsu.backport.common.entity.model.BreezeModel;
-import com.natsu.backport.common.entity.model.CreakingModel;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraftforge.api.distmarker.Dist;

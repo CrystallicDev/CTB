@@ -29,6 +29,7 @@ public class WeatheringCopperDoorBlock extends DoorBlock implements WeatheringCo
         return WeatheringCopper.getNext(state.getBlock()).isPresent();
     }
 
+	@Override
 	public WeatheringCopper.WeatherState getAge() {
 		return this.weatherState;
 	}

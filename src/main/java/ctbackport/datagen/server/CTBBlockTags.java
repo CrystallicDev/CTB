@@ -27,13 +27,14 @@ public class CTBBlockTags extends BlockTagsProvider {
 		handle(CTBBlocks.COPPER_DOOR);
 		handle(CTBBlocks.COPPER_TRAPDOOR);
 		handle(CTBBlocks.COPPER_GRATE);
-				
+
 		this.tag(BlockTags.LEAVES).add(CTBBlocks.CHERRY_LEAVES.get());
 		this.tag(BlockTags.MINEABLE_WITH_HOE).add(CTBBlocks.CHERRY_LEAVES.get());
 		this.tag(BlockTags.PARROTS_SPAWNABLE_ON).add(CTBBlocks.CHERRY_LEAVES.get());
 		this.tag(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE).add(CTBBlocks.CHERRY_LEAVES.get());
+		tag(BlockTags.MINEABLE_WITH_HOE).add(CTBBlocks.PALE_HANGING_MOSS.get());
     }
-    
+
     public void handle(DefaultSet set) {
     	set.addBlockTags(
 	            this::tag

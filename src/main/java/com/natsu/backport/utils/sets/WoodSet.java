@@ -1,13 +1,16 @@
 package com.natsu.backport.utils.sets;
 
+import java.util.Map;
 import java.util.function.Function;
 
+import com.google.common.collect.BiMap;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.block.entity.CTBEntityFactory;
 import com.natsu.backport.common.item.CTBBlockItemFactory;
 import com.natsu.backport.common.item.CTBItemFactory;
 
+import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.data.tags.TagsProvider.TagAppender;
@@ -15,6 +18,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.WallSignBlock;
@@ -64,7 +68,7 @@ public class WoodSet implements DefaultSet {
 
 	public final String name;
 	public final WoodType woodType;
-	
+
 	public final RegistryObject<Block> log;
     public final RegistryObject<Block> wood;
     public final RegistryObject<Block> strippedLog;
@@ -80,7 +84,7 @@ public class WoodSet implements DefaultSet {
     public final RegistryObject<Block> pressurePlate;
     public final RegistryObject<StandingSignBlock> standingsign;
     public final RegistryObject<WallSignBlock> wallsign;
-    
+
     public final RegistryObject<Item> logItem;
     public final RegistryObject<Item> woodItem;
     public final RegistryObject<Item> strippedLogItem;
@@ -95,7 +99,7 @@ public class WoodSet implements DefaultSet {
     public final RegistryObject<Item> buttonItem;
     public final RegistryObject<Item> pressurePlateItem;
     public final RegistryObject<Item> signItem;
-    
+
     public final RegistryObject<BlockEntityType<SignBlockEntity>> signBlockEntity;
     //public final RegistryObject<Block> boat;
 
@@ -103,7 +107,7 @@ public class WoodSet implements DefaultSet {
             CreativeModeTab tab) {
 
     	woodType = WoodType.register(WoodType.create(CTBackport.MODID + ":" + woodName));
-    	
+
     	name = woodName;
 
         log = CTBBlockFactory.makeLog(BLOCKS, name + "_log", baseStrength);
@@ -121,7 +125,7 @@ public class WoodSet implements DefaultSet {
         trapdoor = CTBBlockFactory.makeTrapdoor(BLOCKS, name + "_trapdoor", planks, baseStrength);
         button = CTBBlockFactory.makeButton(BLOCKS, name + "_button");
         pressurePlate = CTBBlockFactory.makePressurePlate(BLOCKS, name + "_pressure_plate", planks);
-        
+
         //boat = CristalliteBlockFactory.makeBoat(name + "_boat", planks);
         standingsign = CTBBlockFactory.makeStandingSign(BLOCKS, name + "_sign", woodType);
         wallsign = CTBBlockFactory.makeWallSign(BLOCKS, name + "_wall_sign", woodType, standingsign);
@@ -140,7 +144,7 @@ public class WoodSet implements DefaultSet {
         buttonItem = CTBBlockItemFactory.blockItem(ITEMS, tab, button);
         pressurePlateItem = CTBBlockItemFactory.blockItem(ITEMS, tab, pressurePlate);
         signItem = CTBItemFactory.makeSign(ITEMS, name+"_sign", tab, wallsign, standingsign);
-        
+
         signBlockEntity = CTBEntityFactory.makeSign(BLOCK_ENTITIES, name+"_sign_block_entity", standingsign, wallsign);
     }
 
@@ -221,5 +225,26 @@ public class WoodSet implements DefaultSet {
 
 	public String getName() {
 		return this.name;
+	}
+
+
+	@Override
+	public void setFlammables(Map<Block, Integer> flameOdds, Map<Block, Integer> burnOdds) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setCompostables(Object2FloatMap<ItemLike> compostables) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setWeatherable(BiMap<Block, Block> nextByBlock, BiMap<Block, Block> previousByBlock) {
+		// TODO Auto-generated method stub
+		
 	}
 }

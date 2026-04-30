@@ -2,6 +2,7 @@ package ctbackport.datagen.client;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.block.GrowableMossLayerBlock;
+import com.natsu.backport.common.block.HangingMossBlock;
 import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
@@ -26,9 +27,11 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.VariantBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 
 public class CTBBlockStateProvider extends BlockStateProvider implements DataGenBlockItemHandler {
 
@@ -47,10 +50,12 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		handleCopperDoorSet(CTBBlocks.COPPER_DOOR);
 		handleCopperTrapdoorSet(CTBBlocks.COPPER_TRAPDOOR);
 		handleCopperSet(CTBBlocks.COPPER_GRATE);
-		
+
 		eyeblossom(CTBBlocks.CLOSED_EYEBLOSSOM.get(), "closed_eyeblossom");
 		eyeblossom(CTBBlocks.OPEN_EYEBLOSSOM.get(), "open_eyeblossom");
-		
+		hangingMoss(CTBBlocks.PALE_HANGING_MOSS);
+
+
 		//simpleBlock(CTBBlocks.COPPER_BULB.get());
 		ResourceLocation leavesTexture = modLoc("block/cherry_leaves");
         ModelFile normalModel = models().withExistingParent("cherry_leaves",
@@ -58,7 +63,7 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
                 .texture("all", leavesTexture)
                 .texture("particle", leavesTexture);
         simpleBlock(CTBBlocks.CHERRY_LEAVES.get(), normalModel);
-		
+
 		simpleBlock(CTBBlocks.BAMBOO_MOSAIC.get());
 
         slabBlock(
@@ -126,14 +131,14 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 
         signBlock(wood.standingsign.get(), wood.wallsign.get(), modLoc("entity/signs/"+wood.name));
 	}
-	
+
 	@Override
 	public void handleMossSet(MossSet set) {
 		simpleBlock(set.moss.get());
-		
+
 		String name = set.name;
 		ResourceLocation mossTexture = modLoc("block/" + name +"_moss");
-		
+
 		VariantBlockStateBuilder layerBuilder = getVariantBuilder(set.mossLayer.get());
 
 	    for (int layer = 1; layer <= 8; layer++) {
@@ -141,7 +146,7 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 
 	        ModelFile layerModel = models().withExistingParent(
 	                name + "_moss_layer_" + l,
-	                modLoc("block/default_layer_" + l)) 
+	                modLoc("block/default_layer_" + l))
 	                .texture("all", mossTexture)
 	                .texture("particle", mossTexture);
 
@@ -154,7 +159,7 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 
 	@Override
 	public void handleLeavesSet(LeavesSet set) {
-		String name = set.name; 
+		String name = set.name;
 
 	    ResourceLocation leavesTexture = modLoc("block/" + name + "_leaves");
         ModelFile normalModel = models().withExistingParent(name + "_leaves",
@@ -168,13 +173,13 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 	@Override
 	public void handleStoneDecorationSet(StoneDecorationSet set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void handleDirtDecorationSet(DirtDecorationSet set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -200,7 +205,7 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		simpleBlock(set.weatheredBlockWaxed.get(), models().getExistingFile(modLoc("block/weathered_" + set.name)));
 		simpleBlock(set.oxidizedBlockWaxed.get(), models().getExistingFile(modLoc("block/oxidized_" + set.name)));
 	}
-	
+
 	@Override
 	public void handleCopperDoorSet(WeatherableCopperSet<?, ?> set) {
 		doorBlock((DoorBlock) set.block.get(), modLoc("block/" + set.name + "_bottom"),
@@ -211,7 +216,7 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 				modLoc("block/weathered_" + set.name + "_top"));
 		doorBlock((DoorBlock) set.oxidizedBlock.get(), modLoc("block/oxidized_" + set.name + "_bottom"),
 				modLoc("block/oxidized_" + set.name + "_top"));
-		
+
 		doorBlock((DoorBlock) set.blockWaxed.get(), modLoc("block/" + set.name + "_bottom"),
 				modLoc("block/" + set.name + "_top"));
 		doorBlock((DoorBlock) set.exposedBlockWaxed.get(), modLoc("block/exposed_" + set.name + "_bottom"),
@@ -229,7 +234,7 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		trapdoorBlock((TrapDoorBlock) set.exposedBlock.get(), modLoc("block/exposed_" + set.name), true);
 		trapdoorBlock((TrapDoorBlock) set.weatheredBlock.get(), modLoc("block/weathered_" + set.name), true);
 		trapdoorBlock((TrapDoorBlock) set.oxidizedBlock.get(), modLoc("block/oxidized_" + set.name), true);
-		
+
 		trapdoorBlock((TrapDoorBlock) set.blockWaxed.get(), modLoc("block/" + set.name), true);
 		trapdoorBlock((TrapDoorBlock) set.exposedBlockWaxed.get(), modLoc("block/exposed_" + set.name), true);
 		trapdoorBlock((TrapDoorBlock) set.weatheredBlockWaxed.get(), modLoc("block/weathered_" + set.name), true);
@@ -239,17 +244,28 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 	@Override
 	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	protected void eyeblossom(Block block, String name) {
 		ModelFile model = models().cross(name, modLoc("block/"+name));
 		simpleBlock(block, model);
 	}
-	
+
 	protected void woodBlock(RotatedPillarBlock block, ResourceLocation texture) {
 	    axisBlock(block, texture, texture);
 	}
 
-	
+	private void hangingMoss(RegistryObject<Block> block) {
+	    Block b = block.get();
+
+	    ModelFile base = models().getExistingFile(modLoc("block/hanging_moss_base"));
+	    ModelFile tip  = models().getExistingFile(modLoc("block/hanging_moss_tip"));
+
+	    getVariantBuilder(b)
+	        .partialState().with(HangingMossBlock.TIP, false).addModels(new ConfiguredModel(base))
+	        .partialState().with(HangingMossBlock.TIP, true) .addModels(new ConfiguredModel(tip));
+	}
+
+
 }

@@ -1,10 +1,13 @@
 package com.natsu.backport.utils.sets;
 
+import java.util.Map;
 import java.util.function.Function;
 
+import com.google.common.collect.BiMap;
 import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.item.CTBBlockItemFactory;
 
+import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.tags.TagsProvider.TagAppender;
@@ -12,6 +15,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -34,7 +38,7 @@ public class LeavesSet implements DefaultSet {
 
     public final String name;
     public final RegistryObject<Block> leaves;
-    
+
     /*** The sapling item for this tree type.
      * Should be tied to an {@link net.minecraft.world.level.block.grower.AbstractTreeGrower}.*/
     public final Item saplingItem;
@@ -60,7 +64,7 @@ public class LeavesSet implements DefaultSet {
 
         this.name = name;
         this.saplingItem = saplingItem;
- 
+
         BlockBehaviour.Properties props = BlockBehaviour.Properties
                 .of(Material.LEAVES)
                 .strength(0.1f)
@@ -68,7 +72,7 @@ public class LeavesSet implements DefaultSet {
                 .sound(SoundType.GRASS)
                 .noOcclusion()
                 .noCollission();
-        
+
         this.leaves = CTBBlockFactory.makeLeaves(BLOCKS, name+"_leaves");
         this.leavesItem = CTBBlockItemFactory.blockItem(ITEMS, tab, leaves);
     }
@@ -88,6 +92,24 @@ public class LeavesSet implements DefaultSet {
 
 	public String getName() {
 		return this.name;
+	}
+
+	@Override
+	public void setFlammables(Map<Block, Integer> flameOdds, Map<Block, Integer> burnOdds) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setCompostables(Object2FloatMap<ItemLike> compostables) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setWeatherable(BiMap<Block, Block> nextByBlock, BiMap<Block, Block> previousByBlock) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 

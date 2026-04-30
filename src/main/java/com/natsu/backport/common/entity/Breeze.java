@@ -2,7 +2,6 @@ package com.natsu.backport.common.entity;
 
 import javax.annotation.Nullable;
 
-import com.natsu.backport.common.block.entity.CreakingHeartBlockEntity;
 import com.natsu.backport.common.entity.goal.BreezeLongJumpGoal;
 import com.natsu.backport.common.entity.goal.BreezeShootGoal;
 import com.natsu.backport.common.entity.goal.BreezeShootWhenStuckGoal;
@@ -35,7 +34,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
@@ -142,8 +140,12 @@ public class Breeze extends Monster implements IAnimatable {
         super.tick();
 
         if (!this.level.isClientSide) {
-            if (shootCooldown > 0) shootCooldown--;
-            if (jumpCooldown > 0) jumpCooldown--;
+            if (shootCooldown > 0) {
+				shootCooldown--;
+			}
+            if (jumpCooldown > 0) {
+				jumpCooldown--;
+			}
         }
 
         int state = getBreezeState();
@@ -190,7 +192,9 @@ public class Breeze extends Monster implements IAnimatable {
     }
 
     public void emitGroundParticles(int amount) {
-        if (this.isPassenger()) return;
+        if (this.isPassenger()) {
+			return;
+		}
         Vec3 center = this.getBoundingBox().getCenter();
         Vec3 pos = new Vec3(center.x, this.position().y, center.z);
         BlockState blockstate = getRelevantBlockState();
@@ -207,7 +211,9 @@ public class Breeze extends Monster implements IAnimatable {
     private BlockState getRelevantBlockState() {
         BlockPos below = this.blockPosition().below();
         BlockState belowState = this.level.getBlockState(below);
-        if (!belowState.isAir()) return belowState;
+        if (!belowState.isAir()) {
+			return belowState;
+		}
         BlockState inState = this.level.getBlockState(this.blockPosition());
         return inState;
     }
@@ -221,7 +227,7 @@ public class Breeze extends Monster implements IAnimatable {
             this.getSoundSource(), volume, pitch, false
         );
     }
-    
+
     @Override
     public boolean hurt(DamageSource source, float amount) {
         if (!this.level.isClientSide && source == DamageSource.FALL) {
@@ -311,23 +317,27 @@ public class Breeze extends Monster implements IAnimatable {
         double horizSqr = dx * dx + dz * dz;
         return horizSqr < 4.0D * 4.0D && dy < 10.0D;
     }
-    
+
     public void shootWindChargeAtGround(LivingEntity target) {
-        if (this.level.isClientSide) return;
+        if (this.level.isClientSide) {
+			return;
+		}
         double startX = this.getX();
         double startY = this.getFiringYPosition();
         double startZ = this.getZ();
         double dx = target.getX() - startX;
-        double dy = target.getY() - startY;  
+        double dy = target.getY() - startY;
         double dz = target.getZ() - startZ;
         WindChargeEntity windCharge = new WindChargeEntity(this.level, this);
         windCharge.setPos(startX, startY, startZ);
         windCharge.shoot(dx, dy, dz, 1.6F, 0.0F);
         this.level.addFreshEntity(windCharge);
     }
-    
+
     public void shootWindCharge(LivingEntity target) {
-        if (this.level.isClientSide) return;
+        if (this.level.isClientSide) {
+			return;
+		}
         double startX = this.getX();
         double startY = this.getFiringYPosition();
         double startZ = this.getZ();

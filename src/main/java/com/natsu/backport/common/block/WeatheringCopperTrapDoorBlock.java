@@ -2,9 +2,6 @@ package com.natsu.backport.common.block;
 
 import java.util.Random;
 
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.TrapDoorBlock;
@@ -32,6 +29,7 @@ public class WeatheringCopperTrapDoorBlock extends TrapDoorBlock implements Weat
         return WeatheringCopper.getNext(state.getBlock()).isPresent();
     }
 
+	@Override
 	public WeatheringCopper.WeatherState getAge() {
 		return this.weatherState;
 	}

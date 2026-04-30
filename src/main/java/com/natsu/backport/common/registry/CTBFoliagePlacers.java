@@ -6,7 +6,6 @@ import java.lang.reflect.Constructor;
 import com.mojang.serialization.Codec;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.server.world.feature.tree.foliage.CherryFoliagePlacer;
-import com.natsu.backport.server.world.feature.tree.trunk.CherryTrunkPlacer;
 
 import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
@@ -18,10 +17,10 @@ public class CTBFoliagePlacers {
 
 	public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER_TYPES =
             DeferredRegister.create(Registry.FOLIAGE_PLACER_TYPE_REGISTRY, CTBackport.MODID);
-	
-	
+
+
 	public static final RegistryObject<FoliagePlacerType<CherryFoliagePlacer>> CHERRY_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("cherry", () -> createFoliagePlacerType(CherryFoliagePlacer.CODEC));
-	
+
 	@SuppressWarnings("unchecked")
     private static <T extends FoliagePlacer> FoliagePlacerType<T> createFoliagePlacerType(Codec<? extends FoliagePlacer> codec) {
         try {

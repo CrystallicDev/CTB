@@ -10,5 +10,5 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class CTBFeatures {
 
 	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, CTBackport.MODID);
-	
+
 }

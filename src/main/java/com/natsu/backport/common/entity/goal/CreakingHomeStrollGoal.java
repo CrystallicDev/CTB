@@ -25,7 +25,9 @@ public class CreakingHomeStrollGoal extends WaterAvoidingRandomStrollGoal {
     protected Vec3 getPosition() {
         Vec3 candidate = super.getPosition();
         BlockPos home  = creaking.getHomePos();
-        if (candidate == null || home == null) return candidate;
+        if (candidate == null || home == null) {
+			return candidate;
+		}
         return home.distToCenterSqr(candidate) > MAX_DIST_SQ ? null : candidate;
     }
 }

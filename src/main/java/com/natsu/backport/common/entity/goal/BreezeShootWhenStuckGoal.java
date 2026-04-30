@@ -24,8 +24,9 @@ public class BreezeShootWhenStuckGoal extends Goal {
     @Override
     public boolean canUse() {
         LivingEntity target = breeze.getTarget();
-        if (target == null) return false;
-        if (breeze.getShootCooldown() > 0) return false;
+        if ((target == null) || (breeze.getShootCooldown() > 0)) {
+			return false;
+		}
         if (breeze.getNavigation().isDone() && !breeze.hasLineOfSight(target)) {
             stuckTicks++;
         } else {
@@ -60,7 +61,9 @@ public class BreezeShootWhenStuckGoal extends Goal {
     @Override
     public void tick() {
         LivingEntity target = breeze.getTarget();
-        if (target == null) return;
+        if (target == null) {
+			return;
+		}
         breeze.getLookControl().setLookAt(target, 30F, 30F);
         activeTicks++;
 

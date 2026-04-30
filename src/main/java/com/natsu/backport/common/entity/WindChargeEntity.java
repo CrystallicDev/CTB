@@ -1,28 +1,20 @@
 package com.natsu.backport.common.entity;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 
 import com.natsu.backport.common.registry.CTBEntities;
 import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.common.registry.CTBParticles;
-import com.natsu.backport.common.registry.CTBSensors;
 import com.natsu.backport.common.registry.CTBSounds;
 import com.natsu.backport.server.events.WindChargePushEntityEvent;
 
-import net.minecraft.advancements.critereon.EntityHurtPlayerTrigger;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
@@ -31,29 +23,29 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.MinecraftForge;
 
 public class WindChargeEntity extends ThrowableItemProjectile {
-	
+
 	public WindChargeEntity(EntityType<? extends WindChargeEntity> type, Level world) {
 		super(type, world);
 	}
-	
+
 	public WindChargeEntity(EntityType<? extends WindChargeEntity> entity, double x, double y, double z, Level level) {
 	      super(entity, x, y, z, level);
 	   }
-	
+
 	public WindChargeEntity(Level world, LivingEntity thrower) {
 		super(CTBEntities.WIND_CHARGE_ENTITY.get(), thrower, world);
 	}
-	
+
 	@Override
 	public Item getDefaultItem() {
 		return CTBItems.WIND_CHARGE.get();
 	}
-	
+
 	@Override
 	public void tick() {
 		super.tick();
 	}
-	
+
 	@Override
 	public void onHitBlock(BlockHitResult result) {
 		super.onHitBlock(result);
@@ -61,7 +53,7 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 			explodeWind(result.getLocation());
 		}
 	}
-	
+
 	@Override
 	public void onHitEntity(EntityHitResult result) {
 		super.onHitEntity(result);
@@ -77,7 +69,7 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 			explodeWind(result.getLocation());
 		}
 	}
-	
+
 	private void explodeWind(Vec3 pos) {
 		AABB area = new AABB(pos, pos).inflate(3.0);
 		List<Entity> entities = level.getEntities(this, area);
@@ -90,7 +82,7 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 				e.hurtMarked = true;
 			}
 		}
-		
+
 		if (level instanceof ServerLevel serverLevel) {
 			serverLevel.sendParticles(CTBParticles.GUST_EMITTER_LARGE.get(), pos.x, pos.y, pos.z, 30, 0.5, 0.5, 0.5, 0.3);
 		}

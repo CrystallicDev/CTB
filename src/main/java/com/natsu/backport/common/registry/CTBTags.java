@@ -14,5 +14,5 @@ public class CTBTags {
 		public static final TagKey<Block> CHERRY_LOGS = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(CTBackport.MODID, "cherry_logs"));
 		public static final TagKey<Block> BAMBOO_LOGS = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(CTBackport.MODID, "bamboo_logs"));
 	}
-	
+
 }

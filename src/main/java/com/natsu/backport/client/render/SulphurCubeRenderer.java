@@ -14,24 +14,24 @@ import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class SulphurCubeRenderer extends SlimeRenderer {
-	 
+
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(CTBackport.MODID, "textures/entity/sulphur_cube.png");
- 
+
     public SulphurCubeRenderer(EntityRendererProvider.Context context) {
         super(context);
     }
- 
+
     @Override
     public ResourceLocation getTextureLocation(Slime slime) {
         return TEXTURE;
     }
- 
+
     @Override
     public void render(Slime slime, float yaw, float partialTicks,
                        PoseStack pose, MultiBufferSource buffers, int packedLight) {
         super.render(slime, yaw, partialTicks, pose, buffers, packedLight);
- 
+
         if (slime instanceof SulphurCube sulphur && sulphur.hasBlock()) {
             BlockState held = sulphur.getHeldBlock();
             int size = slime.getSize();
@@ -41,7 +41,7 @@ public class SulphurCubeRenderer extends SlimeRenderer {
             pose.scale(scale, scale, scale);
             pose.translate(-0.5D, 0.0D, -0.5D);
             Minecraft.getInstance().getBlockRenderer().renderSingleBlock(held, pose, buffers, packedLight, OverlayTexture.NO_OVERLAY);
- 
+
             pose.popPose();
         }
     }

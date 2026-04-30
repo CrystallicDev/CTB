@@ -1,14 +1,18 @@
 package com.natsu.backport.utils.sets;
 
+import java.util.Map;
 import java.util.function.Function;
 
+import com.google.common.collect.BiMap;
 import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.item.CTBBlockItemFactory;
 
+import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.data.tags.TagsProvider.TagAppender;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -32,7 +36,7 @@ import net.minecraftforge.registries.RegistryObject;
  * </ul>
  * */
 public class DirtDecorationSet implements DefaultSet {
-	
+
 	public final String name;
 	public final RegistryObject<Block> dirt;
 	public final RegistryObject<Block> packedDirt;
@@ -47,18 +51,18 @@ public class DirtDecorationSet implements DefaultSet {
 	public final RegistryObject<Item> brickSlabItem;
 	public final RegistryObject<Item> brickStairsItem;
 	public final RegistryObject<Item> brickWallsItem;
-	
+
 	public DirtDecorationSet(DeferredRegister<Item> ITEMS, DeferredRegister<Block> BLOCKS, String name, float baseStrength,
             CreativeModeTab tab) {
 		this.name = name;
-		
+
 		this.dirt = CTBBlockFactory.makeDecorativeDirt(BLOCKS, name, baseStrength);
 		this.packedDirt = CTBBlockFactory.makeDecorativeDirt(BLOCKS, "packed_"+name, baseStrength + 0.5f);
 		this.brick = CTBBlockFactory.makeDecorativeDirt(BLOCKS, name+"_bricks", baseStrength + 1);
 		this.brickSlab = CTBBlockFactory.makeSlab(BLOCKS, name+"_bricks_slab", this.brick, baseStrength + 1);
 		this.brickStairs = CTBBlockFactory.makeStairs(BLOCKS, name+"_bricks_stairs", this.brick, baseStrength + 1);
 		this.brickWalls = CTBBlockFactory.makeWall(BLOCKS, name+"_bricks_wall", this.brick, baseStrength + 1);
-		
+
 		this.dirtItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.dirt);
 		this.packedDirtItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.packedDirt);
 		this.brickItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.brick);
@@ -66,11 +70,11 @@ public class DirtDecorationSet implements DefaultSet {
 		this.brickStairsItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.brickStairs);
 		this.brickWallsItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.brickWalls);
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}
-	
+
 	@Override
     public void addBlockTags(Function<TagKey<Block>, TagAppender<Block>> tag) {
 
@@ -78,8 +82,26 @@ public class DirtDecorationSet implements DefaultSet {
 
     @Override
     public void setRenderTypes() {
-    	
+
     }
-	
-	
+
+	@Override
+	public void setFlammables(Map<Block, Integer> flameOdds, Map<Block, Integer> burnOdds) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setCompostables(Object2FloatMap<ItemLike> compostables) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setWeatherable(BiMap<Block, Block> nextByBlock, BiMap<Block, Block> previousByBlock) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }

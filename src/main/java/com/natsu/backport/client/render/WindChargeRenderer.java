@@ -13,5 +13,5 @@ public class WindChargeRenderer extends ThrownItemRenderer<WindChargeEntity>{
 	public WindChargeRenderer(EntityRendererProvider.Context context) {
 		super(context);
 	}
-	
+
 }

@@ -17,30 +17,30 @@ public class CTBMemoryModules {
 
 	public static final DeferredRegister<MemoryModuleType<?>> MEMORY_MODULES = DeferredRegister.create(ForgeRegistries.MEMORY_MODULE_TYPES, CTBackport.MODID);
 
-	public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_JUMP_COOLDOWN = MEMORY_MODULES.register("breeze_jump_cooldown", 
+	public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_JUMP_COOLDOWN = MEMORY_MODULES.register("breeze_jump_cooldown",
 			() -> new MemoryModuleType<Unit>(Optional.of(UNIT_CODEC))
 			);
-    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_SHOOT = MEMORY_MODULES.register("breeze_shoot", 
+    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_SHOOT = MEMORY_MODULES.register("breeze_shoot",
 			() -> new MemoryModuleType<Unit>(Optional.of(UNIT_CODEC))
 			);
-    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_SHOOT_CHARGING = MEMORY_MODULES.register("breeze_shoot_charging", 
+    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_SHOOT_CHARGING = MEMORY_MODULES.register("breeze_shoot_charging",
 			() -> new MemoryModuleType<Unit>(Optional.of(UNIT_CODEC))
 			);
-    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_SHOOT_RECOVERING = MEMORY_MODULES.register("breeze_shoot_recover", 
+    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_SHOOT_RECOVERING = MEMORY_MODULES.register("breeze_shoot_recover",
 			() -> new MemoryModuleType<Unit>(Optional.of(UNIT_CODEC))
 			);
-    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_SHOOT_COOLDOWN = MEMORY_MODULES.register("breeze_shoot_cooldown", 
+    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_SHOOT_COOLDOWN = MEMORY_MODULES.register("breeze_shoot_cooldown",
 			() -> new MemoryModuleType<Unit>(Optional.of(UNIT_CODEC))
 			);
-    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_JUMP_INHALING = MEMORY_MODULES.register("breeze_jump_inhaling", 
+    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_JUMP_INHALING = MEMORY_MODULES.register("breeze_jump_inhaling",
 			() -> new MemoryModuleType<Unit>(Optional.of(UNIT_CODEC))
-			);;
-    public static final RegistryObject<MemoryModuleType<BlockPos>> BREEZE_JUMP_TARGET = MEMORY_MODULES.register("breeze_jump_target", 
+			);
+    public static final RegistryObject<MemoryModuleType<BlockPos>> BREEZE_JUMP_TARGET = MEMORY_MODULES.register("breeze_jump_target",
 			() -> new MemoryModuleType<BlockPos>(Optional.of(BlockPos.CODEC))
 			);
-    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_LEAVING_WATER = MEMORY_MODULES.register("breeze_leaving_water", 
+    public static final RegistryObject<MemoryModuleType<Unit>> BREEZE_LEAVING_WATER = MEMORY_MODULES.register("breeze_leaving_water",
 			() -> new MemoryModuleType<Unit>(Optional.of(UNIT_CODEC))
 			);
 
-	
+
 }

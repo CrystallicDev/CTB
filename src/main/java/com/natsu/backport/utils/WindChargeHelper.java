@@ -3,7 +3,6 @@ package com.natsu.backport.utils;
 import com.natsu.backport.common.registry.CTBParticles;
 import com.natsu.backport.common.registry.CTBSounds;
 
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;

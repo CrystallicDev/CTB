@@ -13,7 +13,7 @@ public class WindChargePushEntityEvent extends Event {
 	private final Entity entity;
 	private final WindChargeEntity windCharge;
 	private Vec3 addedVelocity = null;
-	
+
 	public WindChargePushEntityEvent(Entity entity, WindChargeEntity wind, Vec3 vel) {
 		this.entity = entity;
 		this.windCharge = wind;
@@ -35,7 +35,7 @@ public class WindChargePushEntityEvent extends Event {
 	public WindChargeEntity getWindCharge() {
 		return windCharge;
 	}
-	
-	
-	
+
+
+
 }

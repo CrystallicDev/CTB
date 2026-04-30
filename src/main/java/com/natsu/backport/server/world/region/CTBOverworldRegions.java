@@ -9,7 +9,6 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 import terrablender.api.ParameterUtils.Continentalness;
 import terrablender.api.ParameterUtils.Depth;
@@ -60,7 +59,7 @@ public class CTBOverworldRegions extends Region {
 			    Depth.SURFACE,
 			    0,
 			    CTBBiomes.CHERRY_GROVE);
-		
+
 		this.addBiome(mapper,
 		    Temperature.COOL,
 		    Humidity.WET,
@@ -100,6 +99,6 @@ public class CTBOverworldRegions extends Region {
 		    Depth.SURFACE,
 		    0,
 		    CTBBiomes.PALE_GARDEN);
-        
+
     }
 }

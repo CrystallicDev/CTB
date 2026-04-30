@@ -2,7 +2,6 @@ package com.natsu.backport.common.entity.model;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.entity.Breeze;
-import com.natsu.backport.common.entity.Creaking;
 
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;

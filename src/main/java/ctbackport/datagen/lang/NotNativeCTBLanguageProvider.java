@@ -10,5 +10,5 @@ public interface NotNativeCTBLanguageProvider {
 	 * run once during datagen anyway.</p>
 	 * */
 	public String translateSetName(String setName) throws MissingTranslationException;
-	
+
 }

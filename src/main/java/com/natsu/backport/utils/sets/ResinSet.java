@@ -1,15 +1,18 @@
 package com.natsu.backport.utils.sets;
 
-import java.util.Properties;
+import java.util.Map;
 import java.util.function.Function;
 
+import com.google.common.collect.BiMap;
 import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.item.CTBBlockItemFactory;
 
+import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.data.tags.TagsProvider.TagAppender;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -32,18 +35,18 @@ import net.minecraftforge.registries.RegistryObject;
  * </ul>
  * */
 public class ResinSet implements DefaultSet {
-	
+
 	public final String name;
 
 	public final RegistryObject<Item> resinItem;
-	
+
 	public final RegistryObject<Block> block;
 	public final RegistryObject<Block> brick;
 	public final RegistryObject<Block> brickSlab;
 	public final RegistryObject<Block> brickStairs;
 	public final RegistryObject<Block> brickWalls;
 	public final RegistryObject<Block> chiseledBrick;
-	
+
 	public final RegistryObject<Item> blockItem;
 	public final RegistryObject<Item> brickItem;
 	public final RegistryObject<Item> brickSlabItem;
@@ -51,20 +54,20 @@ public class ResinSet implements DefaultSet {
 	public final RegistryObject<Item> brickWallsItem;
 	public final RegistryObject<Item> chiseledBrickItem;
 
-	
+
 	public ResinSet(DeferredRegister<Item> ITEMS, DeferredRegister<Block> BLOCKS, String name, float baseStrength,
             CreativeModeTab tab) {
 		this.name = name;
-		
+
 		this.resinItem = ITEMS.register(name+"_clump", () -> new Item(new Item.Properties()));
-		
+
 		this.block = CTBBlockFactory.makeResin(BLOCKS, name+"", baseStrength);
 		this.brick = CTBBlockFactory.makeResinBrick(BLOCKS, name+"_bricks", baseStrength + 1.5f);
 		this.brickSlab = CTBBlockFactory.makeSlab(BLOCKS, name+"_bricks_slab", this.brick, baseStrength + 1.5f);
 		this.brickStairs = CTBBlockFactory.makeStairs(BLOCKS, name+"_bricks_stairs", this.brick, baseStrength + 1.5f);
 		this.brickWalls = CTBBlockFactory.makeWall(BLOCKS, name+"_bricks_wall", this.brick, baseStrength + 1.5f);
 		this.chiseledBrick = CTBBlockFactory.makeResinBrick(BLOCKS, "chiseled_"+name+"_bricks", baseStrength + 1.5f);
-		
+
 		this.blockItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.block);
 		this.brickItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.brick);
 		this.brickSlabItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.brickSlab);
@@ -72,11 +75,11 @@ public class ResinSet implements DefaultSet {
 		this.brickWallsItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.brickWalls);
 		this.chiseledBrickItem = CTBBlockItemFactory.blockItem(ITEMS, tab, this.chiseledBrick);
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}
-	
+
 	@Override
     public void addBlockTags(Function<TagKey<Block>, TagAppender<Block>> tag) {
 
@@ -84,8 +87,26 @@ public class ResinSet implements DefaultSet {
 
     @Override
     public void setRenderTypes() {
-    	
+
     }
-	
-	
+
+	@Override
+	public void setFlammables(Map<Block, Integer> flameOdds, Map<Block, Integer> burnOdds) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setCompostables(Object2FloatMap<ItemLike> compostables) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setWeatherable(BiMap<Block, Block> nextByBlock, BiMap<Block, Block> previousByBlock) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }

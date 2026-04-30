@@ -1,27 +1,19 @@
 package com.natsu.backport.common.block;
 
-import java.util.function.Supplier;
-
-import com.natsu.backport.common.block.EyeblossomBlock.Type;
 import com.natsu.salm.block.cristallite.leaves.ParticleSpawningLeavesBlock;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.world.entity.ai.behavior.Behavior;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.AmethystBlock;
 import net.minecraft.world.level.block.AmethystClusterBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BuddingAmethystBlock;
-import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.PointedDripstoneBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -53,7 +45,7 @@ public class CTBBlockFactory {
                 .strength(strength)
             ));
     }
-	
+
 	public static RegistryObject<Block> makeDecorativeStone(DeferredRegister<Block> BLOCKS, String name, float strength) {
         return BLOCKS.register(name,
             () -> new Block(
@@ -61,7 +53,7 @@ public class CTBBlockFactory {
                 .strength(strength)
             ));
     }
-	
+
 	public static RegistryObject<Block> makeDecorativeDirt(DeferredRegister<Block> BLOCKS, String name, float strength) {
         return BLOCKS.register(name,
             () -> new Block(
@@ -69,9 +61,9 @@ public class CTBBlockFactory {
                 .strength(strength)
             ));
     }
-	
+
 	public static RegistryObject<Block> makeMossBlock(DeferredRegister<Block> BLOCKS, String name, Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> boneMealFeature){
-		return BLOCKS.register(name, 
+		return BLOCKS.register(name,
 				() -> new GrowableMossBlock(BlockBehaviour.Properties.of(Material.MOSS)
 						.requiresCorrectToolForDrops()
 						.sound(SoundType.MOSS)
@@ -79,7 +71,7 @@ public class CTBBlockFactory {
 						boneMealFeature
 				));
 	}
-	
+
 	public static RegistryObject<Block> makeMossLayerBlock(DeferredRegister<Block> BLOCKS, String name, BlockBehaviour.Properties props) {
 		return BLOCKS.register(
             name,
@@ -94,8 +86,8 @@ public class CTBBlockFactory {
                 .strength(strength)
             ));
     }
-	
-	
+
+
     public static RegistryObject<Block> makePlanks(DeferredRegister<Block> BLOCKS, String name, float strength) {
         return BLOCKS.register(name,
             () -> new Block(
@@ -136,7 +128,7 @@ public class CTBBlockFactory {
                 .strength(strength)
             ));
     }
-    
+
     public static RegistryObject<Block> makeWall(DeferredRegister<Block> BLOCKS, String name, RegistryObject<Block> stone, float strength) {
         return BLOCKS.register(name,
             () -> new WallBlock(
@@ -216,7 +208,7 @@ public class CTBBlockFactory {
                 BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
             ));
     }
-    
+
     public static RegistryObject<Block> makeCherryLeaves(DeferredRegister<Block> BLOCKS, String name, RegistryObject<SimpleParticleType> particles) {
         return BLOCKS.register(name,
             () -> new ParticleSpawningLeavesBlock(
@@ -224,14 +216,14 @@ public class CTBBlockFactory {
                 particles
             ));
     }
-    
+
     public static RegistryObject<Block> makeLeaves(DeferredRegister<Block> BLOCKS, String name, BlockBehaviour.Properties props) {
         return BLOCKS.register(name,
             () -> new LeavesBlock(
             	props
             ));
     }
-    
+
 	public static RegistryObject<Block> makeAmethystBlock(DeferredRegister<Block> BLOCKS, String name, float strength) {
 		return BLOCKS.register(name, () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST)
             	.strength(strength).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
@@ -243,9 +235,9 @@ public class CTBBlockFactory {
 		            	.strength(strength)
 						.randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel((state) -> 7)));
 	}
-	
+
 	public static RegistryObject<Block> makeAmethystLargeBud(DeferredRegister<Block> BLOCKS, String name, float strength) {
-		return BLOCKS.register(name, 
+		return BLOCKS.register(name,
 				() -> new AmethystClusterBlock(5, 3,
 		            	BlockBehaviour.Properties.of(Material.AMETHYST)
 		            	.strength(strength)
@@ -253,9 +245,9 @@ public class CTBBlockFactory {
 		                .lightLevel((state) -> 5))
 				);
 	}
-	
+
 	public static RegistryObject<Block> makeAmethystMediumBud(DeferredRegister<Block> BLOCKS, String name, float strength) {
-		return BLOCKS.register(name, 
+		return BLOCKS.register(name,
 				() -> new AmethystClusterBlock(4, 3,
 		            	BlockBehaviour.Properties.of(Material.AMETHYST)
 		            	.strength(strength)
@@ -263,9 +255,9 @@ public class CTBBlockFactory {
 		                .lightLevel((state) -> 2))
 				);
 	}
-	
+
 	public static RegistryObject<Block> makeAmethystSmallBud(DeferredRegister<Block> BLOCKS, String name, float strength) {
-		return BLOCKS.register(name, 
+		return BLOCKS.register(name,
 				() -> new AmethystClusterBlock(3, 4,
 		            	BlockBehaviour.Properties.of(Material.AMETHYST)
 		            	.strength(strength)
@@ -275,7 +267,7 @@ public class CTBBlockFactory {
 	}
 
 	public static RegistryObject<Block> makeSand(DeferredRegister<Block> BLOCKS, String name, float strength) {
-		return BLOCKS.register(name, 
+		return BLOCKS.register(name,
 				() -> new FallingBlock(
 		            	BlockBehaviour.Properties.of(Material.SAND)
 		            	.strength(strength)
@@ -284,16 +276,16 @@ public class CTBBlockFactory {
 	}
 
 	public static RegistryObject<Block> makeGlass(DeferredRegister<Block> BLOCKS, String name, float strength) {
-		return BLOCKS.register(name, 
+		return BLOCKS.register(name,
 				() -> new GlassBlock(
 		            	BlockBehaviour.Properties.of(Material.GLASS)
 		            	.strength(strength)
 		                .sound(SoundType.GLASS))
 				);
 	}
-	
+
 	public static RegistryObject<Block> makeSandStone(DeferredRegister<Block> BLOCKS, String name, float strength) {
-		return BLOCKS.register(name, 
+		return BLOCKS.register(name,
 				() -> new FallingBlock(
 		            	BlockBehaviour.Properties.copy(Blocks.SANDSTONE)
 		            	.strength(strength))
@@ -305,14 +297,14 @@ public class CTBBlockFactory {
 	}
 
 	public static RegistryObject<Block> makeResin(DeferredRegister<Block> BLOCKS, String name, float baseStrength) {
-		return BLOCKS.register(name, () -> 
+		return BLOCKS.register(name, () ->
 			new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)
 					.strength(baseStrength))
 				);
 	}
 
 	public static RegistryObject<Block> makeResinBrick(DeferredRegister<Block> BLOCKS, String name, float baseStrength) {
-		return BLOCKS.register(name, () -> 
+		return BLOCKS.register(name, () ->
 		new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)
 				.strength(baseStrength))
 			);
@@ -334,6 +326,14 @@ public class CTBBlockFactory {
 				.requiresCorrectToolForDrops()
 				));
 	}
-	 
-    
+
+	public static RegistryObject<Block> makePaleHangingMoss(DeferredRegister<Block> BLOCKS, String name) {
+		return BLOCKS.register(name, () -> new HangingMossBlock(
+		        BlockBehaviour.Properties.of(Material.MOSS)
+		            .noCollission()
+		            .sound(SoundType.MOSS_CARPET))
+		    );
+	}
+
+
 }

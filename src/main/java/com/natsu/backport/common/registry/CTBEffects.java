@@ -16,16 +16,16 @@ import net.minecraftforge.registries.RegistryObject;
 public class CTBEffects {
 
 	public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, CTBackport.MODID);
-	
-	public static final RegistryObject<MobEffect> INFESTED = EFFECTS.register("infested", 
+
+	public static final RegistryObject<MobEffect> INFESTED = EFFECTS.register("infested",
 			() -> new InfestedEffect());
-	public static final RegistryObject<MobEffect> OOZING = EFFECTS.register("oozing", 
+	public static final RegistryObject<MobEffect> OOZING = EFFECTS.register("oozing",
 			() -> new OozingEffect());
-	public static final RegistryObject<MobEffect> WEAVING = EFFECTS.register("weaving", 
+	public static final RegistryObject<MobEffect> WEAVING = EFFECTS.register("weaving",
 			() -> new WeavingEffect());
-	public static final RegistryObject<MobEffect> WIND_CHARGED = EFFECTS.register("wind_charged", 
+	public static final RegistryObject<MobEffect> WIND_CHARGED = EFFECTS.register("wind_charged",
 			() -> new WindChargedEffect());
-	public static final RegistryObject<MobEffect> TRIAL_OMEN = EFFECTS.register("trial_omen", 
+	public static final RegistryObject<MobEffect> TRIAL_OMEN = EFFECTS.register("trial_omen",
 			() -> new TrialOmenEffect());
-	
+
 }

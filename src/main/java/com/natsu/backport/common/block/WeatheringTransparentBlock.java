@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class WeatheringTransparentBlock extends WaterLoggedTransparentBlock implements WeatheringCopper {
 
 	private final WeatheringCopper.WeatherState weatherState;
-	
+
 	public WeatheringTransparentBlock(WeatheringCopper.WeatherState weatherState,
 			BlockBehaviour.Properties props) {
 		super(props);
@@ -30,6 +30,7 @@ public class WeatheringTransparentBlock extends WaterLoggedTransparentBlock impl
         return WeatheringCopper.getNext(state.getBlock()).isPresent();
     }
 
+	@Override
 	public WeatheringCopper.WeatherState getAge() {
 		return this.weatherState;
 	}

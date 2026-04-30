@@ -8,7 +8,6 @@ import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -20,7 +19,7 @@ public class GustEmitterParticle extends NoRenderParticle {
 	private final float expansionSpeed;
 	private final int gustsPerRing;
 	private final float gustSpeed;
-	
+
 	public GustEmitterParticle(ClientLevel world, double x, double y, double z, boolean isLarge) {
 		super(world, x, y, z, 0, 0, 0);
 		if (isLarge) {
@@ -38,17 +37,17 @@ public class GustEmitterParticle extends NoRenderParticle {
 		}
 		this.isLarge = isLarge;
 	}
-	
+
 	@Override
 	public void tick() {
 	    for (int i = 0; i < gustsPerRing; i++) {
 	        double angle = (i / (double) gustsPerRing) * Math.PI * 2;
 
-	        double px = this.x + Math.cos(angle) * currentRadius;  
-	        double pz = this.z + Math.sin(angle) * currentRadius;  
+	        double px = this.x + Math.cos(angle) * currentRadius;
+	        double pz = this.z + Math.sin(angle) * currentRadius;
 	        double vx = Math.cos(angle) * gustSpeed;
 	        double vz = Math.sin(angle) * gustSpeed;
-	        double vy = (random.nextDouble() - 0.5) * 0.02;        
+	        double vy = (random.nextDouble() - 0.5) * 0.02;
 
 	        this.level.addParticle(CTBParticles.GUST.get(), px, this.y, pz, vx, vy, vz);
 	    }
@@ -57,16 +56,16 @@ public class GustEmitterParticle extends NoRenderParticle {
 	        this.remove();
 	    }
 	}
-	
+
 	@OnlyIn(value = Dist.CLIENT)
 	public static class SmallProvider implements ParticleProvider<SimpleParticleType>{
 
 		private final SpriteSet spriteSet;
-		
+
 		public SmallProvider(SpriteSet set) {
 			this.spriteSet = set;
 		}
-		
+
 		@Override
 		public Particle createParticle(SimpleParticleType type, ClientLevel lvl, double x,
 				double y, double z, double xd, double yd, double zd) {
@@ -75,16 +74,16 @@ public class GustEmitterParticle extends NoRenderParticle {
 		}
 
 	}
-	
+
 	@OnlyIn(value = Dist.CLIENT)
 	public static class LargeProvider implements ParticleProvider<SimpleParticleType>{
 
 		private final SpriteSet spriteSet;
-		
+
 		public LargeProvider(SpriteSet set) {
 			this.spriteSet = set;
 		}
-		
+
 		@Override
 		public Particle createParticle(SimpleParticleType type, ClientLevel lvl, double x,
 				double y, double z, double xd, double yd, double zd) {
@@ -93,5 +92,5 @@ public class GustEmitterParticle extends NoRenderParticle {
 		}
 
 	}
-	
+
 }

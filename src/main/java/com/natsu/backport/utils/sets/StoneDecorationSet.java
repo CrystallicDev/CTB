@@ -1,14 +1,18 @@
 package com.natsu.backport.utils.sets;
 
+import java.util.Map;
 import java.util.function.Function;
 
+import com.google.common.collect.BiMap;
 import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.item.CTBBlockItemFactory;
 
+import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.data.tags.TagsProvider.TagAppender;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -35,7 +39,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class StoneDecorationSet implements DefaultSet {
 
 	public final String name;
-	
+
 	public final RegistryObject<Block> stone;
 	public final RegistryObject<Block> polishedStone;
 	public final RegistryObject<Block> stairs;
@@ -44,7 +48,7 @@ public class StoneDecorationSet implements DefaultSet {
 	public final RegistryObject<Block> polishedWalls;
 	public final RegistryObject<Block> slabs;
 	public final RegistryObject<Block> polishedSlabs;
-	
+
 	public final RegistryObject<Item> stoneItem;
 	public final RegistryObject<Item> polishedStoneItem;
 	public final RegistryObject<Item> stairsItem;
@@ -53,7 +57,7 @@ public class StoneDecorationSet implements DefaultSet {
 	public final RegistryObject<Item> polishedWallsItem;
 	public final RegistryObject<Item> slabsItem;
 	public final RegistryObject<Item> polishedSlabsItem;
-	
+
 	/**
      * Creates and registers all blocks for this LeavesSet.
      *
@@ -69,7 +73,7 @@ public class StoneDecorationSet implements DefaultSet {
 	public StoneDecorationSet(String name, DeferredRegister<Item> ITEM, DeferredRegister<Block> BLOCK, float baseStrength,
             CreativeModeTab tab) {
 		this.name = name;
-		
+
 		this.stone = CTBBlockFactory.makeDecorativeStone(BLOCK, name, baseStrength);
 		this.polishedStone = CTBBlockFactory.makeDecorativeStone(BLOCK, "polished_"+name, baseStrength);
 		this.slabs = CTBBlockFactory.makeSlab(BLOCK, name+"_slab", stone, baseStrength);
@@ -78,7 +82,7 @@ public class StoneDecorationSet implements DefaultSet {
 		this.polishedStairs = CTBBlockFactory.makeStairs(BLOCK, "polished_"+name+"_stairs", polishedStone, baseStrength);
 		this.walls = CTBBlockFactory.makeWall(BLOCK, name+"_wall", stone, baseStrength);
 		this.polishedWalls = CTBBlockFactory.makeWall(BLOCK, "polished_"+name+"_wall", polishedStone, baseStrength);
-		
+
 		this.stoneItem = CTBBlockItemFactory.blockItem(ITEM, tab, stone);
 		this.polishedStoneItem = CTBBlockItemFactory.blockItem(ITEM, tab, polishedStone);
 		this.slabsItem = CTBBlockItemFactory.blockItem(ITEM, tab, slabs);
@@ -87,23 +91,41 @@ public class StoneDecorationSet implements DefaultSet {
 		this.polishedStairsItem = CTBBlockItemFactory.blockItem(ITEM, tab, polishedStairs);
 		this.wallsItem = CTBBlockItemFactory.blockItem(ITEM, tab, walls);
 		this.polishedWallsItem = CTBBlockItemFactory.blockItem(ITEM, tab, polishedWalls);
-		
+
 	}
-	
+
 	@Override
 	public void addBlockTags(Function<TagKey<Block>, TagAppender<Block>> tag) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void setRenderTypes() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public void setFlammables(Map<Block, Integer> flameOdds, Map<Block, Integer> burnOdds) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setCompostables(Object2FloatMap<ItemLike> compostables) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setWeatherable(BiMap<Block, Block> nextByBlock, BiMap<Block, Block> previousByBlock) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

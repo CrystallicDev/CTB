@@ -27,11 +27,13 @@ public class BreezeLongJumpGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        if (breeze.getJumpCooldown() > 0) return false;
-        if (!breeze.isOnGround()) return false;
-        if (breeze.isInWaterOrBubble()) return false;
+        if ((breeze.getJumpCooldown() > 0) || !breeze.isOnGround() || breeze.isInWaterOrBubble()) {
+			return false;
+		}
         LivingEntity target = breeze.getTarget();
-        if (target == null) return false;
+        if (target == null) {
+			return false;
+		}
 
         double dist = breeze.distanceTo(target);
         return dist < JUMP_INNER_RADIUS || dist > JUMP_OUTER_RADIUS * 0.6D;
@@ -40,7 +42,7 @@ public class BreezeLongJumpGoal extends Goal {
     @Override
     public boolean canContinueToUse() {
         return jumpTicks < MAX_JUMP_DURATION && !breeze.isOnGround()
-            || (jumpTicks < 5); 
+            || (jumpTicks < 5);
     }
 
     @Override
@@ -88,7 +90,9 @@ public class BreezeLongJumpGoal extends Goal {
         double dx = dest.x - from.x;
         double dz = dest.z - from.z;
         double horiz = Math.sqrt(dx * dx + dz * dz);
-        if (horiz < 0.001D) return;
+        if (horiz < 0.001D) {
+			return;
+		}
         double vx = dx / horiz * 0.9D;
         double vz = dz / horiz * 0.9D;
         double vy = 0.7D + Math.min(horiz, 10.0D) * 0.04D;

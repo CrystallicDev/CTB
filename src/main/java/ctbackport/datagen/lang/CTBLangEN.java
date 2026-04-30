@@ -54,7 +54,7 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(set.fence.get(), name+" Fence");
 		add(set.fenceGate.get(), name+" Fence Gate");
 		add(set.standingsign.get(), name+" Sign");
-		
+
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(set.walls.get(), name+" Wall");
 		add(set.polishedWalls.get(), "Polished "+name+" Wall");
 	}
-	
+
 	@Override
 	public void handleDirtDecorationSet(DirtDecorationSet set) {
 		String name = formatSetName(set.getName());
@@ -86,26 +86,30 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(set.brickStairs.get(), "Packed "+name+" Brick Stairs");
 		add(set.brickWalls.get(), "Packed "+name+" Brick Wall");
 	}
-	
+
 	@Override
 	public void handleMossSet(MossSet set) {
 		String name = formatSetName(set.getName());
 		add(set.moss.get(), name+" Moss");
 		add(set.mossLayer.get(), name+" Moss Layer");
-		
+
 	}
-	
+
 	/**
 	 * Utils to formatSetName and split on "_" the sets names
 	 * */
 	public static String formatSetName(String s) {
 		return formatSetName(s, true);
 	}
-	
+
 	public static String formatSetName(String s, boolean addCapital) {
-	    if (s == null || s.isEmpty()) return s;
+	    if (s == null || s.isEmpty()) {
+			return s;
+		}
 	    s = s.replaceAll("_", " ");
-	    if (!addCapital) return s;
+	    if (!addCapital) {
+			return s;
+		}
 	    String[] words = s.split(" ");
 	    StringBuilder builder = new StringBuilder();
 	    for (int i = 0; i < words.length; i++) {
@@ -116,7 +120,9 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 	    			builder.append(word.substring(1).toLowerCase());
 	    		}
 	    	}
-	    	if (i < words.length - 1) builder.append(" ");
+	    	if (i < words.length - 1) {
+				builder.append(" ");
+			}
 	    }
 	    return builder.toString();
 	}
@@ -135,25 +141,25 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 	@Override
 	public void handleCopperSet(WeatherableCopperSet<?, ?> set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void handleCopperDoorSet(WeatherableCopperSet<?, ?> set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void handleCopperTrapdoorSet(WeatherableCopperSet<?, ?> set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

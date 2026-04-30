@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.natsu.backport.CTBackport;
-import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
@@ -21,10 +20,10 @@ import net.minecraftforge.common.data.LanguageProvider;
 public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandler {
 
 	Map<String, String> TRANSLATION = Map.of("a", "b");
-	
+
 	public CTBLangFR(DataGenerator gen) {
 		super(gen, CTBackport.MODID, "fr_fr");
-		TRANSLATION = new HashMap<String, String>();
+		TRANSLATION = new HashMap<>();
 		TRANSLATION.put("cherry", "cerisier");
 		TRANSLATION.put("pale_oak", "chêne_pâle");
 		TRANSLATION.put("bamboo", "bambou");
@@ -40,11 +39,11 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		handleResinSet(CTBBlocks.RESIN);
-		
+
 
 		add(CTBBlocks.CHERRY_LEAVES.get(), "Feuilles de cerisier");
 	}
-	
+
 	@Override
 	public void handleWoodSet(WoodSet set) {
 		try {
@@ -62,13 +61,13 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 			add(set.fence.get(), "Barrière en "+formatSetName(translateSetName(set.getName()), false));
 			add(set.fenceGate.get(), "Portillon en "+formatSetName(translateSetName(set.getName()), false));
 			add(set.standingsign.get(), "Panneau en "+formatSetName(translateSetName(set.getName()), false));
-			
+
 		} catch (MissingTranslationException er) {
 			throw new IllegalStateException(er.getMessage());
 		}
 	}
 
-	
+
 
 	@Override
 	public void handleLeavesSet(LeavesSet set) {
@@ -94,7 +93,7 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 			throw new IllegalStateException(er.getMessage());
 		}
 	}
-	
+
 	@Override
 	public void handleDirtDecorationSet(DirtDecorationSet set) {
 		try {
@@ -105,13 +104,13 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 			add(set.brickSlab.get(), "Dalle de briques "+accordDe(formatSetName(translateSetName(set.getName()), false))+" crue");
 			add(set.brickStairs.get(), "Escaliers de briques "+accordDe(formatSetName(translateSetName(set.getName()), false))+" crue");
 			add(set.brickWalls.get(), "Mur de briques "+accordDe(formatSetName(translateSetName(set.getName()), false))+" crue");
-			
+
 		} catch (MissingTranslationException er) {
 			throw new IllegalStateException(er.getMessage());
 		}
 	}
 
-	
+
 	@Override
 	public void handleMossSet(MossSet set) {
 		try {
@@ -121,17 +120,21 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		} catch (MissingTranslationException er) {
 			throw new IllegalStateException(er.getMessage());
 		}
-		
+
 	}
-	
+
 	public static String formatSetName(String s) {
 		return formatSetName(s, true);
 	}
-	
+
 	public static String formatSetName(String s, boolean addCapital) {
-	    if (s == null || s.isEmpty()) return s;
+	    if (s == null || s.isEmpty()) {
+			return s;
+		}
 	    s = s.replaceAll("_", " ");
-	    if (!addCapital) return s;
+	    if (!addCapital) {
+			return s;
+		}
 	    return Character.toUpperCase(s.charAt(0)) + s.substring(1);
 	}
 
@@ -142,14 +145,16 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		}
 		return translation;
 	}
-	
+
 	/**
 	 * C'est bien chiant le français la vache
 	 * ENG : French is really damn annoying
 	 * */
 	public static String accordDe(String nom) {
-		if (nom == null || nom.isEmpty()) return "de "+nom;
-		
+		if (nom == null || nom.isEmpty()) {
+			return "de "+nom;
+		}
+
 		char p = Character.toLowerCase(nom.charAt(0));
 		return (p == 'a' || p == 'e' || p == 'i' || p == 'o' || p == 'u' || p == 'h' || p == 'h') ? "d'"+nom : "de "+nom;
 	}
@@ -171,25 +176,25 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 	@Override
 	public void handleCopperSet(WeatherableCopperSet<?, ?> set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void handleCopperDoorSet(WeatherableCopperSet<?, ?> set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void handleCopperTrapdoorSet(WeatherableCopperSet<?, ?> set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 

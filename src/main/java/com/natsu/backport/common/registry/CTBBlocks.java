@@ -1,14 +1,10 @@
 package com.natsu.backport.common.registry;
 
-import java.util.function.Function;
-import java.util.function.Supplier;
-
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.block.WeatheringCopperDoorBlock;
 import com.natsu.backport.common.block.WeatheringCopperTrapDoorBlock;
 import com.natsu.backport.common.block.WeatheringTransparentBlock;
-import com.natsu.backport.common.item.CTBBlockItemFactory;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
 import com.natsu.backport.utils.sets.ResinSet;
@@ -30,7 +26,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class CTBBlocks {
 
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CTBackport.MODID);
-	
+
 	public static final WoodSet CHERRY_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "cherry", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final WoodSet BAMBOO_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "bamboo", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final WoodSet PALE_OAK_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "pale_oak", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -39,29 +35,32 @@ public class CTBBlocks {
 	public static final MossSet PALE_MOSS = new MossSet(CTBItems.ITEMS, BLOCKS, "pale", CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 	public static final RegistryObject<Block> CHERRY_LEAVES = registerWithItem(BLOCKS, CTBItems.ITEMS, "cherry_leaves", CTBBlockFactory.makeCherryLeaves(BLOCKS, "cherry_leaves", CTBParticles.CHERRY));
-	
+
 	// Specific Bamboo Blocks
 	public static final RegistryObject<Block> BAMBOO_MOSAIC = registerWithItem(BLOCKS, CTBItems.ITEMS, "bamboo_mosaic", CTBBlockFactory.makePlanks(BLOCKS, "bamboo_mosaic", 2));
 	public static final RegistryObject<Block> BAMBOO_MOSAIC_STAIRS = registerWithItem(BLOCKS, CTBItems.ITEMS, "bamboo_mosaic_stairs", CTBBlockFactory.makeStairs(BLOCKS, "bamboo_mosaic_stairs", BAMBOO_MOSAIC, 2));
 	public static final RegistryObject<Block> BAMBOO_MOSAIC_SLAB = registerWithItem(BLOCKS, CTBItems.ITEMS, "bamboo_mosaic_slab", CTBBlockFactory.makeSlab(BLOCKS, "bamboo_mosaic_slab", BAMBOO_MOSAIC, 2));
 	public static final RegistryObject<Block> CREAKING_HEART = registerWithItem(BLOCKS, CTBItems.ITEMS, "creaking_heart", CTBBlockFactory.makeCreakingHeart(BLOCKS, "creaking_heart"));
-	
+
 	//Eyeblossom blocks
 	public static final RegistryObject<Block> OPEN_EYEBLOSSOM = registerWithItem(BLOCKS, CTBItems.ITEMS, "eyeblossom_open", CTBBlockFactory.makeEyeblossom(BLOCKS, "eyeblossom_open", true));
 	public static final RegistryObject<Block> CLOSED_EYEBLOSSOM = registerWithItem(BLOCKS, CTBItems.ITEMS, "eyeblossom_close", CTBBlockFactory.makeEyeblossom(BLOCKS, "eyeblossom_close", false));
-	
+
+	// Pale Hanging Moss
+	public static final RegistryObject<Block> PALE_HANGING_MOSS = registerWithItem(BLOCKS, CTBItems.ITEMS, "pale_hanging_moss", CTBBlockFactory.makePaleHangingMoss(BLOCKS, "pale_hanging_moss"));
+
 	//Copper Weatherable blocks
-	public static final WeatherableCopperSet<WeatheringTransparentBlock, WaterLoggedTransparentBlock> COPPER_GRATE = new WeatherableCopperSet<WeatheringTransparentBlock, WaterLoggedTransparentBlock>(BLOCKS, CTBItems.ITEMS, "copper_grate", 3, WeatheringTransparentBlock.class, WaterLoggedTransparentBlock.class);
-	public static final WeatherableCopperSet<WeatheringCopperDoorBlock, DoorBlock> COPPER_DOOR = new WeatherableCopperSet<WeatheringCopperDoorBlock, DoorBlock>(BLOCKS, CTBItems.ITEMS, "copper_door", 3, WeatheringCopperDoorBlock.class, DoorBlock.class);
-	public static final WeatherableCopperSet<WeatheringCopperTrapDoorBlock, TrapDoorBlock> COPPER_TRAPDOOR = new WeatherableCopperSet<WeatheringCopperTrapDoorBlock, TrapDoorBlock>(BLOCKS, CTBItems.ITEMS, "copper_trapdoor", 3, WeatheringCopperTrapDoorBlock.class, TrapDoorBlock.class);
+	public static final WeatherableCopperSet<WeatheringTransparentBlock, WaterLoggedTransparentBlock> COPPER_GRATE = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_grate", 3, WeatheringTransparentBlock.class, WaterLoggedTransparentBlock.class);
+	public static final WeatherableCopperSet<WeatheringCopperDoorBlock, DoorBlock> COPPER_DOOR = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_door", 3, WeatheringCopperDoorBlock.class, DoorBlock.class);
+	public static final WeatherableCopperSet<WeatheringCopperTrapDoorBlock, TrapDoorBlock> COPPER_TRAPDOOR = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_trapdoor", 3, WeatheringCopperTrapDoorBlock.class, TrapDoorBlock.class);
 	//public static final RegistryObject<Block> COPPER_BULB = CTBBlockFactory.makeCopperBulb(BLOCKS, "copper_bulb", 3f);
-	
+
 	private static RegistryObject<Block> registerWithItem(DeferredRegister<Block> blocks, DeferredRegister<Item> items,
 			String name, RegistryObject<Block> reg) {
 		items.register(name,
 				() -> new BlockItem(reg.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
 		return reg;
 	}
-	
-	
+
+
 }

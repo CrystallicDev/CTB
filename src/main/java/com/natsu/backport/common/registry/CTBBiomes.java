@@ -20,5 +20,5 @@ public class CTBBiomes {
     public static Biome getBiome(Level level, ResourceKey<Biome> key) {
         return level.registryAccess().registryOrThrow(Registry.BIOME_REGISTRY).get(key);
     }
-    
+
 }

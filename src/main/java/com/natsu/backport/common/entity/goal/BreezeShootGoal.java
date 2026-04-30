@@ -8,12 +8,11 @@ import com.natsu.backport.common.registry.CTBSounds;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.phys.Vec3;
 
 public class BreezeShootGoal extends Goal {
 
     private static final int INHALE_DURATION = 15;
-    private static final int SHOOT_RECOVERY = 15;  
+    private static final int SHOOT_RECOVERY = 15;
     private static final int COOLDOWN_TICKS = 50;
     private static final double MAX_SHOOT_RANGE_SQR = 24.0D * 24.0D;
     private static final double MIN_SHOOT_RANGE_SQR = 4.0D * 4.0D;
@@ -29,12 +28,17 @@ public class BreezeShootGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        if (breeze.getShootCooldown() > 0) return false;
+        if (breeze.getShootCooldown() > 0) {
+			return false;
+		}
         LivingEntity target = breeze.getTarget();
-        if (target == null || !target.isAlive()) return false;
-        if (!breeze.isOnGround()) return false;
+        if (target == null || !target.isAlive() || !breeze.isOnGround()) {
+			return false;
+		}
         double distSqr = breeze.distanceToSqr(target);
-        if (distSqr < MIN_SHOOT_RANGE_SQR || distSqr > MAX_SHOOT_RANGE_SQR) return false;
+        if (distSqr < MIN_SHOOT_RANGE_SQR || distSqr > MAX_SHOOT_RANGE_SQR) {
+			return false;
+		}
         return breeze.hasLineOfSight(target);
     }
 
@@ -66,7 +70,9 @@ public class BreezeShootGoal extends Goal {
     @Override
     public void tick() {
         LivingEntity target = breeze.getTarget();
-        if (target == null) return;
+        if (target == null) {
+			return;
+		}
 
         breeze.getLookControl().setLookAt(target, 30F, 30F);
 
@@ -79,7 +85,9 @@ public class BreezeShootGoal extends Goal {
     }
 
     private void shootWindCharge(LivingEntity target) {
-        if (breeze.level.isClientSide) return;
+        if (breeze.level.isClientSide) {
+			return;
+		}
         double startX = breeze.getX();
         double startY = breeze.getFiringYPosition();
         double startZ = breeze.getZ();

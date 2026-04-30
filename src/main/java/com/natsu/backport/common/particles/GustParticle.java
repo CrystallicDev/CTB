@@ -15,7 +15,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class GustParticle extends TextureSheetParticle {
 
 	private final SpriteSet sprites;
-	
+
 	public GustParticle(ClientLevel world, double x, double y, double z, double dx, double dy, double dz, SpriteSet spriteSet) {
 		super(world, x, y, z, dx, dy, dz);
 		this.sprites = spriteSet;
@@ -27,7 +27,7 @@ public class GustParticle extends TextureSheetParticle {
 		this.rCol = 1.0f;
 		this.gCol = 1.0f;
 		this.bCol = 1.0f;
-		
+
 		this.xd = dx;
 		this.yd = dy;
 		this.zd = dz;
@@ -38,7 +38,7 @@ public class GustParticle extends TextureSheetParticle {
 	public ParticleRenderType getRenderType() {
 		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
 	}
-	
+
 	@Override
 	public void tick() {
 		super.tick();
@@ -51,16 +51,16 @@ public class GustParticle extends TextureSheetParticle {
 		this.yd *= 0.9;
 		this.zd *= 0.9;
 	}
-	
+
 	@OnlyIn(value = Dist.CLIENT)
 	public static class Provider implements ParticleProvider<SimpleParticleType>{
 
 		private final SpriteSet spriteSet;
-		
+
 		public Provider(SpriteSet set) {
 			this.spriteSet = set;
 		}
-		
+
 		@Override
 		public Particle createParticle(SimpleParticleType type, ClientLevel lvl, double x,
 				double y, double z, double xd, double yd, double zd) {

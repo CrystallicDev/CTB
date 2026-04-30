@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.function.BiConsumer;
 
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.natsu.backport.common.registry.CTBFoliagePlacers;
 
@@ -28,12 +27,12 @@ public class CherryFoliagePlacer extends FoliagePlacer {
 					IntProvider.codec(4, 16).fieldOf("height").forGetter(p -> p.height),
 					Codec.floatRange(0.0F, 1.0F).fieldOf("wide_bottom_layer_hole_chance")
 							.forGetter(p -> p.wideBottomLayerHoleChance),
-					Codec.floatRange(0.0F, 1.0F).fieldOf("corner_hole_chance").forGetter(p -> p.cornerHoleChance), 
+					Codec.floatRange(0.0F, 1.0F).fieldOf("corner_hole_chance").forGetter(p -> p.cornerHoleChance),
 					Codec.floatRange(0.0F, 1.0F).fieldOf("hanging_leaves_chance").forGetter(p -> p.hangingLeavesChance),
 					Codec.floatRange(0.0F, 1.0F).fieldOf("hanging_leaves_extension_chance")
 							.forGetter(p -> p.hangingLeavesExtensionChance)))
 					.apply(instance, CherryFoliagePlacer::new));
-	
+
 	private final IntProvider height;
 	private final float wideBottomLayerHoleChance;
 	private final float cornerHoleChance;

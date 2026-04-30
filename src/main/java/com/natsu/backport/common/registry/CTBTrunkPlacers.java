@@ -17,11 +17,11 @@ public class CTBTrunkPlacers {
 
 	public static final DeferredRegister<TrunkPlacerType<?>> TRUNK_PLACER_TYPES =
             DeferredRegister.create(Registry.TRUNK_PLACER_TYPE_REGISTRY, CTBackport.MODID);
-	
+
 
 	public static final RegistryObject<TrunkPlacerType<CherryTrunkPlacer>> CHERRY_TRUNK_PLACER = TRUNK_PLACER_TYPES.register("cherry", () -> createTrunkPlacerType(CherryTrunkPlacer.CODEC));
-	
-	
+
+
 	@SuppressWarnings("unchecked")
     private static <T extends TrunkPlacer> TrunkPlacerType<T> createTrunkPlacerType(Codec<? extends TrunkPlacer> codec) {
         try {

@@ -1,29 +1,22 @@
 package com.natsu.backport.common.block;
 
 import java.util.Random;
-import java.util.function.BiConsumer;
 
 import javax.annotation.Nullable;
 
-import com.mojang.serialization.MapCodec;
 import com.natsu.backport.common.block.entity.CreakingHeartBlockEntity;
 import com.natsu.backport.common.block.state.CreakingHeartState;
 import com.natsu.backport.common.registry.CTBBlockEntities;
-import com.natsu.backport.common.registry.CTBEntities;
 import com.natsu.backport.common.registry.CTBSounds;
 import com.natsu.backport.common.registry.CTBTags;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.world.Containers;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
@@ -48,19 +41,22 @@ public class CreakingHeartBlock extends BaseEntityBlock {
 	public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
     public static final EnumProperty<CreakingHeartState> STATE = EnumProperty.create("state", CreakingHeartState.class);
     public static final BooleanProperty NATURAL = BooleanProperty.create("natural");
- 
+
 
     public static boolean isNaturalNight(Level level) {
-        if (level.isClientSide) return false;
+        if (level.isClientSide) {
+			return false;
+		}
         return !level.isDay() && !level.isRaining()
             || (!level.isDay() && level.getMoonBrightness() > 0.0f);
     }
- 
+
 
     @Override
     public void wasExploded(Level level, BlockPos pos, Explosion explosion) {
-        if (!(level instanceof ServerLevel serverLevel)) return;
-        if (!(level.getBlockEntity(pos) instanceof CreakingHeartBlockEntity heart)) return;
+        if (!(level instanceof ServerLevel serverLevel) || !(level.getBlockEntity(pos) instanceof CreakingHeartBlockEntity heart)) {
+			return;
+		}
         heart.removeProtector(null);
         Entity source = explosion.getExploder();
         if (source instanceof Player player) {
@@ -78,7 +74,7 @@ public class CreakingHeartBlock extends BaseEntityBlock {
         }
         super.playerWillDestroy(level, pos, state, player);
     }
- 
+
     private void tryAwardExperience(Player player, BlockState state, Level level, BlockPos pos) {
         if (!player.isCreative()
             && !player.isSpectator()
@@ -93,9 +89,9 @@ public class CreakingHeartBlock extends BaseEntityBlock {
     public RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
     }
- 
-    
-    
+
+
+
 
     public CreakingHeartBlock(BlockBehaviour.Properties p_366361_) {
         super(p_366361_);
@@ -118,7 +114,7 @@ public class CreakingHeartBlock extends BaseEntityBlock {
                 : null;
         }
     }
-    
+
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
     	if (!state.is(newState.getBlock())) {
@@ -129,7 +125,7 @@ public class CreakingHeartBlock extends BaseEntityBlock {
     	super.onRemove(state, level, pos, newState, isMoving);
     }
 
-    
+
 
     @Override
     public void animateTick(BlockState p_363486_, Level p_367731_, BlockPos p_364380_, Random p_362325_) {
@@ -157,7 +153,9 @@ public class CreakingHeartBlock extends BaseEntityBlock {
         Direction.Axis axis = state.getValue(AXIS);
 
         for (Direction direction : Direction.values()) {
-            if (direction.getAxis() != axis) continue;
+            if (direction.getAxis() != axis) {
+				continue;
+			}
 
             BlockState neighbor = level.getBlockState(pos.relative(direction));
             if (!neighbor.is(CTBTags.Blocks.PALE_OAK_LOGS) || neighbor.getValue(AXIS) != axis) {
@@ -181,7 +179,7 @@ public class CreakingHeartBlock extends BaseEntityBlock {
         return flag && flag1 ? p_366979_.setValue(STATE, isNaturalNight(p_397672_) ? CreakingHeartState.AWAKE : CreakingHeartState.DORMANT) : p_366979_;
     }
 
-    
+
 
     private static boolean isSurroundedByLogs(LevelAccessor p_369449_, BlockPos p_360949_) {
         for (Direction direction : Direction.values()) {
@@ -211,7 +209,7 @@ public class CreakingHeartBlock extends BaseEntityBlock {
         p_365552_.add(AXIS, STATE, NATURAL);
     }
 
-    
+
 
     @Override
 	public boolean hasAnalogOutputSignal(BlockState p_369932_) {

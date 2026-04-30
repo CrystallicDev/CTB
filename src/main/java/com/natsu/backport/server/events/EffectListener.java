@@ -3,7 +3,6 @@ package com.natsu.backport.server.events;
 import java.util.Random;
 import java.util.Set;
 
-
 import com.google.common.collect.Sets;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.registry.CTBEffects;
@@ -14,7 +13,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Silverfish;
@@ -35,19 +33,19 @@ public class EffectListener {
 		if (event.getEntityLiving().hasEffect(CTBEffects.WIND_CHARGED.get())) {
 			LivingEntity entity = event.getEntityLiving();
 			double d2 = entity.getX();
-            double d0 = entity.getY() + (double)(entity.getBbHeight() / 2.0F);
+            double d0 = entity.getY() + entity.getBbHeight() / 2.0F;
             double d1 = entity.getZ();
             float f = 3.0F + entity.level.getRandom().nextFloat() * 2.0F;
             if (entity.level instanceof ServerLevel server) {
                 WindChargeHelper.explodeWind(server, new Vec3(d2, d0, d1));
             }
 		}
-		
+
 		if (event.getEntityLiving().hasEffect(CTBEffects.WEAVING.get())) {
 			LivingEntity entity = event.getEntityLiving();
 			spawnCobwebsRandomlyAround(entity.level, entity.level.random, entity.blockPosition());
 		}
-		
+
 		if (event.getEntityLiving().hasEffect(CTBEffects.OOZING.get())) {
 			LivingEntity entity = event.getEntityLiving();
 			int slimeCount = new Random().nextInt(3) + event.getEntityLiving().getEffect(CTBEffects.INFESTED.get()).getAmplifier();
@@ -56,7 +54,7 @@ public class EffectListener {
 			}
 		}
 	}
-	
+
 	@SubscribeEvent
 	public static void onMobHurt(LivingHurtEvent event) {
 		if (event.getEntityLiving().hasEffect(CTBEffects.INFESTED.get())) {
@@ -66,8 +64,8 @@ public class EffectListener {
 			}
 		}
 	}
-	
-   
+
+
 	private static void spawnSilverfish(Level level, LivingEntity entity) {
         Silverfish silverfish = EntityType.SILVERFISH.create(level);
         if (silverfish != null) {
@@ -76,7 +74,7 @@ public class EffectListener {
             silverfish.playSound(SoundEvents.SILVERFISH_HURT, 1.0f, 1.0f);
         }
     }
-	
+
 	private static void spawnSlimeOffspring(Level level, double x, double y, double z) {
         Slime slime = EntityType.SLIME.create(level);
         if (slime != null) {
@@ -87,7 +85,7 @@ public class EffectListener {
             level.addFreshEntity(slime);
         }
     }
-	
+
 	private static void spawnCobwebsRandomlyAround(Level level, Random random, BlockPos pos) {
 		Set<BlockPos> set = Sets.newHashSet();
 		int i = random.nextInt(10);

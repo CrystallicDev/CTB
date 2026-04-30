@@ -2,7 +2,6 @@ package ctbackport.datagen.server;
 
 
 import com.natsu.backport.common.registry.CTBBlocks;
-import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
@@ -37,7 +36,7 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 	protected static final LootItemCondition.Builder HAS_SHEARS =
 	        MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS));
 	protected static final LootItemCondition.Builder HAS_NO_SILK_TOUCH = HAS_SILK_TOUCH.invert();
-	
+
 	@Override
 	public void addTables() {
 		handleWoodSet(CTBBlocks.CHERRY_WOOD);
@@ -49,14 +48,15 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		handleCopperSet(CTBBlocks.COPPER_DOOR);
 		handleCopperSet(CTBBlocks.COPPER_TRAPDOOR);
 		handleCopperSet(CTBBlocks.COPPER_GRATE);
-		
+
 		add(CTBBlocks.CLOSED_EYEBLOSSOM.get(), createSimpleDrop(CTBBlocks.CLOSED_EYEBLOSSOM.get()));
 		add(CTBBlocks.OPEN_EYEBLOSSOM.get(), createSimpleDrop(CTBBlocks.CLOSED_EYEBLOSSOM.get()));
+		dropSelf(CTBBlocks.PALE_HANGING_MOSS.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC_STAIRS.get());
 		dropSelf(CTBBlocks.CREAKING_HEART.get());
 		add(CTBBlocks.BAMBOO_MOSAIC_SLAB.get(), createSlabItemTable(CTBBlocks.BAMBOO_MOSAIC_SLAB.get()));
-		
+
 		add(CTBBlocks.CHERRY_LEAVES.get(), block -> createLeavesDrops(block, Items.OAK_SAPLING));
 	}
 
@@ -67,7 +67,7 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
             .map(RegistryObject::get)
             .toList();
     }
-	
+
 	@Override
 	public void handleWoodSet(WoodSet set) {
 		dropSelf(set.log.get());
@@ -91,33 +91,33 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		dropSelf(set.moss.get());
 		add(set.mossLayer.get(), noDrop());
 	}
-	
+
 	@Override
 	public void handleLeavesSet(LeavesSet set) {
 	    add(set.leaves.get(), block -> createLeavesDrops(block, set.saplingItem));
-		
+
 	}
 
 	@Override
 	public void handleStoneDecorationSet(StoneDecorationSet set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void handleDirtDecorationSet(DirtDecorationSet set) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	private LootTable.Builder createSimpleDrop(ItemLike block){
 		return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1)).add(LootItem.lootTableItem(block)));
 	}
-	
+
 	private LootTable.Builder createLeavesDrops(Block leavesBlock, Item saplingItem) {
 		LootItemCondition.Builder silkOrShears =
 	            HAS_SILK_TOUCH.or(HAS_SHEARS);
-		
+
 	    return LootTable.lootTable()
 	            .withPool(LootPool.lootPool()
 	                    .setRolls(ConstantValue.exactly(1))
@@ -127,9 +127,9 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 	                            .when(HAS_NO_SILK_TOUCH)
 	                            .when(BonusLevelTableCondition.bonusLevelFlatChance(
 	                                    Enchantments.BLOCK_FORTUNE,
-	                                    0.05f,   
+	                                    0.05f,
 	                                    0.0625f,
-	                                    0.083f,  
+	                                    0.083f,
 	                                    0.1f     // fortune 3
 	                            )))
 	            );
@@ -192,5 +192,5 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		dropSelf(set.oxidizedBlock.get());
 		dropSelf(set.oxidizedBlockWaxed.get());
 	}
-	
+
 }

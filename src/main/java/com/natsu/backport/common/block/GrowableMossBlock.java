@@ -15,12 +15,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatch
 public class GrowableMossBlock extends MossBlock {
 
 	private final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> boneMealFeature;
-	
+
 	public GrowableMossBlock(Properties props, Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> feature) {
 		super(props);
 		this.boneMealFeature = feature;
 	}
-	
+
 	@Override
 	public boolean isValidBonemealTarget(BlockGetter blockGetter, BlockPos pos, BlockState state,
 			boolean p_153800_) {

@@ -19,7 +19,9 @@ public class CreakingActiveTargetGoal extends TargetGoal {
 
     @Override
     public boolean canUse() {
-        if (!creaking.isActive()) return false;
+        if (!creaking.isActive()) {
+			return false;
+		}
         target = creaking.getTarget();
         return target != null && target.isAlive();
     }

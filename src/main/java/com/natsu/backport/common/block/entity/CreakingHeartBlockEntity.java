@@ -14,9 +14,6 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import org.apache.commons.lang3.mutable.Mutable;
-import org.apache.commons.lang3.mutable.MutableObject;
-
 import com.mojang.datafixers.util.Either;
 import com.mojang.math.Vector3f;
 import com.natsu.backport.common.block.CreakingHeartBlock;
@@ -28,21 +25,17 @@ import com.natsu.backport.common.registry.CTBEntities;
 import com.natsu.backport.common.registry.CTBSounds;
 import com.natsu.backport.common.registry.CTBTags;
 
-import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GameRules;
@@ -50,10 +43,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
@@ -73,10 +64,10 @@ public class CreakingHeartBlockEntity extends BlockEntity {
     private static final int MAX_DEPTH = 2;
     private static final int MAX_COUNT = 64;
     private static final int TICKS_GRACE_PERIOD = 30;
-    
+
     public static final int CREAKING_ORANGE = 16545810;
     public static final int CREAKING_GRAY = 6250335;
-    
+
     private static final Optional<Creaking> NO_CREAKING = Optional.empty();
     @Nullable
     private Either<Creaking, UUID> creakingInfo;
@@ -231,10 +222,14 @@ public class CreakingHeartBlockEntity extends BlockEntity {
                 && level.getBlockState(spawnPos.below()).isFaceSturdy(level, spawnPos.below(), Direction.UP)) {
 
                 Creaking creaking = CTBEntities.CREAKING.get().create(level);
-                if (creaking == null) return null;
+                if (creaking == null) {
+					return null;
+				}
 
                 creaking.moveTo(spawnPos, level.random.nextFloat() * 360f, 0f);
-                if (!level.noCollision(creaking, creaking.getBoundingBox())) continue;
+                if (!level.noCollision(creaking, creaking.getBoundingBox())) {
+					continue;
+				}
 
                 creaking.finalizeSpawn(level, level.getCurrentDifficultyAt(spawnPos),
                     MobSpawnType.SPAWNER, null, null);
@@ -255,14 +250,15 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 
     public void creakingHurt() {
         Optional<Creaking> opt = this.getCreakingProtector();
-        if (opt.isEmpty() || !(this.level instanceof ServerLevel serverlevel)) return;
-        if (this.emitter > 0) return;
+        if (opt.isEmpty() || !(this.level instanceof ServerLevel serverlevel) || (this.emitter > 0)) {
+			return;
+		}
 
         Creaking creaking = opt.get();
         this.emitParticles(serverlevel, 20, false);
 
         if (this.getBlockState().getValue(CreakingHeartBlock.STATE) == CreakingHeartState.AWAKE) {
-            int j = this.level.getRandom().nextInt(2) + 2;   
+            int j = this.level.getRandom().nextInt(2) + 2;
             for (int i = 0; i < j; i++) {
                 this.spreadResin().ifPresent(pos -> {
                     this.level.playSound(null, pos, CTBSounds.RESIN_PLACE.get(),
@@ -280,8 +276,8 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 		Set<BlockPos> visited = new HashSet<>();
 		queue.add(this.worldPosition);
 		visited.add(this.worldPosition);
-		int maxDepth = 2; 
-		int maxVisited = 64; 
+		int maxDepth = 2;
+		int maxVisited = 64;
 
 		while (!queue.isEmpty() && visited.size() < maxVisited) {
 			BlockPos current = queue.poll();
@@ -311,7 +307,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 				if (blockstate.is(CTBBlocks.RESIN.block.get()) && !blockstate.getValue(MultifaceBlock.getFaceProperty(opposite))) {
 					this.level.setBlock(blockpos, blockstate.setValue(MultifaceBlock.getFaceProperty(opposite), true),
 							3);
-					return Optional.of(blockpos); 
+					return Optional.of(blockpos);
 				}
 			}
 			List<Direction> directions = shuffledDirections();
@@ -335,7 +331,9 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 
 	private void emitParticles(ServerLevel level, int count, boolean reverse) {
 	    Optional<Creaking> opt = this.getCreakingProtector();
-	    if (opt.isEmpty()) return;
+	    if (opt.isEmpty()) {
+			return;
+		}
 	    Creaking creaking = opt.get();
 
 	    Vec3 color = reverse
@@ -365,7 +363,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 	        level.sendParticles(dust, origin.x, origin.y, origin.z, 1, 0.0, 0.0, 0.0, 0.0);
 	    }
 	}
-    
+
     @Override
     public void load(CompoundTag tag) {
         super.load(tag);
@@ -380,11 +378,11 @@ public class CreakingHeartBlockEntity extends BlockEntity {
     public void saveAdditional(CompoundTag tag) {
         super.saveAdditional(tag);
         if (this.creakingInfo != null) {
-        	UUID uuid = this.creakingInfo.map(Entity::getUUID, existingUuid -> (UUID) existingUuid);
+        	UUID uuid = this.creakingInfo.map(Entity::getUUID, existingUuid -> existingUuid);
         	tag.putUUID("creaking", uuid);
         }
     }
-    
+
     @Override
     public CompoundTag getUpdateTag() {
         return saveWithFullMetadata();
@@ -403,8 +401,8 @@ public class CreakingHeartBlockEntity extends BlockEntity {
         });
     }
 
-    
-    
+
+
     public boolean isProtector(Creaking p_367915_) {
         return this.getCreakingProtector().map(p_375974_ -> p_375974_ == p_367915_).orElse(false);
     }
@@ -423,5 +421,5 @@ public class CreakingHeartBlockEntity extends BlockEntity {
         }
     }
 
-    
+
 }

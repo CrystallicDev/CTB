@@ -1,7 +1,6 @@
 package com.natsu.backport;
 
 
-import com.natsu.backport.common.registry.CTBBiomes;
 import com.natsu.backport.common.registry.CTBBlockEntities;
 import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.common.registry.CTBEffects;
@@ -32,7 +31,7 @@ public class CTBackport {
     	CTBItems.ITEMS.register(modEventBus);
     	CTBBlockEntities.BLOCK_ENTITIES.register(modEventBus);
     	GeckoLib.initialize();
-    
+
     	if (!DatagenModLoader.isRunningDataGen()) {
         	CTBEntities.ENTITIES.register(modEventBus);
         	CTBTrunkPlacers.TRUNK_PLACER_TYPES.register(modEventBus);

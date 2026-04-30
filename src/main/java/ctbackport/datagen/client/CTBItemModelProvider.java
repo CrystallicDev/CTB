@@ -14,10 +14,6 @@ import com.natsu.backport.utils.sets.WoodSet;
 import ctbackport.datagen.DataGenBlockItemHandler;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -38,19 +34,23 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 		handleCopperDoorSet(CTBBlocks.COPPER_DOOR);
 		handleCopperTrapdoorSet(CTBBlocks.COPPER_TRAPDOOR);
 		handleCopperSet(CTBBlocks.COPPER_GRATE);
-		
+
 		withExistingParent("open_eyeblossom", "item/generated").texture("layer0", CTBackport.MODID+":block/open_eyeblossom");
 		withExistingParent("closed_eyeblossom", "item/generated").texture("layer0", CTBackport.MODID+":block/closed_eyeblossom");
-		
+		withExistingParent(
+		        CTBBlocks.PALE_HANGING_MOSS.getId().getPath(),
+		        modLoc("block/hanging_moss_tip")
+		    );
+
 		singleTexture(CTBItems.WIND_CHARGE.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
 				modLoc("item/wind_charge"));
-		
+
 		withExistingParent(CTBBlocks.BAMBOO_MOSAIC.getId().getPath(), modLoc("block/" + CTBBlocks.BAMBOO_MOSAIC.getId().getPath()));
 
 		withExistingParent(CTBBlocks.BAMBOO_MOSAIC_SLAB.getId().getPath(), modLoc("block/" + CTBBlocks.BAMBOO_MOSAIC_SLAB.getId().getPath()));
 
 		withExistingParent(CTBBlocks.BAMBOO_MOSAIC_STAIRS.getId().getPath(), modLoc("block/" + CTBBlocks.BAMBOO_MOSAIC_STAIRS.getId().getPath()));
-		
+
 		withExistingParent(
 	            "cherry_leaves",
 	            modLoc("block/cherry_leaves")
@@ -91,7 +91,7 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 
 		withExistingParent(wood.pressurePlate.getId().getPath(), mcLoc("block/pressure_plate_up")).texture("texture",
 				modLoc("block/" + wood.planks.getId().getPath()));
-		
+
 		basicItem(wood.signItem.get());
 	}
 
@@ -107,7 +107,7 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 	            modLoc("block/" + name + "_moss_layer_1")
 	    );
 	}
-	
+
 	@Override
 	public void handleLeavesSet(LeavesSet set) {
 		String name = set.name;
@@ -120,20 +120,20 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 	@Override
 	public void handleStoneDecorationSet(StoneDecorationSet set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void handleDirtDecorationSet(DirtDecorationSet set) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void handleResinSet(ResinSet set) {
 		singleTexture(set.resinItem.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
 				modLoc("item/"+set.name+"_clump"));
-		
+
 		withExistingParent(set.block.getId().getPath(),
 	            modLoc("block/" + set.getName()));
 		withExistingParent(set.brick.getId().getPath(),
@@ -207,8 +207,9 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 	@Override
 	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 
 
 }

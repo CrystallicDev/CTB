@@ -40,7 +40,7 @@ public class CTBSurfaceRules {
         	        )
         	    )
         	);
-        
+
         return SurfaceRules.sequence(
             //SurfaceRules.ifTrue(SurfaceRules.isBiome(CristalliteBiomes.HOT_RED), RED_TERRACOTTA),
             //SurfaceRules.ifTrue(SurfaceRules.isBiome(CristalliteBiomes.COLD_BLUE), BLUE_TERRACOTTA),
@@ -55,5 +55,5 @@ public class CTBSurfaceRules {
     {
         return SurfaceRules.state(block.defaultBlockState());
     }
-	
+
 }
