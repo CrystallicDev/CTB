@@ -2,6 +2,7 @@ package com.natsu.backport.common.entity.goal;
 
 import com.natsu.backport.common.entity.Creaking;
 
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 
 public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
@@ -12,7 +13,18 @@ public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
         this.creaking = c;
     }
 
-    @Override public boolean canUse() { return creaking.canMove() && super.canUse(); }
+    @Override
+    public boolean canUse() {
+        if (!creaking.canMove()) {
+            return false;
+        }
+        LivingEntity target = this.mob.getTarget();
+        if (target == null || !target.isAlive()) {
+            return false;
+        }
+
+        return super.canUse();
+    }
     @Override public boolean canContinueToUse() { return creaking.canMove() && super.canContinueToUse(); }
 
     @Override

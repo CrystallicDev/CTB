@@ -230,9 +230,6 @@ public class Breeze extends Monster implements IAnimatable {
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
-        if (!this.level.isClientSide && source == DamageSource.FALL) {
-        	return false;
-        }
         return super.hurt(source, amount);
     }
 

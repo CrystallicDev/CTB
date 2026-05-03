@@ -27,6 +27,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.JumpControl;
@@ -42,6 +43,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.PathNavigationRegion;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.pathfinder.PathFinder;
@@ -81,7 +83,7 @@ public class Creaking extends Monster implements IAnimatable {
 	private static final int INVULN_ANIM_DURATION = 8;
 	private static final int TEAR_DOWN_DURATION = 45;
 	private static final int MAX_PLAYER_STUCK_COUNTER = 4;
-	private static final float ACTIVATION_RANGE_SQ = 144.0F; // 12 blocks
+	private static final float ACTIVATION_RANGE_SQ = 144.0F; 
 	private static final double LOOK_ANGLE_TOLERANCE = 0.5D;
 
     private static final String TAG_HOME_POS_X = "CreakingHomePosX";
@@ -91,7 +93,7 @@ public class Creaking extends Monster implements IAnimatable {
     private int attackAnimTicks;
     private int invulnerabilityAnimTicks;
     private int playerStuckCounter;
-    private int damageTicks;        // pour le predicate GeckoLib
+    private int damageTicks;       
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
@@ -459,17 +461,17 @@ public class Creaking extends Monster implements IAnimatable {
         if (damageTicks > 0) {
             damageTicks--;
             event.getController().setAnimation(new AnimationBuilder()
-                .addAnimation("animation.creaking.damage-block", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+                .addAnimation("damage.block", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
             return PlayState.CONTINUE;
         }
         if (attackAnimTicks > 0) {
             event.getController().setAnimation(new AnimationBuilder()
-                .addAnimation("animation.creaking.attack", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+                .addAnimation("attack.melee", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
             return PlayState.CONTINUE;
         }
         if (event.isMoving() && canMove()) {
             event.getController().setAnimation(new AnimationBuilder()
-                .addAnimation("animation.creaking.walk", ILoopType.EDefaultLoopTypes.LOOP));
+                .addAnimation("moove.walk", ILoopType.EDefaultLoopTypes.LOOP));
             return PlayState.CONTINUE;
         }
         return PlayState.STOP;
@@ -495,9 +497,18 @@ public class Creaking extends Monster implements IAnimatable {
     static class CreakingMoveControl extends MoveControl {
         private final Creaking c;
         CreakingMoveControl(Creaking c) { super(c); this.c = c; }
-        @Override public void tick() { if (c.canMove()) {
-			super.tick();
-		} }
+        
+        @Override 
+        public void tick() {
+            if (c.canMove()) {
+                super.tick();
+            } else {
+                c.setZza(0.0F);
+                c.setXxa(0.0F);
+                c.setYya(0.0F);
+                this.operation = Operation.WAIT; 
+            }
+        }
     }
     static class CreakingJumpControl extends JumpControl {
         private final Creaking c;
@@ -510,14 +521,18 @@ public class Creaking extends Monster implements IAnimatable {
     }
 
     static class CreakingPathNavigation extends GroundPathNavigation {
-        private final Creaking c;
-        CreakingPathNavigation(Creaking c, Level l) { super(c, l); this.c = c; }
-        @Override public void tick() { if (c.canMove()) {
-			super.tick();
-		} }
+        CreakingPathNavigation(Creaking c, Level l) { 
+            super(c, l); 
+        }
+        
+        @Override 
+        public void tick() { 
+            if (((Creaking) this.mob).canMove()) super.tick(); 
+        }
+        
         @Override
         protected PathFinder createPathFinder(int max) {
-            this.nodeEvaluator = new HomeNodeEvaluator(c);
+            this.nodeEvaluator = new HomeNodeEvaluator();
             this.nodeEvaluator.setCanPassDoors(true);
             return new PathFinder(this.nodeEvaluator, max);
         }
@@ -525,17 +540,18 @@ public class Creaking extends Monster implements IAnimatable {
 
     static class HomeNodeEvaluator extends WalkNodeEvaluator {
         private static final int MAX_DIST_SQ = 1024;
-        private final Creaking c;
-        HomeNodeEvaluator(Creaking c) { this.c = c; }
+        
         @Override
         public BlockPathTypes getBlockPathType(BlockGetter lvl, int x, int y, int z) {
-            BlockPos home = c.getHomePos();
-            if (home != null) {
-                double here = home.distSqr(new Vec3i(x, y, z));
-                double mob  = home.distSqr(c.blockPosition());
-                if (here > MAX_DIST_SQ && here >= mob) {
-					return BlockPathTypes.BLOCKED;
-				}
+            if (this.mob instanceof Creaking c) {       
+                BlockPos home = c.getHomePos();
+                if (home != null) {
+                    double here = home.distSqr(new Vec3i(x, y, z));
+                    double mobDist = home.distSqr(this.mob.blockPosition());
+                    if (here > MAX_DIST_SQ && here >= mobDist) {
+                        return BlockPathTypes.BLOCKED;
+                    }
+                }
             }
             return super.getBlockPathType(lvl, x, y, z);
         }

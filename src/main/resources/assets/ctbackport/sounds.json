@@ -8,7 +8,7 @@
 		]
 	},
 	"creaking_heart_hurt": {
-		"category": "neutral",
+		"category": "block",
 		"sounds": [
 			"ctbackport:block/creaking_heart/trail1",
 			"ctbackport:block/creaking_heart/trail2",
@@ -20,19 +20,19 @@
 		]
 	},
 	"creaking_heart_spawn": {
-		"category": "neutral",
+		"category": "block",
 		"sounds": [
 			"ctbackport:block/creaking_heart/creaking_heart_spawnmob"
 		]
 	},
 	"creaking_spawn": {
-		"category": "neutral",
+		"category": "hostile",
 		"sounds": [
 			"ctbackport:entity/creaking/creaking_spawn"
 		]
 	},
 	"resin_place": {
-		"category": "neutral",
+		"category": "block",
 		"sounds": [
 			"ctbackport:block/resin/resin_place1",
 			"ctbackport:block/resin/resin_place2",
@@ -41,7 +41,7 @@
 		]
 	},
 	"creaking_heart_idle": {
-		"category": "neutral",
+		"category": "ambient",
 		"sounds": [
 			"ctbackport:block/creaking_heart/creaking_heart_idle1",
 			"ctbackport:block/creaking_heart/creaking_heart_idle2",
@@ -50,7 +50,7 @@
 		]
 	},
 	"copper_bulb_toggle": {
-		"category": "neutral",
+		"category": "block",
 		"sounds": [
 			"ctbackport:block/copper_bulb/toggle"
 		]
@@ -60,55 +60,152 @@
 		"sounds": []
 	},
 	"eyeblossom_open": {
-		"category": "block",
+		"category": "ambient",
 		"sounds": []
 	},
 	"eyeblossom_close": {
-		"category": "block",
+		"category": "ambient",
 		"sounds": []
 	},
 	"eyeblossom_open_long": {
-		"category": "block",
+		"category": "ambient",
 		"sounds": []
 	},
 	"eyeblossom_close_long": {
-		"category": "block",
+		"category": "ambient",
 		"sounds": []
 	},
 	"breeze_shoot": {
-		"category": "block",
-		"sounds": []
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/breeze/breeze_shoot"
+		]
 	},
 	"breeze_whirl": {
-		"category": "block",
-		"sounds": []
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/breeze/breeze_whirl1",
+			"ctbackport:entity/breeze/breeze_whirl2",
+			"ctbackport:entity/breeze/breeze_whirl3",
+			"ctbackport:entity/breeze/breeze_whirl4",
+			"ctbackport:entity/breeze/breeze_whirl5"
+		]
 	},
 	"breeze_idle_ground": {
-		"category": "block",
-		"sounds": []
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/breeze/breeze_idle_ground1",
+			"ctbackport:entity/breeze/breeze_idle_ground2",
+			"ctbackport:entity/breeze/breeze_idle_ground3",
+			"ctbackport:entity/breeze/breeze_idle_ground4"
+		]
 	},
 	"breeze_idle_air": {
-		"category": "block",
-		"sounds": []
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/breeze/breeze_idle_air1",
+			"ctbackport:entity/breeze/breeze_idle_air2",
+			"ctbackport:entity/breeze/breeze_idle_air3",
+			"ctbackport:entity/breeze/breeze_idle_air4"
+		]
 	},
 	"breeze_hurt": {
-		"category": "block",
-		"sounds": []
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/breeze/breeze_hurt1",
+			"ctbackport:entity/breeze/breeze_hurt2",
+			"ctbackport:entity/breeze/breeze_hurt3"
+		]
 	},
 	"breeze_land": {
-		"category": "block",
-		"sounds": []
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/breeze/breeze_land1",
+			"ctbackport:entity/breeze/breeze_land2"
+		]
 	},
 	"breeze_death": {
-		"category": "block",
-		"sounds": []
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/breeze/breeze_death1",
+			"ctbackport:entity/breeze/breeze_death2"
+		]
 	},
 	"breeze_slide": {
-		"category": "block",
-		"sounds": []
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/breeze/breeze_slide1",
+			"ctbackport:entity/breeze/breeze_slide2",
+			"ctbackport:entity/breeze/breeze_slide3",
+			"ctbackport:entity/breeze/breeze_slide4"
+		]
 	},
 	"breeze_jump": {
-		"category": "block",
-		"sounds": []
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/breeze/breeze_jump1",
+			"ctbackport:entity/breeze/breeze_jump2"
+		]
+	},
+	"creaking_activate": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/creaking/creaking_activate"
+		]
+	},
+	"creaking_ambiant": {
+		"category": "hostile",
+		"sounds": [
+		]
+	},
+	"creaking_sway": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/creaking/creaking_sway1",
+			"ctbackport:entity/creaking/creaking_sway2",
+			"ctbackport:entity/creaking/creaking_sway3"
+		]
+	},
+	"creaking_death": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/creaking/creaking_death"
+		]
+	},
+	"creaking_step": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/creaking/creaking_step1",
+			"ctbackport:entity/creaking/creaking_step2",
+			"ctbackport:entity/creaking/creaking_step3",
+			"ctbackport:entity/creaking/creaking_step4"
+		]
+	},
+	"creaking_twitch": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/creaking/creaking_twitch"
+		]
+	},
+	"creaking_deactivate": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/creaking/creaking_deactivate"
+		]
+	},
+	"creaking_unfreeze": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/creaking/creaking_unfreeze1",
+			"ctbackport:entity/creaking/creaking_unfreeze2",
+			"ctbackport:entity/creaking/creaking_unfreeze3"
+		]
+	},
+	"creaking_freeze": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/creaking/creaking_freeze1",
+			"ctbackport:entity/creaking/creaking_freeze2"
+		]
 	}
 }

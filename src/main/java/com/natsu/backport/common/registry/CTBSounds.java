@@ -38,18 +38,14 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> BREEZE_JUMP = SOUND_EVENTS.register("breeze_jump", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "breeze_jump")));
 	public static final RegistryObject<SoundEvent> BREEZE_SLIDE = SOUND_EVENTS.register("breeze_slide", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "breeze_slide")));
 
-	public static final RegistryObject<SoundEvent> CREAKING_AMBIENT = null;
-	public static final RegistryObject<SoundEvent> CREAKING_SWAY = null;
-	public static final RegistryObject<SoundEvent> CREAKING_DEATH = null;
-	public static final RegistryObject<SoundEvent> CREAKING_STEP = null;
-	public static final RegistryObject<SoundEvent> CREAKING_TWITCH = null;
-
-	public static final RegistryObject<SoundEvent> CREAKING_ACTIVATE = null;
-
-	public static final RegistryObject<SoundEvent> CREAKING_DEACTIVATE = null;
-
-	public static final RegistryObject<SoundEvent> CREAKING_UNFREEZE = null;
-
-	public static final RegistryObject<SoundEvent> CREAKING_FREEZE = null;
+	public static final RegistryObject<SoundEvent> CREAKING_AMBIENT = SOUND_EVENTS.register("creaking_ambiant", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_ambiant")));
+	public static final RegistryObject<SoundEvent> CREAKING_SWAY = SOUND_EVENTS.register("creaking_sway", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_sway")));
+	public static final RegistryObject<SoundEvent> CREAKING_DEATH = SOUND_EVENTS.register("creaking_death", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_death")));
+	public static final RegistryObject<SoundEvent> CREAKING_STEP = SOUND_EVENTS.register("creaking_step", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_step")));
+	public static final RegistryObject<SoundEvent> CREAKING_TWITCH = SOUND_EVENTS.register("creaking_twitch", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_twitch")));
+	public static final RegistryObject<SoundEvent> CREAKING_ACTIVATE = SOUND_EVENTS.register("creaking_activate", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_activate")));
+	public static final RegistryObject<SoundEvent> CREAKING_DEACTIVATE = SOUND_EVENTS.register("creaking_deactivate", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_deactivate")));
+	public static final RegistryObject<SoundEvent> CREAKING_UNFREEZE = SOUND_EVENTS.register("creaking_unfreeze", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_unfreeze")));
+	public static final RegistryObject<SoundEvent> CREAKING_FREEZE = SOUND_EVENTS.register("creaking_freeze", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_freeze")));
 
 }
