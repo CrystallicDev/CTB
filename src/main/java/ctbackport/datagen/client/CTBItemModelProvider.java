@@ -37,10 +37,6 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 
 		withExistingParent("open_eyeblossom", "item/generated").texture("layer0", CTBackport.MODID+":block/open_eyeblossom");
 		withExistingParent("closed_eyeblossom", "item/generated").texture("layer0", CTBackport.MODID+":block/closed_eyeblossom");
-		withExistingParent(
-		        CTBBlocks.PALE_HANGING_MOSS.getId().getPath(),
-		        modLoc("block/hanging_moss_tip")
-		    );
 
 		singleTexture(CTBItems.WIND_CHARGE.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
 				modLoc("item/wind_charge"));

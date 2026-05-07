@@ -1,10 +1,10 @@
 {
   "variants": {
     "tip=false": {
-      "model": "ctbackport:block/hanging_moss_base"
+      "model": "ctbackport:block/pale_hanging_moss"
     },
     "tip=true": {
-      "model": "ctbackport:block/hanging_moss_tip"
+      "model": "ctbackport:block/pale_hanging_moss_tip"
     }
   }
 }

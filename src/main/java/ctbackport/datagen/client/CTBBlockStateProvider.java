@@ -259,12 +259,12 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 	private void hangingMoss(RegistryObject<Block> block) {
 	    Block b = block.get();
 
-	    ModelFile base = models().getExistingFile(modLoc("block/hanging_moss_base"));
-	    ModelFile tip  = models().getExistingFile(modLoc("block/hanging_moss_tip"));
+	    ModelFile base = models().getExistingFile(modLoc("block/pale_hanging_moss"));
+	    ModelFile tip = models().getExistingFile(modLoc("block/pale_hanging_moss_tip"));
 
 	    getVariantBuilder(b)
 	        .partialState().with(HangingMossBlock.TIP, false).addModels(new ConfiguredModel(base))
-	        .partialState().with(HangingMossBlock.TIP, true) .addModels(new ConfiguredModel(tip));
+	        .partialState().with(HangingMossBlock.TIP, true).addModels(new ConfiguredModel(tip));
 	}
 
 
