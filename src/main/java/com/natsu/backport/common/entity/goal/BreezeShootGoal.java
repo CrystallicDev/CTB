@@ -3,8 +3,6 @@ package com.natsu.backport.common.entity.goal;
 import java.util.EnumSet;
 
 import com.natsu.backport.common.entity.Breeze;
-import com.natsu.backport.common.entity.WindChargeEntity;
-import com.natsu.backport.common.registry.CTBSounds;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -19,7 +17,6 @@ public class BreezeShootGoal extends Goal {
 
     private final Breeze breeze;
     private int phaseTicks = 0;
-    private boolean hasFired = false;
 
     public BreezeShootGoal(Breeze breeze) {
         this.breeze = breeze;
@@ -52,7 +49,6 @@ public class BreezeShootGoal extends Goal {
     @Override
     public void start() {
         phaseTicks = 0;
-        hasFired = false;
         breeze.setBreezeState(Breeze.STATE_INHALING);
     }
 
@@ -79,25 +75,7 @@ public class BreezeShootGoal extends Goal {
         phaseTicks++;
         if (phaseTicks == INHALE_DURATION) {
             breeze.setBreezeState(Breeze.STATE_SHOOTING);
-            shootWindCharge(target);
-            hasFired = true;
+            breeze.shootWindCharge(target);
         }
-    }
-
-    private void shootWindCharge(LivingEntity target) {
-        if (breeze.level.isClientSide) {
-			return;
-		}
-        double startX = breeze.getX();
-        double startY = breeze.getFiringYPosition();
-        double startZ = breeze.getZ();
-        double dx = target.getX() - startX;
-        double dy = target.getY(0.5D) - startY;
-        double dz = target.getZ() - startZ;
-
-        WindChargeEntity windCharge = new WindChargeEntity(breeze.level, breeze);
-        windCharge.setPos(startX, startY, startZ);
-        breeze.level.addFreshEntity(windCharge);
-        breeze.playSound(CTBSounds.BREEZE_SHOOT.get(), 1.5F, 1.0F);
     }
 }
