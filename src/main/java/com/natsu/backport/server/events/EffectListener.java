@@ -48,7 +48,8 @@ public class EffectListener {
 
 		if (event.getEntityLiving().hasEffect(CTBEffects.OOZING.get())) {
 			LivingEntity entity = event.getEntityLiving();
-			int slimeCount = new Random().nextInt(3) + event.getEntityLiving().getEffect(CTBEffects.INFESTED.get()).getAmplifier();
+			// vanilla spawns 2 slimes per effect level
+			int slimeCount = 2 * (entity.getEffect(CTBEffects.OOZING.get()).getAmplifier() + 1);
 			for (int i = 0; i < slimeCount; i++) {
 				spawnSlimeOffspring(entity.level, entity.getX(), entity.getY(), entity.getZ());
 			}
