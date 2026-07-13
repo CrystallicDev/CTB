@@ -25,6 +25,15 @@
 			"ctbackport:block/creaking_heart/creaking_heart_spawnmob"
 		]
 	},
+	"creaking_attack": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/creaking/creaking_attack1",
+			"ctbackport:entity/creaking/creaking_attack2",
+			"ctbackport:entity/creaking/creaking_attack3",
+			"ctbackport:entity/creaking/creaking_attack4"
+		]
+	},
 	"creaking_spawn": {
 		"category": "hostile",
 		"sounds": [
