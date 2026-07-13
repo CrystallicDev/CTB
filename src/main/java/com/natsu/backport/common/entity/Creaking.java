@@ -62,13 +62,6 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class Creaking extends Monster implements IAnimatable {
 
-    @Nullable
-    private boolean isFrozen = true;		// is being looked at ? (avoid permanent raycasts)
-    private BlockPos homePos = null;         // linked CreakingHeart
-    private boolean isTransient = false;     // when true, disapear if heart unlinked
-    private static final String TAG_HOME_POS = "CreakingHomePos";
-    private static final String TAG_IS_TRANSIENT = "IsTransient";
-
     private static final EntityDataAccessor<Boolean> CAN_MOVE =
         SynchedEntityData.defineId(Creaking.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> IS_ACTIVE =
@@ -79,7 +72,7 @@ public class Creaking extends Monster implements IAnimatable {
         SynchedEntityData.defineId(Creaking.class, EntityDataSerializers.OPTIONAL_BLOCK_POS);
 
 	public static final int ATTACK_INTERVAL = 40;
-	private static final int ATTACK_ANIM_DURATION = 15;
+	private static final int ATTACK_ANIM_DURATION = 10;
 	private static final int INVULN_ANIM_DURATION = 8;
 	private static final int TEAR_DOWN_DURATION = 45;
 	private static final int MAX_PLAYER_STUCK_COUNTER = 4;
@@ -161,24 +154,6 @@ public class Creaking extends Monster implements IAnimatable {
 		return entityData.get(HOME_POS).orElse(null);
 	}
 
-    public void detachFromHeart() {
-        entityData.set(HOME_POS, Optional.empty());
-        if (!level.isClientSide) {
-			discard();
-		}
-    }
-
-    public boolean hasValidHome() {
-        BlockPos pos = getHomePos();
-        if (pos == null || !(level instanceof ServerLevel sl)) {
-			return false;
-		}
-        return sl.getBlockEntity(pos) instanceof CreakingHeartBlockEntity;
-    }
-
-
-
-
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
@@ -212,13 +187,21 @@ public class Creaking extends Monster implements IAnimatable {
         return true;
     }
 
+    // the goal starts the anim, the damage comes a few ticks later on the swing
+    public void startAttackAnim() {
+        attackAnimTicks = ATTACK_ANIM_DURATION;
+        level.broadcastEntityEvent(this, (byte) 4);
+    }
+
     @Override
     public boolean doHurtTarget(Entity target) {
         if (!(target instanceof LivingEntity)) {
 			return false;
 		}
-        attackAnimTicks = ATTACK_ANIM_DURATION;
-        level.broadcastEntityEvent(this, (byte) 4);
+        if (attackAnimTicks <= 0) {
+            startAttackAnim();
+        }
+        makeSound(CTBSounds.CREAKING_ATTACK.get());
         return super.doHurtTarget(target);
     }
 
@@ -233,6 +216,9 @@ public class Creaking extends Monster implements IAnimatable {
 		}
         if (attackAnimTicks > 0) {
 			attackAnimTicks--;
+		}
+        if (damageTicks > 0) {
+			damageTicks--;
 		}
 
         if (!level.isClientSide) {
@@ -255,15 +241,17 @@ public class Creaking extends Monster implements IAnimatable {
 
     @Override
     public void tick() {
-        // Remove if heart not valid (should only happen with /setblocks ?)
-        if (!level.isClientSide) {
+        // crumble if the heart is gone, but never judge an unloaded chunk
+        if (!level.isClientSide && !isDeadOrDying()) {
             BlockPos home = getHomePos();
-            if (home != null) {
+            if (home != null && level.isLoaded(home)) {
                 boolean valid = level.getBlockEntity(home) instanceof CreakingHeartBlockEntity h
                              && h.isProtector(this);
                 if (!valid) {
-					setHealth(0.0F);
-				}
+                    creakingDeathEffects(DamageSource.GENERIC);
+                    setTearingDown();
+                    setHealth(0.0F);
+                }
             }
         }
         super.tick();
@@ -289,20 +277,16 @@ public class Creaking extends Monster implements IAnimatable {
             getBoundingBox().inflate(32.0D),
             p -> canAttack(p) && !isAlliedTo(p));
 
-        boolean active = isActive();
-
         if (nearby.isEmpty()) {
-            if (active) {
+            if (isActive()) {
 				deactivate();
 			}
             return true;
         }
 
-        boolean anyHostile = false;
         for (Player p : nearby) {
-            anyHostile = true;
             if (isLookingAtMe(p)) {
-                if (active) {
+                if (isActive()) {
 					return false;
 				}
                 if (p.distanceToSqr(this) < ACTIVATION_RANGE_SQ) {
@@ -311,9 +295,6 @@ public class Creaking extends Monster implements IAnimatable {
                 }
             }
         }
-        if (!anyHostile && active) {
-			deactivate();
-		}
         return true;
     }
 
@@ -459,7 +440,6 @@ public class Creaking extends Monster implements IAnimatable {
             return PlayState.CONTINUE;
         }
         if (damageTicks > 0) {
-            damageTicks--;
             event.getController().setAnimation(new AnimationBuilder()
                 .addAnimation("damage.block", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
             return PlayState.CONTINUE;

@@ -24,7 +24,10 @@ public class CTBEntities {
 			);
 
 	public static final RegistryObject<EntityType<Creaking>> CREAKING = ENTITIES.register("creaking",
-			() -> EntityType.Builder.<Creaking>of(Creaking::new, MobCategory.MONSTER).build("creaking")
+			() -> EntityType.Builder.<Creaking>of(Creaking::new, MobCategory.MONSTER)
+			.sized(0.9f, 2.7f)
+			.clientTrackingRange(8)
+			.build("creaking")
 			);
 
 	public static final RegistryObject<EntityType<Breeze>> BREEZE = ENTITIES.register("breeze",
