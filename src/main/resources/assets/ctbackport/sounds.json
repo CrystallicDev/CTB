@@ -49,7 +49,7 @@
 			"ctbackport:block/creaking_heart/creaking_heart_idle4"
 		]
 	},
-	"copper_bulb_toggle": {
+	"copper_bulb_turn": {
 		"category": "block",
 		"sounds": [
 			"ctbackport:block/copper_bulb/toggle"

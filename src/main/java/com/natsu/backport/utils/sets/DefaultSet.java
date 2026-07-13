@@ -27,5 +27,6 @@ public interface DefaultSet {
 	public void setFlammables(final Map<Block, Integer> flameOdds, final Map<Block, Integer> burnOdds);
 	public void setCompostables(final Object2FloatMap<ItemLike> compostables);
 	public void setWeatherable(final BiMap<Block, Block> nextByBlock, final BiMap<Block, Block> previousByBlock);
-	
+	public default void setWaxables(final BiMap<Block, Block> waxables) {}
+
 }

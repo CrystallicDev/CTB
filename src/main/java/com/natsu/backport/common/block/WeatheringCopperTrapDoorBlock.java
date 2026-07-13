@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class WeatheringCopperTrapDoorBlock extends TrapDoorBlock implements WeatheringCopper {
+public class WeatheringCopperTrapDoorBlock extends TrapDoorBlock implements CTBWeatheringCopper {
 
 	private final WeatheringCopper.WeatherState weatherState;
 
@@ -26,7 +26,7 @@ public class WeatheringCopperTrapDoorBlock extends TrapDoorBlock implements Weat
 
     @Override
     public boolean isRandomlyTicking(BlockState state) {
-        return WeatheringCopper.getNext(state.getBlock()).isPresent();
+        return CTBWeatheringCopper.getNextBlock(state.getBlock()).isPresent();
     }
 
 	@Override

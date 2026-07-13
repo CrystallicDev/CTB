@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class WeatheringTransparentBlock extends WaterLoggedTransparentBlock implements WeatheringCopper {
+public class WeatheringTransparentBlock extends WaterLoggedTransparentBlock implements CTBWeatheringCopper {
 
 	private final WeatheringCopper.WeatherState weatherState;
 
@@ -27,7 +27,7 @@ public class WeatheringTransparentBlock extends WaterLoggedTransparentBlock impl
 
     @Override
     public boolean isRandomlyTicking(BlockState state) {
-        return WeatheringCopper.getNext(state.getBlock()).isPresent();
+        return CTBWeatheringCopper.getNextBlock(state.getBlock()).isPresent();
     }
 
 	@Override

@@ -146,4 +146,12 @@ public class WeatherableCopperSet<Weatherable extends Block, Waxed extends Block
 		previousByBlock.put(exposedBlock.get(), block.get());
 	}
 
+	@Override
+	public void setWaxables(BiMap<Block, Block> waxables) {
+		waxables.put(block.get(), blockWaxed.get());
+		waxables.put(exposedBlock.get(), exposedBlockWaxed.get());
+		waxables.put(weatheredBlock.get(), weatheredBlockWaxed.get());
+		waxables.put(oxidizedBlock.get(), oxidizedBlockWaxed.get());
+	}
+
 }
