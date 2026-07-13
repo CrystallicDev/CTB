@@ -29,3 +29,25 @@ versionRange="[1.18.2,1.19)"
 ordering="NONE"
 side="BOTH"
 
+[[dependencies.ctbackport]]
+modId="geckolib3"
+mandatory=true
+versionRange="[3.0,4)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.ctbackport]]
+modId="salm"
+mandatory=true
+versionRange="[1.0,)"
+ordering="NONE"
+side="BOTH"
+
+# optional, only needed to inject the biomes into the overworld
+[[dependencies.ctbackport]]
+modId="terrablender"
+mandatory=false
+versionRange="[1.18.2-1.2,)"
+ordering="AFTER"
+side="BOTH"
+

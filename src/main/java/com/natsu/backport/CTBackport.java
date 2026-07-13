@@ -14,6 +14,7 @@ import com.natsu.backport.common.registry.CTBTrunkPlacers;
 
 import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
@@ -37,7 +38,10 @@ public class CTBackport {
         	CTBTrunkPlacers.TRUNK_PLACER_TYPES.register(modEventBus);
         	CTBFoliagePlacers.FOLIAGE_PLACER_TYPES.register(modEventBus);
         	CTBFeatures.FEATURES.register(modEventBus);
-    		FMLJavaModLoadingContext.get().getModEventBus().addListener(TerraBlenderBridge::commonSetup);
+        	// the bridge classloads TerraBlender, only touch it if the mod is there
+        	if (ModList.get().isLoaded("terrablender")) {
+        		modEventBus.addListener(TerraBlenderBridge::commonSetup);
+        	}
     	}
     }
 }
