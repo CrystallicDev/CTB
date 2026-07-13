@@ -4,8 +4,6 @@ import com.natsu.backport.CTBackport;
 import com.natsu.backport.client.render.BreezeRenderer;
 import com.natsu.backport.client.render.CreakingRenderer;
 import com.natsu.backport.client.render.WindChargeRenderer;
-import com.natsu.backport.common.entity.Breeze;
-import com.natsu.backport.common.entity.Creaking;
 import com.natsu.backport.common.particles.CherryParticle;
 import com.natsu.backport.common.particles.GustEmitterParticle;
 import com.natsu.backport.common.particles.GustParticle;
@@ -17,8 +15,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
-import net.minecraftforge.data.loading.DatagenModLoader;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -50,14 +46,5 @@ public class ClientSetup {
 
         });
     }
-
-	@SubscribeEvent
-	public static void onAttributeCreate(EntityAttributeCreationEvent event) {
-		if (DatagenModLoader.isRunningDataGen()) return;
-		
-	    event.put(CTBEntities.CREAKING.get(), Creaking.createAttributes().build());
-	    event.put(CTBEntities.BREEZE.get(), Breeze.createAttributes().build());
-	    //event.put(CTBEntities.SULPHUR_CUBE.get(), SulphurCube.createAttributes().build());
-	}
 
 }
