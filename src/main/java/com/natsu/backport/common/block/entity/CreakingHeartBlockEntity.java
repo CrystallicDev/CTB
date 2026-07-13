@@ -61,7 +61,6 @@ public class CreakingHeartBlockEntity extends BlockEntity {
     private static final int NUMBER_OF_HURT_CALLS = 10;
     private static final int HURT_CALL_INTERVAL = 10;
     private static final int HURT_CALL_PARTICLE_TICKS = 50;
-    private static final int MAX_DEPTH = 2;
     private static final int MAX_COUNT = 64;
     private static final int TICKS_GRACE_PERIOD = 30;
 
@@ -111,7 +110,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
             }
 
             if (p_366884_.ticker-- < 0) {
-                p_366884_.ticker = p_366884_.level == null ? 20 : p_366884_.level.random.nextInt(5) + 20;
+                p_366884_.ticker = p_366884_.level == null ? UPDATE_TICKS : p_366884_.level.random.nextInt(UPDATE_TICKS_VARIANCE) + UPDATE_TICKS;
                 BlockState blockstate = updateCreakingState(p_360952_, p_365574_, p_367184_, p_366884_);
                 if (blockstate != p_365574_) {
                     p_360952_.setBlock(p_367184_, blockstate, 3);
@@ -124,7 +123,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
                     if (blockstate.getValue(CreakingHeartBlock.STATE) == CreakingHeartState.AWAKE) {
                         if (p_360952_.getDifficulty() != Difficulty.PEACEFUL) {
                             if (serverlevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
-                                Player player = p_360952_.getNearestPlayer(p_367184_.getX(), p_367184_.getY(), p_367184_.getZ(), 32.0, false);
+                                Player player = p_360952_.getNearestPlayer(p_367184_.getX(), p_367184_.getY(), p_367184_.getZ(), PLAYER_DETECTION_RANGE, true);
                                 if (player != null) {
                                     Creaking creaking1 = spawnProtector(serverlevel, p_366884_);
                                     if (creaking1 != null) {
@@ -140,7 +139,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
                     Optional<Creaking> optional = p_366884_.getCreakingProtector();
                     if (optional.isPresent()) {
                         Creaking creaking = optional.get();
-                        if (!CreakingHeartBlock.isNaturalNight(p_360952_) && !creaking.isPersistenceRequired() || p_366884_.distanceToCreaking() > 34.0) {
+                        if (!CreakingHeartBlock.isNaturalNight(p_360952_) && !creaking.isPersistenceRequired() || p_366884_.distanceToCreaking() > DISTANCE_CREAKING_TOO_FAR) {
                             p_366884_.removeProtector(null);
                         }
                     }
@@ -197,7 +196,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
                     this.setCreakingInfo(creaking1);
                     return Optional.of(creaking1);
                 } else {
-                    if (this.ticksExisted >= 30L) {
+                    if (this.ticksExisted >= TICKS_GRACE_PERIOD) {
                         this.clearCreakingInfo();
                     }
 
@@ -212,10 +211,10 @@ public class CreakingHeartBlockEntity extends BlockEntity {
     @Nullable
     private static Creaking spawnProtector(ServerLevel level, CreakingHeartBlockEntity blockEntity) {
         BlockPos blockPos = blockEntity.getBlockPos();
-        for (int attempt = 0; attempt < 16; attempt++) {
-            int dx = level.random.nextInt(11) - 5;   // [-5, 5]
-            int dy = level.random.nextInt(17) - 8;   // [-8, 8]
-            int dz = level.random.nextInt(11) - 5;
+        for (int attempt = 0; attempt < ATTEMPTS_PER_SPAWN; attempt++) {
+            int dx = level.random.nextInt(SPAWN_RANGE_XZ * 2 + 1) - SPAWN_RANGE_XZ;
+            int dy = level.random.nextInt(SPAWN_RANGE_Y * 2 + 1) - SPAWN_RANGE_Y;
+            int dz = level.random.nextInt(SPAWN_RANGE_XZ * 2 + 1) - SPAWN_RANGE_XZ;
             BlockPos spawnPos = blockPos.offset(dx, dy, dz);
 
             if (!level.getBlockState(spawnPos).isCollisionShapeFullBlock(level, spawnPos)
@@ -276,10 +275,8 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 		Set<BlockPos> visited = new HashSet<>();
 		queue.add(this.worldPosition);
 		visited.add(this.worldPosition);
-		int maxDepth = 2;
-		int maxVisited = 64;
 
-		while (!queue.isEmpty() && visited.size() < maxVisited) {
+		while (!queue.isEmpty() && visited.size() < MAX_COUNT) {
 			BlockPos current = queue.poll();
 			BlockState currentState = this.level.getBlockState(current);
 			if (!currentState.is(CTBTags.Blocks.PALE_OAK_LOGS)) {

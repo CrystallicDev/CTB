@@ -43,12 +43,9 @@ public class CreakingHeartBlock extends BaseEntityBlock {
     public static final BooleanProperty NATURAL = BooleanProperty.create("natural");
 
 
+    // same rule as vanilla, and it has to work client side for the ambient sounds
     public static boolean isNaturalNight(Level level) {
-        if (level.isClientSide) {
-			return false;
-		}
-        return !level.isDay() && !level.isRaining()
-            || (!level.isDay() && level.getMoonBrightness() > 0.0f);
+        return level.dimensionType().natural() && level.isNight();
     }
 
 
