@@ -35,8 +35,9 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 		handleCopperTrapdoorSet(CTBBlocks.COPPER_TRAPDOOR);
 		handleCopperSet(CTBBlocks.COPPER_GRATE);
 
-		withExistingParent("open_eyeblossom", "item/generated").texture("layer0", CTBackport.MODID+":block/open_eyeblossom");
-		withExistingParent("closed_eyeblossom", "item/generated").texture("layer0", CTBackport.MODID+":block/closed_eyeblossom");
+		// item names, not block model names (eyeblossom_open != open_eyeblossom)
+		withExistingParent(CTBBlocks.OPEN_EYEBLOSSOM.getId().getPath(), "item/generated").texture("layer0", CTBackport.MODID+":block/open_eyeblossom");
+		withExistingParent(CTBBlocks.CLOSED_EYEBLOSSOM.getId().getPath(), "item/generated").texture("layer0", CTBackport.MODID+":block/closed_eyeblossom");
 
 		singleTexture(CTBItems.WIND_CHARGE.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
 				modLoc("item/wind_charge"));
