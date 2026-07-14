@@ -67,7 +67,9 @@ public class HangingMossBlock extends Block implements BonemealableBlock {
     private boolean canStayAtPosition(BlockGetter world, BlockPos pos) {
         BlockPos above = pos.relative(Direction.UP);
         BlockState aboveState = world.getBlockState(above);
+        // vanilla also accepts a full collision face, that's how it hangs from leaves
         return aboveState.isFaceSturdy(world, above, Direction.DOWN)
+            || Block.isFaceFull(aboveState.getCollisionShape(world, above), Direction.DOWN)
             || aboveState.is(this);
     }
 

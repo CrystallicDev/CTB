@@ -48,8 +48,14 @@ public class ClientSetup {
         event.enqueueWork(() -> {
         	CTBBlocks.BAMBOO_WOOD.setRenderTypes();
         	CTBBlocks.CHERRY_WOOD.setRenderTypes();
-        	// palette + alpha texture, without cutout it renders as a solid orange square
+        	CTBBlocks.PALE_OAK_WOOD.setRenderTypes();
+        	CTBBlocks.PALE_OAK_LEAVES.setRenderTypes();
+        	// transparent textures render as solid gray squares without cutout
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.RESIN.clump.get(), RenderType.cutout());
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.OPEN_EYEBLOSSOM.get(), RenderType.cutout());
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.CLOSED_EYEBLOSSOM.get(), RenderType.cutout());
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.PALE_HANGING_MOSS.get(), RenderType.cutout());
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.PALE_OAK_SAPLING.get(), RenderType.cutout());
         });
     }
 

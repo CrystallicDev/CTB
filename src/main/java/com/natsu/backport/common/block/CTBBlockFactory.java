@@ -316,6 +316,7 @@ public class CTBBlockFactory {
 	        return new EyeblossomBlock(type, BlockBehaviour.Properties.copy(Blocks.POPPY)
 	            .noCollission()
 	            .instabreak()
+	            .randomTicks()
 	            .sound(SoundType.GRASS));
 	    });
 	}
