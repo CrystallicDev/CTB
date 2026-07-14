@@ -1,32 +1,24 @@
 {
-  "type": "minecraft:random_patch",
+  "type": "minecraft:vegetation_patch",
   "config": {
-    "tries": 48,
-    "xz_spread": 4,
-    "y_spread": 0,
-    "feature": {
-      "feature": {
-        "type": "minecraft:simple_block",
-        "config": {
-          "to_place": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "ctbackport:pale_moss",
-              "Properties": {}
-            }
-          }
-        }
-      },
-      "placement": [
-        {
-          "type": "minecraft:block_predicate_filter",
-          "predicate": {
-            "type": "minecraft:matching_blocks",
-            "offset": [0, 0, 0],
-            "blocks": ["minecraft:grass_block", "minecraft:dirt"]
-          }
-        }
-      ]
+    "depth": 1,
+    "extra_bottom_block_chance": 0.0,
+    "extra_edge_column_chance": 0.75,
+    "ground_state": {
+      "type": "minecraft:simple_state_provider",
+      "state": { "Name": "ctbackport:pale_moss" }
+    },
+    "replaceable": "#minecraft:moss_replaceable",
+    "surface": "floor",
+    "vegetation_chance": 0.3,
+    "vegetation_feature": {
+      "feature": "ctbackport:pale_moss_vegetation",
+      "placement": []
+    },
+    "vertical_range": 5,
+    "xz_radius": {
+      "type": "minecraft:uniform",
+      "value": { "min_inclusive": 2, "max_inclusive": 4 }
     }
   }
 }

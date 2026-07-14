@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 25,
+          "data": { "Name": "ctbackport:pale_moss_layer", "Properties": { "layers": "1" } }
+        },
+        { "weight": 25, "data": { "Name": "minecraft:grass" } },
+        {
+          "weight": 10,
+          "data": { "Name": "minecraft:tall_grass", "Properties": { "half": "lower" } }
+        }
+      ]
+    }
+  }
+}

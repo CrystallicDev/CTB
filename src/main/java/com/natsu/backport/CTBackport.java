@@ -10,6 +10,7 @@ import com.natsu.backport.common.registry.CTBFoliagePlacers;
 import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.common.registry.CTBParticles;
 import com.natsu.backport.common.registry.CTBSounds;
+import com.natsu.backport.common.registry.CTBTreeDecorators;
 import com.natsu.backport.common.registry.CTBTrunkPlacers;
 
 import net.minecraftforge.data.loading.DatagenModLoader;
@@ -37,6 +38,7 @@ public class CTBackport {
         	CTBEntities.ENTITIES.register(modEventBus);
         	CTBTrunkPlacers.TRUNK_PLACER_TYPES.register(modEventBus);
         	CTBFoliagePlacers.FOLIAGE_PLACER_TYPES.register(modEventBus);
+        	CTBTreeDecorators.TREE_DECORATOR_TYPES.register(modEventBus);
         	CTBFeatures.FEATURES.register(modEventBus);
         	// the bridge classloads TerraBlender, only touch it if the mod is there
         	if (ModList.get().isLoaded("terrablender")) {

@@ -43,6 +43,10 @@
         "leaves_probability": 0.15,
         "trunk_probability": 0.4,
         "ground_probability": 0.8
+      },
+      {
+        "type": "ctbackport:creaking_heart",
+        "probability": 1.0
       }
     ]
   }
