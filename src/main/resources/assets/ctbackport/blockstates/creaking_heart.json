@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "axis=x,state=awake": {
+      "model": "ctbackport:block/creaking_heart_awake_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,state=dormant": {
+      "model": "ctbackport:block/creaking_heart_dormant_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,state=uprooted": {
+      "model": "ctbackport:block/creaking_heart_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,state=awake": {
+      "model": "ctbackport:block/creaking_heart_awake"
+    },
+    "axis=y,state=dormant": {
+      "model": "ctbackport:block/creaking_heart_dormant"
+    },
+    "axis=y,state=uprooted": {
+      "model": "ctbackport:block/creaking_heart"
+    },
+    "axis=z,state=awake": {
+      "model": "ctbackport:block/creaking_heart_awake_horizontal",
+      "x": 90
+    },
+    "axis=z,state=dormant": {
+      "model": "ctbackport:block/creaking_heart_dormant_horizontal",
+      "x": 90
+    },
+    "axis=z,state=uprooted": {
+      "model": "ctbackport:block/creaking_heart_horizontal",
+      "x": 90
+    }
+  }
+}
