@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "#",
+  "#"
+ ],
+ "key": {
+  "#": {
+   "item": "ctbackport:resin_bricks_slab"
+  }
+ },
+ "result": {
+  "item": "ctbackport:chiseled_resin_bricks",
+  "count": 1
+ }
+}

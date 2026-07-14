@@ -38,6 +38,7 @@
   "block.ctbackport.pale_oak_log": "Pale Oak Log",
   "block.ctbackport.pale_oak_planks": "Pale Oak Planks",
   "block.ctbackport.pale_oak_pressure_plate": "Pale Oak Pressure Plate",
+  "block.ctbackport.pale_oak_sapling": "Pale Oak Sapling",
   "block.ctbackport.pale_oak_sign": "Pale Oak Sign",
   "block.ctbackport.pale_oak_slab": "Pale Oak Slab",
   "block.ctbackport.pale_oak_stairs": "Pale Oak Stairs",
@@ -63,5 +64,6 @@
   "entity.ctbackport.breeze": "Breeze",
   "entity.ctbackport.creaking": "Creaking",
   "item.ctbackport.breeze_rod": "Breeze Rod",
+  "item.ctbackport.resin_brick": "Resin Brick",
   "item.ctbackport.wind_charge": "Wind Charge"
 }

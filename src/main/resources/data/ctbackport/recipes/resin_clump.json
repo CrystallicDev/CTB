@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  {
+   "item": "ctbackport:resin"
+  }
+ ],
+ "result": {
+  "item": "ctbackport:resin_clump",
+  "count": 9
+ }
+}

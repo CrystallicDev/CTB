@@ -45,6 +45,9 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 		singleTexture(CTBItems.BREEZE_ROD.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
 				modLoc("item/breeze_rod"));
 
+		withExistingParent(CTBBlocks.PALE_OAK_SAPLING.getId().getPath(), "item/generated")
+				.texture("layer0", modLoc("block/pale_oak_sapling"));
+
 		withExistingParent(CTBBlocks.BAMBOO_MOSAIC.getId().getPath(), modLoc("block/" + CTBBlocks.BAMBOO_MOSAIC.getId().getPath()));
 
 		withExistingParent(CTBBlocks.BAMBOO_MOSAIC_SLAB.getId().getPath(), modLoc("block/" + CTBBlocks.BAMBOO_MOSAIC_SLAB.getId().getPath()));
@@ -133,6 +136,8 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 	public void handleResinSet(ResinSet set) {
 		singleTexture(set.resinItem.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
 				modLoc("item/"+set.name+"_clump"));
+		singleTexture(set.resinBrick.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
+				modLoc("item/"+set.name+"_brick"));
 
 		withExistingParent(set.block.getId().getPath(),
 	            modLoc("block/" + set.getName()));

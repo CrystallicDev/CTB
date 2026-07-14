@@ -43,6 +43,7 @@ public class ResinSet implements DefaultSet {
 	public final String name;
 
 	public final RegistryObject<Item> resinItem;
+	public final RegistryObject<Item> resinBrick;
 
 	public final RegistryObject<Block> clump;
 	public final RegistryObject<Block> block;
@@ -67,6 +68,7 @@ public class ResinSet implements DefaultSet {
 		this.clump = BLOCKS.register(name+"_clump", () -> new ResinClumpBlock(
 				BlockBehaviour.Properties.copy(Blocks.GLOW_LICHEN).noOcclusion()));
 		this.resinItem = ITEMS.register(name+"_clump", () -> new BlockItem(clump.get(), new Item.Properties().tab(tab)));
+		this.resinBrick = ITEMS.register(name+"_brick", () -> new Item(new Item.Properties().tab(tab)));
 
 		this.block = CTBBlockFactory.makeResin(BLOCKS, name+"", baseStrength);
 		this.brick = CTBBlockFactory.makeResinBrick(BLOCKS, name+"_bricks", baseStrength + 1.5f);

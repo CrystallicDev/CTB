@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "group": "planks",
+ "ingredients": [
+  {
+   "tag": "ctbackport:pale_oak_logs"
+  }
+ ],
+ "result": {
+  "item": "ctbackport:pale_oak_planks",
+  "count": 4
+ }
+}

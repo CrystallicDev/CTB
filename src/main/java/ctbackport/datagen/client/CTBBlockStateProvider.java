@@ -51,6 +51,8 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		handleCopperTrapdoorSet(CTBBlocks.COPPER_TRAPDOOR);
 		handleCopperSet(CTBBlocks.COPPER_GRATE);
 
+		simpleBlock(CTBBlocks.PALE_OAK_SAPLING.get(),
+				models().cross("pale_oak_sapling", modLoc("block/pale_oak_sapling")));
 		eyeblossom(CTBBlocks.CLOSED_EYEBLOSSOM.get(), "closed_eyeblossom");
 		eyeblossom(CTBBlocks.OPEN_EYEBLOSSOM.get(), "open_eyeblossom");
 		hangingMoss(CTBBlocks.PALE_HANGING_MOSS);

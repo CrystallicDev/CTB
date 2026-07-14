@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": {
+   "item": "ctbackport:resin_clump"
+  }
+ },
+ "result": {
+  "item": "ctbackport:resin",
+  "count": 1
+ }
+}

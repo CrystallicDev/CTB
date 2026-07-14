@@ -40,6 +40,7 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBBlocks.OPEN_EYEBLOSSOM.get(), "Open Eyeblossom");
 		add(CTBBlocks.CLOSED_EYEBLOSSOM.get(), "Closed Eyeblossom");
 		add(CTBBlocks.PALE_HANGING_MOSS.get(), "Pale Hanging Moss");
+		add(CTBBlocks.PALE_OAK_SAPLING.get(), "Pale Oak Sapling");
 		add(CTBItems.WIND_CHARGE.get(), "Wind Charge");
 		add(CTBItems.BREEZE_ROD.get(), "Breeze Rod");
 		// entities are not registered during datagen, raw keys
@@ -141,6 +142,7 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 	public void handleResinSet(ResinSet set) {
 		String name = formatSetName(set.getName());
 		add(set.clump.get(), name+" Clump");
+		add(set.resinBrick.get(), name+" Brick");
 		add(set.block.get(), name+" Block");
 		add(set.brick.get(), name+" Bricks Block");
 		add(set.brickSlab.get(), name+" Bricks Slab");

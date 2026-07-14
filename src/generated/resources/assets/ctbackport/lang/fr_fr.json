@@ -39,6 +39,7 @@
   "block.ctbackport.pale_oak_log": "B\u00FBche de ch\u00EAne p\u00E2le",
   "block.ctbackport.pale_oak_planks": "Planches de ch\u00EAne p\u00E2le",
   "block.ctbackport.pale_oak_pressure_plate": "Plaque de pression en ch\u00EAne p\u00E2le",
+  "block.ctbackport.pale_oak_sapling": "Pousse de ch\u00EAne p\u00E2le",
   "block.ctbackport.pale_oak_sign": "Panneau en ch\u00EAne p\u00E2le",
   "block.ctbackport.pale_oak_slab": "Dalle en ch\u00EAne p\u00E2le",
   "block.ctbackport.pale_oak_stairs": "Escaliers en ch\u00EAne p\u00E2le",
@@ -59,5 +60,6 @@
   "entity.ctbackport.breeze": "Brise",
   "entity.ctbackport.creaking": "Craqueur",
   "item.ctbackport.breeze_rod": "B\u00E2ton de brise",
+  "item.ctbackport.resin_brick": "Brique de r\u00E9sine",
   "item.ctbackport.wind_charge": "Boule de vent"
 }
