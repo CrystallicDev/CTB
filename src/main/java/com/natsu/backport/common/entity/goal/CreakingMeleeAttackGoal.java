@@ -19,11 +19,10 @@ public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
         this.creaking = c;
     }
 
+    // the goal keeps running while frozen, only the locomotion and the
+    // attack itself are blocked (that's how the vanilla brain does it)
     @Override
     public boolean canUse() {
-        if (!creaking.canMove()) {
-            return false;
-        }
         LivingEntity target = this.mob.getTarget();
         if (target == null || !target.isAlive()) {
             return false;
@@ -31,8 +30,6 @@ public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
 
         return super.canUse();
     }
-
-    @Override public boolean canContinueToUse() { return creaking.canMove() && super.canContinueToUse(); }
 
     @Override
     public void stop() {
@@ -53,10 +50,11 @@ public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
     protected void checkAndPerformAttack(LivingEntity target, double distSqr) {
         if (hitTicks > 0) {
             hitTicks--;
-            if (hitTicks == 0 && distSqr <= this.getAttackReachSqr(target)) {
+            // staring at the creaking mid swing cancels the hit
+            if (hitTicks == 0 && creaking.canMove() && distSqr <= this.getAttackReachSqr(target)) {
                 this.mob.doHurtTarget(target);
             }
-        } else if (cooldown <= 0 && distSqr <= this.getAttackReachSqr(target)) {
+        } else if (creaking.canMove() && cooldown <= 0 && distSqr <= this.getAttackReachSqr(target)) {
             cooldown = this.adjustedTickDelay(Creaking.ATTACK_INTERVAL);
             hitTicks = HIT_DELAY;
             creaking.startAttackAnim();
