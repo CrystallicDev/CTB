@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "minecraft:block/pale_hanging_moss_tip"
-  }
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "ctbackport:block/pale_hanging_moss_tip"
+ }
 }

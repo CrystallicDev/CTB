@@ -47,17 +47,28 @@ public class CreakingHeartDecorator extends TreeDecorator {
 			return;
 		}
 
-		// lowest buried log, so the heart ends up in the trunk and not in the canopy
+		// vanilla wants a log buried on all six sides, but a 2x2 trunk never has
+		// one below the canopy. Instead : inside the trunk (logs above and below,
+		// at least two horizontal log neighbours), as close to mid height as possible.
+		int minY = Integer.MAX_VALUE, maxY = Integer.MIN_VALUE;
+		for (BlockPos pos : logs) {
+			minY = Math.min(minY, pos.getY());
+			maxY = Math.max(maxY, pos.getY());
+		}
+		int midY = (minY + maxY) / 2;
+
 		BlockPos best = null;
 		for (BlockPos pos : logs) {
-			boolean buried = true;
-			for (Direction dir : Direction.values()) {
-				if (!level.isStateAtPosition(pos.relative(dir), s -> s.is(CTBTags.Blocks.PALE_OAK_LOGS))) {
-					buried = false;
-					break;
+			if (!isLog(level, pos.above()) || !isLog(level, pos.below())) {
+				continue;
+			}
+			int horizontal = 0;
+			for (Direction dir : Direction.Plane.HORIZONTAL) {
+				if (isLog(level, pos.relative(dir))) {
+					horizontal++;
 				}
 			}
-			if (buried && (best == null || pos.getY() < best.getY())) {
+			if (horizontal >= 2 && (best == null || Math.abs(pos.getY() - midY) < Math.abs(best.getY() - midY))) {
 				best = pos;
 			}
 		}
@@ -66,5 +77,9 @@ public class CreakingHeartDecorator extends TreeDecorator {
 					.setValue(CreakingHeartBlock.STATE, CreakingHeartState.DORMANT)
 					.setValue(CreakingHeartBlock.NATURAL, true));
 		}
+	}
+
+	private static boolean isLog(LevelSimulatedReader level, BlockPos pos) {
+		return level.isStateAtPosition(pos, s -> s.is(CTBTags.Blocks.PALE_OAK_LOGS));
 	}
 }
