@@ -7,8 +7,8 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 
 public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
 
-    // the arm comes down at ~0.375s in attack.melee
-    private static final int HIT_DELAY = 7;
+    // 5 ticks of anim transition, then the arm comes down at ~0.375s
+    private static final int HIT_DELAY = 12;
 
     private final Creaking creaking;
     private int hitTicks;
@@ -50,9 +50,13 @@ public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
     protected void checkAndPerformAttack(LivingEntity target, double distSqr) {
         if (hitTicks > 0) {
             hitTicks--;
-            // staring at the creaking mid swing cancels the hit
-            if (hitTicks == 0 && creaking.canMove() && distSqr <= this.getAttackReachSqr(target)) {
-                this.mob.doHurtTarget(target);
+            if (hitTicks == 0) {
+                if (creaking.canMove() && distSqr <= this.getAttackReachSqr(target)) {
+                    this.mob.doHurtTarget(target);
+                } else {
+                    // dodged (stared at or out of reach), retry quickly
+                    cooldown = Math.min(cooldown, this.adjustedTickDelay(5));
+                }
             }
         } else if (creaking.canMove() && cooldown <= 0 && distSqr <= this.getAttackReachSqr(target)) {
             cooldown = this.adjustedTickDelay(Creaking.ATTACK_INTERVAL);

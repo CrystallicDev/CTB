@@ -73,7 +73,8 @@ public class Creaking extends Monster implements IAnimatable {
         SynchedEntityData.defineId(Creaking.class, EntityDataSerializers.OPTIONAL_BLOCK_POS);
 
 	public static final int ATTACK_INTERVAL = 40;
-	private static final int ATTACK_ANIM_DURATION = 10;
+	// 5 ticks of geckolib transition + the 0.5s animation, like vanilla's 15
+	private static final int ATTACK_ANIM_DURATION = 15;
 	private static final int INVULN_ANIM_DURATION = 8;
 	private static final int TEAR_DOWN_DURATION = 45;
 	private static final int MAX_PLAYER_STUCK_COUNTER = 4;
@@ -235,8 +236,7 @@ public class Creaking extends Monster implements IAnimatable {
                 if (canMoveNow) {
                     makeSound(CTBSounds.CREAKING_UNFREEZE.get());
                 } else {
-                    getNavigation().stop();
-                    setDeltaMovement(Vec3.ZERO);
+                    stopInPlace();
                     makeSound(CTBSounds.CREAKING_FREEZE.get());
                 }
                 entityData.set(CAN_MOVE, canMoveNow);
@@ -386,6 +386,15 @@ public class Creaking extends Monster implements IAnimatable {
 		playSound(CTBSounds.CREAKING_STEP.get(), 0.15F, 1.0F);
 	}
 
+    // Mob#stopInPlace only exists in newer versions, without it the last
+    // movement inputs stick and the frozen creaking slides along the ground
+    public void stopInPlace() {
+        getNavigation().stop();
+        setXxa(0.0F);
+        setYya(0.0F);
+        setZza(0.0F);
+    }
+
     public void makeSound(@Nullable SoundEvent ev) {
         if (ev != null) {
 			level.playSound(null, blockPosition(), ev, SoundSource.HOSTILE, 1.0F, 1.0F);
@@ -467,7 +476,10 @@ public class Creaking extends Monster implements IAnimatable {
                 .addAnimation("moove.walk", ILoopType.EDefaultLoopTypes.LOOP));
             return PlayState.CONTINUE;
         }
-        return PlayState.STOP;
+        // never STOP the controller, it snaps to the default pose without blending
+        event.getController().setAnimation(new AnimationBuilder()
+            .addAnimation("idle", ILoopType.EDefaultLoopTypes.LOOP));
+        return PlayState.CONTINUE;
     }
 
     @Override public AnimationFactory getFactory() { return factory; }
