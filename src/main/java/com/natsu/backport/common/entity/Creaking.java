@@ -5,7 +5,9 @@ import java.util.Optional;
 
 import javax.annotation.Nullable;
 
+import com.natsu.backport.common.block.CreakingHeartBlock;
 import com.natsu.backport.common.block.entity.CreakingHeartBlockEntity;
+import com.natsu.backport.common.block.state.CreakingHeartState;
 import com.natsu.backport.common.entity.goal.CreakingActiveTargetGoal;
 import com.natsu.backport.common.entity.goal.CreakingHomeStrollGoal;
 import com.natsu.backport.common.entity.goal.CreakingMeleeAttackGoal;
@@ -357,10 +359,14 @@ public class Creaking extends Monster implements IAnimatable {
         if (level instanceof ServerLevel sl) {
             AABB box = getBoundingBox();
             Vec3 c   = box.getCenter();
+            double dx = box.getXsize() * 0.3D, dy = box.getYsize() * 0.3D, dz = box.getZsize() * 0.3D;
             sl.sendParticles(
                 new BlockParticleOption(ParticleTypes.BLOCK, CTBBlocks.PALE_OAK_WOOD.wood.get().defaultBlockState()),
-                c.x, c.y, c.z, 100,
-                box.getXsize() * 0.3D, box.getYsize() * 0.3D, box.getZsize() * 0.3D, 0.0D);
+                c.x, c.y, c.z, 100, dx, dy, dz, 0.0D);
+            sl.sendParticles(
+                new BlockParticleOption(ParticleTypes.BLOCK, CTBBlocks.CREAKING_HEART.get().defaultBlockState()
+                    .setValue(CreakingHeartBlock.STATE, CreakingHeartState.AWAKE)),
+                c.x, c.y, c.z, 10, dx, dy, dz, 0.0D);
         }
         makeSound(getDeathSound());
         remove(RemovalReason.DISCARDED);
@@ -457,7 +463,7 @@ public class Creaking extends Monster implements IAnimatable {
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (isTearingDown()) {
             event.getController().setAnimation(new AnimationBuilder()
-                .addAnimation("animation.creaking.death", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+                .addAnimation("death", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
             return PlayState.CONTINUE;
         }
         if (damageTicks > 0) {

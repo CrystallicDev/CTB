@@ -321,12 +321,12 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 				Direction opposite = direction.getOpposite();
 
 				if (blockstate.isAir()) {
-					blockstate = CTBBlocks.RESIN.block.get().defaultBlockState();
+					blockstate = CTBBlocks.RESIN.clump.get().defaultBlockState();
 				} else if (blockstate.is(Blocks.WATER) && blockstate.getFluidState().isSource()) {
-					blockstate = CTBBlocks.RESIN.block.get().defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, true);
+					blockstate = CTBBlocks.RESIN.clump.get().defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, true);
 				}
 
-				if (blockstate.is(CTBBlocks.RESIN.block.get()) && !blockstate.getValue(MultifaceBlock.getFaceProperty(opposite))) {
+				if (blockstate.is(CTBBlocks.RESIN.clump.get()) && !blockstate.getValue(MultifaceBlock.getFaceProperty(opposite))) {
 					this.level.setBlock(blockpos, blockstate.setValue(MultifaceBlock.getFaceProperty(opposite), true),
 							3);
 					return Optional.of(blockpos);
@@ -351,6 +351,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 		return dirs;
 	}
 
+	// no trail particles in 1.18, fake the travel with dust dotted along the path
 	private void emitParticles(ServerLevel level, int count, boolean reverse) {
 	    Optional<Creaking> opt = this.getCreakingProtector();
 	    if (opt.isEmpty()) {
@@ -358,16 +359,11 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 		}
 	    Creaking creaking = opt.get();
 
-	    Vec3 color = reverse
-	        ? new Vec3(((CREAKING_ORANGE >> 16) & 0xFF) / 255.0,
-	                   ((CREAKING_ORANGE >>  8) & 0xFF) / 255.0,
-	                   ( CREAKING_ORANGE        & 0xFF) / 255.0)
-	        : new Vec3(((CREAKING_GRAY   >> 16) & 0xFF) / 255.0,
-	                   ((CREAKING_GRAY   >>  8) & 0xFF) / 255.0,
-	                   ( CREAKING_GRAY          & 0xFF) / 255.0);
-
-	    DustParticleOptions dust = new DustParticleOptions(
-	        new Vector3f((float) color.x, (float) color.y, (float) color.z), 1.0F);
+	    int color = reverse ? CREAKING_ORANGE : CREAKING_GRAY;
+	    DustParticleOptions dust = new DustParticleOptions(new Vector3f(
+	        ((color >> 16) & 0xFF) / 255.0F,
+	        ((color >>  8) & 0xFF) / 255.0F,
+	        ( color        & 0xFF) / 255.0F), 1.0F);
 	    Random random = level.random;
 
 	    for (int i = 0; i < count; i++) {
@@ -381,8 +377,10 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 	            this.getBlockPos().getY() + random.nextDouble(),
 	            this.getBlockPos().getZ() + random.nextDouble());
 
-	        Vec3 origin = reverse ? fromBlock : fromCreaking;
-	        level.sendParticles(dust, origin.x, origin.y, origin.z, 1, 0.0, 0.0, 0.0, 0.0);
+	        Vec3 from = reverse ? fromBlock : fromCreaking;
+	        Vec3 to   = reverse ? fromCreaking : fromBlock;
+	        Vec3 pos  = from.lerp(to, random.nextDouble());
+	        level.sendParticles(dust, pos.x, pos.y, pos.z, 1, 0.0, 0.0, 0.0, 0.0);
 	    }
 	}
 

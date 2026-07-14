@@ -15,4 +15,10 @@ public class CreakingRenderer extends GeoEntityRenderer<Creaking> {
         super(ctx, new CreakingModel());
         this.shadowRadius = 0.5f;
     }
+
+    // vanilla creakings never tip over on death, they twitch then crumble
+    @Override
+    protected float getDeathMaxRotation(Creaking entity) {
+        return 0.0F;
+    }
 }
