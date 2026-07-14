@@ -16,6 +16,7 @@ public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
     private final double speed;
     private int hitTicks;
     private int cooldown;
+    private int repathTicks;
 
     public CreakingMeleeAttackGoal(Creaking c, double speed, boolean longMemory) {
         super(c, speed, longMemory);
@@ -46,12 +47,23 @@ public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
         if (cooldown > 0) {
             cooldown--;
         }
+        if (repathTicks > 0) {
+            repathTicks--;
+        }
         super.tick();
 
-        // the parent goal paths with a block of slack and gives up just out of
-        // reach, walk right into the target like the vanilla brain does
         LivingEntity target = this.mob.getTarget();
-        if (target != null && !withinAttackRange(target, 0.0D) && this.mob.getNavigation().isDone()) {
+        if (target == null) {
+            return;
+        }
+
+        if (withinAttackRange(target, 0.0D)) {
+            // in range : stand and swing, don't slide past the target
+            this.mob.getNavigation().stop();
+        } else if (repathTicks <= 0 && this.mob.getNavigation().isDone()) {
+            // the parent goal paths with a block of slack and gives up just out of
+            // reach, walk right into the target like the vanilla brain does
+            repathTicks = this.adjustedTickDelay(4);
             this.mob.getNavigation().moveTo(this.mob.getNavigation().createPath(target, 0), speed);
         }
     }
