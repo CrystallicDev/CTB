@@ -3,6 +3,7 @@ package com.natsu.backport.common.registry;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.block.WeatheringCopperDoorBlock;
+import com.natsu.backport.server.world.feature.tree.PaleOakTreeGrower;
 import com.natsu.backport.common.block.WeatheringCopperTrapDoorBlock;
 import com.natsu.backport.common.block.WeatheringTransparentBlock;
 import com.natsu.backport.utils.sets.LeavesSet;
@@ -30,7 +31,10 @@ public class CTBBlocks {
 	public static final WoodSet CHERRY_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "cherry", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final WoodSet BAMBOO_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "bamboo", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final WoodSet PALE_OAK_WOOD = new WoodSet(CTBBlockEntities.BLOCK_ENTITIES, CTBItems.ITEMS, BLOCKS, "pale_oak", 2, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final LeavesSet PALE_OAK_LEAVES = new LeavesSet("pale_oak", CTBItems.ITEMS, BLOCKS, Items.BIRCH_SAPLING, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PALE_OAK_SAPLING = registerWithItem(BLOCKS, CTBItems.ITEMS, "pale_oak_sapling",
+			CTBBlockFactory.makeSapling(BLOCKS, "pale_oak_sapling", new PaleOakTreeGrower()));
+	public static final LeavesSet PALE_OAK_LEAVES = new LeavesSet("pale_oak", CTBItems.ITEMS, BLOCKS,
+			() -> PALE_OAK_SAPLING.get().asItem(), CreativeModeTab.TAB_BUILDING_BLOCKS, CTBParticles.PALE_OAK_LEAVES);
 	public static final ResinSet RESIN = new ResinSet(CTBItems.ITEMS, BLOCKS, "resin", 0, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final MossSet PALE_MOSS = new MossSet(CTBItems.ITEMS, BLOCKS, "pale", CreativeModeTab.TAB_BUILDING_BLOCKS);
 

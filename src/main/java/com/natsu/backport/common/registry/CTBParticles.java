@@ -25,6 +25,9 @@ public class CTBParticles {
 	public static final RegistryObject<SimpleParticleType> CHERRY = PARTICLES.register("cherry_leaves_backport",
 			() -> new SimpleParticleType(true)
 	);
+	public static final RegistryObject<SimpleParticleType> PALE_OAK_LEAVES = PARTICLES.register("pale_oak_leaves",
+			() -> new SimpleParticleType(true)
+	);
 	public static final RegistryObject<SimpleParticleType> GUST = PARTICLES.register("gust",
 				() -> new SimpleParticleType(true)
 			);

@@ -2,6 +2,7 @@ package com.natsu.backport.utils.sets;
 
 import java.util.Map;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 import com.google.common.collect.BiMap;
 import com.natsu.backport.common.block.CTBBlockFactory;
@@ -10,6 +11,7 @@ import com.natsu.backport.common.item.CTBBlockItemFactory;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.data.tags.TagsProvider.TagAppender;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -17,9 +19,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -41,39 +40,33 @@ public class LeavesSet implements DefaultSet {
 
     /*** The sapling item for this tree type.
      * Should be tied to an {@link net.minecraft.world.level.block.grower.AbstractTreeGrower}.*/
-    public final Item saplingItem;
+    public final Supplier<Item> saplingItem;
     public final RegistryObject<Item> leavesItem;
 
     /**
      * Creates and registers all blocks for this LeavesSet.
      *
      * @param name               The base name of the tree type (e.g. {@code "cherry"}).
-     *                           Blocks will be registered as {@code {name}_leaves} and
-     *                           {@code {name}_leaves_layer}.
      * @param ITEMS              The mod's item DeferredRegister used to register blockitems
      * @param BLOCKS             The mod's block DeferredRegister used to register leaves and layer.
-     * @param saplingItem        The sapling item for this tree type.
+     * @param saplingItem        The sapling item this tree's leaves drop.
+     * @param fallingParticles   Falling leaf particles, or null for plain leaves.
      */
     public LeavesSet(
             String name,
             DeferredRegister<Item> ITEMS,
             DeferredRegister<Block> BLOCKS,
-            Item saplingItem,
-            CreativeModeTab tab
+            Supplier<Item> saplingItem,
+            CreativeModeTab tab,
+            RegistryObject<SimpleParticleType> fallingParticles
     ) {
 
         this.name = name;
         this.saplingItem = saplingItem;
 
-        BlockBehaviour.Properties props = BlockBehaviour.Properties
-                .of(Material.LEAVES)
-                .strength(0.1f)
-                .randomTicks()
-                .sound(SoundType.GRASS)
-                .noOcclusion()
-                .noCollission();
-
-        this.leaves = CTBBlockFactory.makeLeaves(BLOCKS, name+"_leaves");
+        this.leaves = fallingParticles == null
+                ? CTBBlockFactory.makeLeaves(BLOCKS, name+"_leaves")
+                : CTBBlockFactory.makeCherryLeaves(BLOCKS, name+"_leaves", fallingParticles);
         this.leavesItem = CTBBlockItemFactory.blockItem(ITEMS, tab, leaves);
     }
 

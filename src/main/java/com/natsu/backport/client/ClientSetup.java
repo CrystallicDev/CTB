@@ -39,6 +39,7 @@ public class ClientSetup {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_LARGE.get(), GustEmitterParticle.LargeProvider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_SMALL.get(), GustEmitterParticle.SmallProvider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.CHERRY.get(), CherryParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.PALE_OAK_LEAVES.get(), CherryParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRAIL.get(), TrailParticle.Provider::new);
 	}
 
