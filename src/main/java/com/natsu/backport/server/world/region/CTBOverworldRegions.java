@@ -60,43 +60,15 @@ public class CTBOverworldRegions extends Region {
 			    0,
 			    CTBBiomes.CHERRY_GROVE);
 
+		// vanilla puts the pale garden in the dark forest climate, on the
+		// "variant" half of the weirdness range (hence the occasional hills)
 		this.addBiome(mapper,
-		    Temperature.COOL,
-		    Humidity.WET,
-		    Continentalness.INLAND,
-		    Erosion.EROSION_2,
-		    Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
-		    Depth.SURFACE,
-		    0,
-		    CTBBiomes.PALE_GARDEN);
-
-		this.addBiome(mapper,
-		    Temperature.COOL,
-		    Humidity.WET,
-		    Continentalness.INLAND,
-		    Erosion.EROSION_2,
-		    Weirdness.MID_SLICE_VARIANT_ASCENDING,
-		    Depth.SURFACE,
-		    0,
-		    CTBBiomes.PALE_GARDEN);
-
-		this.addBiome(mapper,
-		    Temperature.COOL,
-		    Humidity.WET,
-		    Continentalness.INLAND,
-		    Erosion.EROSION_3,
-		    Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
-		    Depth.SURFACE,
-		    0,
-		    CTBBiomes.PALE_GARDEN);
-
-		this.addBiome(mapper,
-		    Temperature.COOL,
-		    Humidity.WET,
-		    Continentalness.INLAND,
-		    Erosion.EROSION_3,
-		    Weirdness.MID_SLICE_VARIANT_ASCENDING,
-		    Depth.SURFACE,
+		    Temperature.NEUTRAL.parameter(),
+		    Humidity.span(Humidity.WET, Humidity.HUMID),
+		    Continentalness.span(Continentalness.MID_INLAND, Continentalness.FAR_INLAND),
+		    Erosion.span(Erosion.EROSION_0, Erosion.EROSION_4),
+		    Weirdness.span(Weirdness.MID_SLICE_VARIANT_ASCENDING, Weirdness.MID_SLICE_VARIANT_DESCENDING),
+		    Depth.SURFACE.parameter(),
 		    0,
 		    CTBBiomes.PALE_GARDEN);
 

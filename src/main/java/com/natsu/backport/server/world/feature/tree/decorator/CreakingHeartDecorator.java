@@ -1,7 +1,5 @@
 package com.natsu.backport.server.world.feature.tree.decorator;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.function.BiConsumer;
@@ -49,10 +47,9 @@ public class CreakingHeartDecorator extends TreeDecorator {
 			return;
 		}
 
-		List<BlockPos> shuffled = new ArrayList<>(logs);
-		Collections.shuffle(shuffled, new Random(random.nextLong()));
-
-		for (BlockPos pos : shuffled) {
+		// lowest buried log, so the heart ends up in the trunk and not in the canopy
+		BlockPos best = null;
+		for (BlockPos pos : logs) {
 			boolean buried = true;
 			for (Direction dir : Direction.values()) {
 				if (!level.isStateAtPosition(pos.relative(dir), s -> s.is(CTBTags.Blocks.PALE_OAK_LOGS))) {
@@ -60,12 +57,14 @@ public class CreakingHeartDecorator extends TreeDecorator {
 					break;
 				}
 			}
-			if (buried) {
-				setter.accept(pos, CTBBlocks.CREAKING_HEART.get().defaultBlockState()
-						.setValue(CreakingHeartBlock.STATE, CreakingHeartState.DORMANT)
-						.setValue(CreakingHeartBlock.NATURAL, true));
-				return;
+			if (buried && (best == null || pos.getY() < best.getY())) {
+				best = pos;
 			}
+		}
+		if (best != null) {
+			setter.accept(best, CTBBlocks.CREAKING_HEART.get().defaultBlockState()
+					.setValue(CreakingHeartBlock.STATE, CreakingHeartState.DORMANT)
+					.setValue(CreakingHeartBlock.NATURAL, true));
 		}
 	}
 }
