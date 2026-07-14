@@ -15,10 +15,10 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import com.mojang.datafixers.util.Either;
-import com.mojang.math.Vector3f;
 import com.natsu.backport.common.block.CreakingHeartBlock;
 import com.natsu.backport.common.block.state.CreakingHeartState;
 import com.natsu.backport.common.entity.Creaking;
+import com.natsu.backport.common.particles.TrailParticleOption;
 import com.natsu.backport.common.registry.CTBBlockEntities;
 import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.common.registry.CTBEntities;
@@ -27,7 +27,6 @@ import com.natsu.backport.common.registry.CTBTags;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
@@ -351,7 +350,6 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 		return dirs;
 	}
 
-	// no trail particles in 1.18, fake the travel with dust dotted along the path
 	private void emitParticles(ServerLevel level, int count, boolean reverse) {
 	    Optional<Creaking> opt = this.getCreakingProtector();
 	    if (opt.isEmpty()) {
@@ -360,10 +358,6 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 	    Creaking creaking = opt.get();
 
 	    int color = reverse ? CREAKING_ORANGE : CREAKING_GRAY;
-	    DustParticleOptions dust = new DustParticleOptions(new Vector3f(
-	        ((color >> 16) & 0xFF) / 255.0F,
-	        ((color >>  8) & 0xFF) / 255.0F,
-	        ( color        & 0xFF) / 255.0F), 1.0F);
 	    Random random = level.random;
 
 	    for (int i = 0; i < count; i++) {
@@ -379,8 +373,8 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 
 	        Vec3 from = reverse ? fromBlock : fromCreaking;
 	        Vec3 to   = reverse ? fromCreaking : fromBlock;
-	        Vec3 pos  = from.lerp(to, random.nextDouble());
-	        level.sendParticles(dust, pos.x, pos.y, pos.z, 1, 0.0, 0.0, 0.0, 0.0);
+	        level.sendParticles(new TrailParticleOption(to, color, random.nextInt(40) + 10),
+	            from.x, from.y, from.z, 1, 0.0, 0.0, 0.0, 0.0);
 	    }
 	}
 

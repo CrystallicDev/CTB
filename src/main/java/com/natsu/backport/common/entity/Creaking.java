@@ -476,8 +476,11 @@ public class Creaking extends Monster implements IAnimatable {
                 .addAnimation("attack.melee", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
             return PlayState.CONTINUE;
         }
-        // the creaking strolls slowly, isMoving() misses it (0.15 threshold)
-        if (canMove() && Math.abs(event.getLimbSwingAmount()) > 0.02F) {
+        // the creaking strolls slowly, isMoving() misses it (0.15 threshold), and
+        // without hysteresis the walk keeps restarting and never completes a cycle
+        boolean walking = event.getController().getCurrentAnimation() != null
+            && "moove.walk".equals(event.getController().getCurrentAnimation().animationName);
+        if (canMove() && Math.abs(event.getLimbSwingAmount()) > (walking ? 0.004F : 0.035F)) {
             event.getController().setAnimation(new AnimationBuilder()
                 .addAnimation("moove.walk", ILoopType.EDefaultLoopTypes.LOOP));
             return PlayState.CONTINUE;
