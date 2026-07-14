@@ -32,6 +32,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
@@ -40,6 +41,7 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -123,7 +125,7 @@ public class CreakingHeartBlockEntity extends BlockEntity {
                     if (blockstate.getValue(CreakingHeartBlock.STATE) == CreakingHeartState.AWAKE) {
                         if (p_360952_.getDifficulty() != Difficulty.PEACEFUL) {
                             if (serverlevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
-                                Player player = p_360952_.getNearestPlayer(p_367184_.getX(), p_367184_.getY(), p_367184_.getZ(), PLAYER_DETECTION_RANGE, true);
+                                Player player = p_360952_.getNearestPlayer(p_367184_.getX(), p_367184_.getY(), p_367184_.getZ(), PLAYER_DETECTION_RANGE, false);
                                 if (player != null) {
                                     Creaking creaking1 = spawnProtector(serverlevel, p_366884_);
                                     if (creaking1 != null) {
@@ -139,7 +141,9 @@ public class CreakingHeartBlockEntity extends BlockEntity {
                     Optional<Creaking> optional = p_366884_.getCreakingProtector();
                     if (optional.isPresent()) {
                         Creaking creaking = optional.get();
-                        if (!CreakingHeartBlock.isNaturalNight(p_360952_) && !creaking.isPersistenceRequired() || p_366884_.distanceToCreaking() > DISTANCE_CREAKING_TOO_FAR) {
+                        if (!CreakingHeartBlock.isNaturalNight(p_360952_) && !creaking.isPersistenceRequired()
+                            || p_366884_.distanceToCreaking() > DISTANCE_CREAKING_TOO_FAR
+                            || creaking.playerIsStuckInYou()) {
                             p_366884_.removeProtector(null);
                         }
                     }
@@ -210,36 +214,57 @@ public class CreakingHeartBlockEntity extends BlockEntity {
 
     @Nullable
     private static Creaking spawnProtector(ServerLevel level, CreakingHeartBlockEntity blockEntity) {
-        BlockPos blockPos = blockEntity.getBlockPos();
+        BlockPos heartPos = blockEntity.getBlockPos();
+        BlockPos.MutableBlockPos searchPos = heartPos.mutable();
+
         for (int attempt = 0; attempt < ATTEMPTS_PER_SPAWN; attempt++) {
             int dx = level.random.nextInt(SPAWN_RANGE_XZ * 2 + 1) - SPAWN_RANGE_XZ;
-            int dy = level.random.nextInt(SPAWN_RANGE_Y * 2 + 1) - SPAWN_RANGE_Y;
             int dz = level.random.nextInt(SPAWN_RANGE_XZ * 2 + 1) - SPAWN_RANGE_XZ;
-            BlockPos spawnPos = blockPos.offset(dx, dy, dz);
+            searchPos.setWithOffset(heartPos, dx, SPAWN_RANGE_Y, dz);
 
-            if (!level.getBlockState(spawnPos).isCollisionShapeFullBlock(level, spawnPos)
-                && level.getBlockState(spawnPos.below()).isFaceSturdy(level, spawnPos.below(), Direction.UP)) {
-
-                Creaking creaking = CTBEntities.CREAKING.get().create(level);
-                if (creaking == null) {
-					return null;
-				}
-
-                creaking.moveTo(spawnPos, level.random.nextFloat() * 360f, 0f);
-                if (!level.noCollision(creaking, creaking.getBoundingBox())) {
-					continue;
-				}
-
-                creaking.finalizeSpawn(level, level.getCurrentDifficultyAt(spawnPos),
-                    MobSpawnType.SPAWNER, null, null);
-                level.addFreshEntityWithPassengers(creaking);
-                level.broadcastEntityEvent(creaking, (byte) 60);
-                creaking.setTransient(blockPos);
-
-                return creaking;
+            if (!level.getWorldBorder().isWithinBounds(searchPos) || !moveToSpawnableSurface(level, searchPos)) {
+                continue;
             }
+
+            Creaking creaking = CTBEntities.CREAKING.get().create(level);
+            if (creaking == null) {
+                return null;
+            }
+
+            creaking.moveTo(searchPos.getX() + 0.5, searchPos.getY(), searchPos.getZ() + 0.5,
+                level.random.nextFloat() * 360f, 0f);
+            if (!level.noCollision(creaking, creaking.getBoundingBox())) {
+                creaking.discard();
+                continue;
+            }
+
+            creaking.finalizeSpawn(level, level.getCurrentDifficultyAt(searchPos),
+                MobSpawnType.SPAWNER, null, null);
+            level.addFreshEntityWithPassengers(creaking);
+            creaking.playAmbientSound();
+            level.broadcastEntityEvent(creaking, (byte) 20);
+            creaking.setTransient(heartPos);
+
+            return creaking;
         }
         return null;
+    }
+
+    // like vanilla SpawnUtil : walk down from +8 to -8 looking for a solid top with nothing on it
+    private static boolean moveToSpawnableSurface(ServerLevel level, BlockPos.MutableBlockPos pos) {
+        BlockState above = level.getBlockState(pos);
+        for (int i = SPAWN_RANGE_Y; i >= -SPAWN_RANGE_Y; i--) {
+            pos.move(Direction.DOWN);
+            BlockState current = level.getBlockState(pos);
+            if (above.getCollisionShape(level, pos.above()).isEmpty()
+                && !current.is(BlockTags.LEAVES)
+                && Block.isFaceFull(current.getCollisionShape(level, pos), Direction.UP)) {
+                pos.move(Direction.UP);
+                return true;
+            }
+            above = current;
+        }
+        return false;
     }
 
     @Override
