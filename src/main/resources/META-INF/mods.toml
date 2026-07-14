@@ -47,7 +47,7 @@ side="BOTH"
 [[dependencies.ctbackport]]
 modId="terrablender"
 mandatory=false
-versionRange="[1.18.2-1.2,)"
+versionRange="[1.2.0,)"
 ordering="AFTER"
 side="BOTH"
 
