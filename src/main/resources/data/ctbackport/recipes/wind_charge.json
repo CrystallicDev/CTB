@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "ctbackport:breeze_rod" }
+  ],
+  "result": { "item": "ctbackport:wind_charge", "count": 4 }
+}

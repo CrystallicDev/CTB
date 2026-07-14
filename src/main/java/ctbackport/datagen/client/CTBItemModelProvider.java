@@ -42,6 +42,9 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 		singleTexture(CTBItems.WIND_CHARGE.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
 				modLoc("item/wind_charge"));
 
+		singleTexture(CTBItems.BREEZE_ROD.get().getRegistryName().getPath(), new ResourceLocation("item/generated"), "layer0",
+				modLoc("item/breeze_rod"));
+
 		withExistingParent(CTBBlocks.BAMBOO_MOSAIC.getId().getPath(), modLoc("block/" + CTBBlocks.BAMBOO_MOSAIC.getId().getPath()));
 
 		withExistingParent(CTBBlocks.BAMBOO_MOSAIC_SLAB.getId().getPath(), modLoc("block/" + CTBBlocks.BAMBOO_MOSAIC_SLAB.getId().getPath()));

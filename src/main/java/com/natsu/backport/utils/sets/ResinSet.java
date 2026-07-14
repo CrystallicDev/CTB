@@ -5,15 +5,19 @@ import java.util.function.Function;
 
 import com.google.common.collect.BiMap;
 import com.natsu.backport.common.block.CTBBlockFactory;
+import com.natsu.backport.common.block.ResinClumpBlock;
 import com.natsu.backport.common.item.CTBBlockItemFactory;
 
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.data.tags.TagsProvider.TagAppender;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -40,6 +44,7 @@ public class ResinSet implements DefaultSet {
 
 	public final RegistryObject<Item> resinItem;
 
+	public final RegistryObject<Block> clump;
 	public final RegistryObject<Block> block;
 	public final RegistryObject<Block> brick;
 	public final RegistryObject<Block> brickSlab;
@@ -59,7 +64,9 @@ public class ResinSet implements DefaultSet {
             CreativeModeTab tab) {
 		this.name = name;
 
-		this.resinItem = ITEMS.register(name+"_clump", () -> new Item(new Item.Properties()));
+		this.clump = BLOCKS.register(name+"_clump", () -> new ResinClumpBlock(
+				BlockBehaviour.Properties.copy(Blocks.GLOW_LICHEN).noOcclusion()));
+		this.resinItem = ITEMS.register(name+"_clump", () -> new BlockItem(clump.get(), new Item.Properties().tab(tab)));
 
 		this.block = CTBBlockFactory.makeResin(BLOCKS, name+"", baseStrength);
 		this.brick = CTBBlockFactory.makeResinBrick(BLOCKS, name+"_bricks", baseStrength + 1.5f);

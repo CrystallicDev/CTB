@@ -3,6 +3,7 @@ package ctbackport.datagen.lang;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.common.registry.CTBEffects;
+import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
@@ -35,6 +36,15 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		handleResinSet(CTBBlocks.RESIN);
 
 		add(CTBBlocks.CHERRY_LEAVES.get(), "Cherry Leaves");
+		add(CTBBlocks.CREAKING_HEART.get(), "Creaking Heart");
+		add(CTBBlocks.OPEN_EYEBLOSSOM.get(), "Open Eyeblossom");
+		add(CTBBlocks.CLOSED_EYEBLOSSOM.get(), "Closed Eyeblossom");
+		add(CTBBlocks.PALE_HANGING_MOSS.get(), "Pale Hanging Moss");
+		add(CTBItems.WIND_CHARGE.get(), "Wind Charge");
+		add(CTBItems.BREEZE_ROD.get(), "Breeze Rod");
+		// entities are not registered during datagen, raw keys
+		add("entity.ctbackport.creaking", "Creaking");
+		add("entity.ctbackport.breeze", "Breeze");
 	}
 
 	@Override
@@ -130,6 +140,7 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 	@Override
 	public void handleResinSet(ResinSet set) {
 		String name = formatSetName(set.getName());
+		add(set.clump.get(), name+" Clump");
 		add(set.block.get(), name+" Block");
 		add(set.brick.get(), name+" Bricks Block");
 		add(set.brickSlab.get(), name+" Bricks Slab");

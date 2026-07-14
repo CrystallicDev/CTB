@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.registry.CTBBlocks;
+import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
 import com.natsu.backport.utils.sets.MossSet;
@@ -42,6 +43,15 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 
 
 		add(CTBBlocks.CHERRY_LEAVES.get(), "Feuilles de cerisier");
+		add(CTBBlocks.CREAKING_HEART.get(), "Cœur de Craqueur");
+		add(CTBBlocks.OPEN_EYEBLOSSOM.get(), "Œillade ouverte");
+		add(CTBBlocks.CLOSED_EYEBLOSSOM.get(), "Œillade fermée");
+		add(CTBBlocks.PALE_HANGING_MOSS.get(), "Mousse pâle suspendue");
+		add(CTBItems.WIND_CHARGE.get(), "Boule de vent");
+		add(CTBItems.BREEZE_ROD.get(), "Bâton de brise");
+		// entities are not registered during datagen, raw keys
+		add("entity.ctbackport.creaking", "Craqueur");
+		add("entity.ctbackport.breeze", "Brise");
 	}
 
 	@Override
@@ -162,6 +172,7 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 	@Override
 	public void handleResinSet(ResinSet set) {
 		try {
+			add(set.clump.get(), "Amas "+accordDe(formatSetName(translateSetName(set.getName()), false)));
 			add(set.block.get(), "Block "+accordDe(formatSetName(translateSetName(set.getName()), false)));
 			add(set.brick.get(), "Block de briques "+accordDe(formatSetName(translateSetName(set.getName()), false)));
 			add(set.brickSlab.get(), "Dalle de briques "+accordDe(formatSetName(translateSetName(set.getName()), false)));

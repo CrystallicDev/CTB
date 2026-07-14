@@ -14,19 +14,27 @@ import ctbackport.datagen.DataGenBlockItemHandler;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.core.Direction;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 
 public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
@@ -54,7 +62,11 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		dropSelf(CTBBlocks.PALE_HANGING_MOSS.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC_STAIRS.get());
-		dropSelf(CTBBlocks.CREAKING_HEART.get());
+		// vanilla : itself with silk touch, otherwise 1-3 resin clumps (+fortune)
+		add(CTBBlocks.CREAKING_HEART.get(), block -> createSilkTouchDispatchTable(block,
+				applyExplosionDecay(block, LootItem.lootTableItem(CTBBlocks.RESIN.resinItem.get())
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+						.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
 		add(CTBBlocks.BAMBOO_MOSAIC_SLAB.get(), createSlabItemTable(CTBBlocks.BAMBOO_MOSAIC_SLAB.get()));
 
 		add(CTBBlocks.CHERRY_LEAVES.get(), block -> createLeavesDrops(block, Items.OAK_SAPLING));
@@ -114,6 +126,19 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1)).add(LootItem.lootTableItem(block)));
 	}
 
+	// one clump per face, same structure as vanilla's glow lichen drops but without shears
+	private LootTable.Builder createResinClumpDrops(Block block) {
+		LootPoolSingletonContainer.Builder<?> entry = LootItem.lootTableItem(block);
+		for (Direction dir : Direction.values()) {
+			entry.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F), true)
+					.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+							.setProperties(StatePropertiesPredicate.Builder.properties()
+									.hasProperty(PipeBlock.PROPERTY_BY_DIRECTION.get(dir), true))));
+		}
+		entry.apply(SetItemCountFunction.setCount(ConstantValue.exactly(-1.0F), true));
+		return LootTable.lootTable().withPool(LootPool.lootPool().add(applyExplosionDecay(block, entry)));
+	}
+
 	private LootTable.Builder createLeavesDrops(Block leavesBlock, Item saplingItem) {
 		LootItemCondition.Builder silkOrShears =
 	            HAS_SILK_TOUCH.or(HAS_SHEARS);
@@ -137,6 +162,7 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 
 	@Override
 	public void handleResinSet(ResinSet set) {
+		add(set.clump.get(), this::createResinClumpDrops);
 		dropSelf(set.block.get());
 		dropSelf(set.brick.get());
 		dropSelf(set.brickSlab.get());

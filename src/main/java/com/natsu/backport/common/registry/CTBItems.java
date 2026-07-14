@@ -17,4 +17,8 @@ public class CTBItems {
 			new WindChargeItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(16))
 			);
 
+	public static final RegistryObject<Item> BREEZE_ROD = ITEMS.register("breeze_rod", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
+
 }

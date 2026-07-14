@@ -25,6 +25,10 @@
   "block.ctbackport.cherry_trapdoor": "Trappe en cerisier",
   "block.ctbackport.cherry_wood": "Bois de cerisier",
   "block.ctbackport.chiseled_resin_bricks": "Briques taill\u00E9es de r\u00E9sine",
+  "block.ctbackport.creaking_heart": "C\u0153ur de Craqueur",
+  "block.ctbackport.eyeblossom_close": "\u0152illade ferm\u00E9e",
+  "block.ctbackport.eyeblossom_open": "\u0152illade ouverte",
+  "block.ctbackport.pale_hanging_moss": "Mousse p\u00E2le suspendue",
   "block.ctbackport.pale_moss": "Mousse p\u00E2le",
   "block.ctbackport.pale_moss_layer": "Couche de mousse p\u00E2le",
   "block.ctbackport.pale_oak_button": "Bouton en ch\u00EAne p\u00E2le",
@@ -45,10 +49,15 @@
   "block.ctbackport.resin_bricks_slab": "Dalle de briques de r\u00E9sine",
   "block.ctbackport.resin_bricks_stairs": "Escaliers de briques de r\u00E9sine",
   "block.ctbackport.resin_bricks_wall": "Mur de briques de r\u00E9sine",
+  "block.ctbackport.resin_clump": "Amas de r\u00E9sine",
   "block.ctbackport.stripped_bamboo_log": "B\u00FBche de bambou \u00E9corc\u00E9e",
   "block.ctbackport.stripped_bamboo_wood": "Bois de bambou \u00E9corc\u00E9e",
   "block.ctbackport.stripped_cherry_log": "B\u00FBche de cerisier \u00E9corc\u00E9e",
   "block.ctbackport.stripped_cherry_wood": "Bois de cerisier \u00E9corc\u00E9e",
   "block.ctbackport.stripped_pale_oak_log": "B\u00FBche de ch\u00EAne p\u00E2le \u00E9corc\u00E9e",
-  "block.ctbackport.stripped_pale_oak_wood": "Bois de ch\u00EAne p\u00E2le \u00E9corc\u00E9e"
+  "block.ctbackport.stripped_pale_oak_wood": "Bois de ch\u00EAne p\u00E2le \u00E9corc\u00E9e",
+  "entity.ctbackport.breeze": "Brise",
+  "entity.ctbackport.creaking": "Craqueur",
+  "item.ctbackport.breeze_rod": "B\u00E2ton de brise",
+  "item.ctbackport.wind_charge": "Boule de vent"
 }
