@@ -28,7 +28,7 @@ public class TrailParticle extends TextureSheetParticle {
 		int color = options.getColor();
 		setColor(((color >> 16) & 0xFF) / 255.0F, ((color >> 8) & 0xFF) / 255.0F, (color & 0xFF) / 255.0F);
 
-		this.quadSize = 0.12F + this.random.nextFloat() * 0.06F;
+		this.quadSize = 0.26F + this.random.nextFloat() * 0.12F;
 		this.gravity = 0.0F;
 		this.hasPhysics = false;
 		this.pickSprite(sprites);
