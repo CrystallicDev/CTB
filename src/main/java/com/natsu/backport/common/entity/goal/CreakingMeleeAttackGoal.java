@@ -9,6 +9,8 @@ public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
 
     // 5 ticks of anim transition, then the arm comes down at ~0.375s
     private static final int HIT_DELAY = 12;
+    // vanilla Mob#DEFAULT_ATTACK_REACH
+    private static final double ATTACK_REACH = Math.sqrt(2.04D) - 0.6D;
 
     private final Creaking creaking;
     private int hitTicks;
@@ -51,17 +53,23 @@ public class CreakingMeleeAttackGoal extends MeleeAttackGoal {
         if (hitTicks > 0) {
             hitTicks--;
             if (hitTicks == 0) {
-                if (creaking.canMove() && distSqr <= this.getAttackReachSqr(target)) {
+                if (creaking.canMove() && withinAttackRange(target)) {
                     this.mob.doHurtTarget(target);
                 } else {
                     // dodged (stared at or out of reach), retry quickly
                     cooldown = Math.min(cooldown, this.adjustedTickDelay(5));
                 }
             }
-        } else if (creaking.canMove() && cooldown <= 0 && distSqr <= this.getAttackReachSqr(target)) {
+        } else if (creaking.canMove() && cooldown <= 0 && withinAttackRange(target)) {
             cooldown = this.adjustedTickDelay(Creaking.ATTACK_INTERVAL);
             hitTicks = HIT_DELAY;
             creaking.startAttackAnim();
         }
+    }
+
+    // vanilla checks box against box, way more generous than the goal's center distance
+    private boolean withinAttackRange(LivingEntity target) {
+        return this.mob.getBoundingBox().inflate(ATTACK_REACH, 0.0D, ATTACK_REACH)
+            .intersects(target.getBoundingBox());
     }
 }
