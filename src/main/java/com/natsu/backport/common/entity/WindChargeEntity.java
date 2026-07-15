@@ -69,11 +69,9 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 
 	private void explodeWind(Vec3 pos) {
 		AABB area = new AABB(pos, pos).inflate(3.0);
+		// the burst pushes everyone, the thrower included (that's the self boost)
 		List<Entity> entities = level.getEntities(this, area);
 		for (Entity e : entities) {
-			if (e == getOwner()) {
-				continue;
-			}
 			Vec3 dir = e.position().subtract(pos).normalize();
 			Vec3 kb = new Vec3(dir.x * 2, dir.y * 1.5 + 0.5, dir.z * 2);
 			WindChargePushEntityEvent event = new WindChargePushEntityEvent(e, this, kb);

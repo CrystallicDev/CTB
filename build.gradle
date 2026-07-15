@@ -132,6 +132,10 @@ tasks.named('jar', Jar).configure {
 //     dependsOn 'reobfJar'
 // }
 
+// Si datagen et build sont lancés dans la même commande, le jar doit embarquer
+// les ressources fraîchement générées, pas celles d'avant.
+tasks.named('processResources').configure { mustRunAfter('runData') }
+
 // Archive chaque build dans CustomMods/builds avec un nom versionné (mc + mod version)
 // pour ne pas écraser les builds des autres versions.
 tasks.register('archiveBuild', Copy) {
