@@ -263,12 +263,13 @@ public class Breeze extends Monster implements IAnimatable {
         }
     }
 
+    // vanilla breezes never take fall damage
     @Override
     public boolean causeFallDamage(float fallDistance, float multiplier, DamageSource src) {
         if (fallDistance > FALL_DISTANCE_SOUND_TRIGGER_THRESHOLD) {
             this.playSound(CTBSounds.BREEZE_LAND.get(), 1.0F, 1.0F);
         }
-        return super.causeFallDamage(fallDistance, multiplier, src);
+        return false;
     }
 
     @Override

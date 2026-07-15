@@ -6,6 +6,6 @@ import net.minecraft.world.effect.MobEffectCategory;
 public class OozingEffect extends MobEffect {
 
 	public OozingEffect() {
-		super(MobEffectCategory.HARMFUL, 0x99FFA3);
+		super(MobEffectCategory.HARMFUL, 0x99FF63);
 	}
 }

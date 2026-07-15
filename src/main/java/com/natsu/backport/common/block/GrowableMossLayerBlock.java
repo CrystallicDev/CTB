@@ -114,7 +114,11 @@ public class GrowableMossLayerBlock extends Block implements SimpleWaterloggedBl
 
     @Override
     public boolean canSurvive(BlockState state, net.minecraft.world.level.LevelReader level, BlockPos pos) {
-        return true;
+        // like snow layers : solid ground, or a full stack of the same block
+        BlockState below = level.getBlockState(pos.below());
+        return net.minecraft.world.level.block.Block.isFaceFull(
+                below.getCollisionShape(level, pos.below()), Direction.UP)
+            || (below.is(this) && below.getValue(LAYERS) == 8);
     }
 
     @Override

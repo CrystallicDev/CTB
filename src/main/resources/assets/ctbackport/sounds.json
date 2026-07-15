@@ -242,5 +242,13 @@
 			"ctbackport:entity/creaking/creaking_freeze1",
 			"ctbackport:entity/creaking/creaking_freeze2"
 		]
+	},
+	"breeze_deflect": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/breeze/breeze_deflect1",
+			"ctbackport:entity/breeze/breeze_deflect2",
+			"ctbackport:entity/breeze/breeze_deflect3"
+		]
 	}
 }

@@ -9,6 +9,7 @@ import com.natsu.backport.common.registry.CTBSounds;
 import com.natsu.backport.server.events.WindChargePushEntityEvent;
 
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -58,14 +59,10 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 	public void onHitEntity(EntityHitResult result) {
 		super.onHitEntity(result);
 		if (!level.isClientSide()) {
+			// vanilla : one point of damage, the knockback comes from the burst only
 			Entity entity = result.getEntity();
-			Vec3 kb = this.getDeltaMovement().normalize().add(0, 0.5, 0);
-			WindChargePushEntityEvent event = new WindChargePushEntityEvent(entity, this, kb);
-			MinecraftForge.EVENT_BUS.post(event);
-			if (!event.isCanceled()) {
-				entity.push(kb.x, kb.y, kb.z);
-				entity.hurtMarked = true;
-			}
+			Entity owner = getOwner();
+			entity.hurt(DamageSource.thrown(this, owner), 1.0F);
 			explodeWind(result.getLocation());
 		}
 	}
@@ -74,9 +71,13 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 		AABB area = new AABB(pos, pos).inflate(3.0);
 		List<Entity> entities = level.getEntities(this, area);
 		for (Entity e : entities) {
+			if (e == getOwner()) {
+				continue;
+			}
 			Vec3 dir = e.position().subtract(pos).normalize();
 			Vec3 kb = new Vec3(dir.x * 2, dir.y * 1.5 + 0.5, dir.z * 2);
 			WindChargePushEntityEvent event = new WindChargePushEntityEvent(e, this, kb);
+			MinecraftForge.EVENT_BUS.post(event);
 			if (!event.isCanceled()) {
 				e.push(kb.x, kb.y, kb.z);
 				e.hurtMarked = true;
