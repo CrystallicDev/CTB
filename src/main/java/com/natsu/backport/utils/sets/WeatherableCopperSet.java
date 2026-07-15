@@ -1,6 +1,7 @@
 package com.natsu.backport.utils.sets;
 
 import java.lang.reflect.Constructor;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -9,6 +10,7 @@ import com.natsu.backport.common.item.CTBBlockItemFactory;
 
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.data.tags.TagsProvider.TagAppender;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
@@ -17,6 +19,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -46,17 +49,22 @@ public class WeatherableCopperSet<Weatherable extends Block, Waxed extends Block
 	public final RegistryObject<Item> oxidizedBlockWaxedItem;
 
 	public WeatherableCopperSet(DeferredRegister<Block> BLOCKS, DeferredRegister<Item> ITEMS, String blockName, float strength, Class<Weatherable> weatherable, Class<Waxed> waxed) {
+		this(BLOCKS, ITEMS, blockName, strength, weatherable, waxed, null);
+	}
+
+	/** litLightLevels : light emitted per weather stage when LIT (bulbs), or null. */
+	public WeatherableCopperSet(DeferredRegister<Block> BLOCKS, DeferredRegister<Item> ITEMS, String blockName, float strength, Class<Weatherable> weatherable, Class<Waxed> waxed, int[] litLightLevels) {
 		name = blockName;
 
-		block = BLOCKS.register(blockName, () -> createWeatherableState(weatherable, WeatherState.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(strength)));
-		exposedBlock = BLOCKS.register("exposed_"+blockName, () -> createWeatherableState(weatherable, WeatherState.EXPOSED, BlockBehaviour.Properties.copy(Blocks.EXPOSED_COPPER).strength(strength)));
-		weatheredBlock = BLOCKS.register("weathered_"+blockName, () -> createWeatherableState(weatherable, WeatherState.WEATHERED, BlockBehaviour.Properties.copy(Blocks.WEATHERED_COPPER).strength(strength)));
-		oxidizedBlock = BLOCKS.register("oxidized_"+blockName, () -> createWeatherableState(weatherable, WeatherState.OXIDIZED, BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).strength(strength)));
+		block = BLOCKS.register(blockName, () -> createWeatherableState(weatherable, WeatherState.UNAFFECTED, props(Blocks.COPPER_BLOCK, strength, litLightLevels, 0)));
+		exposedBlock = BLOCKS.register("exposed_"+blockName, () -> createWeatherableState(weatherable, WeatherState.EXPOSED, props(Blocks.EXPOSED_COPPER, strength, litLightLevels, 1)));
+		weatheredBlock = BLOCKS.register("weathered_"+blockName, () -> createWeatherableState(weatherable, WeatherState.WEATHERED, props(Blocks.WEATHERED_COPPER, strength, litLightLevels, 2)));
+		oxidizedBlock = BLOCKS.register("oxidized_"+blockName, () -> createWeatherableState(weatherable, WeatherState.OXIDIZED, props(Blocks.OXIDIZED_COPPER, strength, litLightLevels, 3)));
 
-		blockWaxed = BLOCKS.register("waxed_"+blockName, () -> createWaxedState(waxed, WeatherState.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(strength)));
-		exposedBlockWaxed = BLOCKS.register("waxed_exposed_"+blockName, () -> createWaxedState(waxed, WeatherState.EXPOSED, BlockBehaviour.Properties.copy(Blocks.EXPOSED_COPPER).strength(strength)));
-		weatheredBlockWaxed = BLOCKS.register("waxed_weathered_"+blockName, () -> createWaxedState(waxed, WeatherState.WEATHERED, BlockBehaviour.Properties.copy(Blocks.WEATHERED_COPPER).strength(strength)));
-		oxidizedBlockWaxed = BLOCKS.register("waxed_oxidized_"+blockName, () -> createWaxedState(waxed, WeatherState.OXIDIZED, BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).strength(strength)));
+		blockWaxed = BLOCKS.register("waxed_"+blockName, () -> createWaxedState(waxed, WeatherState.UNAFFECTED, props(Blocks.COPPER_BLOCK, strength, litLightLevels, 0)));
+		exposedBlockWaxed = BLOCKS.register("waxed_exposed_"+blockName, () -> createWaxedState(waxed, WeatherState.EXPOSED, props(Blocks.EXPOSED_COPPER, strength, litLightLevels, 1)));
+		weatheredBlockWaxed = BLOCKS.register("waxed_weathered_"+blockName, () -> createWaxedState(waxed, WeatherState.WEATHERED, props(Blocks.WEATHERED_COPPER, strength, litLightLevels, 2)));
+		oxidizedBlockWaxed = BLOCKS.register("waxed_oxidized_"+blockName, () -> createWaxedState(waxed, WeatherState.OXIDIZED, props(Blocks.OXIDIZED_COPPER, strength, litLightLevels, 3)));
 
 		blockItem = CTBBlockItemFactory.blockItem(ITEMS, block);
 		exposedBlockItem = CTBBlockItemFactory.blockItem(ITEMS, exposedBlock);
@@ -72,6 +80,15 @@ public class WeatherableCopperSet<Weatherable extends Block, Waxed extends Block
 
 	}
 
+
+	private static BlockBehaviour.Properties props(Block base, float strength, int[] litLightLevels, int stage) {
+		BlockBehaviour.Properties p = BlockBehaviour.Properties.copy(base).strength(strength);
+		if (litLightLevels != null) {
+			int light = litLightLevels[stage];
+			p.lightLevel(state -> state.hasProperty(BlockStateProperties.LIT) && state.getValue(BlockStateProperties.LIT) ? light : 0);
+		}
+		return p;
+	}
 
 	public Block createWeatherable(Class<Weatherable> clazz, WeatherState state, Properties properties) {
         try {
@@ -112,7 +129,11 @@ public class WeatherableCopperSet<Weatherable extends Block, Waxed extends Block
 
 	@Override
 	public void addBlockTags(Function<TagKey<Block>, TagAppender<Block>> tag) {
-
+		for (RegistryObject<Block> b : List.of(block, exposedBlock, weatheredBlock, oxidizedBlock,
+				blockWaxed, exposedBlockWaxed, weatheredBlockWaxed, oxidizedBlockWaxed)) {
+			tag.apply(BlockTags.MINEABLE_WITH_PICKAXE).add(b.get());
+			tag.apply(BlockTags.NEEDS_STONE_TOOL).add(b.get());
+		}
 	}
 
 	@Override

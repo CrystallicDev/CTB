@@ -34,6 +34,7 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleResinSet(CTBBlocks.RESIN);
+		handleCopperBulbSet(CTBBlocks.COPPER_BULB);
 
 		add(CTBBlocks.CHERRY_LEAVES.get(), "Cherry Leaves");
 		add(CTBBlocks.CREAKING_HEART.get(), "Creaking Heart");
@@ -171,8 +172,14 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 
 	@Override
 	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
-		// TODO Auto-generated method stub
-
+		add(set.block.get(), "Copper Bulb");
+		add(set.exposedBlock.get(), "Exposed Copper Bulb");
+		add(set.weatheredBlock.get(), "Weathered Copper Bulb");
+		add(set.oxidizedBlock.get(), "Oxidized Copper Bulb");
+		add(set.blockWaxed.get(), "Waxed Copper Bulb");
+		add(set.exposedBlockWaxed.get(), "Waxed Exposed Copper Bulb");
+		add(set.weatheredBlockWaxed.get(), "Waxed Weathered Copper Bulb");
+		add(set.oxidizedBlockWaxed.get(), "Waxed Oxidized Copper Bulb");
 	}
 
 }

@@ -1,0 +1,24 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "copper_bulb",
+ "pattern": [
+  " C ",
+  "CBC",
+  " R "
+ ],
+ "key": {
+  "B": {
+   "item": "minecraft:blaze_rod"
+  },
+  "C": {
+   "item": "minecraft:copper_block"
+  },
+  "R": {
+   "item": "minecraft:redstone"
+  }
+ },
+ "result": {
+  "item": "ctbackport:copper_bulb",
+  "count": 4
+ }
+}

@@ -56,6 +56,7 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		handleCopperSet(CTBBlocks.COPPER_DOOR);
 		handleCopperSet(CTBBlocks.COPPER_TRAPDOOR);
 		handleCopperSet(CTBBlocks.COPPER_GRATE);
+		handleCopperBulbSet(CTBBlocks.COPPER_BULB);
 
 		add(CTBBlocks.CLOSED_EYEBLOSSOM.get(), createSimpleDrop(CTBBlocks.CLOSED_EYEBLOSSOM.get()));
 		add(CTBBlocks.OPEN_EYEBLOSSOM.get(), createSimpleDrop(CTBBlocks.CLOSED_EYEBLOSSOM.get()));

@@ -2,6 +2,8 @@ package com.natsu.backport.common.registry;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.block.CTBBlockFactory;
+import com.natsu.backport.common.block.CopperBulbBlock;
+import com.natsu.backport.common.block.WeatheringCopperBulbBlock;
 import com.natsu.backport.common.block.WeatheringCopperDoorBlock;
 import com.natsu.backport.server.world.feature.tree.PaleOakTreeGrower;
 import com.natsu.backport.common.block.WeatheringCopperTrapDoorBlock;
@@ -57,7 +59,8 @@ public class CTBBlocks {
 	public static final WeatherableCopperSet<WeatheringTransparentBlock, WaterLoggedTransparentBlock> COPPER_GRATE = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_grate", 3, WeatheringTransparentBlock.class, WaterLoggedTransparentBlock.class);
 	public static final WeatherableCopperSet<WeatheringCopperDoorBlock, DoorBlock> COPPER_DOOR = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_door", 3, WeatheringCopperDoorBlock.class, DoorBlock.class);
 	public static final WeatherableCopperSet<WeatheringCopperTrapDoorBlock, TrapDoorBlock> COPPER_TRAPDOOR = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_trapdoor", 3, WeatheringCopperTrapDoorBlock.class, TrapDoorBlock.class);
-	//public static final RegistryObject<Block> COPPER_BULB = CTBBlockFactory.makeCopperBulb(BLOCKS, "copper_bulb", 3f);
+	// lit light drops with the oxidation, like vanilla
+	public static final WeatherableCopperSet<WeatheringCopperBulbBlock, CopperBulbBlock> COPPER_BULB = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_bulb", 3, WeatheringCopperBulbBlock.class, CopperBulbBlock.class, new int[]{15, 12, 8, 4});
 
 	private static RegistryObject<Block> registerWithItem(DeferredRegister<Block> blocks, DeferredRegister<Item> items,
 			String name, RegistryObject<Block> reg) {

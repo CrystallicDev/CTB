@@ -40,6 +40,7 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		handleResinSet(CTBBlocks.RESIN);
+		handleCopperBulbSet(CTBBlocks.COPPER_BULB);
 
 
 		add(CTBBlocks.CHERRY_LEAVES.get(), "Feuilles de cerisier");
@@ -206,8 +207,14 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 
 	@Override
 	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
-		// TODO Auto-generated method stub
-
+		add(set.block.get(), "Ampoule en cuivre");
+		add(set.exposedBlock.get(), "Ampoule en cuivre exposé");
+		add(set.weatheredBlock.get(), "Ampoule en cuivre érodé");
+		add(set.oxidizedBlock.get(), "Ampoule en cuivre oxydé");
+		add(set.blockWaxed.get(), "Ampoule en cuivre ciré");
+		add(set.exposedBlockWaxed.get(), "Ampoule en cuivre exposé ciré");
+		add(set.weatheredBlockWaxed.get(), "Ampoule en cuivre érodé ciré");
+		add(set.oxidizedBlockWaxed.get(), "Ampoule en cuivre oxydé ciré");
 	}
 
 

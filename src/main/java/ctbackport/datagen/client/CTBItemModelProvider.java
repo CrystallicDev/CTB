@@ -34,6 +34,7 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 		handleCopperDoorSet(CTBBlocks.COPPER_DOOR);
 		handleCopperTrapdoorSet(CTBBlocks.COPPER_TRAPDOOR);
 		handleCopperSet(CTBBlocks.COPPER_GRATE);
+		handleCopperBulbSet(CTBBlocks.COPPER_BULB);
 
 		// item names, not block model names (eyeblossom_open != open_eyeblossom)
 		withExistingParent(CTBBlocks.OPEN_EYEBLOSSOM.getId().getPath(), "item/generated").texture("layer0", CTBackport.MODID+":block/open_eyeblossom");
@@ -211,8 +212,15 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 
 	@Override
 	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
-		// TODO Auto-generated method stub
+		withExistingParent(set.block.getId().getPath(), modLoc("block/" + set.name));
+		withExistingParent(set.exposedBlock.getId().getPath(), modLoc("block/exposed_" + set.name));
+		withExistingParent(set.weatheredBlock.getId().getPath(), modLoc("block/weathered_" + set.name));
+		withExistingParent(set.oxidizedBlock.getId().getPath(), modLoc("block/oxidized_" + set.name));
 
+		withExistingParent(set.blockWaxed.getId().getPath(), modLoc("block/" + set.name));
+		withExistingParent(set.exposedBlockWaxed.getId().getPath(), modLoc("block/exposed_" + set.name));
+		withExistingParent(set.weatheredBlockWaxed.getId().getPath(), modLoc("block/weathered_" + set.name));
+		withExistingParent(set.oxidizedBlockWaxed.getId().getPath(), modLoc("block/oxidized_" + set.name));
 	}
 
 

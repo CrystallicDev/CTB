@@ -61,7 +61,10 @@
 	"copper_bulb_turn": {
 		"category": "block",
 		"sounds": [
-			"ctbackport:block/copper_bulb/toggle"
+			{
+				"name": "ctbackport:block/copper_bulb/toggle",
+				"pitch": 1.1
+			}
 		]
 	},
 	"eyeblossom_idle": {
@@ -249,6 +252,15 @@
 			"ctbackport:entity/breeze/breeze_deflect1",
 			"ctbackport:entity/breeze/breeze_deflect2",
 			"ctbackport:entity/breeze/breeze_deflect3"
+		]
+	},
+	"copper_bulb_turn_off": {
+		"category": "block",
+		"sounds": [
+			{
+				"name": "ctbackport:block/copper_bulb/toggle",
+				"pitch": 0.9
+			}
 		]
 	}
 }

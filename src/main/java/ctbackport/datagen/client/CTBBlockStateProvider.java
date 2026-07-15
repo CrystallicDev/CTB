@@ -1,6 +1,7 @@
 package ctbackport.datagen.client;
 
 import com.natsu.backport.CTBackport;
+import com.natsu.backport.common.block.CopperBulbBlock;
 import com.natsu.backport.common.block.GrowableMossLayerBlock;
 import com.natsu.backport.common.block.HangingMossBlock;
 import com.natsu.backport.common.registry.CTBBlocks;
@@ -50,6 +51,7 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		handleCopperDoorSet(CTBBlocks.COPPER_DOOR);
 		handleCopperTrapdoorSet(CTBBlocks.COPPER_TRAPDOOR);
 		handleCopperSet(CTBBlocks.COPPER_GRATE);
+		handleCopperBulbSet(CTBBlocks.COPPER_BULB);
 
 		simpleBlock(CTBBlocks.PALE_OAK_SAPLING.get(),
 				models().cross("pale_oak_sapling", modLoc("block/pale_oak_sapling")));
@@ -245,8 +247,30 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 
 	@Override
 	public void handleCopperBulbSet(WeatherableCopperSet<?, ?> set) {
-		// TODO Auto-generated method stub
+		copperBulb(set.block.get(), set.name);
+		copperBulb(set.exposedBlock.get(), "exposed_" + set.name);
+		copperBulb(set.weatheredBlock.get(), "weathered_" + set.name);
+		copperBulb(set.oxidizedBlock.get(), "oxidized_" + set.name);
 
+		copperBulb(set.blockWaxed.get(), set.name);
+		copperBulb(set.exposedBlockWaxed.get(), "exposed_" + set.name);
+		copperBulb(set.weatheredBlockWaxed.get(), "weathered_" + set.name);
+		copperBulb(set.oxidizedBlockWaxed.get(), "oxidized_" + set.name);
+	}
+
+	// four models : base, lit, powered, lit_powered
+	private void copperBulb(Block block, String name) {
+		VariantBlockStateBuilder builder = getVariantBuilder(block);
+		for (boolean lit : new boolean[]{false, true}) {
+			for (boolean powered : new boolean[]{false, true}) {
+				String suffix = (lit ? "_lit" : "") + (powered ? "_powered" : "");
+				ModelFile model = models().cubeAll(name + suffix, modLoc("block/" + name + suffix));
+				builder.partialState()
+					.with(CopperBulbBlock.LIT, lit)
+					.with(CopperBulbBlock.POWERED, powered)
+					.modelForState().modelFile(model).addModel();
+			}
+		}
 	}
 
 	protected void eyeblossom(Block block, String name) {
