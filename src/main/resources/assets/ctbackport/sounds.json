@@ -4,7 +4,7 @@
 		"sounds": [
 			"ctbackport:entity/wind_charge/wind_burst1",
 			"ctbackport:entity/wind_charge/wind_burst2",
-			"ctbackport:entity/wind_charge/wind_burst3" 
+			"ctbackport:entity/wind_charge/wind_burst3"
 		]
 	},
 	"creaking_heart_hurt": {
@@ -46,7 +46,7 @@
 			"ctbackport:block/resin/resin_place1",
 			"ctbackport:block/resin/resin_place2",
 			"ctbackport:block/resin/resin_place3",
-			"ctbackport:block/resin/resin_place4" 
+			"ctbackport:block/resin/resin_place4"
 		]
 	},
 	"creaking_heart_idle": {
@@ -66,23 +66,43 @@
 	},
 	"eyeblossom_idle": {
 		"category": "ambient",
-		"sounds": []
+		"sounds": [
+			"ctbackport:block/eyeblossom/eyeblossom_idle1",
+			"ctbackport:block/eyeblossom/eyeblossom_idle2",
+			"ctbackport:block/eyeblossom/eyeblossom_idle3",
+			"ctbackport:block/eyeblossom/eyeblossom_idle4",
+			"ctbackport:block/eyeblossom/eyeblossom_idle5",
+			"ctbackport:block/eyeblossom/eyeblossom_idle6"
+		]
 	},
 	"eyeblossom_open": {
 		"category": "ambient",
-		"sounds": []
+		"sounds": [
+			"ctbackport:block/eyeblossom/eyeblossom_open1",
+			"ctbackport:block/eyeblossom/eyeblossom_open2",
+			"ctbackport:block/eyeblossom/eyeblossom_open3",
+			"ctbackport:block/eyeblossom/eyeblossom_open4"
+		]
 	},
 	"eyeblossom_close": {
 		"category": "ambient",
-		"sounds": []
+		"sounds": [
+			"ctbackport:block/eyeblossom/eyeblossom_close1",
+			"ctbackport:block/eyeblossom/eyeblossom_close2",
+			"ctbackport:block/eyeblossom/eyeblossom_close3"
+		]
 	},
 	"eyeblossom_open_long": {
 		"category": "ambient",
-		"sounds": []
+		"sounds": [
+			"ctbackport:block/eyeblossom/eyeblossom_open_long"
+		]
 	},
 	"eyeblossom_close_long": {
 		"category": "ambient",
-		"sounds": []
+		"sounds": [
+			"ctbackport:block/eyeblossom/eyeblossom_close_long"
+		]
 	},
 	"breeze_shoot": {
 		"category": "hostile",
@@ -165,6 +185,12 @@
 	"creaking_ambiant": {
 		"category": "hostile",
 		"sounds": [
+			"ctbackport:entity/creaking/creaking_idle1",
+			"ctbackport:entity/creaking/creaking_idle2",
+			"ctbackport:entity/creaking/creaking_idle3",
+			"ctbackport:entity/creaking/creaking_idle4",
+			"ctbackport:entity/creaking/creaking_idle5",
+			"ctbackport:entity/creaking/creaking_idle6"
 		]
 	},
 	"creaking_sway": {
