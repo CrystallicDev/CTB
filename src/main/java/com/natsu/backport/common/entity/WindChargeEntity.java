@@ -1,12 +1,12 @@
 package com.natsu.backport.common.entity;
 
-import java.util.List;
 
 import com.natsu.backport.common.registry.CTBEntities;
 import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.common.registry.CTBParticles;
 import com.natsu.backport.common.registry.CTBSounds;
 import com.natsu.backport.server.events.WindChargePushEntityEvent;
+import com.natsu.backport.utils.WindChargeHelper;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
@@ -68,18 +68,16 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 	}
 
 	private void explodeWind(Vec3 pos) {
-		AABB area = new AABB(pos, pos).inflate(3.0);
-		// the burst pushes everyone, the thrower included (that's the self boost),
-		// with a distance falloff so a blast from below doesn't send people flying
-		List<Entity> entities = level.getEntities(this, area);
-		for (Entity e : entities) {
-			double dist = e.position().distanceTo(pos);
-			double falloff = Math.max(0.0, 1.0 - dist / 3.0);
-			if (falloff <= 0.0) {
+		// vanilla numbers : small strong burst for players, wide one for breezes
+		boolean fromBreeze = getOwner() instanceof Breeze;
+		double radius = fromBreeze ? 3.0 : 1.2;
+		double multiplier = fromBreeze ? 1.0 : 1.22;
+
+		for (Entity e : level.getEntities(this, new AABB(pos, pos).inflate(radius * 2.0))) {
+			Vec3 kb = WindChargeHelper.windKnockback(pos, e, radius, multiplier);
+			if (kb == null) {
 				continue;
 			}
-			Vec3 dir = e.position().subtract(pos).normalize();
-			Vec3 kb = new Vec3(dir.x * 1.6 * falloff, dir.y * 1.2 * falloff + 0.4 * falloff, dir.z * 1.6 * falloff);
 			WindChargePushEntityEvent event = new WindChargePushEntityEvent(e, this, kb);
 			MinecraftForge.EVENT_BUS.post(event);
 			if (!event.isCanceled()) {
@@ -89,7 +87,8 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 		}
 
 		if (level instanceof ServerLevel serverLevel) {
-			serverLevel.sendParticles(CTBParticles.GUST_EMITTER_LARGE.get(), pos.x, pos.y, pos.z, 30, 0.5, 0.5, 0.5, 0.3);
+			serverLevel.sendParticles(radius < 2.0 ? CTBParticles.GUST_EMITTER_SMALL.get() : CTBParticles.GUST_EMITTER_LARGE.get(),
+					pos.x, pos.y, pos.z, 1, 0.0, 0.0, 0.0, 0.0);
 		}
 		level.playSound(null, pos.x, pos.y, pos.z, CTBSounds.BREEZE_WIND_BURST.get(), SoundSource.NEUTRAL, 1.0f, 1.0f);
 		this.discard();
