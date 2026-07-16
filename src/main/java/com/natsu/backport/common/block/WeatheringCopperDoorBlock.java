@@ -4,12 +4,12 @@ import java.util.Random;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 
-public class WeatheringCopperDoorBlock extends DoorBlock implements CTBWeatheringCopper {
+public class WeatheringCopperDoorBlock extends CopperDoorBlock implements CTBWeatheringCopper {
 
 	private final WeatheringCopper.WeatherState weatherState;
 
@@ -19,9 +19,12 @@ public class WeatheringCopperDoorBlock extends DoorBlock implements CTBWeatherin
 		this.weatherState = weather;
 	}
 
+	// only the lower half rolls the oxidation, the upper follows via updateShape
 	@Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, Random random) {
-        this.applyChangeOverTime(state, level, pos, random);
+        if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
+            this.applyChangeOverTime(state, level, pos, random);
+        }
     }
 
     @Override
