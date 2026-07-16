@@ -42,14 +42,18 @@ public class GustEmitterParticle extends NoRenderParticle {
 	public void tick() {
 	    for (int i = 0; i < gustsPerRing; i++) {
 	        double angle = (i / (double) gustsPerRing) * Math.PI * 2;
+	        // random pitch so the burst is a sphere, not a flat ring
+	        double pitch = (random.nextDouble() - 0.5) * Math.PI * 0.8;
+	        double cosP = Math.cos(pitch);
 
-	        double px = this.x + Math.cos(angle) * currentRadius;
-	        double pz = this.z + Math.sin(angle) * currentRadius;
-	        double vx = Math.cos(angle) * gustSpeed;
-	        double vz = Math.sin(angle) * gustSpeed;
-	        double vy = (random.nextDouble() - 0.5) * 0.02;
+	        double px = this.x + Math.cos(angle) * cosP * currentRadius;
+	        double py = this.y + Math.sin(pitch) * currentRadius;
+	        double pz = this.z + Math.sin(angle) * cosP * currentRadius;
+	        double vx = Math.cos(angle) * cosP * gustSpeed;
+	        double vy = Math.sin(pitch) * gustSpeed;
+	        double vz = Math.sin(angle) * cosP * gustSpeed;
 
-	        this.level.addParticle(CTBParticles.GUST.get(), px, this.y, pz, vx, vy, vz);
+	        this.level.addParticle(CTBParticles.GUST.get(), px, py, pz, vx, vy, vz);
 	    }
 	    this.currentRadius += this.expansionSpeed;
 	    if (this.age++ >= this.lifetime) {

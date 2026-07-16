@@ -51,7 +51,9 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 	public void onHitBlock(BlockHitResult result) {
 		super.onHitBlock(result);
 		if (!level.isClientSide()) {
-			explodeWind(result.getLocation());
+			// vanilla explodes at the projectile center : on the block face, the
+			// exposure raycasts end inside the ground and eat all the knockback
+			explodeWind(position());
 		}
 	}
 
@@ -63,7 +65,7 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 			Entity entity = result.getEntity();
 			Entity owner = getOwner();
 			entity.hurt(DamageSource.thrown(this, owner), 1.0F);
-			explodeWind(result.getLocation());
+			explodeWind(position());
 		}
 	}
 
