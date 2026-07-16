@@ -22,8 +22,15 @@ import software.bernie.geckolib3.renderers.geo.layer.AbstractLayerGeo;
 public class BreezeWindLayer extends AbstractLayerGeo<Breeze> {
 
 	public static final String WIND_BONE = "wind_body";
-	private static final ResourceLocation WIND_TEXTURE =
-			new ResourceLocation(CTBackport.MODID, "textures/entity/breeze/breeze_wind.png");
+
+	// no lit shader with texture scrolling in 1.18, so the scroll is prebaked
+	private static final int FRAMES = 16;
+	private static final ResourceLocation[] WIND_TEXTURES = new ResourceLocation[FRAMES];
+	static {
+		for (int i = 0; i < FRAMES; i++) {
+			WIND_TEXTURES[i] = new ResourceLocation(CTBackport.MODID, "textures/entity/breeze/breeze_wind_" + i + ".png");
+		}
+	}
 
 	public BreezeWindLayer(GeoEntityRenderer<Breeze> renderer) {
 		super(renderer, renderer::getTextureLocation, e -> renderer.getGeoModelProvider().getModelLocation(e));
@@ -36,9 +43,10 @@ public class BreezeWindLayer extends AbstractLayerGeo<Breeze> {
 		GeoModel model = getEntityModel().getModel(this.funcGetCurrentModel.apply(breeze));
 
 		setHiddenExcept(model, WIND_BONE);
-		float scroll = (breeze.tickCount + partialTick) * 0.02F % 1.0F;
+		float scroll = (breeze.tickCount + partialTick) * 0.02F;
+		int frame = (int) (scroll * FRAMES) % FRAMES;
 		reRenderCurrentModelInRenderer(breeze, partialTick, poseStack, bufferSource, packedLight,
-				RenderType.energySwirl(WIND_TEXTURE, scroll, 0.0F));
+				RenderType.entityTranslucent(WIND_TEXTURES[frame]));
 		showAll(model);
 	}
 
