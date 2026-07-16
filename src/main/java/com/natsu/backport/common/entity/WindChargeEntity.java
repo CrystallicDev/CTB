@@ -69,11 +69,17 @@ public class WindChargeEntity extends ThrowableItemProjectile {
 
 	private void explodeWind(Vec3 pos) {
 		AABB area = new AABB(pos, pos).inflate(3.0);
-		// the burst pushes everyone, the thrower included (that's the self boost)
+		// the burst pushes everyone, the thrower included (that's the self boost),
+		// with a distance falloff so a blast from below doesn't send people flying
 		List<Entity> entities = level.getEntities(this, area);
 		for (Entity e : entities) {
+			double dist = e.position().distanceTo(pos);
+			double falloff = Math.max(0.0, 1.0 - dist / 3.0);
+			if (falloff <= 0.0) {
+				continue;
+			}
 			Vec3 dir = e.position().subtract(pos).normalize();
-			Vec3 kb = new Vec3(dir.x * 2, dir.y * 1.5 + 0.5, dir.z * 2);
+			Vec3 kb = new Vec3(dir.x * 1.6 * falloff, dir.y * 1.2 * falloff + 0.4 * falloff, dir.z * 1.6 * falloff);
 			WindChargePushEntityEvent event = new WindChargePushEntityEvent(e, this, kb);
 			MinecraftForge.EVENT_BUS.post(event);
 			if (!event.isCanceled()) {

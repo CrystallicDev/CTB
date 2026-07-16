@@ -15,8 +15,13 @@ public class WindChargeHelper {
     public static void explodeWind(ServerLevel level, Vec3 pos, float radius) {
         AABB area = new AABB(pos, pos).inflate(radius);
         for (Entity e : level.getEntities(null, area)) {
+            double dist = e.position().distanceTo(pos);
+            double falloff = Math.max(0.0, 1.0 - dist / radius);
+            if (falloff <= 0.0) {
+                continue;
+            }
             Vec3 dir = e.position().subtract(pos).normalize();
-            e.push(dir.x * 2.0, dir.y * 1.5 + 0.5, dir.z * 2.0);
+            e.push(dir.x * 1.6 * falloff, dir.y * 1.2 * falloff + 0.4 * falloff, dir.z * 1.6 * falloff);
             e.hurtMarked = true;
         }
 
