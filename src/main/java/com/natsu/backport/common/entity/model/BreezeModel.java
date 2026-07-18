@@ -10,8 +10,8 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class BreezeModel extends AnimatedGeoModel<Breeze> {
 
-	// full turn every ~2s, whatever animation is playing
-	private static final float RODS_SPIN_SPEED = 0.15F;
+	// the speed the old idle keyframes used : 1080 degrees over 2 seconds
+	private static final float RODS_SPIN_SPEED = (float) Math.toRadians(27.0);
 
 	@Override
 	public void setCustomAnimations(Breeze breeze, int instanceId, AnimationEvent animationEvent) {
