@@ -70,6 +70,10 @@ public class Breeze extends Monster implements IAnimatable {
     private int shootCooldown = 0;
     private int jumpCooldown = 0;
 
+    // client only : accumulated so speed changes between states don't snap
+    public float rodsAngle;
+    public float rodsAngleO;
+
     public Breeze(EntityType<? extends Monster> type, Level level) {
         super(type, level);
         this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, -1.0F);
@@ -139,6 +143,11 @@ public class Breeze extends Monster implements IAnimatable {
     public void tick() {
         super.tick();
 
+        if (this.level.isClientSide) {
+            rodsAngleO = rodsAngle;
+            rodsAngle += rodsSpinSpeed();
+        }
+
         if (!this.level.isClientSide) {
             if (shootCooldown > 0) {
 				shootCooldown--;
@@ -169,6 +178,16 @@ public class Breeze extends Monster implements IAnimatable {
             : this.soundTick - 1;
         if (this.soundTick == 0) {
             this.playWhirlSound();
+        }
+    }
+
+    // the speeds the old keyframes used, per state
+    private float rodsSpinSpeed() {
+        switch (getBreezeState()) {
+            case STATE_SHOOTING: return (float) Math.toRadians(18.0);
+            case STATE_INHALING: return (float) Math.toRadians(28.8);
+            case STATE_LONG_JUMPING: return (float) Math.toRadians(36.0);
+            default: return (float) Math.toRadians(27.0);
         }
     }
 

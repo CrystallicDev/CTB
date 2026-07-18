@@ -4,14 +4,12 @@ import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.entity.Breeze;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class BreezeModel extends AnimatedGeoModel<Breeze> {
-
-	// the speed the old idle keyframes used : 1080 degrees over 2 seconds
-	private static final float RODS_SPIN_SPEED = (float) Math.toRadians(27.0);
 
 	@Override
 	public void setCustomAnimations(Breeze breeze, int instanceId, AnimationEvent animationEvent) {
@@ -19,7 +17,7 @@ public class BreezeModel extends AnimatedGeoModel<Breeze> {
 		IBone rods = this.getAnimationProcessor().getBone("rods");
 		if (rods != null) {
 			float partialTick = animationEvent == null ? 0.0F : (float) animationEvent.getPartialTick();
-			rods.setRotationY((breeze.tickCount + partialTick) * RODS_SPIN_SPEED);
+			rods.setRotationY(Mth.lerp(partialTick, breeze.rodsAngleO, breeze.rodsAngle));
 		}
 	}
 
