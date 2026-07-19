@@ -32,6 +32,14 @@
     "ctbackport:waxed_copper_bulb",
     "ctbackport:waxed_exposed_copper_bulb",
     "ctbackport:waxed_weathered_copper_bulb",
-    "ctbackport:waxed_oxidized_copper_bulb"
+    "ctbackport:waxed_oxidized_copper_bulb",
+    "ctbackport:chiseled_copper",
+    "ctbackport:exposed_chiseled_copper",
+    "ctbackport:weathered_chiseled_copper",
+    "ctbackport:oxidized_chiseled_copper",
+    "ctbackport:waxed_chiseled_copper",
+    "ctbackport:waxed_exposed_chiseled_copper",
+    "ctbackport:waxed_weathered_chiseled_copper",
+    "ctbackport:waxed_oxidized_chiseled_copper"
   ]
 }

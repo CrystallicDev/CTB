@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "ctbackport:block/polished_tuff_slab_top"
+    },
+    "type=bottom": {
+      "model": "ctbackport:block/polished_tuff_slab"
+    },
+    "type=double": {
+      "model": "ctbackport:block/polished_tuff"
+    }
+  }
+}

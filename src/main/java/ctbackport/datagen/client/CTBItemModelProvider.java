@@ -55,6 +55,17 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 
 		withExistingParent(CTBBlocks.BAMBOO_MOSAIC_STAIRS.getId().getPath(), modLoc("block/" + CTBBlocks.BAMBOO_MOSAIC_STAIRS.getId().getPath()));
 
+		handleCopperSet(CTBBlocks.CHISELED_COPPER);
+
+		for (String n : new String[]{"chiseled_tuff", "polished_tuff", "polished_tuff_stairs", "polished_tuff_slab",
+				"tuff_bricks", "tuff_brick_stairs", "tuff_brick_slab", "chiseled_tuff_bricks",
+				"tuff_stairs", "tuff_slab", "heavy_core"}) {
+			withExistingParent(n, modLoc("block/" + n));
+		}
+		wallInventory("tuff_wall", mcLoc("block/tuff"));
+		wallInventory("polished_tuff_wall", modLoc("block/polished_tuff"));
+		wallInventory("tuff_brick_wall", modLoc("block/tuff_bricks"));
+
 		withExistingParent(
 	            "cherry_leaves",
 	            modLoc("block/cherry_leaves")

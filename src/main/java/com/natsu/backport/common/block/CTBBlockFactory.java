@@ -292,6 +292,23 @@ public class CTBBlockFactory {
 				);
 	}
 
+	public static RegistryObject<Block> makeStoneOf(DeferredRegister<Block> BLOCKS, String name, float strength) {
+		return BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.TUFF).strength(strength)));
+	}
+
+	public static RegistryObject<Block> makeStairsOf(DeferredRegister<Block> BLOCKS, String name, java.util.function.Supplier<Block> base, float strength) {
+		return BLOCKS.register(name, () -> new StairBlock(() -> base.get().defaultBlockState(),
+				BlockBehaviour.Properties.copy(base.get()).strength(strength)));
+	}
+
+	public static RegistryObject<Block> makeSlabOf(DeferredRegister<Block> BLOCKS, String name, java.util.function.Supplier<Block> base, float strength) {
+		return BLOCKS.register(name, () -> new SlabBlock(BlockBehaviour.Properties.copy(base.get()).strength(strength)));
+	}
+
+	public static RegistryObject<Block> makeWallOf(DeferredRegister<Block> BLOCKS, String name, java.util.function.Supplier<Block> base, float strength) {
+		return BLOCKS.register(name, () -> new WallBlock(BlockBehaviour.Properties.copy(base.get()).strength(strength)));
+	}
+
 	public static RegistryObject<Block> makeCreakingHeart(DeferredRegister<Block> BLOCKS, String name) {
 		return BLOCKS.register(name, () -> new CreakingHeartBlock(Properties.copy(Blocks.DARK_OAK_LOG).randomTicks()));
 	}

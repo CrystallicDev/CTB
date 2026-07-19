@@ -36,6 +36,15 @@ public class CTBBlockTags extends BlockTagsProvider {
 		tag(BlockTags.MINEABLE_WITH_HOE).add(CTBBlocks.PALE_HANGING_MOSS.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.CREAKING_HEART.get());
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.HEAVY_CORE.get());
+		handle(CTBBlocks.CHISELED_COPPER);
+		for (net.minecraftforge.registries.RegistryObject<net.minecraft.world.level.block.Block> b : java.util.List.of(
+				CTBBlocks.TUFF_STAIRS, CTBBlocks.TUFF_SLAB, CTBBlocks.TUFF_WALL, CTBBlocks.CHISELED_TUFF,
+				CTBBlocks.POLISHED_TUFF, CTBBlocks.POLISHED_TUFF_STAIRS, CTBBlocks.POLISHED_TUFF_SLAB,
+				CTBBlocks.POLISHED_TUFF_WALL, CTBBlocks.TUFF_BRICKS, CTBBlocks.TUFF_BRICK_STAIRS,
+				CTBBlocks.TUFF_BRICK_SLAB, CTBBlocks.TUFF_BRICK_WALL, CTBBlocks.CHISELED_TUFF_BRICKS)) {
+			tag(BlockTags.MINEABLE_WITH_PICKAXE).add(b.get());
+		}
+		tag(BlockTags.WALLS).add(CTBBlocks.TUFF_WALL.get(), CTBBlocks.POLISHED_TUFF_WALL.get(), CTBBlocks.TUFF_BRICK_WALL.get());
 		tag(BlockTags.SAPLINGS).add(CTBBlocks.PALE_OAK_SAPLING.get());
 		tag(BlockTags.SMALL_FLOWERS).add(CTBBlocks.OPEN_EYEBLOSSOM.get(), CTBBlocks.CLOSED_EYEBLOSSOM.get());
     }

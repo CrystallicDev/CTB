@@ -33,6 +33,27 @@
     "ctbackport:waxed_exposed_copper_bulb",
     "ctbackport:waxed_weathered_copper_bulb",
     "ctbackport:waxed_oxidized_copper_bulb",
-    "ctbackport:heavy_core"
+    "ctbackport:heavy_core",
+    "ctbackport:chiseled_copper",
+    "ctbackport:exposed_chiseled_copper",
+    "ctbackport:weathered_chiseled_copper",
+    "ctbackport:oxidized_chiseled_copper",
+    "ctbackport:waxed_chiseled_copper",
+    "ctbackport:waxed_exposed_chiseled_copper",
+    "ctbackport:waxed_weathered_chiseled_copper",
+    "ctbackport:waxed_oxidized_chiseled_copper",
+    "ctbackport:tuff_stairs",
+    "ctbackport:tuff_slab",
+    "ctbackport:tuff_wall",
+    "ctbackport:chiseled_tuff",
+    "ctbackport:polished_tuff",
+    "ctbackport:polished_tuff_stairs",
+    "ctbackport:polished_tuff_slab",
+    "ctbackport:polished_tuff_wall",
+    "ctbackport:tuff_bricks",
+    "ctbackport:tuff_brick_stairs",
+    "ctbackport:tuff_brick_slab",
+    "ctbackport:tuff_brick_wall",
+    "ctbackport:chiseled_tuff_bricks"
   ]
 }

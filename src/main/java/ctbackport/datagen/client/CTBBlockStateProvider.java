@@ -60,7 +60,24 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		hangingMoss(CTBBlocks.PALE_HANGING_MOSS);
 
 
-		//simpleBlock(CTBBlocks.COPPER_BULB.get());
+		handleCopperSet(CTBBlocks.CHISELED_COPPER);
+
+		// tuff family (base texture is vanilla's)
+		simpleBlock(CTBBlocks.POLISHED_TUFF.get());
+		simpleBlock(CTBBlocks.TUFF_BRICKS.get());
+		simpleBlock(CTBBlocks.CHISELED_TUFF.get(),
+				models().cubeColumn("chiseled_tuff", modLoc("block/chiseled_tuff"), modLoc("block/chiseled_tuff_top")));
+		simpleBlock(CTBBlocks.CHISELED_TUFF_BRICKS.get(),
+				models().cubeColumn("chiseled_tuff_bricks", modLoc("block/chiseled_tuff_bricks"), modLoc("block/chiseled_tuff_bricks_top")));
+		stairsBlock((StairBlock) CTBBlocks.TUFF_STAIRS.get(), mcLoc("block/tuff"));
+		slabBlock((SlabBlock) CTBBlocks.TUFF_SLAB.get(), mcLoc("block/tuff"), mcLoc("block/tuff"));
+		wallBlock((WallBlock) CTBBlocks.TUFF_WALL.get(), mcLoc("block/tuff"));
+		stairsBlock((StairBlock) CTBBlocks.POLISHED_TUFF_STAIRS.get(), modLoc("block/polished_tuff"));
+		slabBlock((SlabBlock) CTBBlocks.POLISHED_TUFF_SLAB.get(), modLoc("block/polished_tuff"), modLoc("block/polished_tuff"));
+		wallBlock((WallBlock) CTBBlocks.POLISHED_TUFF_WALL.get(), modLoc("block/polished_tuff"));
+		stairsBlock((StairBlock) CTBBlocks.TUFF_BRICK_STAIRS.get(), modLoc("block/tuff_bricks"));
+		slabBlock((SlabBlock) CTBBlocks.TUFF_BRICK_SLAB.get(), modLoc("block/tuff_bricks"), modLoc("block/tuff_bricks"));
+		wallBlock((WallBlock) CTBBlocks.TUFF_BRICK_WALL.get(), modLoc("block/tuff_bricks"));
 		ResourceLocation leavesTexture = modLoc("block/cherry_leaves");
         ModelFile normalModel = models().withExistingParent("cherry_leaves",
                 new ResourceLocation("minecraft", "block/leaves"))

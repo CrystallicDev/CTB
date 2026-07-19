@@ -63,6 +63,16 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		dropSelf(CTBBlocks.PALE_HANGING_MOSS.get());
 		dropSelf(CTBBlocks.PALE_OAK_SAPLING.get());
 		dropSelf(CTBBlocks.HEAVY_CORE.get());
+		handleCopperSet(CTBBlocks.CHISELED_COPPER);
+		for (net.minecraftforge.registries.RegistryObject<Block> b : java.util.List.of(
+				CTBBlocks.TUFF_STAIRS, CTBBlocks.TUFF_WALL, CTBBlocks.CHISELED_TUFF, CTBBlocks.POLISHED_TUFF,
+				CTBBlocks.POLISHED_TUFF_STAIRS, CTBBlocks.POLISHED_TUFF_WALL, CTBBlocks.TUFF_BRICKS,
+				CTBBlocks.TUFF_BRICK_STAIRS, CTBBlocks.TUFF_BRICK_WALL, CTBBlocks.CHISELED_TUFF_BRICKS)) {
+			dropSelf(b.get());
+		}
+		add(CTBBlocks.TUFF_SLAB.get(), createSlabItemTable(CTBBlocks.TUFF_SLAB.get()));
+		add(CTBBlocks.POLISHED_TUFF_SLAB.get(), createSlabItemTable(CTBBlocks.POLISHED_TUFF_SLAB.get()));
+		add(CTBBlocks.TUFF_BRICK_SLAB.get(), createSlabItemTable(CTBBlocks.TUFF_BRICK_SLAB.get()));
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC_STAIRS.get());
 		// vanilla : itself with silk touch, otherwise 1-3 resin clumps (+fortune)

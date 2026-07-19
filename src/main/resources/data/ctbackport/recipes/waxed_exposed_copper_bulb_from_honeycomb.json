@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "group": "waxed_copper_bulb",
+ "ingredients": [
+  {
+   "item": "ctbackport:exposed_copper_bulb"
+  },
+  {
+   "item": "minecraft:honeycomb"
+  }
+ ],
+ "result": {
+  "item": "ctbackport:waxed_exposed_copper_bulb",
+  "count": 1
+ }
+}

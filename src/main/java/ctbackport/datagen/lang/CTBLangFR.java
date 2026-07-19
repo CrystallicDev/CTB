@@ -42,6 +42,24 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		handleResinSet(CTBBlocks.RESIN);
 		handleCopperBulbSet(CTBBlocks.COPPER_BULB);
+		handleCopperSet(CTBBlocks.COPPER_GRATE);
+		handleCopperSet(CTBBlocks.COPPER_DOOR);
+		handleCopperSet(CTBBlocks.COPPER_TRAPDOOR);
+		handleCopperSet(CTBBlocks.CHISELED_COPPER);
+
+		add(CTBBlocks.TUFF_STAIRS.get(), "Escaliers en tuf");
+		add(CTBBlocks.TUFF_SLAB.get(), "Dalle en tuf");
+		add(CTBBlocks.TUFF_WALL.get(), "Muret en tuf");
+		add(CTBBlocks.CHISELED_TUFF.get(), "Tuf sculpté");
+		add(CTBBlocks.POLISHED_TUFF.get(), "Tuf poli");
+		add(CTBBlocks.POLISHED_TUFF_STAIRS.get(), "Escaliers en tuf poli");
+		add(CTBBlocks.POLISHED_TUFF_SLAB.get(), "Dalle en tuf poli");
+		add(CTBBlocks.POLISHED_TUFF_WALL.get(), "Muret en tuf poli");
+		add(CTBBlocks.TUFF_BRICKS.get(), "Briques de tuf");
+		add(CTBBlocks.TUFF_BRICK_STAIRS.get(), "Escaliers en briques de tuf");
+		add(CTBBlocks.TUFF_BRICK_SLAB.get(), "Dalle en briques de tuf");
+		add(CTBBlocks.TUFF_BRICK_WALL.get(), "Muret en briques de tuf");
+		add(CTBBlocks.CHISELED_TUFF_BRICKS.get(), "Briques de tuf sculptées");
 
 
 		add(CTBBlocks.CHERRY_LEAVES.get(), "Feuilles de cerisier");
@@ -193,22 +211,35 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		}
 	}
 
+	private static final java.util.Map<String, String[]> COPPER_FR = java.util.Map.of(
+			"copper_grate", new String[]{"Grille de cuivre", "e"},
+			"copper_door", new String[]{"Porte en cuivre", "e"},
+			"copper_trapdoor", new String[]{"Trappe en cuivre", "e"},
+			"chiseled_copper", new String[]{"Cuivre sculpté", ""});
+
 	@Override
 	public void handleCopperSet(WeatherableCopperSet<?, ?> set) {
-		// TODO Auto-generated method stub
-
+		String[] entry = COPPER_FR.get(set.name);
+		String name = entry[0];
+		String g = entry[1];
+		add(set.block.get(), name);
+		add(set.exposedBlock.get(), name + " exposé" + g);
+		add(set.weatheredBlock.get(), name + " érodé" + g);
+		add(set.oxidizedBlock.get(), name + " oxydé" + g);
+		add(set.blockWaxed.get(), name + " ciré" + g);
+		add(set.exposedBlockWaxed.get(), name + " exposé" + g + " ciré" + g);
+		add(set.weatheredBlockWaxed.get(), name + " érodé" + g + " ciré" + g);
+		add(set.oxidizedBlockWaxed.get(), name + " oxydé" + g + " ciré" + g);
 	}
 
 	@Override
 	public void handleCopperDoorSet(WeatherableCopperSet<?, ?> set) {
-		// TODO Auto-generated method stub
-
+		handleCopperSet(set);
 	}
 
 	@Override
 	public void handleCopperTrapdoorSet(WeatherableCopperSet<?, ?> set) {
-		// TODO Auto-generated method stub
-
+		handleCopperSet(set);
 	}
 
 	@Override

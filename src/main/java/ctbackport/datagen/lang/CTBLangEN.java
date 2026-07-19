@@ -36,6 +36,24 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		handleMossSet(CTBBlocks.PALE_MOSS);
 		handleResinSet(CTBBlocks.RESIN);
 		handleCopperBulbSet(CTBBlocks.COPPER_BULB);
+		handleCopperSet(CTBBlocks.COPPER_GRATE);
+		handleCopperSet(CTBBlocks.COPPER_DOOR);
+		handleCopperSet(CTBBlocks.COPPER_TRAPDOOR);
+		handleCopperSet(CTBBlocks.CHISELED_COPPER);
+
+		add(CTBBlocks.TUFF_STAIRS.get(), "Tuff Stairs");
+		add(CTBBlocks.TUFF_SLAB.get(), "Tuff Slab");
+		add(CTBBlocks.TUFF_WALL.get(), "Tuff Wall");
+		add(CTBBlocks.CHISELED_TUFF.get(), "Chiseled Tuff");
+		add(CTBBlocks.POLISHED_TUFF.get(), "Polished Tuff");
+		add(CTBBlocks.POLISHED_TUFF_STAIRS.get(), "Polished Tuff Stairs");
+		add(CTBBlocks.POLISHED_TUFF_SLAB.get(), "Polished Tuff Slab");
+		add(CTBBlocks.POLISHED_TUFF_WALL.get(), "Polished Tuff Wall");
+		add(CTBBlocks.TUFF_BRICKS.get(), "Tuff Bricks");
+		add(CTBBlocks.TUFF_BRICK_STAIRS.get(), "Tuff Brick Stairs");
+		add(CTBBlocks.TUFF_BRICK_SLAB.get(), "Tuff Brick Slab");
+		add(CTBBlocks.TUFF_BRICK_WALL.get(), "Tuff Brick Wall");
+		add(CTBBlocks.CHISELED_TUFF_BRICKS.get(), "Chiseled Tuff Bricks");
 
 		add(CTBBlocks.CHERRY_LEAVES.get(), "Cherry Leaves");
 		add(CTBBlocks.CREAKING_HEART.get(), "Creaking Heart");
@@ -160,20 +178,25 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 
 	@Override
 	public void handleCopperSet(WeatherableCopperSet<?, ?> set) {
-		// TODO Auto-generated method stub
-
+		String name = formatSetName(set.name);
+		add(set.block.get(), name);
+		add(set.exposedBlock.get(), "Exposed " + name);
+		add(set.weatheredBlock.get(), "Weathered " + name);
+		add(set.oxidizedBlock.get(), "Oxidized " + name);
+		add(set.blockWaxed.get(), "Waxed " + name);
+		add(set.exposedBlockWaxed.get(), "Waxed Exposed " + name);
+		add(set.weatheredBlockWaxed.get(), "Waxed Weathered " + name);
+		add(set.oxidizedBlockWaxed.get(), "Waxed Oxidized " + name);
 	}
 
 	@Override
 	public void handleCopperDoorSet(WeatherableCopperSet<?, ?> set) {
-		// TODO Auto-generated method stub
-
+		handleCopperSet(set);
 	}
 
 	@Override
 	public void handleCopperTrapdoorSet(WeatherableCopperSet<?, ?> set) {
-		// TODO Auto-generated method stub
-
+		handleCopperSet(set);
 	}
 
 	@Override

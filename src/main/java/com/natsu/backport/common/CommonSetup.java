@@ -43,7 +43,7 @@ public class CommonSetup {
 	}
 
 	private static void registerWeatherables() {
-		for (WeatherableCopperSet<?, ?> set : List.of(CTBBlocks.COPPER_GRATE, CTBBlocks.COPPER_DOOR, CTBBlocks.COPPER_TRAPDOOR, CTBBlocks.COPPER_BULB)) {
+		for (WeatherableCopperSet<?, ?> set : List.of(CTBBlocks.COPPER_GRATE, CTBBlocks.COPPER_DOOR, CTBBlocks.COPPER_TRAPDOOR, CTBBlocks.COPPER_BULB, CTBBlocks.CHISELED_COPPER)) {
 			set.setWeatherable(CTBWeatheringCopper.NEXT_BY_BLOCK, CTBWeatheringCopper.NEXT_BY_BLOCK.inverse());
 			set.setWaxables(CTBWeatheringCopper.WAXABLES);
 		}

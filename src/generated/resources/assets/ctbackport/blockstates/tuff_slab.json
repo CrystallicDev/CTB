@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "ctbackport:block/tuff_slab_top"
+    },
+    "type=bottom": {
+      "model": "ctbackport:block/tuff_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/tuff"
+    }
+  }
+}

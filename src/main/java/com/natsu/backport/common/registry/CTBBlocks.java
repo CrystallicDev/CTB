@@ -5,6 +5,7 @@ import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.block.CopperBulbBlock;
 import com.natsu.backport.common.block.CopperDoorBlock;
 import com.natsu.backport.common.block.HeavyCoreBlock;
+import com.natsu.backport.common.block.WeatheringCopperBlock;
 import com.natsu.backport.common.block.WeatheringCopperBulbBlock;
 import com.natsu.backport.common.block.WeatheringCopperDoorBlock;
 import com.natsu.backport.server.world.feature.tree.PaleOakTreeGrower;
@@ -63,6 +64,23 @@ public class CTBBlocks {
 	public static final WeatherableCopperSet<WeatheringCopperTrapDoorBlock, TrapDoorBlock> COPPER_TRAPDOOR = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_trapdoor", 3, WeatheringCopperTrapDoorBlock.class, TrapDoorBlock.class);
 	// lit light drops with the oxidation, like vanilla
 	public static final WeatherableCopperSet<WeatheringCopperBulbBlock, CopperBulbBlock> COPPER_BULB = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_bulb", 3, WeatheringCopperBulbBlock.class, CopperBulbBlock.class, new int[]{15, 12, 8, 4});
+
+	// Tuff family, the base tuff block is already vanilla
+	public static final RegistryObject<Block> TUFF_STAIRS = registerWithItem(BLOCKS, CTBItems.ITEMS, "tuff_stairs", CTBBlockFactory.makeStairsOf(BLOCKS, "tuff_stairs", () -> net.minecraft.world.level.block.Blocks.TUFF, 1.5f));
+	public static final RegistryObject<Block> TUFF_SLAB = registerWithItem(BLOCKS, CTBItems.ITEMS, "tuff_slab", CTBBlockFactory.makeSlabOf(BLOCKS, "tuff_slab", () -> net.minecraft.world.level.block.Blocks.TUFF, 1.5f));
+	public static final RegistryObject<Block> TUFF_WALL = registerWithItem(BLOCKS, CTBItems.ITEMS, "tuff_wall", CTBBlockFactory.makeWallOf(BLOCKS, "tuff_wall", () -> net.minecraft.world.level.block.Blocks.TUFF, 1.5f));
+	public static final RegistryObject<Block> CHISELED_TUFF = registerWithItem(BLOCKS, CTBItems.ITEMS, "chiseled_tuff", CTBBlockFactory.makeStoneOf(BLOCKS, "chiseled_tuff", 1.5f));
+	public static final RegistryObject<Block> POLISHED_TUFF = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_tuff", CTBBlockFactory.makeStoneOf(BLOCKS, "polished_tuff", 1.5f));
+	public static final RegistryObject<Block> POLISHED_TUFF_STAIRS = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_tuff_stairs", CTBBlockFactory.makeStairs(BLOCKS, "polished_tuff_stairs", POLISHED_TUFF, 1.5f));
+	public static final RegistryObject<Block> POLISHED_TUFF_SLAB = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_tuff_slab", CTBBlockFactory.makeSlab(BLOCKS, "polished_tuff_slab", POLISHED_TUFF, 1.5f));
+	public static final RegistryObject<Block> POLISHED_TUFF_WALL = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_tuff_wall", CTBBlockFactory.makeWall(BLOCKS, "polished_tuff_wall", POLISHED_TUFF, 1.5f));
+	public static final RegistryObject<Block> TUFF_BRICKS = registerWithItem(BLOCKS, CTBItems.ITEMS, "tuff_bricks", CTBBlockFactory.makeStoneOf(BLOCKS, "tuff_bricks", 1.5f));
+	public static final RegistryObject<Block> TUFF_BRICK_STAIRS = registerWithItem(BLOCKS, CTBItems.ITEMS, "tuff_brick_stairs", CTBBlockFactory.makeStairs(BLOCKS, "tuff_brick_stairs", TUFF_BRICKS, 1.5f));
+	public static final RegistryObject<Block> TUFF_BRICK_SLAB = registerWithItem(BLOCKS, CTBItems.ITEMS, "tuff_brick_slab", CTBBlockFactory.makeSlab(BLOCKS, "tuff_brick_slab", TUFF_BRICKS, 1.5f));
+	public static final RegistryObject<Block> TUFF_BRICK_WALL = registerWithItem(BLOCKS, CTBItems.ITEMS, "tuff_brick_wall", CTBBlockFactory.makeWall(BLOCKS, "tuff_brick_wall", TUFF_BRICKS, 1.5f));
+	public static final RegistryObject<Block> CHISELED_TUFF_BRICKS = registerWithItem(BLOCKS, CTBItems.ITEMS, "chiseled_tuff_bricks", CTBBlockFactory.makeStoneOf(BLOCKS, "chiseled_tuff_bricks", 1.5f));
+
+	public static final WeatherableCopperSet<WeatheringCopperBlock, Block> CHISELED_COPPER = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "chiseled_copper", 3, WeatheringCopperBlock.class, Block.class);
 
 	public static final RegistryObject<Block> HEAVY_CORE = registerWithItem(BLOCKS, CTBItems.ITEMS, "heavy_core",
 			BLOCKS.register("heavy_core", () -> new HeavyCoreBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties
