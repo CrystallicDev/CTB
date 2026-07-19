@@ -27,4 +27,12 @@ public class CTBItems {
 			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
 			);
 
+	public static final RegistryObject<Item> TRIAL_KEY = ITEMS.register("trial_key", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
+
+	public static final RegistryObject<Item> OMINOUS_TRIAL_KEY = ITEMS.register("ominous_trial_key", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.RARE))
+			);
+
 }

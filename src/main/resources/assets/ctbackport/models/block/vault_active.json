@@ -1,0 +1,9 @@
+{
+	"parent": "ctbackport:block/template_vault",
+	"textures": {
+		"bottom": "ctbackport:block/vault_bottom",
+		"front": "ctbackport:block/vault_front_on",
+		"side": "ctbackport:block/vault_side_on",
+		"top": "ctbackport:block/vault_top"
+	}
+}

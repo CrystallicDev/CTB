@@ -55,4 +55,36 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> CREAKING_UNFREEZE = SOUND_EVENTS.register("creaking_unfreeze", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_unfreeze")));
 	public static final RegistryObject<SoundEvent> CREAKING_FREEZE = SOUND_EVENTS.register("creaking_freeze", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_freeze")));
 
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_AMBIENT = simple("trial_spawner_ambient");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_AMBIENT_OMINOUS = simple("trial_spawner_ambient_ominous");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_DETECT_PLAYER = simple("trial_spawner_detect_player");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_SPAWN_MOB = simple("trial_spawner_spawn_mob");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_OPEN_SHUTTER = simple("trial_spawner_open_shutter");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_CLOSE_SHUTTER = simple("trial_spawner_close_shutter");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_EJECT_ITEM = simple("trial_spawner_eject_item");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_OMINOUS_ACTIVATE = simple("trial_spawner_ominous_activate");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_ABOUT_TO_SPAWN_ITEM = simple("trial_spawner_about_to_spawn_item");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_SPAWN_ITEM = simple("trial_spawner_spawn_item");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_SPAWN_ITEM_BEGIN = simple("trial_spawner_spawn_item_begin");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_BREAK = simple("trial_spawner_break");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_PLACE = simple("trial_spawner_place");
+	public static final RegistryObject<SoundEvent> TRIAL_SPAWNER_STEP = simple("trial_spawner_step");
+
+	public static final RegistryObject<SoundEvent> VAULT_AMBIENT = simple("vault_ambient");
+	public static final RegistryObject<SoundEvent> VAULT_ACTIVATE = simple("vault_activate");
+	public static final RegistryObject<SoundEvent> VAULT_DEACTIVATE = simple("vault_deactivate");
+	public static final RegistryObject<SoundEvent> VAULT_INSERT_ITEM = simple("vault_insert_item");
+	public static final RegistryObject<SoundEvent> VAULT_INSERT_ITEM_FAIL = simple("vault_insert_item_fail");
+	public static final RegistryObject<SoundEvent> VAULT_REJECT_REWARDED_PLAYER = simple("vault_reject_rewarded_player");
+	public static final RegistryObject<SoundEvent> VAULT_OPEN_SHUTTER = simple("vault_open_shutter");
+	public static final RegistryObject<SoundEvent> VAULT_CLOSE_SHUTTER = simple("vault_close_shutter");
+	public static final RegistryObject<SoundEvent> VAULT_EJECT_ITEM = simple("vault_eject_item");
+	public static final RegistryObject<SoundEvent> VAULT_BREAK = simple("vault_break");
+	public static final RegistryObject<SoundEvent> VAULT_PLACE = simple("vault_place");
+	public static final RegistryObject<SoundEvent> VAULT_STEP = simple("vault_step");
+
+	private static RegistryObject<SoundEvent> simple(String name) {
+		return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, name)));
+	}
+
 }

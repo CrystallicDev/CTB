@@ -285,5 +285,203 @@
 		"sounds": [
 			"ctbackport:item/mace/smash_ground_heavy"
 		]
+	},
+	"trial_spawner_ambient": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/ambient1",
+			"ctbackport:block/trial_spawner/ambient2",
+			"ctbackport:block/trial_spawner/ambient3",
+			"ctbackport:block/trial_spawner/ambient4",
+			"ctbackport:block/trial_spawner/ambient5"
+		]
+	},
+	"trial_spawner_ambient_ominous": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/ambient_ominous1",
+			"ctbackport:block/trial_spawner/ambient_ominous2",
+			"ctbackport:block/trial_spawner/ambient_ominous3",
+			"ctbackport:block/trial_spawner/ambient_ominous4",
+			"ctbackport:block/trial_spawner/ambient_ominous5"
+		]
+	},
+	"trial_spawner_detect_player": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/detect_player1",
+			"ctbackport:block/trial_spawner/detect_player2",
+			"ctbackport:block/trial_spawner/detect_player3"
+		]
+	},
+	"trial_spawner_spawn_mob": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/spawn1",
+			"ctbackport:block/trial_spawner/spawn2",
+			"ctbackport:block/trial_spawner/spawn3",
+			"ctbackport:block/trial_spawner/spawn4"
+		]
+	},
+	"trial_spawner_open_shutter": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/open_shutter"
+		]
+	},
+	"trial_spawner_close_shutter": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/close_shutter"
+		]
+	},
+	"trial_spawner_eject_item": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/eject_item1"
+		]
+	},
+	"trial_spawner_ominous_activate": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/ominous_activate"
+		]
+	},
+	"trial_spawner_about_to_spawn_item": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/about_to_spawn_item"
+		]
+	},
+	"trial_spawner_spawn_item": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/spawn_item1",
+			"ctbackport:block/trial_spawner/spawn_item2",
+			"ctbackport:block/trial_spawner/spawn_item3"
+		]
+	},
+	"trial_spawner_spawn_item_begin": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/spawn_item_begin1",
+			"ctbackport:block/trial_spawner/spawn_item_begin2",
+			"ctbackport:block/trial_spawner/spawn_item_begin3"
+		]
+	},
+	"trial_spawner_break": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/break1",
+			"ctbackport:block/trial_spawner/break2",
+			"ctbackport:block/trial_spawner/break3"
+		]
+	},
+	"trial_spawner_place": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/place1",
+			"ctbackport:block/trial_spawner/place2",
+			"ctbackport:block/trial_spawner/place3"
+		]
+	},
+	"trial_spawner_step": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/step1",
+			"ctbackport:block/trial_spawner/step2",
+			"ctbackport:block/trial_spawner/step3",
+			"ctbackport:block/trial_spawner/step4",
+			"ctbackport:block/trial_spawner/step5"
+		]
+	},
+	"vault_ambient": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/ambient1",
+			"ctbackport:block/vault/ambient2",
+			"ctbackport:block/vault/ambient3"
+		]
+	},
+	"vault_activate": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/activate"
+		]
+	},
+	"vault_deactivate": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/deactivate"
+		]
+	},
+	"vault_insert_item": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/insert"
+		]
+	},
+	"vault_insert_item_fail": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/insert_fail"
+		]
+	},
+	"vault_reject_rewarded_player": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/reject_rewarded_player"
+		]
+	},
+	"vault_open_shutter": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/open_shutter"
+		]
+	},
+	"vault_close_shutter": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/trial_spawner/close_shutter"
+		]
+	},
+	"vault_eject_item": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/eject1",
+			"ctbackport:block/vault/eject2",
+			"ctbackport:block/vault/eject3"
+		]
+	},
+	"vault_break": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/break1",
+			"ctbackport:block/vault/break2",
+			"ctbackport:block/vault/break3",
+			"ctbackport:block/vault/break4"
+		]
+	},
+	"vault_place": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/place1",
+			"ctbackport:block/vault/place2",
+			"ctbackport:block/vault/place3",
+			"ctbackport:block/vault/place4"
+		]
+	},
+	"vault_step": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/vault/step1",
+			"ctbackport:block/vault/step2",
+			"ctbackport:block/vault/step3",
+			"ctbackport:block/vault/step4",
+			"ctbackport:block/vault/step5",
+			"ctbackport:block/vault/step6",
+			"ctbackport:block/vault/step7",
+			"ctbackport:block/vault/step8"
+		]
 	}
 }

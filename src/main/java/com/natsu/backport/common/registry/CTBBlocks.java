@@ -89,6 +89,31 @@ public class CTBBlocks {
 					.requiresCorrectToolForDrops()
 					.sound(net.minecraft.world.level.block.SoundType.NETHERITE_BLOCK))));
 
+	// Trial Chambers, light and sounds depend on the block state like vanilla
+	public static final RegistryObject<Block> TRIAL_SPAWNER = registerWithItem(BLOCKS, CTBItems.ITEMS, "trial_spawner",
+			BLOCKS.register("trial_spawner", () -> new com.natsu.backport.common.block.TrialSpawnerBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.of(net.minecraft.world.level.material.Material.STONE)
+						.requiresCorrectToolForDrops()
+						.lightLevel(state -> state.getValue(com.natsu.backport.common.block.TrialSpawnerBlock.STATE).lightLevel())
+						.strength(50.0F)
+						.sound(new net.minecraftforge.common.util.ForgeSoundType(1.0F, 1.0F,
+								CTBSounds.TRIAL_SPAWNER_BREAK, CTBSounds.TRIAL_SPAWNER_STEP, CTBSounds.TRIAL_SPAWNER_PLACE,
+								CTBSounds.TRIAL_SPAWNER_BREAK, CTBSounds.TRIAL_SPAWNER_STEP))
+						.isViewBlocking((state, level, pos) -> false)
+						.noOcclusion())));
+
+	public static final RegistryObject<Block> VAULT = registerWithItem(BLOCKS, CTBItems.ITEMS, "vault",
+			BLOCKS.register("vault", () -> new com.natsu.backport.common.block.VaultBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.of(net.minecraft.world.level.material.Material.STONE)
+						.requiresCorrectToolForDrops()
+						.lightLevel(state -> state.getValue(com.natsu.backport.common.block.VaultBlock.STATE).lightLevel())
+						.strength(50.0F)
+						.sound(new net.minecraftforge.common.util.ForgeSoundType(1.0F, 1.0F,
+								CTBSounds.VAULT_BREAK, CTBSounds.VAULT_STEP, CTBSounds.VAULT_PLACE,
+								CTBSounds.VAULT_BREAK, CTBSounds.VAULT_STEP))
+						.isViewBlocking((state, level, pos) -> false)
+						.noOcclusion())));
+
 	private static RegistryObject<Block> registerWithItem(DeferredRegister<Block> blocks, DeferredRegister<Item> items,
 			String name, RegistryObject<Block> reg) {
 		items.register(name,

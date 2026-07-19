@@ -65,6 +65,10 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBItems.BREEZE_ROD.get(), "Breeze Rod");
 		add(CTBItems.MACE.get(), "Mace");
 		add(CTBBlocks.HEAVY_CORE.get(), "Heavy Core");
+		add(CTBBlocks.TRIAL_SPAWNER.get(), "Trial Spawner");
+		add(CTBBlocks.VAULT.get(), "Vault");
+		add(CTBItems.TRIAL_KEY.get(), "Trial Key");
+		add(CTBItems.OMINOUS_TRIAL_KEY.get(), "Ominous Trial Key");
 		add(CTBEnchantments.DENSITY.get(), "Density");
 		add(CTBEnchantments.BREACH.get(), "Breach");
 		add(CTBEnchantments.WIND_BURST.get(), "Wind Burst");

@@ -1,0 +1,8 @@
+{
+	"parent": "ctbackport:block/cube_bottom_top_inner_faces",
+	"textures": {
+		"bottom": "ctbackport:block/trial_spawner_bottom",
+		"side": "ctbackport:block/trial_spawner_side_inactive_ominous",
+		"top": "ctbackport:block/trial_spawner_top_inactive_ominous"
+	}
+}

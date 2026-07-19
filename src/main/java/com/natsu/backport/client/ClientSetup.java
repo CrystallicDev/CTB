@@ -3,11 +3,16 @@ package com.natsu.backport.client;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.client.render.BreezeRenderer;
 import com.natsu.backport.client.render.CreakingRenderer;
+import com.natsu.backport.client.render.TrialSpawnerRenderer;
+import com.natsu.backport.client.render.VaultRenderer;
 import com.natsu.backport.client.render.WindChargeRenderer;
 import com.natsu.backport.common.particles.CherryParticle;
 import com.natsu.backport.common.particles.GustEmitterParticle;
 import com.natsu.backport.common.particles.GustParticle;
 import com.natsu.backport.common.particles.TrailParticle;
+import com.natsu.backport.common.particles.TrialSpawnerDetectionParticle;
+import com.natsu.backport.common.particles.VaultConnectionParticle;
+import com.natsu.backport.common.registry.CTBBlockEntities;
 import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.common.registry.CTBEntities;
 import com.natsu.backport.common.registry.CTBParticles;
@@ -31,6 +36,8 @@ public class ClientSetup {
 		event.registerEntityRenderer(CTBEntities.CREAKING.get(), CreakingRenderer::new);
 		//event.registerEntityRenderer(CTBEntities.SULPHUR_CUBE.get(), SulphurCubeRenderer::new);
 		event.registerEntityRenderer(CTBEntities.BREEZE.get(), BreezeRenderer::new);
+		event.registerBlockEntityRenderer(CTBBlockEntities.TRIAL_SPAWNER.get(), TrialSpawnerRenderer::new);
+		event.registerBlockEntityRenderer(CTBBlockEntities.VAULT.get(), VaultRenderer::new);
 	}
 
 	@SubscribeEvent
@@ -41,6 +48,9 @@ public class ClientSetup {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.CHERRY.get(), CherryParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.PALE_OAK_LEAVES.get(), CherryParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRAIL.get(), TrailParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.TRIAL_SPAWNER_DETECTION.get(), TrialSpawnerDetectionParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.TRIAL_SPAWNER_DETECTION_OMINOUS.get(), TrialSpawnerDetectionParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.VAULT_CONNECTION.get(), VaultConnectionParticle.Provider::new);
 	}
 
 	@SubscribeEvent

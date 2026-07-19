@@ -72,6 +72,10 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBItems.BREEZE_ROD.get(), "Bâton de brise");
 		add(CTBItems.MACE.get(), "Masse d'armes");
 		add(CTBBlocks.HEAVY_CORE.get(), "Cœur pesant");
+		add(CTBBlocks.TRIAL_SPAWNER.get(), "Générateur d'épreuve");
+		add(CTBBlocks.VAULT.get(), "Chambre forte");
+		add(CTBItems.TRIAL_KEY.get(), "Clé d'épreuve");
+		add(CTBItems.OMINOUS_TRIAL_KEY.get(), "Clé d'épreuve sinistre");
 		add(CTBEnchantments.DENSITY.get(), "Densité");
 		add(CTBEnchantments.BREACH.get(), "Brèche");
 		add(CTBEnchantments.WIND_BURST.get(), "Rafale de vent");

@@ -63,6 +63,9 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		dropSelf(CTBBlocks.PALE_HANGING_MOSS.get());
 		dropSelf(CTBBlocks.PALE_OAK_SAPLING.get());
 		dropSelf(CTBBlocks.HEAVY_CORE.get());
+		// vanilla : neither drops anything, even with silk touch
+		add(CTBBlocks.TRIAL_SPAWNER.get(), noDrop());
+		add(CTBBlocks.VAULT.get(), noDrop());
 		handleCopperSet(CTBBlocks.CHISELED_COPPER);
 		for (net.minecraftforge.registries.RegistryObject<Block> b : java.util.List.of(
 				CTBBlocks.TUFF_STAIRS, CTBBlocks.TUFF_WALL, CTBBlocks.CHISELED_TUFF, CTBBlocks.POLISHED_TUFF,

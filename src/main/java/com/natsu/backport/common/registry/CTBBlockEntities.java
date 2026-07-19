@@ -2,6 +2,8 @@ package com.natsu.backport.common.registry;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.block.entity.CreakingHeartBlockEntity;
+import com.natsu.backport.common.block.entity.TrialSpawnerBlockEntity;
+import com.natsu.backport.common.block.entity.vault.VaultBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,5 +16,13 @@ public class CTBBlockEntities {
 
 	public static final RegistryObject<BlockEntityType<CreakingHeartBlockEntity>> CREAKING_HEART = BLOCK_ENTITIES.register("creaking_heart",
 			() -> BlockEntityType.Builder.of(CreakingHeartBlockEntity::new, CTBBlocks.CREAKING_HEART.get()).build(null)
+			);
+
+	public static final RegistryObject<BlockEntityType<TrialSpawnerBlockEntity>> TRIAL_SPAWNER = BLOCK_ENTITIES.register("trial_spawner",
+			() -> BlockEntityType.Builder.of(TrialSpawnerBlockEntity::new, CTBBlocks.TRIAL_SPAWNER.get()).build(null)
+			);
+
+	public static final RegistryObject<BlockEntityType<VaultBlockEntity>> VAULT = BLOCK_ENTITIES.register("vault",
+			() -> BlockEntityType.Builder.of(VaultBlockEntity::new, CTBBlocks.VAULT.get()).build(null)
 			);
 }

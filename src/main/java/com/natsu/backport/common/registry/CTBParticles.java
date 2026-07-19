@@ -38,4 +38,14 @@ public class CTBParticles {
 			() -> new SimpleParticleType(true)
 		);
 
+	public static final RegistryObject<SimpleParticleType> TRIAL_SPAWNER_DETECTION = PARTICLES.register("trial_spawner_detection",
+			() -> new SimpleParticleType(true)
+		);
+	public static final RegistryObject<SimpleParticleType> TRIAL_SPAWNER_DETECTION_OMINOUS = PARTICLES.register("trial_spawner_detection_ominous",
+			() -> new SimpleParticleType(true)
+		);
+	public static final RegistryObject<SimpleParticleType> VAULT_CONNECTION = PARTICLES.register("vault_connection",
+			() -> new SimpleParticleType(true)
+		);
+
 }

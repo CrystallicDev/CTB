@@ -78,6 +78,7 @@
   "block.ctbackport.stripped_cherry_wood": "Stripped Cherry Wood",
   "block.ctbackport.stripped_pale_oak_log": "Stripped Pale Oak Log",
   "block.ctbackport.stripped_pale_oak_wood": "Stripped Pale Oak Wood",
+  "block.ctbackport.trial_spawner": "Trial Spawner",
   "block.ctbackport.tuff_brick_slab": "Tuff Brick Slab",
   "block.ctbackport.tuff_brick_stairs": "Tuff Brick Stairs",
   "block.ctbackport.tuff_brick_wall": "Tuff Brick Wall",
@@ -85,6 +86,7 @@
   "block.ctbackport.tuff_slab": "Tuff Slab",
   "block.ctbackport.tuff_stairs": "Tuff Stairs",
   "block.ctbackport.tuff_wall": "Tuff Wall",
+  "block.ctbackport.vault": "Vault",
   "block.ctbackport.waxed_chiseled_copper": "Waxed Chiseled Copper",
   "block.ctbackport.waxed_copper_bulb": "Waxed Copper Bulb",
   "block.ctbackport.waxed_copper_door": "Waxed Copper Door",
@@ -122,6 +124,8 @@
   "entity.ctbackport.creaking": "Creaking",
   "item.ctbackport.breeze_rod": "Breeze Rod",
   "item.ctbackport.mace": "Mace",
+  "item.ctbackport.ominous_trial_key": "Ominous Trial Key",
   "item.ctbackport.resin_brick": "Resin Brick",
+  "item.ctbackport.trial_key": "Trial Key",
   "item.ctbackport.wind_charge": "Wind Charge"
 }
