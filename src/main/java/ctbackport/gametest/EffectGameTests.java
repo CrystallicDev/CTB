@@ -34,9 +34,12 @@ public class EffectGameTests {
 
 	@GameTest(template = EMPTY)
 	public static void weavingSpawnsCobwebs(GameTestHelper helper) {
-		Zombie zombie = helper.spawn(EntityType.ZOMBIE, 3, 1, 3);
-		zombie.addEffect(new MobEffectInstance(CTBEffects.WEAVING.get(), 1200));
-		zombie.hurt(DamageSource.OUT_OF_WORLD, 1000.0F);
+		// the placement rolls are random, three deaths make a miss astronomical
+		for (int i = 0; i < 3; i++) {
+			Zombie zombie = helper.spawn(EntityType.ZOMBIE, 3, 1, 3);
+			zombie.addEffect(new MobEffectInstance(CTBEffects.WEAVING.get(), 1200));
+			zombie.hurt(DamageSource.OUT_OF_WORLD, 1000.0F);
+		}
 		helper.succeedWhen(() -> {
 			for (BlockPos pos : BlockPos.betweenClosed(new BlockPos(1, 1, 1), new BlockPos(5, 3, 5))) {
 				if (helper.getBlockState(pos).is(Blocks.COBWEB)) {
