@@ -35,6 +35,7 @@ public class CTBBlockTags extends BlockTagsProvider {
 		this.tag(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE).add(CTBBlocks.CHERRY_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_HOE).add(CTBBlocks.PALE_HANGING_MOSS.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.CREAKING_HEART.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.HEAVY_CORE.get());
 		tag(BlockTags.SAPLINGS).add(CTBBlocks.PALE_OAK_SAPLING.get());
 		tag(BlockTags.SMALL_FLOWERS).add(CTBBlocks.OPEN_EYEBLOSSOM.get(), CTBBlocks.CLOSED_EYEBLOSSOM.get());
     }

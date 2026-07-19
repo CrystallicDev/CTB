@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "III",
+  "IWI",
+  "III"
+ ],
+ "key": {
+  "I": {"item": "minecraft:iron_block"},
+  "W": {"item": "ctbackport:wind_charge"}
+ },
+ "result": {"item": "ctbackport:heavy_core", "count": 1}
+}

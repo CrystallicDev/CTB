@@ -3,6 +3,7 @@ package ctbackport.datagen.lang;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.common.registry.CTBEffects;
+import com.natsu.backport.common.registry.CTBEnchantments;
 import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
@@ -44,6 +45,11 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBBlocks.PALE_OAK_SAPLING.get(), "Pale Oak Sapling");
 		add(CTBItems.WIND_CHARGE.get(), "Wind Charge");
 		add(CTBItems.BREEZE_ROD.get(), "Breeze Rod");
+		add(CTBItems.MACE.get(), "Mace");
+		add(CTBBlocks.HEAVY_CORE.get(), "Heavy Core");
+		add(CTBEnchantments.DENSITY.get(), "Density");
+		add(CTBEnchantments.BREACH.get(), "Breach");
+		add(CTBEnchantments.WIND_BURST.get(), "Wind Burst");
 		// entities are not registered during datagen, raw keys
 		add("entity.ctbackport.creaking", "Creaking");
 		add("entity.ctbackport.breeze", "Breeze");

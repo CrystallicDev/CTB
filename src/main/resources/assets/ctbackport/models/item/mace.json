@@ -1,0 +1,6 @@
+{
+ "parent": "ctbackport:item/handheld_mace",
+ "textures": {
+  "layer0": "ctbackport:item/mace"
+ }
+}

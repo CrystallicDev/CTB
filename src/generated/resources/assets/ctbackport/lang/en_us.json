@@ -30,6 +30,7 @@
   "block.ctbackport.exposed_copper_bulb": "Exposed Copper Bulb",
   "block.ctbackport.eyeblossom_close": "Closed Eyeblossom",
   "block.ctbackport.eyeblossom_open": "Open Eyeblossom",
+  "block.ctbackport.heavy_core": "Heavy Core",
   "block.ctbackport.oxidized_copper_bulb": "Oxidized Copper Bulb",
   "block.ctbackport.pale_hanging_moss": "Pale Hanging Moss",
   "block.ctbackport.pale_moss": "Pale Moss",
@@ -69,9 +70,13 @@
   "effect.ctbackport.trial_omen": "Trial Omen",
   "effect.ctbackport.weaving": "Weaving",
   "effect.ctbackport.wind_charged": "Wind Charged",
+  "enchantment.ctbackport.breach": "Breach",
+  "enchantment.ctbackport.density": "Density",
+  "enchantment.ctbackport.wind_burst": "Wind Burst",
   "entity.ctbackport.breeze": "Breeze",
   "entity.ctbackport.creaking": "Creaking",
   "item.ctbackport.breeze_rod": "Breeze Rod",
+  "item.ctbackport.mace": "Mace",
   "item.ctbackport.resin_brick": "Resin Brick",
   "item.ctbackport.wind_charge": "Wind Charge"
 }

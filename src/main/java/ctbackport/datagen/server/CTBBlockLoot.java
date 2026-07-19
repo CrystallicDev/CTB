@@ -62,6 +62,7 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		add(CTBBlocks.OPEN_EYEBLOSSOM.get(), createSimpleDrop(CTBBlocks.CLOSED_EYEBLOSSOM.get()));
 		dropSelf(CTBBlocks.PALE_HANGING_MOSS.get());
 		dropSelf(CTBBlocks.PALE_OAK_SAPLING.get());
+		dropSelf(CTBBlocks.HEAVY_CORE.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC.get());
 		dropSelf(CTBBlocks.BAMBOO_MOSAIC_STAIRS.get());
 		// vanilla : itself with silk touch, otherwise 1-3 resin clumps (+fortune)

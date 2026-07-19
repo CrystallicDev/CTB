@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.registry.CTBBlocks;
+import com.natsu.backport.common.registry.CTBEnchantments;
 import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
 import com.natsu.backport.utils.sets.LeavesSet;
@@ -51,6 +52,11 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBBlocks.PALE_OAK_SAPLING.get(), "Pousse de chêne pâle");
 		add(CTBItems.WIND_CHARGE.get(), "Boule de vent");
 		add(CTBItems.BREEZE_ROD.get(), "Bâton de brise");
+		add(CTBItems.MACE.get(), "Masse d'armes");
+		add(CTBBlocks.HEAVY_CORE.get(), "Cœur pesant");
+		add(CTBEnchantments.DENSITY.get(), "Densité");
+		add(CTBEnchantments.BREACH.get(), "Brèche");
+		add(CTBEnchantments.WIND_BURST.get(), "Rafale de vent");
 		// entities are not registered during datagen, raw keys
 		add("entity.ctbackport.creaking", "Craqueur");
 		add("entity.ctbackport.breeze", "Brise");

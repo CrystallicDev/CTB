@@ -30,6 +30,7 @@
   "block.ctbackport.exposed_copper_bulb": "Ampoule en cuivre expos\u00E9",
   "block.ctbackport.eyeblossom_close": "\u0152illade ferm\u00E9e",
   "block.ctbackport.eyeblossom_open": "\u0152illade ouverte",
+  "block.ctbackport.heavy_core": "C\u0153ur pesant",
   "block.ctbackport.oxidized_copper_bulb": "Ampoule en cuivre oxyd\u00E9",
   "block.ctbackport.pale_hanging_moss": "Mousse p\u00E2le suspendue",
   "block.ctbackport.pale_moss": "Mousse p\u00E2le",
@@ -65,9 +66,13 @@
   "block.ctbackport.waxed_oxidized_copper_bulb": "Ampoule en cuivre oxyd\u00E9 cir\u00E9",
   "block.ctbackport.waxed_weathered_copper_bulb": "Ampoule en cuivre \u00E9rod\u00E9 cir\u00E9",
   "block.ctbackport.weathered_copper_bulb": "Ampoule en cuivre \u00E9rod\u00E9",
+  "enchantment.ctbackport.breach": "Br\u00E8che",
+  "enchantment.ctbackport.density": "Densit\u00E9",
+  "enchantment.ctbackport.wind_burst": "Rafale de vent",
   "entity.ctbackport.breeze": "Brise",
   "entity.ctbackport.creaking": "Craqueur",
   "item.ctbackport.breeze_rod": "B\u00E2ton de brise",
+  "item.ctbackport.mace": "Masse d'armes",
   "item.ctbackport.resin_brick": "Brique de r\u00E9sine",
   "item.ctbackport.wind_charge": "Boule de vent"
 }

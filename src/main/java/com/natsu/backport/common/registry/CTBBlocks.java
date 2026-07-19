@@ -4,6 +4,7 @@ import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.block.CTBBlockFactory;
 import com.natsu.backport.common.block.CopperBulbBlock;
 import com.natsu.backport.common.block.CopperDoorBlock;
+import com.natsu.backport.common.block.HeavyCoreBlock;
 import com.natsu.backport.common.block.WeatheringCopperBulbBlock;
 import com.natsu.backport.common.block.WeatheringCopperDoorBlock;
 import com.natsu.backport.server.world.feature.tree.PaleOakTreeGrower;
@@ -62,6 +63,13 @@ public class CTBBlocks {
 	public static final WeatherableCopperSet<WeatheringCopperTrapDoorBlock, TrapDoorBlock> COPPER_TRAPDOOR = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_trapdoor", 3, WeatheringCopperTrapDoorBlock.class, TrapDoorBlock.class);
 	// lit light drops with the oxidation, like vanilla
 	public static final WeatherableCopperSet<WeatheringCopperBulbBlock, CopperBulbBlock> COPPER_BULB = new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_bulb", 3, WeatheringCopperBulbBlock.class, CopperBulbBlock.class, new int[]{15, 12, 8, 4});
+
+	public static final RegistryObject<Block> HEAVY_CORE = registerWithItem(BLOCKS, CTBItems.ITEMS, "heavy_core",
+			BLOCKS.register("heavy_core", () -> new HeavyCoreBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties
+					.of(net.minecraft.world.level.material.Material.METAL)
+					.strength(10.0F, 1200.0F)
+					.requiresCorrectToolForDrops()
+					.sound(net.minecraft.world.level.block.SoundType.NETHERITE_BLOCK))));
 
 	private static RegistryObject<Block> registerWithItem(DeferredRegister<Block> blocks, DeferredRegister<Item> items,
 			String name, RegistryObject<Block> reg) {

@@ -4,6 +4,7 @@ package com.natsu.backport;
 import com.natsu.backport.common.registry.CTBBlockEntities;
 import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.common.registry.CTBEffects;
+import com.natsu.backport.common.registry.CTBEnchantments;
 import com.natsu.backport.common.registry.CTBEntities;
 import com.natsu.backport.common.registry.CTBFeatures;
 import com.natsu.backport.common.registry.CTBFoliagePlacers;
@@ -32,6 +33,7 @@ public class CTBackport {
     	CTBBlocks.BLOCKS.register(modEventBus);
     	CTBItems.ITEMS.register(modEventBus);
     	CTBBlockEntities.BLOCK_ENTITIES.register(modEventBus);
+    	CTBEnchantments.ENCHANTMENTS.register(modEventBus);
     	GeckoLib.initialize();
 
     	if (!DatagenModLoader.isRunningDataGen()) {

@@ -40,6 +40,10 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> BREEZE_DEFLECT = SOUND_EVENTS.register("breeze_deflect", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "breeze_deflect")));
 	public static final RegistryObject<SoundEvent> BREEZE_SLIDE = SOUND_EVENTS.register("breeze_slide", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "breeze_slide")));
 
+	public static final RegistryObject<SoundEvent> MACE_SMASH_AIR = SOUND_EVENTS.register("mace_smash_air", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "mace_smash_air")));
+	public static final RegistryObject<SoundEvent> MACE_SMASH_GROUND = SOUND_EVENTS.register("mace_smash_ground", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "mace_smash_ground")));
+	public static final RegistryObject<SoundEvent> MACE_SMASH_GROUND_HEAVY = SOUND_EVENTS.register("mace_smash_ground_heavy", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "mace_smash_ground_heavy")));
+
 	public static final RegistryObject<SoundEvent> CREAKING_AMBIENT = SOUND_EVENTS.register("creaking_ambiant", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_ambiant")));
 	public static final RegistryObject<SoundEvent> CREAKING_ATTACK = SOUND_EVENTS.register("creaking_attack", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_attack")));
 	public static final RegistryObject<SoundEvent> CREAKING_SWAY = SOUND_EVENTS.register("creaking_sway", () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "creaking_sway")));

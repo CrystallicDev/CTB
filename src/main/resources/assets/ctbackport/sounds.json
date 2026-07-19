@@ -262,5 +262,28 @@
 				"pitch": 0.9
 			}
 		]
+	},
+	"mace_smash_air": {
+		"category": "player",
+		"sounds": [
+			"ctbackport:item/mace/smash_air1",
+			"ctbackport:item/mace/smash_air2",
+			"ctbackport:item/mace/smash_air3"
+		]
+	},
+	"mace_smash_ground": {
+		"category": "player",
+		"sounds": [
+			"ctbackport:item/mace/smash_ground1",
+			"ctbackport:item/mace/smash_ground2",
+			"ctbackport:item/mace/smash_ground3",
+			"ctbackport:item/mace/smash_ground4"
+		]
+	},
+	"mace_smash_ground_heavy": {
+		"category": "player",
+		"sounds": [
+			"ctbackport:item/mace/smash_ground_heavy"
+		]
 	}
 }

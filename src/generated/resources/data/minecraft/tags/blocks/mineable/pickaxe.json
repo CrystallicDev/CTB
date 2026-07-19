@@ -32,6 +32,7 @@
     "ctbackport:waxed_copper_bulb",
     "ctbackport:waxed_exposed_copper_bulb",
     "ctbackport:waxed_weathered_copper_bulb",
-    "ctbackport:waxed_oxidized_copper_bulb"
+    "ctbackport:waxed_oxidized_copper_bulb",
+    "ctbackport:heavy_core"
   ]
 }

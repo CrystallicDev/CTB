@@ -38,9 +38,13 @@ public class WindChargeHelper {
 
     // knockback burst on death of a wind charged entity, no damage
     public static void explodeWind(ServerLevel level, Vec3 pos, float radius) {
+        explodeWind(level, pos, radius, 1.0);
+    }
+
+    public static void explodeWind(ServerLevel level, Vec3 pos, float radius, double multiplier) {
         AABB area = new AABB(pos, pos).inflate(radius * 2.0);
         for (Entity e : level.getEntities(null, area)) {
-            Vec3 kb = windKnockback(pos, e, radius, 1.0);
+            Vec3 kb = windKnockback(pos, e, radius, multiplier);
             if (kb != null) {
                 e.push(kb.x, kb.y, kb.z);
                 e.hurtMarked = true;
