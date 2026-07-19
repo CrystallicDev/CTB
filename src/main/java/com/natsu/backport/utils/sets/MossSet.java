@@ -78,14 +78,16 @@ public class MossSet implements DefaultSet {
 
 	@Override
 	public void setFlammables(Map<Block, Integer> flameOdds, Map<Block, Integer> burnOdds) {
-		// TODO Auto-generated method stub
-		
+		flameOdds.put(moss.get(), 5);
+		burnOdds.put(moss.get(), 100);
+		flameOdds.put(mossLayer.get(), 5);
+		burnOdds.put(mossLayer.get(), 100);
 	}
 
 	@Override
 	public void setCompostables(Object2FloatMap<ItemLike> compostables) {
-		// TODO Auto-generated method stub
-		
+		compostables.put(mossItem.get(), 0.65F);
+		compostables.put(mossLayerItem.get(), 0.3F);
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package com.natsu.backport.utils.sets;
 
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -230,8 +231,14 @@ public class WoodSet implements DefaultSet {
 
 	@Override
 	public void setFlammables(Map<Block, Integer> flameOdds, Map<Block, Integer> burnOdds) {
-		// TODO Auto-generated method stub
-		
+		for (RegistryObject<Block> b : List.of(planks, slab, stairs, fence, fenceGate)) {
+			flameOdds.put(b.get(), 5);
+			burnOdds.put(b.get(), 20);
+		}
+		for (RegistryObject<Block> b : List.of(log, strippedLog, wood, strippedWood)) {
+			flameOdds.put(b.get(), 5);
+			burnOdds.put(b.get(), 5);
+		}
 	}
 
 

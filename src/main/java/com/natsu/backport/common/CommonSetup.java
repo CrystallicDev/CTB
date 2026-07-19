@@ -1,6 +1,16 @@
 package com.natsu.backport.common;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import com.natsu.backport.utils.sets.DefaultSet;
+import it.unimi.dsi.fastutil.objects.Object2FloatMap;
+import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ComposterBlock;
+import net.minecraft.world.level.block.FireBlock;
 
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
@@ -40,6 +50,39 @@ public class CommonSetup {
 		if (DatagenModLoader.isRunningDataGen()) return;
 
 		event.enqueueWork(CommonSetup::registerWeatherables);
+		event.enqueueWork(CommonSetup::registerFlammablesAndCompostables);
+	}
+
+	// vanilla values, applied through the sets (FireBlock#setFlammable is AT'd)
+	private static void registerFlammablesAndCompostables() {
+		Map<Block, Integer> flameOdds = new HashMap<>();
+		Map<Block, Integer> burnOdds = new HashMap<>();
+		Object2FloatMap<ItemLike> compostables = new Object2FloatOpenHashMap<>();
+
+		for (DefaultSet set : List.of(CTBBlocks.CHERRY_WOOD, CTBBlocks.BAMBOO_WOOD, CTBBlocks.PALE_OAK_WOOD,
+				CTBBlocks.PALE_OAK_LEAVES, CTBBlocks.PALE_MOSS)) {
+			set.setFlammables(flameOdds, burnOdds);
+			set.setCompostables(compostables);
+		}
+
+		// the loners
+		flameOdds.put(CTBBlocks.BAMBOO_MOSAIC.get(), 5);
+		burnOdds.put(CTBBlocks.BAMBOO_MOSAIC.get(), 20);
+		flameOdds.put(CTBBlocks.BAMBOO_MOSAIC_STAIRS.get(), 5);
+		burnOdds.put(CTBBlocks.BAMBOO_MOSAIC_STAIRS.get(), 20);
+		flameOdds.put(CTBBlocks.BAMBOO_MOSAIC_SLAB.get(), 5);
+		burnOdds.put(CTBBlocks.BAMBOO_MOSAIC_SLAB.get(), 20);
+		flameOdds.put(CTBBlocks.CHERRY_LEAVES.get(), 30);
+		burnOdds.put(CTBBlocks.CHERRY_LEAVES.get(), 60);
+		compostables.put(CTBBlocks.CHERRY_LEAVES.get().asItem(), 0.3F);
+		compostables.put(CTBBlocks.PALE_HANGING_MOSS.get().asItem(), 0.3F);
+		compostables.put(CTBBlocks.PALE_OAK_SAPLING.get().asItem(), 0.3F);
+		compostables.put(CTBBlocks.OPEN_EYEBLOSSOM.get().asItem(), 0.65F);
+		compostables.put(CTBBlocks.CLOSED_EYEBLOSSOM.get().asItem(), 0.65F);
+
+		FireBlock fire = (FireBlock) Blocks.FIRE;
+		flameOdds.forEach((block, flame) -> fire.setFlammable(block, flame, burnOdds.get(block)));
+		ComposterBlock.COMPOSTABLES.putAll(compostables);
 	}
 
 	private static void registerWeatherables() {

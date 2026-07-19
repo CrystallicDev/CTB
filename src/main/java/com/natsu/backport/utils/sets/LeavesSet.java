@@ -89,14 +89,13 @@ public class LeavesSet implements DefaultSet {
 
 	@Override
 	public void setFlammables(Map<Block, Integer> flameOdds, Map<Block, Integer> burnOdds) {
-		// TODO Auto-generated method stub
-		
+		flameOdds.put(leaves.get(), 30);
+		burnOdds.put(leaves.get(), 60);
 	}
 
 	@Override
 	public void setCompostables(Object2FloatMap<ItemLike> compostables) {
-		// TODO Auto-generated method stub
-		
+		compostables.put(leavesItem.get(), 0.3F);
 	}
 
 	@Override
