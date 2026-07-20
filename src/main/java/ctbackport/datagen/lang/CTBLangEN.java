@@ -70,6 +70,10 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBItems.TRIAL_KEY.get(), "Trial Key");
 		add(CTBItems.OMINOUS_TRIAL_KEY.get(), "Ominous Trial Key");
 		add(CTBItems.OMINOUS_BOTTLE.get(), "Ominous Bottle");
+		add(CTBBlocks.DECORATED_POT.get(), "Decorated Pot");
+		add(CTBItems.FLOW_POTTERY_SHERD.get(), "Flow Pottery Sherd");
+		add(CTBItems.GUSTER_POTTERY_SHERD.get(), "Guster Pottery Sherd");
+		add(CTBItems.SCRAPE_POTTERY_SHERD.get(), "Scrape Pottery Sherd");
 		add("item.minecraft.potion.effect.oozing", "Potion of Oozing");
 		add("item.minecraft.splash_potion.effect.oozing", "Splash Potion of Oozing");
 		add("item.minecraft.lingering_potion.effect.oozing", "Lingering Potion of Oozing");

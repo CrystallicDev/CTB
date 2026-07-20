@@ -114,6 +114,13 @@ public class CTBBlocks {
 						.isViewBlocking((state, level, pos) -> false)
 						.noOcclusion())));
 
+	public static final RegistryObject<Block> DECORATED_POT = registerWithItem(BLOCKS, CTBItems.ITEMS, "decorated_pot",
+			BLOCKS.register("decorated_pot", () -> new com.natsu.backport.common.block.DecoratedPotBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.of(net.minecraft.world.level.material.Material.DECORATION)
+						.strength(0.0F)
+						.sound(net.minecraft.world.level.block.SoundType.STONE)
+						.noOcclusion())));
+
 	private static RegistryObject<Block> registerWithItem(DeferredRegister<Block> blocks, DeferredRegister<Item> items,
 			String name, RegistryObject<Block> reg) {
 		items.register(name,

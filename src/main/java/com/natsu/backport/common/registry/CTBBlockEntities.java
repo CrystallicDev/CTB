@@ -2,6 +2,7 @@ package com.natsu.backport.common.registry;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.block.entity.CreakingHeartBlockEntity;
+import com.natsu.backport.common.block.entity.DecoratedPotBlockEntity;
 import com.natsu.backport.common.block.entity.TrialSpawnerBlockEntity;
 import com.natsu.backport.common.block.entity.vault.VaultBlockEntity;
 
@@ -24,5 +25,9 @@ public class CTBBlockEntities {
 
 	public static final RegistryObject<BlockEntityType<VaultBlockEntity>> VAULT = BLOCK_ENTITIES.register("vault",
 			() -> BlockEntityType.Builder.of(VaultBlockEntity::new, CTBBlocks.VAULT.get()).build(null)
+			);
+
+	public static final RegistryObject<BlockEntityType<DecoratedPotBlockEntity>> DECORATED_POT = BLOCK_ENTITIES.register("decorated_pot",
+			() -> BlockEntityType.Builder.of(DecoratedPotBlockEntity::new, CTBBlocks.DECORATED_POT.get()).build(null)
 			);
 }

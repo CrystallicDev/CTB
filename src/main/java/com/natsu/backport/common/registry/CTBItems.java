@@ -40,4 +40,14 @@ public class CTBItems {
 			new OminousBottleItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.UNCOMMON))
 			);
 
+	public static final RegistryObject<Item> FLOW_POTTERY_SHERD = ITEMS.register("flow_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
+	public static final RegistryObject<Item> GUSTER_POTTERY_SHERD = ITEMS.register("guster_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
+	public static final RegistryObject<Item> SCRAPE_POTTERY_SHERD = ITEMS.register("scrape_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
+
 }

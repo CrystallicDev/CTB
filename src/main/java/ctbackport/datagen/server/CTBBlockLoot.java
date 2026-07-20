@@ -65,6 +65,12 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		dropSelf(CTBBlocks.HEAVY_CORE.get());
 		// vanilla : neither drops anything, even with silk touch
 		add(CTBBlocks.TRIAL_SPAWNER.get(), noDrop());
+		add(CTBBlocks.DECORATED_POT.get(), block -> LootTable.lootTable().withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1))
+				.add(LootItem.lootTableItem(block)
+						.apply(net.minecraft.world.level.storage.loot.functions.CopyNbtFunction
+								.copyData(net.minecraft.world.level.storage.loot.providers.nbt.ContextNbtProvider.BLOCK_ENTITY)
+								.copy("sherds", "BlockEntityTag.sherds")))));
 		add(CTBBlocks.VAULT.get(), noDrop());
 		handleCopperSet(CTBBlocks.CHISELED_COPPER);
 		for (net.minecraftforge.registries.RegistryObject<Block> b : java.util.List.of(

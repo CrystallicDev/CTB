@@ -68,6 +68,25 @@ public class TrialChambersStructureGameTests {
 	}
 
 	@GameTest(template = "empty")
+	public static void potTemplateKeepsSherdsAndLoot(GameTestHelper helper) {
+		StructureTemplate template = load(helper, "decor/flow_pot");
+		place(helper, template, new BlockPos(1, 1, 1));
+
+		for (BlockPos pos : BlockPos.betweenClosed(helper.absolutePos(new BlockPos(0, 0, 0)), helper.absolutePos(new BlockPos(4, 4, 4)))) {
+			if (helper.getLevel().getBlockState(pos).is(CTBBlocks.DECORATED_POT.get())) {
+				BlockEntity be = helper.getLevel().getBlockEntity(pos);
+				if (be instanceof com.natsu.backport.common.block.entity.DecoratedPotBlockEntity pot
+						&& pot.getSherds().contains(com.natsu.backport.common.registry.CTBItems.FLOW_POTTERY_SHERD.get())) {
+					helper.succeed();
+					return;
+				}
+				throw new GameTestAssertException("pot placed but sherds not loaded");
+			}
+		}
+		throw new GameTestAssertException("no decorated pot placed from the template");
+	}
+
+	@GameTest(template = "empty")
 	public static void chamberTemplateUsesModBlocks(GameTestHelper helper) {
 		StructureTemplate template = load(helper, "corridor/first_plate");
 		place(helper, template, new BlockPos(0, 1, 0));
