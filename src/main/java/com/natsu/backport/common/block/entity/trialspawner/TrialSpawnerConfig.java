@@ -20,11 +20,15 @@ public record TrialSpawnerConfig(
 		float simultaneousMobsAddedPerPlayer,
 		int ticksBetweenSpawn,
 		SimpleWeightedRandomList<SpawnData> spawnPotentials,
-		SimpleWeightedRandomList<ResourceLocation> lootTablesToEject
+		SimpleWeightedRandomList<ResourceLocation> lootTablesToEject,
+		ResourceLocation itemsToDropWhenOminous
 ) {
 
 	public static final ResourceLocation LOOT_CONSUMABLES = new ResourceLocation(CTBackport.MODID, "spawners/trial_chamber/consumables");
 	public static final ResourceLocation LOOT_KEY = new ResourceLocation(CTBackport.MODID, "spawners/trial_chamber/key");
+	public static final ResourceLocation LOOT_OMINOUS_CONSUMABLES = new ResourceLocation(CTBackport.MODID, "spawners/ominous/trial_chamber/consumables");
+	public static final ResourceLocation LOOT_OMINOUS_KEY = new ResourceLocation(CTBackport.MODID, "spawners/ominous/trial_chamber/key");
+	public static final ResourceLocation LOOT_OMINOUS_ITEMS_TO_DROP = new ResourceLocation(CTBackport.MODID, "spawners/trial_chamber/items_to_drop_when_ominous");
 
 	public static final TrialSpawnerConfig DEFAULT = builder().build();
 
@@ -36,7 +40,8 @@ public record TrialSpawnerConfig(
 			Codec.floatRange(0.0F, Float.MAX_VALUE).optionalFieldOf("simultaneous_mobs_added_per_player", DEFAULT.simultaneousMobsAddedPerPlayer).forGetter(TrialSpawnerConfig::simultaneousMobsAddedPerPlayer),
 			Codec.intRange(0, Integer.MAX_VALUE).optionalFieldOf("ticks_between_spawn", DEFAULT.ticksBetweenSpawn).forGetter(TrialSpawnerConfig::ticksBetweenSpawn),
 			SpawnData.LIST_CODEC.optionalFieldOf("spawn_potentials", SimpleWeightedRandomList.empty()).forGetter(TrialSpawnerConfig::spawnPotentials),
-			SimpleWeightedRandomList.wrappedCodecAllowingEmpty(ResourceLocation.CODEC).optionalFieldOf("loot_tables_to_eject", DEFAULT.lootTablesToEject).forGetter(TrialSpawnerConfig::lootTablesToEject)
+			SimpleWeightedRandomList.wrappedCodecAllowingEmpty(ResourceLocation.CODEC).optionalFieldOf("loot_tables_to_eject", DEFAULT.lootTablesToEject).forGetter(TrialSpawnerConfig::lootTablesToEject),
+			ResourceLocation.CODEC.optionalFieldOf("items_to_drop_when_ominous", DEFAULT.itemsToDropWhenOminous).forGetter(TrialSpawnerConfig::itemsToDropWhenOminous)
 		).apply(i, TrialSpawnerConfig::new));
 
 	public int calculateTargetTotalMobs(int additionalPlayers) {
@@ -52,7 +57,8 @@ public record TrialSpawnerConfig(
 		tag.putString("id", type.getRegistryName().toString());
 		SpawnData spawnData = new SpawnData(tag, Optional.empty());
 		return new TrialSpawnerConfig(this.spawnRange, this.totalMobs, this.simultaneousMobs, this.totalMobsAddedPerPlayer,
-				this.simultaneousMobsAddedPerPlayer, this.ticksBetweenSpawn, SimpleWeightedRandomList.single(spawnData), this.lootTablesToEject);
+				this.simultaneousMobsAddedPerPlayer, this.ticksBetweenSpawn, SimpleWeightedRandomList.single(spawnData),
+				this.lootTablesToEject, this.itemsToDropWhenOminous);
 	}
 
 	public static Builder builder() {
@@ -69,6 +75,7 @@ public record TrialSpawnerConfig(
 		private SimpleWeightedRandomList<SpawnData> spawnPotentials = SimpleWeightedRandomList.empty();
 		private SimpleWeightedRandomList<ResourceLocation> lootTablesToEject = SimpleWeightedRandomList.<ResourceLocation>builder()
 				.add(LOOT_CONSUMABLES, 1).add(LOOT_KEY, 1).build();
+		private ResourceLocation itemsToDropWhenOminous = LOOT_OMINOUS_ITEMS_TO_DROP;
 
 		public Builder spawnRange(int spawnRange) { this.spawnRange = spawnRange; return this; }
 		public Builder totalMobs(float totalMobs) { this.totalMobs = totalMobs; return this; }
@@ -78,10 +85,11 @@ public record TrialSpawnerConfig(
 		public Builder ticksBetweenSpawn(int ticksBetweenSpawn) { this.ticksBetweenSpawn = ticksBetweenSpawn; return this; }
 		public Builder spawnPotentials(SimpleWeightedRandomList<SpawnData> list) { this.spawnPotentials = list; return this; }
 		public Builder lootTablesToEject(SimpleWeightedRandomList<ResourceLocation> list) { this.lootTablesToEject = list; return this; }
+		public Builder itemsToDropWhenOminous(ResourceLocation loot) { this.itemsToDropWhenOminous = loot; return this; }
 
 		public TrialSpawnerConfig build() {
 			return new TrialSpawnerConfig(spawnRange, totalMobs, simultaneousMobs, totalMobsAddedPerPlayer,
-					simultaneousMobsAddedPerPlayer, ticksBetweenSpawn, spawnPotentials, lootTablesToEject);
+					simultaneousMobsAddedPerPlayer, ticksBetweenSpawn, spawnPotentials, lootTablesToEject, itemsToDropWhenOminous);
 		}
 	}
 }

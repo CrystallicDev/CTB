@@ -99,7 +99,17 @@ public class TrialSpawnerConfigs {
 
 	private static void register(String id, TrialSpawnerConfig normal, TrialSpawnerConfig ominous) {
 		BY_ID.put(new ResourceLocation(CTBackport.MODID, id + "/normal"), normal);
-		BY_ID.put(new ResourceLocation(CTBackport.MODID, id + "/ominous"), ominous);
+		BY_ID.put(new ResourceLocation(CTBackport.MODID, id + "/ominous"), withOminousEject(ominous));
+	}
+
+	// every vanilla ominous config ejects the same table pair
+	private static TrialSpawnerConfig withOminousEject(TrialSpawnerConfig c) {
+		SimpleWeightedRandomList<ResourceLocation> eject = SimpleWeightedRandomList.<ResourceLocation>builder()
+				.add(TrialSpawnerConfig.LOOT_OMINOUS_KEY, 3)
+				.add(TrialSpawnerConfig.LOOT_OMINOUS_CONSUMABLES, 7)
+				.build();
+		return new TrialSpawnerConfig(c.spawnRange(), c.totalMobs(), c.simultaneousMobs(), c.totalMobsAddedPerPlayer(),
+				c.simultaneousMobsAddedPerPlayer(), c.ticksBetweenSpawn(), c.spawnPotentials(), eject, c.itemsToDropWhenOminous());
 	}
 
 	private static TrialSpawnerConfig.Builder base() {

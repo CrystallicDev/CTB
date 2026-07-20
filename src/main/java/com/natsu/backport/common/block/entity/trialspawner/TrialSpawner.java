@@ -122,7 +122,10 @@ public final class TrialSpawner {
 
 	public void applyOminous(ServerLevel level, BlockPos pos) {
 		level.setBlock(pos, level.getBlockState(pos).setValue(TrialSpawnerBlock.OMINOUS, true), Block.UPDATE_ALL);
+		level.playSound(null, pos, CTBSounds.TRIAL_SPAWNER_OMINOUS_ACTIVATE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+		addBecomeOminousParticles(level, pos);
 		this.isOminous = true;
+		this.data.resetAfterBecomingOminous(this, level);
 	}
 
 	public void removeOminous(ServerLevel level, BlockPos pos) {
@@ -332,6 +335,24 @@ public final class TrialSpawner {
 			double z = pos.getZ() + 0.5 + (random.nextDouble() - 0.5) * 2.0;
 			level.sendParticles(ParticleTypes.SMOKE, x, y, z, 1, 0.0, 0.0, 0.0, 0.0);
 			level.sendParticles(particleType, x, y, z, 1, 0.0, 0.0, 0.0, 0.0);
+		}
+	}
+
+	public void playRemoveMobEffects(ServerLevel level, BlockPos pos) {
+		addSpawnParticles(level, pos, ParticleTypes.FLAME);
+	}
+
+	private static void addBecomeOminousParticles(ServerLevel level, BlockPos pos) {
+		Random random = level.getRandom();
+		for (int i = 0; i < 20; i++) {
+			double x = pos.getX() + 0.5 + (random.nextDouble() - 0.5) * 2.0;
+			double y = pos.getY() + 0.5 + (random.nextDouble() - 0.5) * 2.0;
+			double z = pos.getZ() + 0.5 + (random.nextDouble() - 0.5) * 2.0;
+			double vx = random.nextGaussian() * 0.02;
+			double vy = random.nextGaussian() * 0.02;
+			double vz = random.nextGaussian() * 0.02;
+			level.sendParticles(CTBParticles.TRIAL_OMEN.get(), x, y, z, 0, vx, vy, vz, 1.0);
+			level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, x, y, z, 0, vx, vy, vz, 1.0);
 		}
 	}
 

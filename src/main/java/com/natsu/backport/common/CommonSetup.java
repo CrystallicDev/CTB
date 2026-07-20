@@ -22,6 +22,8 @@ import com.natsu.backport.common.entity.Breeze;
 import com.natsu.backport.common.entity.Creaking;
 import com.natsu.backport.common.registry.CTBBlocks;
 import com.natsu.backport.common.registry.CTBEntities;
+import com.natsu.backport.common.registry.CTBItems;
+import com.natsu.backport.common.registry.CTBPotions;
 import com.natsu.backport.utils.sets.WeatherableCopperSet;
 
 import net.minecraft.world.item.HoneycombItem;
@@ -51,6 +53,26 @@ public class CommonSetup {
 
 		event.enqueueWork(CommonSetup::registerWeatherables);
 		event.enqueueWork(CommonSetup::registerFlammablesAndCompostables);
+		event.enqueueWork(CommonSetup::registerBrewingRecipes);
+	}
+
+	// vanilla 1.21 mixes, splash and lingering conversions are container level and free
+	private static void registerBrewingRecipes() {
+		addMix(net.minecraft.world.item.alchemy.Potions.AWKWARD, CTBItems.BREEZE_ROD.get(), CTBPotions.WIND_CHARGED.get());
+		addMix(net.minecraft.world.item.alchemy.Potions.AWKWARD, net.minecraft.world.item.Items.SLIME_BLOCK, CTBPotions.OOZING.get());
+		addMix(net.minecraft.world.item.alchemy.Potions.AWKWARD, net.minecraft.world.item.Items.COBWEB, CTBPotions.WEAVING.get());
+		addMix(net.minecraft.world.item.alchemy.Potions.AWKWARD, net.minecraft.world.item.Items.STONE, CTBPotions.INFESTED.get());
+	}
+
+	private static void addMix(net.minecraft.world.item.alchemy.Potion from, net.minecraft.world.item.Item ingredient, net.minecraft.world.item.alchemy.Potion to) {
+		for (net.minecraft.world.item.Item container : List.of(net.minecraft.world.item.Items.POTION,
+				net.minecraft.world.item.Items.SPLASH_POTION, net.minecraft.world.item.Items.LINGERING_POTION)) {
+			net.minecraftforge.common.brewing.BrewingRecipeRegistry.addRecipe(
+					net.minecraftforge.common.crafting.NBTIngredient.of(
+							net.minecraft.world.item.alchemy.PotionUtils.setPotion(new net.minecraft.world.item.ItemStack(container), from)),
+					net.minecraft.world.item.crafting.Ingredient.of(ingredient),
+					net.minecraft.world.item.alchemy.PotionUtils.setPotion(new net.minecraft.world.item.ItemStack(container), to));
+		}
 	}
 
 	// vanilla values, applied through the sets (FireBlock#setFlammable is AT'd)

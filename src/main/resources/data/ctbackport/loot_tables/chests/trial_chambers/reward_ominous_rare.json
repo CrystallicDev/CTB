@@ -1,0 +1,124 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1.0,
+			"bonus_rolls": 0.0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:emerald_block",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:iron_block",
+					"weight": 4
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:crossbow",
+					"weight": 4,
+					"functions": [
+						{
+							"function": "minecraft:enchant_with_levels",
+							"treasure": false,
+							"levels": {
+								"type": "minecraft:uniform",
+								"min": 5.0,
+								"max": 20.0
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:golden_apple",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:diamond_axe",
+					"weight": 3,
+					"functions": [
+						{
+							"function": "minecraft:enchant_with_levels",
+							"treasure": false,
+							"levels": {
+								"type": "minecraft:uniform",
+								"min": 10.0,
+								"max": 20.0
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:diamond_chestplate",
+					"weight": 3,
+					"functions": [
+						{
+							"function": "minecraft:enchant_with_levels",
+							"treasure": false,
+							"levels": {
+								"type": "minecraft:uniform",
+								"min": 10.0,
+								"max": 20.0
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:book",
+					"weight": 2,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"enchantments": [
+								"minecraft:knockback",
+								"minecraft:punch",
+								"minecraft:smite",
+								"minecraft:looting",
+								"minecraft:multishot"
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:book",
+					"weight": 2,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"enchantments": [
+								"ctbackport:breach",
+								"ctbackport:density"
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:book",
+					"weight": 2,
+					"functions": [
+						{
+							"function": "minecraft:set_enchantments",
+							"add": false,
+							"enchantments": {
+								"ctbackport:wind_burst": 1.0
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:diamond_block",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

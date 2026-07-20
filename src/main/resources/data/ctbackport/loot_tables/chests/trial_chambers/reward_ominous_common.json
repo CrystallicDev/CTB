@@ -7,15 +7,30 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:arrow",
+					"name": "minecraft:emerald",
+					"weight": 5,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"type": "minecraft:uniform",
+								"min": 4.0,
+								"max": 10.0
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "ctbackport:wind_charge",
 					"weight": 4,
 					"functions": [
 						{
 							"function": "minecraft:set_count",
 							"count": {
 								"type": "minecraft:uniform",
-								"min": 2.0,
-								"max": 8.0
+								"min": 8.0,
+								"max": 12.0
 							}
 						}
 					]
@@ -23,115 +38,7 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:tipped_arrow",
-					"weight": 4,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"type": "minecraft:uniform",
-								"min": 2.0,
-								"max": 8.0
-							}
-						},
-						{
-							"function": "minecraft:set_nbt",
-							"tag": "{Potion:\"minecraft:poison\"}"
-						}
-					]
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:emerald",
-					"weight": 4,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"type": "minecraft:uniform",
-								"min": 2.0,
-								"max": 4.0
-							}
-						}
-					]
-				},
-				{
-					"type": "minecraft:item",
-					"name": "ctbackport:wind_charge",
 					"weight": 3,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"type": "minecraft:uniform",
-								"min": 1.0,
-								"max": 3.0
-							}
-						}
-					]
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:iron_ingot",
-					"weight": 3,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"type": "minecraft:uniform",
-								"min": 1.0,
-								"max": 4.0
-							}
-						}
-					]
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:honey_bottle",
-					"weight": 3,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"type": "minecraft:uniform",
-								"min": 1.0,
-								"max": 2.0
-							}
-						}
-					]
-				},
-				{
-					"type": "minecraft:item",
-					"name": "ctbackport:ominous_bottle",
-					"weight": 1,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": 1
-						},
-						{
-							"function": "minecraft:set_nbt",
-							"tag": "{OminousBottleAmplifier:0}"
-						}
-					]
-				},
-				{
-					"type": "minecraft:item",
-					"name": "ctbackport:ominous_bottle",
-					"weight": 1,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": 1
-						},
-						{
-							"function": "minecraft:set_nbt",
-							"tag": "{OminousBottleAmplifier:1}"
-						}
-					]
-				},
-				{
-					"type": "minecraft:item",
-					"name": "ctbackport:wind_charge",
 					"functions": [
 						{
 							"function": "minecraft:set_count",
@@ -140,20 +47,70 @@
 								"min": 4.0,
 								"max": 12.0
 							}
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{Potion:\"minecraft:strong_slowness\"}"
 						}
 					]
 				},
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond",
+					"weight": 2,
 					"functions": [
 						{
 							"function": "minecraft:set_count",
 							"count": {
 								"type": "minecraft:uniform",
-								"min": 1.0,
-								"max": 2.0
+								"min": 2.0,
+								"max": 3.0
 							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "ctbackport:ominous_bottle",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 1
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{OminousBottleAmplifier:2}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "ctbackport:ominous_bottle",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 1
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{OminousBottleAmplifier:3}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "ctbackport:ominous_bottle",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 1
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{OminousBottleAmplifier:4}"
 						}
 					]
 				}

@@ -1,9 +1,18 @@
 package com.natsu.backport.common.block.entity.trialspawner;
 
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Random;
+import java.util.Set;
+import java.util.UUID;
 
+import javax.annotation.Nullable;
+
+import com.natsu.backport.common.entity.OminousItemSpawner;
 import com.natsu.backport.common.registry.CTBSounds;
 
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -12,7 +21,12 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 
 public enum TrialSpawnerState implements StringRepresentable {
@@ -67,7 +81,9 @@ public enum TrialSpawnerState implements StringRepresentable {
 				} else {
 					int additionalPlayers = data.countAdditionalPlayers();
 					data.tryDetectPlayers(level, pos, spawner);
-					// the ominous item spawner drops belong to the ominous phase, not wired yet
+					if (spawner.isOminous()) {
+						this.spawnOminousItemSpawner(level, pos, spawner);
+					}
 
 					if (data.hasFinishedSpawningAllMobs(config, additionalPlayers)) {
 						if (data.haveAllCurrentMobsDied()) {
@@ -131,6 +147,62 @@ public enum TrialSpawnerState implements StringRepresentable {
 				}
 			}
 		};
+	}
+
+	private void spawnOminousItemSpawner(ServerLevel level, BlockPos spawnerPos, TrialSpawner spawner) {
+		TrialSpawnerStateData data = spawner.getStateData();
+		TrialSpawnerConfig config = spawner.activeConfig();
+		ItemStack itemToDispense = data.getDispensingItems(level, config, spawnerPos).getRandomValue(level.getRandom()).orElse(ItemStack.EMPTY);
+		if (itemToDispense.isEmpty() || level.getGameTime() < data.cooldownEndsAt) {
+			return;
+		}
+
+		calculatePositionToSpawnItemSpawner(level, spawnerPos, spawner, data).ifPresent(pos -> {
+			OminousItemSpawner itemSpawner = OminousItemSpawner.create(level, itemToDispense.copy());
+			itemSpawner.setPos(pos);
+			level.addFreshEntity(itemSpawner);
+			float pitch = (level.getRandom().nextFloat() - level.getRandom().nextFloat()) * 0.2F + 1.0F;
+			level.playSound(null, new BlockPos(pos), CTBSounds.TRIAL_SPAWNER_SPAWN_ITEM_BEGIN.get(), SoundSource.BLOCKS, 1.0F, pitch);
+			data.cooldownEndsAt = level.getGameTime() + TrialSpawnerStateData.TICKS_BETWEEN_ITEM_SPAWNERS;
+		});
+	}
+
+	private static Optional<Vec3> calculatePositionToSpawnItemSpawner(ServerLevel level, BlockPos spawnerPos, TrialSpawner spawner, TrialSpawnerStateData data) {
+		List<Player> nearbyPlayers = data.detectedPlayers.stream()
+				.map(level::getPlayerByUUID)
+				.filter(Objects::nonNull)
+				.filter(player -> !player.isCreative() && !player.isSpectator() && player.isAlive()
+						&& player.distanceToSqr(Vec3.atCenterOf(spawnerPos)) <= (double) Mth.square(spawner.getRequiredPlayerRange()))
+				.toList();
+		if (nearbyPlayers.isEmpty()) {
+			return Optional.empty();
+		}
+
+		Entity target = selectEntityToSpawnItemAbove(nearbyPlayers, data.currentMobs, spawner, spawnerPos, level);
+		return target == null ? Optional.empty() : calculatePositionAbove(target, level);
+	}
+
+	private static Optional<Vec3> calculatePositionAbove(Entity target, ServerLevel level) {
+		Vec3 targetPos = target.position();
+		Vec3 tryPos = targetPos.add(0.0, target.getBbHeight() + 2.0F + level.getRandom().nextInt(4), 0.0);
+		BlockHitResult hit = level.clip(new ClipContext(targetPos, tryPos, ClipContext.Block.VISUAL, ClipContext.Fluid.NONE, null));
+		Vec3 below = Vec3.atCenterOf(hit.getBlockPos()).add(0.0, -1.0, 0.0);
+		BlockPos belowPos = new BlockPos(below);
+		return level.getBlockState(belowPos).getCollisionShape(level, belowPos).isEmpty() ? Optional.of(below) : Optional.empty();
+	}
+
+	@Nullable
+	private static Entity selectEntityToSpawnItemAbove(List<Player> nearbyPlayers, Set<UUID> mobIds, TrialSpawner spawner, BlockPos spawnerPos, ServerLevel level) {
+		List<? extends Entity> nearbyMobs = mobIds.stream()
+				.map(level::getEntity)
+				.filter(Objects::nonNull)
+				.filter(mob -> mob.isAlive() && mob.distanceToSqr(Vec3.atCenterOf(spawnerPos)) <= (double) Mth.square(spawner.getRequiredPlayerRange()))
+				.toList();
+		List<? extends Entity> eligible = level.getRandom().nextBoolean() ? nearbyMobs : nearbyPlayers;
+		if (eligible.isEmpty()) {
+			return null;
+		}
+		return eligible.size() == 1 ? eligible.get(0) : Util.getRandom(eligible, level.getRandom());
 	}
 
 	public int lightLevel() {

@@ -3,6 +3,7 @@ package com.natsu.backport.client;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.client.render.BreezeRenderer;
 import com.natsu.backport.client.render.CreakingRenderer;
+import com.natsu.backport.client.render.OminousItemSpawnerRenderer;
 import com.natsu.backport.client.render.TrialSpawnerRenderer;
 import com.natsu.backport.client.render.VaultRenderer;
 import com.natsu.backport.client.render.WindChargeRenderer;
@@ -38,6 +39,7 @@ public class ClientSetup {
 		event.registerEntityRenderer(CTBEntities.BREEZE.get(), BreezeRenderer::new);
 		event.registerBlockEntityRenderer(CTBBlockEntities.TRIAL_SPAWNER.get(), TrialSpawnerRenderer::new);
 		event.registerBlockEntityRenderer(CTBBlockEntities.VAULT.get(), VaultRenderer::new);
+		event.registerEntityRenderer(CTBEntities.OMINOUS_ITEM_SPAWNER.get(), OminousItemSpawnerRenderer::new);
 	}
 
 	@SubscribeEvent
@@ -51,6 +53,9 @@ public class ClientSetup {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRIAL_SPAWNER_DETECTION.get(), TrialSpawnerDetectionParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRIAL_SPAWNER_DETECTION_OMINOUS.get(), TrialSpawnerDetectionParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.VAULT_CONNECTION.get(), VaultConnectionParticle.Provider::new);
+		// same fly-along-vector behavior as the vault connection
+		Minecraft.getInstance().particleEngine.register(CTBParticles.OMINOUS_SPAWNING.get(), VaultConnectionParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.TRIAL_OMEN.get(), TrialSpawnerDetectionParticle.Provider::new);
 	}
 
 	@SubscribeEvent

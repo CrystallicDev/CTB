@@ -9,6 +9,7 @@ import com.natsu.backport.common.registry.CTBEntities;
 import com.natsu.backport.common.registry.CTBFeatures;
 import com.natsu.backport.common.registry.CTBFoliagePlacers;
 import com.natsu.backport.common.registry.CTBItems;
+import com.natsu.backport.common.registry.CTBPotions;
 import com.natsu.backport.common.registry.CTBStructures;
 import com.natsu.backport.common.registry.CTBParticles;
 import com.natsu.backport.common.registry.CTBSounds;
@@ -35,6 +36,7 @@ public class CTBackport {
     	CTBItems.ITEMS.register(modEventBus);
     	CTBBlockEntities.BLOCK_ENTITIES.register(modEventBus);
     	CTBStructures.STRUCTURES.register(modEventBus);
+    	CTBPotions.POTIONS.register(modEventBus);
     	CTBEnchantments.ENCHANTMENTS.register(modEventBus);
     	GeckoLib.initialize();
 

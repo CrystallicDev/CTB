@@ -7,7 +7,13 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"name": "ctbackport:chests/trial_chambers/reward_rare"
+					"name": "ctbackport:chests/trial_chambers/reward_ominous_rare",
+					"weight": 8
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "ctbackport:chests/trial_chambers/reward_ominous_common",
+					"weight": 2
 				}
 			]
 		},
@@ -21,7 +27,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"name": "ctbackport:chests/trial_chambers/reward_rare"
+					"name": "ctbackport:chests/trial_chambers/reward_ominous_common"
 				}
 			]
 		},
@@ -31,7 +37,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"name": "ctbackport:chests/trial_chambers/reward_unique"
+					"name": "ctbackport:chests/trial_chambers/reward_ominous_unique"
 				}
 			],
 			"conditions": [

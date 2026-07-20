@@ -47,5 +47,11 @@ public class CTBParticles {
 	public static final RegistryObject<SimpleParticleType> VAULT_CONNECTION = PARTICLES.register("vault_connection",
 			() -> new SimpleParticleType(true)
 		);
+	public static final RegistryObject<SimpleParticleType> TRIAL_OMEN = PARTICLES.register("trial_omen",
+			() -> new SimpleParticleType(true)
+		);
+	public static final RegistryObject<SimpleParticleType> OMINOUS_SPAWNING = PARTICLES.register("ominous_spawning",
+			() -> new SimpleParticleType(true)
+		);
 
 }

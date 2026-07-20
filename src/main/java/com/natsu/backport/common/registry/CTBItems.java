@@ -2,6 +2,7 @@ package com.natsu.backport.common.registry;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.item.MaceItem;
+import com.natsu.backport.common.item.OminousBottleItem;
 import com.natsu.backport.common.item.WindChargeItem;
 
 import net.minecraft.world.item.CreativeModeTab;
@@ -33,6 +34,10 @@ public class CTBItems {
 
 	public static final RegistryObject<Item> OMINOUS_TRIAL_KEY = ITEMS.register("ominous_trial_key", () ->
 			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.RARE))
+			);
+
+	public static final RegistryObject<Item> OMINOUS_BOTTLE = ITEMS.register("ominous_bottle", () ->
+			new OminousBottleItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.UNCOMMON))
 			);
 
 }
