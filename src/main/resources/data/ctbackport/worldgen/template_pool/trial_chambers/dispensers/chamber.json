@@ -1,0 +1,45 @@
+{
+	"name": "ctbackport:trial_chambers/dispensers/chamber",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:empty_pool_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/dispensers/chamber",
+				"processors": {
+					"processors": []
+				},
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/dispensers/wall_dispenser",
+				"processors": {
+					"processors": []
+				},
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/dispensers/floor_dispenser",
+				"processors": {
+					"processors": []
+				},
+				"projection": "rigid"
+			}
+		}
+	]
+}

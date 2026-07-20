@@ -1,0 +1,15 @@
+{
+	"name": "ctbackport:trial_chambers/chamber/entrance_cap",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/entrance_cap",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		}
+	]
+}

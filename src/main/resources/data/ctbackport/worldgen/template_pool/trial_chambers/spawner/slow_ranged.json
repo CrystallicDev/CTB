@@ -1,0 +1,17 @@
+{
+	"name": "ctbackport:trial_chambers/spawner/slow_ranged",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/spawner/connectors/slow_ranged",
+				"processors": {
+					"processors": []
+				},
+				"projection": "rigid"
+			}
+		}
+	]
+}

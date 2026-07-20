@@ -1,0 +1,42 @@
+{
+	"name": "ctbackport:trial_chambers/chambers/end",
+	"fallback": "ctbackport:trial_chambers/hallway/fallback",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/chamber_1",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/assembly",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/eruption",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/slanted",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		}
+	]
+}

@@ -1,0 +1,34 @@
+{
+	"name": "ctbackport:trial_chambers/corridors/addon/middle",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 8,
+			"element": {
+				"element_type": "minecraft:empty_pool_element"
+			}
+		},
+		{
+			"weight": 2,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/corridor/addon/open_walkway",
+				"processors": {
+					"processors": []
+				},
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/corridor/addon/walled_walkway",
+				"processors": {
+					"processors": []
+				},
+				"projection": "rigid"
+			}
+		}
+	]
+}

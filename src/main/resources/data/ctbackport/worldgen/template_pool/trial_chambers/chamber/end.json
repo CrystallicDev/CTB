@@ -1,0 +1,24 @@
+{
+	"name": "ctbackport:trial_chambers/chamber/end",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/corridor/end_1",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/corridor/end_2",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		}
+	]
+}

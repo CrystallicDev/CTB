@@ -1,0 +1,280 @@
+{
+	"name": "ctbackport:trial_chambers/hallway",
+	"fallback": "ctbackport:trial_chambers/hallway/fallback",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/corridor_connector_1",
+				"processors": {
+					"processors": []
+				},
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/upper_hallway_connector",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/lower_hallway_connector",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/rubble",
+				"processors": {
+					"processors": []
+				},
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 150,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/chamber_1",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 150,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/chamber_2",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 150,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/chamber_4",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 150,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/chamber_8",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 150,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/assembly",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 150,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/eruption",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 150,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/slanted",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 150,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/chamber/pedestal",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 10,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/rubble_chamber",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/rubble_chamber_thin",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/cache_1",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/left_corner",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/right_corner",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/corner_staircase",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/corner_staircase_down",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/long_straight_staircase",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/long_straight_staircase_down",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/straight",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/straight_staircase",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/straight_staircase_down",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/trapped_staircase",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/encounter_1",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/encounter_2",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/encounter_3",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/encounter_4",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/hallway/encounter_5",
+				"processors": "ctbackport:trial_chambers_copper_bulb_degradation",
+				"projection": "rigid"
+			}
+		}
+	]
+}

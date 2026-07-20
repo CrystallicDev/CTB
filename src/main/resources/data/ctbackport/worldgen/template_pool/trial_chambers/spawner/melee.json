@@ -1,0 +1,17 @@
+{
+	"name": "ctbackport:trial_chambers/spawner/melee",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "ctbackport:trial_chambers/spawner/connectors/melee",
+				"processors": {
+					"processors": []
+				},
+				"projection": "rigid"
+			}
+		}
+	]
+}
