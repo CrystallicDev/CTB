@@ -66,6 +66,8 @@ public class ClientSetup {
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.CLOSED_EYEBLOSSOM.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.PALE_HANGING_MOSS.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.PALE_OAK_SAPLING.get(), RenderType.cutout());
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.TRIAL_SPAWNER.get(), RenderType.cutout());
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.VAULT.get(), RenderType.cutout());
         });
     }
 
