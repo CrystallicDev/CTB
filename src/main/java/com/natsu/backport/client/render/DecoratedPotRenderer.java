@@ -57,7 +57,7 @@ public class DecoratedPotRenderer implements BlockEntityRenderer<DecoratedPotBlo
 	private static void drawFace(PoseStack poseStack, VertexConsumer consumer, Direction side, int light, int overlay) {
 		float min = 1.0F / 16.0F - 0.004F;
 		float max = 15.0F / 16.0F + 0.004F;
-		float top = 13.0F / 16.0F + 0.004F;
+		float top = 1.0F + 0.004F;
 		float bottom = -0.004F;
 
 		poseStack.pushPose();
@@ -73,7 +73,10 @@ public class DecoratedPotRenderer implements BlockEntityRenderer<DecoratedPotBlo
 			case WEST -> new float[][] {{min, bottom, min}, {min, bottom, max}, {min, top, max}, {min, top, min}};
 			default -> new float[][] {{max, bottom, max}, {max, bottom, min}, {max, top, min}, {max, top, max}};
 		};
-		float[][] uvs = {{1.0F, 1.0F}, {0.0F, 1.0F}, {0.0F, 0.0F}, {1.0F, 0.0F}};
+		// vanilla maps the 14 wide face onto texture columns 1..15
+		float u0 = 1.0F / 16.0F;
+		float u1 = 15.0F / 16.0F;
+		float[][] uvs = {{u1, 1.0F}, {u0, 1.0F}, {u0, 0.0F}, {u1, 0.0F}};
 
 		for (int i = 0; i < 4; i++) {
 			consumer.vertex(pose, corners[i][0], corners[i][1], corners[i][2])
