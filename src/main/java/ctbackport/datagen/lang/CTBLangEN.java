@@ -71,6 +71,7 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBItems.OMINOUS_TRIAL_KEY.get(), "Ominous Trial Key");
 		add(CTBItems.OMINOUS_BOTTLE.get(), "Ominous Bottle");
 		add(CTBBlocks.DECORATED_POT.get(), "Decorated Pot");
+		add("entity.ctbackport.bogged", "Bogged");
 		add(CTBItems.FLOW_POTTERY_SHERD.get(), "Flow Pottery Sherd");
 		add(CTBItems.GUSTER_POTTERY_SHERD.get(), "Guster Pottery Sherd");
 		add(CTBItems.SCRAPE_POTTERY_SHERD.get(), "Scrape Pottery Sherd");

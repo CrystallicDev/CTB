@@ -83,6 +83,11 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> VAULT_PLACE = simple("vault_place");
 	public static final RegistryObject<SoundEvent> VAULT_STEP = simple("vault_step");
 
+	public static final RegistryObject<SoundEvent> BOGGED_AMBIENT = simple("bogged_ambient");
+	public static final RegistryObject<SoundEvent> BOGGED_HURT = simple("bogged_hurt");
+	public static final RegistryObject<SoundEvent> BOGGED_DEATH = simple("bogged_death");
+	public static final RegistryObject<SoundEvent> BOGGED_STEP = simple("bogged_step");
+
 	private static RegistryObject<SoundEvent> simple(String name) {
 		return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, name)));
 	}

@@ -1,6 +1,7 @@
 package com.natsu.backport.common.registry;
 
 import com.natsu.backport.CTBackport;
+import com.natsu.backport.common.entity.Bogged;
 import com.natsu.backport.common.entity.Breeze;
 import com.natsu.backport.common.entity.Creaking;
 import com.natsu.backport.common.entity.OminousItemSpawner;
@@ -33,6 +34,13 @@ public class CTBEntities {
 
 	public static final RegistryObject<EntityType<Breeze>> BREEZE = ENTITIES.register("breeze",
 			() -> EntityType.Builder.<Breeze>of(Breeze::new, MobCategory.MONSTER).build("breeze")
+			);
+
+	public static final RegistryObject<EntityType<Bogged>> BOGGED = ENTITIES.register("bogged",
+			() -> EntityType.Builder.<Bogged>of(Bogged::new, MobCategory.MONSTER)
+			.sized(0.6f, 1.99f)
+			.clientTrackingRange(8)
+			.build("bogged")
 			);
 
 	public static final RegistryObject<EntityType<OminousItemSpawner>> OMINOUS_ITEM_SPAWNER = ENTITIES.register("ominous_item_spawner",

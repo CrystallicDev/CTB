@@ -78,6 +78,7 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBItems.OMINOUS_TRIAL_KEY.get(), "Clé d'épreuve sinistre");
 		add(CTBItems.OMINOUS_BOTTLE.get(), "Fiole sinistre");
 		add(CTBBlocks.DECORATED_POT.get(), "Poterie décorée");
+		add("entity.ctbackport.bogged", "Enlisé");
 		add(CTBItems.FLOW_POTTERY_SHERD.get(), "Tesson de poterie flux");
 		add(CTBItems.GUSTER_POTTERY_SHERD.get(), "Tesson de poterie bourrasque");
 		add(CTBItems.SCRAPE_POTTERY_SHERD.get(), "Tesson de poterie raclage");

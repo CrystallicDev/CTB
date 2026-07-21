@@ -483,5 +483,38 @@
 			"ctbackport:block/vault/step7",
 			"ctbackport:block/vault/step8"
 		]
+	},
+	"bogged_ambient": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/bogged/ambient1",
+			"ctbackport:entity/bogged/ambient2",
+			"ctbackport:entity/bogged/ambient3",
+			"ctbackport:entity/bogged/ambient4"
+		]
+	},
+	"bogged_hurt": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/bogged/hurt1",
+			"ctbackport:entity/bogged/hurt2",
+			"ctbackport:entity/bogged/hurt3",
+			"ctbackport:entity/bogged/hurt4"
+		]
+	},
+	"bogged_death": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/bogged/death"
+		]
+	},
+	"bogged_step": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/bogged/step1",
+			"ctbackport:entity/bogged/step2",
+			"ctbackport:entity/bogged/step3",
+			"ctbackport:entity/bogged/step4"
+		]
 	}
 }

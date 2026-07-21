@@ -44,6 +44,7 @@ public class CommonSetup {
 
 		event.put(CTBEntities.CREAKING.get(), Creaking.createAttributes().build());
 		event.put(CTBEntities.BREEZE.get(), Breeze.createAttributes().build());
+		event.put(CTBEntities.BOGGED.get(), com.natsu.backport.common.entity.Bogged.createAttributes().build());
 		//event.put(CTBEntities.SULPHUR_CUBE.get(), SulphurCube.createAttributes().build());
 	}
 

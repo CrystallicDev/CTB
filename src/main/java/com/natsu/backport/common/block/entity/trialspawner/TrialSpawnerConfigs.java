@@ -55,10 +55,9 @@ public class TrialSpawnerConfigs {
 				base().spawnPotentials(single(() -> EntityType.ZOMBIE)).build(),
 				base().spawnPotentials(single(() -> EntityType.ZOMBIE)).build());
 
-		// the bogged is not backported yet, its spawners fall back to regular skeletons
 		register("trial_chamber/ranged/poison_skeleton",
-				base().spawnPotentials(single(() -> EntityType.SKELETON)).build(),
-				base().spawnPotentials(single(() -> EntityType.SKELETON)).build());
+				base().spawnPotentials(single(CTBEntities.BOGGED::get)).build(),
+				base().spawnPotentials(single(CTBEntities.BOGGED::get)).build());
 		register("trial_chamber/ranged/skeleton",
 				base().spawnPotentials(single(() -> EntityType.SKELETON)).build(),
 				base().spawnPotentials(single(() -> EntityType.SKELETON)).build());
@@ -66,8 +65,8 @@ public class TrialSpawnerConfigs {
 				base().spawnPotentials(single(() -> EntityType.STRAY)).build(),
 				base().spawnPotentials(single(() -> EntityType.STRAY)).build());
 		register("trial_chamber/slow_ranged/poison_skeleton",
-				slowRanged().spawnPotentials(single(() -> EntityType.SKELETON)).build(),
-				slowRanged().spawnPotentials(single(() -> EntityType.SKELETON)).build());
+				slowRanged().spawnPotentials(single(CTBEntities.BOGGED::get)).build(),
+				slowRanged().spawnPotentials(single(CTBEntities.BOGGED::get)).build());
 		register("trial_chamber/slow_ranged/skeleton",
 				slowRanged().spawnPotentials(single(() -> EntityType.SKELETON)).build(),
 				slowRanged().spawnPotentials(single(() -> EntityType.SKELETON)).build());

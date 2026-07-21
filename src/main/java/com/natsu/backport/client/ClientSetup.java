@@ -1,6 +1,7 @@
 package com.natsu.backport.client;
 
 import com.natsu.backport.CTBackport;
+import com.natsu.backport.client.render.BoggedRenderer;
 import com.natsu.backport.client.render.BreezeRenderer;
 import com.natsu.backport.client.render.CreakingRenderer;
 import com.natsu.backport.client.render.DecoratedPotRenderer;
@@ -38,6 +39,7 @@ public class ClientSetup {
 		event.registerEntityRenderer(CTBEntities.CREAKING.get(), CreakingRenderer::new);
 		//event.registerEntityRenderer(CTBEntities.SULPHUR_CUBE.get(), SulphurCubeRenderer::new);
 		event.registerEntityRenderer(CTBEntities.BREEZE.get(), BreezeRenderer::new);
+		event.registerEntityRenderer(CTBEntities.BOGGED.get(), BoggedRenderer::new);
 		event.registerBlockEntityRenderer(CTBBlockEntities.TRIAL_SPAWNER.get(), TrialSpawnerRenderer::new);
 		event.registerBlockEntityRenderer(CTBBlockEntities.VAULT.get(), VaultRenderer::new);
 		event.registerEntityRenderer(CTBEntities.OMINOUS_ITEM_SPAWNER.get(), OminousItemSpawnerRenderer::new);
