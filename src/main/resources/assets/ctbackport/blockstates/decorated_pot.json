@@ -1,19 +1,7 @@
 {
 	"variants": {
-		"facing=north": {
+		"": {
 			"model": "ctbackport:block/decorated_pot"
-		},
-		"facing=east": {
-			"model": "ctbackport:block/decorated_pot",
-			"y": 90
-		},
-		"facing=south": {
-			"model": "ctbackport:block/decorated_pot",
-			"y": 180
-		},
-		"facing=west": {
-			"model": "ctbackport:block/decorated_pot",
-			"y": 270
 		}
 	}
 }

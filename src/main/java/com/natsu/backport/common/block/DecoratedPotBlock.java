@@ -50,7 +50,8 @@ public class DecoratedPotBlock extends BaseEntityBlock implements SimpleWaterlog
 
 	@Override
 	public RenderShape getRenderShape(BlockState state) {
-		return RenderShape.MODEL;
+		// the block entity renderer draws the whole pot
+		return RenderShape.INVISIBLE;
 	}
 
 	@Override

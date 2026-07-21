@@ -114,12 +114,16 @@ public class CTBBlocks {
 						.isViewBlocking((state, level, pos) -> false)
 						.noOcclusion())));
 
-	public static final RegistryObject<Block> DECORATED_POT = registerWithItem(BLOCKS, CTBItems.ITEMS, "decorated_pot",
-			BLOCKS.register("decorated_pot", () -> new com.natsu.backport.common.block.DecoratedPotBlock(
+	public static final RegistryObject<Block> DECORATED_POT = BLOCKS.register("decorated_pot",
+			() -> new com.natsu.backport.common.block.DecoratedPotBlock(
 					net.minecraft.world.level.block.state.BlockBehaviour.Properties.of(net.minecraft.world.level.material.Material.DECORATION)
 						.strength(0.0F)
 						.sound(net.minecraft.world.level.block.SoundType.STONE)
-						.noOcclusion())));
+						.noOcclusion()));
+	// custom item, the pot renders through the block entity renderer even in hand
+	private static final RegistryObject<Item> DECORATED_POT_ITEM = CTBItems.ITEMS.register("decorated_pot",
+			() -> new com.natsu.backport.common.item.DecoratedPotItem(DECORATED_POT.get(),
+					new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
 
 	private static RegistryObject<Block> registerWithItem(DeferredRegister<Block> blocks, DeferredRegister<Item> items,
 			String name, RegistryObject<Block> reg) {
