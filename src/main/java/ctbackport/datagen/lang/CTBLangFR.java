@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.registry.CTBBlocks;
+import com.natsu.backport.common.registry.CTBEffects;
 import com.natsu.backport.common.registry.CTBEnchantments;
 import com.natsu.backport.common.registry.CTBItems;
 import com.natsu.backport.utils.sets.DirtDecorationSet;
@@ -79,6 +80,9 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBItems.OMINOUS_BOTTLE.get(), "Fiole sinistre");
 		add(CTBBlocks.DECORATED_POT.get(), "Poterie décorée");
 		add("entity.ctbackport.bogged", "Enlisé");
+		add("entity.ctbackport.nautilus", "Nautile");
+		add("entity.ctbackport.zombie_nautilus", "Nautile zombie");
+		add(CTBEffects.BREATH_OF_THE_NAUTILUS.get(), "Souffle du nautile");
 		add(CTBItems.FLOW_POTTERY_SHERD.get(), "Tesson de poterie flux");
 		add(CTBItems.GUSTER_POTTERY_SHERD.get(), "Tesson de poterie bourrasque");
 		add(CTBItems.SCRAPE_POTTERY_SHERD.get(), "Tesson de poterie raclage");

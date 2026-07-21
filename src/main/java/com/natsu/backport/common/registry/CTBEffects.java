@@ -27,5 +27,7 @@ public class CTBEffects {
 			() -> new WindChargedEffect());
 	public static final RegistryObject<MobEffect> TRIAL_OMEN = EFFECTS.register("trial_omen",
 			() -> new TrialOmenEffect());
+	public static final RegistryObject<MobEffect> BREATH_OF_THE_NAUTILUS = EFFECTS.register("breath_of_the_nautilus",
+			() -> new com.natsu.backport.common.mobeffects.positive.BreathOfTheNautilus());
 
 }

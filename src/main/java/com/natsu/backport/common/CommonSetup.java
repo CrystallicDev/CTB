@@ -45,6 +45,8 @@ public class CommonSetup {
 		event.put(CTBEntities.CREAKING.get(), Creaking.createAttributes().build());
 		event.put(CTBEntities.BREEZE.get(), Breeze.createAttributes().build());
 		event.put(CTBEntities.BOGGED.get(), com.natsu.backport.common.entity.Bogged.createAttributes().build());
+		event.put(CTBEntities.NAUTILUS.get(), com.natsu.backport.common.entity.AbstractNautilus.createAttributes().build());
+		event.put(CTBEntities.ZOMBIE_NAUTILUS.get(), com.natsu.backport.common.entity.ZombieNautilus.createAttributes().build());
 		//event.put(CTBEntities.SULPHUR_CUBE.get(), SulphurCube.createAttributes().build());
 	}
 
@@ -55,6 +57,7 @@ public class CommonSetup {
 		event.enqueueWork(CommonSetup::registerWeatherables);
 		event.enqueueWork(CommonSetup::registerFlammablesAndCompostables);
 		event.enqueueWork(CommonSetup::registerBrewingRecipes);
+		event.enqueueWork(com.natsu.backport.server.events.NautilusSpawns::registerPlacements);
 	}
 
 	// vanilla 1.21 mixes, splash and lingering conversions are container level and free

@@ -4,7 +4,9 @@ import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.entity.Bogged;
 import com.natsu.backport.common.entity.Breeze;
 import com.natsu.backport.common.entity.Creaking;
+import com.natsu.backport.common.entity.Nautilus;
 import com.natsu.backport.common.entity.OminousItemSpawner;
+import com.natsu.backport.common.entity.ZombieNautilus;
 import com.natsu.backport.common.entity.WindChargeEntity;
 
 import net.minecraft.world.entity.EntityType;
@@ -41,6 +43,20 @@ public class CTBEntities {
 			.sized(0.6f, 1.99f)
 			.clientTrackingRange(8)
 			.build("bogged")
+			);
+
+	public static final RegistryObject<EntityType<Nautilus>> NAUTILUS = ENTITIES.register("nautilus",
+			() -> EntityType.Builder.<Nautilus>of(Nautilus::new, MobCategory.WATER_CREATURE)
+			.sized(0.9f, 0.9f)
+			.clientTrackingRange(10)
+			.build("nautilus")
+			);
+
+	public static final RegistryObject<EntityType<ZombieNautilus>> ZOMBIE_NAUTILUS = ENTITIES.register("zombie_nautilus",
+			() -> EntityType.Builder.<ZombieNautilus>of(ZombieNautilus::new, MobCategory.WATER_CREATURE)
+			.sized(0.9f, 0.9f)
+			.clientTrackingRange(10)
+			.build("zombie_nautilus")
 			);
 
 	public static final RegistryObject<EntityType<OminousItemSpawner>> OMINOUS_ITEM_SPAWNER = ENTITIES.register("ominous_item_spawner",
