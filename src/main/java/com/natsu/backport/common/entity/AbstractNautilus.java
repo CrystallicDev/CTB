@@ -183,7 +183,9 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
 	public void equipSaddle(@Nullable SoundSource source) {
 		this.entityData.set(SADDLED, true);
 		if (source != null) {
-			this.level.playSound(null, this, SoundEvents.HORSE_SADDLE, source, 0.5F, 1.0F);
+			this.level.playSound(null, this, this.isUnderWater()
+					? com.natsu.backport.common.registry.CTBSounds.NAUTILUS_SADDLE_UNDERWATER_EQUIP.get()
+					: com.natsu.backport.common.registry.CTBSounds.NAUTILUS_SADDLE_EQUIP.get(), source, 0.5F, 1.0F);
 		}
 	}
 
@@ -457,12 +459,12 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
 
 	@Nullable
 	protected SoundEvent getDashSound() {
-		return SoundEvents.DOLPHIN_JUMP;
+		return null;
 	}
 
 	@Nullable
 	protected SoundEvent getDashReadySound() {
-		return SoundEvents.DOLPHIN_PLAY;
+		return null;
 	}
 
 	protected boolean isMobControlled() {

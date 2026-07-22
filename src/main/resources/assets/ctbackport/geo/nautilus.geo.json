@@ -325,12 +325,12 @@
 					]
 				},
 				{
-					"name": "upper_mouth",
+					"name": "outer_mouth",
 					"parent": "body",
 					"pivot": [
 						0,
-						8,
-						17
+						-5,
+						6
 					],
 					"cubes": [
 						{
@@ -406,18 +406,7 @@
 									]
 								}
 							}
-						}
-					]
-				},
-				{
-					"name": "lower_mouth",
-					"parent": "body",
-					"pivot": [
-						0,
-						0.1,
-						17
-					],
-					"cubes": [
+						},
 						{
 							"origin": [
 								-5,

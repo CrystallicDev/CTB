@@ -2,6 +2,8 @@ package com.natsu.backport.common.entity;
 
 import javax.annotation.Nullable;
 
+import com.natsu.backport.common.registry.CTBSounds;
+
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -41,6 +43,36 @@ public class ZombieNautilus extends AbstractNautilus {
 	@Override
 	public boolean isBaby() {
 		return false;
+	}
+
+	@Override
+	protected net.minecraft.sounds.SoundEvent getAmbientSound() {
+		return this.isUnderWater() ? CTBSounds.ZOMBIE_NAUTILUS_AMBIENT.get() : CTBSounds.ZOMBIE_NAUTILUS_AMBIENT_LAND.get();
+	}
+
+	@Override
+	protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) {
+		return this.isUnderWater() ? CTBSounds.ZOMBIE_NAUTILUS_HURT.get() : CTBSounds.ZOMBIE_NAUTILUS_HURT_LAND.get();
+	}
+
+	@Override
+	protected net.minecraft.sounds.SoundEvent getDeathSound() {
+		return this.isUnderWater() ? CTBSounds.ZOMBIE_NAUTILUS_DEATH.get() : CTBSounds.ZOMBIE_NAUTILUS_DEATH_LAND.get();
+	}
+
+	@Override
+	protected net.minecraft.sounds.SoundEvent getDashSound() {
+		return CTBSounds.ZOMBIE_NAUTILUS_DASH_LAND.get();
+	}
+
+	@Override
+	protected net.minecraft.sounds.SoundEvent getDashReadySound() {
+		return this.isUnderWater() ? CTBSounds.ZOMBIE_NAUTILUS_DASH_READY.get() : CTBSounds.ZOMBIE_NAUTILUS_DASH_READY_LAND.get();
+	}
+
+	@Override
+	protected void playEatingSound() {
+		this.playSound(CTBSounds.ZOMBIE_NAUTILUS_EAT.get(), 1.0F, 1.0F);
 	}
 
 	@Override

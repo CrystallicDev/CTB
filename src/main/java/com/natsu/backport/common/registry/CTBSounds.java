@@ -88,6 +88,30 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> BOGGED_DEATH = simple("bogged_death");
 	public static final RegistryObject<SoundEvent> BOGGED_STEP = simple("bogged_step");
 
+	public static final RegistryObject<SoundEvent> NAUTILUS_AMBIENT = simple("nautilus_ambient");
+	public static final RegistryObject<SoundEvent> NAUTILUS_AMBIENT_LAND = simple("nautilus_ambient_land");
+	public static final RegistryObject<SoundEvent> NAUTILUS_HURT = simple("nautilus_hurt");
+	public static final RegistryObject<SoundEvent> NAUTILUS_HURT_LAND = simple("nautilus_hurt_land");
+	public static final RegistryObject<SoundEvent> NAUTILUS_DEATH = simple("nautilus_death");
+	public static final RegistryObject<SoundEvent> NAUTILUS_DEATH_LAND = simple("nautilus_death_land");
+	public static final RegistryObject<SoundEvent> NAUTILUS_DASH = simple("nautilus_dash");
+	public static final RegistryObject<SoundEvent> NAUTILUS_DASH_LAND = simple("nautilus_dash_land");
+	public static final RegistryObject<SoundEvent> NAUTILUS_DASH_READY = simple("nautilus_dash_ready");
+	public static final RegistryObject<SoundEvent> NAUTILUS_DASH_READY_LAND = simple("nautilus_dash_ready_land");
+	public static final RegistryObject<SoundEvent> NAUTILUS_EAT = simple("nautilus_eat");
+	public static final RegistryObject<SoundEvent> ZOMBIE_NAUTILUS_AMBIENT = simple("zombie_nautilus_ambient");
+	public static final RegistryObject<SoundEvent> ZOMBIE_NAUTILUS_AMBIENT_LAND = simple("zombie_nautilus_ambient_land");
+	public static final RegistryObject<SoundEvent> ZOMBIE_NAUTILUS_HURT = simple("zombie_nautilus_hurt");
+	public static final RegistryObject<SoundEvent> ZOMBIE_NAUTILUS_HURT_LAND = simple("zombie_nautilus_hurt_land");
+	public static final RegistryObject<SoundEvent> ZOMBIE_NAUTILUS_DEATH = simple("zombie_nautilus_death");
+	public static final RegistryObject<SoundEvent> ZOMBIE_NAUTILUS_DEATH_LAND = simple("zombie_nautilus_death_land");
+	public static final RegistryObject<SoundEvent> ZOMBIE_NAUTILUS_DASH_LAND = simple("zombie_nautilus_dash_land");
+	public static final RegistryObject<SoundEvent> ZOMBIE_NAUTILUS_DASH_READY = simple("zombie_nautilus_dash_ready");
+	public static final RegistryObject<SoundEvent> ZOMBIE_NAUTILUS_DASH_READY_LAND = simple("zombie_nautilus_dash_ready_land");
+	public static final RegistryObject<SoundEvent> ZOMBIE_NAUTILUS_EAT = simple("zombie_nautilus_eat");
+	public static final RegistryObject<SoundEvent> NAUTILUS_SADDLE_EQUIP = simple("nautilus_saddle_equip");
+	public static final RegistryObject<SoundEvent> NAUTILUS_SADDLE_UNDERWATER_EQUIP = simple("nautilus_saddle_underwater_equip");
+
 	private static RegistryObject<SoundEvent> simple(String name) {
 		return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, name)));
 	}

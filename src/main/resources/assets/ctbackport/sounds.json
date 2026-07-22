@@ -516,5 +516,198 @@
 			"ctbackport:entity/bogged/step3",
 			"ctbackport:entity/bogged/step4"
 		]
+	},
+	"nautilus_ambient": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/ambient1",
+			"ctbackport:entity/nautilus/ambient2",
+			"ctbackport:entity/nautilus/ambient3",
+			"ctbackport:entity/nautilus/ambient4",
+			"ctbackport:entity/nautilus/ambient5",
+			"ctbackport:entity/nautilus/ambient6",
+			"ctbackport:entity/nautilus/ambient7",
+			"ctbackport:entity/nautilus/ambient8"
+		]
+	},
+	"nautilus_ambient_land": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/ambient_land1",
+			"ctbackport:entity/nautilus/ambient_land2",
+			"ctbackport:entity/nautilus/ambient_land3",
+			"ctbackport:entity/nautilus/ambient_land4",
+			"ctbackport:entity/nautilus/ambient_land5",
+			"ctbackport:entity/nautilus/ambient_land6",
+			"ctbackport:entity/nautilus/ambient_land7"
+		]
+	},
+	"nautilus_hurt": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/hurt1",
+			"ctbackport:entity/nautilus/hurt2",
+			"ctbackport:entity/nautilus/hurt3",
+			"ctbackport:entity/nautilus/hurt4"
+		]
+	},
+	"nautilus_hurt_land": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/hurt_land1",
+			"ctbackport:entity/nautilus/hurt_land2",
+			"ctbackport:entity/nautilus/hurt_land3",
+			"ctbackport:entity/nautilus/hurt_land4"
+		]
+	},
+	"nautilus_death": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/death"
+		]
+	},
+	"nautilus_death_land": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/death_land"
+		]
+	},
+	"nautilus_dash": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/dash1",
+			"ctbackport:entity/nautilus/dash2",
+			"ctbackport:entity/nautilus/dash3",
+			"ctbackport:entity/nautilus/dash4"
+		]
+	},
+	"nautilus_dash_land": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/dash_land1",
+			"ctbackport:entity/nautilus/dash_land2",
+			"ctbackport:entity/nautilus/dash_land3",
+			"ctbackport:entity/nautilus/dash_land4"
+		]
+	},
+	"nautilus_dash_ready": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/dash_ready1",
+			"ctbackport:entity/nautilus/dash_ready2",
+			"ctbackport:entity/nautilus/dash_ready3"
+		]
+	},
+	"nautilus_dash_ready_land": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/dash_ready_land1",
+			"ctbackport:entity/nautilus/dash_ready_land2",
+			"ctbackport:entity/nautilus/dash_ready_land3",
+			"ctbackport:entity/nautilus/dash_ready_land4"
+		]
+	},
+	"nautilus_eat": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/eat1",
+			"ctbackport:entity/nautilus/eat2"
+		]
+	},
+	"zombie_nautilus_ambient": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/zombie_nautilus/ambient1",
+			"ctbackport:entity/zombie_nautilus/ambient2",
+			"ctbackport:entity/zombie_nautilus/ambient3",
+			"ctbackport:entity/zombie_nautilus/ambient4",
+			"ctbackport:entity/zombie_nautilus/ambient5"
+		]
+	},
+	"zombie_nautilus_ambient_land": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/zombie_nautilus/ambient_land1",
+			"ctbackport:entity/zombie_nautilus/ambient_land2",
+			"ctbackport:entity/zombie_nautilus/ambient_land3",
+			"ctbackport:entity/zombie_nautilus/ambient_land4",
+			"ctbackport:entity/zombie_nautilus/ambient_land5",
+			"ctbackport:entity/zombie_nautilus/ambient_land6"
+		]
+	},
+	"zombie_nautilus_hurt": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/zombie_nautilus/hurt1",
+			"ctbackport:entity/zombie_nautilus/hurt2",
+			"ctbackport:entity/zombie_nautilus/hurt3",
+			"ctbackport:entity/zombie_nautilus/hurt4"
+		]
+	},
+	"zombie_nautilus_hurt_land": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/zombie_nautilus/hurt_land1",
+			"ctbackport:entity/zombie_nautilus/hurt_land2",
+			"ctbackport:entity/zombie_nautilus/hurt_land3",
+			"ctbackport:entity/zombie_nautilus/hurt_land4"
+		]
+	},
+	"zombie_nautilus_death": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/zombie_nautilus/death"
+		]
+	},
+	"zombie_nautilus_death_land": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/zombie_nautilus/death_land"
+		]
+	},
+	"zombie_nautilus_dash_land": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/zombie_nautilus/dash_land1",
+			"ctbackport:entity/zombie_nautilus/dash_land2",
+			"ctbackport:entity/zombie_nautilus/dash_land3",
+			"ctbackport:entity/zombie_nautilus/dash_land4"
+		]
+	},
+	"zombie_nautilus_dash_ready": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/zombie_nautilus/dash_ready1",
+			"ctbackport:entity/zombie_nautilus/dash_ready2",
+			"ctbackport:entity/zombie_nautilus/dash_ready3"
+		]
+	},
+	"zombie_nautilus_dash_ready_land": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/zombie_nautilus/dash_ready_land1",
+			"ctbackport:entity/zombie_nautilus/dash_ready_land2",
+			"ctbackport:entity/zombie_nautilus/dash_ready_land3",
+			"ctbackport:entity/zombie_nautilus/dash_ready_land4"
+		]
+	},
+	"zombie_nautilus_eat": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/zombie_nautilus/eat1",
+			"ctbackport:entity/zombie_nautilus/eat2"
+		]
+	},
+	"nautilus_saddle_equip": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/nautilus_saddle_equip"
+		]
+	},
+	"nautilus_saddle_underwater_equip": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/nautilus/nautilus_saddle_underwater_equip"
+		]
 	}
 }
