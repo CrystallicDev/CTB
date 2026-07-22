@@ -75,6 +75,14 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add("entity.ctbackport.nautilus", "Nautilus");
 		add("entity.ctbackport.zombie_nautilus", "Zombie Nautilus");
 		add(CTBEffects.BREATH_OF_THE_NAUTILUS.get(), "Breath of the Nautilus");
+		add(CTBItems.WOODEN_SPEAR.get(), "Wooden Spear");
+		add(CTBItems.STONE_SPEAR.get(), "Stone Spear");
+		add(CTBItems.COPPER_SPEAR.get(), "Copper Spear");
+		add(CTBItems.IRON_SPEAR.get(), "Iron Spear");
+		add(CTBItems.GOLDEN_SPEAR.get(), "Golden Spear");
+		add(CTBItems.DIAMOND_SPEAR.get(), "Diamond Spear");
+		add(CTBItems.NETHERITE_SPEAR.get(), "Netherite Spear");
+		add(CTBEnchantments.LUNGE.get(), "Lunge");
 		add(CTBItems.FLOW_POTTERY_SHERD.get(), "Flow Pottery Sherd");
 		add(CTBItems.GUSTER_POTTERY_SHERD.get(), "Guster Pottery Sherd");
 		add(CTBItems.SCRAPE_POTTERY_SHERD.get(), "Scrape Pottery Sherd");

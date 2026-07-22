@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"X": {
+			"tag": "minecraft:stone_crafting_materials"
+		}
+	},
+	"pattern": [
+		"  X",
+		" # ",
+		"#  "
+	],
+	"result": {
+		"item": "ctbackport:stone_spear",
+		"count": 1
+	}
+}

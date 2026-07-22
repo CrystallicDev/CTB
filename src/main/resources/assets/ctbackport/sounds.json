@@ -709,5 +709,57 @@
 		"sounds": [
 			"ctbackport:entity/nautilus/nautilus_saddle_underwater_equip"
 		]
+	},
+	"spear_use": {
+		"category": "player",
+		"sounds": [
+			"ctbackport:item/spear/use"
+		]
+	},
+	"spear_hit": {
+		"category": "player",
+		"sounds": [
+			"ctbackport:item/spear/hit1",
+			"ctbackport:item/spear/hit2",
+			"ctbackport:item/spear/hit3"
+		]
+	},
+	"spear_attack": {
+		"category": "player",
+		"sounds": [
+			"ctbackport:item/spear/attack1",
+			"ctbackport:item/spear/attack2",
+			"ctbackport:item/spear/attack3"
+		]
+	},
+	"spear_lunge": {
+		"category": "player",
+		"sounds": [
+			"ctbackport:item/spear/lunge1",
+			"ctbackport:item/spear/lunge2",
+			"ctbackport:item/spear/lunge3"
+		]
+	},
+	"spear_wood_use": {
+		"category": "player",
+		"sounds": [
+			"ctbackport:item/spear/wood/use"
+		]
+	},
+	"spear_wood_hit": {
+		"category": "player",
+		"sounds": [
+			"ctbackport:item/spear/wood/hit1",
+			"ctbackport:item/spear/wood/hit2",
+			"ctbackport:item/spear/wood/hit3"
+		]
+	},
+	"spear_wood_attack": {
+		"category": "player",
+		"sounds": [
+			"ctbackport:item/spear/wood/attack1",
+			"ctbackport:item/spear/wood/attack2",
+			"ctbackport:item/spear/wood/attack3"
+		]
 	}
 }

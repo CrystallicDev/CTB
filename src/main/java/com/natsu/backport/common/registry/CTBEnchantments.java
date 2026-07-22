@@ -15,11 +15,37 @@ public class CTBEnchantments {
 	public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, CTBackport.MODID);
 
 	public static final EnchantmentCategory MACE = EnchantmentCategory.create("ctb_mace", item -> item instanceof MaceItem);
+	public static final EnchantmentCategory SPEAR = EnchantmentCategory.create("ctb_spear",
+			item -> item instanceof com.natsu.backport.common.item.SpearItem);
 	private static final EquipmentSlot[] MAINHAND = {EquipmentSlot.MAINHAND};
 
 	public static final RegistryObject<Enchantment> DENSITY = ENCHANTMENTS.register("density", DensityEnchantment::new);
 	public static final RegistryObject<Enchantment> BREACH = ENCHANTMENTS.register("breach", BreachEnchantment::new);
 	public static final RegistryObject<Enchantment> WIND_BURST = ENCHANTMENTS.register("wind_burst", WindBurstEnchantment::new);
+	public static final RegistryObject<Enchantment> LUNGE = ENCHANTMENTS.register("lunge", LungeEnchantment::new);
+
+	/** Dashes the attacker forward after a stab on foot, applied in SpearItem. */
+	public static class LungeEnchantment extends Enchantment {
+		LungeEnchantment() {
+			super(Rarity.UNCOMMON, SPEAR, new net.minecraft.world.entity.EquipmentSlot[] {
+					net.minecraft.world.entity.EquipmentSlot.MAINHAND, net.minecraft.world.entity.EquipmentSlot.OFFHAND });
+		}
+
+		@Override
+		public int getMaxLevel() {
+			return 3;
+		}
+
+		@Override
+		public int getMinCost(int level) {
+			return 5 + (level - 1) * 8;
+		}
+
+		@Override
+		public int getMaxCost(int level) {
+			return 25 + (level - 1) * 8;
+		}
+	}
 
 	public static class DensityEnchantment extends Enchantment {
 		DensityEnchantment() {

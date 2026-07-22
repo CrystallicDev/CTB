@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "ctbackport:diamond_spear"
+	},
+	"addition": {
+		"item": "minecraft:netherite_ingot"
+	},
+	"result": {
+		"item": "ctbackport:netherite_spear"
+	}
+}

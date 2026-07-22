@@ -475,6 +475,9 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		event.getController().setAnimation(new AnimationBuilder().addAnimation("moove.swim", ILoopType.EDefaultLoopTypes.LOOP));
+		// the jet pulse reads from the animation, so its speed follows the actual motion
+		double speed = this.getDeltaMovement().horizontalDistance() + Math.abs(this.getDeltaMovement().y) * 0.5;
+		event.getController().setAnimationSpeed(Mth.clamp(0.6 + speed * 10.0, 0.6, 2.5));
 		return PlayState.CONTINUE;
 	}
 

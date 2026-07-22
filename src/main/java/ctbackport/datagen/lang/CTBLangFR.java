@@ -81,8 +81,16 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBBlocks.DECORATED_POT.get(), "Poterie décorée");
 		add("entity.ctbackport.bogged", "Enlisé");
 		add("entity.ctbackport.nautilus", "Nautile");
-		add("entity.ctbackport.zombie_nautilus", "Nautile zombie");
-		add(CTBEffects.BREATH_OF_THE_NAUTILUS.get(), "Souffle du nautile");
+		add("entity.ctbackport.zombie_nautilus", "Nautile-zombie");
+		add(CTBEffects.BREATH_OF_THE_NAUTILUS.get(), "Respiration du nautile");
+		add(CTBItems.WOODEN_SPEAR.get(), "Lance en bois");
+		add(CTBItems.STONE_SPEAR.get(), "Lance en pierre");
+		add(CTBItems.COPPER_SPEAR.get(), "Lance en cuivre");
+		add(CTBItems.IRON_SPEAR.get(), "Lance en fer");
+		add(CTBItems.GOLDEN_SPEAR.get(), "Lance en or");
+		add(CTBItems.DIAMOND_SPEAR.get(), "Lance en diamant");
+		add(CTBItems.NETHERITE_SPEAR.get(), "Lance en netherite");
+		add(CTBEnchantments.LUNGE.get(), "Élan");
 		add(CTBItems.FLOW_POTTERY_SHERD.get(), "Tesson de poterie flux");
 		add(CTBItems.GUSTER_POTTERY_SHERD.get(), "Tesson de poterie bourrasque");
 		add(CTBItems.SCRAPE_POTTERY_SHERD.get(), "Tesson de poterie raclage");

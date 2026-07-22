@@ -112,6 +112,14 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> NAUTILUS_SADDLE_EQUIP = simple("nautilus_saddle_equip");
 	public static final RegistryObject<SoundEvent> NAUTILUS_SADDLE_UNDERWATER_EQUIP = simple("nautilus_saddle_underwater_equip");
 
+	public static final RegistryObject<SoundEvent> SPEAR_USE = simple("spear_use");
+	public static final RegistryObject<SoundEvent> SPEAR_HIT = simple("spear_hit");
+	public static final RegistryObject<SoundEvent> SPEAR_ATTACK = simple("spear_attack");
+	public static final RegistryObject<SoundEvent> SPEAR_LUNGE = simple("spear_lunge");
+	public static final RegistryObject<SoundEvent> SPEAR_WOOD_USE = simple("spear_wood_use");
+	public static final RegistryObject<SoundEvent> SPEAR_WOOD_HIT = simple("spear_wood_hit");
+	public static final RegistryObject<SoundEvent> SPEAR_WOOD_ATTACK = simple("spear_wood_attack");
+
 	private static RegistryObject<SoundEvent> simple(String name) {
 		return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, name)));
 	}
