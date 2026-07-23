@@ -65,6 +65,20 @@ public class ClientSetup {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRIAL_OMEN.get(), TrialSpawnerDetectionParticle.Provider::new);
 	}
 
+	// the spear only slows its wielder to 38% instead of the usual 20% while couched
+	@Mod.EventBusSubscriber(modid = CTBackport.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+	public static class SpearMovement {
+		@SubscribeEvent
+		public static void onMovementInput(net.minecraftforge.client.event.MovementInputUpdateEvent event) {
+			net.minecraft.world.entity.player.Player player = event.getPlayer();
+			if (player.isUsingItem() && !player.isPassenger()
+					&& player.getUseItem().getItem() instanceof com.natsu.backport.common.item.SpearItem) {
+				event.getInput().forwardImpulse *= 1.9F;
+				event.getInput().leftImpulse *= 1.9F;
+			}
+		}
+	}
+
 	@SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {

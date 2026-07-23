@@ -82,7 +82,8 @@ public class SpearItem extends TieredItem implements Vanishable {
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack stack) {
-		return UseAnim.SPEAR;
+		// SPEAR is the trident throw windup in 1.18.2, the tip would point backwards
+		return UseAnim.NONE;
 	}
 
 	@Override
