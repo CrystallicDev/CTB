@@ -121,7 +121,7 @@ public class SpearItem extends TieredItem implements Vanishable {
 		}
 
 		Vec3 reach = look.scale(KINETIC_REACH);
-		List<Entity> targets = user.level.getEntities(user, user.getBoundingBox().expandTowards(reach).inflate(0.3),
+		List<Entity> targets = user.level.getEntities(user, user.getBoundingBox().expandTowards(reach).inflate(0.5),
 				e -> e instanceof LivingEntity && e.isAlive() && !e.isSpectator()
 						&& !user.isPassengerOfSameVehicle(e) && !e.hasPassenger(user));
 		Object2IntOpenHashMap<Entity> recent = RECENT_STABS.computeIfAbsent(user, k -> new Object2IntOpenHashMap<>());
@@ -165,8 +165,9 @@ public class SpearItem extends TieredItem implements Vanishable {
 	}
 
 	private static Vec3 motionOf(Entity entity) {
-		Entity mover = !(entity instanceof Player) && entity.isPassenger() ? entity.getRootVehicle() : entity;
-		// position delta is authoritative for ridden entities, times 20 for blocks per second
+		// the server only re-syncs a rider's own position at vehicle packets, the
+		// vehicle's per tick position delta is the authoritative speed for everyone
+		Entity mover = entity.isPassenger() ? entity.getRootVehicle() : entity;
 		return new Vec3(mover.getX() - mover.xOld, mover.getY() - mover.yOld, mover.getZ() - mover.zOld).scale(20.0);
 	}
 

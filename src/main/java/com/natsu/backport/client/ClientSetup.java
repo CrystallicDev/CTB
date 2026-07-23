@@ -77,6 +77,26 @@ public class ClientSetup {
 				event.getInput().leftImpulse *= 1.9F;
 			}
 		}
+
+		// couched lance pose, the 1.18.2 use animations have nothing close to the 1.21 one
+		@SubscribeEvent
+		public static void onRenderHand(net.minecraftforge.client.event.RenderHandEvent event) {
+			net.minecraft.client.player.LocalPlayer player = Minecraft.getInstance().player;
+			if (player == null || !player.isUsingItem()
+					|| event.getHand() != player.getUsedItemHand()
+					|| !(event.getItemStack().getItem() instanceof com.natsu.backport.common.item.SpearItem)) {
+				return;
+			}
+
+			boolean rightSide = (event.getHand() == net.minecraft.world.InteractionHand.MAIN_HAND
+					? player.getMainArm() : player.getMainArm().getOpposite()) == net.minecraft.world.entity.HumanoidArm.RIGHT;
+			float side = rightSide ? 1.0F : -1.0F;
+			com.mojang.blaze3d.vertex.PoseStack pose = event.getPoseStack();
+			// tucked against the hip, tip levelled at the crosshair
+			pose.translate(side * -0.22, -0.12, -0.16);
+			pose.mulPose(com.mojang.math.Vector3f.XP.rotationDegrees(-32.0F));
+			pose.mulPose(com.mojang.math.Vector3f.YP.rotationDegrees(side * 8.0F));
+		}
 	}
 
 	@SubscribeEvent
