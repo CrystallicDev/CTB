@@ -84,7 +84,18 @@ public class OminousItemSpawner extends Entity {
 		}
 
 		Entity spawned;
-		if (item.getItem() instanceof ThrowablePotionItem) {
+		if (item.getItem() == net.minecraft.world.item.Items.FIRE_CHARGE) {
+			net.minecraft.world.entity.projectile.SmallFireball fireball = new net.minecraft.world.entity.projectile.SmallFireball(
+					level, this.getX(), this.getY(), this.getZ(), 0.0, -1.0, 0.0);
+			level.addFreshEntity(fireball);
+			spawned = fireball;
+		} else if (item.getItem() instanceof com.natsu.backport.common.item.WindChargeItem) {
+			WindChargeEntity charge = new WindChargeEntity(com.natsu.backport.common.registry.CTBEntities.WIND_CHARGE_ENTITY.get(), level);
+			charge.setPos(this.getX(), this.getY(), this.getZ());
+			charge.shoot(0.0, -1.0, 0.0, 1.0F, 1.0F);
+			level.addFreshEntity(charge);
+			spawned = charge;
+		} else if (item.getItem() instanceof ThrowablePotionItem) {
 			ThrownPotion potion = new ThrownPotion(level, this.getX(), this.getY(), this.getZ());
 			potion.setItem(item);
 			potion.setOwner(this);

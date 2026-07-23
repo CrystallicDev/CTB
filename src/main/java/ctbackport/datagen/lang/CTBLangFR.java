@@ -80,6 +80,13 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBItems.OMINOUS_BOTTLE.get(), "Fiole sinistre");
 		add(CTBBlocks.DECORATED_POT.get(), "Poterie décorée");
 		add("entity.ctbackport.bogged", "Enlisé");
+		add("entity.ctbackport.parched", "Desséché");
+		add(CTBItems.MUSIC_DISC_PRECIPICE.get(), "Disque de musique");
+		add("item.ctbackport.music_disc_precipice.desc", "Aaron Cherof - Precipice");
+		add(CTBItems.MUSIC_DISC_CREATOR.get(), "Disque de musique");
+		add("item.ctbackport.music_disc_creator.desc", "Lena Raine - Creator");
+		add(CTBItems.MUSIC_DISC_CREATOR_MUSIC_BOX.get(), "Disque de musique");
+		add("item.ctbackport.music_disc_creator_music_box.desc", "Lena Raine - Creator (boîte à musique)");
 		add("entity.ctbackport.nautilus", "Nautile");
 		add("entity.ctbackport.zombie_nautilus", "Nautile-zombie");
 		add(CTBEffects.BREATH_OF_THE_NAUTILUS.get(), "Respiration du nautile");

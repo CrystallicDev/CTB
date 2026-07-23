@@ -12,7 +12,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:music_disc_otherside",
+					"name": "ctbackport:music_disc_precipice",
 					"weight": 2
 				},
 				{

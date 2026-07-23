@@ -761,5 +761,62 @@
 			"ctbackport:item/spear/wood/attack2",
 			"ctbackport:item/spear/wood/attack3"
 		]
+	},
+	"parched_ambient": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/parched/ambient1",
+			"ctbackport:entity/parched/ambient2",
+			"ctbackport:entity/parched/ambient3",
+			"ctbackport:entity/parched/ambient4"
+		]
+	},
+	"parched_hurt": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/parched/hurt1",
+			"ctbackport:entity/parched/hurt2",
+			"ctbackport:entity/parched/hurt3",
+			"ctbackport:entity/parched/hurt4"
+		]
+	},
+	"parched_death": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/parched/death"
+		]
+	},
+	"parched_step": {
+		"category": "hostile",
+		"sounds": [
+			"ctbackport:entity/parched/step1",
+			"ctbackport:entity/parched/step2",
+			"ctbackport:entity/parched/step3",
+			"ctbackport:entity/parched/step4"
+		]
+	},
+	"music_disc_precipice": {
+		"sounds": [
+			{
+				"name": "ctbackport:records/precipice",
+				"stream": true
+			}
+		]
+	},
+	"music_disc_creator": {
+		"sounds": [
+			{
+				"name": "ctbackport:records/creator",
+				"stream": true
+			}
+		]
+	},
+	"music_disc_creator_music_box": {
+		"sounds": [
+			{
+				"name": "ctbackport:records/creator_music_box",
+				"stream": true
+			}
+		]
 	}
 }

@@ -72,6 +72,13 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBItems.OMINOUS_BOTTLE.get(), "Ominous Bottle");
 		add(CTBBlocks.DECORATED_POT.get(), "Decorated Pot");
 		add("entity.ctbackport.bogged", "Bogged");
+		add("entity.ctbackport.parched", "Parched");
+		add(CTBItems.MUSIC_DISC_PRECIPICE.get(), "Music Disc");
+		add("item.ctbackport.music_disc_precipice.desc", "Aaron Cherof - Precipice");
+		add(CTBItems.MUSIC_DISC_CREATOR.get(), "Music Disc");
+		add("item.ctbackport.music_disc_creator.desc", "Lena Raine - Creator");
+		add(CTBItems.MUSIC_DISC_CREATOR_MUSIC_BOX.get(), "Music Disc");
+		add("item.ctbackport.music_disc_creator_music_box.desc", "Lena Raine - Creator (Music Box)");
 		add("entity.ctbackport.nautilus", "Nautilus");
 		add("entity.ctbackport.zombie_nautilus", "Zombie Nautilus");
 		add(CTBEffects.BREATH_OF_THE_NAUTILUS.get(), "Breath of the Nautilus");

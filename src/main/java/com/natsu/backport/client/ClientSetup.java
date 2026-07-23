@@ -7,6 +7,7 @@ import com.natsu.backport.client.render.CreakingRenderer;
 import com.natsu.backport.client.render.DecoratedPotRenderer;
 import com.natsu.backport.client.render.NautilusRenderer;
 import com.natsu.backport.client.render.OminousItemSpawnerRenderer;
+import com.natsu.backport.client.render.ParchedRenderer;
 import com.natsu.backport.client.render.TrialSpawnerRenderer;
 import com.natsu.backport.client.render.VaultRenderer;
 import com.natsu.backport.client.render.WindChargeRenderer;
@@ -41,6 +42,7 @@ public class ClientSetup {
 		//event.registerEntityRenderer(CTBEntities.SULPHUR_CUBE.get(), SulphurCubeRenderer::new);
 		event.registerEntityRenderer(CTBEntities.BREEZE.get(), BreezeRenderer::new);
 		event.registerEntityRenderer(CTBEntities.BOGGED.get(), BoggedRenderer::new);
+		event.registerEntityRenderer(CTBEntities.PARCHED.get(), ParchedRenderer::new);
 		event.registerEntityRenderer(CTBEntities.NAUTILUS.get(), NautilusRenderer::new);
 		event.registerEntityRenderer(CTBEntities.ZOMBIE_NAUTILUS.get(), NautilusRenderer::new);
 		event.registerBlockEntityRenderer(CTBBlockEntities.TRIAL_SPAWNER.get(), TrialSpawnerRenderer::new);

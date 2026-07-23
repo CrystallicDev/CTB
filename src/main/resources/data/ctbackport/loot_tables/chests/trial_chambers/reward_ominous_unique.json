@@ -12,7 +12,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:music_disc_pigstep",
+					"name": "ctbackport:music_disc_creator",
 					"weight": 1
 				},
 				{

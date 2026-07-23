@@ -120,6 +120,14 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> SPEAR_WOOD_HIT = simple("spear_wood_hit");
 	public static final RegistryObject<SoundEvent> SPEAR_WOOD_ATTACK = simple("spear_wood_attack");
 
+	public static final RegistryObject<SoundEvent> PARCHED_AMBIENT = simple("parched_ambient");
+	public static final RegistryObject<SoundEvent> PARCHED_HURT = simple("parched_hurt");
+	public static final RegistryObject<SoundEvent> PARCHED_DEATH = simple("parched_death");
+	public static final RegistryObject<SoundEvent> PARCHED_STEP = simple("parched_step");
+	public static final RegistryObject<SoundEvent> MUSIC_DISC_PRECIPICE = simple("music_disc_precipice");
+	public static final RegistryObject<SoundEvent> MUSIC_DISC_CREATOR = simple("music_disc_creator");
+	public static final RegistryObject<SoundEvent> MUSIC_DISC_CREATOR_MUSIC_BOX = simple("music_disc_creator_music_box");
+
 	private static RegistryObject<SoundEvent> simple(String name) {
 		return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, name)));
 	}

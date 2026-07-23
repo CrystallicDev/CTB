@@ -26,7 +26,26 @@ public class NautilusSpawns {
 
 	@SubscribeEvent(priority = EventPriority.HIGH)
 	public static void onBiomeLoad(BiomeLoadingEvent event) {
-		if (event.getCategory() != Biome.BiomeCategory.OCEAN || event.getName() == null) {
+		if (event.getName() == null) {
+			return;
+		}
+
+		if (event.getCategory() == Biome.BiomeCategory.DESERT) {
+			// vanilla splits the desert skeletons half and half with the parched
+			java.util.List<MobSpawnSettings.SpawnerData> monsters = event.getSpawns().getSpawner(MobCategory.MONSTER);
+			for (int i = 0; i < monsters.size(); i++) {
+				MobSpawnSettings.SpawnerData data = monsters.get(i);
+				if (data.type == net.minecraft.world.entity.EntityType.SKELETON) {
+					monsters.set(i, new MobSpawnSettings.SpawnerData(net.minecraft.world.entity.EntityType.SKELETON,
+							Math.max(1, data.getWeight().asInt() / 2), data.minCount, data.maxCount));
+				}
+			}
+			event.getSpawns().addSpawn(MobCategory.MONSTER,
+					new MobSpawnSettings.SpawnerData(CTBEntities.PARCHED.get(), 50, 4, 4));
+			return;
+		}
+
+		if (event.getCategory() != Biome.BiomeCategory.OCEAN) {
 			return;
 		}
 

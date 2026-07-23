@@ -4,6 +4,7 @@ import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.item.MaceItem;
 import com.natsu.backport.common.item.OminousBottleItem;
 import com.natsu.backport.common.item.SpearItem;
+import com.natsu.backport.common.registry.CTBSounds;
 import com.natsu.backport.common.item.WindChargeItem;
 
 import net.minecraft.world.item.CreativeModeTab;
@@ -51,6 +52,19 @@ public class CTBItems {
 			);
 	public static final RegistryObject<Item> SCRAPE_POTTERY_SHERD = ITEMS.register("scrape_pottery_sherd", () ->
 			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
+
+	public static final RegistryObject<Item> MUSIC_DISC_PRECIPICE = ITEMS.register("music_disc_precipice", () ->
+			new net.minecraft.world.item.RecordItem(13, CTBSounds.MUSIC_DISC_PRECIPICE,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1).rarity(Rarity.RARE))
+			);
+	public static final RegistryObject<Item> MUSIC_DISC_CREATOR = ITEMS.register("music_disc_creator", () ->
+			new net.minecraft.world.item.RecordItem(12, CTBSounds.MUSIC_DISC_CREATOR,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1).rarity(Rarity.RARE))
+			);
+	public static final RegistryObject<Item> MUSIC_DISC_CREATOR_MUSIC_BOX = ITEMS.register("music_disc_creator_music_box", () ->
+			new net.minecraft.world.item.RecordItem(11, CTBSounds.MUSIC_DISC_CREATOR_MUSIC_BOX,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1).rarity(Rarity.RARE))
 			);
 
 	// vanilla 1.21.11 kinetic tuning per tier

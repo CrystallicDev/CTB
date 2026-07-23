@@ -6,6 +6,7 @@ import com.natsu.backport.common.entity.Breeze;
 import com.natsu.backport.common.entity.Creaking;
 import com.natsu.backport.common.entity.Nautilus;
 import com.natsu.backport.common.entity.OminousItemSpawner;
+import com.natsu.backport.common.entity.Parched;
 import com.natsu.backport.common.entity.ZombieNautilus;
 import com.natsu.backport.common.entity.WindChargeEntity;
 
@@ -43,6 +44,13 @@ public class CTBEntities {
 			.sized(0.6f, 1.99f)
 			.clientTrackingRange(8)
 			.build("bogged")
+			);
+
+	public static final RegistryObject<EntityType<Parched>> PARCHED = ENTITIES.register("parched",
+			() -> EntityType.Builder.<Parched>of(Parched::new, MobCategory.MONSTER)
+			.sized(0.6f, 1.99f)
+			.clientTrackingRange(8)
+			.build("parched")
 			);
 
 	public static final RegistryObject<EntityType<Nautilus>> NAUTILUS = ENTITIES.register("nautilus",
