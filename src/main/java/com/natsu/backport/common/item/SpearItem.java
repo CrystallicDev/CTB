@@ -50,6 +50,9 @@ public class SpearItem extends TieredItem implements Vanishable {
 
 	// recently stabbed targets per attacker, vanilla contact cooldown
 	private static final WeakHashMap<LivingEntity, Object2IntOpenHashMap<Entity>> RECENT_STABS = new WeakHashMap<>();
+	// the server wipes xOld through absMoveTo for packet driven entities (riders,
+	// vehicles, remote players), so speeds are tracked from our own tick samples
+	private static final WeakHashMap<Entity, Vec3> LAST_SAMPLED_POS = new WeakHashMap<>();
 
 	private final KineticParams params;
 	private final boolean woodSounds;
@@ -109,13 +112,14 @@ public class SpearItem extends TieredItem implements Vanishable {
 	/** One tick of couched lance contact checks, vanilla KineticWeapon logic. */
 	public void kineticTick(LivingEntity user, ItemStack stack, int ticksUsed) {
 		int delayTicks = (int) (this.params.delay() * 20.0F);
+		Vec3 attackerMotion = sampleMotion(user.isPassenger() ? user.getRootVehicle() : user);
 		if (ticksUsed < delayTicks) {
 			return;
 		}
 		int sinceDelay = ticksUsed - delayTicks;
 
 		Vec3 look = user.getLookAngle();
-		double attackerSpeed = look.dot(motionOf(user));
+		double attackerSpeed = look.dot(attackerMotion);
 		if (attackerSpeed <= 0.0) {
 			return;
 		}
@@ -134,7 +138,7 @@ public class SpearItem extends TieredItem implements Vanishable {
 			}
 			recent.put(target, user.tickCount);
 
-			double targetSpeed = look.dot(motionOf(target));
+			double targetSpeed = look.dot(sampleMotion(target.isPassenger() ? target.getRootVehicle() : target));
 			double relativeSpeed = Math.max(0.0, attackerSpeed - targetSpeed);
 			boolean dismount = sinceDelay <= this.params.dismountTime() * 20.0F && attackerSpeed >= this.params.dismountThreshold();
 			boolean knockback = sinceDelay <= this.params.knockbackTime() * 20.0F && attackerSpeed >= this.params.knockbackThreshold();
@@ -164,11 +168,16 @@ public class SpearItem extends TieredItem implements Vanishable {
 		}
 	}
 
-	private static Vec3 motionOf(Entity entity) {
-		// the server only re-syncs a rider's own position at vehicle packets, the
-		// vehicle's per tick position delta is the authoritative speed for everyone
-		Entity mover = entity.isPassenger() ? entity.getRootVehicle() : entity;
-		return new Vec3(mover.getX() - mover.xOld, mover.getY() - mover.yOld, mover.getZ() - mover.zOld).scale(20.0);
+	/** Blocks per second from consecutive samples, zero on the first sighting. */
+	private static Vec3 sampleMotion(Entity mover) {
+		Vec3 current = mover.position();
+		Vec3 previous = LAST_SAMPLED_POS.put(mover, current);
+		if (previous == null) {
+			return Vec3.ZERO;
+		}
+		Vec3 perTick = current.subtract(previous);
+		// a stale sample from a past use would read as a huge teleport
+		return perTick.lengthSqr() > 25.0 ? Vec3.ZERO : perTick.scale(20.0);
 	}
 
 	@Override
