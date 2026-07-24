@@ -2,6 +2,8 @@ package com.natsu.backport.common.registry;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.block.entity.CreakingHeartBlockEntity;
+import com.natsu.backport.common.block.entity.CopperChestBlockEntity;
+import com.natsu.backport.common.block.entity.CopperGolemStatueBlockEntity;
 import com.natsu.backport.common.block.entity.DecoratedPotBlockEntity;
 import com.natsu.backport.common.block.entity.TrialSpawnerBlockEntity;
 import com.natsu.backport.common.block.entity.vault.VaultBlockEntity;
@@ -25,6 +27,14 @@ public class CTBBlockEntities {
 
 	public static final RegistryObject<BlockEntityType<VaultBlockEntity>> VAULT = BLOCK_ENTITIES.register("vault",
 			() -> BlockEntityType.Builder.of(VaultBlockEntity::new, CTBBlocks.VAULT.get()).build(null)
+			);
+
+	public static final RegistryObject<BlockEntityType<CopperChestBlockEntity>> COPPER_CHEST = BLOCK_ENTITIES.register("copper_chest",
+			() -> BlockEntityType.Builder.of(CopperChestBlockEntity::new, CTBBlocks.COPPER_CHEST.get()).build(null)
+			);
+
+	public static final RegistryObject<BlockEntityType<CopperGolemStatueBlockEntity>> COPPER_GOLEM_STATUE = BLOCK_ENTITIES.register("copper_golem_statue",
+			() -> BlockEntityType.Builder.of(CopperGolemStatueBlockEntity::new, CTBBlocks.COPPER_GOLEM_STATUE.get()).build(null)
 			);
 
 	public static final RegistryObject<BlockEntityType<DecoratedPotBlockEntity>> DECORATED_POT = BLOCK_ENTITIES.register("decorated_pot",

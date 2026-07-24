@@ -3,6 +3,7 @@ package com.natsu.backport.common.registry;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.common.entity.Bogged;
 import com.natsu.backport.common.entity.Breeze;
+import com.natsu.backport.common.entity.CopperGolem;
 import com.natsu.backport.common.entity.Creaking;
 import com.natsu.backport.common.entity.Nautilus;
 import com.natsu.backport.common.entity.OminousItemSpawner;
@@ -44,6 +45,13 @@ public class CTBEntities {
 			.sized(0.6f, 1.99f)
 			.clientTrackingRange(8)
 			.build("bogged")
+			);
+
+	public static final RegistryObject<EntityType<CopperGolem>> COPPER_GOLEM = ENTITIES.register("copper_golem",
+			() -> EntityType.Builder.<CopperGolem>of(CopperGolem::new, MobCategory.MISC)
+			.sized(0.6f, 0.95f)
+			.clientTrackingRange(8)
+			.build("copper_golem")
 			);
 
 	public static final RegistryObject<EntityType<Parched>> PARCHED = ENTITIES.register("parched",

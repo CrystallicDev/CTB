@@ -81,6 +81,10 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBBlocks.DECORATED_POT.get(), "Poterie décorée");
 		add("entity.ctbackport.bogged", "Enlisé");
 		add("entity.ctbackport.parched", "Desséché");
+		add("entity.ctbackport.copper_golem", "Golem de cuivre");
+		add(CTBBlocks.COPPER_CHEST.get(), "Coffre en cuivre");
+		add(CTBBlocks.COPPER_GOLEM_STATUE.get(), "Statue de golem de cuivre");
+		add("container.ctbackport.copper_chest", "Coffre en cuivre");
 		add(CTBItems.MUSIC_DISC_PRECIPICE.get(), "Disque de musique");
 		add("item.ctbackport.music_disc_precipice.desc", "Aaron Cherof - Precipice");
 		add(CTBItems.MUSIC_DISC_CREATOR.get(), "Disque de musique");

@@ -38,6 +38,8 @@ public class CTBBlockTags extends BlockTagsProvider {
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.HEAVY_CORE.get());
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.TRIAL_SPAWNER.get());
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.VAULT.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.COPPER_CHEST.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.COPPER_GOLEM_STATUE.get());
 		handle(CTBBlocks.CHISELED_COPPER);
 		for (net.minecraftforge.registries.RegistryObject<net.minecraft.world.level.block.Block> b : java.util.List.of(
 				CTBBlocks.TUFF_STAIRS, CTBBlocks.TUFF_SLAB, CTBBlocks.TUFF_WALL, CTBBlocks.CHISELED_TUFF,

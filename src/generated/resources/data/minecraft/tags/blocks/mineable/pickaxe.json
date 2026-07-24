@@ -36,6 +36,8 @@
     "ctbackport:heavy_core",
     "ctbackport:trial_spawner",
     "ctbackport:vault",
+    "ctbackport:copper_chest",
+    "ctbackport:copper_golem_statue",
     "ctbackport:chiseled_copper",
     "ctbackport:exposed_chiseled_copper",
     "ctbackport:weathered_chiseled_copper",

@@ -125,6 +125,22 @@ public class CTBBlocks {
 			() -> new com.natsu.backport.common.item.DecoratedPotItem(DECORATED_POT.get(),
 					new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
 
+	public static final RegistryObject<Block> COPPER_CHEST = registerWithItem(BLOCKS, CTBItems.ITEMS, "copper_chest",
+			BLOCKS.register("copper_chest", () -> new com.natsu.backport.common.block.CopperChestBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.of(net.minecraft.world.level.material.Material.METAL)
+						.strength(3.0F, 6.0F)
+						.requiresCorrectToolForDrops()
+						.sound(net.minecraft.world.level.block.SoundType.COPPER)
+						.noOcclusion())));
+
+	public static final RegistryObject<Block> COPPER_GOLEM_STATUE = registerWithItem(BLOCKS, CTBItems.ITEMS, "copper_golem_statue",
+			BLOCKS.register("copper_golem_statue", () -> new com.natsu.backport.common.block.CopperGolemStatueBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.of(net.minecraft.world.level.material.Material.METAL)
+						.strength(3.0F, 6.0F)
+						.requiresCorrectToolForDrops()
+						.sound(net.minecraft.world.level.block.SoundType.COPPER)
+						.noOcclusion())));
+
 	private static RegistryObject<Block> registerWithItem(DeferredRegister<Block> blocks, DeferredRegister<Item> items,
 			String name, RegistryObject<Block> reg) {
 		items.register(name,

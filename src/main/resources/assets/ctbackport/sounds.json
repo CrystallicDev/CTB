@@ -818,5 +818,206 @@
 				"stream": true
 			}
 		]
+	},
+	"copper_golem_regular_hurt": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/regular/hurt1",
+			"ctbackport:entity/copper_golem/regular/hurt2",
+			"ctbackport:entity/copper_golem/regular/hurt3",
+			"ctbackport:entity/copper_golem/regular/hurt4"
+		]
+	},
+	"copper_golem_regular_death": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/regular/death"
+		]
+	},
+	"copper_golem_regular_step": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/regular/step1",
+			"ctbackport:entity/copper_golem/regular/step2",
+			"ctbackport:entity/copper_golem/regular/step3",
+			"ctbackport:entity/copper_golem/regular/step4",
+			"ctbackport:entity/copper_golem/regular/step5",
+			"ctbackport:entity/copper_golem/regular/step6",
+			"ctbackport:entity/copper_golem/regular/step7",
+			"ctbackport:entity/copper_golem/regular/step8",
+			"ctbackport:entity/copper_golem/regular/step9"
+		]
+	},
+	"copper_golem_regular_spin": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/regular/spin1",
+			"ctbackport:entity/copper_golem/regular/spin2",
+			"ctbackport:entity/copper_golem/regular/spin3",
+			"ctbackport:entity/copper_golem/regular/spin4",
+			"ctbackport:entity/copper_golem/regular/spin5",
+			"ctbackport:entity/copper_golem/regular/spin6",
+			"ctbackport:entity/copper_golem/regular/spin7"
+		]
+	},
+	"copper_golem_weathered_hurt": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/weathered/hurt1",
+			"ctbackport:entity/copper_golem/weathered/hurt2",
+			"ctbackport:entity/copper_golem/weathered/hurt3",
+			"ctbackport:entity/copper_golem/weathered/hurt4"
+		]
+	},
+	"copper_golem_weathered_death": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/weathered/death"
+		]
+	},
+	"copper_golem_weathered_step": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/weathered/step1",
+			"ctbackport:entity/copper_golem/weathered/step2",
+			"ctbackport:entity/copper_golem/weathered/step3",
+			"ctbackport:entity/copper_golem/weathered/step4",
+			"ctbackport:entity/copper_golem/weathered/step5",
+			"ctbackport:entity/copper_golem/weathered/step6",
+			"ctbackport:entity/copper_golem/weathered/step7",
+			"ctbackport:entity/copper_golem/weathered/step8",
+			"ctbackport:entity/copper_golem/weathered/step9"
+		]
+	},
+	"copper_golem_weathered_spin": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/weathered/spin1",
+			"ctbackport:entity/copper_golem/weathered/spin2",
+			"ctbackport:entity/copper_golem/weathered/spin3",
+			"ctbackport:entity/copper_golem/weathered/spin4",
+			"ctbackport:entity/copper_golem/weathered/spin5",
+			"ctbackport:entity/copper_golem/weathered/spin6",
+			"ctbackport:entity/copper_golem/weathered/spin7"
+		]
+	},
+	"copper_golem_oxidized_hurt": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/oxidized/hurt1",
+			"ctbackport:entity/copper_golem/oxidized/hurt2",
+			"ctbackport:entity/copper_golem/oxidized/hurt3",
+			"ctbackport:entity/copper_golem/oxidized/hurt4"
+		]
+	},
+	"copper_golem_oxidized_death": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/oxidized/death"
+		]
+	},
+	"copper_golem_oxidized_step": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/oxidized/step1",
+			"ctbackport:entity/copper_golem/oxidized/step2",
+			"ctbackport:entity/copper_golem/oxidized/step3",
+			"ctbackport:entity/copper_golem/oxidized/step4",
+			"ctbackport:entity/copper_golem/oxidized/step5",
+			"ctbackport:entity/copper_golem/oxidized/step6",
+			"ctbackport:entity/copper_golem/oxidized/step7",
+			"ctbackport:entity/copper_golem/oxidized/step8",
+			"ctbackport:entity/copper_golem/oxidized/step9"
+		]
+	},
+	"copper_golem_oxidized_spin": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/oxidized/spin1",
+			"ctbackport:entity/copper_golem/oxidized/spin2",
+			"ctbackport:entity/copper_golem/oxidized/spin3",
+			"ctbackport:entity/copper_golem/oxidized/spin4",
+			"ctbackport:entity/copper_golem/oxidized/spin5",
+			"ctbackport:entity/copper_golem/oxidized/spin6",
+			"ctbackport:entity/copper_golem/oxidized/spin7"
+		]
+	},
+	"copper_golem_spawn": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/spawn"
+		]
+	},
+	"copper_golem_item_drop": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/item_drop"
+		]
+	},
+	"copper_golem_item_no_drop": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/item_no_drop"
+		]
+	},
+	"copper_golem_no_item_get": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/no_item_get"
+		]
+	},
+	"copper_golem_no_item_no_get": {
+		"category": "neutral",
+		"sounds": [
+			"ctbackport:entity/copper_golem/no_item_no_get"
+		]
+	},
+	"copper_chest_open": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/copper_chest/copper_chest_open1",
+			"ctbackport:block/copper_chest/copper_chest_open2",
+			"ctbackport:block/copper_chest/copper_chest_open3"
+		]
+	},
+	"copper_chest_close": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/copper_chest/copper_chest_close1",
+			"ctbackport:block/copper_chest/copper_chest_close2",
+			"ctbackport:block/copper_chest/copper_chest_close3"
+		]
+	},
+	"copper_chest_weathered_open": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/copper_chest/copper_chest_weathered_open1",
+			"ctbackport:block/copper_chest/copper_chest_weathered_open2",
+			"ctbackport:block/copper_chest/copper_chest_weathered_open3"
+		]
+	},
+	"copper_chest_weathered_close": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/copper_chest/copper_chest_weathered_close1",
+			"ctbackport:block/copper_chest/copper_chest_weathered_close2",
+			"ctbackport:block/copper_chest/copper_chest_weathered_close3"
+		]
+	},
+	"copper_chest_oxidized_open": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/copper_chest/copper_chest_oxidized_open1",
+			"ctbackport:block/copper_chest/copper_chest_oxidized_open2",
+			"ctbackport:block/copper_chest/copper_chest_oxidized_open3"
+		]
+	},
+	"copper_chest_oxidized_close": {
+		"category": "block",
+		"sounds": [
+			"ctbackport:block/copper_chest/copper_chest_oxidized_close1",
+			"ctbackport:block/copper_chest/copper_chest_oxidized_close2",
+			"ctbackport:block/copper_chest/copper_chest_oxidized_close3"
+		]
 	}
 }

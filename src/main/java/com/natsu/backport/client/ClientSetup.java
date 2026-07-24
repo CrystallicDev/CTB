@@ -2,6 +2,9 @@ package com.natsu.backport.client;
 
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.client.render.BoggedRenderer;
+import com.natsu.backport.client.render.CopperChestRenderer;
+import com.natsu.backport.client.render.CopperGolemRenderer;
+import com.natsu.backport.client.render.CopperGolemStatueRenderer;
 import com.natsu.backport.client.render.BreezeRenderer;
 import com.natsu.backport.client.render.CreakingRenderer;
 import com.natsu.backport.client.render.DecoratedPotRenderer;
@@ -43,6 +46,9 @@ public class ClientSetup {
 		event.registerEntityRenderer(CTBEntities.BREEZE.get(), BreezeRenderer::new);
 		event.registerEntityRenderer(CTBEntities.BOGGED.get(), BoggedRenderer::new);
 		event.registerEntityRenderer(CTBEntities.PARCHED.get(), ParchedRenderer::new);
+		event.registerEntityRenderer(CTBEntities.COPPER_GOLEM.get(), CopperGolemRenderer::new);
+		event.registerBlockEntityRenderer(CTBBlockEntities.COPPER_CHEST.get(), CopperChestRenderer::new);
+		event.registerBlockEntityRenderer(CTBBlockEntities.COPPER_GOLEM_STATUE.get(), CopperGolemStatueRenderer::new);
 		event.registerEntityRenderer(CTBEntities.NAUTILUS.get(), NautilusRenderer::new);
 		event.registerEntityRenderer(CTBEntities.ZOMBIE_NAUTILUS.get(), NautilusRenderer::new);
 		event.registerBlockEntityRenderer(CTBBlockEntities.TRIAL_SPAWNER.get(), TrialSpawnerRenderer::new);

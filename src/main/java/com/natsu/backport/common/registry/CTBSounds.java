@@ -128,6 +128,26 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> MUSIC_DISC_CREATOR = simple("music_disc_creator");
 	public static final RegistryObject<SoundEvent> MUSIC_DISC_CREATOR_MUSIC_BOX = simple("music_disc_creator_music_box");
 
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_REGULAR_HURT = simple("copper_golem_regular_hurt");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_REGULAR_DEATH = simple("copper_golem_regular_death");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_REGULAR_STEP = simple("copper_golem_regular_step");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_REGULAR_SPIN = simple("copper_golem_regular_spin");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_WEATHERED_HURT = simple("copper_golem_weathered_hurt");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_WEATHERED_DEATH = simple("copper_golem_weathered_death");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_WEATHERED_STEP = simple("copper_golem_weathered_step");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_WEATHERED_SPIN = simple("copper_golem_weathered_spin");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_OXIDIZED_HURT = simple("copper_golem_oxidized_hurt");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_OXIDIZED_DEATH = simple("copper_golem_oxidized_death");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_OXIDIZED_STEP = simple("copper_golem_oxidized_step");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_OXIDIZED_SPIN = simple("copper_golem_oxidized_spin");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_SPAWN = simple("copper_golem_spawn");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_ITEM_DROP = simple("copper_golem_item_drop");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_ITEM_NO_DROP = simple("copper_golem_item_no_drop");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_NO_ITEM_GET = simple("copper_golem_no_item_get");
+	public static final RegistryObject<SoundEvent> COPPER_GOLEM_NO_ITEM_NO_GET = simple("copper_golem_no_item_no_get");
+	public static final RegistryObject<SoundEvent> COPPER_CHEST_OPEN = simple("copper_chest_open");
+	public static final RegistryObject<SoundEvent> COPPER_CHEST_CLOSE = simple("copper_chest_close");
+
 	private static RegistryObject<SoundEvent> simple(String name) {
 		return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(CTBackport.MODID, name)));
 	}

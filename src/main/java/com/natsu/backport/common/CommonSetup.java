@@ -47,6 +47,7 @@ public class CommonSetup {
 		event.put(CTBEntities.BOGGED.get(), com.natsu.backport.common.entity.Bogged.createAttributes().build());
 		event.put(CTBEntities.NAUTILUS.get(), com.natsu.backport.common.entity.AbstractNautilus.createAttributes().build());
 		event.put(CTBEntities.PARCHED.get(), com.natsu.backport.common.entity.Parched.createAttributes().build());
+		event.put(CTBEntities.COPPER_GOLEM.get(), com.natsu.backport.common.entity.CopperGolem.createAttributes().build());
 		event.put(CTBEntities.ZOMBIE_NAUTILUS.get(), com.natsu.backport.common.entity.ZombieNautilus.createAttributes().build());
 		//event.put(CTBEntities.SULPHUR_CUBE.get(), SulphurCube.createAttributes().build());
 	}

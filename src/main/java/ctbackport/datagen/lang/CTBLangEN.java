@@ -73,6 +73,10 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBBlocks.DECORATED_POT.get(), "Decorated Pot");
 		add("entity.ctbackport.bogged", "Bogged");
 		add("entity.ctbackport.parched", "Parched");
+		add("entity.ctbackport.copper_golem", "Copper Golem");
+		add(CTBBlocks.COPPER_CHEST.get(), "Copper Chest");
+		add(CTBBlocks.COPPER_GOLEM_STATUE.get(), "Copper Golem Statue");
+		add("container.ctbackport.copper_chest", "Copper Chest");
 		add(CTBItems.MUSIC_DISC_PRECIPICE.get(), "Music Disc");
 		add("item.ctbackport.music_disc_precipice.desc", "Aaron Cherof - Precipice");
 		add(CTBItems.MUSIC_DISC_CREATOR.get(), "Music Disc");

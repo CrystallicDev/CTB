@@ -65,6 +65,8 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		dropSelf(CTBBlocks.HEAVY_CORE.get());
 		// vanilla : neither drops anything, even with silk touch
 		add(CTBBlocks.TRIAL_SPAWNER.get(), noDrop());
+		dropSelf(CTBBlocks.COPPER_CHEST.get());
+		dropSelf(CTBBlocks.COPPER_GOLEM_STATUE.get());
 		add(CTBBlocks.DECORATED_POT.get(), block -> LootTable.lootTable().withPool(LootPool.lootPool()
 				.setRolls(ConstantValue.exactly(1))
 				.add(LootItem.lootTableItem(block)
