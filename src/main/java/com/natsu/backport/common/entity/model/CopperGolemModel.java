@@ -37,4 +37,21 @@ public class CopperGolemModel extends AnimatedGeoModel<CopperGolem> {
 	public ResourceLocation getAnimationFileLocation(CopperGolem entity) {
 		return ANIMATION;
 	}
+
+	@Override
+	public void setCustomAnimations(CopperGolem entity, int instanceId,
+			software.bernie.geckolib3.core.event.predicate.AnimationEvent animationEvent) {
+		super.setCustomAnimations(entity, instanceId, animationEvent);
+		// the sit props only exist for the statue poses
+		hide("sit_seat", true);
+		hide("sit_back", true);
+		hide("antenna", !entity.hasAntenna());
+	}
+
+	private void hide(String bone, boolean hidden) {
+		software.bernie.geckolib3.core.processor.IBone b = this.getAnimationProcessor().getBone(bone);
+		if (b != null) {
+			b.setHidden(hidden);
+		}
+	}
 }

@@ -28,7 +28,7 @@ public class TransportItemsGoal extends Goal {
 
 	private static final int MAX_CARRIED = 16;
 	private static final int SEARCH_RADIUS = 32;
-	private static final int INTERACTION_TICKS = 24;
+	private static final int INTERACTION_TICKS = 60; // the interaction animations last three seconds
 	private static final double REACH = 2.2;
 
 	private enum Phase { TO_PICKUP, INTERACT_PICKUP, TO_DROPOFF, INTERACT_DROPOFF, RETURNING }
@@ -98,20 +98,30 @@ public class TransportItemsGoal extends Goal {
 				}
 			}
 			case INTERACT_PICKUP -> {
+				// the outcome is decided when the interaction starts so the
+				// matching animation plays while the golem stands at the chest
+				if (this.interactTicks == INTERACTION_TICKS) {
+					Container source = this.containerAt(this.pickupPos);
+					ItemStack taken = source != null ? takeFromContainer(source) : ItemStack.EMPTY;
+					if (taken.isEmpty()) {
+						this.golem.setState(CopperGolem.GolemState.GETTING_NO_ITEM);
+						this.golem.playSound(CTBSounds.COPPER_GOLEM_NO_ITEM_NO_GET.get(), 1.0F, 1.0F);
+					} else {
+						this.golem.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, taken);
+						this.golem.setState(CopperGolem.GolemState.GETTING_ITEM);
+						this.golem.playSound(CTBSounds.COPPER_GOLEM_NO_ITEM_GET.get(), 1.0F, 1.0F);
+					}
+				}
+				this.golem.getNavigation().stop();
 				if (--this.interactTicks > 0) {
 					return;
 				}
-				Container source = this.containerAt(this.pickupPos);
-				ItemStack taken = source != null ? takeFromContainer(source) : ItemStack.EMPTY;
-				if (taken.isEmpty()) {
-					this.golem.setState(CopperGolem.GolemState.GETTING_NO_ITEM);
-					this.golem.playSound(CTBSounds.COPPER_GOLEM_NO_ITEM_NO_GET.get(), 1.0F, 1.0F);
+				this.golem.setState(CopperGolem.GolemState.IDLE);
+				ItemStack carried = this.golem.getMainHandItem();
+				if (carried.isEmpty()) {
 					this.pickupPos = null; // done, nothing to carry
 				} else {
-					this.golem.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, taken);
-					this.golem.setState(CopperGolem.GolemState.GETTING_ITEM);
-					this.golem.playSound(CTBSounds.COPPER_GOLEM_NO_ITEM_GET.get(), 1.0F, 1.0F);
-					this.dropoffPos = this.findDropoffChest(taken);
+					this.dropoffPos = this.findDropoffChest(carried);
 					if (this.dropoffPos != null) {
 						this.phase = Phase.TO_DROPOFF;
 						this.stuckTicks = 0;
@@ -130,18 +140,22 @@ public class TransportItemsGoal extends Goal {
 				}
 			}
 			case INTERACT_DROPOFF -> {
+				if (this.interactTicks == INTERACTION_TICKS) {
+					Container target = this.containerAt(this.dropoffPos);
+					ItemStack carried = this.golem.getMainHandItem();
+					if (target != null && !carried.isEmpty()) {
+						ItemStack leftover = depositIntoContainer(target, carried);
+						this.golem.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, leftover);
+						boolean dropped = leftover.getCount() < carried.getCount();
+						this.golem.setState(dropped ? CopperGolem.GolemState.DROPPING_ITEM : CopperGolem.GolemState.DROPPING_NO_ITEM);
+						this.golem.playSound(dropped ? CTBSounds.COPPER_GOLEM_ITEM_DROP.get() : CTBSounds.COPPER_GOLEM_ITEM_NO_DROP.get(), 1.0F, 1.0F);
+					}
+				}
+				this.golem.getNavigation().stop();
 				if (--this.interactTicks > 0) {
 					return;
 				}
-				Container target = this.containerAt(this.dropoffPos);
-				ItemStack carried = this.golem.getMainHandItem();
-				if (target != null && !carried.isEmpty()) {
-					ItemStack leftover = depositIntoContainer(target, carried);
-					this.golem.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, leftover);
-					boolean dropped = leftover.getCount() < carried.getCount();
-					this.golem.setState(dropped ? CopperGolem.GolemState.DROPPING_ITEM : CopperGolem.GolemState.DROPPING_NO_ITEM);
-					this.golem.playSound(dropped ? CTBSounds.COPPER_GOLEM_ITEM_DROP.get() : CTBSounds.COPPER_GOLEM_ITEM_NO_DROP.get(), 1.0F, 1.0F);
-				}
+				this.golem.setState(CopperGolem.GolemState.IDLE);
 				if (this.golem.getMainHandItem().isEmpty()) {
 					this.pickupPos = null; // cycle finished
 				} else {

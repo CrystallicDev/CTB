@@ -47,6 +47,7 @@ public class CopperGolemStatueBlockEntity extends BlockEntity implements softwar
 
 	private int weatherLevel = 3;
 	private boolean waxed;
+	private boolean hasAntenna = true;
 	private CompoundTag golemData = new CompoundTag();
 
 	public CopperGolemStatueBlockEntity(BlockPos pos, BlockState state) {
@@ -57,6 +58,7 @@ public class CopperGolemStatueBlockEntity extends BlockEntity implements softwar
 	public void createStatue(CopperGolem golem) {
 		this.weatherLevel = golem.getWeatherLevel();
 		this.waxed = false;
+		this.hasAntenna = golem.hasAntenna();
 		this.golemData = new CompoundTag();
 		golem.saveWithoutId(this.golemData);
 		this.golemData.remove("Pos");
@@ -81,6 +83,10 @@ public class CopperGolemStatueBlockEntity extends BlockEntity implements softwar
 			level.addFreshEntity(golem);
 			golem.playSpawnSound();
 		}
+	}
+
+	public boolean hasAntenna() {
+		return this.hasAntenna;
 	}
 
 	public int getWeatherLevel() {
@@ -113,6 +119,7 @@ public class CopperGolemStatueBlockEntity extends BlockEntity implements softwar
 		super.saveAdditional(tag);
 		tag.putInt("weather_level", this.weatherLevel);
 		tag.putBoolean("waxed", this.waxed);
+		tag.putBoolean("has_antenna", this.hasAntenna);
 		if (!this.golemData.isEmpty()) {
 			tag.put("golem_data", this.golemData);
 		}
@@ -123,6 +130,7 @@ public class CopperGolemStatueBlockEntity extends BlockEntity implements softwar
 		super.load(tag);
 		this.weatherLevel = tag.getInt("weather_level");
 		this.waxed = tag.getBoolean("waxed");
+		this.hasAntenna = !tag.contains("has_antenna") || tag.getBoolean("has_antenna");
 		this.golemData = tag.getCompound("golem_data");
 	}
 
@@ -136,6 +144,7 @@ public class CopperGolemStatueBlockEntity extends BlockEntity implements softwar
 		CompoundTag tag = new CompoundTag();
 		tag.putInt("weather_level", this.weatherLevel);
 		tag.putBoolean("waxed", this.waxed);
+		tag.putBoolean("has_antenna", this.hasAntenna);
 		return tag;
 	}
 }

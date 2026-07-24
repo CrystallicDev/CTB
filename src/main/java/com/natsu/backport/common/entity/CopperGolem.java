@@ -59,6 +59,7 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 	// 0 unaffected, 1 exposed, 2 weathered, 3 oxidized
 	private static final EntityDataAccessor<Byte> DATA_WEATHER = SynchedEntityData.defineId(CopperGolem.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Byte> DATA_STATE = SynchedEntityData.defineId(CopperGolem.class, EntityDataSerializers.BYTE);
+	private static final EntityDataAccessor<Boolean> DATA_ANTENNA = SynchedEntityData.defineId(CopperGolem.class, EntityDataSerializers.BOOLEAN);
 
 	public enum GolemState {
 		IDLE, GETTING_ITEM, GETTING_NO_ITEM, DROPPING_ITEM, DROPPING_NO_ITEM
@@ -92,6 +93,7 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 		super.defineSynchedData();
 		this.entityData.define(DATA_WEATHER, (byte) 0);
 		this.entityData.define(DATA_STATE, (byte) 0);
+		this.entityData.define(DATA_ANTENNA, true);
 	}
 
 	public int getWeatherLevel() {
@@ -100,6 +102,14 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 
 	public void setWeatherLevel(int level) {
 		this.entityData.set(DATA_WEATHER, (byte) net.minecraft.util.Mth.clamp(level, 0, 3));
+	}
+
+	public boolean hasAntenna() {
+		return this.entityData.get(DATA_ANTENNA);
+	}
+
+	public void setAntenna(boolean antenna) {
+		this.entityData.set(DATA_ANTENNA, antenna);
 	}
 
 	public GolemState getState() {
@@ -115,6 +125,7 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 		super.addAdditionalSaveData(tag);
 		tag.putLong("next_weather_age", this.nextWeatheringTick);
 		tag.putByte("weather_state", (byte) this.getWeatherLevel());
+		tag.putBoolean("has_antenna", this.hasAntenna());
 	}
 
 	@Override
@@ -122,6 +133,9 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 		super.readAdditionalSaveData(tag);
 		this.nextWeatheringTick = tag.contains("next_weather_age") ? tag.getLong("next_weather_age") : UNSET_WEATHERING_TICK;
 		this.setWeatherLevel(tag.getByte("weather_state"));
+		if (tag.contains("has_antenna")) {
+			this.setAntenna(tag.getBoolean("has_antenna"));
+		}
 	}
 
 	@Override
@@ -129,6 +143,13 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 		super.tick();
 		if (!this.level.isClientSide) {
 			this.updateWeathering((ServerLevel) this.level, this.random, this.level.getGameTime());
+		} else if (this.getState() == GolemState.IDLE && this.tickCount % 240 == 12 && this.getDeltaMovement().horizontalDistanceSqr() < 1.0E-4) {
+			SoundEvent spin = switch (this.soundSet()) {
+				case "oxidized" -> CTBSounds.COPPER_GOLEM_OXIDIZED_SPIN.get();
+				case "weathered" -> CTBSounds.COPPER_GOLEM_WEATHERED_SPIN.get();
+				default -> CTBSounds.COPPER_GOLEM_REGULAR_SPIN.get();
+			};
+			this.level.playLocalSound(this.getX(), this.getY(), this.getZ(), spin, this.getSoundSource(), 1.0F, 1.0F, false);
 		}
 	}
 
@@ -181,6 +202,27 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 				this.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
 				return InteractionResult.sidedSuccess(this.level.isClientSide);
 			}
+		}
+
+		if (held.is(Items.SHEARS) && this.hasAntenna()) {
+			if (!this.level.isClientSide) {
+				this.setAntenna(false);
+				this.spawnAtLocation(Items.LIGHTNING_ROD);
+				this.playSound(SoundEvents.SHEEP_SHEAR, 1.0F, 1.0F);
+				held.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
+			}
+			return InteractionResult.sidedSuccess(this.level.isClientSide);
+		}
+
+		if (held.is(Items.LIGHTNING_ROD) && !this.hasAntenna()) {
+			if (!this.level.isClientSide) {
+				this.setAntenna(true);
+				this.playSound(SoundEvents.COPPER_PLACE, 1.0F, 1.0F);
+				if (!player.getAbilities().instabuild) {
+					held.shrink(1);
+				}
+			}
+			return InteractionResult.sidedSuccess(this.level.isClientSide);
 		}
 
 		if (this.level.isClientSide) {
@@ -297,8 +339,11 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 			default -> {
 				if (event.isMoving()) {
 					builder.addAnimation(this.getMainHandItem().isEmpty() ? "moove.walk" : "moove.walk_item", ILoopType.EDefaultLoopTypes.LOOP);
+				} else if (this.tickCount % 240 < 70) {
+					// the head spin plays now and then, not on a loop
+					builder.addAnimation("moove.idle", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
 				} else {
-					builder.addAnimation("moove.idle", ILoopType.EDefaultLoopTypes.LOOP);
+					return PlayState.STOP;
 				}
 			}
 		}

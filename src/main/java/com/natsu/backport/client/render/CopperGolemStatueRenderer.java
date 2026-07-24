@@ -39,5 +39,24 @@ public class CopperGolemStatueRenderer extends GeoBlockRenderer<CopperGolemStatu
 		public ResourceLocation getAnimationFileLocation(CopperGolemStatueBlockEntity statue) {
 			return ANIMATION;
 		}
+
+		@Override
+		public void setCustomAnimations(CopperGolemStatueBlockEntity statue, int instanceId,
+				software.bernie.geckolib3.core.event.predicate.AnimationEvent animationEvent) {
+			super.setCustomAnimations(statue, instanceId, animationEvent);
+			boolean sitting = statue.getBlockState().hasProperty(com.natsu.backport.common.block.CopperGolemStatueBlock.POSE)
+					&& statue.getBlockState().getValue(com.natsu.backport.common.block.CopperGolemStatueBlock.POSE)
+							== com.natsu.backport.common.block.CopperGolemStatueBlock.Pose.SITTING;
+			hide("sit_seat", !sitting);
+			hide("sit_back", !sitting);
+			hide("antenna", !statue.hasAntenna());
+		}
+
+		private void hide(String bone, boolean hidden) {
+			software.bernie.geckolib3.core.processor.IBone b = this.getAnimationProcessor().getBone(bone);
+			if (b != null) {
+				b.setHidden(hidden);
+			}
+		}
 	}
 }
