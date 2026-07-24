@@ -54,6 +54,8 @@ public class CopperGolemRenderer extends GeoEntityRenderer<CopperGolem> {
 				RenderUtils.moveBackFromPivot(bone, poseStack);
 				poseStack.translate(0.14, -0.4, 0.0);
 				poseStack.mulPose(Vector3f.XP.rotationDegrees(-90.0F));
+				// the ground display transform floats items three pixels up
+				poseStack.translate(0.0, -0.1875, 0.0);
 				Minecraft.getInstance().getItemRenderer().renderStatic(carried, ItemTransforms.TransformType.GROUND,
 						packedLight, OverlayTexture.NO_OVERLAY, poseStack, this.rtb, this.currentGolem.getId());
 				poseStack.popPose();

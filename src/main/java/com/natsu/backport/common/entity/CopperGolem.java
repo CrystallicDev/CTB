@@ -68,6 +68,8 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	public long nextWeatheringTick = UNSET_WEATHERING_TICK;
 	@Nullable
+	private BlockPos openedChestPos;
+	@Nullable
 	private UUID lastLightningBoltUUID;
 
 	public CopperGolem(EntityType<? extends CopperGolem> type, Level level) {
@@ -102,6 +104,19 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 
 	public void setWeatherLevel(int level) {
 		this.entityData.set(DATA_WEATHER, (byte) net.minecraft.util.Mth.clamp(level, 0, 3));
+	}
+
+	@Nullable
+	public BlockPos getOpenedChestPos() {
+		return this.openedChestPos;
+	}
+
+	public void setOpenedChestPos(BlockPos pos) {
+		this.openedChestPos = pos;
+	}
+
+	public void clearOpenedChestPos() {
+		this.openedChestPos = null;
 	}
 
 	public boolean hasAntenna() {
