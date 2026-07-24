@@ -29,7 +29,9 @@ public class TransportItemsGoal extends Goal {
 	private static final int MAX_CARRIED = 16;
 	private static final int SEARCH_RADIUS = 32;
 	private static final int INTERACTION_TICKS = 60; // the interaction animations last three seconds
-	private static final double REACH = 1.75;
+	private static final double REACH = 1.9;
+	// vanilla interacts up to three blocks, accept it when pathing cannot get closer
+	private static final double REACH_PATH_LIMIT = 2.75;
 
 	private enum Phase { TO_PICKUP, INTERACT_PICKUP, TO_DROPOFF, INTERACT_DROPOFF, RETURNING }
 
@@ -216,7 +218,13 @@ public class TransportItemsGoal extends Goal {
 	}
 
 	private boolean arrivedAt(@Nullable BlockPos pos) {
-		return pos != null && pos.closerToCenterThan(this.golem.position(), REACH);
+		if (pos == null) {
+			return false;
+		}
+		if (pos.closerToCenterThan(this.golem.position(), REACH)) {
+			return true;
+		}
+		return this.golem.getNavigation().isDone() && pos.closerToCenterThan(this.golem.position(), REACH_PATH_LIMIT);
 	}
 
 	@Nullable
