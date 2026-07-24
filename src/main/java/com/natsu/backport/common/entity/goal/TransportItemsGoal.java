@@ -29,7 +29,7 @@ public class TransportItemsGoal extends Goal {
 	private static final int MAX_CARRIED = 16;
 	private static final int SEARCH_RADIUS = 32;
 	private static final int INTERACTION_TICKS = 60; // the interaction animations last three seconds
-	private static final double REACH = 2.2;
+	private static final double REACH = 1.75;
 
 	private enum Phase { TO_PICKUP, INTERACT_PICKUP, TO_DROPOFF, INTERACT_DROPOFF, RETURNING }
 
@@ -75,6 +75,11 @@ public class TransportItemsGoal extends Goal {
 
 	@Override
 	public void stop() {
+		if (this.phase == Phase.INTERACT_PICKUP) {
+			this.setChestLid(this.pickupPos, false);
+		} else if (this.phase == Phase.INTERACT_DROPOFF) {
+			this.setChestLid(this.dropoffPos, false);
+		}
 		this.golem.setState(CopperGolem.GolemState.IDLE);
 		this.pickupPos = null;
 		this.dropoffPos = null;
@@ -116,6 +121,7 @@ public class TransportItemsGoal extends Goal {
 				if (--this.interactTicks > 0) {
 					return;
 				}
+				this.setChestLid(this.pickupPos, false);
 				this.golem.setState(CopperGolem.GolemState.IDLE);
 				ItemStack carried = this.golem.getMainHandItem();
 				if (carried.isEmpty()) {
@@ -155,6 +161,7 @@ public class TransportItemsGoal extends Goal {
 				if (--this.interactTicks > 0) {
 					return;
 				}
+				this.setChestLid(this.dropoffPos, false);
 				this.golem.setState(CopperGolem.GolemState.IDLE);
 				if (this.golem.getMainHandItem().isEmpty()) {
 					this.pickupPos = null; // cycle finished
@@ -183,6 +190,23 @@ public class TransportItemsGoal extends Goal {
 		this.phase = next;
 		this.interactTicks = INTERACTION_TICKS;
 		this.stuckTicks = 0;
+		BlockPos pos = next == Phase.INTERACT_PICKUP ? this.pickupPos : this.dropoffPos;
+		this.setChestLid(pos, true);
+	}
+
+	/** Drives the lid through the vanilla block event, works for any chest. */
+	private void setChestLid(@Nullable BlockPos pos, boolean open) {
+		if (pos == null) {
+			return;
+		}
+		net.minecraft.world.level.block.state.BlockState state = this.golem.level.getBlockState(pos);
+		this.golem.level.blockEvent(pos, state.getBlock(), 1, open ? 1 : 0);
+		boolean copper = this.golem.level.getBlockEntity(pos) instanceof CopperChestBlockEntity;
+		net.minecraft.sounds.SoundEvent sound = copper
+				? (open ? CTBSounds.COPPER_CHEST_OPEN.get() : CTBSounds.COPPER_CHEST_CLOSE.get())
+				: (open ? net.minecraft.sounds.SoundEvents.CHEST_OPEN : net.minecraft.sounds.SoundEvents.CHEST_CLOSE);
+		this.golem.level.playSound(null, pos, sound, net.minecraft.sounds.SoundSource.BLOCKS, 0.5F,
+				this.golem.getRandom().nextFloat() * 0.1F + 0.9F);
 	}
 
 	private void walkTo(BlockPos pos) {
