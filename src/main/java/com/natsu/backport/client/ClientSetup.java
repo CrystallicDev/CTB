@@ -68,6 +68,21 @@ public class ClientSetup {
 		event.registerBlockEntityRenderer(CTBBlockEntities.DECORATED_POT.get(), DecoratedPotRenderer::new);
 	}
 
+	@net.minecraftforge.eventbus.api.SubscribeEvent
+	public static void registerBlockColors(net.minecraftforge.client.event.ColorHandlerEvent.Block event) {
+		event.getBlockColors().register((state, level, pos, tintIndex) ->
+				level != null && pos != null
+						? net.minecraft.client.renderer.BiomeColors.getAverageGrassColor(level, pos)
+						: net.minecraft.world.level.GrassColor.get(0.5, 1.0),
+				CTBBlocks.BUSH.get());
+	}
+
+	@net.minecraftforge.eventbus.api.SubscribeEvent
+	public static void registerItemColors(net.minecraftforge.client.event.ColorHandlerEvent.Item event) {
+		event.getItemColors().register((stack, tintIndex) -> net.minecraft.world.level.GrassColor.get(0.5, 1.0),
+				CTBBlocks.BUSH.get().asItem());
+	}
+
 	@SubscribeEvent
 	public static void registerParticles(ParticleFactoryRegisterEvent event) {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST.get(), GustParticle.Provider::new);

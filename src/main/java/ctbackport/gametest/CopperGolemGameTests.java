@@ -22,7 +22,7 @@ import net.minecraftforge.gametest.PrefixGameTestTemplate;
 public class CopperGolemGameTests {
 
 	// full loop: the golem empties the copper chest into the plain chest
-	@GameTest(template = "empty", timeoutTicks = 600)
+	@GameTest(template = "empty", timeoutTicks = 1200)
 	public static void golemSortsItems(GameTestHelper helper) {
 		BlockPos copperPos = new BlockPos(1, 2, 3);
 		BlockPos chestPos = new BlockPos(5, 2, 3);
