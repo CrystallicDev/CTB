@@ -1,0 +1,36 @@
+{
+	"type": "minecraft:blasting",
+	"group": "copper_nugget",
+	"ingredient": [
+		{
+			"item": "ctbackport:copper_sword"
+		},
+		{
+			"item": "ctbackport:copper_shovel"
+		},
+		{
+			"item": "ctbackport:copper_pickaxe"
+		},
+		{
+			"item": "ctbackport:copper_axe"
+		},
+		{
+			"item": "ctbackport:copper_hoe"
+		},
+		{
+			"item": "ctbackport:copper_helmet"
+		},
+		{
+			"item": "ctbackport:copper_chestplate"
+		},
+		{
+			"item": "ctbackport:copper_leggings"
+		},
+		{
+			"item": "ctbackport:copper_boots"
+		}
+	],
+	"result": "ctbackport:copper_nugget",
+	"experience": 0.1,
+	"cookingtime": 100
+}

@@ -1,0 +1,28 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"C",
+		"X",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"C": {
+			"item": "ctbackport:copper_nugget"
+		},
+		"X": [
+			{
+				"item": "minecraft:coal"
+			},
+			{
+				"item": "minecraft:charcoal"
+			}
+		]
+	},
+	"result": {
+		"item": "ctbackport:copper_torch",
+		"count": 4
+	}
+}

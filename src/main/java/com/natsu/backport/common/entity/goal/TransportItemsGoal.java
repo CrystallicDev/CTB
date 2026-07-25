@@ -342,7 +342,7 @@ public class TransportItemsGoal extends Goal {
 	private boolean isWantedBlock(BlockState state) {
 		return this.isPickingUpItems()
 				? state.getBlock() instanceof CopperChestBlock
-				: state.getBlock() instanceof ChestBlock;
+				: state.getBlock() instanceof ChestBlock && !(state.getBlock() instanceof CopperChestBlock);
 	}
 
 	private boolean isPickingUpItems() {

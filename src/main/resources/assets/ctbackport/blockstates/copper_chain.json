@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ctbackport:block/copper_chain",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ctbackport:block/copper_chain"
+    },
+    "axis=z": {
+      "model": "ctbackport:block/copper_chain",
+      "x": 90
+    }
+  }
+}

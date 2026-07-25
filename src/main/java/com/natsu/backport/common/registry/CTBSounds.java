@@ -145,6 +145,7 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_ITEM_NO_DROP = simple("copper_golem_item_no_drop");
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_NO_ITEM_GET = simple("copper_golem_no_item_get");
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_NO_ITEM_NO_GET = simple("copper_golem_no_item_no_get");
+	public static final RegistryObject<SoundEvent> ARMOR_EQUIP_COPPER = simple("armor_equip_copper");
 	public static final RegistryObject<SoundEvent> COPPER_CHEST_OPEN = simple("copper_chest_open");
 	public static final RegistryObject<SoundEvent> COPPER_CHEST_CLOSE = simple("copper_chest_close");
 

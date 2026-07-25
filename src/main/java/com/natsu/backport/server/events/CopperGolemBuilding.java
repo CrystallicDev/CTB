@@ -34,12 +34,18 @@ public class CopperGolemBuilding {
 			return;
 		}
 
+		BlockState baseState = level.getBlockState(basePos);
+		net.minecraft.core.Direction facing = event.getPlacedBlock()
+				.getOptionalValue(net.minecraft.world.level.block.CarvedPumpkinBlock.FACING)
+				.orElse(net.minecraft.core.Direction.NORTH);
 		level.removeBlock(pumpkinPos, false);
-		level.removeBlock(basePos, false);
+		// vanilla turns the copper base block into the matching copper chest
+		level.setBlockAndUpdate(basePos, com.natsu.backport.common.block.CopperChestBlock
+				.getFromCopperBlock(baseState.getBlock(), facing));
 		CopperGolem golem = CTBEntities.COPPER_GOLEM.get().create(level);
 		if (golem != null) {
 			golem.setWeatherLevel(weather);
-			golem.moveTo(basePos.getX() + 0.5, basePos.getY(), basePos.getZ() + 0.5,
+			golem.moveTo(pumpkinPos.getX() + 0.5, pumpkinPos.getY(), pumpkinPos.getZ() + 0.5,
 					event.getEntity() instanceof Player player ? player.getYRot() + 180.0F : 0.0F, 0.0F);
 			level.addFreshEntity(golem);
 			golem.playSpawnSound();

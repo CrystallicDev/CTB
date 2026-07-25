@@ -63,6 +63,7 @@ public class ClientSetup {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_LARGE.get(), GustEmitterParticle.LargeProvider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_SMALL.get(), GustEmitterParticle.SmallProvider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.CHERRY.get(), CherryParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.COPPER_FIRE_FLAME.get(), net.minecraft.client.particle.FlameParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.PALE_OAK_LEAVES.get(), CherryParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRAIL.get(), TrailParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRIAL_SPAWNER_DETECTION.get(), TrialSpawnerDetectionParticle.Provider::new);
@@ -116,6 +117,16 @@ public class ClientSetup {
         	CTBBlocks.PALE_OAK_LEAVES.setRenderTypes();
         	// transparent textures render as solid gray squares without cutout
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.RESIN.clump.get(), RenderType.cutout());
+        	for (com.natsu.backport.utils.sets.WeatherableCopperSet<?, ?> set : java.util.List.of(
+        			CTBBlocks.COPPER_BARS, CTBBlocks.COPPER_CHAIN, CTBBlocks.COPPER_LANTERN)) {
+        		for (net.minecraftforge.registries.RegistryObject<net.minecraft.world.level.block.Block> b : java.util.List.of(
+        				set.block, set.exposedBlock, set.weatheredBlock, set.oxidizedBlock,
+        				set.blockWaxed, set.exposedBlockWaxed, set.weatheredBlockWaxed, set.oxidizedBlockWaxed)) {
+        			ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.cutout());
+        		}
+        	}
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.COPPER_TORCH.get(), RenderType.cutout());
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.COPPER_WALL_TORCH.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.OPEN_EYEBLOSSOM.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.CLOSED_EYEBLOSSOM.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.PALE_HANGING_MOSS.get(), RenderType.cutout());

@@ -39,8 +39,26 @@ public class CTBBlockTags extends BlockTagsProvider {
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.TRIAL_SPAWNER.get());
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.VAULT.get());
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.COPPER_CHEST.get());
+		tag(BlockTags.NEEDS_STONE_TOOL).add(CTBBlocks.COPPER_CHEST.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.EXPOSED_COPPER_CHEST.get());
+		tag(BlockTags.NEEDS_STONE_TOOL).add(CTBBlocks.EXPOSED_COPPER_CHEST.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.WEATHERED_COPPER_CHEST.get());
+		tag(BlockTags.NEEDS_STONE_TOOL).add(CTBBlocks.WEATHERED_COPPER_CHEST.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.OXIDIZED_COPPER_CHEST.get());
+		tag(BlockTags.NEEDS_STONE_TOOL).add(CTBBlocks.OXIDIZED_COPPER_CHEST.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.WAXED_COPPER_CHEST.get());
+		tag(BlockTags.NEEDS_STONE_TOOL).add(CTBBlocks.WAXED_COPPER_CHEST.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.WAXED_EXPOSED_COPPER_CHEST.get());
+		tag(BlockTags.NEEDS_STONE_TOOL).add(CTBBlocks.WAXED_EXPOSED_COPPER_CHEST.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.WAXED_WEATHERED_COPPER_CHEST.get());
+		tag(BlockTags.NEEDS_STONE_TOOL).add(CTBBlocks.WAXED_WEATHERED_COPPER_CHEST.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.WAXED_OXIDIZED_COPPER_CHEST.get());
+		tag(BlockTags.NEEDS_STONE_TOOL).add(CTBBlocks.WAXED_OXIDIZED_COPPER_CHEST.get());
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.COPPER_GOLEM_STATUE.get());
 		handle(CTBBlocks.CHISELED_COPPER);
+		handle(CTBBlocks.COPPER_BARS);
+		handle(CTBBlocks.COPPER_CHAIN);
+		handle(CTBBlocks.COPPER_LANTERN);
 		for (net.minecraftforge.registries.RegistryObject<net.minecraft.world.level.block.Block> b : java.util.List.of(
 				CTBBlocks.TUFF_STAIRS, CTBBlocks.TUFF_SLAB, CTBBlocks.TUFF_WALL, CTBBlocks.CHISELED_TUFF,
 				CTBBlocks.POLISHED_TUFF, CTBBlocks.POLISHED_TUFF_STAIRS, CTBBlocks.POLISHED_TUFF_SLAB,

@@ -30,7 +30,11 @@ public class CTBBlockEntities {
 			);
 
 	public static final RegistryObject<BlockEntityType<CopperChestBlockEntity>> COPPER_CHEST = BLOCK_ENTITIES.register("copper_chest",
-			() -> BlockEntityType.Builder.of(CopperChestBlockEntity::new, CTBBlocks.COPPER_CHEST.get()).build(null)
+			() -> BlockEntityType.Builder.of(CopperChestBlockEntity::new,
+					CTBBlocks.COPPER_CHEST.get(), CTBBlocks.EXPOSED_COPPER_CHEST.get(),
+					CTBBlocks.WEATHERED_COPPER_CHEST.get(), CTBBlocks.OXIDIZED_COPPER_CHEST.get(),
+					CTBBlocks.WAXED_COPPER_CHEST.get(), CTBBlocks.WAXED_EXPOSED_COPPER_CHEST.get(),
+					CTBBlocks.WAXED_WEATHERED_COPPER_CHEST.get(), CTBBlocks.WAXED_OXIDIZED_COPPER_CHEST.get()).build(null)
 			);
 
 	public static final RegistryObject<BlockEntityType<CopperGolemStatueBlockEntity>> COPPER_GOLEM_STATUE = BLOCK_ENTITIES.register("copper_golem_statue",

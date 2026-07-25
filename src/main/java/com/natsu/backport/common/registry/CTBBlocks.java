@@ -125,13 +125,79 @@ public class CTBBlocks {
 			() -> new com.natsu.backport.common.item.DecoratedPotItem(DECORATED_POT.get(),
 					new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
 
-	public static final RegistryObject<Block> COPPER_CHEST = registerWithItem(BLOCKS, CTBItems.ITEMS, "copper_chest",
-			BLOCKS.register("copper_chest", () -> new com.natsu.backport.common.block.CopperChestBlock(
-					net.minecraft.world.level.block.state.BlockBehaviour.Properties.of(net.minecraft.world.level.material.Material.METAL)
-						.strength(3.0F, 6.0F)
-						.requiresCorrectToolForDrops()
-						.sound(net.minecraft.world.level.block.SoundType.COPPER)
-						.noOcclusion())));
+	public static final WeatherableCopperSet<com.natsu.backport.common.block.WeatheringCopperBarsBlock, net.minecraft.world.level.block.IronBarsBlock> COPPER_BARS =
+			new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_bars",
+					() -> net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.METAL)
+							.requiresCorrectToolForDrops().strength(5.0F, 6.0F)
+							.sound(net.minecraft.world.level.block.SoundType.COPPER).noOcclusion(),
+					com.natsu.backport.common.block.WeatheringCopperBarsBlock.class,
+					net.minecraft.world.level.block.IronBarsBlock.class);
+
+	public static final WeatherableCopperSet<com.natsu.backport.common.block.WeatheringCopperChainBlock, net.minecraft.world.level.block.ChainBlock> COPPER_CHAIN =
+			new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_chain",
+					() -> net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.METAL)
+							.requiresCorrectToolForDrops().strength(5.0F, 6.0F)
+							.sound(net.minecraft.world.level.block.SoundType.CHAIN).noOcclusion(),
+					com.natsu.backport.common.block.WeatheringCopperChainBlock.class,
+					net.minecraft.world.level.block.ChainBlock.class);
+
+	public static final WeatherableCopperSet<com.natsu.backport.common.block.WeatheringCopperLanternBlock, net.minecraft.world.level.block.LanternBlock> COPPER_LANTERN =
+			new WeatherableCopperSet<>(BLOCKS, CTBItems.ITEMS, "copper_lantern",
+					() -> net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.METAL)
+							.requiresCorrectToolForDrops().strength(3.5F)
+							.sound(net.minecraft.world.level.block.SoundType.LANTERN)
+							.lightLevel(state -> 15).noOcclusion(),
+					com.natsu.backport.common.block.WeatheringCopperLanternBlock.class,
+					net.minecraft.world.level.block.LanternBlock.class);
+
+	// the copper torch does not oxidize, it just burns green
+	public static final RegistryObject<Block> COPPER_TORCH = BLOCKS.register("copper_torch",
+			() -> new com.natsu.backport.common.block.CopperTorchBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.DECORATION)
+							.noCollission().instabreak()
+							.lightLevel(state -> 14)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)));
+	public static final RegistryObject<Block> COPPER_WALL_TORCH = BLOCKS.register("copper_wall_torch",
+			() -> new com.natsu.backport.common.block.CopperWallTorchBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.DECORATION)
+							.noCollission().instabreak()
+							.lightLevel(state -> 14)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.dropsLike(COPPER_TORCH.get())));
+	private static final RegistryObject<Item> COPPER_TORCH_ITEM = CTBItems.ITEMS.register("copper_torch",
+			() -> new net.minecraft.world.item.StandingAndWallBlockItem(COPPER_TORCH.get(), COPPER_WALL_TORCH.get(),
+					new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+
+	public static final RegistryObject<Block> COPPER_CHEST = copperChest("copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.UNAFFECTED, false);
+	public static final RegistryObject<Block> EXPOSED_COPPER_CHEST = copperChest("exposed_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.EXPOSED, false);
+	public static final RegistryObject<Block> WEATHERED_COPPER_CHEST = copperChest("weathered_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.WEATHERED, false);
+	public static final RegistryObject<Block> OXIDIZED_COPPER_CHEST = copperChest("oxidized_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.OXIDIZED, false);
+	public static final RegistryObject<Block> WAXED_COPPER_CHEST = copperChest("waxed_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.UNAFFECTED, true);
+	public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_CHEST = copperChest("waxed_exposed_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.EXPOSED, true);
+	public static final RegistryObject<Block> WAXED_WEATHERED_COPPER_CHEST = copperChest("waxed_weathered_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.WEATHERED, true);
+	public static final RegistryObject<Block> WAXED_OXIDIZED_COPPER_CHEST = copperChest("waxed_oxidized_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.OXIDIZED, true);
+
+	private static RegistryObject<Block> copperChest(String name, net.minecraft.world.level.block.WeatheringCopper.WeatherState state, boolean waxed) {
+		RegistryObject<Block> block = BLOCKS.register(name, () -> waxed
+				? new com.natsu.backport.common.block.CopperChestBlock(state, copperChestProps())
+				: new com.natsu.backport.common.block.WeatheringCopperChestBlock(state, copperChestProps()));
+		CTBItems.ITEMS.register(name, () -> new com.natsu.backport.common.item.CopperChestItem(block.get(),
+				new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+		return block;
+	}
+
+	private static net.minecraft.world.level.block.state.BlockBehaviour.Properties copperChestProps() {
+		return net.minecraft.world.level.block.state.BlockBehaviour.Properties.of(net.minecraft.world.level.material.Material.METAL)
+				.strength(3.0F, 6.0F)
+				.requiresCorrectToolForDrops()
+				.sound(net.minecraft.world.level.block.SoundType.COPPER)
+				.noOcclusion();
+	}
 
 	public static final RegistryObject<Block> COPPER_GOLEM_STATUE = registerWithItem(BLOCKS, CTBItems.ITEMS, "copper_golem_statue",
 			BLOCKS.register("copper_golem_statue", () -> new com.natsu.backport.common.block.CopperGolemStatueBlock(

@@ -66,6 +66,13 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		// vanilla : neither drops anything, even with silk touch
 		add(CTBBlocks.TRIAL_SPAWNER.get(), noDrop());
 		dropSelf(CTBBlocks.COPPER_CHEST.get());
+		dropSelf(CTBBlocks.EXPOSED_COPPER_CHEST.get());
+		dropSelf(CTBBlocks.WEATHERED_COPPER_CHEST.get());
+		dropSelf(CTBBlocks.OXIDIZED_COPPER_CHEST.get());
+		dropSelf(CTBBlocks.WAXED_COPPER_CHEST.get());
+		dropSelf(CTBBlocks.WAXED_EXPOSED_COPPER_CHEST.get());
+		dropSelf(CTBBlocks.WAXED_WEATHERED_COPPER_CHEST.get());
+		dropSelf(CTBBlocks.WAXED_OXIDIZED_COPPER_CHEST.get());
 		dropSelf(CTBBlocks.COPPER_GOLEM_STATUE.get());
 		add(CTBBlocks.DECORATED_POT.get(), block -> LootTable.lootTable().withPool(LootPool.lootPool()
 				.setRolls(ConstantValue.exactly(1))
@@ -75,6 +82,10 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 								.copy("sherds", "BlockEntityTag.sherds")))));
 		add(CTBBlocks.VAULT.get(), noDrop());
 		handleCopperSet(CTBBlocks.CHISELED_COPPER);
+		handleCopperSet(CTBBlocks.COPPER_BARS);
+		handleCopperSet(CTBBlocks.COPPER_CHAIN);
+		handleCopperSet(CTBBlocks.COPPER_LANTERN);
+		dropSelf(CTBBlocks.COPPER_TORCH.get());
 		for (net.minecraftforge.registries.RegistryObject<Block> b : java.util.List.of(
 				CTBBlocks.TUFF_STAIRS, CTBBlocks.TUFF_WALL, CTBBlocks.CHISELED_TUFF, CTBBlocks.POLISHED_TUFF,
 				CTBBlocks.POLISHED_TUFF_STAIRS, CTBBlocks.POLISHED_TUFF_WALL, CTBBlocks.TUFF_BRICKS,

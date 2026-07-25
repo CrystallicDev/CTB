@@ -114,7 +114,16 @@ public class CommonSetup {
 	}
 
 	private static void registerWeatherables() {
-		for (WeatherableCopperSet<?, ?> set : List.of(CTBBlocks.COPPER_GRATE, CTBBlocks.COPPER_DOOR, CTBBlocks.COPPER_TRAPDOOR, CTBBlocks.COPPER_BULB, CTBBlocks.CHISELED_COPPER)) {
+		CTBWeatheringCopper.NEXT_BY_BLOCK.put(CTBBlocks.COPPER_CHEST.get(), CTBBlocks.EXPOSED_COPPER_CHEST.get());
+		CTBWeatheringCopper.NEXT_BY_BLOCK.put(CTBBlocks.EXPOSED_COPPER_CHEST.get(), CTBBlocks.WEATHERED_COPPER_CHEST.get());
+		CTBWeatheringCopper.NEXT_BY_BLOCK.put(CTBBlocks.WEATHERED_COPPER_CHEST.get(), CTBBlocks.OXIDIZED_COPPER_CHEST.get());
+		CTBWeatheringCopper.WAXABLES.put(CTBBlocks.COPPER_CHEST.get(), CTBBlocks.WAXED_COPPER_CHEST.get());
+		CTBWeatheringCopper.WAXABLES.put(CTBBlocks.EXPOSED_COPPER_CHEST.get(), CTBBlocks.WAXED_EXPOSED_COPPER_CHEST.get());
+		CTBWeatheringCopper.WAXABLES.put(CTBBlocks.WEATHERED_COPPER_CHEST.get(), CTBBlocks.WAXED_WEATHERED_COPPER_CHEST.get());
+		CTBWeatheringCopper.WAXABLES.put(CTBBlocks.OXIDIZED_COPPER_CHEST.get(), CTBBlocks.WAXED_OXIDIZED_COPPER_CHEST.get());
+
+		for (WeatherableCopperSet<?, ?> set : List.of(CTBBlocks.COPPER_GRATE, CTBBlocks.COPPER_DOOR, CTBBlocks.COPPER_TRAPDOOR, CTBBlocks.COPPER_BULB, CTBBlocks.CHISELED_COPPER,
+				CTBBlocks.COPPER_BARS, CTBBlocks.COPPER_CHAIN, CTBBlocks.COPPER_LANTERN)) {
 			set.setWeatherable(CTBWeatheringCopper.NEXT_BY_BLOCK, CTBWeatheringCopper.NEXT_BY_BLOCK.inverse());
 			set.setWaxables(CTBWeatheringCopper.WAXABLES);
 		}

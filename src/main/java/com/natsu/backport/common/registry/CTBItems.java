@@ -28,6 +28,47 @@ public class CTBItems {
 			new MaceItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).durability(500).rarity(Rarity.EPIC))
 			);
 
+	// copper gear, vanilla 1.21.11 stats
+	public static final RegistryObject<Item> COPPER_NUGGET = ITEMS.register("copper_nugget", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
+	public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword", () ->
+			new net.minecraft.world.item.SwordItem(CopperTier.INSTANCE, 3, -2.4F,
+					new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+			);
+	public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel", () ->
+			new net.minecraft.world.item.ShovelItem(CopperTier.INSTANCE, 1.5F, -3.0F,
+					new Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+			);
+	public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", () ->
+			new net.minecraft.world.item.PickaxeItem(CopperTier.INSTANCE, 1, -2.8F,
+					new Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+			);
+	public static final RegistryObject<Item> COPPER_AXE = ITEMS.register("copper_axe", () ->
+			new net.minecraft.world.item.AxeItem(CopperTier.INSTANCE, 7.0F, -3.2F,
+					new Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+			);
+	public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe", () ->
+			new net.minecraft.world.item.HoeItem(CopperTier.INSTANCE, -1, -2.0F,
+					new Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+			);
+	public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet", () ->
+			new net.minecraft.world.item.ArmorItem(com.natsu.backport.common.item.CTBArmorMaterials.COPPER,
+					net.minecraft.world.entity.EquipmentSlot.HEAD, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+			);
+	public static final RegistryObject<Item> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate", () ->
+			new net.minecraft.world.item.ArmorItem(com.natsu.backport.common.item.CTBArmorMaterials.COPPER,
+					net.minecraft.world.entity.EquipmentSlot.CHEST, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+			);
+	public static final RegistryObject<Item> COPPER_LEGGINGS = ITEMS.register("copper_leggings", () ->
+			new net.minecraft.world.item.ArmorItem(com.natsu.backport.common.item.CTBArmorMaterials.COPPER,
+					net.minecraft.world.entity.EquipmentSlot.LEGS, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+			);
+	public static final RegistryObject<Item> COPPER_BOOTS = ITEMS.register("copper_boots", () ->
+			new net.minecraft.world.item.ArmorItem(com.natsu.backport.common.item.CTBArmorMaterials.COPPER,
+					net.minecraft.world.entity.EquipmentSlot.FEET, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+			);
+
 	public static final RegistryObject<Item> BREEZE_ROD = ITEMS.register("breeze_rod", () ->
 			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
 			);
@@ -100,7 +141,7 @@ public class CTBItems {
 
 		@Override public int getUses() { return 190; }
 		@Override public float getSpeed() { return 5.0F; }
-		@Override public float getAttackDamageBonus() { return 1.5F; }
+		@Override public float getAttackDamageBonus() { return 1.0F; }
 		@Override public int getLevel() { return 1; }
 		@Override public int getEnchantmentValue() { return 13; }
 		@Override public net.minecraft.world.item.crafting.Ingredient getRepairIngredient() {

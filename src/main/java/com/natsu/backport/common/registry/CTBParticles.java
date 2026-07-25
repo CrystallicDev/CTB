@@ -22,6 +22,9 @@ public class CTBParticles {
 				}
 			});
 
+	public static final RegistryObject<SimpleParticleType> COPPER_FIRE_FLAME = PARTICLES.register("copper_fire_flame",
+			() -> new SimpleParticleType(false)
+	);
 	public static final RegistryObject<SimpleParticleType> CHERRY = PARTICLES.register("cherry_leaves_backport",
 			() -> new SimpleParticleType(true)
 	);

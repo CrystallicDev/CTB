@@ -40,6 +40,10 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		handleCopperSet(CTBBlocks.COPPER_DOOR);
 		handleCopperSet(CTBBlocks.COPPER_TRAPDOOR);
 		handleCopperSet(CTBBlocks.CHISELED_COPPER);
+		handleCopperSet(CTBBlocks.COPPER_BARS);
+		handleCopperSet(CTBBlocks.COPPER_CHAIN);
+		handleCopperSet(CTBBlocks.COPPER_LANTERN);
+		add(CTBBlocks.COPPER_TORCH.get(), "Copper Torch");
 
 		add(CTBBlocks.TUFF_STAIRS.get(), "Tuff Stairs");
 		add(CTBBlocks.TUFF_SLAB.get(), "Tuff Slab");
@@ -75,8 +79,26 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add("entity.ctbackport.parched", "Parched");
 		add("entity.ctbackport.copper_golem", "Copper Golem");
 		add(CTBBlocks.COPPER_CHEST.get(), "Copper Chest");
+		add(CTBBlocks.EXPOSED_COPPER_CHEST.get(), "Exposed Copper Chest");
+		add(CTBBlocks.WEATHERED_COPPER_CHEST.get(), "Weathered Copper Chest");
+		add(CTBBlocks.OXIDIZED_COPPER_CHEST.get(), "Oxidized Copper Chest");
+		add(CTBBlocks.WAXED_COPPER_CHEST.get(), "Waxed Copper Chest");
+		add(CTBBlocks.WAXED_EXPOSED_COPPER_CHEST.get(), "Waxed Exposed Copper Chest");
+		add(CTBBlocks.WAXED_WEATHERED_COPPER_CHEST.get(), "Waxed Weathered Copper Chest");
+		add(CTBBlocks.WAXED_OXIDIZED_COPPER_CHEST.get(), "Waxed Oxidized Copper Chest");
 		add(CTBBlocks.COPPER_GOLEM_STATUE.get(), "Copper Golem Statue");
 		add("container.ctbackport.copper_chest", "Copper Chest");
+		add(CTBItems.COPPER_NUGGET.get(), "Copper Nugget");
+		add(CTBItems.COPPER_SWORD.get(), "Copper Sword");
+		add(CTBItems.COPPER_SHOVEL.get(), "Copper Shovel");
+		add(CTBItems.COPPER_PICKAXE.get(), "Copper Pickaxe");
+		add(CTBItems.COPPER_AXE.get(), "Copper Axe");
+		add(CTBItems.COPPER_HOE.get(), "Copper Hoe");
+		add(CTBItems.COPPER_HELMET.get(), "Copper Helmet");
+		add(CTBItems.COPPER_CHESTPLATE.get(), "Copper Chestplate");
+		add(CTBItems.COPPER_LEGGINGS.get(), "Copper Leggings");
+		add(CTBItems.COPPER_BOOTS.get(), "Copper Boots");
+		add("subtitles.item.armor.equip_copper", "Copper armor clinks");
 		add(CTBItems.MUSIC_DISC_PRECIPICE.get(), "Music Disc");
 		add("item.ctbackport.music_disc_precipice.desc", "Aaron Cherof - Precipice");
 		add(CTBItems.MUSIC_DISC_CREATOR.get(), "Music Disc");

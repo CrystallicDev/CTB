@@ -47,6 +47,10 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		handleCopperSet(CTBBlocks.COPPER_DOOR);
 		handleCopperSet(CTBBlocks.COPPER_TRAPDOOR);
 		handleCopperSet(CTBBlocks.CHISELED_COPPER);
+		handleCopperSet(CTBBlocks.COPPER_BARS);
+		handleCopperSet(CTBBlocks.COPPER_CHAIN);
+		handleCopperSet(CTBBlocks.COPPER_LANTERN);
+		add(CTBBlocks.COPPER_TORCH.get(), "Torche en cuivre");
 
 		add(CTBBlocks.TUFF_STAIRS.get(), "Escaliers en tuf");
 		add(CTBBlocks.TUFF_SLAB.get(), "Dalle en tuf");
@@ -83,8 +87,26 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add("entity.ctbackport.parched", "Desséché");
 		add("entity.ctbackport.copper_golem", "Golem de cuivre");
 		add(CTBBlocks.COPPER_CHEST.get(), "Coffre en cuivre");
+		add(CTBBlocks.EXPOSED_COPPER_CHEST.get(), "Coffre en cuivre exposé");
+		add(CTBBlocks.WEATHERED_COPPER_CHEST.get(), "Coffre en cuivre érodé");
+		add(CTBBlocks.OXIDIZED_COPPER_CHEST.get(), "Coffre en cuivre oxydé");
+		add(CTBBlocks.WAXED_COPPER_CHEST.get(), "Coffre en cuivre ciré");
+		add(CTBBlocks.WAXED_EXPOSED_COPPER_CHEST.get(), "Coffre en cuivre exposé ciré");
+		add(CTBBlocks.WAXED_WEATHERED_COPPER_CHEST.get(), "Coffre en cuivre érodé ciré");
+		add(CTBBlocks.WAXED_OXIDIZED_COPPER_CHEST.get(), "Coffre en cuivre oxydé ciré");
 		add(CTBBlocks.COPPER_GOLEM_STATUE.get(), "Statue de golem de cuivre");
 		add("container.ctbackport.copper_chest", "Coffre en cuivre");
+		add(CTBItems.COPPER_NUGGET.get(), "Pépite de cuivre");
+		add(CTBItems.COPPER_SWORD.get(), "Épée en cuivre");
+		add(CTBItems.COPPER_SHOVEL.get(), "Pelle en cuivre");
+		add(CTBItems.COPPER_PICKAXE.get(), "Pioche en cuivre");
+		add(CTBItems.COPPER_AXE.get(), "Hache en cuivre");
+		add(CTBItems.COPPER_HOE.get(), "Houe en cuivre");
+		add(CTBItems.COPPER_HELMET.get(), "Casque en cuivre");
+		add(CTBItems.COPPER_CHESTPLATE.get(), "Plastron en cuivre");
+		add(CTBItems.COPPER_LEGGINGS.get(), "Jambières en cuivre");
+		add(CTBItems.COPPER_BOOTS.get(), "Bottes en cuivre");
+		add("subtitles.item.armor.equip_copper", "Cliquetis d'une armure en cuivre");
 		add(CTBItems.MUSIC_DISC_PRECIPICE.get(), "Disque de musique");
 		add("item.ctbackport.music_disc_precipice.desc", "Aaron Cherof - Precipice");
 		add(CTBItems.MUSIC_DISC_CREATOR.get(), "Disque de musique");
@@ -264,7 +286,10 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 			"copper_grate", new String[]{"Grille de cuivre", "e"},
 			"copper_door", new String[]{"Porte en cuivre", "e"},
 			"copper_trapdoor", new String[]{"Trappe en cuivre", "e"},
-			"chiseled_copper", new String[]{"Cuivre sculpté", ""});
+			"chiseled_copper", new String[]{"Cuivre sculpté", ""},
+			"copper_bars", new String[]{"Barreaux en cuivre", "s"},
+			"copper_chain", new String[]{"Chaîne en cuivre", "e"},
+			"copper_lantern", new String[]{"Lanterne en cuivre", "e"});
 
 	@Override
 	public void handleCopperSet(WeatherableCopperSet<?, ?> set) {

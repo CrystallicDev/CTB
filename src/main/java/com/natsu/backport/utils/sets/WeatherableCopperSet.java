@@ -52,6 +52,28 @@ public class WeatherableCopperSet<Weatherable extends Block, Waxed extends Block
 		this(BLOCKS, ITEMS, blockName, strength, weatherable, waxed, null);
 	}
 
+	/** Same set, but every stage shares the given properties instead of the copper block ones. */
+	public WeatherableCopperSet(DeferredRegister<Block> BLOCKS, DeferredRegister<Item> ITEMS, String blockName,
+			java.util.function.Supplier<BlockBehaviour.Properties> customProps, Class<Weatherable> weatherable, Class<Waxed> waxed) {
+		name = blockName;
+		block = BLOCKS.register(blockName, () -> createWeatherableState(weatherable, WeatherState.UNAFFECTED, customProps.get()));
+		exposedBlock = BLOCKS.register("exposed_"+blockName, () -> createWeatherableState(weatherable, WeatherState.EXPOSED, customProps.get()));
+		weatheredBlock = BLOCKS.register("weathered_"+blockName, () -> createWeatherableState(weatherable, WeatherState.WEATHERED, customProps.get()));
+		oxidizedBlock = BLOCKS.register("oxidized_"+blockName, () -> createWeatherableState(weatherable, WeatherState.OXIDIZED, customProps.get()));
+		blockWaxed = BLOCKS.register("waxed_"+blockName, () -> createWaxedState(waxed, WeatherState.UNAFFECTED, customProps.get()));
+		exposedBlockWaxed = BLOCKS.register("waxed_exposed_"+blockName, () -> createWaxedState(waxed, WeatherState.EXPOSED, customProps.get()));
+		weatheredBlockWaxed = BLOCKS.register("waxed_weathered_"+blockName, () -> createWaxedState(waxed, WeatherState.WEATHERED, customProps.get()));
+		oxidizedBlockWaxed = BLOCKS.register("waxed_oxidized_"+blockName, () -> createWaxedState(waxed, WeatherState.OXIDIZED, customProps.get()));
+		blockItem = CTBBlockItemFactory.blockItem(ITEMS, block);
+		exposedBlockItem = CTBBlockItemFactory.blockItem(ITEMS, exposedBlock);
+		weatheredBlockItem = CTBBlockItemFactory.blockItem(ITEMS, weatheredBlock);
+		oxidizedBlockItem = CTBBlockItemFactory.blockItem(ITEMS, oxidizedBlock);
+		blockWaxedItem = CTBBlockItemFactory.blockItem(ITEMS, blockWaxed);
+		exposedBlockWaxedItem = CTBBlockItemFactory.blockItem(ITEMS, exposedBlockWaxed);
+		weatheredBlockWaxedItem = CTBBlockItemFactory.blockItem(ITEMS, weatheredBlockWaxed);
+		oxidizedBlockWaxedItem = CTBBlockItemFactory.blockItem(ITEMS, oxidizedBlockWaxed);
+	}
+
 	/** litLightLevels : light emitted per weather stage when LIT (bulbs), or null. */
 	public WeatherableCopperSet(DeferredRegister<Block> BLOCKS, DeferredRegister<Item> ITEMS, String blockName, float strength, Class<Weatherable> weatherable, Class<Waxed> waxed, int[] litLightLevels) {
 		name = blockName;
