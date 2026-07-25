@@ -35,6 +35,7 @@ public class CTBackport {
     	CTBBlocks.BLOCKS.register(modEventBus);
     	CTBItems.ITEMS.register(modEventBus);
     	CTBBlockEntities.BLOCK_ENTITIES.register(modEventBus);
+    	com.natsu.backport.common.registry.CTBMenus.MENUS.register(modEventBus);
     	CTBStructures.STRUCTURES.register(modEventBus);
     	CTBPotions.POTIONS.register(modEventBus);
     	CTBEnchantments.ENCHANTMENTS.register(modEventBus);

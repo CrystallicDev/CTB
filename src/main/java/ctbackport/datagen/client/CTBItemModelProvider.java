@@ -119,7 +119,7 @@ public class CTBItemModelProvider extends ItemModelProvider implements DataGenBl
 	    );
 	    withExistingParent(
 	            name + "_moss_layer",
-	            modLoc("block/" + name + "_moss_layer_1")
+	            modLoc("block/pale_moss_carpet")
 	    );
 	}
 

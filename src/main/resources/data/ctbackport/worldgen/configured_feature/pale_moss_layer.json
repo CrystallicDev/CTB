@@ -14,22 +14,19 @@
               {
                 "weight": 6,
                 "data": {
-                  "Name": "ctbackport:pale_moss_layer",
-                  "Properties": { "layers": "1" }
+                  "Name": "ctbackport:pale_moss_layer"
                 }
               },
               {
                 "weight": 3,
                 "data": {
-                  "Name": "ctbackport:pale_moss_layer",
-                  "Properties": { "layers": "2" }
+                  "Name": "ctbackport:pale_moss_layer"
                 }
               },
               {
                 "weight": 1,
                 "data": {
-                  "Name": "ctbackport:pale_moss_layer",
-                  "Properties": { "layers": "3" }
+                  "Name": "ctbackport:pale_moss_layer"
                 }
               }
             ]

@@ -51,6 +51,18 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		handleWoodSet(CTBBlocks.BAMBOO_WOOD);
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
+		add(CTBBlocks.BUSH.get(), BlockLoot::createShearsOnlyDrop);
+		add(CTBBlocks.SHORT_DRY_GRASS.get(), BlockLoot::createShearsOnlyDrop);
+		add(CTBBlocks.TALL_DRY_GRASS.get(), BlockLoot::createShearsOnlyDrop);
+		dropSelf(CTBBlocks.FIREFLY_BUSH.get());
+		dropSelf(CTBBlocks.CACTUS_FLOWER.get());
+		add(CTBBlocks.WILDFLOWERS.get(), block -> createSegmentedDrops(block,
+				com.natsu.backport.common.block.FlowerBedBlock.AMOUNT));
+		add(CTBBlocks.LEAF_LITTER.get(), block -> createSegmentedDrops(block,
+				com.natsu.backport.common.block.LeafLitterBlock.AMOUNT));
+		dropPottedContents(CTBBlocks.POTTED_PALE_OAK_SAPLING.get());
+		dropPottedContents(CTBBlocks.POTTED_OPEN_EYEBLOSSOM.get());
+		dropPottedContents(CTBBlocks.POTTED_CLOSED_EYEBLOSSOM.get());
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		handleResinSet(CTBBlocks.RESIN);
 		handleCopperSet(CTBBlocks.COPPER_DOOR);
@@ -133,10 +145,36 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
         dropSelf(set.standingsign.get());
 	}
 
+	private static net.minecraft.world.level.storage.loot.LootTable.Builder createSegmentedDrops(
+			net.minecraft.world.level.block.Block block,
+			net.minecraft.world.level.block.state.properties.IntegerProperty amountProperty) {
+		net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer.Builder<?> entry =
+				net.minecraft.world.level.storage.loot.entries.LootItem.lootTableItem(block);
+		for (int amount = 2; amount <= 4; amount++) {
+			entry.apply(net.minecraft.world.level.storage.loot.functions.SetItemCountFunction
+					.setCount(net.minecraft.world.level.storage.loot.providers.number.ConstantValue.exactly(amount))
+					.when(net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition
+							.hasBlockStateProperties(block)
+							.setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties()
+									.hasProperty(amountProperty, amount))));
+		}
+		return net.minecraft.world.level.storage.loot.LootTable.lootTable()
+				.withPool(net.minecraft.world.level.storage.loot.LootPool.lootPool()
+						.setRolls(net.minecraft.world.level.storage.loot.providers.number.ConstantValue.exactly(1.0F))
+						.add(entry));
+	}
+
 	@Override
 	public void handleMossSet(MossSet set) {
 		dropSelf(set.moss.get());
-		add(set.mossLayer.get(), noDrop());
+		add(set.mossLayer.get(), block -> net.minecraft.world.level.storage.loot.LootTable.lootTable()
+				.withPool(applyExplosionCondition(block, net.minecraft.world.level.storage.loot.LootPool.lootPool()
+						.setRolls(net.minecraft.world.level.storage.loot.providers.number.ConstantValue.exactly(1.0F))
+						.add(net.minecraft.world.level.storage.loot.entries.LootItem.lootTableItem(block))
+						.when(net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition
+								.hasBlockStateProperties(block)
+								.setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties()
+										.hasProperty(com.natsu.backport.common.block.PaleMossCarpetBlock.BASE, true))))));
 	}
 
 	@Override

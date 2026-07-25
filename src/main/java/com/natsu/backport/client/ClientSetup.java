@@ -47,6 +47,17 @@ public class ClientSetup {
 		event.registerEntityRenderer(CTBEntities.BOGGED.get(), BoggedRenderer::new);
 		event.registerEntityRenderer(CTBEntities.PARCHED.get(), ParchedRenderer::new);
 		event.registerEntityRenderer(CTBEntities.COPPER_GOLEM.get(), CopperGolemRenderer::new);
+		net.minecraft.client.gui.screens.MenuScreens.register(
+				com.natsu.backport.common.registry.CTBMenus.NAUTILUS_INVENTORY.get(),
+				com.natsu.backport.client.screen.NautilusInventoryScreen::new);
+		event.registerEntityRenderer(CTBEntities.VARIANT_EGG.get(),
+				net.minecraft.client.renderer.entity.ThrownItemRenderer::new);
+		event.registerEntityRenderer(net.minecraft.world.entity.EntityType.PIG,
+				com.natsu.backport.client.render.VariantPigRenderer::new);
+		event.registerEntityRenderer(net.minecraft.world.entity.EntityType.COW,
+				com.natsu.backport.client.render.VariantCowRenderer::new);
+		event.registerEntityRenderer(net.minecraft.world.entity.EntityType.CHICKEN,
+				com.natsu.backport.client.render.VariantChickenRenderer::new);
 		event.registerBlockEntityRenderer(CTBBlockEntities.COPPER_CHEST.get(), CopperChestRenderer::new);
 		event.registerBlockEntityRenderer(CTBBlockEntities.COPPER_GOLEM_STATUE.get(), CopperGolemStatueRenderer::new);
 		event.registerEntityRenderer(CTBEntities.NAUTILUS.get(), NautilusRenderer::new);
@@ -64,6 +75,7 @@ public class ClientSetup {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GUST_EMITTER_SMALL.get(), GustEmitterParticle.SmallProvider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.CHERRY.get(), CherryParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.COPPER_FIRE_FLAME.get(), net.minecraft.client.particle.FlameParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.FIREFLY.get(), com.natsu.backport.client.render.FireflyParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.PALE_OAK_LEAVES.get(), CherryParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRAIL.get(), TrailParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRIAL_SPAWNER_DETECTION.get(), TrialSpawnerDetectionParticle.Provider::new);
@@ -125,6 +137,13 @@ public class ClientSetup {
         			ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.cutout());
         		}
         	}
+        	for (net.minecraftforge.registries.RegistryObject<net.minecraft.world.level.block.Block> b : java.util.List.of(
+        			CTBBlocks.BUSH, CTBBlocks.FIREFLY_BUSH, CTBBlocks.CACTUS_FLOWER, CTBBlocks.SHORT_DRY_GRASS,
+        			CTBBlocks.TALL_DRY_GRASS, CTBBlocks.WILDFLOWERS, CTBBlocks.LEAF_LITTER,
+        			CTBBlocks.POTTED_PALE_OAK_SAPLING, CTBBlocks.POTTED_OPEN_EYEBLOSSOM, CTBBlocks.POTTED_CLOSED_EYEBLOSSOM)) {
+        		ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.cutout());
+        	}
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.PALE_MOSS.mossLayer.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.COPPER_TORCH.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.COPPER_WALL_TORCH.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.OPEN_EYEBLOSSOM.get(), RenderType.cutout());

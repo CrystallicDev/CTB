@@ -199,13 +199,69 @@ public class CTBBlocks {
 				.noOcclusion();
 	}
 
-	public static final RegistryObject<Block> COPPER_GOLEM_STATUE = registerWithItem(BLOCKS, CTBItems.ITEMS, "copper_golem_statue",
+	public static final RegistryObject<Block> COPPER_GOLEM_STATUE = registerStatue(
 			BLOCKS.register("copper_golem_statue", () -> new com.natsu.backport.common.block.CopperGolemStatueBlock(
 					net.minecraft.world.level.block.state.BlockBehaviour.Properties.of(net.minecraft.world.level.material.Material.METAL)
 						.strength(3.0F, 6.0F)
 						.requiresCorrectToolForDrops()
 						.sound(net.minecraft.world.level.block.SoundType.COPPER)
 						.noOcclusion())));
+
+	private static RegistryObject<Block> registerStatue(RegistryObject<Block> reg) {
+		CTBItems.ITEMS.register("copper_golem_statue",
+				() -> new com.natsu.backport.common.item.CopperGolemStatueItem(reg.get(),
+						new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+		return reg;
+	}
+
+	// spring to life plants
+	public static final RegistryObject<Block> BUSH = plant("bush",
+			() -> new com.natsu.backport.common.block.SpringBushBlock(plantProps(false)));
+	public static final RegistryObject<Block> FIREFLY_BUSH = plant("firefly_bush",
+			() -> new com.natsu.backport.common.block.FireflyBushBlock(plantProps(false).lightLevel(state -> 2)));
+	public static final RegistryObject<Block> CACTUS_FLOWER = plant("cactus_flower",
+			() -> new com.natsu.backport.common.block.CactusFlowerBlock(plantProps(true)));
+	public static final RegistryObject<Block> SHORT_DRY_GRASS = plant("short_dry_grass",
+			() -> new com.natsu.backport.common.block.ShortDryGrassBlock(plantProps(false)));
+	public static final RegistryObject<Block> TALL_DRY_GRASS = plant("tall_dry_grass",
+			() -> new com.natsu.backport.common.block.TallDryGrassBlock(plantProps(false)));
+	public static final RegistryObject<Block> WILDFLOWERS = plant("wildflowers",
+			() -> new com.natsu.backport.common.block.FlowerBedBlock(plantProps(true)));
+	public static final RegistryObject<Block> LEAF_LITTER = plant("leaf_litter",
+			() -> new com.natsu.backport.common.block.LeafLitterBlock(plantProps(false)));
+
+	private static net.minecraft.world.level.block.state.BlockBehaviour.Properties plantProps(boolean solid) {
+		return net.minecraft.world.level.block.state.BlockBehaviour.Properties
+				.of(solid ? net.minecraft.world.level.material.Material.PLANT
+						: net.minecraft.world.level.material.Material.REPLACEABLE_PLANT)
+				.noCollission().instabreak()
+				.sound(net.minecraft.world.level.block.SoundType.GRASS);
+	}
+
+	private static RegistryObject<Block> plant(String name, java.util.function.Supplier<Block> supplier) {
+		RegistryObject<Block> block = BLOCKS.register(name, supplier);
+		CTBItems.ITEMS.register(name,
+				() -> new BlockItem(block.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+		return block;
+	}
+
+	// pale garden flower pots ; the eyeblossom ones flip with the night
+	public static final RegistryObject<Block> POTTED_PALE_OAK_SAPLING = BLOCKS.register("potted_pale_oak_sapling",
+			() -> new net.minecraft.world.level.block.FlowerPotBlock(
+					() -> (net.minecraft.world.level.block.FlowerPotBlock) net.minecraft.world.level.block.Blocks.FLOWER_POT,
+					() -> PALE_OAK_SAPLING.get(),
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.DECORATION).instabreak().noOcclusion()));
+	public static final RegistryObject<Block> POTTED_OPEN_EYEBLOSSOM = BLOCKS.register("potted_open_eyeblossom",
+			() -> new com.natsu.backport.common.block.PottedEyeblossomBlock(true,
+					() -> CTBBlocks.POTTED_CLOSED_EYEBLOSSOM.get(), () -> OPEN_EYEBLOSSOM.get(),
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.DECORATION).instabreak().noOcclusion().randomTicks()));
+	public static final RegistryObject<Block> POTTED_CLOSED_EYEBLOSSOM = BLOCKS.register("potted_closed_eyeblossom",
+			() -> new com.natsu.backport.common.block.PottedEyeblossomBlock(false,
+					() -> POTTED_OPEN_EYEBLOSSOM.get(), () -> CLOSED_EYEBLOSSOM.get(),
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.DECORATION).instabreak().noOcclusion().randomTicks()));
 
 	private static RegistryObject<Block> registerWithItem(DeferredRegister<Block> blocks, DeferredRegister<Item> items,
 			String name, RegistryObject<Block> reg) {

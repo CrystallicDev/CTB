@@ -40,6 +40,23 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		handleWoodSet(CTBBlocks.CHERRY_WOOD);
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
+		add(CTBItems.COPPER_NAUTILUS_ARMOR.get(), "Armure en cuivre pour nautile");
+		add(CTBItems.IRON_NAUTILUS_ARMOR.get(), "Armure en fer pour nautile");
+		add(CTBItems.GOLDEN_NAUTILUS_ARMOR.get(), "Armure en or pour nautile");
+		add(CTBItems.DIAMOND_NAUTILUS_ARMOR.get(), "Armure en diamant pour nautile");
+		add(CTBItems.NETHERITE_NAUTILUS_ARMOR.get(), "Armure en Netherite pour nautile");
+		add(CTBItems.BLUE_EGG.get(), "Œuf bleu");
+		add(CTBItems.BROWN_EGG.get(), "Œuf marron");
+		add(CTBBlocks.BUSH.get(), "Buisson");
+		add(CTBBlocks.FIREFLY_BUSH.get(), "Buisson à lucioles");
+		add(CTBBlocks.CACTUS_FLOWER.get(), "Fleur de cactus");
+		add(CTBBlocks.SHORT_DRY_GRASS.get(), "Herbes sèches basses");
+		add(CTBBlocks.TALL_DRY_GRASS.get(), "Herbes sèches hautes");
+		add(CTBBlocks.WILDFLOWERS.get(), "Fleurs sauvages");
+		add(CTBBlocks.LEAF_LITTER.get(), "Feuilles mortes");
+		add(CTBBlocks.POTTED_PALE_OAK_SAPLING.get(), "Pousse de chêne pâle en pot");
+		add(CTBBlocks.POTTED_OPEN_EYEBLOSSOM.get(), "Œillade ouverte en pot");
+		add(CTBBlocks.POTTED_CLOSED_EYEBLOSSOM.get(), "Œillade fermée en pot");
 		handleLeavesSet(CTBBlocks.PALE_OAK_LEAVES);
 		handleResinSet(CTBBlocks.RESIN);
 		handleCopperBulbSet(CTBBlocks.COPPER_BULB);
@@ -223,7 +240,7 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		try {
 			String name = formatSetName(translateSetName(set.getName()), false);
 			add(set.moss.get(), "Mousse "+name);
-			add(set.mossLayer.get(), "Couche de mousse "+name);
+			add(set.mossLayer.get(), "Tapis de mousse "+name);
 		} catch (MissingTranslationException er) {
 			throw new IllegalStateException(er.getMessage());
 		}

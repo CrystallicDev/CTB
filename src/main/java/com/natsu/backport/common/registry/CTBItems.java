@@ -69,6 +69,30 @@ public class CTBItems {
 					net.minecraft.world.entity.EquipmentSlot.FEET, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
 			);
 
+	// nautilus body armor, the vanilla material body values
+	public static final RegistryObject<Item> COPPER_NAUTILUS_ARMOR = ITEMS.register("copper_nautilus_armor", () ->
+			new com.natsu.backport.common.item.NautilusArmorItem(4, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+			);
+	public static final RegistryObject<Item> IRON_NAUTILUS_ARMOR = ITEMS.register("iron_nautilus_armor", () ->
+			new com.natsu.backport.common.item.NautilusArmorItem(5, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+			);
+	public static final RegistryObject<Item> GOLDEN_NAUTILUS_ARMOR = ITEMS.register("golden_nautilus_armor", () ->
+			new com.natsu.backport.common.item.NautilusArmorItem(7, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+			);
+	public static final RegistryObject<Item> DIAMOND_NAUTILUS_ARMOR = ITEMS.register("diamond_nautilus_armor", () ->
+			new com.natsu.backport.common.item.NautilusArmorItem(11, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+			);
+	public static final RegistryObject<Item> NETHERITE_NAUTILUS_ARMOR = ITEMS.register("netherite_nautilus_armor", () ->
+			new com.natsu.backport.common.item.NautilusArmorItem(19, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).fireResistant())
+			);
+
+	public static final RegistryObject<Item> BLUE_EGG = ITEMS.register("blue_egg", () ->
+			new com.natsu.backport.common.item.VariantEggItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(16))
+			);
+	public static final RegistryObject<Item> BROWN_EGG = ITEMS.register("brown_egg", () ->
+			new com.natsu.backport.common.item.VariantEggItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(16))
+			);
+
 	public static final RegistryObject<Item> BREEZE_ROD = ITEMS.register("breeze_rod", () ->
 			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
 			);

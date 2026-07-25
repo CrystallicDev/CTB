@@ -6,7 +6,7 @@
       "entries": [
         {
           "weight": 25,
-          "data": { "Name": "ctbackport:pale_moss_layer", "Properties": { "layers": "1" } }
+          "data": { "Name": "ctbackport:pale_moss_layer" }
         },
         { "weight": 25, "data": { "Name": "minecraft:grass" } },
         {

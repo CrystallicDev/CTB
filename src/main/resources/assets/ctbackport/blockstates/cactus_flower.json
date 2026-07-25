@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ctbackport:block/cactus_flower"
+    }
+  }
+}

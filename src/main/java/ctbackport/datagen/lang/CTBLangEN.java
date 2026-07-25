@@ -34,6 +34,23 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		handleWoodSet(CTBBlocks.CHERRY_WOOD);
 		handleWoodSet(CTBBlocks.PALE_OAK_WOOD);
 		handleMossSet(CTBBlocks.PALE_MOSS);
+		add(CTBItems.COPPER_NAUTILUS_ARMOR.get(), "Copper Nautilus Armor");
+		add(CTBItems.IRON_NAUTILUS_ARMOR.get(), "Iron Nautilus Armor");
+		add(CTBItems.GOLDEN_NAUTILUS_ARMOR.get(), "Golden Nautilus Armor");
+		add(CTBItems.DIAMOND_NAUTILUS_ARMOR.get(), "Diamond Nautilus Armor");
+		add(CTBItems.NETHERITE_NAUTILUS_ARMOR.get(), "Netherite Nautilus Armor");
+		add(CTBItems.BLUE_EGG.get(), "Blue Egg");
+		add(CTBItems.BROWN_EGG.get(), "Brown Egg");
+		add(CTBBlocks.BUSH.get(), "Bush");
+		add(CTBBlocks.FIREFLY_BUSH.get(), "Firefly Bush");
+		add(CTBBlocks.CACTUS_FLOWER.get(), "Cactus Flower");
+		add(CTBBlocks.SHORT_DRY_GRASS.get(), "Short Dry Grass");
+		add(CTBBlocks.TALL_DRY_GRASS.get(), "Tall Dry Grass");
+		add(CTBBlocks.WILDFLOWERS.get(), "Wildflowers");
+		add(CTBBlocks.LEAF_LITTER.get(), "Leaf Litter");
+		add(CTBBlocks.POTTED_PALE_OAK_SAPLING.get(), "Potted Pale Oak Sapling");
+		add(CTBBlocks.POTTED_OPEN_EYEBLOSSOM.get(), "Potted Open Eyeblossom");
+		add(CTBBlocks.POTTED_CLOSED_EYEBLOSSOM.get(), "Potted Closed Eyeblossom");
 		handleResinSet(CTBBlocks.RESIN);
 		handleCopperBulbSet(CTBBlocks.COPPER_BULB);
 		handleCopperSet(CTBBlocks.COPPER_GRATE);
@@ -197,7 +214,7 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 	public void handleMossSet(MossSet set) {
 		String name = formatSetName(set.getName());
 		add(set.moss.get(), name+" Moss");
-		add(set.mossLayer.get(), name+" Moss Layer");
+		add(set.mossLayer.get(), name+" Moss Carpet");
 
 	}
 

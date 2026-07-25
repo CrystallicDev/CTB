@@ -65,6 +65,8 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
 
 	private static final EntityDataAccessor<Boolean> DASH = SynchedEntityData.defineId(AbstractNautilus.class, EntityDataSerializers.BOOLEAN);
 	private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(AbstractNautilus.class, EntityDataSerializers.BOOLEAN);
+	private static final EntityDataAccessor<ItemStack> ARMOR = SynchedEntityData.defineId(AbstractNautilus.class, EntityDataSerializers.ITEM_STACK);
+	private static final java.util.UUID ARMOR_MODIFIER_UUID = java.util.UUID.fromString("21b17c9e-6c37-4d43-8be1-2ff4c1f34e21");
 
 	private static final int EFFECT_DURATION = 60;
 	private static final int EFFECT_REFRESH_RATE = 40;
@@ -74,6 +76,7 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
 	private static final int TOTAL_AIR_SUPPLY = 300;
 
 	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
+	protected final net.minecraft.world.SimpleContainer inventory = new net.minecraft.world.SimpleContainer(2);
 	private int dashCooldown = 0;
 	protected float playerJumpPendingScale;
 
@@ -82,6 +85,43 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
 		this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10, 0.011F, 0.0F, true);
 		this.lookControl = new SmoothSwimmingLookControl(this, 10);
 		this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
+		this.inventory.addListener(container -> this.inventoryChanged());
+	}
+
+	private void inventoryChanged() {
+		if (this.level.isClientSide) {
+			return;
+		}
+		this.entityData.set(SADDLED, this.inventory.getItem(0).is(Items.SADDLE));
+		ItemStack armor = this.inventory.getItem(1);
+		this.entityData.set(ARMOR, armor.copy());
+		net.minecraft.world.entity.ai.attributes.AttributeInstance attribute = this.getAttribute(Attributes.ARMOR);
+		if (attribute != null) {
+			attribute.removeModifier(ARMOR_MODIFIER_UUID);
+			if (armor.getItem() instanceof com.natsu.backport.common.item.NautilusArmorItem armorItem) {
+				attribute.addTransientModifier(new net.minecraft.world.entity.ai.attributes.AttributeModifier(
+						ARMOR_MODIFIER_UUID, "Nautilus armor", armorItem.getProtection(),
+						net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADDITION));
+			}
+		}
+	}
+
+	public net.minecraft.world.SimpleContainer getInventory() {
+		return this.inventory;
+	}
+
+	public ItemStack getArmor() {
+		return this.entityData.get(ARMOR);
+	}
+
+	public void openInventory(Player player) {
+		if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer) {
+			net.minecraftforge.network.NetworkHooks.openGui(serverPlayer,
+					new net.minecraft.world.SimpleMenuProvider((id, playerInventory, unused) ->
+							new com.natsu.backport.common.inventory.NautilusInventoryMenu(id, playerInventory,
+									this.inventory, this), this.getDisplayName()),
+					buffer -> buffer.writeVarInt(this.getId()));
+		}
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -110,18 +150,23 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
 		super.defineSynchedData();
 		this.entityData.define(DASH, false);
 		this.entityData.define(SADDLED, false);
+		this.entityData.define(ARMOR, ItemStack.EMPTY);
 	}
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putBoolean("SaddleItem", this.isSaddled());
+		if (!this.inventory.getItem(1).isEmpty()) {
+			tag.put("ArmorItem", this.inventory.getItem(1).save(new CompoundTag()));
+		}
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
-		this.entityData.set(SADDLED, tag.getBoolean("SaddleItem"));
+		this.inventory.setItem(0, tag.getBoolean("SaddleItem") ? new ItemStack(Items.SADDLE) : ItemStack.EMPTY);
+		this.inventory.setItem(1, tag.contains("ArmorItem") ? ItemStack.of(tag.getCompound("ArmorItem")) : ItemStack.EMPTY);
 	}
 
 	@Override
@@ -181,7 +226,7 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
 
 	@Override
 	public void equipSaddle(@Nullable SoundSource source) {
-		this.entityData.set(SADDLED, true);
+		this.inventory.setItem(0, new ItemStack(Items.SADDLE));
 		if (source != null) {
 			this.level.playSound(null, this, this.isUnderWater()
 					? com.natsu.backport.common.registry.CTBSounds.NAUTILUS_SADDLE_UNDERWATER_EQUIP.get()
@@ -197,8 +242,12 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
 	@Override
 	protected void dropEquipment() {
 		super.dropEquipment();
-		if (this.isSaddled()) {
-			this.spawnAtLocation(Items.SADDLE);
+		for (int slot = 0; slot < this.inventory.getContainerSize(); slot++) {
+			ItemStack stack = this.inventory.getItem(slot);
+			if (!stack.isEmpty()) {
+				this.spawnAtLocation(stack);
+				this.inventory.setItem(slot, ItemStack.EMPTY);
+			}
 		}
 	}
 
@@ -380,6 +429,26 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
 			return super.mobInteract(player, hand);
 		}
 
+		if (this.isTame() && player.isSecondaryUseActive()) {
+			if (!this.level.isClientSide) {
+				this.openInventory(player);
+			}
+			return InteractionResult.sidedSuccess(this.level.isClientSide);
+		}
+		if (!held.isEmpty() && this.isTame()
+				&& held.getItem() instanceof com.natsu.backport.common.item.NautilusArmorItem
+				&& this.inventory.getItem(1).isEmpty()) {
+			if (!this.level.isClientSide) {
+				ItemStack single = held.copy();
+				single.setCount(1);
+				this.inventory.setItem(1, single);
+				if (!player.getAbilities().instabuild) {
+					held.shrink(1);
+				}
+				this.level.playSound(null, this, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.NEUTRAL, 0.5F, 1.0F);
+			}
+			return InteractionResult.sidedSuccess(this.level.isClientSide);
+		}
 		if (!held.isEmpty()) {
 			if (!this.level.isClientSide && !this.isTame() && this.isFood(held)) {
 				this.usePlayerItem(player, hand, held);

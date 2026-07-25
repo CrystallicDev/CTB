@@ -160,22 +160,7 @@ public class CTBBlockStateProvider extends BlockStateProvider implements DataGen
 		String name = set.name;
 		ResourceLocation mossTexture = modLoc("block/" + name +"_moss");
 
-		VariantBlockStateBuilder layerBuilder = getVariantBuilder(set.mossLayer.get());
-
-	    for (int layer = 1; layer <= 8; layer++) {
-	        final int l = layer;
-
-	        ModelFile layerModel = models().withExistingParent(
-	                name + "_moss_layer_" + l,
-	                modLoc("block/default_layer_" + l))
-	                .texture("all", mossTexture)
-	                .texture("particle", mossTexture);
-
-	        layerBuilder
-            .partialState()
-                .with(GrowableMossLayerBlock.LAYERS, l)
-                .modelForState().modelFile(layerModel).addModel();
-	    }
+		// the carpet blockstate and models are static assets, vanilla multipart
 	}
 
 	@Override

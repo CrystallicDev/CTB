@@ -57,6 +57,8 @@ public class CommonSetup {
 		if (DatagenModLoader.isRunningDataGen()) return;
 
 		event.enqueueWork(CommonSetup::registerWeatherables);
+		event.enqueueWork(CommonSetup::registerFlowerPots);
+		event.enqueueWork(com.natsu.backport.common.network.CTBNetwork::register);
 		event.enqueueWork(CommonSetup::registerFlammablesAndCompostables);
 		event.enqueueWork(CommonSetup::registerBrewingRecipes);
 		event.enqueueWork(com.natsu.backport.server.events.NautilusSpawns::registerPlacements);
@@ -108,9 +110,30 @@ public class CommonSetup {
 		compostables.put(CTBBlocks.OPEN_EYEBLOSSOM.get().asItem(), 0.65F);
 		compostables.put(CTBBlocks.CLOSED_EYEBLOSSOM.get().asItem(), 0.65F);
 
+		for (net.minecraftforge.registries.RegistryObject<Block> b : java.util.List.of(
+				CTBBlocks.BUSH, CTBBlocks.FIREFLY_BUSH, CTBBlocks.SHORT_DRY_GRASS,
+				CTBBlocks.TALL_DRY_GRASS, CTBBlocks.WILDFLOWERS, CTBBlocks.LEAF_LITTER)) {
+			flameOdds.put(b.get(), 60);
+			burnOdds.put(b.get(), 100);
+		}
+		compostables.put(CTBBlocks.BUSH.get().asItem(), 0.5F);
+		compostables.put(CTBBlocks.FIREFLY_BUSH.get().asItem(), 0.65F);
+		compostables.put(CTBBlocks.CACTUS_FLOWER.get().asItem(), 0.5F);
+		compostables.put(CTBBlocks.SHORT_DRY_GRASS.get().asItem(), 0.3F);
+		compostables.put(CTBBlocks.TALL_DRY_GRASS.get().asItem(), 0.3F);
+		compostables.put(CTBBlocks.WILDFLOWERS.get().asItem(), 0.65F);
+		compostables.put(CTBBlocks.LEAF_LITTER.get().asItem(), 0.3F);
 		FireBlock fire = (FireBlock) Blocks.FIRE;
 		flameOdds.forEach((block, flame) -> fire.setFlammable(block, flame, burnOdds.get(block)));
 		ComposterBlock.COMPOSTABLES.putAll(compostables);
+	}
+
+	private static void registerFlowerPots() {
+		net.minecraft.world.level.block.FlowerPotBlock pot =
+				(net.minecraft.world.level.block.FlowerPotBlock) net.minecraft.world.level.block.Blocks.FLOWER_POT;
+		pot.addPlant(CTBBlocks.PALE_OAK_SAPLING.getId(), CTBBlocks.POTTED_PALE_OAK_SAPLING);
+		pot.addPlant(CTBBlocks.OPEN_EYEBLOSSOM.getId(), CTBBlocks.POTTED_OPEN_EYEBLOSSOM);
+		pot.addPlant(CTBBlocks.CLOSED_EYEBLOSSOM.getId(), CTBBlocks.POTTED_CLOSED_EYEBLOSSOM);
 	}
 
 	private static void registerWeatherables() {

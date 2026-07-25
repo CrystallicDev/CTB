@@ -47,6 +47,13 @@ public class CTBEntities {
 			.build("bogged")
 			);
 
+	public static final RegistryObject<EntityType<com.natsu.backport.common.entity.VariantEggEntity>> VARIANT_EGG =
+			ENTITIES.register("variant_egg", () -> EntityType.Builder
+					.<com.natsu.backport.common.entity.VariantEggEntity>of(
+							com.natsu.backport.common.entity.VariantEggEntity::new, net.minecraft.world.entity.MobCategory.MISC)
+					.sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10)
+					.build("variant_egg"));
+
 	public static final RegistryObject<EntityType<CopperGolem>> COPPER_GOLEM = ENTITIES.register("copper_golem",
 			() -> EntityType.Builder.<CopperGolem>of(CopperGolem::new, MobCategory.MISC)
 			.sized(0.6f, 0.95f)

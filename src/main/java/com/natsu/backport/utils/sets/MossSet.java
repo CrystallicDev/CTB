@@ -53,7 +53,8 @@ public class MossSet implements DefaultSet {
                 .noCollission();
 
 		this.moss = CTBBlockFactory.makeMossBlock(BLOCKS, name+"_moss", null);
-		this.mossLayer = CTBBlockFactory.makeMossLayerBlock(BLOCKS, name+"_moss_layer", props);
+		this.mossLayer = BLOCKS.register(name+"_moss_layer",
+				() -> new com.natsu.backport.common.block.PaleMossCarpetBlock(props));
 
 		this.mossItem = CTBBlockItemFactory.blockItem(ITEMS, tab, moss);
 		this.mossLayerItem = CTBBlockItemFactory.blockItem(ITEMS, tab, mossLayer);

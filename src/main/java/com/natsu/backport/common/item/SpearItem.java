@@ -55,6 +55,11 @@ public class SpearItem extends TieredItem implements Vanishable {
 	private static final WeakHashMap<Entity, Vec3> LAST_SAMPLED_POS = new WeakHashMap<>();
 
 	private final KineticParams params;
+
+	/** delay + damage window, the vanilla computeDamageUseDuration. */
+	public int computeDamageUseDuration() {
+		return (int) (this.params.delay() + this.params.damageTime());
+	}
 	private final boolean woodSounds;
 	// built lazily, the forge reach attribute does not exist yet during item registration
 	private Multimap<Attribute, AttributeModifier> defaultModifiers;

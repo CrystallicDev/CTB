@@ -11,8 +11,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "ctbackport:pale_moss_layer",
-              "Properties": { "layers": "1" }
+              "Name": "ctbackport:pale_moss_layer"
             }
           }
         }
