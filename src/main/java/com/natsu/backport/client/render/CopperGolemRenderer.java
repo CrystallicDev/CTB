@@ -42,17 +42,14 @@ public class CopperGolemRenderer extends GeoEntityRenderer<CopperGolem> {
 	@Override
 	public void renderRecursively(GeoBone bone, PoseStack poseStack, VertexConsumer buffer, int packedLight,
 			int packedOverlay, float red, float green, float blue, float alpha) {
-		if (bone.getName().equals("right_arm") && this.currentGolem != null) {
+		if (bone.getName().equals("ItemSlot") && this.currentGolem != null) {
 			ItemStack carried = this.currentGolem.getMainHandItem();
 			if (!carried.isEmpty()) {
-				// follow the animated arm into its local space, then sit the
-				// stack between the raised hands
+				// center the stack on the ItemSlot locator bone of the model
 				poseStack.pushPose();
 				RenderUtils.translate(bone, poseStack);
 				RenderUtils.moveToPivot(bone, poseStack);
 				RenderUtils.rotate(bone, poseStack);
-				RenderUtils.moveBackFromPivot(bone, poseStack);
-				poseStack.translate(0.14, -0.4, 0.0);
 				poseStack.mulPose(Vector3f.XP.rotationDegrees(-90.0F));
 				// the ground display transform floats items three pixels up
 				poseStack.translate(0.0, -0.1875, 0.0);

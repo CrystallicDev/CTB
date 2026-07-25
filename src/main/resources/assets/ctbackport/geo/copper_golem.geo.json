@@ -169,6 +169,15 @@
 					]
 				},
 				{
+					"name": "ItemSlot",
+					"pivot": [
+						-4.4,
+						2,
+						0
+					],
+					"parent": "right_arm"
+				},
+				{
 					"name": "left_arm",
 					"pivot": [
 						4,
