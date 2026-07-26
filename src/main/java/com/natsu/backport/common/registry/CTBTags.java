@@ -28,6 +28,8 @@ public class CTBTags {
 			return map;
 		}
 
+		public static final TagKey<net.minecraft.world.item.Item> SULFUR_CUBE_FOOD =
+				TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "sulfur_cube_food"));
 		public static final TagKey<net.minecraft.world.item.Item> NAUTILUS_FOOD = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "nautilus_food"));
 		public static final TagKey<net.minecraft.world.item.Item> NAUTILUS_TAMING_ITEMS = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "nautilus_taming_items"));
 		public static final TagKey<net.minecraft.world.item.Item> NAUTILUS_BUCKET_FOOD = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "nautilus_bucket_food"));

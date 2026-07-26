@@ -93,7 +93,7 @@ public class ClientSetup {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.CHERRY.get(), CherryParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.COPPER_FIRE_FLAME.get(), net.minecraft.client.particle.FlameParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.FIREFLY.get(), com.natsu.backport.client.render.FireflyParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(CTBParticles.SULFUR_CUBE_GOO.get(), net.minecraft.client.particle.SuspendedTownParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.SULFUR_CUBE_GOO.get(), com.natsu.backport.client.render.GooParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GEYSER.get(), com.natsu.backport.client.render.GeyserParticles.Plume.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.GEYSER_BASE.get(), com.natsu.backport.client.render.GeyserParticles.Base.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.SULFUR_BUBBLES.get(), com.natsu.backport.client.render.GeyserParticles.SulfurBubble.Provider::new);

@@ -348,7 +348,8 @@ public class SulphurCube extends Slime implements Bucketable {
 		playerSpeed = Mth.clamp(playerSpeed, 0.0, MAX_PLAYER_PUSH_SPEED);
 		Vec3 pushVelocity = new Vec3(pushDirection.x,
 				this.onGround ? VERTICAL_PUSH_MULTIPLIER : 0.0, pushDirection.z).scale(playerSpeed);
-		if (pushVelocity.lengthSqr() < 1.0E-6) {
+		if (pushVelocity.lengthSqr() < 1.0E-4
+				|| this.getDeltaMovement().horizontalDistanceSqr() > MAX_PLAYER_PUSH_SPEED * MAX_PLAYER_PUSH_SPEED) {
 			return;
 		}
 		this.setDeltaMovement(this.getDeltaMovement().add(pushVelocity));
@@ -421,6 +422,17 @@ public class SulphurCube extends Slime implements Bucketable {
 	public InteractionResult mobInteract(Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 
+		if (!this.isAdult() && stack.is(com.natsu.backport.common.registry.CTBTags.Items.SULFUR_CUBE_FOOD)
+				&& this.growUpTime > 0) {
+			if (!this.level.isClientSide) {
+				this.growUpTime = Math.max(0, this.growUpTime - 2400);
+				if (!player.getAbilities().instabuild) {
+					stack.shrink(1);
+				}
+				this.playSound(CTBSounds.SULFUR_CUBE_ABSORB.get(), 1.0F, 1.0F);
+			}
+			return InteractionResult.sidedSuccess(this.level.isClientSide);
+		}
 		if (this.isPrimed()) {
 			return InteractionResult.PASS;
 		}
@@ -644,6 +656,15 @@ public class SulphurCube extends Slime implements Bucketable {
 	@Override
 	public boolean removeWhenFarAway(double distance) {
 		return !this.fromBucket() && !this.hasCustomName() && !this.hasBodyItem();
+	}
+
+	@Override
+	public boolean causeFallDamage(float fallDistance, float multiplier, DamageSource source) {
+		if (this.hasBodyItem()) {
+			float absorbed = 1.0F - this.archetype.bounce;
+			return super.causeFallDamage(fallDistance * Math.max(0.0F, absorbed), multiplier, source);
+		}
+		return super.causeFallDamage(fallDistance, multiplier, source);
 	}
 
 	@Override
