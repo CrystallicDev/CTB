@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "ctbackport:sulfur"
+	},
+	"result": "ctbackport:sulfur_slab",
+	"count": 2
+}

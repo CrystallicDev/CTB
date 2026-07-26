@@ -1,6 +1,12 @@
 {
   "replace": false,
   "values": [
+    "ctbackport:sulfur_wall",
+    "ctbackport:polished_sulfur_wall",
+    "ctbackport:sulfur_brick_wall",
+    "ctbackport:cinnabar_wall",
+    "ctbackport:polished_cinnabar_wall",
+    "ctbackport:cinnabar_brick_wall",
     "ctbackport:tuff_wall",
     "ctbackport:polished_tuff_wall",
     "ctbackport:tuff_brick_wall"

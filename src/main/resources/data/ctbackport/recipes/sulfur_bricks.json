@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": {
+			"item": "ctbackport:polished_sulfur"
+		}
+	},
+	"result": {
+		"item": "ctbackport:sulfur_bricks",
+		"count": 4
+	}
+}

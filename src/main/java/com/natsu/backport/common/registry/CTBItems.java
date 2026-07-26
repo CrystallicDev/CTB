@@ -133,6 +133,10 @@ public class CTBItems {
 			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
 			);
 
+	public static final RegistryObject<Item> MUSIC_DISC_BOUNCE = ITEMS.register("music_disc_bounce", () ->
+			new net.minecraft.world.item.RecordItem(14, CTBSounds.MUSIC_DISC_BOUNCE,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1).rarity(Rarity.RARE))
+			);
 	public static final RegistryObject<Item> MUSIC_DISC_PRECIPICE = ITEMS.register("music_disc_precipice", () ->
 			new net.minecraft.world.item.RecordItem(13, CTBSounds.MUSIC_DISC_PRECIPICE,
 					new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1).rarity(Rarity.RARE))

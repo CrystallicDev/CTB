@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "ctbackport:polished_sulfur"
+	},
+	"result": "ctbackport:sulfur_brick_wall",
+	"count": 1
+}

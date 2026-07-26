@@ -123,6 +123,50 @@
 			"ctbackport:entity/breeze/breeze_whirl5"
 		]
 	},
+	"cinnabar_break": {
+		"sounds": [
+			"ctbackport:block/cinnabar/break1",
+			"ctbackport:block/cinnabar/break2",
+			"ctbackport:block/cinnabar/break3",
+			"ctbackport:block/cinnabar/break4",
+			"ctbackport:block/cinnabar/break5",
+			"ctbackport:block/cinnabar/break6",
+			"ctbackport:block/cinnabar/break7"
+		]
+	},
+	"cinnabar_hit": {
+		"sounds": [
+			"ctbackport:block/cinnabar/hit1",
+			"ctbackport:block/cinnabar/hit2",
+			"ctbackport:block/cinnabar/hit3",
+			"ctbackport:block/cinnabar/hit4",
+			"ctbackport:block/cinnabar/hit5",
+			"ctbackport:block/cinnabar/hit6",
+			"ctbackport:block/cinnabar/hit7"
+		]
+	},
+	"cinnabar_place": {
+		"sounds": [
+			"ctbackport:block/cinnabar/place1",
+			"ctbackport:block/cinnabar/place2",
+			"ctbackport:block/cinnabar/place3",
+			"ctbackport:block/cinnabar/place4",
+			"ctbackport:block/cinnabar/place5",
+			"ctbackport:block/cinnabar/place6",
+			"ctbackport:block/cinnabar/place7"
+		]
+	},
+	"cinnabar_step": {
+		"sounds": [
+			"ctbackport:block/cinnabar/step1",
+			"ctbackport:block/cinnabar/step2",
+			"ctbackport:block/cinnabar/step3",
+			"ctbackport:block/cinnabar/step4",
+			"ctbackport:block/cinnabar/step5",
+			"ctbackport:block/cinnabar/step6",
+			"ctbackport:block/cinnabar/step7"
+		]
+	},
 	"copper_bulb_turn": {
 		"category": "block",
 		"sounds": [
@@ -530,6 +574,14 @@
 			"ctbackport:item/mace/smash_ground_heavy"
 		]
 	},
+	"music_disc_bounce": {
+		"sounds": [
+			{
+				"name": "ctbackport:records/bounce",
+				"stream": true
+			}
+		]
+	},
 	"music_disc_creator": {
 		"sounds": [
 			{
@@ -800,6 +852,51 @@
 		"category": "player",
 		"sounds": [
 			"ctbackport:item/spear/wood/use"
+		]
+	},
+	"sulfur_break": {
+		"sounds": [
+			"ctbackport:block/sulfur/break1",
+			"ctbackport:block/sulfur/break2",
+			"ctbackport:block/sulfur/break3",
+			"ctbackport:block/sulfur/break4",
+			"ctbackport:block/sulfur/break5",
+			"ctbackport:block/sulfur/break6",
+			"ctbackport:block/sulfur/break7"
+		]
+	},
+	"sulfur_hit": {
+		"sounds": [
+			"ctbackport:block/sulfur/hit1",
+			"ctbackport:block/sulfur/hit2",
+			"ctbackport:block/sulfur/hit3",
+			"ctbackport:block/sulfur/hit4",
+			"ctbackport:block/sulfur/hit5",
+			"ctbackport:block/sulfur/hit6",
+			"ctbackport:block/sulfur/hit7"
+		]
+	},
+	"sulfur_place": {
+		"sounds": [
+			"ctbackport:block/sulfur/place1",
+			"ctbackport:block/sulfur/place2",
+			"ctbackport:block/sulfur/place3",
+			"ctbackport:block/sulfur/place4",
+			"ctbackport:block/sulfur/place5",
+			"ctbackport:block/sulfur/place6",
+			"ctbackport:block/sulfur/place7",
+			"ctbackport:block/sulfur/place8"
+		]
+	},
+	"sulfur_step": {
+		"sounds": [
+			"ctbackport:block/sulfur/step1",
+			"ctbackport:block/sulfur/step2",
+			"ctbackport:block/sulfur/step3",
+			"ctbackport:block/sulfur/step4",
+			"ctbackport:block/sulfur/step5",
+			"ctbackport:block/sulfur/step6",
+			"ctbackport:block/sulfur/step7"
 		]
 	},
 	"trial_spawner_about_to_spawn_item": {

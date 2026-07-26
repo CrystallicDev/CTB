@@ -135,6 +135,7 @@ public class CommonSetup {
 		pot.addPlant(CTBBlocks.PALE_OAK_SAPLING.getId(), CTBBlocks.POTTED_PALE_OAK_SAPLING);
 		pot.addPlant(CTBBlocks.OPEN_EYEBLOSSOM.getId(), CTBBlocks.POTTED_OPEN_EYEBLOSSOM);
 		pot.addPlant(CTBBlocks.CLOSED_EYEBLOSSOM.getId(), CTBBlocks.POTTED_CLOSED_EYEBLOSSOM);
+		pot.addPlant(CTBBlocks.GOLDEN_DANDELION.getId(), CTBBlocks.POTTED_GOLDEN_DANDELION);
 	}
 
 	private static void registerWeatherables() {

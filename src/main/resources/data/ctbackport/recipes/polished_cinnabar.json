@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"SS",
+		"SS"
+	],
+	"key": {
+		"S": {
+			"item": "ctbackport:cinnabar"
+		}
+	},
+	"result": {
+		"item": "ctbackport:polished_cinnabar",
+		"count": 4
+	}
+}

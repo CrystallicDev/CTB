@@ -251,6 +251,73 @@ public class CTBBlocks {
 							.sound(net.minecraft.world.level.block.SoundType.WOOD)
 							.noOcclusion())));
 
+	// the 26.2 sulfur family, vanilla 1.5/6.0 with its own sound type
+	public static final RegistryObject<Block> SULFUR = registerWithItem(BLOCKS, CTBItems.ITEMS, "sulfur",
+			BLOCKS.register("sulfur", () -> new Block(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.STONE)
+							.requiresCorrectToolForDrops().strength(1.5F, 6.0F)
+							.sound(com.natsu.backport.common.registry.CTBSoundTypes.SULFUR))));
+	public static final RegistryObject<Block> SULFUR_STAIRS = registerWithItem(BLOCKS, CTBItems.ITEMS, "sulfur_stairs", CTBBlockFactory.makeStairs(BLOCKS, "sulfur_stairs", SULFUR, 1.5f));
+	public static final RegistryObject<Block> SULFUR_SLAB = registerWithItem(BLOCKS, CTBItems.ITEMS, "sulfur_slab", CTBBlockFactory.makeSlab(BLOCKS, "sulfur_slab", SULFUR, 1.5f));
+	public static final RegistryObject<Block> SULFUR_WALL = registerWithItem(BLOCKS, CTBItems.ITEMS, "sulfur_wall", CTBBlockFactory.makeWall(BLOCKS, "sulfur_wall", SULFUR, 1.5f));
+	public static final RegistryObject<Block> POLISHED_SULFUR = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_sulfur",
+			BLOCKS.register("polished_sulfur", () -> new Block(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy(SULFUR.get()))));
+	public static final RegistryObject<Block> POLISHED_SULFUR_STAIRS = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_sulfur_stairs", CTBBlockFactory.makeStairs(BLOCKS, "polished_sulfur_stairs", POLISHED_SULFUR, 1.5f));
+	public static final RegistryObject<Block> POLISHED_SULFUR_SLAB = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_sulfur_slab", CTBBlockFactory.makeSlab(BLOCKS, "polished_sulfur_slab", POLISHED_SULFUR, 1.5f));
+	public static final RegistryObject<Block> POLISHED_SULFUR_WALL = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_sulfur_wall", CTBBlockFactory.makeWall(BLOCKS, "polished_sulfur_wall", POLISHED_SULFUR, 1.5f));
+	public static final RegistryObject<Block> SULFUR_BRICKS = registerWithItem(BLOCKS, CTBItems.ITEMS, "sulfur_bricks",
+			BLOCKS.register("sulfur_bricks", () -> new Block(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy(SULFUR.get()))));
+	public static final RegistryObject<Block> SULFUR_BRICK_STAIRS = registerWithItem(BLOCKS, CTBItems.ITEMS, "sulfur_brick_stairs", CTBBlockFactory.makeStairs(BLOCKS, "sulfur_brick_stairs", SULFUR_BRICKS, 1.5f));
+	public static final RegistryObject<Block> SULFUR_BRICK_SLAB = registerWithItem(BLOCKS, CTBItems.ITEMS, "sulfur_brick_slab", CTBBlockFactory.makeSlab(BLOCKS, "sulfur_brick_slab", SULFUR_BRICKS, 1.5f));
+	public static final RegistryObject<Block> SULFUR_BRICK_WALL = registerWithItem(BLOCKS, CTBItems.ITEMS, "sulfur_brick_wall", CTBBlockFactory.makeWall(BLOCKS, "sulfur_brick_wall", SULFUR_BRICKS, 1.5f));
+	public static final RegistryObject<Block> CHISELED_SULFUR = registerWithItem(BLOCKS, CTBItems.ITEMS, "chiseled_sulfur",
+			BLOCKS.register("chiseled_sulfur", () -> new Block(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy(SULFUR.get()))));
+
+	// the 26.2 cinnabar family, vanilla 1.5/6.0 with its own sound type
+	public static final RegistryObject<Block> CINNABAR = registerWithItem(BLOCKS, CTBItems.ITEMS, "cinnabar",
+			BLOCKS.register("cinnabar", () -> new Block(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.STONE)
+							.requiresCorrectToolForDrops().strength(1.5F, 6.0F)
+							.sound(com.natsu.backport.common.registry.CTBSoundTypes.CINNABAR))));
+	public static final RegistryObject<Block> CINNABAR_STAIRS = registerWithItem(BLOCKS, CTBItems.ITEMS, "cinnabar_stairs", CTBBlockFactory.makeStairs(BLOCKS, "cinnabar_stairs", CINNABAR, 1.5f));
+	public static final RegistryObject<Block> CINNABAR_SLAB = registerWithItem(BLOCKS, CTBItems.ITEMS, "cinnabar_slab", CTBBlockFactory.makeSlab(BLOCKS, "cinnabar_slab", CINNABAR, 1.5f));
+	public static final RegistryObject<Block> CINNABAR_WALL = registerWithItem(BLOCKS, CTBItems.ITEMS, "cinnabar_wall", CTBBlockFactory.makeWall(BLOCKS, "cinnabar_wall", CINNABAR, 1.5f));
+	public static final RegistryObject<Block> POLISHED_CINNABAR = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_cinnabar",
+			BLOCKS.register("polished_cinnabar", () -> new Block(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy(CINNABAR.get()))));
+	public static final RegistryObject<Block> POLISHED_CINNABAR_STAIRS = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_cinnabar_stairs", CTBBlockFactory.makeStairs(BLOCKS, "polished_cinnabar_stairs", POLISHED_CINNABAR, 1.5f));
+	public static final RegistryObject<Block> POLISHED_CINNABAR_SLAB = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_cinnabar_slab", CTBBlockFactory.makeSlab(BLOCKS, "polished_cinnabar_slab", POLISHED_CINNABAR, 1.5f));
+	public static final RegistryObject<Block> POLISHED_CINNABAR_WALL = registerWithItem(BLOCKS, CTBItems.ITEMS, "polished_cinnabar_wall", CTBBlockFactory.makeWall(BLOCKS, "polished_cinnabar_wall", POLISHED_CINNABAR, 1.5f));
+	public static final RegistryObject<Block> CINNABAR_BRICKS = registerWithItem(BLOCKS, CTBItems.ITEMS, "cinnabar_bricks",
+			BLOCKS.register("cinnabar_bricks", () -> new Block(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy(CINNABAR.get()))));
+	public static final RegistryObject<Block> CINNABAR_BRICK_STAIRS = registerWithItem(BLOCKS, CTBItems.ITEMS, "cinnabar_brick_stairs", CTBBlockFactory.makeStairs(BLOCKS, "cinnabar_brick_stairs", CINNABAR_BRICKS, 1.5f));
+	public static final RegistryObject<Block> CINNABAR_BRICK_SLAB = registerWithItem(BLOCKS, CTBItems.ITEMS, "cinnabar_brick_slab", CTBBlockFactory.makeSlab(BLOCKS, "cinnabar_brick_slab", CINNABAR_BRICKS, 1.5f));
+	public static final RegistryObject<Block> CINNABAR_BRICK_WALL = registerWithItem(BLOCKS, CTBItems.ITEMS, "cinnabar_brick_wall", CTBBlockFactory.makeWall(BLOCKS, "cinnabar_brick_wall", CINNABAR_BRICKS, 1.5f));
+	public static final RegistryObject<Block> CHISELED_CINNABAR = registerWithItem(BLOCKS, CTBItems.ITEMS, "chiseled_cinnabar",
+			BLOCKS.register("chiseled_cinnabar", () -> new Block(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy(CINNABAR.get()))));
+
+	// the 26.2 golden dandelion, saturation like its plain cousin
+	public static final RegistryObject<Block> GOLDEN_DANDELION = registerWithItem(BLOCKS, CTBItems.ITEMS, "golden_dandelion",
+			BLOCKS.register("golden_dandelion", () -> new net.minecraft.world.level.block.FlowerBlock(
+					net.minecraft.world.effect.MobEffects.SATURATION, 7,
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.PLANT)
+							.noCollission().instabreak()
+							.sound(net.minecraft.world.level.block.SoundType.GRASS))));
+	public static final RegistryObject<Block> POTTED_GOLDEN_DANDELION = BLOCKS.register("potted_golden_dandelion",
+			() -> new net.minecraft.world.level.block.FlowerPotBlock(
+					() -> (net.minecraft.world.level.block.FlowerPotBlock) net.minecraft.world.level.block.Blocks.FLOWER_POT,
+					() -> GOLDEN_DANDELION.get(),
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.DECORATION).instabreak().noOcclusion()));
+
 	public static final RegistryObject<Block> COPPER_CHEST = copperChest("copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.UNAFFECTED, false);
 	public static final RegistryObject<Block> EXPOSED_COPPER_CHEST = copperChest("exposed_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.EXPOSED, false);
 	public static final RegistryObject<Block> WEATHERED_COPPER_CHEST = copperChest("weathered_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.WEATHERED, false);

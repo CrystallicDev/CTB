@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "ctbackport:golden_dandelion",
     "ctbackport:eyeblossom_open",
     "ctbackport:eyeblossom_close"
   ]

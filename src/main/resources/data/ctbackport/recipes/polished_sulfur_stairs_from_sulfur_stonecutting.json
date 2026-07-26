@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "ctbackport:sulfur"
+	},
+	"result": "ctbackport:polished_sulfur_stairs",
+	"count": 1
+}

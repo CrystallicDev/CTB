@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "ctbackport:block/sulfur_bricks",
+    "side": "ctbackport:block/sulfur_bricks",
+    "top": "ctbackport:block/sulfur_bricks"
+  }
+}

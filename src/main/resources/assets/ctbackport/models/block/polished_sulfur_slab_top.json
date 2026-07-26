@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "ctbackport:block/polished_sulfur",
+    "side": "ctbackport:block/polished_sulfur",
+    "top": "ctbackport:block/polished_sulfur"
+  }
+}

@@ -145,6 +145,16 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_ITEM_NO_DROP = simple("copper_golem_item_no_drop");
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_NO_ITEM_GET = simple("copper_golem_no_item_get");
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_NO_ITEM_NO_GET = simple("copper_golem_no_item_no_get");
+	public static final RegistryObject<SoundEvent> SULFUR_BREAK = simple("sulfur_break");
+	public static final RegistryObject<SoundEvent> SULFUR_STEP = simple("sulfur_step");
+	public static final RegistryObject<SoundEvent> SULFUR_PLACE = simple("sulfur_place");
+	public static final RegistryObject<SoundEvent> SULFUR_HIT = simple("sulfur_hit");
+	public static final RegistryObject<SoundEvent> CINNABAR_BREAK = simple("cinnabar_break");
+	public static final RegistryObject<SoundEvent> CINNABAR_STEP = simple("cinnabar_step");
+	public static final RegistryObject<SoundEvent> CINNABAR_PLACE = simple("cinnabar_place");
+	public static final RegistryObject<SoundEvent> CINNABAR_HIT = simple("cinnabar_hit");
+	public static final RegistryObject<SoundEvent> MUSIC_DISC_BOUNCE = SOUND_EVENTS.register("music_disc_bounce",
+			() -> new SoundEvent(new ResourceLocation(CTBackport.MODID, "music_disc_bounce")));
 	public static final RegistryObject<SoundEvent> SHELF_ACTIVATE = simple("shelf_activate");
 	public static final RegistryObject<SoundEvent> SHELF_DEACTIVATE = simple("shelf_deactivate");
 	public static final RegistryObject<SoundEvent> SHELF_PLACE_ITEM = simple("shelf_place_item");

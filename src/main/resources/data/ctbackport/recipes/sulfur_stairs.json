@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "ctbackport:sulfur"
+		}
+	},
+	"result": {
+		"item": "ctbackport:sulfur_stairs",
+		"count": 4
+	}
+}
