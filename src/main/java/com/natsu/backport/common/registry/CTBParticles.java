@@ -30,6 +30,9 @@ public class CTBParticles {
 					return com.natsu.backport.common.particle.GeyserParticleOptions.CODEC;
 				}
 			});
+	public static final RegistryObject<SimpleParticleType> SULFUR_CUBE_GOO = PARTICLES.register("sulfur_cube_goo",
+			() -> new SimpleParticleType(false)
+	);
 	public static final RegistryObject<SimpleParticleType> GEYSER_BASE = PARTICLES.register("geyser_base",
 			() -> new SimpleParticleType(false)
 	);

@@ -1,3 +1,29 @@
 {
-	"values": []
+	"replace": false,
+	"values": [
+		{
+			"id": "minecraft:brown_mushroom_block",
+			"required": false
+		},
+		{
+			"id": "minecraft:red_mushroom_block",
+			"required": false
+		},
+		{
+			"id": "minecraft:mushroom_stem",
+			"required": false
+		},
+		{
+			"id": "minecraft:mycelium",
+			"required": false
+		},
+		{
+			"id": "#minecraft:wart_blocks",
+			"required": false
+		},
+		{
+			"id": "minecraft:shroomlight",
+			"required": false
+		}
+	]
 }

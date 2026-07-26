@@ -1,3 +1,21 @@
 {
-	"values": []
+	"replace": false,
+	"values": [
+		{
+			"id": "#minecraft:planks",
+			"required": false
+		},
+		{
+			"id": "minecraft:bamboo_mosaic",
+			"required": false
+		},
+		{
+			"id": "#minecraft:logs",
+			"required": false
+		},
+		{
+			"id": "#minecraft:bamboo_blocks",
+			"required": false
+		}
+	]
 }

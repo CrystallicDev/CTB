@@ -151,6 +151,11 @@ public class SulphurCube extends Slime implements Bucketable {
 		return this.getSize() >= ADULT_SIZE;
 	}
 
+	@Override
+	protected net.minecraft.core.particles.ParticleOptions getParticleType() {
+		return com.natsu.backport.common.registry.CTBParticles.SULFUR_CUBE_GOO.get();
+	}
+
 	// --- goals : inert while loaded ---
 
 	@Override

@@ -1,3 +1,381 @@
 {
-	"values": []
+	"replace": false,
+	"values": [
+		{
+			"id": "minecraft:amethyst_block",
+			"required": false
+		},
+		{
+			"id": "minecraft:andesite",
+			"required": false
+		},
+		{
+			"id": "minecraft:basalt",
+			"required": false
+		},
+		{
+			"id": "minecraft:blackstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:calcite",
+			"required": false
+		},
+		{
+			"id": "ctbackport:chiseled_cinnabar",
+			"required": false
+		},
+		{
+			"id": "minecraft:chiseled_deepslate",
+			"required": false
+		},
+		{
+			"id": "minecraft:chiseled_nether_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:chiseled_polished_blackstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:chiseled_quartz_block",
+			"required": false
+		},
+		{
+			"id": "minecraft:chiseled_red_sandstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:chiseled_sandstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:chiseled_stone_bricks",
+			"required": false
+		},
+		{
+			"id": "ctbackport:chiseled_sulfur",
+			"required": false
+		},
+		{
+			"id": "minecraft:chiseled_tuff",
+			"required": false
+		},
+		{
+			"id": "minecraft:chiseled_tuff_bricks",
+			"required": false
+		},
+		{
+			"id": "ctbackport:cinnabar",
+			"required": false
+		},
+		{
+			"id": "ctbackport:cinnabar_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:cobbled_deepslate",
+			"required": false
+		},
+		{
+			"id": "minecraft:cobblestone",
+			"required": false
+		},
+		{
+			"id": "minecraft:cracked_deepslate_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:cracked_deepslate_tiles",
+			"required": false
+		},
+		{
+			"id": "minecraft:cracked_nether_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:cracked_polished_blackstone_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:cracked_stone_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:crimson_nylium",
+			"required": false
+		},
+		{
+			"id": "minecraft:crying_obsidian",
+			"required": false
+		},
+		{
+			"id": "minecraft:cut_red_sandstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:cut_sandstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:dark_prismarine",
+			"required": false
+		},
+		{
+			"id": "minecraft:deepslate",
+			"required": false
+		},
+		{
+			"id": "minecraft:deepslate_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:deepslate_tiles",
+			"required": false
+		},
+		{
+			"id": "minecraft:diamond_block",
+			"required": false
+		},
+		{
+			"id": "minecraft:diorite",
+			"required": false
+		},
+		{
+			"id": "minecraft:dripstone_block",
+			"required": false
+		},
+		{
+			"id": "minecraft:emerald_block",
+			"required": false
+		},
+		{
+			"id": "minecraft:end_stone",
+			"required": false
+		},
+		{
+			"id": "minecraft:end_stone_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:gilded_blackstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:glowstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:granite",
+			"required": false
+		},
+		{
+			"id": "minecraft:lapis_block",
+			"required": false
+		},
+		{
+			"id": "minecraft:mossy_cobblestone",
+			"required": false
+		},
+		{
+			"id": "minecraft:mossy_stone_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:mud_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:nether_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:netherrack",
+			"required": false
+		},
+		{
+			"id": "minecraft:observer",
+			"required": false
+		},
+		{
+			"id": "minecraft:obsidian",
+			"required": false
+		},
+		{
+			"id": "minecraft:polished_andesite",
+			"required": false
+		},
+		{
+			"id": "minecraft:polished_basalt",
+			"required": false
+		},
+		{
+			"id": "minecraft:polished_blackstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:polished_blackstone_bricks",
+			"required": false
+		},
+		{
+			"id": "ctbackport:polished_cinnabar",
+			"required": false
+		},
+		{
+			"id": "minecraft:polished_deepslate",
+			"required": false
+		},
+		{
+			"id": "minecraft:polished_diorite",
+			"required": false
+		},
+		{
+			"id": "minecraft:polished_granite",
+			"required": false
+		},
+		{
+			"id": "ctbackport:polished_sulfur",
+			"required": false
+		},
+		{
+			"id": "minecraft:polished_tuff",
+			"required": false
+		},
+		{
+			"id": "minecraft:prismarine",
+			"required": false
+		},
+		{
+			"id": "minecraft:prismarine_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:purpur_block",
+			"required": false
+		},
+		{
+			"id": "minecraft:purpur_pillar",
+			"required": false
+		},
+		{
+			"id": "minecraft:quartz_block",
+			"required": false
+		},
+		{
+			"id": "minecraft:quartz_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:nether_quartz_ore",
+			"required": false
+		},
+		{
+			"id": "minecraft:quartz_pillar",
+			"required": false
+		},
+		{
+			"id": "minecraft:red_nether_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:red_sandstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:redstone_lamp",
+			"required": false
+		},
+		{
+			"id": "minecraft:sandstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:sea_lantern",
+			"required": false
+		},
+		{
+			"id": "minecraft:smooth_basalt",
+			"required": false
+		},
+		{
+			"id": "minecraft:smooth_quartz",
+			"required": false
+		},
+		{
+			"id": "minecraft:smooth_red_sandstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:smooth_sandstone",
+			"required": false
+		},
+		{
+			"id": "minecraft:smooth_stone",
+			"required": false
+		},
+		{
+			"id": "minecraft:stone",
+			"required": false
+		},
+		{
+			"id": "minecraft:stone_bricks",
+			"required": false
+		},
+		{
+			"id": "ctbackport:sulfur",
+			"required": false
+		},
+		{
+			"id": "ctbackport:sulfur_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:tuff",
+			"required": false
+		},
+		{
+			"id": "minecraft:tuff_bricks",
+			"required": false
+		},
+		{
+			"id": "minecraft:warped_nylium",
+			"required": false
+		},
+		{
+			"id": "#minecraft:concrete",
+			"required": false
+		},
+		{
+			"id": "#minecraft:coal_ores",
+			"required": false
+		},
+		{
+			"id": "#minecraft:lapis_ores",
+			"required": false
+		},
+		{
+			"id": "#minecraft:redstone_ores",
+			"required": false
+		},
+		{
+			"id": "#minecraft:diamond_ores",
+			"required": false
+		},
+		{
+			"id": "#minecraft:emerald_ores",
+			"required": false
+		},
+		{
+			"id": "#minecraft:terracotta",
+			"required": false
+		},
+		{
+			"id": "#minecraft:glazed_terracotta",
+			"required": false
+		}
+	]
 }

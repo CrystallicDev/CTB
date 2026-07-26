@@ -1,3 +1,9 @@
 {
-	"values": []
+	"replace": false,
+	"values": [
+		{
+			"id": "minecraft:tnt",
+			"required": false
+		}
+	]
 }
