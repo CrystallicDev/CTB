@@ -318,6 +318,19 @@ public class CTBBlocks {
 					net.minecraft.world.level.block.state.BlockBehaviour.Properties
 							.of(net.minecraft.world.level.material.Material.DECORATION).instabreak().noOcclusion()));
 
+	public static final RegistryObject<Block> POTENT_SULFUR = registerWithItem(BLOCKS, CTBItems.ITEMS, "potent_sulfur",
+			BLOCKS.register("potent_sulfur", () -> new com.natsu.backport.common.block.PotentSulfurBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy(SULFUR.get())
+							.sound(com.natsu.backport.common.registry.CTBSoundTypes.POTENT_SULFUR))));
+	public static final RegistryObject<Block> SULFUR_SPIKE = registerWithItem(BLOCKS, CTBItems.ITEMS, "sulfur_spike",
+			BLOCKS.register("sulfur_spike", () -> new com.natsu.backport.common.block.SulfurSpikeBlock(
+					() -> SULFUR.get(),
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.STONE)
+							.sound(com.natsu.backport.common.registry.CTBSoundTypes.SULFUR)
+							.randomTicks().strength(1.5F, 3.0F).dynamicShape()
+							.noOcclusion())));
+
 	public static final RegistryObject<Block> COPPER_CHEST = copperChest("copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.UNAFFECTED, false);
 	public static final RegistryObject<Block> EXPOSED_COPPER_CHEST = copperChest("exposed_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.EXPOSED, false);
 	public static final RegistryObject<Block> WEATHERED_COPPER_CHEST = copperChest("weathered_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.WEATHERED, false);

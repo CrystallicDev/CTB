@@ -34,6 +34,11 @@ public class CTBBlockEntities {
 					com.natsu.backport.common.block.entity.ShelfBlockEntity::new,
 					CTBBlocks.OAK_SHELF.get(), CTBBlocks.SPRUCE_SHELF.get(), CTBBlocks.BIRCH_SHELF.get(), CTBBlocks.JUNGLE_SHELF.get(), CTBBlocks.ACACIA_SHELF.get(), CTBBlocks.DARK_OAK_SHELF.get(), CTBBlocks.CRIMSON_SHELF.get(), CTBBlocks.WARPED_SHELF.get(), CTBBlocks.PALE_OAK_SHELF.get(), CTBBlocks.CHERRY_SHELF.get(), CTBBlocks.BAMBOO_SHELF.get()).build(null));
 
+	public static final RegistryObject<BlockEntityType<com.natsu.backport.common.block.entity.PotentSulfurBlockEntity>> POTENT_SULFUR =
+			BLOCK_ENTITIES.register("potent_sulfur", () -> BlockEntityType.Builder.of(
+					com.natsu.backport.common.block.entity.PotentSulfurBlockEntity::new,
+					CTBBlocks.POTENT_SULFUR.get()).build(null));
+
 	public static final RegistryObject<BlockEntityType<CopperChestBlockEntity>> COPPER_CHEST = BLOCK_ENTITIES.register("copper_chest",
 			() -> BlockEntityType.Builder.of(CopperChestBlockEntity::new,
 					CTBBlocks.COPPER_CHEST.get(), CTBBlocks.EXPOSED_COPPER_CHEST.get(),

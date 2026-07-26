@@ -551,6 +551,51 @@
 		],
 		"subtitle": "subtitles.block.firefly_bush.idle"
 	},
+	"geyser_continuous_active": {
+		"sounds": [
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active1",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active2",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active3",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active4",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active5",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active6",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active7"
+		]
+	},
+	"geyser_continuous_start": {
+		"sounds": [
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption1",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption2",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption3",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption4",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption5",
+			"ctbackport:block/potent_sulfur/geyser_continuous/eruption6"
+		]
+	},
+	"geyser_eruption_active": {
+		"sounds": [
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active1",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active2",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active3",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active4",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active5",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active6",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active7",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active8"
+		]
+	},
+	"geyser_eruption_start": {
+		"sounds": [
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption1",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption2",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption3",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption4",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption5",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption6",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption7",
+			"ctbackport:block/potent_sulfur/sulfur_spring/eruption8"
+		]
+	},
 	"mace_smash_air": {
 		"category": "player",
 		"sounds": [
@@ -715,6 +760,24 @@
 			"ctbackport:entity/nautilus/nautilus_saddle_underwater_equip"
 		]
 	},
+	"noxious_gas": {
+		"sounds": [
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient1",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient10",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient11",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient12",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient13",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient14",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient2",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient3",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient4",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient5",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient6",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient7",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient8",
+			"ctbackport:block/potent_sulfur/noxious_gas/ambient9"
+		]
+	},
 	"parched_ambient": {
 		"category": "hostile",
 		"sounds": [
@@ -746,6 +809,51 @@
 			"ctbackport:entity/parched/step2",
 			"ctbackport:entity/parched/step3",
 			"ctbackport:entity/parched/step4"
+		]
+	},
+	"potent_sulfur_break": {
+		"sounds": [
+			"ctbackport:block/potent_sulfur/break1",
+			"ctbackport:block/potent_sulfur/break2",
+			"ctbackport:block/potent_sulfur/break3",
+			"ctbackport:block/potent_sulfur/break4",
+			"ctbackport:block/potent_sulfur/break5",
+			"ctbackport:block/potent_sulfur/break6",
+			"ctbackport:block/potent_sulfur/break7"
+		]
+	},
+	"potent_sulfur_hit": {
+		"sounds": [
+			"ctbackport:block/potent_sulfur/hit1",
+			"ctbackport:block/potent_sulfur/hit2",
+			"ctbackport:block/potent_sulfur/hit3",
+			"ctbackport:block/potent_sulfur/hit4",
+			"ctbackport:block/potent_sulfur/hit5",
+			"ctbackport:block/potent_sulfur/hit6",
+			"ctbackport:block/potent_sulfur/hit7"
+		]
+	},
+	"potent_sulfur_place": {
+		"sounds": [
+			"ctbackport:block/potent_sulfur/place1",
+			"ctbackport:block/potent_sulfur/place2",
+			"ctbackport:block/potent_sulfur/place3",
+			"ctbackport:block/potent_sulfur/place4",
+			"ctbackport:block/potent_sulfur/place5",
+			"ctbackport:block/potent_sulfur/place6",
+			"ctbackport:block/potent_sulfur/place7",
+			"ctbackport:block/potent_sulfur/place8"
+		]
+	},
+	"potent_sulfur_step": {
+		"sounds": [
+			"ctbackport:block/potent_sulfur/step1",
+			"ctbackport:block/potent_sulfur/step2",
+			"ctbackport:block/potent_sulfur/step3",
+			"ctbackport:block/potent_sulfur/step4",
+			"ctbackport:block/potent_sulfur/step5",
+			"ctbackport:block/potent_sulfur/step6",
+			"ctbackport:block/potent_sulfur/step7"
 		]
 	},
 	"resin_place": {
@@ -886,6 +994,17 @@
 			"ctbackport:block/sulfur/place6",
 			"ctbackport:block/sulfur/place7",
 			"ctbackport:block/sulfur/place8"
+		]
+	},
+	"sulfur_spike_land": {
+		"sounds": [
+			"ctbackport:block/sulfur_spike/land1",
+			"ctbackport:block/sulfur_spike/land2",
+			"ctbackport:block/sulfur_spike/land3",
+			"ctbackport:block/sulfur_spike/land4",
+			"ctbackport:block/sulfur_spike/land5",
+			"ctbackport:block/sulfur_spike/land6",
+			"ctbackport:block/sulfur_spike/land7"
 		]
 	},
 	"sulfur_step": {

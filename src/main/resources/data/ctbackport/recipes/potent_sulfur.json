@@ -1,0 +1,36 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "ctbackport:sulfur"
+		},
+		{
+			"item": "ctbackport:sulfur"
+		},
+		{
+			"item": "ctbackport:sulfur"
+		},
+		{
+			"item": "ctbackport:sulfur"
+		},
+		{
+			"item": "ctbackport:sulfur"
+		},
+		{
+			"item": "ctbackport:sulfur"
+		},
+		{
+			"item": "ctbackport:sulfur"
+		},
+		{
+			"item": "ctbackport:sulfur"
+		},
+		{
+			"item": "ctbackport:sulfur"
+		}
+	],
+	"result": {
+		"item": "ctbackport:potent_sulfur",
+		"count": 1
+	}
+}

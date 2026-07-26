@@ -145,6 +145,16 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_ITEM_NO_DROP = simple("copper_golem_item_no_drop");
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_NO_ITEM_GET = simple("copper_golem_no_item_get");
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_NO_ITEM_NO_GET = simple("copper_golem_no_item_no_get");
+	public static final RegistryObject<SoundEvent> POTENT_SULFUR_BREAK = simple("potent_sulfur_break");
+	public static final RegistryObject<SoundEvent> POTENT_SULFUR_STEP = simple("potent_sulfur_step");
+	public static final RegistryObject<SoundEvent> POTENT_SULFUR_PLACE = simple("potent_sulfur_place");
+	public static final RegistryObject<SoundEvent> POTENT_SULFUR_HIT = simple("potent_sulfur_hit");
+	public static final RegistryObject<SoundEvent> SULFUR_SPIKE_LAND = simple("sulfur_spike_land");
+	public static final RegistryObject<SoundEvent> NOXIOUS_GAS = simple("noxious_gas");
+	public static final RegistryObject<SoundEvent> GEYSER_ERUPTION_START = simple("geyser_eruption_start");
+	public static final RegistryObject<SoundEvent> GEYSER_ERUPTION_ACTIVE = simple("geyser_eruption_active");
+	public static final RegistryObject<SoundEvent> GEYSER_CONTINUOUS_START = simple("geyser_continuous_start");
+	public static final RegistryObject<SoundEvent> GEYSER_CONTINUOUS_ACTIVE = simple("geyser_continuous_active");
 	public static final RegistryObject<SoundEvent> SULFUR_BREAK = simple("sulfur_break");
 	public static final RegistryObject<SoundEvent> SULFUR_STEP = simple("sulfur_step");
 	public static final RegistryObject<SoundEvent> SULFUR_PLACE = simple("sulfur_place");

@@ -86,6 +86,8 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBBlocks.POTTED_GOLDEN_DANDELION.get(), "Pissenlit doré en pot");
 		add(CTBItems.MUSIC_DISC_BOUNCE.get(), "Disque de musique");
 		add("item.ctbackport.music_disc_bounce.desc", "fingerspit - Bounce");
+		add(CTBBlocks.POTENT_SULFUR.get(), "Soufre puissant");
+		add(CTBBlocks.SULFUR_SPIKE.get(), "Pointe de soufre");
 		add("entity.ctbackport.sulphur_cube", "Cube de soufre");
 		add(CTBItems.SULPHUR_CUBE_BUCKET.get(), "Cube de soufre dans un seau");
 		add(CTBItems.SULPHUR_CUBE_SPAWN_EGG.get(), "Œuf d'apparition de cube de soufre");

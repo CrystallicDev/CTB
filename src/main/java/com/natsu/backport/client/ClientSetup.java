@@ -93,6 +93,10 @@ public class ClientSetup {
 		Minecraft.getInstance().particleEngine.register(CTBParticles.CHERRY.get(), CherryParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.COPPER_FIRE_FLAME.get(), net.minecraft.client.particle.FlameParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.FIREFLY.get(), com.natsu.backport.client.render.FireflyParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.GEYSER.get(), com.natsu.backport.client.render.GeyserParticles.Plume.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.GEYSER_BASE.get(), com.natsu.backport.client.render.GeyserParticles.Base.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.SULFUR_BUBBLES.get(), com.natsu.backport.client.render.GeyserParticles.SulfurBubble.Provider::new);
+		Minecraft.getInstance().particleEngine.register(CTBParticles.NOXIOUS_GAS.get(), com.natsu.backport.client.render.GeyserParticles.NoxiousGas.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.PALE_OAK_LEAVES.get(), CherryParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRAIL.get(), TrailParticle.Provider::new);
 		Minecraft.getInstance().particleEngine.register(CTBParticles.TRIAL_SPAWNER_DETECTION.get(), TrialSpawnerDetectionParticle.Provider::new);
@@ -161,6 +165,7 @@ public class ClientSetup {
         		ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.cutout());
         	}
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.PALE_MOSS.mossLayer.get(), RenderType.cutout());
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.SULFUR_SPIKE.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.COPPER_TORCH.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.COPPER_WALL_TORCH.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.OPEN_EYEBLOSSOM.get(), RenderType.cutout());

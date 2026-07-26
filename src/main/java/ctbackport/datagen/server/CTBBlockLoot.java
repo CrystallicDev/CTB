@@ -99,6 +99,8 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		dropSelf(CTBBlocks.CHISELED_CINNABAR.get());
 		dropSelf(CTBBlocks.GOLDEN_DANDELION.get());
 		dropPottedContents(CTBBlocks.POTTED_GOLDEN_DANDELION.get());
+		dropSelf(CTBBlocks.POTENT_SULFUR.get());
+		dropSelf(CTBBlocks.SULFUR_SPIKE.get());
 		dropPottedContents(CTBBlocks.POTTED_PALE_OAK_SAPLING.get());
 		dropPottedContents(CTBBlocks.POTTED_OPEN_EYEBLOSSOM.get());
 		dropPottedContents(CTBBlocks.POTTED_CLOSED_EYEBLOSSOM.get());

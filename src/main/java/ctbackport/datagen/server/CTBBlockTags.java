@@ -95,6 +95,8 @@ public class CTBBlockTags extends BlockTagsProvider {
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.CHISELED_CINNABAR.get());
 		tag(BlockTags.WALLS).add(CTBBlocks.SULFUR_WALL.get(), CTBBlocks.POLISHED_SULFUR_WALL.get(), CTBBlocks.SULFUR_BRICK_WALL.get(), CTBBlocks.CINNABAR_WALL.get(), CTBBlocks.POLISHED_CINNABAR_WALL.get(), CTBBlocks.CINNABAR_BRICK_WALL.get());
 		tag(BlockTags.SMALL_FLOWERS).add(CTBBlocks.GOLDEN_DANDELION.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.POTENT_SULFUR.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.SULFUR_SPIKE.get());
 		handle(CTBBlocks.COPPER_BARS);
 		handle(CTBBlocks.COPPER_CHAIN);
 		handle(CTBBlocks.COPPER_LANTERN);

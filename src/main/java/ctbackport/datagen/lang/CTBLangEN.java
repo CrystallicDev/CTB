@@ -80,6 +80,8 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBBlocks.POTTED_GOLDEN_DANDELION.get(), "Potted Golden Dandelion");
 		add(CTBItems.MUSIC_DISC_BOUNCE.get(), "Music Disc");
 		add("item.ctbackport.music_disc_bounce.desc", "fingerspit - Bounce");
+		add(CTBBlocks.POTENT_SULFUR.get(), "Potent Sulfur");
+		add(CTBBlocks.SULFUR_SPIKE.get(), "Sulfur Spike");
 		add("entity.ctbackport.sulphur_cube", "Sulphur Cube");
 		add(CTBItems.SULPHUR_CUBE_BUCKET.get(), "Bucket of Sulphur Cube");
 		add(CTBItems.SULPHUR_CUBE_SPAWN_EGG.get(), "Sulphur Cube Spawn Egg");

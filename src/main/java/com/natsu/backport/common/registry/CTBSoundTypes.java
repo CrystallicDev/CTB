@@ -12,6 +12,10 @@ public final class CTBSoundTypes {
 			CTBSounds.CINNABAR_BREAK, CTBSounds.CINNABAR_STEP, CTBSounds.CINNABAR_PLACE,
 			CTBSounds.CINNABAR_HIT, CTBSounds.CINNABAR_STEP);
 
+	public static final ForgeSoundType POTENT_SULFUR = new ForgeSoundType(1.0F, 1.0F,
+			CTBSounds.POTENT_SULFUR_BREAK, CTBSounds.POTENT_SULFUR_STEP, CTBSounds.POTENT_SULFUR_PLACE,
+			CTBSounds.POTENT_SULFUR_HIT, CTBSounds.POTENT_SULFUR_STEP);
+
 	private CTBSoundTypes() {
 	}
 }

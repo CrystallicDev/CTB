@@ -22,6 +22,23 @@ public class CTBParticles {
 				}
 			});
 
+	public static final RegistryObject<net.minecraft.core.particles.ParticleType<com.natsu.backport.common.particle.GeyserParticleOptions>> GEYSER =
+			PARTICLES.register("geyser", () -> new net.minecraft.core.particles.ParticleType<com.natsu.backport.common.particle.GeyserParticleOptions>(
+					false, com.natsu.backport.common.particle.GeyserParticleOptions.DESERIALIZER) {
+				@Override
+				public com.mojang.serialization.Codec<com.natsu.backport.common.particle.GeyserParticleOptions> codec() {
+					return com.natsu.backport.common.particle.GeyserParticleOptions.CODEC;
+				}
+			});
+	public static final RegistryObject<SimpleParticleType> GEYSER_BASE = PARTICLES.register("geyser_base",
+			() -> new SimpleParticleType(false)
+	);
+	public static final RegistryObject<SimpleParticleType> SULFUR_BUBBLES = PARTICLES.register("sulfur_bubbles",
+			() -> new SimpleParticleType(false)
+	);
+	public static final RegistryObject<SimpleParticleType> NOXIOUS_GAS = PARTICLES.register("noxious_gas",
+			() -> new SimpleParticleType(false)
+	);
 	public static final RegistryObject<SimpleParticleType> FIREFLY = PARTICLES.register("firefly",
 			() -> new SimpleParticleType(false)
 	);
