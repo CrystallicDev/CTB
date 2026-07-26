@@ -40,6 +40,17 @@
     "ctbackport:pale_oak_pressure_plate",
     "ctbackport:pale_oak_fence_gate",
     "ctbackport:pale_oak_trapdoor",
-    "ctbackport:creaking_heart"
+    "ctbackport:creaking_heart",
+    "ctbackport:oak_shelf",
+    "ctbackport:spruce_shelf",
+    "ctbackport:birch_shelf",
+    "ctbackport:jungle_shelf",
+    "ctbackport:acacia_shelf",
+    "ctbackport:dark_oak_shelf",
+    "ctbackport:crimson_shelf",
+    "ctbackport:warped_shelf",
+    "ctbackport:pale_oak_shelf",
+    "ctbackport:cherry_shelf",
+    "ctbackport:bamboo_shelf"
   ]
 }

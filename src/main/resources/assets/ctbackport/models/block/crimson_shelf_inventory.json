@@ -1,0 +1,7 @@
+{
+  "parent": "ctbackport:block/template_shelf_inventory",
+  "textures": {
+    "all": "ctbackport:block/crimson_shelf",
+    "particle": "minecraft:block/stripped_crimson_stem"
+  }
+}

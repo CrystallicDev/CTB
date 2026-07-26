@@ -173,6 +173,84 @@ public class CTBBlocks {
 			() -> new net.minecraft.world.item.StandingAndWallBlockItem(COPPER_TORCH.get(), COPPER_WALL_TORCH.get(),
 					new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 
+	public static final RegistryObject<Block> OAK_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "oak_shelf",
+			BLOCKS.register("oak_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+	public static final RegistryObject<Block> SPRUCE_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "spruce_shelf",
+			BLOCKS.register("spruce_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+	public static final RegistryObject<Block> BIRCH_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "birch_shelf",
+			BLOCKS.register("birch_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+	public static final RegistryObject<Block> JUNGLE_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "jungle_shelf",
+			BLOCKS.register("jungle_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+	public static final RegistryObject<Block> ACACIA_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "acacia_shelf",
+			BLOCKS.register("acacia_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+	public static final RegistryObject<Block> DARK_OAK_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "dark_oak_shelf",
+			BLOCKS.register("dark_oak_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+	public static final RegistryObject<Block> CRIMSON_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "crimson_shelf",
+			BLOCKS.register("crimson_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+	public static final RegistryObject<Block> WARPED_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "warped_shelf",
+			BLOCKS.register("warped_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+	public static final RegistryObject<Block> PALE_OAK_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "pale_oak_shelf",
+			BLOCKS.register("pale_oak_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+	public static final RegistryObject<Block> CHERRY_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "cherry_shelf",
+			BLOCKS.register("cherry_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+	public static final RegistryObject<Block> BAMBOO_SHELF = registerWithItem(BLOCKS, CTBItems.ITEMS, "bamboo_shelf",
+			BLOCKS.register("bamboo_shelf", () -> new com.natsu.backport.common.block.ShelfBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.WOOD)
+							.strength(2.0F, 3.0F)
+							.sound(net.minecraft.world.level.block.SoundType.WOOD)
+							.noOcclusion())));
+
 	public static final RegistryObject<Block> COPPER_CHEST = copperChest("copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.UNAFFECTED, false);
 	public static final RegistryObject<Block> EXPOSED_COPPER_CHEST = copperChest("exposed_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.EXPOSED, false);
 	public static final RegistryObject<Block> WEATHERED_COPPER_CHEST = copperChest("weathered_copper_chest", net.minecraft.world.level.block.WeatheringCopper.WeatherState.WEATHERED, false);

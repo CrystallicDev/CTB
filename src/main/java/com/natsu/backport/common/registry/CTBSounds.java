@@ -145,6 +145,12 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_ITEM_NO_DROP = simple("copper_golem_item_no_drop");
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_NO_ITEM_GET = simple("copper_golem_no_item_get");
 	public static final RegistryObject<SoundEvent> COPPER_GOLEM_NO_ITEM_NO_GET = simple("copper_golem_no_item_no_get");
+	public static final RegistryObject<SoundEvent> SHELF_ACTIVATE = simple("shelf_activate");
+	public static final RegistryObject<SoundEvent> SHELF_DEACTIVATE = simple("shelf_deactivate");
+	public static final RegistryObject<SoundEvent> SHELF_PLACE_ITEM = simple("shelf_place_item");
+	public static final RegistryObject<SoundEvent> SHELF_TAKE_ITEM = simple("shelf_take_item");
+	public static final RegistryObject<SoundEvent> SHELF_SINGLE_SWAP = simple("shelf_single_swap");
+	public static final RegistryObject<SoundEvent> SHELF_MULTI_SWAP = simple("shelf_multi_swap");
 	public static final RegistryObject<SoundEvent> ARMOR_EQUIP_COPPER = simple("armor_equip_copper");
 	public static final RegistryObject<SoundEvent> FIREFLY_BUSH_IDLE = simple("firefly_bush_idle");
 	public static final RegistryObject<SoundEvent> COPPER_CHEST_OPEN = simple("copper_chest_open");

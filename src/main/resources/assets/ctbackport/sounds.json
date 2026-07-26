@@ -705,6 +705,51 @@
 			"ctbackport:block/resin/resin_place4"
 		]
 	},
+	"shelf_activate": {
+		"sounds": [
+			"ctbackport:block/shelf/activate1",
+			"ctbackport:block/shelf/activate2",
+			"ctbackport:block/shelf/activate3"
+		]
+	},
+	"shelf_deactivate": {
+		"sounds": [
+			"ctbackport:block/shelf/deactivate1",
+			"ctbackport:block/shelf/deactivate2",
+			"ctbackport:block/shelf/deactivate3"
+		]
+	},
+	"shelf_multi_swap": {
+		"sounds": [
+			"ctbackport:block/shelf/multi_swap1",
+			"ctbackport:block/shelf/multi_swap2",
+			"ctbackport:block/shelf/multi_swap3"
+		]
+	},
+	"shelf_place_item": {
+		"sounds": [
+			"ctbackport:block/shelf/place_item1",
+			"ctbackport:block/shelf/place_item2",
+			"ctbackport:block/shelf/place_item3",
+			"ctbackport:block/shelf/place_item4"
+		]
+	},
+	"shelf_single_swap": {
+		"sounds": [
+			"ctbackport:block/shelf/single_swap1",
+			"ctbackport:block/shelf/single_swap2",
+			"ctbackport:block/shelf/single_swap3",
+			"ctbackport:block/shelf/single_swap4"
+		]
+	},
+	"shelf_take_item": {
+		"sounds": [
+			"ctbackport:block/shelf/place_item1",
+			"ctbackport:block/shelf/place_item2",
+			"ctbackport:block/shelf/place_item3",
+			"ctbackport:block/shelf/place_item4"
+		]
+	},
 	"spear_attack": {
 		"category": "player",
 		"sounds": [

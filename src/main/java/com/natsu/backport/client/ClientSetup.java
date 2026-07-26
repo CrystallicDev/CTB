@@ -3,6 +3,7 @@ package com.natsu.backport.client;
 import com.natsu.backport.CTBackport;
 import com.natsu.backport.client.render.BoggedRenderer;
 import com.natsu.backport.client.render.CopperChestRenderer;
+import com.natsu.backport.client.render.SulphurCubeRenderer;
 import com.natsu.backport.client.render.CopperGolemRenderer;
 import com.natsu.backport.client.render.CopperGolemStatueRenderer;
 import com.natsu.backport.client.render.BreezeRenderer;
@@ -42,7 +43,7 @@ public class ClientSetup {
 	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(CTBEntities.WIND_CHARGE_ENTITY.get(), WindChargeRenderer::new);
 		event.registerEntityRenderer(CTBEntities.CREAKING.get(), CreakingRenderer::new);
-		//event.registerEntityRenderer(CTBEntities.SULPHUR_CUBE.get(), SulphurCubeRenderer::new);
+		event.registerEntityRenderer(CTBEntities.SULPHUR_CUBE.get(), SulphurCubeRenderer::new);
 		event.registerEntityRenderer(CTBEntities.BREEZE.get(), BreezeRenderer::new);
 		event.registerEntityRenderer(CTBEntities.BOGGED.get(), BoggedRenderer::new);
 		event.registerEntityRenderer(CTBEntities.PARCHED.get(), ParchedRenderer::new);
@@ -59,6 +60,7 @@ public class ClientSetup {
 		event.registerEntityRenderer(net.minecraft.world.entity.EntityType.CHICKEN,
 				com.natsu.backport.client.render.VariantChickenRenderer::new);
 		event.registerBlockEntityRenderer(CTBBlockEntities.COPPER_CHEST.get(), CopperChestRenderer::new);
+		event.registerBlockEntityRenderer(CTBBlockEntities.SHELF.get(), com.natsu.backport.client.render.ShelfRenderer::new);
 		event.registerBlockEntityRenderer(CTBBlockEntities.COPPER_GOLEM_STATUE.get(), CopperGolemStatueRenderer::new);
 		event.registerEntityRenderer(CTBEntities.NAUTILUS.get(), NautilusRenderer::new);
 		event.registerEntityRenderer(CTBEntities.ZOMBIE_NAUTILUS.get(), NautilusRenderer::new);

@@ -1,0 +1,7 @@
+{
+  "parent": "ctbackport:block/template_shelf_right",
+  "textures": {
+    "all": "ctbackport:block/bamboo_shelf",
+    "particle": "ctbackport:block/stripped_bamboo_log"
+  }
+}

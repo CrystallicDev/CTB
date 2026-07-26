@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "shelf",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stripped_jungle_log"
+		}
+	},
+	"result": {
+		"item": "ctbackport:jungle_shelf",
+		"count": 6
+	}
+}

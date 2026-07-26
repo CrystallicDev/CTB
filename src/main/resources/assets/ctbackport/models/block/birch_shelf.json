@@ -1,0 +1,7 @@
+{
+  "parent": "ctbackport:block/template_shelf_body",
+  "textures": {
+    "all": "ctbackport:block/birch_shelf",
+    "particle": "minecraft:block/stripped_birch_log"
+  }
+}

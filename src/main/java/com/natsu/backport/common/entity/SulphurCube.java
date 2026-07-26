@@ -325,7 +325,7 @@ public class SulphurCube extends Slime implements Bucketable {
 
     @Override
     public ItemStack getBucketItemStack() {
-        return new ItemStack(Items.AXOLOTL_BUCKET);
+        return new ItemStack(com.natsu.backport.common.registry.CTBItems.SULPHUR_CUBE_BUCKET.get());
     }
 
     @Override

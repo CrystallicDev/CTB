@@ -1,0 +1,7 @@
+{
+  "parent": "ctbackport:block/template_shelf_right",
+  "textures": {
+    "all": "ctbackport:block/jungle_shelf",
+    "particle": "minecraft:block/stripped_jungle_log"
+  }
+}

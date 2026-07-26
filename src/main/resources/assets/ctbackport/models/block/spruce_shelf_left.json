@@ -1,0 +1,7 @@
+{
+  "parent": "ctbackport:block/template_shelf_left",
+  "textures": {
+    "all": "ctbackport:block/spruce_shelf",
+    "particle": "minecraft:block/stripped_spruce_log"
+  }
+}

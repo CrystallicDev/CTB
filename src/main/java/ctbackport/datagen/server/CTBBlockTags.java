@@ -56,6 +56,17 @@ public class CTBBlockTags extends BlockTagsProvider {
 		tag(BlockTags.NEEDS_STONE_TOOL).add(CTBBlocks.WAXED_OXIDIZED_COPPER_CHEST.get());
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CTBBlocks.COPPER_GOLEM_STATUE.get());
 		handle(CTBBlocks.CHISELED_COPPER);
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.OAK_SHELF.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.SPRUCE_SHELF.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.BIRCH_SHELF.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.JUNGLE_SHELF.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.ACACIA_SHELF.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.DARK_OAK_SHELF.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.CRIMSON_SHELF.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.WARPED_SHELF.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.PALE_OAK_SHELF.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.CHERRY_SHELF.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(CTBBlocks.BAMBOO_SHELF.get());
 		handle(CTBBlocks.COPPER_BARS);
 		handle(CTBBlocks.COPPER_CHAIN);
 		handle(CTBBlocks.COPPER_LANTERN);

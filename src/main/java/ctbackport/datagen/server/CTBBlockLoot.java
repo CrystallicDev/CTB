@@ -60,6 +60,17 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 				com.natsu.backport.common.block.FlowerBedBlock.AMOUNT));
 		add(CTBBlocks.LEAF_LITTER.get(), block -> createSegmentedDrops(block,
 				com.natsu.backport.common.block.LeafLitterBlock.AMOUNT));
+		dropSelf(CTBBlocks.OAK_SHELF.get());
+		dropSelf(CTBBlocks.SPRUCE_SHELF.get());
+		dropSelf(CTBBlocks.BIRCH_SHELF.get());
+		dropSelf(CTBBlocks.JUNGLE_SHELF.get());
+		dropSelf(CTBBlocks.ACACIA_SHELF.get());
+		dropSelf(CTBBlocks.DARK_OAK_SHELF.get());
+		dropSelf(CTBBlocks.CRIMSON_SHELF.get());
+		dropSelf(CTBBlocks.WARPED_SHELF.get());
+		dropSelf(CTBBlocks.PALE_OAK_SHELF.get());
+		dropSelf(CTBBlocks.CHERRY_SHELF.get());
+		dropSelf(CTBBlocks.BAMBOO_SHELF.get());
 		dropPottedContents(CTBBlocks.POTTED_PALE_OAK_SAPLING.get());
 		dropPottedContents(CTBBlocks.POTTED_OPEN_EYEBLOSSOM.get());
 		dropPottedContents(CTBBlocks.POTTED_CLOSED_EYEBLOSSOM.get());

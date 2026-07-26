@@ -49,7 +49,7 @@ public class CommonSetup {
 		event.put(CTBEntities.PARCHED.get(), com.natsu.backport.common.entity.Parched.createAttributes().build());
 		event.put(CTBEntities.COPPER_GOLEM.get(), com.natsu.backport.common.entity.CopperGolem.createAttributes().build());
 		event.put(CTBEntities.ZOMBIE_NAUTILUS.get(), com.natsu.backport.common.entity.ZombieNautilus.createAttributes().build());
-		//event.put(CTBEntities.SULPHUR_CUBE.get(), SulphurCube.createAttributes().build());
+		event.put(CTBEntities.SULPHUR_CUBE.get(), com.natsu.backport.common.entity.SulphurCube.createAttributes().build());
 	}
 
 	@SubscribeEvent
