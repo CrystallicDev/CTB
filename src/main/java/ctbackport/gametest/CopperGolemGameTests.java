@@ -21,9 +21,23 @@ import net.minecraftforge.gametest.PrefixGameTestTemplate;
 @PrefixGameTestTemplate(false)
 public class CopperGolemGameTests {
 
+	/** The stroll goal can walk a golem off the platform, fence it in. */
+	private static void fence(GameTestHelper helper) {
+		for (int x = 0; x <= 8; x++) {
+			for (int z = 0; z <= 8; z++) {
+				if (x == 0 || x == 8 || z == 0 || z == 8) {
+					for (int y = 2; y <= 4; y++) {
+						helper.setBlock(new BlockPos(x, y, z), Blocks.BARRIER);
+					}
+				}
+			}
+		}
+	}
+
 	// full loop: the golem empties the copper chest into the plain chest
 	@GameTest(template = "empty", timeoutTicks = 1200)
 	public static void golemSortsItems(GameTestHelper helper) {
+		fence(helper);
 		BlockPos copperPos = new BlockPos(1, 2, 3);
 		BlockPos chestPos = new BlockPos(5, 2, 3);
 		helper.setBlock(copperPos, CTBBlocks.COPPER_CHEST.get());
@@ -50,6 +64,7 @@ public class CopperGolemGameTests {
 
 	@GameTest(template = "empty")
 	public static void statueScrapesBackToGolem(GameTestHelper helper) {
+		fence(helper);
 		BlockPos pos = new BlockPos(3, 2, 3);
 		helper.setBlock(pos, CTBBlocks.COPPER_GOLEM_STATUE.get());
 		com.natsu.backport.common.block.entity.CopperGolemStatueBlockEntity statue =

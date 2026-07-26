@@ -59,6 +59,7 @@ public class CommonSetup {
 		event.enqueueWork(CommonSetup::registerWeatherables);
 		event.enqueueWork(CommonSetup::registerFlowerPots);
 		event.enqueueWork(com.natsu.backport.common.network.CTBNetwork::register);
+		event.enqueueWork(com.natsu.backport.common.registry.CTBVegetationFeatures::register);
 		event.enqueueWork(CommonSetup::registerFlammablesAndCompostables);
 		event.enqueueWork(CommonSetup::registerBrewingRecipes);
 		event.enqueueWork(com.natsu.backport.server.events.NautilusSpawns::registerPlacements);
