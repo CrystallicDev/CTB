@@ -12,34 +12,37 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 /**
- * The 26.2 look : the translucent outer shell, its inner content drawn by the
- * layer so both follow the exact same pose.
+ * The 26.2 ordering : the main pass draws the inner core or the swallowed
+ * block, then the translucent shell layers over it, exactly like the vanilla
+ * inner layer submitting at order minus one.
  */
 public class SulphurCubeRenderer extends MobRenderer<SulphurCube, SulphurCubeModel> {
 
-	private static final ResourceLocation OUTER =
-			new ResourceLocation(CTBackport.MODID, "textures/entity/sulfur_cube/sulfur_cube_outer.png");
-	private static final ResourceLocation OUTER_SMALL =
-			new ResourceLocation(CTBackport.MODID, "textures/entity/sulfur_cube/sulfur_cube_outer_small.png");
+	private static final ResourceLocation INNER =
+			new ResourceLocation(CTBackport.MODID, "textures/entity/sulfur_cube/sulfur_cube_inner.png");
+	private static final ResourceLocation INNER_SMALL =
+			new ResourceLocation(CTBackport.MODID, "textures/entity/sulfur_cube/sulfur_cube_inner_small.png");
 
-	private final SulphurCubeModel outerModel;
-	private final SulphurCubeModel smallOuterModel;
+	private final SulphurCubeModel innerModel;
+	private final SulphurCubeModel smallInnerModel;
 
 	public SulphurCubeRenderer(EntityRendererProvider.Context context) {
-		super(context, new SulphurCubeModel(SulphurCubeModel.outer().bakeRoot()), 0.625F);
-		this.outerModel = this.model;
-		this.smallOuterModel = new SulphurCubeModel(SulphurCubeModel.smallOuter().bakeRoot());
-		this.addLayer(new SulphurCubeInnerLayer(this));
+		super(context, new SulphurCubeModel(SulphurCubeModel.inner().bakeRoot()), 0.625F);
+		this.innerModel = this.model;
+		this.smallInnerModel = new SulphurCubeModel(SulphurCubeModel.smallInner().bakeRoot());
+		this.addLayer(new SulphurCubeBodyItemLayer(this));
+		this.addLayer(new SulphurCubeOuterLayer(this));
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(SulphurCube cube) {
-		return cube.getSize() <= 1 ? OUTER_SMALL : OUTER;
+		return cube.getSize() <= 1 ? INNER_SMALL : INNER;
 	}
 
 	@Override
 	protected RenderType getRenderType(SulphurCube cube, boolean visible, boolean invisibleToPlayer, boolean glowing) {
-		return RenderType.entityTranslucent(this.getTextureLocation(cube));
+		// the core hides when a block sits inside, the layers do the rest
+		return cube.hasBodyItem() ? null : RenderType.entityTranslucent(this.getTextureLocation(cube));
 	}
 
 	@Override
@@ -55,7 +58,7 @@ public class SulphurCubeRenderer extends MobRenderer<SulphurCube, SulphurCubeMod
 	@Override
 	public void render(SulphurCube cube, float yaw, float partialTick, PoseStack poseStack,
 			MultiBufferSource buffers, int packedLight) {
-		this.model = cube.getSize() <= 1 ? this.smallOuterModel : this.outerModel;
+		this.model = cube.getSize() <= 1 ? this.smallInnerModel : this.innerModel;
 		super.render(cube, yaw, partialTick, poseStack, buffers, packedLight);
 	}
 }

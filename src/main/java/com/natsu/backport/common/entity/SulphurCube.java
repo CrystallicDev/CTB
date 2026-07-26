@@ -342,7 +342,7 @@ public class SulphurCube extends Slime implements Bucketable {
 				|| pusher.getY() > cubeTop || pusherTop <= this.getY()) {
 			return;
 		}
-		Vec3 pushDirection = new Vec3(cubeToPusher.x, 0.0, cubeToPusher.z).normalize();
+		Vec3 pushDirection = new Vec3(cubeToPusher.x, 0.0, cubeToPusher.z).normalize().scale(this.massFactor());
 		float pushSpeedScale = player.isPassenger() ? VEHICLE_PUSH_SPEED_SCALE : PLAYER_PUSH_SPEED_SCALE;
 		double playerSpeed = sampleSpeed(player) * 2.0 * pushSpeedScale;
 		playerSpeed = Mth.clamp(playerSpeed, 0.0, MAX_PLAYER_PUSH_SPEED);
@@ -373,7 +373,7 @@ public class SulphurCube extends Slime implements Bucketable {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		if (this.hasBodyItem() && !source.isBypassInvul() && !source.isCreativePlayer()) {
+		if (this.hasBodyItem() && !source.isBypassInvul()) {
 			if (this.canExplode()) {
 				Entity direct = source.getDirectEntity();
 				if (source.isFire() || direct instanceof AbstractArrow arrow && arrow.isOnFire()) {
@@ -396,16 +396,21 @@ public class SulphurCube extends Slime implements Bucketable {
 		return super.hurt(source, amount);
 	}
 
+	/** The negated knockback resistance the vanilla attributes encode. */
+	private float massFactor() {
+		return Math.max(0.0F, 1.0F + this.archetype.speed);
+	}
+
 	private void hitAsBall(LivingEntity attacker, float damage) {
 		Vec3 look = attacker.getLookAngle().normalize();
-		float powerMultiplier = Mth.sqrt(damage);
+		float powerMultiplier = Mth.sqrt(damage) * this.massFactor();
 		float horizontal = this.archetype.knockbackHorizontal * powerMultiplier;
 		float vertical = this.archetype.knockbackVertical * powerMultiplier;
 		// looking down drives the ball flat, looking up pops it in the air
 		vertical += (float) Math.max(0.0, -look.y) * 0.5F * horizontal;
 		Vec3 flat = new Vec3(look.x, 0.0, look.z).normalize();
 		this.setDeltaMovement(this.getDeltaMovement()
-				.add(flat.x * horizontal * 1.6, vertical, flat.z * horizontal * 1.6));
+				.add(flat.x * horizontal, vertical, flat.z * horizontal));
 		this.hurtMarked = true;
 		this.playSound(this.archetype.hitSound.get(), 1.0F, 1.0F);
 	}
@@ -533,7 +538,7 @@ public class SulphurCube extends Slime implements Bucketable {
 	@Override
 	public void remove(Entity.RemovalReason reason) {
 		int size = this.getSize();
-		if (!this.level.isClientSide && size > 1 && this.isDeadOrDying()) {
+		if (!this.level.isClientSide && size > 1 && this.isDeadOrDying() && !this.isPrimed()) {
 			if (this.hasBodyItem()) {
 				this.spawnAtLocation(this.getBodyItem());
 				this.setBodyItem(ItemStack.EMPTY);
