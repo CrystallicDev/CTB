@@ -973,6 +973,261 @@
 			"ctbackport:block/sulfur/break7"
 		]
 	},
+	"sulfur_cube_absorb": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/absorb1",
+			"ctbackport:mob/sulfur_cube/absorb2"
+		]
+	},
+	"sulfur_cube_bouncy_hit": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/bouncy_hit1",
+			"ctbackport:mob/sulfur_cube/ball/bouncy_hit2",
+			"ctbackport:mob/sulfur_cube/ball/bouncy_hit3",
+			"ctbackport:mob/sulfur_cube/ball/bouncy_hit4"
+		]
+	},
+	"sulfur_cube_bouncy_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/bouncy_push1",
+			"ctbackport:mob/sulfur_cube/ball/bouncy_push2",
+			"ctbackport:mob/sulfur_cube/ball/bouncy_push3",
+			"ctbackport:mob/sulfur_cube/ball/bouncy_push4"
+		]
+	},
+	"sulfur_cube_death": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/death"
+		]
+	},
+	"sulfur_cube_eject": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/eject1",
+			"ctbackport:mob/sulfur_cube/eject2"
+		]
+	},
+	"sulfur_cube_explosive_hit": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/explosive_hit1",
+			"ctbackport:mob/sulfur_cube/ball/explosive_hit2",
+			"ctbackport:mob/sulfur_cube/ball/explosive_hit3",
+			"ctbackport:mob/sulfur_cube/ball/explosive_hit4"
+		]
+	},
+	"sulfur_cube_explosive_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/explosive_push1",
+			"ctbackport:mob/sulfur_cube/ball/explosive_push2",
+			"ctbackport:mob/sulfur_cube/ball/explosive_push3",
+			"ctbackport:mob/sulfur_cube/ball/explosive_push4"
+		]
+	},
+	"sulfur_cube_fast_flat_hit": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/fastflat_hit1",
+			"ctbackport:mob/sulfur_cube/ball/fastflat_hit2",
+			"ctbackport:mob/sulfur_cube/ball/fastflat_hit3",
+			"ctbackport:mob/sulfur_cube/ball/fastflat_hit4"
+		]
+	},
+	"sulfur_cube_fast_flat_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/fastflat_push1",
+			"ctbackport:mob/sulfur_cube/ball/fastflat_push2",
+			"ctbackport:mob/sulfur_cube/ball/fastflat_push3",
+			"ctbackport:mob/sulfur_cube/ball/fastflat_push4"
+		]
+	},
+	"sulfur_cube_fast_sliding_hit": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/fastsliding_hit1",
+			"ctbackport:mob/sulfur_cube/ball/fastsliding_hit2",
+			"ctbackport:mob/sulfur_cube/ball/fastsliding_hit3",
+			"ctbackport:mob/sulfur_cube/ball/fastsliding_hit4"
+		]
+	},
+	"sulfur_cube_fast_sliding_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/fastsliding_push1",
+			"ctbackport:mob/sulfur_cube/ball/fastsliding_push2",
+			"ctbackport:mob/sulfur_cube/ball/fastsliding_push3",
+			"ctbackport:mob/sulfur_cube/ball/fastsliding_push4"
+		]
+	},
+	"sulfur_cube_high_resistance_hit": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/highresistance_hit1",
+			"ctbackport:mob/sulfur_cube/ball/highresistance_hit2",
+			"ctbackport:mob/sulfur_cube/ball/highresistance_hit3",
+			"ctbackport:mob/sulfur_cube/ball/highresistance_hit4"
+		]
+	},
+	"sulfur_cube_high_resistance_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/highresistance_push1",
+			"ctbackport:mob/sulfur_cube/ball/highresistance_push2",
+			"ctbackport:mob/sulfur_cube/ball/highresistance_push3",
+			"ctbackport:mob/sulfur_cube/ball/highresistance_push4"
+		]
+	},
+	"sulfur_cube_hot_hit": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/hot_hit1",
+			"ctbackport:mob/sulfur_cube/ball/hot_hit2",
+			"ctbackport:mob/sulfur_cube/ball/hot_hit3",
+			"ctbackport:mob/sulfur_cube/ball/hot_hit4"
+		]
+	},
+	"sulfur_cube_hot_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/hot_push1",
+			"ctbackport:mob/sulfur_cube/ball/hot_push2",
+			"ctbackport:mob/sulfur_cube/ball/hot_push3",
+			"ctbackport:mob/sulfur_cube/ball/hot_push4"
+		]
+	},
+	"sulfur_cube_hurt": {
+		"sounds": [
+			"minecraft:mob/slime/hurt1"
+		]
+	},
+	"sulfur_cube_jump": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/jump1",
+			"ctbackport:mob/sulfur_cube/jump10",
+			"ctbackport:mob/sulfur_cube/jump11",
+			"ctbackport:mob/sulfur_cube/jump2",
+			"ctbackport:mob/sulfur_cube/jump3",
+			"ctbackport:mob/sulfur_cube/jump4",
+			"ctbackport:mob/sulfur_cube/jump5",
+			"ctbackport:mob/sulfur_cube/jump6",
+			"ctbackport:mob/sulfur_cube/jump7",
+			"ctbackport:mob/sulfur_cube/jump8",
+			"ctbackport:mob/sulfur_cube/jump9"
+		]
+	},
+	"sulfur_cube_light_hit": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/light_hit1",
+			"ctbackport:mob/sulfur_cube/ball/light_hit2",
+			"ctbackport:mob/sulfur_cube/ball/light_hit3",
+			"ctbackport:mob/sulfur_cube/ball/light_hit4"
+		]
+	},
+	"sulfur_cube_light_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/light_push1",
+			"ctbackport:mob/sulfur_cube/ball/light_push2",
+			"ctbackport:mob/sulfur_cube/ball/light_push3",
+			"ctbackport:mob/sulfur_cube/ball/light_push4"
+		]
+	},
+	"sulfur_cube_regular_hit": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/hit1",
+			"ctbackport:mob/sulfur_cube/ball/hit2",
+			"ctbackport:mob/sulfur_cube/ball/hit3",
+			"ctbackport:mob/sulfur_cube/ball/hit4"
+		]
+	},
+	"sulfur_cube_regular_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/push1",
+			"ctbackport:mob/sulfur_cube/ball/push2",
+			"ctbackport:mob/sulfur_cube/ball/push3",
+			"ctbackport:mob/sulfur_cube/ball/push4"
+		]
+	},
+	"sulfur_cube_slow_bouncy_hit": {
+		"sounds": [
+			"minecraft:entity/slime/attack1"
+		]
+	},
+	"sulfur_cube_slow_bouncy_push": {
+		"sounds": [
+			"minecraft:entity/slime/attack1"
+		]
+	},
+	"sulfur_cube_slow_flat_hit": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/slowflat_hit1",
+			"ctbackport:mob/sulfur_cube/ball/slowflat_hit2",
+			"ctbackport:mob/sulfur_cube/ball/slowflat_hit3",
+			"ctbackport:mob/sulfur_cube/ball/slowflat_hit4"
+		]
+	},
+	"sulfur_cube_slow_flat_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/slowflat_push1",
+			"ctbackport:mob/sulfur_cube/ball/slowflat_push2",
+			"ctbackport:mob/sulfur_cube/ball/slowflat_push3",
+			"ctbackport:mob/sulfur_cube/ball/slowflat_push4"
+		]
+	},
+	"sulfur_cube_slow_sliding_hit": {
+		"sounds": [
+			"minecraft:entity/slime/attack1"
+		]
+	},
+	"sulfur_cube_slow_sliding_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/slowsliding_push1",
+			"ctbackport:mob/sulfur_cube/ball/slowsliding_push2",
+			"ctbackport:mob/sulfur_cube/ball/slowsliding_push3",
+			"ctbackport:mob/sulfur_cube/ball/slowsliding_push4"
+		]
+	},
+	"sulfur_cube_small_death": {
+		"sounds": [
+			"minecraft:mob/slime/small_death1"
+		]
+	},
+	"sulfur_cube_small_hurt": {
+		"sounds": [
+			"minecraft:mob/slime/small_hurt1"
+		]
+	},
+	"sulfur_cube_small_jump": {
+		"sounds": [
+			"minecraft:mob/slime/small_squish2"
+		]
+	},
+	"sulfur_cube_small_squish": {
+		"sounds": [
+			"minecraft:mob/slime/small_squish1"
+		]
+	},
+	"sulfur_cube_squish": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/squish1",
+			"ctbackport:mob/sulfur_cube/squish10",
+			"ctbackport:mob/sulfur_cube/squish11",
+			"ctbackport:mob/sulfur_cube/squish2",
+			"ctbackport:mob/sulfur_cube/squish3",
+			"ctbackport:mob/sulfur_cube/squish4",
+			"ctbackport:mob/sulfur_cube/squish5",
+			"ctbackport:mob/sulfur_cube/squish6",
+			"ctbackport:mob/sulfur_cube/squish7",
+			"ctbackport:mob/sulfur_cube/squish8",
+			"ctbackport:mob/sulfur_cube/squish9"
+		]
+	},
+	"sulfur_cube_sticky_hit": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/sticky_hit1",
+			"ctbackport:mob/sulfur_cube/ball/sticky_hit2",
+			"ctbackport:mob/sulfur_cube/ball/sticky_hit3",
+			"ctbackport:mob/sulfur_cube/ball/sticky_hit4"
+		]
+	},
+	"sulfur_cube_sticky_push": {
+		"sounds": [
+			"ctbackport:mob/sulfur_cube/ball/sticky_push1",
+			"ctbackport:mob/sulfur_cube/ball/sticky_push2",
+			"ctbackport:mob/sulfur_cube/ball/sticky_push3",
+			"ctbackport:mob/sulfur_cube/ball/sticky_push4"
+		]
+	},
 	"sulfur_hit": {
 		"sounds": [
 			"ctbackport:block/sulfur/hit1",

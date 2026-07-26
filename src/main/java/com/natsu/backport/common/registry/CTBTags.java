@@ -16,6 +16,18 @@ public class CTBTags {
 	}
 
 	public static class Items {
+		public static final java.util.Map<com.natsu.backport.common.entity.SulfurCubeArchetype, TagKey<net.minecraft.world.item.Item>> SULFUR_CUBE_ARCHETYPES = buildArchetypeTags();
+
+		private static java.util.Map<com.natsu.backport.common.entity.SulfurCubeArchetype, TagKey<net.minecraft.world.item.Item>> buildArchetypeTags() {
+			java.util.EnumMap<com.natsu.backport.common.entity.SulfurCubeArchetype, TagKey<net.minecraft.world.item.Item>> map =
+					new java.util.EnumMap<>(com.natsu.backport.common.entity.SulfurCubeArchetype.class);
+			for (com.natsu.backport.common.entity.SulfurCubeArchetype archetype : com.natsu.backport.common.entity.SulfurCubeArchetype.values()) {
+				map.put(archetype, TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID,
+						"sulfur_cube_archetype_" + archetype.name().toLowerCase(java.util.Locale.ROOT))));
+			}
+			return map;
+		}
+
 		public static final TagKey<net.minecraft.world.item.Item> NAUTILUS_FOOD = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "nautilus_food"));
 		public static final TagKey<net.minecraft.world.item.Item> NAUTILUS_TAMING_ITEMS = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "nautilus_taming_items"));
 		public static final TagKey<net.minecraft.world.item.Item> NAUTILUS_BUCKET_FOOD = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "nautilus_bucket_food"));

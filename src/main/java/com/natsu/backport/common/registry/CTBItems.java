@@ -86,14 +86,14 @@ public class CTBItems {
 			new com.natsu.backport.common.item.NautilusArmorItem(19, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).fireResistant())
 			);
 
-	public static final RegistryObject<Item> SULPHUR_CUBE_BUCKET = ITEMS.register("sulphur_cube_bucket", () ->
+	public static final RegistryObject<Item> SULPHUR_CUBE_BUCKET = ITEMS.register("sulfur_cube_bucket", () ->
 			new net.minecraft.world.item.MobBucketItem(
 					com.natsu.backport.common.registry.CTBEntities.SULPHUR_CUBE,
 					() -> net.minecraft.world.level.material.Fluids.WATER,
 					() -> net.minecraft.sounds.SoundEvents.BUCKET_EMPTY_FISH,
 					new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1))
 			);
-	public static final RegistryObject<Item> SULPHUR_CUBE_SPAWN_EGG = ITEMS.register("sulphur_cube_spawn_egg", () ->
+	public static final RegistryObject<Item> SULPHUR_CUBE_SPAWN_EGG = ITEMS.register("sulfur_cube_spawn_egg", () ->
 			new net.minecraftforge.common.ForgeSpawnEggItem(
 					com.natsu.backport.common.registry.CTBEntities.SULPHUR_CUBE,
 					0xE8D24A, 0xB08F1F,

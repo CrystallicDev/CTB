@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/mossy_carpet_side",
+  "parent": "ctbackport:block/mossy_carpet_side",
   "textures": {
     "side": "ctbackport:block/pale_moss_carpet_side_small"
   }
