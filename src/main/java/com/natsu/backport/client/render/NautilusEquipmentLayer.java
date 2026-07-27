@@ -41,8 +41,12 @@ public class NautilusEquipmentLayer extends AbstractLayerGeo<AbstractNautilus> {
 							"textures/entity/nautilus/armor_" + material + ".png")));
 		}
 		if (nautilus.isSaddled()) {
+			// the saddle sits above the armor : slightly inflated so both stay visible
+			poseStack.pushPose();
+			poseStack.scale(1.02F, 1.02F, 1.02F);
 			reRenderCurrentModelInRenderer(nautilus, partialTick, poseStack, bufferSource, packedLight,
 					RenderType.entityCutoutNoCull(SADDLE));
+			poseStack.popPose();
 		}
 	}
 }
