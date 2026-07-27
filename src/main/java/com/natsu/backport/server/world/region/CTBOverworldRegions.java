@@ -72,5 +72,16 @@ public class CTBOverworldRegions extends Region {
 		    0,
 		    CTBBiomes.PALE_GARDEN);
 
+		// 26.2 : underground, coast to inland, heavily eroded, low weirdness band
+		this.addBiome(mapper,
+		    Climate.Parameter.span(-1.0F, 1.0F),
+		    Climate.Parameter.span(-1.0F, 1.0F),
+		    Climate.Parameter.span(-0.19F, 0.55F),
+		    Climate.Parameter.span(0.45F, 1.0F),
+		    Depth.UNDERGROUND.parameter(),
+		    Climate.Parameter.span(-1.1F, -0.85F),
+		    0,
+		    CTBBiomes.SULFUR_CAVES);
+
     }
 }

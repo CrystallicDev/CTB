@@ -13,6 +13,7 @@ public class CTBBiomes {
 
     public static final ResourceKey<Biome> CHERRY_GROVE = register("cherry_grove");
     public static final ResourceKey<Biome> PALE_GARDEN = register("pale_garden");
+    public static final ResourceKey<Biome> SULFUR_CAVES = register("sulfur_caves");
 
     private static ResourceKey<Biome> register(String name) {
         return ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(CTBackport.MODID, name));

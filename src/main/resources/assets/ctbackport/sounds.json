@@ -1,1566 +1,1594 @@
 {
-	"armor_equip_copper": {
-		"sounds": [
-			"ctbackport:item/armor/equip_copper1",
-			"ctbackport:item/armor/equip_copper2",
-			"ctbackport:item/armor/equip_copper3",
-			"ctbackport:item/armor/equip_copper4",
-			"ctbackport:item/armor/equip_copper5",
-			"ctbackport:item/armor/equip_copper6"
-		],
-		"subtitle": "subtitles.item.armor.equip_copper"
-	},
-	"bogged_ambient": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/bogged/ambient1",
-			"ctbackport:entity/bogged/ambient2",
-			"ctbackport:entity/bogged/ambient3",
-			"ctbackport:entity/bogged/ambient4"
-		]
-	},
-	"bogged_death": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/bogged/death"
-		]
-	},
-	"bogged_hurt": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/bogged/hurt1",
-			"ctbackport:entity/bogged/hurt2",
-			"ctbackport:entity/bogged/hurt3",
-			"ctbackport:entity/bogged/hurt4"
-		]
-	},
-	"bogged_step": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/bogged/step1",
-			"ctbackport:entity/bogged/step2",
-			"ctbackport:entity/bogged/step3",
-			"ctbackport:entity/bogged/step4"
-		]
-	},
-	"breeze_death": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/breeze/breeze_death1",
-			"ctbackport:entity/breeze/breeze_death2"
-		]
-	},
-	"breeze_deflect": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/breeze/breeze_deflect1",
-			"ctbackport:entity/breeze/breeze_deflect2",
-			"ctbackport:entity/breeze/breeze_deflect3"
-		]
-	},
-	"breeze_hurt": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/breeze/breeze_hurt1",
-			"ctbackport:entity/breeze/breeze_hurt2",
-			"ctbackport:entity/breeze/breeze_hurt3"
-		]
-	},
-	"breeze_idle_air": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/breeze/breeze_idle_air1",
-			"ctbackport:entity/breeze/breeze_idle_air2",
-			"ctbackport:entity/breeze/breeze_idle_air3",
-			"ctbackport:entity/breeze/breeze_idle_air4"
-		]
-	},
-	"breeze_idle_ground": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/breeze/breeze_idle_ground1",
-			"ctbackport:entity/breeze/breeze_idle_ground2",
-			"ctbackport:entity/breeze/breeze_idle_ground3",
-			"ctbackport:entity/breeze/breeze_idle_ground4"
-		]
-	},
-	"breeze_jump": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/breeze/breeze_jump1",
-			"ctbackport:entity/breeze/breeze_jump2"
-		]
-	},
-	"breeze_land": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/breeze/breeze_land1",
-			"ctbackport:entity/breeze/breeze_land2"
-		]
-	},
-	"breeze_shoot": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/breeze/breeze_shoot"
-		]
-	},
-	"breeze_slide": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/breeze/breeze_slide1",
-			"ctbackport:entity/breeze/breeze_slide2",
-			"ctbackport:entity/breeze/breeze_slide3",
-			"ctbackport:entity/breeze/breeze_slide4"
-		]
-	},
-	"breeze_whirl": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/breeze/breeze_whirl1",
-			"ctbackport:entity/breeze/breeze_whirl2",
-			"ctbackport:entity/breeze/breeze_whirl3",
-			"ctbackport:entity/breeze/breeze_whirl4",
-			"ctbackport:entity/breeze/breeze_whirl5"
-		]
-	},
-	"cinnabar_break": {
-		"sounds": [
-			"ctbackport:block/cinnabar/break1",
-			"ctbackport:block/cinnabar/break2",
-			"ctbackport:block/cinnabar/break3",
-			"ctbackport:block/cinnabar/break4",
-			"ctbackport:block/cinnabar/break5",
-			"ctbackport:block/cinnabar/break6",
-			"ctbackport:block/cinnabar/break7"
-		]
-	},
-	"cinnabar_hit": {
-		"sounds": [
-			"ctbackport:block/cinnabar/hit1",
-			"ctbackport:block/cinnabar/hit2",
-			"ctbackport:block/cinnabar/hit3",
-			"ctbackport:block/cinnabar/hit4",
-			"ctbackport:block/cinnabar/hit5",
-			"ctbackport:block/cinnabar/hit6",
-			"ctbackport:block/cinnabar/hit7"
-		]
-	},
-	"cinnabar_place": {
-		"sounds": [
-			"ctbackport:block/cinnabar/place1",
-			"ctbackport:block/cinnabar/place2",
-			"ctbackport:block/cinnabar/place3",
-			"ctbackport:block/cinnabar/place4",
-			"ctbackport:block/cinnabar/place5",
-			"ctbackport:block/cinnabar/place6",
-			"ctbackport:block/cinnabar/place7"
-		]
-	},
-	"cinnabar_step": {
-		"sounds": [
-			"ctbackport:block/cinnabar/step1",
-			"ctbackport:block/cinnabar/step2",
-			"ctbackport:block/cinnabar/step3",
-			"ctbackport:block/cinnabar/step4",
-			"ctbackport:block/cinnabar/step5",
-			"ctbackport:block/cinnabar/step6",
-			"ctbackport:block/cinnabar/step7"
-		]
-	},
-	"copper_bulb_turn": {
-		"category": "block",
-		"sounds": [
-			{
-				"name": "ctbackport:block/copper_bulb/toggle",
-				"pitch": 1.1
-			}
-		]
-	},
-	"copper_bulb_turn_off": {
-		"category": "block",
-		"sounds": [
-			{
-				"name": "ctbackport:block/copper_bulb/toggle",
-				"pitch": 0.9
-			}
-		]
-	},
-	"copper_chest_close": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/copper_chest/copper_chest_close1",
-			"ctbackport:block/copper_chest/copper_chest_close2",
-			"ctbackport:block/copper_chest/copper_chest_close3"
-		]
-	},
-	"copper_chest_open": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/copper_chest/copper_chest_open1",
-			"ctbackport:block/copper_chest/copper_chest_open2",
-			"ctbackport:block/copper_chest/copper_chest_open3"
-		]
-	},
-	"copper_chest_oxidized_close": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/copper_chest/copper_chest_oxidized_close1",
-			"ctbackport:block/copper_chest/copper_chest_oxidized_close2",
-			"ctbackport:block/copper_chest/copper_chest_oxidized_close3"
-		]
-	},
-	"copper_chest_oxidized_open": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/copper_chest/copper_chest_oxidized_open1",
-			"ctbackport:block/copper_chest/copper_chest_oxidized_open2",
-			"ctbackport:block/copper_chest/copper_chest_oxidized_open3"
-		]
-	},
-	"copper_chest_weathered_close": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/copper_chest/copper_chest_weathered_close1",
-			"ctbackport:block/copper_chest/copper_chest_weathered_close2",
-			"ctbackport:block/copper_chest/copper_chest_weathered_close3"
-		]
-	},
-	"copper_chest_weathered_open": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/copper_chest/copper_chest_weathered_open1",
-			"ctbackport:block/copper_chest/copper_chest_weathered_open2",
-			"ctbackport:block/copper_chest/copper_chest_weathered_open3"
-		]
-	},
-	"copper_golem_item_drop": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/item_drop"
-		]
-	},
-	"copper_golem_item_no_drop": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/item_no_drop"
-		]
-	},
-	"copper_golem_no_item_get": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/no_item_get"
-		]
-	},
-	"copper_golem_no_item_no_get": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/no_item_no_get"
-		]
-	},
-	"copper_golem_oxidized_death": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/oxidized/death"
-		]
-	},
-	"copper_golem_oxidized_hurt": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/oxidized/hurt1",
-			"ctbackport:entity/copper_golem/oxidized/hurt2",
-			"ctbackport:entity/copper_golem/oxidized/hurt3",
-			"ctbackport:entity/copper_golem/oxidized/hurt4"
-		]
-	},
-	"copper_golem_oxidized_spin": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/oxidized/spin1",
-			"ctbackport:entity/copper_golem/oxidized/spin2",
-			"ctbackport:entity/copper_golem/oxidized/spin3",
-			"ctbackport:entity/copper_golem/oxidized/spin4",
-			"ctbackport:entity/copper_golem/oxidized/spin5",
-			"ctbackport:entity/copper_golem/oxidized/spin6",
-			"ctbackport:entity/copper_golem/oxidized/spin7"
-		]
-	},
-	"copper_golem_oxidized_step": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/oxidized/step1",
-			"ctbackport:entity/copper_golem/oxidized/step2",
-			"ctbackport:entity/copper_golem/oxidized/step3",
-			"ctbackport:entity/copper_golem/oxidized/step4",
-			"ctbackport:entity/copper_golem/oxidized/step5",
-			"ctbackport:entity/copper_golem/oxidized/step6",
-			"ctbackport:entity/copper_golem/oxidized/step7",
-			"ctbackport:entity/copper_golem/oxidized/step8",
-			"ctbackport:entity/copper_golem/oxidized/step9"
-		]
-	},
-	"copper_golem_regular_death": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/regular/death"
-		]
-	},
-	"copper_golem_regular_hurt": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/regular/hurt1",
-			"ctbackport:entity/copper_golem/regular/hurt2",
-			"ctbackport:entity/copper_golem/regular/hurt3",
-			"ctbackport:entity/copper_golem/regular/hurt4"
-		]
-	},
-	"copper_golem_regular_spin": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/regular/spin1",
-			"ctbackport:entity/copper_golem/regular/spin2",
-			"ctbackport:entity/copper_golem/regular/spin3",
-			"ctbackport:entity/copper_golem/regular/spin4",
-			"ctbackport:entity/copper_golem/regular/spin5",
-			"ctbackport:entity/copper_golem/regular/spin6",
-			"ctbackport:entity/copper_golem/regular/spin7"
-		]
-	},
-	"copper_golem_regular_step": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/regular/step1",
-			"ctbackport:entity/copper_golem/regular/step2",
-			"ctbackport:entity/copper_golem/regular/step3",
-			"ctbackport:entity/copper_golem/regular/step4",
-			"ctbackport:entity/copper_golem/regular/step5",
-			"ctbackport:entity/copper_golem/regular/step6",
-			"ctbackport:entity/copper_golem/regular/step7",
-			"ctbackport:entity/copper_golem/regular/step8",
-			"ctbackport:entity/copper_golem/regular/step9"
-		]
-	},
-	"copper_golem_spawn": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/spawn"
-		]
-	},
-	"copper_golem_weathered_death": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/weathered/death"
-		]
-	},
-	"copper_golem_weathered_hurt": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/weathered/hurt1",
-			"ctbackport:entity/copper_golem/weathered/hurt2",
-			"ctbackport:entity/copper_golem/weathered/hurt3",
-			"ctbackport:entity/copper_golem/weathered/hurt4"
-		]
-	},
-	"copper_golem_weathered_spin": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/weathered/spin1",
-			"ctbackport:entity/copper_golem/weathered/spin2",
-			"ctbackport:entity/copper_golem/weathered/spin3",
-			"ctbackport:entity/copper_golem/weathered/spin4",
-			"ctbackport:entity/copper_golem/weathered/spin5",
-			"ctbackport:entity/copper_golem/weathered/spin6",
-			"ctbackport:entity/copper_golem/weathered/spin7"
-		]
-	},
-	"copper_golem_weathered_step": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/copper_golem/weathered/step1",
-			"ctbackport:entity/copper_golem/weathered/step2",
-			"ctbackport:entity/copper_golem/weathered/step3",
-			"ctbackport:entity/copper_golem/weathered/step4",
-			"ctbackport:entity/copper_golem/weathered/step5",
-			"ctbackport:entity/copper_golem/weathered/step6",
-			"ctbackport:entity/copper_golem/weathered/step7",
-			"ctbackport:entity/copper_golem/weathered/step8",
-			"ctbackport:entity/copper_golem/weathered/step9"
-		]
-	},
-	"creaking_activate": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_activate"
-		]
-	},
-	"creaking_ambiant": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_idle1",
-			"ctbackport:entity/creaking/creaking_idle2",
-			"ctbackport:entity/creaking/creaking_idle3",
-			"ctbackport:entity/creaking/creaking_idle4",
-			"ctbackport:entity/creaking/creaking_idle5",
-			"ctbackport:entity/creaking/creaking_idle6"
-		]
-	},
-	"creaking_attack": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_attack1",
-			"ctbackport:entity/creaking/creaking_attack2",
-			"ctbackport:entity/creaking/creaking_attack3",
-			"ctbackport:entity/creaking/creaking_attack4"
-		]
-	},
-	"creaking_deactivate": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_deactivate"
-		]
-	},
-	"creaking_death": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_death"
-		]
-	},
-	"creaking_freeze": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_freeze1",
-			"ctbackport:entity/creaking/creaking_freeze2"
-		]
-	},
-	"creaking_heart_hurt": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/creaking_heart/trail1",
-			"ctbackport:block/creaking_heart/trail2",
-			"ctbackport:block/creaking_heart/trail3",
-			"ctbackport:block/creaking_heart/trail4",
-			"ctbackport:block/creaking_heart/trail5",
-			"ctbackport:block/creaking_heart/trail6",
-			"ctbackport:block/creaking_heart/trail7"
-		]
-	},
-	"creaking_heart_idle": {
-		"category": "ambient",
-		"sounds": [
-			"ctbackport:block/creaking_heart/creaking_heart_idle1",
-			"ctbackport:block/creaking_heart/creaking_heart_idle2",
-			"ctbackport:block/creaking_heart/creaking_heart_idle3",
-			"ctbackport:block/creaking_heart/creaking_heart_idle4"
-		]
-	},
-	"creaking_heart_spawn": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/creaking_heart/creaking_heart_spawnmob"
-		]
-	},
-	"creaking_spawn": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_spawn"
-		]
-	},
-	"creaking_step": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_step1",
-			"ctbackport:entity/creaking/creaking_step2",
-			"ctbackport:entity/creaking/creaking_step3",
-			"ctbackport:entity/creaking/creaking_step4"
-		]
-	},
-	"creaking_sway": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_sway1",
-			"ctbackport:entity/creaking/creaking_sway2",
-			"ctbackport:entity/creaking/creaking_sway3"
-		]
-	},
-	"creaking_twitch": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_twitch"
-		]
-	},
-	"creaking_unfreeze": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/creaking/creaking_unfreeze1",
-			"ctbackport:entity/creaking/creaking_unfreeze2",
-			"ctbackport:entity/creaking/creaking_unfreeze3"
-		]
-	},
-	"eyeblossom_close": {
-		"category": "ambient",
-		"sounds": [
-			"ctbackport:block/eyeblossom/eyeblossom_close1",
-			"ctbackport:block/eyeblossom/eyeblossom_close2",
-			"ctbackport:block/eyeblossom/eyeblossom_close3"
-		]
-	},
-	"eyeblossom_close_long": {
-		"category": "ambient",
-		"sounds": [
-			"ctbackport:block/eyeblossom/eyeblossom_close_long"
-		]
-	},
-	"eyeblossom_idle": {
-		"category": "ambient",
-		"sounds": [
-			"ctbackport:block/eyeblossom/eyeblossom_idle1",
-			"ctbackport:block/eyeblossom/eyeblossom_idle2",
-			"ctbackport:block/eyeblossom/eyeblossom_idle3",
-			"ctbackport:block/eyeblossom/eyeblossom_idle4",
-			"ctbackport:block/eyeblossom/eyeblossom_idle5",
-			"ctbackport:block/eyeblossom/eyeblossom_idle6"
-		]
-	},
-	"eyeblossom_open": {
-		"category": "ambient",
-		"sounds": [
-			"ctbackport:block/eyeblossom/eyeblossom_open1",
-			"ctbackport:block/eyeblossom/eyeblossom_open2",
-			"ctbackport:block/eyeblossom/eyeblossom_open3",
-			"ctbackport:block/eyeblossom/eyeblossom_open4"
-		]
-	},
-	"eyeblossom_open_long": {
-		"category": "ambient",
-		"sounds": [
-			"ctbackport:block/eyeblossom/eyeblossom_open_long"
-		]
-	},
-	"firefly_bush_idle": {
-		"sounds": [
-			"ctbackport:block/firefly_bush/firefly_bush1",
-			"ctbackport:block/firefly_bush/firefly_bush10",
-			"ctbackport:block/firefly_bush/firefly_bush11",
-			"ctbackport:block/firefly_bush/firefly_bush2",
-			"ctbackport:block/firefly_bush/firefly_bush3",
-			"ctbackport:block/firefly_bush/firefly_bush4",
-			"ctbackport:block/firefly_bush/firefly_bush5",
-			"ctbackport:block/firefly_bush/firefly_bush6",
-			"ctbackport:block/firefly_bush/firefly_bush7",
-			"ctbackport:block/firefly_bush/firefly_bush8",
-			"ctbackport:block/firefly_bush/firefly_bush9"
-		],
-		"subtitle": "subtitles.block.firefly_bush.idle"
-	},
-	"geyser_continuous_active": {
-		"sounds": [
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active1",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active2",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active3",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active4",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active5",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active6",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption_active7"
-		]
-	},
-	"geyser_continuous_start": {
-		"sounds": [
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption1",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption2",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption3",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption4",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption5",
-			"ctbackport:block/potent_sulfur/geyser_continuous/eruption6"
-		]
-	},
-	"geyser_eruption_active": {
-		"sounds": [
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active1",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active2",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active3",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active4",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active5",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active6",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active7",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption_active8"
-		]
-	},
-	"geyser_eruption_start": {
-		"sounds": [
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption1",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption2",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption3",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption4",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption5",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption6",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption7",
-			"ctbackport:block/potent_sulfur/sulfur_spring/eruption8"
-		]
-	},
-	"mace_smash_air": {
-		"category": "player",
-		"sounds": [
-			"ctbackport:item/mace/smash_air1",
-			"ctbackport:item/mace/smash_air2",
-			"ctbackport:item/mace/smash_air3"
-		]
-	},
-	"mace_smash_ground": {
-		"category": "player",
-		"sounds": [
-			"ctbackport:item/mace/smash_ground1",
-			"ctbackport:item/mace/smash_ground2",
-			"ctbackport:item/mace/smash_ground3",
-			"ctbackport:item/mace/smash_ground4"
-		]
-	},
-	"mace_smash_ground_heavy": {
-		"category": "player",
-		"sounds": [
-			"ctbackport:item/mace/smash_ground_heavy"
-		]
-	},
-	"music_disc_bounce": {
-		"sounds": [
-			{
-				"name": "ctbackport:records/bounce",
-				"stream": true
-			}
-		]
-	},
-	"music_disc_creator": {
-		"sounds": [
-			{
-				"name": "ctbackport:records/creator",
-				"stream": true
-			}
-		]
-	},
-	"music_disc_creator_music_box": {
-		"sounds": [
-			{
-				"name": "ctbackport:records/creator_music_box",
-				"stream": true
-			}
-		]
-	},
-	"music_disc_precipice": {
-		"sounds": [
-			{
-				"name": "ctbackport:records/precipice",
-				"stream": true
-			}
-		]
-	},
-	"nautilus_ambient": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/ambient1",
-			"ctbackport:entity/nautilus/ambient2",
-			"ctbackport:entity/nautilus/ambient3",
-			"ctbackport:entity/nautilus/ambient4",
-			"ctbackport:entity/nautilus/ambient5",
-			"ctbackport:entity/nautilus/ambient6",
-			"ctbackport:entity/nautilus/ambient7",
-			"ctbackport:entity/nautilus/ambient8"
-		]
-	},
-	"nautilus_ambient_land": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/ambient_land1",
-			"ctbackport:entity/nautilus/ambient_land2",
-			"ctbackport:entity/nautilus/ambient_land3",
-			"ctbackport:entity/nautilus/ambient_land4",
-			"ctbackport:entity/nautilus/ambient_land5",
-			"ctbackport:entity/nautilus/ambient_land6",
-			"ctbackport:entity/nautilus/ambient_land7"
-		]
-	},
-	"nautilus_dash": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/dash1",
-			"ctbackport:entity/nautilus/dash2",
-			"ctbackport:entity/nautilus/dash3",
-			"ctbackport:entity/nautilus/dash4"
-		]
-	},
-	"nautilus_dash_land": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/dash_land1",
-			"ctbackport:entity/nautilus/dash_land2",
-			"ctbackport:entity/nautilus/dash_land3",
-			"ctbackport:entity/nautilus/dash_land4"
-		]
-	},
-	"nautilus_dash_ready": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/dash_ready1",
-			"ctbackport:entity/nautilus/dash_ready2",
-			"ctbackport:entity/nautilus/dash_ready3"
-		]
-	},
-	"nautilus_dash_ready_land": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/dash_ready_land1",
-			"ctbackport:entity/nautilus/dash_ready_land2",
-			"ctbackport:entity/nautilus/dash_ready_land3",
-			"ctbackport:entity/nautilus/dash_ready_land4"
-		]
-	},
-	"nautilus_death": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/death"
-		]
-	},
-	"nautilus_death_land": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/death_land"
-		]
-	},
-	"nautilus_eat": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/eat1",
-			"ctbackport:entity/nautilus/eat2"
-		]
-	},
-	"nautilus_hurt": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/hurt1",
-			"ctbackport:entity/nautilus/hurt2",
-			"ctbackport:entity/nautilus/hurt3",
-			"ctbackport:entity/nautilus/hurt4"
-		]
-	},
-	"nautilus_hurt_land": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/hurt_land1",
-			"ctbackport:entity/nautilus/hurt_land2",
-			"ctbackport:entity/nautilus/hurt_land3",
-			"ctbackport:entity/nautilus/hurt_land4"
-		]
-	},
-	"nautilus_saddle_equip": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/nautilus_saddle_equip"
-		]
-	},
-	"nautilus_saddle_underwater_equip": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/nautilus/nautilus_saddle_underwater_equip"
-		]
-	},
-	"noxious_gas": {
-		"sounds": [
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient1",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient10",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient11",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient12",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient13",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient14",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient2",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient3",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient4",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient5",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient6",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient7",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient8",
-			"ctbackport:block/potent_sulfur/noxious_gas/ambient9"
-		]
-	},
-	"parched_ambient": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/parched/ambient1",
-			"ctbackport:entity/parched/ambient2",
-			"ctbackport:entity/parched/ambient3",
-			"ctbackport:entity/parched/ambient4"
-		]
-	},
-	"parched_death": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/parched/death"
-		]
-	},
-	"parched_hurt": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/parched/hurt1",
-			"ctbackport:entity/parched/hurt2",
-			"ctbackport:entity/parched/hurt3",
-			"ctbackport:entity/parched/hurt4"
-		]
-	},
-	"parched_step": {
-		"category": "hostile",
-		"sounds": [
-			"ctbackport:entity/parched/step1",
-			"ctbackport:entity/parched/step2",
-			"ctbackport:entity/parched/step3",
-			"ctbackport:entity/parched/step4"
-		]
-	},
-	"potent_sulfur_break": {
-		"sounds": [
-			"ctbackport:block/potent_sulfur/break1",
-			"ctbackport:block/potent_sulfur/break2",
-			"ctbackport:block/potent_sulfur/break3",
-			"ctbackport:block/potent_sulfur/break4",
-			"ctbackport:block/potent_sulfur/break5",
-			"ctbackport:block/potent_sulfur/break6",
-			"ctbackport:block/potent_sulfur/break7"
-		]
-	},
-	"potent_sulfur_hit": {
-		"sounds": [
-			"ctbackport:block/potent_sulfur/hit1",
-			"ctbackport:block/potent_sulfur/hit2",
-			"ctbackport:block/potent_sulfur/hit3",
-			"ctbackport:block/potent_sulfur/hit4",
-			"ctbackport:block/potent_sulfur/hit5",
-			"ctbackport:block/potent_sulfur/hit6",
-			"ctbackport:block/potent_sulfur/hit7"
-		]
-	},
-	"potent_sulfur_place": {
-		"sounds": [
-			"ctbackport:block/potent_sulfur/place1",
-			"ctbackport:block/potent_sulfur/place2",
-			"ctbackport:block/potent_sulfur/place3",
-			"ctbackport:block/potent_sulfur/place4",
-			"ctbackport:block/potent_sulfur/place5",
-			"ctbackport:block/potent_sulfur/place6",
-			"ctbackport:block/potent_sulfur/place7",
-			"ctbackport:block/potent_sulfur/place8"
-		]
-	},
-	"potent_sulfur_step": {
-		"sounds": [
-			"ctbackport:block/potent_sulfur/step1",
-			"ctbackport:block/potent_sulfur/step2",
-			"ctbackport:block/potent_sulfur/step3",
-			"ctbackport:block/potent_sulfur/step4",
-			"ctbackport:block/potent_sulfur/step5",
-			"ctbackport:block/potent_sulfur/step6",
-			"ctbackport:block/potent_sulfur/step7"
-		]
-	},
-	"resin_place": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/resin/resin_place1",
-			"ctbackport:block/resin/resin_place2",
-			"ctbackport:block/resin/resin_place3",
-			"ctbackport:block/resin/resin_place4"
-		]
-	},
-	"shelf_activate": {
-		"sounds": [
-			"ctbackport:block/shelf/activate1",
-			"ctbackport:block/shelf/activate2",
-			"ctbackport:block/shelf/activate3"
-		]
-	},
-	"shelf_deactivate": {
-		"sounds": [
-			"ctbackport:block/shelf/deactivate1",
-			"ctbackport:block/shelf/deactivate2",
-			"ctbackport:block/shelf/deactivate3"
-		]
-	},
-	"shelf_multi_swap": {
-		"sounds": [
-			"ctbackport:block/shelf/multi_swap1",
-			"ctbackport:block/shelf/multi_swap2",
-			"ctbackport:block/shelf/multi_swap3"
-		]
-	},
-	"shelf_place_item": {
-		"sounds": [
-			"ctbackport:block/shelf/place_item1",
-			"ctbackport:block/shelf/place_item2",
-			"ctbackport:block/shelf/place_item3",
-			"ctbackport:block/shelf/place_item4"
-		]
-	},
-	"shelf_single_swap": {
-		"sounds": [
-			"ctbackport:block/shelf/single_swap1",
-			"ctbackport:block/shelf/single_swap2",
-			"ctbackport:block/shelf/single_swap3",
-			"ctbackport:block/shelf/single_swap4"
-		]
-	},
-	"shelf_take_item": {
-		"sounds": [
-			"ctbackport:block/shelf/place_item1",
-			"ctbackport:block/shelf/place_item2",
-			"ctbackport:block/shelf/place_item3",
-			"ctbackport:block/shelf/place_item4"
-		]
-	},
-	"spear_attack": {
-		"category": "player",
-		"sounds": [
-			"ctbackport:item/spear/attack1",
-			"ctbackport:item/spear/attack2",
-			"ctbackport:item/spear/attack3"
-		]
-	},
-	"spear_hit": {
-		"category": "player",
-		"sounds": [
-			"ctbackport:item/spear/hit1",
-			"ctbackport:item/spear/hit2",
-			"ctbackport:item/spear/hit3"
-		]
-	},
-	"spear_lunge": {
-		"category": "player",
-		"sounds": [
-			"ctbackport:item/spear/lunge1",
-			"ctbackport:item/spear/lunge2",
-			"ctbackport:item/spear/lunge3"
-		]
-	},
-	"spear_use": {
-		"category": "player",
-		"sounds": [
-			"ctbackport:item/spear/use"
-		]
-	},
-	"spear_wood_attack": {
-		"category": "player",
-		"sounds": [
-			"ctbackport:item/spear/wood/attack1",
-			"ctbackport:item/spear/wood/attack2",
-			"ctbackport:item/spear/wood/attack3"
-		]
-	},
-	"spear_wood_hit": {
-		"category": "player",
-		"sounds": [
-			"ctbackport:item/spear/wood/hit1",
-			"ctbackport:item/spear/wood/hit2",
-			"ctbackport:item/spear/wood/hit3"
-		]
-	},
-	"spear_wood_use": {
-		"category": "player",
-		"sounds": [
-			"ctbackport:item/spear/wood/use"
-		]
-	},
-	"sulfur_break": {
-		"sounds": [
-			"ctbackport:block/sulfur/break1",
-			"ctbackport:block/sulfur/break2",
-			"ctbackport:block/sulfur/break3",
-			"ctbackport:block/sulfur/break4",
-			"ctbackport:block/sulfur/break5",
-			"ctbackport:block/sulfur/break6",
-			"ctbackport:block/sulfur/break7"
-		]
-	},
-	"sulfur_cube_absorb": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/absorb1",
-			"ctbackport:mob/sulfur_cube/absorb2"
-		]
-	},
-	"sulfur_cube_bouncy_hit": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/bouncy_hit1",
-			"ctbackport:mob/sulfur_cube/ball/bouncy_hit2",
-			"ctbackport:mob/sulfur_cube/ball/bouncy_hit3",
-			"ctbackport:mob/sulfur_cube/ball/bouncy_hit4"
-		]
-	},
-	"sulfur_cube_bouncy_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/bouncy_push1",
-			"ctbackport:mob/sulfur_cube/ball/bouncy_push2",
-			"ctbackport:mob/sulfur_cube/ball/bouncy_push3",
-			"ctbackport:mob/sulfur_cube/ball/bouncy_push4"
-		]
-	},
-	"sulfur_cube_death": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/death"
-		]
-	},
-	"sulfur_cube_eject": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/eject1",
-			"ctbackport:mob/sulfur_cube/eject2"
-		]
-	},
-	"sulfur_cube_explosive_hit": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/explosive_hit1",
-			"ctbackport:mob/sulfur_cube/ball/explosive_hit2",
-			"ctbackport:mob/sulfur_cube/ball/explosive_hit3",
-			"ctbackport:mob/sulfur_cube/ball/explosive_hit4"
-		]
-	},
-	"sulfur_cube_explosive_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/explosive_push1",
-			"ctbackport:mob/sulfur_cube/ball/explosive_push2",
-			"ctbackport:mob/sulfur_cube/ball/explosive_push3",
-			"ctbackport:mob/sulfur_cube/ball/explosive_push4"
-		]
-	},
-	"sulfur_cube_fast_flat_hit": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/fastflat_hit1",
-			"ctbackport:mob/sulfur_cube/ball/fastflat_hit2",
-			"ctbackport:mob/sulfur_cube/ball/fastflat_hit3",
-			"ctbackport:mob/sulfur_cube/ball/fastflat_hit4"
-		]
-	},
-	"sulfur_cube_fast_flat_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/fastflat_push1",
-			"ctbackport:mob/sulfur_cube/ball/fastflat_push2",
-			"ctbackport:mob/sulfur_cube/ball/fastflat_push3",
-			"ctbackport:mob/sulfur_cube/ball/fastflat_push4"
-		]
-	},
-	"sulfur_cube_fast_sliding_hit": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/fastsliding_hit1",
-			"ctbackport:mob/sulfur_cube/ball/fastsliding_hit2",
-			"ctbackport:mob/sulfur_cube/ball/fastsliding_hit3",
-			"ctbackport:mob/sulfur_cube/ball/fastsliding_hit4"
-		]
-	},
-	"sulfur_cube_fast_sliding_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/fastsliding_push1",
-			"ctbackport:mob/sulfur_cube/ball/fastsliding_push2",
-			"ctbackport:mob/sulfur_cube/ball/fastsliding_push3",
-			"ctbackport:mob/sulfur_cube/ball/fastsliding_push4"
-		]
-	},
-	"sulfur_cube_high_resistance_hit": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/highresistance_hit1",
-			"ctbackport:mob/sulfur_cube/ball/highresistance_hit2",
-			"ctbackport:mob/sulfur_cube/ball/highresistance_hit3",
-			"ctbackport:mob/sulfur_cube/ball/highresistance_hit4"
-		]
-	},
-	"sulfur_cube_high_resistance_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/highresistance_push1",
-			"ctbackport:mob/sulfur_cube/ball/highresistance_push2",
-			"ctbackport:mob/sulfur_cube/ball/highresistance_push3",
-			"ctbackport:mob/sulfur_cube/ball/highresistance_push4"
-		]
-	},
-	"sulfur_cube_hot_hit": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/hot_hit1",
-			"ctbackport:mob/sulfur_cube/ball/hot_hit2",
-			"ctbackport:mob/sulfur_cube/ball/hot_hit3",
-			"ctbackport:mob/sulfur_cube/ball/hot_hit4"
-		]
-	},
-	"sulfur_cube_hot_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/hot_push1",
-			"ctbackport:mob/sulfur_cube/ball/hot_push2",
-			"ctbackport:mob/sulfur_cube/ball/hot_push3",
-			"ctbackport:mob/sulfur_cube/ball/hot_push4"
-		]
-	},
-	"sulfur_cube_hurt": {
-		"sounds": [
-			"minecraft:mob/slime/hurt1"
-		]
-	},
-	"sulfur_cube_jump": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/jump1",
-			"ctbackport:mob/sulfur_cube/jump10",
-			"ctbackport:mob/sulfur_cube/jump11",
-			"ctbackport:mob/sulfur_cube/jump2",
-			"ctbackport:mob/sulfur_cube/jump3",
-			"ctbackport:mob/sulfur_cube/jump4",
-			"ctbackport:mob/sulfur_cube/jump5",
-			"ctbackport:mob/sulfur_cube/jump6",
-			"ctbackport:mob/sulfur_cube/jump7",
-			"ctbackport:mob/sulfur_cube/jump8",
-			"ctbackport:mob/sulfur_cube/jump9"
-		]
-	},
-	"sulfur_cube_light_hit": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/light_hit1",
-			"ctbackport:mob/sulfur_cube/ball/light_hit2",
-			"ctbackport:mob/sulfur_cube/ball/light_hit3",
-			"ctbackport:mob/sulfur_cube/ball/light_hit4"
-		]
-	},
-	"sulfur_cube_light_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/light_push1",
-			"ctbackport:mob/sulfur_cube/ball/light_push2",
-			"ctbackport:mob/sulfur_cube/ball/light_push3",
-			"ctbackport:mob/sulfur_cube/ball/light_push4"
-		]
-	},
-	"sulfur_cube_regular_hit": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/hit1",
-			"ctbackport:mob/sulfur_cube/ball/hit2",
-			"ctbackport:mob/sulfur_cube/ball/hit3",
-			"ctbackport:mob/sulfur_cube/ball/hit4"
-		]
-	},
-	"sulfur_cube_regular_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/push1",
-			"ctbackport:mob/sulfur_cube/ball/push2",
-			"ctbackport:mob/sulfur_cube/ball/push3",
-			"ctbackport:mob/sulfur_cube/ball/push4"
-		]
-	},
-	"sulfur_cube_slow_bouncy_hit": {
-		"sounds": [
-			"minecraft:entity/slime/attack1"
-		]
-	},
-	"sulfur_cube_slow_bouncy_push": {
-		"sounds": [
-			"minecraft:entity/slime/attack1"
-		]
-	},
-	"sulfur_cube_slow_flat_hit": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/slowflat_hit1",
-			"ctbackport:mob/sulfur_cube/ball/slowflat_hit2",
-			"ctbackport:mob/sulfur_cube/ball/slowflat_hit3",
-			"ctbackport:mob/sulfur_cube/ball/slowflat_hit4"
-		]
-	},
-	"sulfur_cube_slow_flat_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/slowflat_push1",
-			"ctbackport:mob/sulfur_cube/ball/slowflat_push2",
-			"ctbackport:mob/sulfur_cube/ball/slowflat_push3",
-			"ctbackport:mob/sulfur_cube/ball/slowflat_push4"
-		]
-	},
-	"sulfur_cube_slow_sliding_hit": {
-		"sounds": [
-			"minecraft:entity/slime/attack1"
-		]
-	},
-	"sulfur_cube_slow_sliding_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/slowsliding_push1",
-			"ctbackport:mob/sulfur_cube/ball/slowsliding_push2",
-			"ctbackport:mob/sulfur_cube/ball/slowsliding_push3",
-			"ctbackport:mob/sulfur_cube/ball/slowsliding_push4"
-		]
-	},
-	"sulfur_cube_small_death": {
-		"sounds": [
-			"minecraft:mob/slime/small_death1"
-		]
-	},
-	"sulfur_cube_small_hurt": {
-		"sounds": [
-			"minecraft:mob/slime/small_hurt1"
-		]
-	},
-	"sulfur_cube_small_jump": {
-		"sounds": [
-			"minecraft:mob/slime/small_squish2"
-		]
-	},
-	"sulfur_cube_small_squish": {
-		"sounds": [
-			"minecraft:mob/slime/small_squish1"
-		]
-	},
-	"sulfur_cube_squish": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/squish1",
-			"ctbackport:mob/sulfur_cube/squish10",
-			"ctbackport:mob/sulfur_cube/squish11",
-			"ctbackport:mob/sulfur_cube/squish2",
-			"ctbackport:mob/sulfur_cube/squish3",
-			"ctbackport:mob/sulfur_cube/squish4",
-			"ctbackport:mob/sulfur_cube/squish5",
-			"ctbackport:mob/sulfur_cube/squish6",
-			"ctbackport:mob/sulfur_cube/squish7",
-			"ctbackport:mob/sulfur_cube/squish8",
-			"ctbackport:mob/sulfur_cube/squish9"
-		]
-	},
-	"sulfur_cube_sticky_hit": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/sticky_hit1",
-			"ctbackport:mob/sulfur_cube/ball/sticky_hit2",
-			"ctbackport:mob/sulfur_cube/ball/sticky_hit3",
-			"ctbackport:mob/sulfur_cube/ball/sticky_hit4"
-		]
-	},
-	"sulfur_cube_sticky_push": {
-		"sounds": [
-			"ctbackport:mob/sulfur_cube/ball/sticky_push1",
-			"ctbackport:mob/sulfur_cube/ball/sticky_push2",
-			"ctbackport:mob/sulfur_cube/ball/sticky_push3",
-			"ctbackport:mob/sulfur_cube/ball/sticky_push4"
-		]
-	},
-	"sulfur_hit": {
-		"sounds": [
-			"ctbackport:block/sulfur/hit1",
-			"ctbackport:block/sulfur/hit2",
-			"ctbackport:block/sulfur/hit3",
-			"ctbackport:block/sulfur/hit4",
-			"ctbackport:block/sulfur/hit5",
-			"ctbackport:block/sulfur/hit6",
-			"ctbackport:block/sulfur/hit7"
-		]
-	},
-	"sulfur_place": {
-		"sounds": [
-			"ctbackport:block/sulfur/place1",
-			"ctbackport:block/sulfur/place2",
-			"ctbackport:block/sulfur/place3",
-			"ctbackport:block/sulfur/place4",
-			"ctbackport:block/sulfur/place5",
-			"ctbackport:block/sulfur/place6",
-			"ctbackport:block/sulfur/place7",
-			"ctbackport:block/sulfur/place8"
-		]
-	},
-	"sulfur_spike_land": {
-		"sounds": [
-			"ctbackport:block/sulfur_spike/land1",
-			"ctbackport:block/sulfur_spike/land2",
-			"ctbackport:block/sulfur_spike/land3",
-			"ctbackport:block/sulfur_spike/land4",
-			"ctbackport:block/sulfur_spike/land5",
-			"ctbackport:block/sulfur_spike/land6",
-			"ctbackport:block/sulfur_spike/land7"
-		]
-	},
-	"sulfur_step": {
-		"sounds": [
-			"ctbackport:block/sulfur/step1",
-			"ctbackport:block/sulfur/step2",
-			"ctbackport:block/sulfur/step3",
-			"ctbackport:block/sulfur/step4",
-			"ctbackport:block/sulfur/step5",
-			"ctbackport:block/sulfur/step6",
-			"ctbackport:block/sulfur/step7"
-		]
-	},
-	"trial_spawner_about_to_spawn_item": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/about_to_spawn_item"
-		]
-	},
-	"trial_spawner_ambient": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/ambient1",
-			"ctbackport:block/trial_spawner/ambient2",
-			"ctbackport:block/trial_spawner/ambient3",
-			"ctbackport:block/trial_spawner/ambient4",
-			"ctbackport:block/trial_spawner/ambient5"
-		]
-	},
-	"trial_spawner_ambient_ominous": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/ambient_ominous1",
-			"ctbackport:block/trial_spawner/ambient_ominous2",
-			"ctbackport:block/trial_spawner/ambient_ominous3",
-			"ctbackport:block/trial_spawner/ambient_ominous4",
-			"ctbackport:block/trial_spawner/ambient_ominous5"
-		]
-	},
-	"trial_spawner_break": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/break1",
-			"ctbackport:block/trial_spawner/break2",
-			"ctbackport:block/trial_spawner/break3"
-		]
-	},
-	"trial_spawner_close_shutter": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/close_shutter"
-		]
-	},
-	"trial_spawner_detect_player": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/detect_player1",
-			"ctbackport:block/trial_spawner/detect_player2",
-			"ctbackport:block/trial_spawner/detect_player3"
-		]
-	},
-	"trial_spawner_eject_item": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/eject_item1"
-		]
-	},
-	"trial_spawner_ominous_activate": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/ominous_activate"
-		]
-	},
-	"trial_spawner_open_shutter": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/open_shutter"
-		]
-	},
-	"trial_spawner_place": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/place1",
-			"ctbackport:block/trial_spawner/place2",
-			"ctbackport:block/trial_spawner/place3"
-		]
-	},
-	"trial_spawner_spawn_item": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/spawn_item1",
-			"ctbackport:block/trial_spawner/spawn_item2",
-			"ctbackport:block/trial_spawner/spawn_item3"
-		]
-	},
-	"trial_spawner_spawn_item_begin": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/spawn_item_begin1",
-			"ctbackport:block/trial_spawner/spawn_item_begin2",
-			"ctbackport:block/trial_spawner/spawn_item_begin3"
-		]
-	},
-	"trial_spawner_spawn_mob": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/spawn1",
-			"ctbackport:block/trial_spawner/spawn2",
-			"ctbackport:block/trial_spawner/spawn3",
-			"ctbackport:block/trial_spawner/spawn4"
-		]
-	},
-	"trial_spawner_step": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/step1",
-			"ctbackport:block/trial_spawner/step2",
-			"ctbackport:block/trial_spawner/step3",
-			"ctbackport:block/trial_spawner/step4",
-			"ctbackport:block/trial_spawner/step5"
-		]
-	},
-	"vault_activate": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/activate"
-		]
-	},
-	"vault_ambient": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/ambient1",
-			"ctbackport:block/vault/ambient2",
-			"ctbackport:block/vault/ambient3"
-		]
-	},
-	"vault_break": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/break1",
-			"ctbackport:block/vault/break2",
-			"ctbackport:block/vault/break3",
-			"ctbackport:block/vault/break4"
-		]
-	},
-	"vault_close_shutter": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/trial_spawner/close_shutter"
-		]
-	},
-	"vault_deactivate": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/deactivate"
-		]
-	},
-	"vault_eject_item": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/eject1",
-			"ctbackport:block/vault/eject2",
-			"ctbackport:block/vault/eject3"
-		]
-	},
-	"vault_insert_item": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/insert"
-		]
-	},
-	"vault_insert_item_fail": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/insert_fail"
-		]
-	},
-	"vault_open_shutter": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/open_shutter"
-		]
-	},
-	"vault_place": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/place1",
-			"ctbackport:block/vault/place2",
-			"ctbackport:block/vault/place3",
-			"ctbackport:block/vault/place4"
-		]
-	},
-	"vault_reject_rewarded_player": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/reject_rewarded_player"
-		]
-	},
-	"vault_step": {
-		"category": "block",
-		"sounds": [
-			"ctbackport:block/vault/step1",
-			"ctbackport:block/vault/step2",
-			"ctbackport:block/vault/step3",
-			"ctbackport:block/vault/step4",
-			"ctbackport:block/vault/step5",
-			"ctbackport:block/vault/step6",
-			"ctbackport:block/vault/step7",
-			"ctbackport:block/vault/step8"
-		]
-	},
-	"wind_burst": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/wind_charge/wind_burst1",
-			"ctbackport:entity/wind_charge/wind_burst2",
-			"ctbackport:entity/wind_charge/wind_burst3"
-		]
-	},
-	"zombie_nautilus_ambient": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/zombie_nautilus/ambient1",
-			"ctbackport:entity/zombie_nautilus/ambient2",
-			"ctbackport:entity/zombie_nautilus/ambient3",
-			"ctbackport:entity/zombie_nautilus/ambient4",
-			"ctbackport:entity/zombie_nautilus/ambient5"
-		]
-	},
-	"zombie_nautilus_ambient_land": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/zombie_nautilus/ambient_land1",
-			"ctbackport:entity/zombie_nautilus/ambient_land2",
-			"ctbackport:entity/zombie_nautilus/ambient_land3",
-			"ctbackport:entity/zombie_nautilus/ambient_land4",
-			"ctbackport:entity/zombie_nautilus/ambient_land5",
-			"ctbackport:entity/zombie_nautilus/ambient_land6"
-		]
-	},
-	"zombie_nautilus_dash_land": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/zombie_nautilus/dash_land1",
-			"ctbackport:entity/zombie_nautilus/dash_land2",
-			"ctbackport:entity/zombie_nautilus/dash_land3",
-			"ctbackport:entity/zombie_nautilus/dash_land4"
-		]
-	},
-	"zombie_nautilus_dash_ready": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/zombie_nautilus/dash_ready1",
-			"ctbackport:entity/zombie_nautilus/dash_ready2",
-			"ctbackport:entity/zombie_nautilus/dash_ready3"
-		]
-	},
-	"zombie_nautilus_dash_ready_land": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/zombie_nautilus/dash_ready_land1",
-			"ctbackport:entity/zombie_nautilus/dash_ready_land2",
-			"ctbackport:entity/zombie_nautilus/dash_ready_land3",
-			"ctbackport:entity/zombie_nautilus/dash_ready_land4"
-		]
-	},
-	"zombie_nautilus_death": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/zombie_nautilus/death"
-		]
-	},
-	"zombie_nautilus_death_land": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/zombie_nautilus/death_land"
-		]
-	},
-	"zombie_nautilus_eat": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/zombie_nautilus/eat1",
-			"ctbackport:entity/zombie_nautilus/eat2"
-		]
-	},
-	"zombie_nautilus_hurt": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/zombie_nautilus/hurt1",
-			"ctbackport:entity/zombie_nautilus/hurt2",
-			"ctbackport:entity/zombie_nautilus/hurt3",
-			"ctbackport:entity/zombie_nautilus/hurt4"
-		]
-	},
-	"zombie_nautilus_hurt_land": {
-		"category": "neutral",
-		"sounds": [
-			"ctbackport:entity/zombie_nautilus/hurt_land1",
-			"ctbackport:entity/zombie_nautilus/hurt_land2",
-			"ctbackport:entity/zombie_nautilus/hurt_land3",
-			"ctbackport:entity/zombie_nautilus/hurt_land4"
-		]
-	}
+ "armor_equip_copper": {
+  "sounds": [
+   "ctbackport:item/armor/equip_copper1",
+   "ctbackport:item/armor/equip_copper2",
+   "ctbackport:item/armor/equip_copper3",
+   "ctbackport:item/armor/equip_copper4",
+   "ctbackport:item/armor/equip_copper5",
+   "ctbackport:item/armor/equip_copper6"
+  ],
+  "subtitle": "subtitles.item.armor.equip_copper"
+ },
+ "bogged_ambient": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/bogged/ambient1",
+   "ctbackport:entity/bogged/ambient2",
+   "ctbackport:entity/bogged/ambient3",
+   "ctbackport:entity/bogged/ambient4"
+  ]
+ },
+ "bogged_death": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/bogged/death"
+  ]
+ },
+ "bogged_hurt": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/bogged/hurt1",
+   "ctbackport:entity/bogged/hurt2",
+   "ctbackport:entity/bogged/hurt3",
+   "ctbackport:entity/bogged/hurt4"
+  ]
+ },
+ "bogged_step": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/bogged/step1",
+   "ctbackport:entity/bogged/step2",
+   "ctbackport:entity/bogged/step3",
+   "ctbackport:entity/bogged/step4"
+  ]
+ },
+ "breeze_death": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/breeze/breeze_death1",
+   "ctbackport:entity/breeze/breeze_death2"
+  ]
+ },
+ "breeze_deflect": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/breeze/breeze_deflect1",
+   "ctbackport:entity/breeze/breeze_deflect2",
+   "ctbackport:entity/breeze/breeze_deflect3"
+  ]
+ },
+ "breeze_hurt": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/breeze/breeze_hurt1",
+   "ctbackport:entity/breeze/breeze_hurt2",
+   "ctbackport:entity/breeze/breeze_hurt3"
+  ]
+ },
+ "breeze_idle_air": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/breeze/breeze_idle_air1",
+   "ctbackport:entity/breeze/breeze_idle_air2",
+   "ctbackport:entity/breeze/breeze_idle_air3",
+   "ctbackport:entity/breeze/breeze_idle_air4"
+  ]
+ },
+ "breeze_idle_ground": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/breeze/breeze_idle_ground1",
+   "ctbackport:entity/breeze/breeze_idle_ground2",
+   "ctbackport:entity/breeze/breeze_idle_ground3",
+   "ctbackport:entity/breeze/breeze_idle_ground4"
+  ]
+ },
+ "breeze_jump": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/breeze/breeze_jump1",
+   "ctbackport:entity/breeze/breeze_jump2"
+  ]
+ },
+ "breeze_land": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/breeze/breeze_land1",
+   "ctbackport:entity/breeze/breeze_land2"
+  ]
+ },
+ "breeze_shoot": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/breeze/breeze_shoot"
+  ]
+ },
+ "breeze_slide": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/breeze/breeze_slide1",
+   "ctbackport:entity/breeze/breeze_slide2",
+   "ctbackport:entity/breeze/breeze_slide3",
+   "ctbackport:entity/breeze/breeze_slide4"
+  ]
+ },
+ "breeze_whirl": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/breeze/breeze_whirl1",
+   "ctbackport:entity/breeze/breeze_whirl2",
+   "ctbackport:entity/breeze/breeze_whirl3",
+   "ctbackport:entity/breeze/breeze_whirl4",
+   "ctbackport:entity/breeze/breeze_whirl5"
+  ]
+ },
+ "cinnabar_break": {
+  "sounds": [
+   "ctbackport:block/cinnabar/break1",
+   "ctbackport:block/cinnabar/break2",
+   "ctbackport:block/cinnabar/break3",
+   "ctbackport:block/cinnabar/break4",
+   "ctbackport:block/cinnabar/break5",
+   "ctbackport:block/cinnabar/break6",
+   "ctbackport:block/cinnabar/break7"
+  ]
+ },
+ "cinnabar_hit": {
+  "sounds": [
+   "ctbackport:block/cinnabar/hit1",
+   "ctbackport:block/cinnabar/hit2",
+   "ctbackport:block/cinnabar/hit3",
+   "ctbackport:block/cinnabar/hit4",
+   "ctbackport:block/cinnabar/hit5",
+   "ctbackport:block/cinnabar/hit6",
+   "ctbackport:block/cinnabar/hit7"
+  ]
+ },
+ "cinnabar_place": {
+  "sounds": [
+   "ctbackport:block/cinnabar/place1",
+   "ctbackport:block/cinnabar/place2",
+   "ctbackport:block/cinnabar/place3",
+   "ctbackport:block/cinnabar/place4",
+   "ctbackport:block/cinnabar/place5",
+   "ctbackport:block/cinnabar/place6",
+   "ctbackport:block/cinnabar/place7"
+  ]
+ },
+ "cinnabar_step": {
+  "sounds": [
+   "ctbackport:block/cinnabar/step1",
+   "ctbackport:block/cinnabar/step2",
+   "ctbackport:block/cinnabar/step3",
+   "ctbackport:block/cinnabar/step4",
+   "ctbackport:block/cinnabar/step5",
+   "ctbackport:block/cinnabar/step6",
+   "ctbackport:block/cinnabar/step7"
+  ]
+ },
+ "copper_bulb_turn": {
+  "category": "block",
+  "sounds": [
+   {
+    "name": "ctbackport:block/copper_bulb/toggle",
+    "pitch": 1.1
+   }
+  ]
+ },
+ "copper_bulb_turn_off": {
+  "category": "block",
+  "sounds": [
+   {
+    "name": "ctbackport:block/copper_bulb/toggle",
+    "pitch": 0.9
+   }
+  ]
+ },
+ "copper_chest_close": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/copper_chest/copper_chest_close1",
+   "ctbackport:block/copper_chest/copper_chest_close2",
+   "ctbackport:block/copper_chest/copper_chest_close3"
+  ]
+ },
+ "copper_chest_open": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/copper_chest/copper_chest_open1",
+   "ctbackport:block/copper_chest/copper_chest_open2",
+   "ctbackport:block/copper_chest/copper_chest_open3"
+  ]
+ },
+ "copper_chest_oxidized_close": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/copper_chest/copper_chest_oxidized_close1",
+   "ctbackport:block/copper_chest/copper_chest_oxidized_close2",
+   "ctbackport:block/copper_chest/copper_chest_oxidized_close3"
+  ]
+ },
+ "copper_chest_oxidized_open": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/copper_chest/copper_chest_oxidized_open1",
+   "ctbackport:block/copper_chest/copper_chest_oxidized_open2",
+   "ctbackport:block/copper_chest/copper_chest_oxidized_open3"
+  ]
+ },
+ "copper_chest_weathered_close": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/copper_chest/copper_chest_weathered_close1",
+   "ctbackport:block/copper_chest/copper_chest_weathered_close2",
+   "ctbackport:block/copper_chest/copper_chest_weathered_close3"
+  ]
+ },
+ "copper_chest_weathered_open": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/copper_chest/copper_chest_weathered_open1",
+   "ctbackport:block/copper_chest/copper_chest_weathered_open2",
+   "ctbackport:block/copper_chest/copper_chest_weathered_open3"
+  ]
+ },
+ "copper_golem_item_drop": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/item_drop"
+  ]
+ },
+ "copper_golem_item_no_drop": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/item_no_drop"
+  ]
+ },
+ "copper_golem_no_item_get": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/no_item_get"
+  ]
+ },
+ "copper_golem_no_item_no_get": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/no_item_no_get"
+  ]
+ },
+ "copper_golem_oxidized_death": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/oxidized/death"
+  ]
+ },
+ "copper_golem_oxidized_hurt": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/oxidized/hurt1",
+   "ctbackport:entity/copper_golem/oxidized/hurt2",
+   "ctbackport:entity/copper_golem/oxidized/hurt3",
+   "ctbackport:entity/copper_golem/oxidized/hurt4"
+  ]
+ },
+ "copper_golem_oxidized_spin": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/oxidized/spin1",
+   "ctbackport:entity/copper_golem/oxidized/spin2",
+   "ctbackport:entity/copper_golem/oxidized/spin3",
+   "ctbackport:entity/copper_golem/oxidized/spin4",
+   "ctbackport:entity/copper_golem/oxidized/spin5",
+   "ctbackport:entity/copper_golem/oxidized/spin6",
+   "ctbackport:entity/copper_golem/oxidized/spin7"
+  ]
+ },
+ "copper_golem_oxidized_step": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/oxidized/step1",
+   "ctbackport:entity/copper_golem/oxidized/step2",
+   "ctbackport:entity/copper_golem/oxidized/step3",
+   "ctbackport:entity/copper_golem/oxidized/step4",
+   "ctbackport:entity/copper_golem/oxidized/step5",
+   "ctbackport:entity/copper_golem/oxidized/step6",
+   "ctbackport:entity/copper_golem/oxidized/step7",
+   "ctbackport:entity/copper_golem/oxidized/step8",
+   "ctbackport:entity/copper_golem/oxidized/step9"
+  ]
+ },
+ "copper_golem_regular_death": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/regular/death"
+  ]
+ },
+ "copper_golem_regular_hurt": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/regular/hurt1",
+   "ctbackport:entity/copper_golem/regular/hurt2",
+   "ctbackport:entity/copper_golem/regular/hurt3",
+   "ctbackport:entity/copper_golem/regular/hurt4"
+  ]
+ },
+ "copper_golem_regular_spin": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/regular/spin1",
+   "ctbackport:entity/copper_golem/regular/spin2",
+   "ctbackport:entity/copper_golem/regular/spin3",
+   "ctbackport:entity/copper_golem/regular/spin4",
+   "ctbackport:entity/copper_golem/regular/spin5",
+   "ctbackport:entity/copper_golem/regular/spin6",
+   "ctbackport:entity/copper_golem/regular/spin7"
+  ]
+ },
+ "copper_golem_regular_step": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/regular/step1",
+   "ctbackport:entity/copper_golem/regular/step2",
+   "ctbackport:entity/copper_golem/regular/step3",
+   "ctbackport:entity/copper_golem/regular/step4",
+   "ctbackport:entity/copper_golem/regular/step5",
+   "ctbackport:entity/copper_golem/regular/step6",
+   "ctbackport:entity/copper_golem/regular/step7",
+   "ctbackport:entity/copper_golem/regular/step8",
+   "ctbackport:entity/copper_golem/regular/step9"
+  ]
+ },
+ "copper_golem_spawn": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/spawn"
+  ]
+ },
+ "copper_golem_weathered_death": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/weathered/death"
+  ]
+ },
+ "copper_golem_weathered_hurt": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/weathered/hurt1",
+   "ctbackport:entity/copper_golem/weathered/hurt2",
+   "ctbackport:entity/copper_golem/weathered/hurt3",
+   "ctbackport:entity/copper_golem/weathered/hurt4"
+  ]
+ },
+ "copper_golem_weathered_spin": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/weathered/spin1",
+   "ctbackport:entity/copper_golem/weathered/spin2",
+   "ctbackport:entity/copper_golem/weathered/spin3",
+   "ctbackport:entity/copper_golem/weathered/spin4",
+   "ctbackport:entity/copper_golem/weathered/spin5",
+   "ctbackport:entity/copper_golem/weathered/spin6",
+   "ctbackport:entity/copper_golem/weathered/spin7"
+  ]
+ },
+ "copper_golem_weathered_step": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/copper_golem/weathered/step1",
+   "ctbackport:entity/copper_golem/weathered/step2",
+   "ctbackport:entity/copper_golem/weathered/step3",
+   "ctbackport:entity/copper_golem/weathered/step4",
+   "ctbackport:entity/copper_golem/weathered/step5",
+   "ctbackport:entity/copper_golem/weathered/step6",
+   "ctbackport:entity/copper_golem/weathered/step7",
+   "ctbackport:entity/copper_golem/weathered/step8",
+   "ctbackport:entity/copper_golem/weathered/step9"
+  ]
+ },
+ "creaking_activate": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_activate"
+  ]
+ },
+ "creaking_ambiant": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_idle1",
+   "ctbackport:entity/creaking/creaking_idle2",
+   "ctbackport:entity/creaking/creaking_idle3",
+   "ctbackport:entity/creaking/creaking_idle4",
+   "ctbackport:entity/creaking/creaking_idle5",
+   "ctbackport:entity/creaking/creaking_idle6"
+  ]
+ },
+ "creaking_attack": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_attack1",
+   "ctbackport:entity/creaking/creaking_attack2",
+   "ctbackport:entity/creaking/creaking_attack3",
+   "ctbackport:entity/creaking/creaking_attack4"
+  ]
+ },
+ "creaking_deactivate": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_deactivate"
+  ]
+ },
+ "creaking_death": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_death"
+  ]
+ },
+ "creaking_freeze": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_freeze1",
+   "ctbackport:entity/creaking/creaking_freeze2"
+  ]
+ },
+ "creaking_heart_hurt": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/creaking_heart/trail1",
+   "ctbackport:block/creaking_heart/trail2",
+   "ctbackport:block/creaking_heart/trail3",
+   "ctbackport:block/creaking_heart/trail4",
+   "ctbackport:block/creaking_heart/trail5",
+   "ctbackport:block/creaking_heart/trail6",
+   "ctbackport:block/creaking_heart/trail7"
+  ]
+ },
+ "creaking_heart_idle": {
+  "category": "ambient",
+  "sounds": [
+   "ctbackport:block/creaking_heart/creaking_heart_idle1",
+   "ctbackport:block/creaking_heart/creaking_heart_idle2",
+   "ctbackport:block/creaking_heart/creaking_heart_idle3",
+   "ctbackport:block/creaking_heart/creaking_heart_idle4"
+  ]
+ },
+ "creaking_heart_spawn": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/creaking_heart/creaking_heart_spawnmob"
+  ]
+ },
+ "creaking_spawn": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_spawn"
+  ]
+ },
+ "creaking_step": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_step1",
+   "ctbackport:entity/creaking/creaking_step2",
+   "ctbackport:entity/creaking/creaking_step3",
+   "ctbackport:entity/creaking/creaking_step4"
+  ]
+ },
+ "creaking_sway": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_sway1",
+   "ctbackport:entity/creaking/creaking_sway2",
+   "ctbackport:entity/creaking/creaking_sway3"
+  ]
+ },
+ "creaking_twitch": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_twitch"
+  ]
+ },
+ "creaking_unfreeze": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/creaking/creaking_unfreeze1",
+   "ctbackport:entity/creaking/creaking_unfreeze2",
+   "ctbackport:entity/creaking/creaking_unfreeze3"
+  ]
+ },
+ "eyeblossom_close": {
+  "category": "ambient",
+  "sounds": [
+   "ctbackport:block/eyeblossom/eyeblossom_close1",
+   "ctbackport:block/eyeblossom/eyeblossom_close2",
+   "ctbackport:block/eyeblossom/eyeblossom_close3"
+  ]
+ },
+ "eyeblossom_close_long": {
+  "category": "ambient",
+  "sounds": [
+   "ctbackport:block/eyeblossom/eyeblossom_close_long"
+  ]
+ },
+ "eyeblossom_idle": {
+  "category": "ambient",
+  "sounds": [
+   "ctbackport:block/eyeblossom/eyeblossom_idle1",
+   "ctbackport:block/eyeblossom/eyeblossom_idle2",
+   "ctbackport:block/eyeblossom/eyeblossom_idle3",
+   "ctbackport:block/eyeblossom/eyeblossom_idle4",
+   "ctbackport:block/eyeblossom/eyeblossom_idle5",
+   "ctbackport:block/eyeblossom/eyeblossom_idle6"
+  ]
+ },
+ "eyeblossom_open": {
+  "category": "ambient",
+  "sounds": [
+   "ctbackport:block/eyeblossom/eyeblossom_open1",
+   "ctbackport:block/eyeblossom/eyeblossom_open2",
+   "ctbackport:block/eyeblossom/eyeblossom_open3",
+   "ctbackport:block/eyeblossom/eyeblossom_open4"
+  ]
+ },
+ "eyeblossom_open_long": {
+  "category": "ambient",
+  "sounds": [
+   "ctbackport:block/eyeblossom/eyeblossom_open_long"
+  ]
+ },
+ "firefly_bush_idle": {
+  "sounds": [
+   "ctbackport:block/firefly_bush/firefly_bush1",
+   "ctbackport:block/firefly_bush/firefly_bush10",
+   "ctbackport:block/firefly_bush/firefly_bush11",
+   "ctbackport:block/firefly_bush/firefly_bush2",
+   "ctbackport:block/firefly_bush/firefly_bush3",
+   "ctbackport:block/firefly_bush/firefly_bush4",
+   "ctbackport:block/firefly_bush/firefly_bush5",
+   "ctbackport:block/firefly_bush/firefly_bush6",
+   "ctbackport:block/firefly_bush/firefly_bush7",
+   "ctbackport:block/firefly_bush/firefly_bush8",
+   "ctbackport:block/firefly_bush/firefly_bush9"
+  ],
+  "subtitle": "subtitles.block.firefly_bush.idle"
+ },
+ "geyser_continuous_active": {
+  "sounds": [
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption_active1",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption_active2",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption_active3",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption_active4",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption_active5",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption_active6",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption_active7"
+  ]
+ },
+ "geyser_continuous_start": {
+  "sounds": [
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption1",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption2",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption3",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption4",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption5",
+   "ctbackport:block/potent_sulfur/geyser_continuous/eruption6"
+  ]
+ },
+ "geyser_eruption_active": {
+  "sounds": [
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption_active1",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption_active2",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption_active3",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption_active4",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption_active5",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption_active6",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption_active7",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption_active8"
+  ]
+ },
+ "geyser_eruption_start": {
+  "sounds": [
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption1",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption2",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption3",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption4",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption5",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption6",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption7",
+   "ctbackport:block/potent_sulfur/sulfur_spring/eruption8"
+  ]
+ },
+ "mace_smash_air": {
+  "category": "player",
+  "sounds": [
+   "ctbackport:item/mace/smash_air1",
+   "ctbackport:item/mace/smash_air2",
+   "ctbackport:item/mace/smash_air3"
+  ]
+ },
+ "mace_smash_ground": {
+  "category": "player",
+  "sounds": [
+   "ctbackport:item/mace/smash_ground1",
+   "ctbackport:item/mace/smash_ground2",
+   "ctbackport:item/mace/smash_ground3",
+   "ctbackport:item/mace/smash_ground4"
+  ]
+ },
+ "mace_smash_ground_heavy": {
+  "category": "player",
+  "sounds": [
+   "ctbackport:item/mace/smash_ground_heavy"
+  ]
+ },
+ "music.overworld.sulfur_caves": {
+  "sounds": [
+   {
+    "name": "minecraft:music/game/an_ordinary_day",
+    "stream": true
+   },
+   {
+    "name": "ctbackport:music/game/deeper",
+    "stream": true,
+    "volume": 0.4
+   },
+   {
+    "name": "ctbackport:music/game/eld_unknown",
+    "stream": true,
+    "volume": 0.4
+   },
+   {
+    "name": "minecraft:music/game/infinite_amethyst",
+    "stream": true,
+    "volume": 0.4
+   },
+   {
+    "name": "minecraft:music/game/wending",
+    "stream": true,
+    "volume": 0.4
+   }
+  ]
+ },
+ "music_disc_bounce": {
+  "sounds": [
+   {
+    "name": "ctbackport:records/bounce",
+    "stream": true
+   }
+  ]
+ },
+ "music_disc_creator": {
+  "sounds": [
+   {
+    "name": "ctbackport:records/creator",
+    "stream": true
+   }
+  ]
+ },
+ "music_disc_creator_music_box": {
+  "sounds": [
+   {
+    "name": "ctbackport:records/creator_music_box",
+    "stream": true
+   }
+  ]
+ },
+ "music_disc_precipice": {
+  "sounds": [
+   {
+    "name": "ctbackport:records/precipice",
+    "stream": true
+   }
+  ]
+ },
+ "nautilus_ambient": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/ambient1",
+   "ctbackport:entity/nautilus/ambient2",
+   "ctbackport:entity/nautilus/ambient3",
+   "ctbackport:entity/nautilus/ambient4",
+   "ctbackport:entity/nautilus/ambient5",
+   "ctbackport:entity/nautilus/ambient6",
+   "ctbackport:entity/nautilus/ambient7",
+   "ctbackport:entity/nautilus/ambient8"
+  ]
+ },
+ "nautilus_ambient_land": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/ambient_land1",
+   "ctbackport:entity/nautilus/ambient_land2",
+   "ctbackport:entity/nautilus/ambient_land3",
+   "ctbackport:entity/nautilus/ambient_land4",
+   "ctbackport:entity/nautilus/ambient_land5",
+   "ctbackport:entity/nautilus/ambient_land6",
+   "ctbackport:entity/nautilus/ambient_land7"
+  ]
+ },
+ "nautilus_dash": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/dash1",
+   "ctbackport:entity/nautilus/dash2",
+   "ctbackport:entity/nautilus/dash3",
+   "ctbackport:entity/nautilus/dash4"
+  ]
+ },
+ "nautilus_dash_land": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/dash_land1",
+   "ctbackport:entity/nautilus/dash_land2",
+   "ctbackport:entity/nautilus/dash_land3",
+   "ctbackport:entity/nautilus/dash_land4"
+  ]
+ },
+ "nautilus_dash_ready": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/dash_ready1",
+   "ctbackport:entity/nautilus/dash_ready2",
+   "ctbackport:entity/nautilus/dash_ready3"
+  ]
+ },
+ "nautilus_dash_ready_land": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/dash_ready_land1",
+   "ctbackport:entity/nautilus/dash_ready_land2",
+   "ctbackport:entity/nautilus/dash_ready_land3",
+   "ctbackport:entity/nautilus/dash_ready_land4"
+  ]
+ },
+ "nautilus_death": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/death"
+  ]
+ },
+ "nautilus_death_land": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/death_land"
+  ]
+ },
+ "nautilus_eat": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/eat1",
+   "ctbackport:entity/nautilus/eat2"
+  ]
+ },
+ "nautilus_hurt": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/hurt1",
+   "ctbackport:entity/nautilus/hurt2",
+   "ctbackport:entity/nautilus/hurt3",
+   "ctbackport:entity/nautilus/hurt4"
+  ]
+ },
+ "nautilus_hurt_land": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/hurt_land1",
+   "ctbackport:entity/nautilus/hurt_land2",
+   "ctbackport:entity/nautilus/hurt_land3",
+   "ctbackport:entity/nautilus/hurt_land4"
+  ]
+ },
+ "nautilus_saddle_equip": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/nautilus_saddle_equip"
+  ]
+ },
+ "nautilus_saddle_underwater_equip": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/nautilus/nautilus_saddle_underwater_equip"
+  ]
+ },
+ "noxious_gas": {
+  "sounds": [
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient1",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient10",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient11",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient12",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient13",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient14",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient2",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient3",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient4",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient5",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient6",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient7",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient8",
+   "ctbackport:block/potent_sulfur/noxious_gas/ambient9"
+  ]
+ },
+ "parched_ambient": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/parched/ambient1",
+   "ctbackport:entity/parched/ambient2",
+   "ctbackport:entity/parched/ambient3",
+   "ctbackport:entity/parched/ambient4"
+  ]
+ },
+ "parched_death": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/parched/death"
+  ]
+ },
+ "parched_hurt": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/parched/hurt1",
+   "ctbackport:entity/parched/hurt2",
+   "ctbackport:entity/parched/hurt3",
+   "ctbackport:entity/parched/hurt4"
+  ]
+ },
+ "parched_step": {
+  "category": "hostile",
+  "sounds": [
+   "ctbackport:entity/parched/step1",
+   "ctbackport:entity/parched/step2",
+   "ctbackport:entity/parched/step3",
+   "ctbackport:entity/parched/step4"
+  ]
+ },
+ "potent_sulfur_break": {
+  "sounds": [
+   "ctbackport:block/potent_sulfur/break1",
+   "ctbackport:block/potent_sulfur/break2",
+   "ctbackport:block/potent_sulfur/break3",
+   "ctbackport:block/potent_sulfur/break4",
+   "ctbackport:block/potent_sulfur/break5",
+   "ctbackport:block/potent_sulfur/break6",
+   "ctbackport:block/potent_sulfur/break7"
+  ]
+ },
+ "potent_sulfur_hit": {
+  "sounds": [
+   "ctbackport:block/potent_sulfur/hit1",
+   "ctbackport:block/potent_sulfur/hit2",
+   "ctbackport:block/potent_sulfur/hit3",
+   "ctbackport:block/potent_sulfur/hit4",
+   "ctbackport:block/potent_sulfur/hit5",
+   "ctbackport:block/potent_sulfur/hit6",
+   "ctbackport:block/potent_sulfur/hit7"
+  ]
+ },
+ "potent_sulfur_place": {
+  "sounds": [
+   "ctbackport:block/potent_sulfur/place1",
+   "ctbackport:block/potent_sulfur/place2",
+   "ctbackport:block/potent_sulfur/place3",
+   "ctbackport:block/potent_sulfur/place4",
+   "ctbackport:block/potent_sulfur/place5",
+   "ctbackport:block/potent_sulfur/place6",
+   "ctbackport:block/potent_sulfur/place7",
+   "ctbackport:block/potent_sulfur/place8"
+  ]
+ },
+ "potent_sulfur_step": {
+  "sounds": [
+   "ctbackport:block/potent_sulfur/step1",
+   "ctbackport:block/potent_sulfur/step2",
+   "ctbackport:block/potent_sulfur/step3",
+   "ctbackport:block/potent_sulfur/step4",
+   "ctbackport:block/potent_sulfur/step5",
+   "ctbackport:block/potent_sulfur/step6",
+   "ctbackport:block/potent_sulfur/step7"
+  ]
+ },
+ "resin_place": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/resin/resin_place1",
+   "ctbackport:block/resin/resin_place2",
+   "ctbackport:block/resin/resin_place3",
+   "ctbackport:block/resin/resin_place4"
+  ]
+ },
+ "shelf_activate": {
+  "sounds": [
+   "ctbackport:block/shelf/activate1",
+   "ctbackport:block/shelf/activate2",
+   "ctbackport:block/shelf/activate3"
+  ]
+ },
+ "shelf_deactivate": {
+  "sounds": [
+   "ctbackport:block/shelf/deactivate1",
+   "ctbackport:block/shelf/deactivate2",
+   "ctbackport:block/shelf/deactivate3"
+  ]
+ },
+ "shelf_multi_swap": {
+  "sounds": [
+   "ctbackport:block/shelf/multi_swap1",
+   "ctbackport:block/shelf/multi_swap2",
+   "ctbackport:block/shelf/multi_swap3"
+  ]
+ },
+ "shelf_place_item": {
+  "sounds": [
+   "ctbackport:block/shelf/place_item1",
+   "ctbackport:block/shelf/place_item2",
+   "ctbackport:block/shelf/place_item3",
+   "ctbackport:block/shelf/place_item4"
+  ]
+ },
+ "shelf_single_swap": {
+  "sounds": [
+   "ctbackport:block/shelf/single_swap1",
+   "ctbackport:block/shelf/single_swap2",
+   "ctbackport:block/shelf/single_swap3",
+   "ctbackport:block/shelf/single_swap4"
+  ]
+ },
+ "shelf_take_item": {
+  "sounds": [
+   "ctbackport:block/shelf/place_item1",
+   "ctbackport:block/shelf/place_item2",
+   "ctbackport:block/shelf/place_item3",
+   "ctbackport:block/shelf/place_item4"
+  ]
+ },
+ "spear_attack": {
+  "category": "player",
+  "sounds": [
+   "ctbackport:item/spear/attack1",
+   "ctbackport:item/spear/attack2",
+   "ctbackport:item/spear/attack3"
+  ]
+ },
+ "spear_hit": {
+  "category": "player",
+  "sounds": [
+   "ctbackport:item/spear/hit1",
+   "ctbackport:item/spear/hit2",
+   "ctbackport:item/spear/hit3"
+  ]
+ },
+ "spear_lunge": {
+  "category": "player",
+  "sounds": [
+   "ctbackport:item/spear/lunge1",
+   "ctbackport:item/spear/lunge2",
+   "ctbackport:item/spear/lunge3"
+  ]
+ },
+ "spear_use": {
+  "category": "player",
+  "sounds": [
+   "ctbackport:item/spear/use"
+  ]
+ },
+ "spear_wood_attack": {
+  "category": "player",
+  "sounds": [
+   "ctbackport:item/spear/wood/attack1",
+   "ctbackport:item/spear/wood/attack2",
+   "ctbackport:item/spear/wood/attack3"
+  ]
+ },
+ "spear_wood_hit": {
+  "category": "player",
+  "sounds": [
+   "ctbackport:item/spear/wood/hit1",
+   "ctbackport:item/spear/wood/hit2",
+   "ctbackport:item/spear/wood/hit3"
+  ]
+ },
+ "spear_wood_use": {
+  "category": "player",
+  "sounds": [
+   "ctbackport:item/spear/wood/use"
+  ]
+ },
+ "sulfur_break": {
+  "sounds": [
+   "ctbackport:block/sulfur/break1",
+   "ctbackport:block/sulfur/break2",
+   "ctbackport:block/sulfur/break3",
+   "ctbackport:block/sulfur/break4",
+   "ctbackport:block/sulfur/break5",
+   "ctbackport:block/sulfur/break6",
+   "ctbackport:block/sulfur/break7"
+  ]
+ },
+ "sulfur_cube_absorb": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/absorb1",
+   "ctbackport:mob/sulfur_cube/absorb2"
+  ]
+ },
+ "sulfur_cube_bouncy_hit": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/bouncy_hit1",
+   "ctbackport:mob/sulfur_cube/ball/bouncy_hit2",
+   "ctbackport:mob/sulfur_cube/ball/bouncy_hit3",
+   "ctbackport:mob/sulfur_cube/ball/bouncy_hit4"
+  ]
+ },
+ "sulfur_cube_bouncy_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/bouncy_push1",
+   "ctbackport:mob/sulfur_cube/ball/bouncy_push2",
+   "ctbackport:mob/sulfur_cube/ball/bouncy_push3",
+   "ctbackport:mob/sulfur_cube/ball/bouncy_push4"
+  ]
+ },
+ "sulfur_cube_death": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/death"
+  ]
+ },
+ "sulfur_cube_eject": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/eject1",
+   "ctbackport:mob/sulfur_cube/eject2"
+  ]
+ },
+ "sulfur_cube_explosive_hit": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/explosive_hit1",
+   "ctbackport:mob/sulfur_cube/ball/explosive_hit2",
+   "ctbackport:mob/sulfur_cube/ball/explosive_hit3",
+   "ctbackport:mob/sulfur_cube/ball/explosive_hit4"
+  ]
+ },
+ "sulfur_cube_explosive_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/explosive_push1",
+   "ctbackport:mob/sulfur_cube/ball/explosive_push2",
+   "ctbackport:mob/sulfur_cube/ball/explosive_push3",
+   "ctbackport:mob/sulfur_cube/ball/explosive_push4"
+  ]
+ },
+ "sulfur_cube_fast_flat_hit": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/fastflat_hit1",
+   "ctbackport:mob/sulfur_cube/ball/fastflat_hit2",
+   "ctbackport:mob/sulfur_cube/ball/fastflat_hit3",
+   "ctbackport:mob/sulfur_cube/ball/fastflat_hit4"
+  ]
+ },
+ "sulfur_cube_fast_flat_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/fastflat_push1",
+   "ctbackport:mob/sulfur_cube/ball/fastflat_push2",
+   "ctbackport:mob/sulfur_cube/ball/fastflat_push3",
+   "ctbackport:mob/sulfur_cube/ball/fastflat_push4"
+  ]
+ },
+ "sulfur_cube_fast_sliding_hit": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/fastsliding_hit1",
+   "ctbackport:mob/sulfur_cube/ball/fastsliding_hit2",
+   "ctbackport:mob/sulfur_cube/ball/fastsliding_hit3",
+   "ctbackport:mob/sulfur_cube/ball/fastsliding_hit4"
+  ]
+ },
+ "sulfur_cube_fast_sliding_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/fastsliding_push1",
+   "ctbackport:mob/sulfur_cube/ball/fastsliding_push2",
+   "ctbackport:mob/sulfur_cube/ball/fastsliding_push3",
+   "ctbackport:mob/sulfur_cube/ball/fastsliding_push4"
+  ]
+ },
+ "sulfur_cube_high_resistance_hit": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/highresistance_hit1",
+   "ctbackport:mob/sulfur_cube/ball/highresistance_hit2",
+   "ctbackport:mob/sulfur_cube/ball/highresistance_hit3",
+   "ctbackport:mob/sulfur_cube/ball/highresistance_hit4"
+  ]
+ },
+ "sulfur_cube_high_resistance_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/highresistance_push1",
+   "ctbackport:mob/sulfur_cube/ball/highresistance_push2",
+   "ctbackport:mob/sulfur_cube/ball/highresistance_push3",
+   "ctbackport:mob/sulfur_cube/ball/highresistance_push4"
+  ]
+ },
+ "sulfur_cube_hot_hit": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/hot_hit1",
+   "ctbackport:mob/sulfur_cube/ball/hot_hit2",
+   "ctbackport:mob/sulfur_cube/ball/hot_hit3",
+   "ctbackport:mob/sulfur_cube/ball/hot_hit4"
+  ]
+ },
+ "sulfur_cube_hot_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/hot_push1",
+   "ctbackport:mob/sulfur_cube/ball/hot_push2",
+   "ctbackport:mob/sulfur_cube/ball/hot_push3",
+   "ctbackport:mob/sulfur_cube/ball/hot_push4"
+  ]
+ },
+ "sulfur_cube_hurt": {
+  "sounds": [
+   "minecraft:mob/slime/hurt1"
+  ]
+ },
+ "sulfur_cube_jump": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/jump1",
+   "ctbackport:mob/sulfur_cube/jump10",
+   "ctbackport:mob/sulfur_cube/jump11",
+   "ctbackport:mob/sulfur_cube/jump2",
+   "ctbackport:mob/sulfur_cube/jump3",
+   "ctbackport:mob/sulfur_cube/jump4",
+   "ctbackport:mob/sulfur_cube/jump5",
+   "ctbackport:mob/sulfur_cube/jump6",
+   "ctbackport:mob/sulfur_cube/jump7",
+   "ctbackport:mob/sulfur_cube/jump8",
+   "ctbackport:mob/sulfur_cube/jump9"
+  ]
+ },
+ "sulfur_cube_light_hit": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/light_hit1",
+   "ctbackport:mob/sulfur_cube/ball/light_hit2",
+   "ctbackport:mob/sulfur_cube/ball/light_hit3",
+   "ctbackport:mob/sulfur_cube/ball/light_hit4"
+  ]
+ },
+ "sulfur_cube_light_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/light_push1",
+   "ctbackport:mob/sulfur_cube/ball/light_push2",
+   "ctbackport:mob/sulfur_cube/ball/light_push3",
+   "ctbackport:mob/sulfur_cube/ball/light_push4"
+  ]
+ },
+ "sulfur_cube_regular_hit": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/hit1",
+   "ctbackport:mob/sulfur_cube/ball/hit2",
+   "ctbackport:mob/sulfur_cube/ball/hit3",
+   "ctbackport:mob/sulfur_cube/ball/hit4"
+  ]
+ },
+ "sulfur_cube_regular_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/push1",
+   "ctbackport:mob/sulfur_cube/ball/push2",
+   "ctbackport:mob/sulfur_cube/ball/push3",
+   "ctbackport:mob/sulfur_cube/ball/push4"
+  ]
+ },
+ "sulfur_cube_slow_bouncy_hit": {
+  "sounds": [
+   "minecraft:entity/slime/attack1"
+  ]
+ },
+ "sulfur_cube_slow_bouncy_push": {
+  "sounds": [
+   "minecraft:entity/slime/attack1"
+  ]
+ },
+ "sulfur_cube_slow_flat_hit": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/slowflat_hit1",
+   "ctbackport:mob/sulfur_cube/ball/slowflat_hit2",
+   "ctbackport:mob/sulfur_cube/ball/slowflat_hit3",
+   "ctbackport:mob/sulfur_cube/ball/slowflat_hit4"
+  ]
+ },
+ "sulfur_cube_slow_flat_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/slowflat_push1",
+   "ctbackport:mob/sulfur_cube/ball/slowflat_push2",
+   "ctbackport:mob/sulfur_cube/ball/slowflat_push3",
+   "ctbackport:mob/sulfur_cube/ball/slowflat_push4"
+  ]
+ },
+ "sulfur_cube_slow_sliding_hit": {
+  "sounds": [
+   "minecraft:entity/slime/attack1"
+  ]
+ },
+ "sulfur_cube_slow_sliding_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/slowsliding_push1",
+   "ctbackport:mob/sulfur_cube/ball/slowsliding_push2",
+   "ctbackport:mob/sulfur_cube/ball/slowsliding_push3",
+   "ctbackport:mob/sulfur_cube/ball/slowsliding_push4"
+  ]
+ },
+ "sulfur_cube_small_death": {
+  "sounds": [
+   "minecraft:mob/slime/small_death1"
+  ]
+ },
+ "sulfur_cube_small_hurt": {
+  "sounds": [
+   "minecraft:mob/slime/small_hurt1"
+  ]
+ },
+ "sulfur_cube_small_jump": {
+  "sounds": [
+   "minecraft:mob/slime/small_squish2"
+  ]
+ },
+ "sulfur_cube_small_squish": {
+  "sounds": [
+   "minecraft:mob/slime/small_squish1"
+  ]
+ },
+ "sulfur_cube_squish": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/squish1",
+   "ctbackport:mob/sulfur_cube/squish10",
+   "ctbackport:mob/sulfur_cube/squish11",
+   "ctbackport:mob/sulfur_cube/squish2",
+   "ctbackport:mob/sulfur_cube/squish3",
+   "ctbackport:mob/sulfur_cube/squish4",
+   "ctbackport:mob/sulfur_cube/squish5",
+   "ctbackport:mob/sulfur_cube/squish6",
+   "ctbackport:mob/sulfur_cube/squish7",
+   "ctbackport:mob/sulfur_cube/squish8",
+   "ctbackport:mob/sulfur_cube/squish9"
+  ]
+ },
+ "sulfur_cube_sticky_hit": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/sticky_hit1",
+   "ctbackport:mob/sulfur_cube/ball/sticky_hit2",
+   "ctbackport:mob/sulfur_cube/ball/sticky_hit3",
+   "ctbackport:mob/sulfur_cube/ball/sticky_hit4"
+  ]
+ },
+ "sulfur_cube_sticky_push": {
+  "sounds": [
+   "ctbackport:mob/sulfur_cube/ball/sticky_push1",
+   "ctbackport:mob/sulfur_cube/ball/sticky_push2",
+   "ctbackport:mob/sulfur_cube/ball/sticky_push3",
+   "ctbackport:mob/sulfur_cube/ball/sticky_push4"
+  ]
+ },
+ "sulfur_hit": {
+  "sounds": [
+   "ctbackport:block/sulfur/hit1",
+   "ctbackport:block/sulfur/hit2",
+   "ctbackport:block/sulfur/hit3",
+   "ctbackport:block/sulfur/hit4",
+   "ctbackport:block/sulfur/hit5",
+   "ctbackport:block/sulfur/hit6",
+   "ctbackport:block/sulfur/hit7"
+  ]
+ },
+ "sulfur_place": {
+  "sounds": [
+   "ctbackport:block/sulfur/place1",
+   "ctbackport:block/sulfur/place2",
+   "ctbackport:block/sulfur/place3",
+   "ctbackport:block/sulfur/place4",
+   "ctbackport:block/sulfur/place5",
+   "ctbackport:block/sulfur/place6",
+   "ctbackport:block/sulfur/place7",
+   "ctbackport:block/sulfur/place8"
+  ]
+ },
+ "sulfur_spike_land": {
+  "sounds": [
+   "ctbackport:block/sulfur_spike/land1",
+   "ctbackport:block/sulfur_spike/land2",
+   "ctbackport:block/sulfur_spike/land3",
+   "ctbackport:block/sulfur_spike/land4",
+   "ctbackport:block/sulfur_spike/land5",
+   "ctbackport:block/sulfur_spike/land6",
+   "ctbackport:block/sulfur_spike/land7"
+  ]
+ },
+ "sulfur_step": {
+  "sounds": [
+   "ctbackport:block/sulfur/step1",
+   "ctbackport:block/sulfur/step2",
+   "ctbackport:block/sulfur/step3",
+   "ctbackport:block/sulfur/step4",
+   "ctbackport:block/sulfur/step5",
+   "ctbackport:block/sulfur/step6",
+   "ctbackport:block/sulfur/step7"
+  ]
+ },
+ "trial_spawner_about_to_spawn_item": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/about_to_spawn_item"
+  ]
+ },
+ "trial_spawner_ambient": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/ambient1",
+   "ctbackport:block/trial_spawner/ambient2",
+   "ctbackport:block/trial_spawner/ambient3",
+   "ctbackport:block/trial_spawner/ambient4",
+   "ctbackport:block/trial_spawner/ambient5"
+  ]
+ },
+ "trial_spawner_ambient_ominous": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/ambient_ominous1",
+   "ctbackport:block/trial_spawner/ambient_ominous2",
+   "ctbackport:block/trial_spawner/ambient_ominous3",
+   "ctbackport:block/trial_spawner/ambient_ominous4",
+   "ctbackport:block/trial_spawner/ambient_ominous5"
+  ]
+ },
+ "trial_spawner_break": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/break1",
+   "ctbackport:block/trial_spawner/break2",
+   "ctbackport:block/trial_spawner/break3"
+  ]
+ },
+ "trial_spawner_close_shutter": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/close_shutter"
+  ]
+ },
+ "trial_spawner_detect_player": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/detect_player1",
+   "ctbackport:block/trial_spawner/detect_player2",
+   "ctbackport:block/trial_spawner/detect_player3"
+  ]
+ },
+ "trial_spawner_eject_item": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/eject_item1"
+  ]
+ },
+ "trial_spawner_ominous_activate": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/ominous_activate"
+  ]
+ },
+ "trial_spawner_open_shutter": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/open_shutter"
+  ]
+ },
+ "trial_spawner_place": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/place1",
+   "ctbackport:block/trial_spawner/place2",
+   "ctbackport:block/trial_spawner/place3"
+  ]
+ },
+ "trial_spawner_spawn_item": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/spawn_item1",
+   "ctbackport:block/trial_spawner/spawn_item2",
+   "ctbackport:block/trial_spawner/spawn_item3"
+  ]
+ },
+ "trial_spawner_spawn_item_begin": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/spawn_item_begin1",
+   "ctbackport:block/trial_spawner/spawn_item_begin2",
+   "ctbackport:block/trial_spawner/spawn_item_begin3"
+  ]
+ },
+ "trial_spawner_spawn_mob": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/spawn1",
+   "ctbackport:block/trial_spawner/spawn2",
+   "ctbackport:block/trial_spawner/spawn3",
+   "ctbackport:block/trial_spawner/spawn4"
+  ]
+ },
+ "trial_spawner_step": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/step1",
+   "ctbackport:block/trial_spawner/step2",
+   "ctbackport:block/trial_spawner/step3",
+   "ctbackport:block/trial_spawner/step4",
+   "ctbackport:block/trial_spawner/step5"
+  ]
+ },
+ "vault_activate": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/activate"
+  ]
+ },
+ "vault_ambient": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/ambient1",
+   "ctbackport:block/vault/ambient2",
+   "ctbackport:block/vault/ambient3"
+  ]
+ },
+ "vault_break": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/break1",
+   "ctbackport:block/vault/break2",
+   "ctbackport:block/vault/break3",
+   "ctbackport:block/vault/break4"
+  ]
+ },
+ "vault_close_shutter": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/trial_spawner/close_shutter"
+  ]
+ },
+ "vault_deactivate": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/deactivate"
+  ]
+ },
+ "vault_eject_item": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/eject1",
+   "ctbackport:block/vault/eject2",
+   "ctbackport:block/vault/eject3"
+  ]
+ },
+ "vault_insert_item": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/insert"
+  ]
+ },
+ "vault_insert_item_fail": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/insert_fail"
+  ]
+ },
+ "vault_open_shutter": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/open_shutter"
+  ]
+ },
+ "vault_place": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/place1",
+   "ctbackport:block/vault/place2",
+   "ctbackport:block/vault/place3",
+   "ctbackport:block/vault/place4"
+  ]
+ },
+ "vault_reject_rewarded_player": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/reject_rewarded_player"
+  ]
+ },
+ "vault_step": {
+  "category": "block",
+  "sounds": [
+   "ctbackport:block/vault/step1",
+   "ctbackport:block/vault/step2",
+   "ctbackport:block/vault/step3",
+   "ctbackport:block/vault/step4",
+   "ctbackport:block/vault/step5",
+   "ctbackport:block/vault/step6",
+   "ctbackport:block/vault/step7",
+   "ctbackport:block/vault/step8"
+  ]
+ },
+ "wind_burst": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/wind_charge/wind_burst1",
+   "ctbackport:entity/wind_charge/wind_burst2",
+   "ctbackport:entity/wind_charge/wind_burst3"
+  ]
+ },
+ "zombie_nautilus_ambient": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/zombie_nautilus/ambient1",
+   "ctbackport:entity/zombie_nautilus/ambient2",
+   "ctbackport:entity/zombie_nautilus/ambient3",
+   "ctbackport:entity/zombie_nautilus/ambient4",
+   "ctbackport:entity/zombie_nautilus/ambient5"
+  ]
+ },
+ "zombie_nautilus_ambient_land": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/zombie_nautilus/ambient_land1",
+   "ctbackport:entity/zombie_nautilus/ambient_land2",
+   "ctbackport:entity/zombie_nautilus/ambient_land3",
+   "ctbackport:entity/zombie_nautilus/ambient_land4",
+   "ctbackport:entity/zombie_nautilus/ambient_land5",
+   "ctbackport:entity/zombie_nautilus/ambient_land6"
+  ]
+ },
+ "zombie_nautilus_dash_land": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/zombie_nautilus/dash_land1",
+   "ctbackport:entity/zombie_nautilus/dash_land2",
+   "ctbackport:entity/zombie_nautilus/dash_land3",
+   "ctbackport:entity/zombie_nautilus/dash_land4"
+  ]
+ },
+ "zombie_nautilus_dash_ready": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/zombie_nautilus/dash_ready1",
+   "ctbackport:entity/zombie_nautilus/dash_ready2",
+   "ctbackport:entity/zombie_nautilus/dash_ready3"
+  ]
+ },
+ "zombie_nautilus_dash_ready_land": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/zombie_nautilus/dash_ready_land1",
+   "ctbackport:entity/zombie_nautilus/dash_ready_land2",
+   "ctbackport:entity/zombie_nautilus/dash_ready_land3",
+   "ctbackport:entity/zombie_nautilus/dash_ready_land4"
+  ]
+ },
+ "zombie_nautilus_death": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/zombie_nautilus/death"
+  ]
+ },
+ "zombie_nautilus_death_land": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/zombie_nautilus/death_land"
+  ]
+ },
+ "zombie_nautilus_eat": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/zombie_nautilus/eat1",
+   "ctbackport:entity/zombie_nautilus/eat2"
+  ]
+ },
+ "zombie_nautilus_hurt": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/zombie_nautilus/hurt1",
+   "ctbackport:entity/zombie_nautilus/hurt2",
+   "ctbackport:entity/zombie_nautilus/hurt3",
+   "ctbackport:entity/zombie_nautilus/hurt4"
+  ]
+ },
+ "zombie_nautilus_hurt_land": {
+  "category": "neutral",
+  "sounds": [
+   "ctbackport:entity/zombie_nautilus/hurt_land1",
+   "ctbackport:entity/zombie_nautilus/hurt_land2",
+   "ctbackport:entity/zombie_nautilus/hurt_land3",
+   "ctbackport:entity/zombie_nautilus/hurt_land4"
+  ]
+ }
 }

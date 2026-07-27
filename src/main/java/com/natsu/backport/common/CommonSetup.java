@@ -60,9 +60,19 @@ public class CommonSetup {
 		event.enqueueWork(CommonSetup::registerFlowerPots);
 		event.enqueueWork(com.natsu.backport.common.network.CTBNetwork::register);
 		event.enqueueWork(com.natsu.backport.common.registry.CTBVegetationFeatures::register);
+		event.enqueueWork(com.natsu.backport.common.registry.CTBSulfurCaveFeatures::register);
+		event.enqueueWork(CommonSetup::registerSulfurCubeSpawns);
 		event.enqueueWork(CommonSetup::registerFlammablesAndCompostables);
 		event.enqueueWork(CommonSetup::registerBrewingRecipes);
 		event.enqueueWork(com.natsu.backport.server.events.NautilusSpawns::registerPlacements);
+	}
+
+	// the 26.2 rule is a plain "true", the biome list drives the spawns
+	private static void registerSulfurCubeSpawns() {
+		net.minecraft.world.entity.SpawnPlacements.register(CTBEntities.SULPHUR_CUBE.get(),
+				net.minecraft.world.entity.SpawnPlacements.Type.ON_GROUND,
+				net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				(type, level, reason, pos, random) -> true);
 	}
 
 	// vanilla 1.21 mixes, splash and lingering conversions are container level and free

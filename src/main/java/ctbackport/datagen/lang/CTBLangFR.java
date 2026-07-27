@@ -89,6 +89,7 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBBlocks.POTENT_SULFUR.get(), "Soufre puissant");
 		add(CTBBlocks.SULFUR_SPIKE.get(), "Pointe de soufre");
 		add("entity.ctbackport.sulfur_cube", "Cube de soufre");
+		add("biome.ctbackport.sulfur_caves", "Grottes de soufre");
 		add("death.attack.sulfurCubeHot", "%1$s est mort car le sol n'est pas la seule lave");
 		add("death.attack.sulfurCubeHot.player", "%2$s a montr\u00e9 \u00e0 %1$s que le sol n'est pas la seule lave");
 		add(CTBItems.SULPHUR_CUBE_BUCKET.get(), "Cube de soufre dans un seau");

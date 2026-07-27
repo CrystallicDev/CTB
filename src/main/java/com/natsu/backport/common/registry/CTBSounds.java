@@ -124,6 +124,7 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> PARCHED_HURT = simple("parched_hurt");
 	public static final RegistryObject<SoundEvent> PARCHED_DEATH = simple("parched_death");
 	public static final RegistryObject<SoundEvent> PARCHED_STEP = simple("parched_step");
+	public static final RegistryObject<SoundEvent> MUSIC_SULFUR_CAVES = simple("music.overworld.sulfur_caves");
 	public static final RegistryObject<SoundEvent> MUSIC_DISC_PRECIPICE = simple("music_disc_precipice");
 	public static final RegistryObject<SoundEvent> MUSIC_DISC_CREATOR = simple("music_disc_creator");
 	public static final RegistryObject<SoundEvent> MUSIC_DISC_CREATOR_MUSIC_BOX = simple("music_disc_creator_music_box");
