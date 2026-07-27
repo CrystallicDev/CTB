@@ -12,7 +12,7 @@ public class CTBBlockItemFactory {
 
 	public static RegistryObject<Item> blockItem(DeferredRegister<Item> ITEMS, RegistryObject<Block> block) {
         return ITEMS.register(block.getId().getPath(),
-            () -> new BlockItem(block.get(), new Item.Properties()));
+            () -> new BlockItem(block.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     }
 
 	public static RegistryObject<Item> blockItem(DeferredRegister<Item> ITEMS, CreativeModeTab tab,
