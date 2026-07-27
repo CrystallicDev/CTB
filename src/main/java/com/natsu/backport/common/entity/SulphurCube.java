@@ -409,9 +409,11 @@ public class SulphurCube extends Slime implements Bucketable {
 		float vertical = this.archetype.knockbackVertical * powerMultiplier;
 		// looking down drives the ball flat, looking up pops it in the air
 		vertical += (float) Math.max(0.0, -look.y) * 0.5F * horizontal;
+		// the vanilla final dampening : horizontal * 0.4, vertical applied * 1.2
+		horizontal *= 0.4F;
 		Vec3 flat = new Vec3(look.x, 0.0, look.z).normalize();
 		this.setDeltaMovement(this.getDeltaMovement()
-				.add(flat.x * horizontal, vertical, flat.z * horizontal));
+				.add(flat.x * horizontal, vertical * 1.2F, flat.z * horizontal));
 		this.hurtMarked = true;
 		this.playSound(this.archetype.hitSound.get(), 1.0F, 1.0F);
 	}
