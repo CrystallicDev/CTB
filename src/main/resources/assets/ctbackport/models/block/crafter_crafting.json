@@ -1,0 +1,9 @@
+{
+ "parent": "ctbackport:block/crafter_triggered",
+ "textures": {
+  "top": "ctbackport:block/crafter_top_crafting",
+  "north": "ctbackport:block/crafter_north_crafting",
+  "east": "ctbackport:block/crafter_east_crafting",
+  "west": "ctbackport:block/crafter_west_crafting"
+ }
+}

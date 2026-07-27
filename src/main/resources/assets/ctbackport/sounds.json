@@ -10,6 +10,16 @@
   ],
   "subtitle": "subtitles.item.armor.equip_copper"
  },
+ "block.crafter.craft": {
+  "sounds": [
+   "ctbackport:block/crafter/craft"
+  ]
+ },
+ "block.crafter.fail": {
+  "sounds": [
+   "ctbackport:block/crafter/fail"
+  ]
+ },
  "bogged_ambient": {
   "category": "hostile",
   "sounds": [

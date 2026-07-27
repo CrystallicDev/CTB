@@ -84,6 +84,9 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add(CTBBlocks.SULFUR_SPIKE.get(), "Sulfur Spike");
 		add("entity.ctbackport.sulfur_cube", "Sulfur Cube");
 		add("biome.ctbackport.sulfur_caves", "Sulfur Caves");
+		add("block.ctbackport.crafter", "Crafter");
+		add("container.crafter", "Crafter");
+		add("gui.togglable_slot", "Click to disable slot");
 		add("death.attack.sulfurCubeHot", "%1$s died because not just the floor is lava");
 		add("death.attack.sulfurCubeHot.player", "%2$s showed %1$s that not just the floor is lava");
 		add(CTBItems.SULPHUR_CUBE_BUCKET.get(), "Bucket of Sulphur Cube");

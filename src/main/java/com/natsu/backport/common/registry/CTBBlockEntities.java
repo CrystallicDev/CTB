@@ -29,6 +29,11 @@ public class CTBBlockEntities {
 			() -> BlockEntityType.Builder.of(VaultBlockEntity::new, CTBBlocks.VAULT.get()).build(null)
 			);
 
+	public static final RegistryObject<BlockEntityType<com.natsu.backport.common.block.entity.CrafterBlockEntity>> CRAFTER =
+			BLOCK_ENTITIES.register("crafter", () -> BlockEntityType.Builder.of(
+					com.natsu.backport.common.block.entity.CrafterBlockEntity::new,
+					CTBBlocks.CRAFTER.get()).build(null));
+
 	public static final RegistryObject<BlockEntityType<com.natsu.backport.common.block.entity.ShelfBlockEntity>> SHELF =
 			BLOCK_ENTITIES.register("shelf", () -> BlockEntityType.Builder.of(
 					com.natsu.backport.common.block.entity.ShelfBlockEntity::new,

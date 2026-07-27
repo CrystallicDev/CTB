@@ -15,4 +15,8 @@ public class CTBMenus {
 
 	public static final RegistryObject<MenuType<NautilusInventoryMenu>> NAUTILUS_INVENTORY = MENUS.register("nautilus_inventory",
 			() -> IForgeMenuType.create(NautilusInventoryMenu::fromNetwork));
+
+	public static final RegistryObject<MenuType<com.natsu.backport.common.inventory.CrafterMenu>> CRAFTER = MENUS.register("crafter",
+			() -> IForgeMenuType.create((windowId, inventory, data) ->
+					new com.natsu.backport.common.inventory.CrafterMenu(windowId, inventory)));
 }

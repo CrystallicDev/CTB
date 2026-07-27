@@ -19,6 +19,35 @@ public class CTBNetwork {
 	public static void register() {
 		CHANNEL.registerMessage(0, AnimalVariantPacket.class,
 				AnimalVariantPacket::encode, AnimalVariantPacket::decode, AnimalVariantPacket::handle);
+		CHANNEL.registerMessage(1, CrafterSlotStatePacket.class,
+				CrafterSlotStatePacket::encode, CrafterSlotStatePacket::decode, CrafterSlotStatePacket::handle);
+	}
+
+	/** Client to server : the player toggled a crafter grid slot. */
+	public record CrafterSlotStatePacket(int containerId, int slotId, boolean enabled) {
+
+		public static void encode(CrafterSlotStatePacket packet, FriendlyByteBuf buffer) {
+			buffer.writeVarInt(packet.containerId);
+			buffer.writeVarInt(packet.slotId);
+			buffer.writeBoolean(packet.enabled);
+		}
+
+		public static CrafterSlotStatePacket decode(FriendlyByteBuf buffer) {
+			return new CrafterSlotStatePacket(buffer.readVarInt(), buffer.readVarInt(), buffer.readBoolean());
+		}
+
+		public static void handle(CrafterSlotStatePacket packet, Supplier<NetworkEvent.Context> context) {
+			context.get().enqueueWork(() -> {
+				net.minecraft.server.level.ServerPlayer sender = context.get().getSender();
+				if (sender != null
+						&& sender.containerMenu instanceof com.natsu.backport.common.inventory.CrafterMenu menu
+						&& menu.containerId == packet.containerId
+						&& packet.slotId >= 0 && packet.slotId < 9) {
+					menu.setSlotState(packet.slotId, packet.enabled);
+				}
+			});
+			context.get().setPacketHandled(true);
+		}
 	}
 
 	/** Tells the client which farm animal variant an entity carries. */

@@ -318,6 +318,14 @@ public class CTBBlocks {
 					net.minecraft.world.level.block.state.BlockBehaviour.Properties
 							.of(net.minecraft.world.level.material.Material.DECORATION).instabreak().noOcclusion()));
 
+	public static final RegistryObject<Block> CRAFTER = BLOCKS.register("crafter",
+			() -> new com.natsu.backport.common.block.CrafterBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties
+					.of(net.minecraft.world.level.material.Material.STONE).strength(1.5F)
+					.sound(net.minecraft.world.level.block.SoundType.STONE)));
+	public static final RegistryObject<net.minecraft.world.item.Item> CRAFTER_ITEM = CTBItems.ITEMS.register("crafter",
+			() -> new net.minecraft.world.item.BlockItem(CRAFTER.get(),
+					new net.minecraft.world.item.Item.Properties().tab(net.minecraft.world.item.CreativeModeTab.TAB_REDSTONE)));
+
 	public static final RegistryObject<Block> POTENT_SULFUR = registerWithItem(BLOCKS, CTBItems.ITEMS, "potent_sulfur",
 			BLOCKS.register("potent_sulfur", () -> new com.natsu.backport.common.block.PotentSulfurBlock(
 					net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy(SULFUR.get())

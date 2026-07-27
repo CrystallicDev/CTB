@@ -61,6 +61,7 @@ public class CommonSetup {
 		event.enqueueWork(com.natsu.backport.common.network.CTBNetwork::register);
 		event.enqueueWork(com.natsu.backport.common.registry.CTBVegetationFeatures::register);
 		event.enqueueWork(com.natsu.backport.common.registry.CTBSulfurCaveFeatures::register);
+		event.enqueueWork(com.natsu.backport.common.registry.CTBSpringExtras::register);
 		event.enqueueWork(CommonSetup::registerSulfurCubeSpawns);
 		event.enqueueWork(CommonSetup::registerFlammablesAndCompostables);
 		event.enqueueWork(CommonSetup::registerBrewingRecipes);

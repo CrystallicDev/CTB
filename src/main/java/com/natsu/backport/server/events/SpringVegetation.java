@@ -53,7 +53,7 @@ public class SpringVegetation {
 		if (vanilla && DRY_GRASS_BADLANDS_BIOMES.contains(path)) {
 			add(event, CTBVegetationFeatures.PATCH_DRY_GRASS_BADLANDS);
 		}
-		if (vanilla && path.equals("dark_forest")) {
+		if (vanilla && (path.equals("dark_forest") || path.equals("forest"))) {
 			add(event, CTBVegetationFeatures.PATCH_LEAF_LITTER);
 		}
 		if (vanilla && WILDFLOWERS_BIRCH_BIOMES.contains(path)) {
@@ -69,7 +69,28 @@ public class SpringVegetation {
 			add(event, CTBVegetationFeatures.PATCH_FIREFLY_BUSH_NEAR_WATER_SWAMP);
 			add(event, CTBVegetationFeatures.PATCH_FIREFLY_BUSH_SWAMP);
 		}
+		if (vanilla) {
+			for (net.minecraft.core.Holder<net.minecraft.world.level.levelgen.placement.PlacedFeature> fallen
+					: com.natsu.backport.common.registry.CTBSpringExtras.FALLEN_BY_BIOME
+							.getOrDefault(path, java.util.List.of())) {
+				add(event, fallen);
+			}
+		}
+		// the 1.21.5 cactus tops some columns with a flower : swap the vanilla patches for ours
+		if (vanilla && CACTUS_BIOMES.contains(path)) {
+			event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION)
+					.removeIf(holder -> holder.unwrapKey()
+							.map(key -> key.location().getNamespace().equals("minecraft")
+									&& key.location().getPath().startsWith("patch_cactus"))
+							.orElse(false));
+			add(event, path.equals("desert")
+					? com.natsu.backport.common.registry.CTBSpringExtras.PATCH_CACTUS_DESERT
+					: com.natsu.backport.common.registry.CTBSpringExtras.PATCH_CACTUS_DECORATED);
+		}
 	}
+
+	private static final Set<String> CACTUS_BIOMES = Set.of(
+			"desert", "badlands", "eroded_badlands", "wooded_badlands");
 
 	private static void add(BiomeLoadingEvent event, net.minecraft.core.Holder<net.minecraft.world.level.levelgen.placement.PlacedFeature> feature) {
 		event.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, feature);

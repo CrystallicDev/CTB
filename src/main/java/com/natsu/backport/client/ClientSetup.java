@@ -51,6 +51,9 @@ public class ClientSetup {
 		net.minecraft.client.gui.screens.MenuScreens.register(
 				com.natsu.backport.common.registry.CTBMenus.NAUTILUS_INVENTORY.get(),
 				com.natsu.backport.client.screen.NautilusInventoryScreen::new);
+		net.minecraft.client.gui.screens.MenuScreens.register(
+				com.natsu.backport.common.registry.CTBMenus.CRAFTER.get(),
+				com.natsu.backport.client.screen.CrafterScreen::new);
 		event.registerEntityRenderer(CTBEntities.VARIANT_EGG.get(),
 				net.minecraft.client.renderer.entity.ThrownItemRenderer::new);
 		event.registerEntityRenderer(net.minecraft.world.entity.EntityType.PIG,
