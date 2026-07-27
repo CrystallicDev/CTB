@@ -59,7 +59,7 @@ public class ShelfBlock extends BaseEntityBlock implements SideChainPartBlock, S
 	public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final EnumProperty<CTBSideChainPart> SIDE_CHAIN_PART =
-			EnumProperty.create("side_chain_part", CTBSideChainPart.class);
+			EnumProperty.create("side_chain", CTBSideChainPart.class);
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	private static final Map<Direction, VoxelShape> SHAPES = makeShapes();
