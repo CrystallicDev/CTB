@@ -65,6 +65,11 @@ public class Nautilus extends AbstractNautilus {
 		this.playSound(CTBSounds.NAUTILUS_EAT.get(), 1.0F, 1.0F);
 	}
 
+	@Override
+	public boolean rideableUnderWater() {
+		return true;
+	}
+
 	public static boolean checkNautilusSpawnRules(EntityType<? extends AbstractNautilus> type, LevelAccessor level,
 			MobSpawnType spawnType, BlockPos pos, Random random) {
 		int seaLevel = level.getSeaLevel();

@@ -100,6 +100,19 @@ public class CTBItems {
 					new Item.Properties().tab(CreativeModeTab.TAB_MISC))
 			);
 
+	public static final RegistryObject<Item> NAUTILUS_SPAWN_EGG = ITEMS.register("nautilus_spawn_egg", () ->
+			new net.minecraftforge.common.ForgeSpawnEggItem(
+					com.natsu.backport.common.registry.CTBEntities.NAUTILUS,
+					0xC86A50, 0xF3E1CE,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
+	public static final RegistryObject<Item> ZOMBIE_NAUTILUS_SPAWN_EGG = ITEMS.register("zombie_nautilus_spawn_egg", () ->
+			new net.minecraftforge.common.ForgeSpawnEggItem(
+					com.natsu.backport.common.registry.CTBEntities.ZOMBIE_NAUTILUS,
+					0x527A62, 0xA1C4A8,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
+
 	public static final RegistryObject<Item> BLUE_EGG = ITEMS.register("blue_egg", () ->
 			new com.natsu.backport.common.item.VariantEggItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(16))
 			);

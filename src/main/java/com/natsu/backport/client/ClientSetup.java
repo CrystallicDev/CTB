@@ -168,6 +168,8 @@ public class ClientSetup {
         			CTBBlocks.POTTED_PALE_OAK_SAPLING, CTBBlocks.POTTED_OPEN_EYEBLOSSOM, CTBBlocks.POTTED_CLOSED_EYEBLOSSOM)) {
         		ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.cutout());
         	}
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.GOLDEN_DANDELION.get(), RenderType.cutout());
+        	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.POTTED_GOLDEN_DANDELION.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.PALE_MOSS.mossLayer.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.SULFUR_SPIKE.get(), RenderType.cutout());
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.COPPER_TORCH.get(), RenderType.cutout());

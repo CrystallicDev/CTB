@@ -91,6 +91,8 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add("entity.ctbackport.sulfur_cube", "Cube de soufre");
 		add("biome.ctbackport.sulfur_caves", "Grottes de soufre");
 		add("block.ctbackport.crafter", "Assembleur");
+		add("item.ctbackport.nautilus_spawn_egg", "\u0152uf d'apparition de nautile");
+		add("item.ctbackport.zombie_nautilus_spawn_egg", "\u0152uf d'apparition de nautile zombie");
 		add("container.crafter", "Assembleur");
 		add("gui.togglable_slot", "Cliquez pour d\u00e9sactiver l'emplacement");
 		add("death.attack.sulfurCubeHot", "%1$s est mort car le sol n'est pas la seule lave");

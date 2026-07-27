@@ -85,6 +85,8 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add("entity.ctbackport.sulfur_cube", "Sulfur Cube");
 		add("biome.ctbackport.sulfur_caves", "Sulfur Caves");
 		add("block.ctbackport.crafter", "Crafter");
+		add("item.ctbackport.nautilus_spawn_egg", "Nautilus Spawn Egg");
+		add("item.ctbackport.zombie_nautilus_spawn_egg", "Zombie Nautilus Spawn Egg");
 		add("container.crafter", "Crafter");
 		add("gui.togglable_slot", "Click to disable slot");
 		add("death.attack.sulfurCubeHot", "%1$s died because not just the floor is lava");
