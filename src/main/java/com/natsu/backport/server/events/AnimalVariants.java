@@ -43,6 +43,15 @@ public class AnimalVariants {
 		return entity.getPersistentData().getByte(TAG);
 	}
 
+	/** Marks freshly finalized spawns so onJoin can tell them from loaded entities. */
+	@SubscribeEvent
+	public static void onSpecialSpawn(net.minecraftforge.event.entity.living.LivingSpawnEvent.SpecialSpawn event) {
+		if (event.getEntity() instanceof net.minecraft.world.entity.animal.Sheep
+				&& event.getSpawnReason() != net.minecraft.world.entity.MobSpawnType.BREEDING) {
+			event.getEntity().getPersistentData().putBoolean(SHEEP_COLOR_TAG, true);
+		}
+	}
+
 	@SubscribeEvent
 	public static void onJoin(EntityJoinWorldEvent event) {
 		Level level = event.getWorld();
@@ -50,6 +59,11 @@ public class AnimalVariants {
 			return;
 		}
 		Entity entity = event.getEntity();
+		if (entity instanceof net.minecraft.world.entity.animal.Sheep sheep
+				&& sheep.getPersistentData().contains(SHEEP_COLOR_TAG)) {
+			sheep.getPersistentData().remove(SHEEP_COLOR_TAG);
+			sheep.setColor(sheepColorFor(variantForBiome(level, sheep.blockPosition()), sheep.getRandom()));
+		}
 		if (isVariantAnimal(entity)) {
 			if (!entity.getPersistentData().contains(TAG)) {
 				entity.getPersistentData().putByte(TAG, variantForBiome(level, entity.blockPosition()));
@@ -70,6 +84,45 @@ public class AnimalVariants {
 				}
 			}
 		}
+	}
+
+	private static final String SHEEP_COLOR_TAG = "ctb_sheep_color";
+
+	/**
+	 * The 1.21.5 SheepColorSpawnRules : 5/5/5/3 rare solid colors and an 82
+	 * weight of the climate's common color, itself pink once in five hundred.
+	 */
+	private static net.minecraft.world.item.DyeColor sheepColorFor(byte climate, java.util.Random random) {
+		net.minecraft.world.item.DyeColor[] rare = switch (climate) {
+			case WARM -> new net.minecraft.world.item.DyeColor[] {
+					net.minecraft.world.item.DyeColor.GRAY, net.minecraft.world.item.DyeColor.LIGHT_GRAY,
+					net.minecraft.world.item.DyeColor.WHITE, net.minecraft.world.item.DyeColor.BLACK };
+			case COLD -> new net.minecraft.world.item.DyeColor[] {
+					net.minecraft.world.item.DyeColor.LIGHT_GRAY, net.minecraft.world.item.DyeColor.GRAY,
+					net.minecraft.world.item.DyeColor.WHITE, net.minecraft.world.item.DyeColor.BROWN };
+			default -> new net.minecraft.world.item.DyeColor[] {
+					net.minecraft.world.item.DyeColor.BLACK, net.minecraft.world.item.DyeColor.GRAY,
+					net.minecraft.world.item.DyeColor.LIGHT_GRAY, net.minecraft.world.item.DyeColor.BROWN };
+		};
+		net.minecraft.world.item.DyeColor common = switch (climate) {
+			case WARM -> net.minecraft.world.item.DyeColor.BROWN;
+			case COLD -> net.minecraft.world.item.DyeColor.BLACK;
+			default -> net.minecraft.world.item.DyeColor.WHITE;
+		};
+		int roll = random.nextInt(100);
+		if (roll < 5) {
+			return rare[0];
+		}
+		if (roll < 10) {
+			return rare[1];
+		}
+		if (roll < 15) {
+			return rare[2];
+		}
+		if (roll < 18) {
+			return rare[3];
+		}
+		return random.nextInt(500) == 0 ? net.minecraft.world.item.DyeColor.PINK : common;
 	}
 
 	private static byte variantForBiome(Level level, BlockPos pos) {

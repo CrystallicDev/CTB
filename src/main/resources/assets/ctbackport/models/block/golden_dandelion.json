@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "minecraft:block/golden_dandelion"
-  }
+ "parent": "minecraft:block/cross",
+ "textures": {
+  "cross": "ctbackport:block/golden_dandelion"
+ }
 }

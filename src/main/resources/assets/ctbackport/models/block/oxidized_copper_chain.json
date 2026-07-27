@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/template_chain",
-  "textures": {
-    "texture": "ctbackport:block/oxidized_copper_chain"
-  }
+ "parent": "ctbackport:block/template_chain",
+ "textures": {
+  "texture": "ctbackport:block/oxidized_copper_chain"
+ }
 }

@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/flower_pot_cross",
-  "textures": {
-    "plant": "minecraft:block/golden_dandelion"
-  }
+ "parent": "minecraft:block/flower_pot_cross",
+ "textures": {
+  "plant": "ctbackport:block/golden_dandelion"
+ }
 }

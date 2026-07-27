@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/potted_golden_dandelion"
+      "model": "ctbackport:block/potted_golden_dandelion"
     }
   }
 }
