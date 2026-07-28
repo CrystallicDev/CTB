@@ -22,6 +22,12 @@ public class NautilusSpawns {
 				Heightmap.Types.OCEAN_FLOOR, Nautilus::checkNautilusSpawnRules);
 		SpawnPlacements.register(CTBEntities.ZOMBIE_NAUTILUS.get(), SpawnPlacements.Type.IN_WATER,
 				Heightmap.Types.OCEAN_FLOOR, Nautilus::checkNautilusSpawnRules);
+		SpawnPlacements.register(CTBEntities.CAMEL.get(), SpawnPlacements.Type.ON_GROUND,
+				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				com.natsu.backport.common.entity.Camel::checkCamelSpawnRules);
+		SpawnPlacements.register(CTBEntities.CAMEL_HUSK.get(), SpawnPlacements.Type.ON_GROUND,
+				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				com.natsu.backport.common.entity.Camel::checkCamelSpawnRules);
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGH)
@@ -42,6 +48,8 @@ public class NautilusSpawns {
 			}
 			event.getSpawns().addSpawn(MobCategory.MONSTER,
 					new MobSpawnSettings.SpawnerData(CTBEntities.PARCHED.get(), 50, 4, 4));
+			event.getSpawns().addSpawn(MobCategory.CREATURE,
+					new MobSpawnSettings.SpawnerData(CTBEntities.CAMEL.get(), 1, 1, 1));
 			return;
 		}
 

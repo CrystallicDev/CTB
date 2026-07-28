@@ -48,6 +48,8 @@ public class ClientSetup {
 		event.registerEntityRenderer(CTBEntities.BOGGED.get(), BoggedRenderer::new);
 		event.registerEntityRenderer(CTBEntities.PARCHED.get(), ParchedRenderer::new);
 		event.registerEntityRenderer(CTBEntities.COPPER_GOLEM.get(), CopperGolemRenderer::new);
+		event.registerEntityRenderer(CTBEntities.CAMEL.get(), com.natsu.backport.client.render.CamelRenderer::new);
+		event.registerEntityRenderer(CTBEntities.CAMEL_HUSK.get(), com.natsu.backport.client.render.CamelRenderer::new);
 		net.minecraft.client.gui.screens.MenuScreens.register(
 				com.natsu.backport.common.registry.CTBMenus.NAUTILUS_INVENTORY.get(),
 				com.natsu.backport.client.screen.NautilusInventoryScreen::new);

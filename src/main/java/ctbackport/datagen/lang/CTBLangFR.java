@@ -91,6 +91,10 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add("entity.ctbackport.sulfur_cube", "Cube de soufre");
 		add("biome.ctbackport.sulfur_caves", "Grottes de soufre");
 		add("block.ctbackport.crafter", "Assembleur");
+		add("entity.ctbackport.camel", "Chameau");
+		add("entity.ctbackport.camel_husk", "Chameau husk");
+		add("item.ctbackport.camel_spawn_egg", "\u0152uf d'apparition de chameau");
+		add("item.ctbackport.camel_husk_spawn_egg", "\u0152uf d'apparition de chameau husk");
 		add("item.ctbackport.nautilus_spawn_egg", "\u0152uf d'apparition de nautile");
 		add("item.ctbackport.zombie_nautilus_spawn_egg", "\u0152uf d'apparition de nautile zombie");
 		add("container.crafter", "Assembleur");

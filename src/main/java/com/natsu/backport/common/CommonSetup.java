@@ -50,6 +50,8 @@ public class CommonSetup {
 		event.put(CTBEntities.COPPER_GOLEM.get(), com.natsu.backport.common.entity.CopperGolem.createAttributes().build());
 		event.put(CTBEntities.ZOMBIE_NAUTILUS.get(), com.natsu.backport.common.entity.ZombieNautilus.createAttributes().build());
 		event.put(CTBEntities.SULPHUR_CUBE.get(), com.natsu.backport.common.entity.SulphurCube.createAttributes().build());
+		event.put(CTBEntities.CAMEL.get(), com.natsu.backport.common.entity.Camel.createAttributes().build());
+		event.put(CTBEntities.CAMEL_HUSK.get(), com.natsu.backport.common.entity.Camel.createAttributes().build());
 	}
 
 	@SubscribeEvent

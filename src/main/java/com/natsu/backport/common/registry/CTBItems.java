@@ -100,6 +100,18 @@ public class CTBItems {
 					new Item.Properties().tab(CreativeModeTab.TAB_MISC))
 			);
 
+	public static final RegistryObject<Item> CAMEL_SPAWN_EGG = ITEMS.register("camel_spawn_egg", () ->
+			new net.minecraftforge.common.ForgeSpawnEggItem(
+					com.natsu.backport.common.registry.CTBEntities.CAMEL,
+					0xFCC369, 0xCB9337,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
+	public static final RegistryObject<Item> CAMEL_HUSK_SPAWN_EGG = ITEMS.register("camel_husk_spawn_egg", () ->
+			new net.minecraftforge.common.ForgeSpawnEggItem(
+					com.natsu.backport.common.registry.CTBEntities.CAMEL_HUSK,
+					0x797061, 0x5E5545,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC))
+			);
 	public static final RegistryObject<Item> NAUTILUS_SPAWN_EGG = ITEMS.register("nautilus_spawn_egg", () ->
 			new net.minecraftforge.common.ForgeSpawnEggItem(
 					com.natsu.backport.common.registry.CTBEntities.NAUTILUS,

@@ -69,6 +69,16 @@ public class CTBEntities {
 			.build("parched")
 			);
 
+	public static final RegistryObject<EntityType<com.natsu.backport.common.entity.Camel>> CAMEL =
+			ENTITIES.register("camel", () -> EntityType.Builder
+					.of(com.natsu.backport.common.entity.Camel::new, MobCategory.CREATURE)
+					.sized(1.7F, 2.375F).clientTrackingRange(10).build("camel"));
+	public static final RegistryObject<EntityType<com.natsu.backport.common.entity.CamelHusk>> CAMEL_HUSK =
+			ENTITIES.register("camel_husk", () -> EntityType.Builder
+					.of((EntityType<com.natsu.backport.common.entity.CamelHusk> t, net.minecraft.world.level.Level l) ->
+							new com.natsu.backport.common.entity.CamelHusk(t, l), MobCategory.CREATURE)
+					.sized(1.7F, 2.375F).clientTrackingRange(10).build("camel_husk"));
+
 	public static final RegistryObject<EntityType<Nautilus>> NAUTILUS = ENTITIES.register("nautilus",
 			() -> EntityType.Builder.<Nautilus>of(Nautilus::new, MobCategory.WATER_CREATURE)
 			.sized(0.9f, 0.9f)

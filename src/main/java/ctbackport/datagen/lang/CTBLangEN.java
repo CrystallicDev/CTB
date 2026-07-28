@@ -85,6 +85,10 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add("entity.ctbackport.sulfur_cube", "Sulfur Cube");
 		add("biome.ctbackport.sulfur_caves", "Sulfur Caves");
 		add("block.ctbackport.crafter", "Crafter");
+		add("entity.ctbackport.camel", "Camel");
+		add("entity.ctbackport.camel_husk", "Camel Husk");
+		add("item.ctbackport.camel_spawn_egg", "Camel Spawn Egg");
+		add("item.ctbackport.camel_husk_spawn_egg", "Camel Husk Spawn Egg");
 		add("item.ctbackport.nautilus_spawn_egg", "Nautilus Spawn Egg");
 		add("item.ctbackport.zombie_nautilus_spawn_egg", "Zombie Nautilus Spawn Egg");
 		add("container.crafter", "Crafter");
