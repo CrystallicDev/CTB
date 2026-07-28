@@ -12,6 +12,7 @@ public class NautilusModel extends AnimatedGeoModel<AbstractNautilus> {
 	private static final ResourceLocation MODEL = new ResourceLocation(CTBackport.MODID, "geo/nautilus.geo.json");
 	private static final ResourceLocation ANIMATION = new ResourceLocation(CTBackport.MODID, "animations/nautilus.animation.json");
 	private static final ResourceLocation TEXTURE = new ResourceLocation(CTBackport.MODID, "textures/entity/nautilus.png");
+	private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(CTBackport.MODID, "textures/entity/nautilus_baby.png");
 	private static final ResourceLocation TEXTURE_ZOMBIE = new ResourceLocation(CTBackport.MODID, "textures/entity/nautilus_zombie.png");
 	private static final ResourceLocation TEXTURE_ZOMBIE_CORAL = new ResourceLocation(CTBackport.MODID, "textures/entity/nautilus_zombie_coral.png");
 
@@ -25,7 +26,7 @@ public class NautilusModel extends AnimatedGeoModel<AbstractNautilus> {
 		if (entity instanceof ZombieNautilus zombie) {
 			return zombie.getVariant() == 1 ? TEXTURE_ZOMBIE_CORAL : TEXTURE_ZOMBIE;
 		}
-		return TEXTURE;
+		return entity.isBaby() ? TEXTURE_BABY : TEXTURE;
 	}
 
 	@Override
