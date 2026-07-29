@@ -591,9 +591,10 @@ public class Camel extends AbstractHorse implements IAnimatable {
 
 	@Override
 	public void registerControllers(AnimationData data) {
-		// two layers like vanilla : the pose owns the body while sitting or
-		// getting up, locomotion owns it the rest of the time
-		data.addAnimationController(new AnimationController<>(this, "pose", 2, event -> {
+		// one controller and every animation keys every bone : geckolib bones
+		// are shared across entities, an unkeyed bone inherits the pose of
+		// whichever camel rendered just before
+		data.addAnimationController(new AnimationController<>(this, "main", 4, event -> {
 			if (this.isCamelVisuallySitting()) {
 				// HOLD, not PLAY_ONCE : a finished PLAY_ONCE snaps back to the
 				// bind pose and the re-set restarts it, blinking sat and stood
@@ -606,25 +607,16 @@ public class Camel extends AbstractHorse implements IAnimatable {
 				}
 				return PlayState.CONTINUE;
 			}
-			if (this.inStandUpTransition()) {
-				event.getController().setAnimation(new AnimationBuilder()
-						.addAnimation("special.standup", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
-				return PlayState.CONTINUE;
-			}
-			// never STOP : geckolib bones are shared across entities, unkeyed
-			// bones inherit the pose of whichever camel rendered just before
-			event.getController().setAnimation(new AnimationBuilder()
-					.addAnimation("special.none", ILoopType.EDefaultLoopTypes.LOOP));
-			return PlayState.CONTINUE;
-		}));
-		data.addAnimationController(new AnimationController<>(this, "locomotion", 4, event -> {
-			if (this.isCamelVisuallySitting() || this.inStandUpTransition()) {
-				return PlayState.STOP;
-			}
 			if (this.isDashing()) {
 				event.getController().setAnimationSpeed(1.0);
 				event.getController().setAnimation(new AnimationBuilder()
 						.addAnimation("moove.dash", ILoopType.EDefaultLoopTypes.LOOP));
+				return PlayState.CONTINUE;
+			}
+			if (this.inStandUpTransition()) {
+				event.getController().setAnimationSpeed(1.0);
+				event.getController().setAnimation(new AnimationBuilder()
+						.addAnimation("special.standup", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
 				return PlayState.CONTINUE;
 			}
 			if (event.isMoving()) {
