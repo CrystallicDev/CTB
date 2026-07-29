@@ -611,7 +611,11 @@ public class Camel extends AbstractHorse implements IAnimatable {
 						.addAnimation("special.standup", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
 				return PlayState.CONTINUE;
 			}
-			return PlayState.STOP;
+			// never STOP : geckolib bones are shared across entities, unkeyed
+			// bones inherit the pose of whichever camel rendered just before
+			event.getController().setAnimation(new AnimationBuilder()
+					.addAnimation("special.none", ILoopType.EDefaultLoopTypes.LOOP));
+			return PlayState.CONTINUE;
 		}));
 		data.addAnimationController(new AnimationController<>(this, "locomotion", 4, event -> {
 			if (this.isCamelVisuallySitting() || this.inStandUpTransition()) {
