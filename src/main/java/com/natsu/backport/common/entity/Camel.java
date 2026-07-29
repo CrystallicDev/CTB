@@ -334,6 +334,21 @@ public class Camel extends AbstractHorse implements IAnimatable {
 	public void handleStopJump() {
 	}
 
+	@Override
+	public void onSyncedDataUpdated(net.minecraft.network.syncher.EntityDataAccessor<?> accessor) {
+		// the jump runs client side only : arm the cooldown wherever DASH flips,
+		// otherwise the server clears the flag on the very next tick
+		if (!this.firstTick && DASH.equals(accessor) && this.entityData.get(DASH)) {
+			if (this.dashCooldown == 0) {
+				this.dashCooldown = DASH_COOLDOWN_TICKS;
+			}
+		}
+		if (!this.firstTick && LAST_POSE_CHANGE_TICK.equals(accessor)) {
+			this.refreshDimensions();
+		}
+		super.onSyncedDataUpdated(accessor);
+	}
+
 	public boolean canSprint() {
 		return true;
 	}
@@ -570,9 +585,15 @@ public class Camel extends AbstractHorse implements IAnimatable {
 
 	// --- geckolib ---
 
+	private boolean inStandUpTransition() {
+		return !this.isCamelVisuallySitting() && this.isInPoseTransition() && this.getPoseTime() >= 0L;
+	}
+
 	@Override
 	public void registerControllers(AnimationData data) {
-		data.addAnimationController(new AnimationController<>(this, "main", 4, event -> {
+		// two layers like vanilla : the pose owns the body while sitting or
+		// getting up, locomotion owns it the rest of the time
+		data.addAnimationController(new AnimationController<>(this, "pose", 2, event -> {
 			if (this.isCamelVisuallySitting()) {
 				// HOLD, not PLAY_ONCE : a finished PLAY_ONCE snaps back to the
 				// bind pose and the re-set restarts it, blinking sat and stood
@@ -585,16 +606,21 @@ public class Camel extends AbstractHorse implements IAnimatable {
 				}
 				return PlayState.CONTINUE;
 			}
+			if (this.inStandUpTransition()) {
+				event.getController().setAnimation(new AnimationBuilder()
+						.addAnimation("special.standup", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
+				return PlayState.CONTINUE;
+			}
+			return PlayState.STOP;
+		}));
+		data.addAnimationController(new AnimationController<>(this, "locomotion", 4, event -> {
+			if (this.isCamelVisuallySitting() || this.inStandUpTransition()) {
+				return PlayState.STOP;
+			}
 			if (this.isDashing()) {
 				event.getController().setAnimationSpeed(1.0);
 				event.getController().setAnimation(new AnimationBuilder()
 						.addAnimation("moove.dash", ILoopType.EDefaultLoopTypes.LOOP));
-				return PlayState.CONTINUE;
-			}
-			if (this.isInPoseTransition() && this.getPoseTime() >= 0L) {
-				event.getController().setAnimationSpeed(1.0);
-				event.getController().setAnimation(new AnimationBuilder()
-						.addAnimation("special.standup", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
 				return PlayState.CONTINUE;
 			}
 			if (event.isMoving()) {
