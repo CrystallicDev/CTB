@@ -589,6 +589,7 @@ public class Camel extends AbstractHorse implements IAnimatable {
 				return PlayState.CONTINUE;
 			}
 			if (this.isDashing()) {
+				event.getController().setAnimationSpeed(1.0);
 				event.getController().setAnimation(new AnimationBuilder()
 						.addAnimation("moove.dash", ILoopType.EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;
