@@ -245,6 +245,28 @@ public class Camel extends AbstractHorse implements IAnimatable {
 		if (this.isCamelSitting() && this.isInWater()) {
 			this.standUpInstantly();
 		}
+		if (!this.level.isClientSide) {
+			this.updateSprintBonus();
+		}
+	}
+
+	private static final java.util.UUID SPRINT_BONUS_ID =
+			java.util.UUID.fromString("2a3b5c8e-9d41-4e76-b380-5c1f6e2a9d47");
+
+	/** The vanilla running speed bonus while the rider sprints and the dash is ready. */
+	private void updateSprintBonus() {
+		boolean sprinting = this.getControllingPassenger() instanceof Player player
+				&& player.isSprinting() && this.dashCooldown == 0;
+		net.minecraft.world.entity.ai.attributes.AttributeInstance speed =
+				this.getAttribute(Attributes.MOVEMENT_SPEED);
+		boolean has = speed.getModifier(SPRINT_BONUS_ID) != null;
+		if (sprinting && !has) {
+			speed.addTransientModifier(new net.minecraft.world.entity.ai.attributes.AttributeModifier(
+					SPRINT_BONUS_ID, "Camel sprint bonus", RUNNING_SPEED_BONUS,
+					net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADDITION));
+		} else if (!sprinting && has) {
+			speed.removeModifier(SPRINT_BONUS_ID);
+		}
 	}
 
 	@Override
@@ -572,10 +594,14 @@ public class Camel extends AbstractHorse implements IAnimatable {
 				return PlayState.CONTINUE;
 			}
 			if (event.isMoving()) {
+				// the walk cycle keeps up with the actual speed, sprint included
+				double speed = this.getDeltaMovement().horizontalDistance();
+				event.getController().setAnimationSpeed(Mth.clamp(speed / 0.09, 0.6, 3.0));
 				event.getController().setAnimation(new AnimationBuilder()
 						.addAnimation("moove.walk", ILoopType.EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;
 			}
+			event.getController().setAnimationSpeed(1.0);
 			event.getController().setAnimation(new AnimationBuilder()
 					.addAnimation("moove.idle", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
@@ -669,6 +695,7 @@ public class Camel extends AbstractHorse implements IAnimatable {
 		public boolean canUse() {
 			return !Camel.this.isVehicle() && !Camel.this.isInWater() && !Camel.this.isLeashed()
 					&& Camel.this.onGround && !Camel.this.isCamelSitting()
+					&& Camel.this.getNavigation().isDone()
 					&& Camel.this.random.nextInt(reducedTickDelay(400)) == 0;
 		}
 
@@ -680,6 +707,8 @@ public class Camel extends AbstractHorse implements IAnimatable {
 		@Override
 		public void start() {
 			this.sittingTicksLeft = 300 + Camel.this.random.nextInt(600);
+			// a leftover move order makes the move control stand us right back up
+			Camel.this.getNavigation().stop();
 			Camel.this.sitDown();
 		}
 
