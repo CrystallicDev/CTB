@@ -15,6 +15,16 @@ public class NautilusRenderer extends GeoEntityRenderer<AbstractNautilus> {
 	}
 
 	@Override
+	public net.minecraft.client.renderer.RenderType getRenderType(AbstractNautilus animatable, float partialTick,
+			com.mojang.blaze3d.vertex.PoseStack poseStack,
+			net.minecraft.client.renderer.MultiBufferSource bufferSource,
+			com.mojang.blaze3d.vertex.VertexConsumer buffer, int packedLight,
+			net.minecraft.resources.ResourceLocation texture) {
+		// no cull : the one sided mouth faces read from both sides, Creaking style
+		return net.minecraft.client.renderer.RenderType.entityCutoutNoCull(texture);
+	}
+
+	@Override
 	public void render(AbstractNautilus nautilus, float entityYaw, float partialTick,
 			com.mojang.blaze3d.vertex.PoseStack poseStack,
 			net.minecraft.client.renderer.MultiBufferSource buffer, int packedLight) {
