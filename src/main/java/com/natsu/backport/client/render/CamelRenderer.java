@@ -25,6 +25,14 @@ public class CamelRenderer extends GeoEntityRenderer<Camel> {
 		this.addLayer(new SaddleLayer(this));
 	}
 
+	@Override
+	public RenderType getRenderType(Camel animatable, float partialTick, PoseStack poseStack,
+			MultiBufferSource bufferSource, com.mojang.blaze3d.vertex.VertexConsumer buffer, int packedLight,
+			ResourceLocation texture) {
+		// no cull : single sided faces like the tail read from both sides
+		return RenderType.entityCutoutNoCull(texture);
+	}
+
 	/** The vanilla saddle pass : same model, the saddle texture painted over. */
 	private static class SaddleLayer extends AbstractLayerGeo<Camel> {
 
