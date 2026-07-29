@@ -574,24 +574,27 @@ public class Camel extends AbstractHorse implements IAnimatable {
 	public void registerControllers(AnimationData data) {
 		data.addAnimationController(new AnimationController<>(this, "main", 4, event -> {
 			if (this.isCamelVisuallySitting()) {
+				// HOLD, not PLAY_ONCE : a finished PLAY_ONCE snaps back to the
+				// bind pose and the re-set restarts it, blinking sat and stood
 				if (this.isVisuallySittingDown()) {
 					event.getController().setAnimation(new AnimationBuilder()
-							.addAnimation("special.sit", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+							.addAnimation("special.sit", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
 				} else {
 					event.getController().setAnimation(new AnimationBuilder()
 							.addAnimation("special.sit_pose", ILoopType.EDefaultLoopTypes.LOOP));
 				}
 				return PlayState.CONTINUE;
 			}
-			if (this.isInPoseTransition() && this.getPoseTime() >= 0L) {
-				event.getController().setAnimation(new AnimationBuilder()
-						.addAnimation("special.standup", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
-				return PlayState.CONTINUE;
-			}
 			if (this.isDashing()) {
 				event.getController().setAnimationSpeed(1.0);
 				event.getController().setAnimation(new AnimationBuilder()
 						.addAnimation("moove.dash", ILoopType.EDefaultLoopTypes.LOOP));
+				return PlayState.CONTINUE;
+			}
+			if (this.isInPoseTransition() && this.getPoseTime() >= 0L) {
+				event.getController().setAnimationSpeed(1.0);
+				event.getController().setAnimation(new AnimationBuilder()
+						.addAnimation("special.standup", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
 				return PlayState.CONTINUE;
 			}
 			if (event.isMoving()) {
