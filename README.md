@@ -16,13 +16,19 @@
 </div>
 
 ## Description
-**CTB** backports content from the **Pale Garden Awakens** and **Tricky Trials** updates to older Minecraft versions, focusing on "visual" contents. CTB's objective is to provide Cristallite the blocks and tools to ensure continuous features from 1.18 through 26.2.
+**CTB** originally backports content from the **Pale Garden Awakens** and **Tricky Trials** updates to older Minecraft versions, focusing on "visual" contents. It ended up backporting most updates since 2022. CTB's objective is to provide Cristallite the blocks and tools to ensure continuous features from 1.18 through 26.2.
 
 Among other things :
-* Backports the **Creaking**, and the **Pale Garden** biome, with related blocks. _(oak wood set, pale moss, hanging moss, eyeblossoms and resin)_
-* Backports the **Breeze**, the **Mace** and the **Trial Chamber** structure, with related blocks. _(Trial Spawner, Potion effects, Copper blocs)_
-* The **Cherry Grove** biome and its wood set
-* The **Nautilus** and the Spear from later versions
+* The "**Chaos Cubed**" update, with the Sulphur Cube and its biome. (26.2)
+* The "**Mounts of Mayhem**" update, with the Nautilus and the Spear. (1.21.11)
+* The "**Copper Age**" update, with the Copper Golem and the copper family blocks. (1.21.9)
+* The "**Chase the Skies**" update, with the Happy Ghast and the saddle. (1.21.6)
+* The "**Spring to Life**" update, with the biome-specific mob textures. (1.21.5)
+* The "**Garden Awakens**" update, with the Creaking and its biome. (1.21.4)
+* The "**Tricky Trials**" update, with the Breeze, Trial Chamber and the Mace. (1.21)
+* The "**Armored Paws**" update, with the Armadillo and wolf armor. (1.20.5)
+* The "**Bats and Pots**" update, with the new Pots. (1.20.3)
+* The "**Trails and Tales**" update, with the Sniffer and the archeology. (1.20)
 
 Creatures are rendered with [GeckoLib](https://github.com/bernie-g/geckolib), with models, textures and animations remade from scratch.
 
