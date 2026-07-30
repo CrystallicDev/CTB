@@ -18,7 +18,9 @@ public class CopperGolemStatueItemRenderer extends GeoItemRenderer<CopperGolemSt
 
 	private static class StatueItemModel extends AnimatedGeoModel<CopperGolemStatueItem> {
 
-		private static final ResourceLocation MODEL = new ResourceLocation(CTBackport.MODID, "geo/copper_golem.geo.json");
+		// the statue copy of the geo, never the living golem one (shared bones
+		// cross contaminate transition snapshots)
+		private static final ResourceLocation MODEL = new ResourceLocation(CTBackport.MODID, "geo/copper_golem_statue.geo.json");
 		private static final ResourceLocation TEXTURE = new ResourceLocation(CTBackport.MODID, "textures/entity/copper_golem.png");
 		private static final ResourceLocation ANIMATION = new ResourceLocation(CTBackport.MODID, "animations/copper_golem.animation.json");
 

@@ -66,6 +66,8 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 	}
 
 	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
+	/** Client only : last tick the golem was visibly moving, for anim hysteresis. */
+	private int lastMovingTick = Integer.MIN_VALUE;
 	public long nextWeatheringTick = UNSET_WEATHERING_TICK;
 	@Nullable
 	private BlockPos openedChestPos;
@@ -354,8 +356,13 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 			case DROPPING_ITEM -> builder.addAnimation("interact.chest_item_drop", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
 			case DROPPING_NO_ITEM -> builder.addAnimation("interact.chest_item_nodrop", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
 			default -> {
-				// isMoving() has a 0.15 limbSwing threshold the slow golem hovers around
+				// isMoving() has a 0.15 limbSwing threshold the slow golem hovers around,
+				// and the pathfinding pauses a tick or two at every waypoint : hold the
+				// walk through those micro stops instead of dipping to the idle pose
 				if (this.animationSpeed > 0.02F) {
+					this.lastMovingTick = this.tickCount;
+				}
+				if (this.tickCount - this.lastMovingTick < 5) {
 					builder.addAnimation(this.getMainHandItem().isEmpty() ? "moove.walk" : "moove.walk_item", ILoopType.EDefaultLoopTypes.LOOP);
 				} else if (this.tickCount % 240 < 70) {
 					// the head spin plays now and then, not on a loop

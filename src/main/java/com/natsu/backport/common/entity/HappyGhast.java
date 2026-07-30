@@ -237,6 +237,7 @@ public class HappyGhast extends Animal implements IAnimatable {
 	public void tick() {
 		super.tick();
 		if (this.level.isClientSide) {
+			this.liftStuckLocalPlayer();
 			return;
 		}
 		if (this.serverStillTimeout > 0) {
@@ -254,6 +255,27 @@ public class HappyGhast extends Animal implements IAnimatable {
 	public void aiStep() {
 		super.aiStep();
 		this.continuousHeal();
+	}
+
+	/**
+	 * 1.18.2 entity positions reach the client quantized (1/4096), so the box
+	 * top can end a hair above the feet of a player standing on the back ; once
+	 * overlapped every move is clipped to zero and the player is stuck. 26.2
+	 * fixes this with requiresPrecisePosition, which does not exist here, so
+	 * pop the local player back on top instead.
+	 */
+	private void liftStuckLocalPlayer() {
+		Player local = CLIENT_PLAYER.get();
+		if (local == null || local.isSpectator() || local.isPassenger()
+				|| local.getDeltaMovement().y > 0.01) {
+			return;
+		}
+		AABB box = this.getBoundingBox();
+		if (local.getY() < box.maxY && local.getY() > box.maxY - 0.6
+				&& local.getBoundingBox().intersects(box)) {
+			local.setPos(local.getX(), box.maxY, local.getZ());
+			local.setOnGround(true);
+		}
 	}
 
 	/** Regenerates slowly, fast in the rain or up in the clouds. */
@@ -484,8 +506,9 @@ public class HappyGhast extends Animal implements IAnimatable {
 					double distance = toWanted.length();
 					toWanted = toWanted.normalize();
 					if (this.canReach(toWanted, Mth.ceil(distance))) {
-						HappyGhast.this.setDeltaMovement(
-								HappyGhast.this.getDeltaMovement().add(toWanted.scale(0.1)));
+						// the vanilla impulse : flying speed times 5/3
+						HappyGhast.this.setDeltaMovement(HappyGhast.this.getDeltaMovement().add(toWanted
+								.scale(HappyGhast.this.getAttributeValue(Attributes.FLYING_SPEED) * 5.0 / 3.0)));
 					} else {
 						this.operation = MoveControl.Operation.WAIT;
 					}
@@ -608,14 +631,19 @@ public class HappyGhast extends Animal implements IAnimatable {
 				return false;
 			}
 			MoveControl control = HappyGhast.this.getMoveControl();
+			boolean needsTarget;
 			if (!control.hasWanted()) {
-				return true;
+				needsTarget = true;
+			} else {
+				double dx = control.getWantedX() - HappyGhast.this.getX();
+				double dy = control.getWantedY() - HappyGhast.this.getY();
+				double dz = control.getWantedZ() - HappyGhast.this.getZ();
+				double distSqr = dx * dx + dy * dy + dz * dz;
+				needsTarget = distSqr < 1.0 || distSqr > 3600.0;
 			}
-			double dx = control.getWantedX() - HappyGhast.this.getX();
-			double dy = control.getWantedY() - HappyGhast.this.getY();
-			double dz = control.getWantedZ() - HappyGhast.this.getZ();
-			double distSqr = dx * dx + dy * dy + dz * dz;
-			return distSqr < 1.0 || distSqr > 3600.0;
+			// the vanilla happy ghast strolls on a lazy interval and coasts to a
+			// stop in between, it does not retarget the moment it arrives
+			return needsTarget && HappyGhast.this.random.nextInt(60) == 0;
 		}
 
 		@Override

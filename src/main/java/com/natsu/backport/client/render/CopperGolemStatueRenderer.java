@@ -16,7 +16,10 @@ public class CopperGolemStatueRenderer extends GeoBlockRenderer<CopperGolemStatu
 
 	public static class StatueModel extends AnimatedGeoModel<CopperGolemStatueBlockEntity> {
 
-		private static final ResourceLocation MODEL = new ResourceLocation(CTBackport.MODID, "geo/copper_golem.geo.json");
+		// a COPY of the golem geo : geckolib caches bones by geo location, and
+		// sharing them with the living golem cross contaminates the poses at
+		// every animation transition (the snapshot captures the foreign pose)
+		private static final ResourceLocation MODEL = new ResourceLocation(CTBackport.MODID, "geo/copper_golem_statue.geo.json");
 		private static final ResourceLocation ANIMATION = new ResourceLocation(CTBackport.MODID, "animations/copper_golem.animation.json");
 		private static final ResourceLocation[] TEXTURES = {
 				new ResourceLocation(CTBackport.MODID, "textures/entity/copper_golem.png"),
