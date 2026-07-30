@@ -95,6 +95,7 @@ public class CTBLangFR extends LanguageProvider implements DataGenBlockItemHandl
 		add("item.ctbackport.flow_banner_pattern.desc", "Flux");
 		add("item.ctbackport.guster_banner_pattern", "Motif de banni\u00e8re");
 		add("item.ctbackport.guster_banner_pattern.desc", "Bourrasque");
+		add("block.ctbackport.pink_petals", "Pétales roses");
 		add("entity.ctbackport.armadillo", "Tatou");
 		add("item.ctbackport.armadillo_scute", "\u00c9caille de tatou");
 		add("item.ctbackport.wolf_armor", "Armure pour loup");

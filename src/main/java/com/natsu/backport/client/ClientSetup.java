@@ -170,7 +170,7 @@ public class ClientSetup {
         		}
         	}
         	for (net.minecraftforge.registries.RegistryObject<net.minecraft.world.level.block.Block> b : java.util.List.of(
-        			CTBBlocks.BUSH, CTBBlocks.FIREFLY_BUSH, CTBBlocks.CACTUS_FLOWER, CTBBlocks.SHORT_DRY_GRASS,
+        			CTBBlocks.PINK_PETALS, CTBBlocks.BUSH, CTBBlocks.FIREFLY_BUSH, CTBBlocks.CACTUS_FLOWER, CTBBlocks.SHORT_DRY_GRASS,
         			CTBBlocks.TALL_DRY_GRASS, CTBBlocks.WILDFLOWERS, CTBBlocks.LEAF_LITTER,
         			CTBBlocks.POTTED_PALE_OAK_SAPLING, CTBBlocks.POTTED_OPEN_EYEBLOSSOM, CTBBlocks.POTTED_CLOSED_EYEBLOSSOM)) {
         		ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.cutout());

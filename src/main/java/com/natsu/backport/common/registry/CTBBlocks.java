@@ -450,6 +450,8 @@ public class CTBBlocks {
 			() -> new com.natsu.backport.common.block.ShortDryGrassBlock(plantProps(false)));
 	public static final RegistryObject<Block> TALL_DRY_GRASS = plant("tall_dry_grass",
 			() -> new com.natsu.backport.common.block.TallDryGrassBlock(plantProps(false)));
+	public static final RegistryObject<Block> PINK_PETALS = plant("pink_petals",
+			() -> new com.natsu.backport.common.block.FlowerBedBlock(plantProps(true)));
 	public static final RegistryObject<Block> WILDFLOWERS = plant("wildflowers",
 			() -> new com.natsu.backport.common.block.FlowerBedBlock(plantProps(true)));
 	public static final RegistryObject<Block> LEAF_LITTER = plant("leaf_litter",

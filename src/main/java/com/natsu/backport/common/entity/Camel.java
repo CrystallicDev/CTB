@@ -717,12 +717,22 @@ public class Camel extends AbstractHorse implements IAnimatable {
 			this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.JUMP));
 		}
 
+		private int quietTicks;
+
 		@Override
 		public boolean canUse() {
-			return !Camel.this.isVehicle() && !Camel.this.isInWater() && !Camel.this.isLeashed()
+			boolean quiet = !Camel.this.isVehicle() && !Camel.this.isInWater() && !Camel.this.isLeashed()
 					&& Camel.this.onGround && !Camel.this.isCamelSitting()
 					&& Camel.this.getNavigation().isDone()
-					&& Camel.this.random.nextInt(reducedTickDelay(400)) == 0;
+					&& Camel.this.getDeltaMovement().horizontalDistanceSqr() < 1.0E-4;
+			this.quietTicks = quiet ? this.quietTicks + 1 : 0;
+			if (this.quietTicks < 60 || Camel.this.random.nextInt(reducedTickDelay(340)) != 0) {
+				return false;
+			}
+			// a tempting player nearby will stand us right back up : do not flash
+			Player tempter = Camel.this.level.getNearestPlayer(Camel.this, 12.0);
+			return tempter == null || !(tempter.getMainHandItem().is(CTBTags.Items.CAMEL_FOOD)
+					|| tempter.getOffhandItem().is(CTBTags.Items.CAMEL_FOOD));
 		}
 
 		@Override

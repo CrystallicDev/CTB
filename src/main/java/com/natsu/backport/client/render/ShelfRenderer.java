@@ -36,7 +36,7 @@ public class ShelfRenderer implements BlockEntityRenderer<ShelfBlockEntity> {
 				continue;
 			}
 			poseStack.pushPose();
-			poseStack.translate(0.3125 - slot * 0.3125, 0.40, 0.25);
+			poseStack.translate(-0.3125 + slot * 0.3125, 0.42, -0.22);
 			poseStack.mulPose(Vector3f.YP.rotationDegrees(180.0F));
 			poseStack.scale(0.35F, 0.35F, 0.35F);
 			Minecraft.getInstance().getItemRenderer().renderStatic(stack, ItemTransforms.TransformType.FIXED,

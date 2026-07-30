@@ -140,6 +140,24 @@ public final class CTBSpringExtras {
 						net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration.INSTANCE),
 				RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), BiomeFilter.biome());
 
+		// the cherry grove petal carpet, all facings and amounts evenly mixed
+		SimpleWeightedRandomList.Builder<BlockState> petals = SimpleWeightedRandomList.builder();
+		for (int amount = 1; amount <= 4; amount++) {
+			for (Direction direction : Direction.Plane.HORIZONTAL) {
+				petals.add(CTBBlocks.PINK_PETALS.get().defaultBlockState()
+						.setValue(com.natsu.backport.common.block.FlowerBedBlock.FACING, direction)
+						.setValue(com.natsu.backport.common.block.FlowerBedBlock.AMOUNT, amount), 1);
+			}
+		}
+		PlacementUtils.register("ctbackport:flower_cherry",
+				FeatureUtils.register("ctbackport:flower_cherry", Feature.SIMPLE_BLOCK,
+						new net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration(
+								new net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider(petals.build()))),
+				net.minecraft.world.level.levelgen.placement.NoiseThresholdCountPlacement.of(-0.8, 5, 10),
+				InSquarePlacement.spread(),
+				HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING),
+				BiomeFilter.biome());
+
 		// the 1.21.5 cactus column : one to three cactus, one in four topped by a flower
 		BlockState cactus = Blocks.CACTUS.defaultBlockState();
 		Holder<PlacedFeature> column = PlacementUtils.register("ctbackport:cactus_column",

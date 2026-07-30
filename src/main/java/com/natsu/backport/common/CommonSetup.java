@@ -140,6 +140,7 @@ public class CommonSetup {
 		compostables.put(CTBBlocks.SHORT_DRY_GRASS.get().asItem(), 0.3F);
 		compostables.put(CTBBlocks.TALL_DRY_GRASS.get().asItem(), 0.3F);
 		compostables.put(CTBBlocks.WILDFLOWERS.get().asItem(), 0.65F);
+		compostables.put(CTBBlocks.PINK_PETALS.get().asItem(), 0.3F);
 		compostables.put(CTBBlocks.LEAF_LITTER.get().asItem(), 0.3F);
 		compostables.put(CTBBlocks.GOLDEN_DANDELION.get().asItem(), 0.65F);
 		compostables.put(CTBBlocks.TORCHFLOWER.get().asItem(), 0.65F);
