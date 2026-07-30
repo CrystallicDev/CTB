@@ -134,6 +134,17 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> DRIED_GHAST_AMBIENT = simple("block.dried_ghast.ambient");
 	public static final RegistryObject<SoundEvent> DRIED_GHAST_AMBIENT_WATER = simple("block.dried_ghast.ambient_water");
 	public static final RegistryObject<SoundEvent> DRIED_GHAST_TRANSITION = simple("block.dried_ghast.transition");
+	public static final RegistryObject<SoundEvent> ARMADILLO_AMBIENT = simple("entity.armadillo.ambient");
+	public static final RegistryObject<SoundEvent> ARMADILLO_HURT = simple("entity.armadillo.hurt");
+	public static final RegistryObject<SoundEvent> ARMADILLO_HURT_REDUCED = simple("entity.armadillo.hurt_reduced");
+	public static final RegistryObject<SoundEvent> ARMADILLO_DEATH = simple("entity.armadillo.death");
+	public static final RegistryObject<SoundEvent> ARMADILLO_STEP = simple("entity.armadillo.step");
+	public static final RegistryObject<SoundEvent> ARMADILLO_ROLL = simple("entity.armadillo.roll");
+	public static final RegistryObject<SoundEvent> ARMADILLO_UNROLL_START = simple("entity.armadillo.unroll_start");
+	public static final RegistryObject<SoundEvent> ARMADILLO_UNROLL_FINISH = simple("entity.armadillo.unroll_finish");
+	public static final RegistryObject<SoundEvent> ARMADILLO_PEEK = simple("entity.armadillo.peek");
+	public static final RegistryObject<SoundEvent> ARMADILLO_SCUTE_DROP = simple("entity.armadillo.scute_drop");
+	public static final RegistryObject<SoundEvent> ARMADILLO_BRUSH = simple("entity.armadillo.brush");
 	public static final RegistryObject<SoundEvent> BRUSHING_SAND = simple("item.brush.brushing.sand");
 	public static final RegistryObject<SoundEvent> BRUSHING_SAND_COMPLETE = simple("item.brush.brushing.sand.complete");
 	public static final RegistryObject<SoundEvent> BRUSHING_GRAVEL = simple("item.brush.brushing.gravel");

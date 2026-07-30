@@ -53,6 +53,7 @@ public class CommonSetup {
 		event.put(CTBEntities.CAMEL.get(), com.natsu.backport.common.entity.Camel.createAttributes().build());
 		event.put(CTBEntities.SNIFFER.get(), com.natsu.backport.common.entity.Sniffer.createAttributes().build());
 		event.put(CTBEntities.HAPPY_GHAST.get(), com.natsu.backport.common.entity.HappyGhast.createAttributes().build());
+		event.put(CTBEntities.ARMADILLO.get(), com.natsu.backport.common.entity.Armadillo.createAttributes().build());
 		event.put(CTBEntities.CAMEL_HUSK.get(), com.natsu.backport.common.entity.Camel.createAttributes().build());
 	}
 

@@ -148,6 +148,13 @@ public class CTBItems {
 	public static final RegistryObject<Item> BLACK_HARNESS = ITEMS.register("black_harness", () ->
 			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.BLACK,
 					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> ARMADILLO_SCUTE = ITEMS.register("armadillo_scute", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> ARMADILLO_SPAWN_EGG = ITEMS.register("armadillo_spawn_egg", () ->
+			new net.minecraftforge.common.ForgeSpawnEggItem(
+					com.natsu.backport.common.registry.CTBEntities.ARMADILLO,
+					0xAD716D, 0xCB9C8D,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> BRUSH = ITEMS.register("brush", () ->
 			new com.natsu.backport.common.item.BrushItem(
 					new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).durability(64)));

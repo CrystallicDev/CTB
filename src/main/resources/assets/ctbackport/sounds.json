@@ -670,6 +670,223 @@
    "ctbackport:entity/creaking/creaking_unfreeze3"
   ]
  },
+ "entity.armadillo.ambient": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/ambient1"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/ambient2"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/ambient3"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/ambient4"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/ambient5"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/ambient6"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/ambient7"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/ambient8"
+   }
+  ]
+ },
+ "entity.armadillo.brush": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/brush_armadillo1",
+    "volume": 0.9
+   },
+   {
+    "name": "ctbackport:mob/armadillo/brush_armadillo1",
+    "pitch": 0.8,
+    "volume": 0.9
+   },
+   {
+    "name": "ctbackport:mob/armadillo/brush_armadillo1",
+    "pitch": 0.9,
+    "volume": 0.9
+   },
+   {
+    "name": "ctbackport:mob/armadillo/brush_armadillo2",
+    "volume": 0.9
+   },
+   {
+    "name": "ctbackport:mob/armadillo/brush_armadillo2",
+    "pitch": 0.8,
+    "volume": 0.9
+   },
+   {
+    "name": "ctbackport:mob/armadillo/brush_armadillo2",
+    "pitch": 0.9,
+    "volume": 0.9
+   }
+  ]
+ },
+ "entity.armadillo.death": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/death1"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/death2"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/death3"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/death4"
+   }
+  ]
+ },
+ "entity.armadillo.eat": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/eat1"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/eat2"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/eat3"
+   }
+  ]
+ },
+ "entity.armadillo.hurt": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/hurt1"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/hurt2"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/hurt3"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/hurt4"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/hurt5"
+   }
+  ]
+ },
+ "entity.armadillo.hurt_reduced": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/hurt_reduced1"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/hurt_reduced2"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/hurt_reduced3"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/hurt_reduced4"
+   }
+  ]
+ },
+ "entity.armadillo.land": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/land1"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/land2"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/land3"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/land4"
+   }
+  ]
+ },
+ "entity.armadillo.peek": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/peek"
+   }
+  ]
+ },
+ "entity.armadillo.roll": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/roll1"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/roll2"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/roll3"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/roll4"
+   }
+  ]
+ },
+ "entity.armadillo.scute_drop": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/scute_drop1"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/scute_drop1",
+    "pitch": 0.9
+   },
+   {
+    "name": "ctbackport:mob/armadillo/scute_drop2"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/scute_drop2",
+    "pitch": 0.9
+   }
+  ]
+ },
+ "entity.armadillo.step": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/step1"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/step2"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/step3"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/step4"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/step5"
+   }
+  ]
+ },
+ "entity.armadillo.unroll_finish": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/unroll_finish1"
+   },
+   {
+    "name": "ctbackport:mob/armadillo/unroll_finish2"
+   }
+  ]
+ },
+ "entity.armadillo.unroll_start": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/armadillo/unroll_start"
+   }
+  ]
+ },
  "entity.camel.ambient": {
   "sounds": [
    {

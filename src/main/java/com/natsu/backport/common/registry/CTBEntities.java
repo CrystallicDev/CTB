@@ -69,6 +69,11 @@ public class CTBEntities {
 			.build("parched")
 			);
 
+	public static final RegistryObject<EntityType<com.natsu.backport.common.entity.Armadillo>> ARMADILLO =
+			ENTITIES.register("armadillo", () -> EntityType.Builder
+					.of(com.natsu.backport.common.entity.Armadillo::new, MobCategory.CREATURE)
+					.sized(0.7F, 0.65F).clientTrackingRange(10).build("armadillo"));
+
 	public static final RegistryObject<EntityType<com.natsu.backport.common.entity.HappyGhast>> HAPPY_GHAST =
 			ENTITIES.register("happy_ghast", () -> EntityType.Builder
 					.of(com.natsu.backport.common.entity.HappyGhast::new, MobCategory.CREATURE)

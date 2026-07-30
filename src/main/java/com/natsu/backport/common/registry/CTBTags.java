@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 public class CTBTags {
 
 	public static class Blocks {
+		public static final TagKey<Block> ARMADILLO_SPAWNABLE_ON = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(CTBackport.MODID, "armadillo_spawnable_on"));
 		public static final TagKey<Block> SNIFFER_DIGGABLE_BLOCK = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(CTBackport.MODID, "sniffer_diggable_block"));
 		public static final TagKey<Block> CAMELS_SPAWNABLE_ON = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(CTBackport.MODID, "camels_spawnable_on"));
 		public static final TagKey<Block> CAMEL_SAND_STEP_SOUND_BLOCKS = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(CTBackport.MODID, "camel_sand_step_sound_blocks"));
@@ -32,6 +33,8 @@ public class CTBTags {
 			return map;
 		}
 
+		public static final TagKey<net.minecraft.world.item.Item> ARMADILLO_FOOD =
+				TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "armadillo_food"));
 		public static final TagKey<net.minecraft.world.item.Item> HAPPY_GHAST_FOOD =
 				TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "happy_ghast_food"));
 		public static final TagKey<net.minecraft.world.item.Item> HAPPY_GHAST_TEMPT_ITEMS =

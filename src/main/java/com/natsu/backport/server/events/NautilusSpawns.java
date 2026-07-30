@@ -28,12 +28,24 @@ public class NautilusSpawns {
 		SpawnPlacements.register(CTBEntities.CAMEL_HUSK.get(), SpawnPlacements.Type.ON_GROUND,
 				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
 				com.natsu.backport.common.entity.Camel::checkCamelSpawnRules);
+		SpawnPlacements.register(CTBEntities.ARMADILLO.get(), SpawnPlacements.Type.ON_GROUND,
+				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				com.natsu.backport.common.entity.Armadillo::checkArmadilloSpawnRules);
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGH)
 	public static void onBiomeLoad(BiomeLoadingEvent event) {
 		if (event.getName() == null) {
 			return;
+		}
+
+		String biomePath = event.getName().getPath();
+		if (biomePath.contains("savanna")) {
+			event.getSpawns().addSpawn(MobCategory.CREATURE,
+					new MobSpawnSettings.SpawnerData(CTBEntities.ARMADILLO.get(), 10, 2, 3));
+		} else if (biomePath.contains("badlands")) {
+			event.getSpawns().addSpawn(MobCategory.CREATURE,
+					new MobSpawnSettings.SpawnerData(CTBEntities.ARMADILLO.get(), 6, 1, 2));
 		}
 
 		if (event.getCategory() == Biome.BiomeCategory.DESERT) {
