@@ -134,6 +134,11 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> DRIED_GHAST_AMBIENT = simple("block.dried_ghast.ambient");
 	public static final RegistryObject<SoundEvent> DRIED_GHAST_AMBIENT_WATER = simple("block.dried_ghast.ambient_water");
 	public static final RegistryObject<SoundEvent> DRIED_GHAST_TRANSITION = simple("block.dried_ghast.transition");
+	public static final RegistryObject<SoundEvent> WOLF_ARMOR_BREAK = simple("item.wolf_armor.break");
+	public static final RegistryObject<SoundEvent> WOLF_ARMOR_DAMAGE = simple("item.wolf_armor.damage");
+	public static final RegistryObject<SoundEvent> WOLF_ARMOR_REPAIR = simple("item.wolf_armor.repair");
+	public static final RegistryObject<SoundEvent> WOLF_ARMOR_EQUIP = simple("item.armor.equip_wolf");
+	public static final RegistryObject<SoundEvent> WOLF_ARMOR_UNEQUIP = simple("item.armor.unequip_wolf");
 	public static final RegistryObject<SoundEvent> ARMADILLO_AMBIENT = simple("entity.armadillo.ambient");
 	public static final RegistryObject<SoundEvent> ARMADILLO_HURT = simple("entity.armadillo.hurt");
 	public static final RegistryObject<SoundEvent> ARMADILLO_HURT_REDUCED = simple("entity.armadillo.hurt_reduced");

@@ -48,6 +48,18 @@ public class DrownedCavalry {
 			zombie.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(CTBItems.IRON_SPEAR.get()));
 		}
 
+		// a desert husk sometimes rides in on a camel husk
+		if (zombie instanceof net.minecraft.world.entity.monster.Husk husk && !husk.isBaby()
+				&& !husk.isPassenger() && level.random.nextFloat() < 0.1F) {
+			com.natsu.backport.common.entity.CamelHusk mount =
+					CTBEntities.CAMEL_HUSK.get().create(level);
+			if (mount != null) {
+				mount.moveTo(husk.getX(), husk.getY(), husk.getZ(), husk.getYRot(), 0.0F);
+				level.addFreshEntity(mount);
+				husk.startRiding(mount, true);
+			}
+		}
+
 		// a trident drowned has an even chance to ride in on a zombie nautilus
 		if (zombie instanceof Drowned drowned && !drowned.isBaby() && !drowned.isPassenger()
 				&& drowned.getMainHandItem().is(Items.TRIDENT)

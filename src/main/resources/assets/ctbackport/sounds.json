@@ -1838,6 +1838,34 @@
    "ctbackport:block/potent_sulfur/sulfur_spring/eruption8"
   ]
  },
+ "item.armor.equip_wolf": {
+  "sounds": [
+   {
+    "name": "ctbackport:item/armor/equip_wolf1"
+   },
+   {
+    "name": "ctbackport:item/armor/equip_wolf1",
+    "pitch": 1.1
+   },
+   {
+    "name": "ctbackport:item/armor/equip_wolf2"
+   },
+   {
+    "name": "ctbackport:item/armor/equip_wolf2",
+    "pitch": 1.1
+   }
+  ]
+ },
+ "item.armor.unequip_wolf": {
+  "sounds": [
+   {
+    "name": "ctbackport:item/armor/unequip_wolf1"
+   },
+   {
+    "name": "ctbackport:item/armor/unequip_wolf2"
+   }
+  ]
+ },
  "item.brush.brushing.gravel": {
   "sounds": [
    {
@@ -1918,6 +1946,61 @@
    },
    {
     "name": "ctbackport:item/brush/brush_sand_complete5"
+   }
+  ]
+ },
+ "item.wolf_armor.break": {
+  "sounds": [
+   {
+    "name": "ctbackport:item/armor/break_wolf"
+   }
+  ]
+ },
+ "item.wolf_armor.crack": {
+  "sounds": [
+   {
+    "name": "ctbackport:item/armor/crack_wolf1"
+   },
+   {
+    "name": "ctbackport:item/armor/crack_wolf2"
+   },
+   {
+    "name": "ctbackport:item/armor/crack_wolf3"
+   },
+   {
+    "name": "ctbackport:item/armor/crack_wolf4"
+   }
+  ]
+ },
+ "item.wolf_armor.damage": {
+  "sounds": [
+   {
+    "name": "ctbackport:item/armor/damage_wolf1"
+   },
+   {
+    "name": "ctbackport:item/armor/damage_wolf2"
+   },
+   {
+    "name": "ctbackport:item/armor/damage_wolf3"
+   },
+   {
+    "name": "ctbackport:item/armor/damage_wolf4"
+   }
+  ]
+ },
+ "item.wolf_armor.repair": {
+  "sounds": [
+   {
+    "name": "ctbackport:item/armor/repair_wolf1"
+   },
+   {
+    "name": "ctbackport:item/armor/repair_wolf2"
+   },
+   {
+    "name": "ctbackport:item/armor/repair_wolf3"
+   },
+   {
+    "name": "ctbackport:item/armor/repair_wolf4"
    }
   ]
  },

@@ -52,6 +52,8 @@ public class ClientSetup {
 		event.registerEntityRenderer(CTBEntities.SNIFFER.get(), com.natsu.backport.client.render.SnifferRenderer::new);
 		event.registerEntityRenderer(CTBEntities.HAPPY_GHAST.get(), com.natsu.backport.client.render.HappyGhastRenderer::new);
 		event.registerEntityRenderer(CTBEntities.ARMADILLO.get(), com.natsu.backport.client.render.ArmadilloRenderer::new);
+		event.registerEntityRenderer(net.minecraft.world.entity.EntityType.WOLF,
+				com.natsu.backport.client.render.VariantWolfRenderer::new);
 		event.registerEntityRenderer(CTBEntities.CAMEL_HUSK.get(), com.natsu.backport.client.render.CamelRenderer::new);
 		net.minecraft.client.gui.screens.MenuScreens.register(
 				com.natsu.backport.common.registry.CTBMenus.NAUTILUS_INVENTORY.get(),

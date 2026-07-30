@@ -21,6 +21,27 @@ public class CTBNetwork {
 				AnimalVariantPacket::encode, AnimalVariantPacket::decode, AnimalVariantPacket::handle);
 		CHANNEL.registerMessage(1, CrafterSlotStatePacket.class,
 				CrafterSlotStatePacket::encode, CrafterSlotStatePacket::decode, CrafterSlotStatePacket::handle);
+		CHANNEL.registerMessage(2, WolfArmorPacket.class,
+				WolfArmorPacket::encode, WolfArmorPacket::decode, WolfArmorPacket::handle);
+	}
+
+	/** Tells the client the wolf armor durability, -1 for none. */
+	public record WolfArmorPacket(int entityId, int durability) {
+
+		public static void encode(WolfArmorPacket packet, FriendlyByteBuf buffer) {
+			buffer.writeVarInt(packet.entityId);
+			buffer.writeVarInt(packet.durability + 1);
+		}
+
+		public static WolfArmorPacket decode(FriendlyByteBuf buffer) {
+			return new WolfArmorPacket(buffer.readVarInt(), buffer.readVarInt() - 1);
+		}
+
+		public static void handle(WolfArmorPacket packet, Supplier<NetworkEvent.Context> context) {
+			context.get().enqueueWork(() ->
+					com.natsu.backport.client.ClientVariantCache.putWolfArmor(packet.entityId, packet.durability));
+			context.get().setPacketHandled(true);
+		}
 	}
 
 	/** Client to server : the player toggled a crafter grid slot. */

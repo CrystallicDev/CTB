@@ -34,6 +34,21 @@ public class AnimalVariants {
 	public static final byte WARM = 1;
 	public static final byte COLD = 2;
 
+	/** The nine 1.20.5 wolf coats, indexed for VariantWolfRenderer. */
+	public static byte wolfVariantForBiome(Level level, BlockPos pos) {
+		String biome = level.getBiome(pos).unwrapKey()
+				.map(key -> key.location().getPath()).orElse("");
+		if (biome.equals("snowy_taiga")) return 1;
+		if (biome.equals("old_growth_pine_taiga")) return 2;
+		if (biome.equals("old_growth_spruce_taiga")) return 3;
+		if (biome.contains("jungle")) return 4;
+		if (biome.equals("grove") || biome.contains("peaks") || biome.equals("snowy_slopes")) return 5;
+		if (biome.contains("savanna")) return 6;
+		if (biome.contains("badlands") || biome.contains("desert")) return 7;
+		if (biome.contains("forest")) return 8;
+		return 0;
+	}
+
 	public static boolean isVariantAnimal(Entity entity) {
 		return (entity instanceof Pig || entity instanceof Cow || entity instanceof Chicken)
 				&& !(entity instanceof MushroomCow);
@@ -59,6 +74,10 @@ public class AnimalVariants {
 			return;
 		}
 		Entity entity = event.getEntity();
+		if (entity instanceof net.minecraft.world.entity.animal.Wolf wolf
+				&& !wolf.getPersistentData().contains(TAG)) {
+			wolf.getPersistentData().putByte(TAG, wolfVariantForBiome(level, wolf.blockPosition()));
+		}
 		if (entity instanceof net.minecraft.world.entity.animal.Sheep sheep
 				&& sheep.getPersistentData().contains(SHEEP_COLOR_TAG)) {
 			sheep.getPersistentData().remove(SHEEP_COLOR_TAG);
@@ -136,6 +155,11 @@ public class AnimalVariants {
 	@SubscribeEvent
 	public static void onStartTracking(PlayerEvent.StartTracking event) {
 		Entity target = event.getTarget();
+		if (target instanceof net.minecraft.world.entity.animal.Wolf
+				&& event.getPlayer() instanceof net.minecraft.server.level.ServerPlayer wolfWatcher) {
+			CTBNetwork.CHANNEL.sendTo(new CTBNetwork.AnimalVariantPacket(target.getId(), variantOf(target)),
+					wolfWatcher.connection.connection, NetworkDirection.PLAY_TO_CLIENT);
+		}
 		if (isVariantAnimal(target) && event.getPlayer() instanceof net.minecraft.server.level.ServerPlayer player) {
 			CTBNetwork.CHANNEL.sendTo(new CTBNetwork.AnimalVariantPacket(target.getId(), variantOf(target)),
 					player.connection.connection, NetworkDirection.PLAY_TO_CLIENT);

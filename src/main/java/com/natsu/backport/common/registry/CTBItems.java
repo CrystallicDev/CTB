@@ -148,6 +148,18 @@ public class CTBItems {
 	public static final RegistryObject<Item> BLACK_HARNESS = ITEMS.register("black_harness", () ->
 			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.BLACK,
 					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> WOLF_ARMOR = ITEMS.register("wolf_armor", () ->
+			new com.natsu.backport.common.item.WolfArmorItem(
+					new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).durability(
+							com.natsu.backport.server.events.WolfEvents.MAX_DURABILITY)));
+	public static final RegistryObject<Item> FLOW_BANNER_PATTERN = ITEMS.register("flow_banner_pattern", () ->
+			new net.minecraft.world.item.BannerPatternItem(
+					com.natsu.backport.common.registry.CTBBannerPatterns.FLOW,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
+	public static final RegistryObject<Item> GUSTER_BANNER_PATTERN = ITEMS.register("guster_banner_pattern", () ->
+			new net.minecraft.world.item.BannerPatternItem(
+					com.natsu.backport.common.registry.CTBBannerPatterns.GUSTER,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 	public static final RegistryObject<Item> ARMADILLO_SCUTE = ITEMS.register("armadillo_scute", () ->
 			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> ARMADILLO_SPAWN_EGG = ITEMS.register("armadillo_spawn_egg", () ->

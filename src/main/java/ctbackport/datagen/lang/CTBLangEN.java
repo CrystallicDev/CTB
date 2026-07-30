@@ -85,8 +85,15 @@ public class CTBLangEN extends LanguageProvider implements DataGenBlockItemHandl
 		add("entity.ctbackport.sulfur_cube", "Sulfur Cube");
 		add("biome.ctbackport.sulfur_caves", "Sulfur Caves");
 		add("block.ctbackport.crafter", "Crafter");
+		add("item.ctbackport.flow_banner_pattern", "Banner Pattern");
+		add("item.ctbackport.flow_banner_pattern.desc", "Flow");
+		add("item.ctbackport.guster_banner_pattern", "Banner Pattern");
+		add("item.ctbackport.guster_banner_pattern.desc", "Guster");
+		add("block.minecraft.banner.flow.white", "White Flow");
+		add("block.minecraft.banner.guster.white", "White Guster");
 		add("entity.ctbackport.armadillo", "Armadillo");
 		add("item.ctbackport.armadillo_scute", "Armadillo Scute");
+		add("item.ctbackport.wolf_armor", "Wolf Armor");
 		add("item.ctbackport.armadillo_spawn_egg", "Armadillo Spawn Egg");
 		add("block.ctbackport.suspicious_sand", "Suspicious Sand");
 		add("block.ctbackport.suspicious_gravel", "Suspicious Gravel");

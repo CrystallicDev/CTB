@@ -19,7 +19,26 @@ public final class ClientVariantCache {
 		return VARIANTS.get(entityId);
 	}
 
+	private static final it.unimi.dsi.fastutil.ints.Int2IntMap WOLF_ARMOR =
+			new it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap();
+	static {
+		WOLF_ARMOR.defaultReturnValue(-1);
+	}
+
+	public static void putWolfArmor(int entityId, int durability) {
+		if (durability < 0) {
+			WOLF_ARMOR.remove(entityId);
+		} else {
+			WOLF_ARMOR.put(entityId, durability);
+		}
+	}
+
+	public static int getWolfArmor(int entityId) {
+		return WOLF_ARMOR.get(entityId);
+	}
+
 	public static void clear() {
 		VARIANTS.clear();
+		WOLF_ARMOR.clear();
 	}
 }

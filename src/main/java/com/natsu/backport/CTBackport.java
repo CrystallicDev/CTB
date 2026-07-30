@@ -47,6 +47,7 @@ public class CTBackport {
         	CTBFoliagePlacers.FOLIAGE_PLACER_TYPES.register(modEventBus);
         	CTBTreeDecorators.TREE_DECORATOR_TYPES.register(modEventBus);
         	CTBFeatures.FEATURES.register(modEventBus);
+        	com.natsu.backport.common.registry.CTBPaintings.PAINTINGS.register(modEventBus);
         	// the bridge classloads TerraBlender, only touch it if the mod is there
         	if (ModList.get().isLoaded("terrablender")) {
         		modEventBus.addListener(TerraBlenderBridge::commonSetup);

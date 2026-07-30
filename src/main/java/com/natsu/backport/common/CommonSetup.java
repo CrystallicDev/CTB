@@ -64,6 +64,7 @@ public class CommonSetup {
 		event.enqueueWork(CommonSetup::registerWeatherables);
 		event.enqueueWork(CommonSetup::registerFlowerPots);
 		event.enqueueWork(com.natsu.backport.common.network.CTBNetwork::register);
+		event.enqueueWork(com.natsu.backport.common.registry.CTBBannerPatterns::init);
 		event.enqueueWork(com.natsu.backport.common.registry.CTBVegetationFeatures::register);
 		event.enqueueWork(com.natsu.backport.common.registry.CTBSulfurCaveFeatures::register);
 		event.enqueueWork(com.natsu.backport.common.registry.CTBSpringExtras::register);
@@ -140,6 +141,17 @@ public class CommonSetup {
 		compostables.put(CTBBlocks.TALL_DRY_GRASS.get().asItem(), 0.3F);
 		compostables.put(CTBBlocks.WILDFLOWERS.get().asItem(), 0.65F);
 		compostables.put(CTBBlocks.LEAF_LITTER.get().asItem(), 0.3F);
+		compostables.put(CTBBlocks.GOLDEN_DANDELION.get().asItem(), 0.65F);
+		compostables.put(CTBBlocks.TORCHFLOWER.get().asItem(), 0.65F);
+		compostables.put(com.natsu.backport.common.registry.CTBItems.TORCHFLOWER_SEEDS.get(), 0.3F);
+		compostables.put(CTBBlocks.PITCHER_PLANT.get().asItem(), 0.65F);
+		compostables.put(com.natsu.backport.common.registry.CTBItems.PITCHER_POD.get(), 0.3F);
+		flameOdds.put(CTBBlocks.PITCHER_PLANT.get(), 60);
+		burnOdds.put(CTBBlocks.PITCHER_PLANT.get(), 100);
+		flameOdds.put(CTBBlocks.TORCHFLOWER.get(), 60);
+		burnOdds.put(CTBBlocks.TORCHFLOWER.get(), 100);
+		flameOdds.put(CTBBlocks.GOLDEN_DANDELION.get(), 60);
+		burnOdds.put(CTBBlocks.GOLDEN_DANDELION.get(), 100);
 		FireBlock fire = (FireBlock) Blocks.FIRE;
 		flameOdds.forEach((block, flame) -> fire.setFlammable(block, flame, burnOdds.get(block)));
 		ComposterBlock.COMPOSTABLES.putAll(compostables);
