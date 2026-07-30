@@ -286,15 +286,6 @@ public class HappyGhast extends Animal implements IAnimatable {
 	}
 
 	@Override
-	public Entity getControllingPassenger() {
-		if (this.isWearingHarness() && !this.isOnStillTimeout()
-				&& this.getFirstPassenger() instanceof Player player) {
-			return player;
-		}
-		return null;
-	}
-
-	@Override
 	public void positionRider(Entity passenger) {
 		if (!this.hasPassenger(passenger)) {
 			return;
@@ -321,35 +312,39 @@ public class HappyGhast extends Animal implements IAnimatable {
 
 	@Override
 	public void travel(Vec3 input) {
-		if (this.getControllingPassenger() instanceof Player controller) {
-			if (this.isControlledByLocalInstance()) {
-				this.setSpeed((float) this.getAttributeValue(Attributes.FLYING_SPEED));
-				// yaw eases toward the rider, pitch follows half the look
-				float wantedYRot = controller.getYRot();
-				float yRot = this.getYRot() + Mth.wrapDegrees(wantedYRot - this.getYRot()) * 0.08F;
-				this.setRot(yRot, controller.getXRot() * 0.5F);
-				this.yBodyRot = this.yHeadRot = this.getYRot();
-				this.yRotO = this.yHeadRot;
+		// server side steering : the rider inputs and rotation reach the server
+		// every tick through the player input and rotation packets, and the
+		// ghast stays a normal server driven mob the client simply lerps to
+		if (!this.level.isClientSide && this.getFirstPassenger() instanceof Player rider
+				&& this.isWearingHarness() && !this.isOnStillTimeout()) {
+			this.setSpeed((float) this.getAttributeValue(Attributes.FLYING_SPEED));
+			// yaw eases toward the rider, pitch follows half the look
+			float wantedYRot = rider.getYRot();
+			float yRot = this.getYRot() + Mth.wrapDegrees(wantedYRot - this.getYRot()) * 0.08F;
+			this.setRot(yRot, rider.getXRot() * 0.5F);
+			this.yBodyRot = this.yHeadRot = this.getYRot();
+			this.yRotO = this.yHeadRot;
 
-				float strafe = controller.xxa;
-				float forward = 0.0F;
-				float up = 0.0F;
-				if (controller.zza != 0.0F) {
-					float cos = Mth.cos(controller.getXRot() * ((float) Math.PI / 180.0F));
-					float sin = -Mth.sin(controller.getXRot() * ((float) Math.PI / 180.0F));
-					if (controller.zza < 0.0F) {
-						cos *= -0.5F;
-						sin *= -0.5F;
-					}
-					forward = cos;
-					up = sin;
+			float strafe = rider.xxa;
+			float forward = 0.0F;
+			float up = 0.0F;
+			if (rider.zza != 0.0F) {
+				float cos = Mth.cos(rider.getXRot() * ((float) Math.PI / 180.0F));
+				float sin = -Mth.sin(rider.getXRot() * ((float) Math.PI / 180.0F));
+				if (rider.zza < 0.0F) {
+					cos *= -0.5F;
+					sin *= -0.5F;
 				}
-				Vec3 ridden = new Vec3(strafe, up, forward)
-						.scale(3.9F * this.getAttributeValue(Attributes.FLYING_SPEED));
-				this.flyingTravel(ridden, 1.0F);
-			} else {
-				this.setDeltaMovement(Vec3.ZERO);
+				forward = cos;
+				up = sin;
 			}
+			Vec3 ridden = new Vec3(strafe, up, forward)
+					.scale(3.9F * this.getAttributeValue(Attributes.FLYING_SPEED));
+			this.flyingTravel(ridden, 1.0F);
+			return;
+		}
+		if (this.level.isClientSide && this.isVehicle()) {
+			// the ridden position comes from the server, do not add drift on top
 			return;
 		}
 		if (this.isOnStillTimeout()) {
@@ -448,7 +443,7 @@ public class HappyGhast extends Animal implements IAnimatable {
 
 		@Override
 		public void tick() {
-			if (HappyGhast.this.isOnStillTimeout()) {
+			if (HappyGhast.this.isOnStillTimeout() || HappyGhast.this.isVehicle()) {
 				return;
 			}
 			if (this.operation == MoveControl.Operation.MOVE_TO) {
@@ -488,6 +483,10 @@ public class HappyGhast extends Animal implements IAnimatable {
 
 		@Override
 		public void tick() {
+			if (HappyGhast.this.isVehicle()) {
+				// travel already eases the yaw toward the rider look
+				return;
+			}
 			if (HappyGhast.this.isOnStillTimeout()) {
 				float closeAngle = Mth.wrapDegrees(HappyGhast.this.getYRot()) * 0.5F;
 				HappyGhast.this.setYRot(HappyGhast.this.getYRot() - closeAngle * 0.1F);

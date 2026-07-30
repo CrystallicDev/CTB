@@ -30,6 +30,11 @@ public class CTBOverworldRegions extends Region {
 	@Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper)
     {
+		// seed the region with the whole vanilla parameter set : without it the
+		// nearest-point search only knows our biomes and paints them over the
+		// entire region cell, at every depth
+		this.addModifiedVanillaOverworldBiomes(mapper, builder -> {});
+
 		this.addBiome(mapper,
 			    Temperature.WARM,
 			    Humidity.DRY,
