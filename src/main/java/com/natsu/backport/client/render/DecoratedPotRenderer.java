@@ -31,10 +31,30 @@ public class DecoratedPotRenderer implements BlockEntityRenderer<DecoratedPotBlo
 
 	private static final ResourceLocation BASE = texture("decorated_pot_base");
 	private static final ResourceLocation SIDE = texture("decorated_pot_side");
-	private static final Map<Item, ResourceLocation> PATTERNS = Map.of(
-			CTBItems.FLOW_POTTERY_SHERD.get(), texture("flow_pottery_pattern"),
-			CTBItems.GUSTER_POTTERY_SHERD.get(), texture("guster_pottery_pattern"),
-			CTBItems.SCRAPE_POTTERY_SHERD.get(), texture("scrape_pottery_pattern"));
+	private static final Map<Item, ResourceLocation> PATTERNS = Map.ofEntries(
+			Map.entry(CTBItems.ANGLER_POTTERY_SHERD.get(), texture("angler_pottery_pattern")),
+			Map.entry(CTBItems.ARCHER_POTTERY_SHERD.get(), texture("archer_pottery_pattern")),
+			Map.entry(CTBItems.ARMS_UP_POTTERY_SHERD.get(), texture("arms_up_pottery_pattern")),
+			Map.entry(CTBItems.BLADE_POTTERY_SHERD.get(), texture("blade_pottery_pattern")),
+			Map.entry(CTBItems.BREWER_POTTERY_SHERD.get(), texture("brewer_pottery_pattern")),
+			Map.entry(CTBItems.BURN_POTTERY_SHERD.get(), texture("burn_pottery_pattern")),
+			Map.entry(CTBItems.DANGER_POTTERY_SHERD.get(), texture("danger_pottery_pattern")),
+			Map.entry(CTBItems.EXPLORER_POTTERY_SHERD.get(), texture("explorer_pottery_pattern")),
+			Map.entry(CTBItems.FRIEND_POTTERY_SHERD.get(), texture("friend_pottery_pattern")),
+			Map.entry(CTBItems.HEART_POTTERY_SHERD.get(), texture("heart_pottery_pattern")),
+			Map.entry(CTBItems.HEARTBREAK_POTTERY_SHERD.get(), texture("heartbreak_pottery_pattern")),
+			Map.entry(CTBItems.HOWL_POTTERY_SHERD.get(), texture("howl_pottery_pattern")),
+			Map.entry(CTBItems.MINER_POTTERY_SHERD.get(), texture("miner_pottery_pattern")),
+			Map.entry(CTBItems.MOURNER_POTTERY_SHERD.get(), texture("mourner_pottery_pattern")),
+			Map.entry(CTBItems.PLENTY_POTTERY_SHERD.get(), texture("plenty_pottery_pattern")),
+			Map.entry(CTBItems.PRIZE_POTTERY_SHERD.get(), texture("prize_pottery_pattern")),
+			Map.entry(CTBItems.SHEAF_POTTERY_SHERD.get(), texture("sheaf_pottery_pattern")),
+			Map.entry(CTBItems.SHELTER_POTTERY_SHERD.get(), texture("shelter_pottery_pattern")),
+			Map.entry(CTBItems.SKULL_POTTERY_SHERD.get(), texture("skull_pottery_pattern")),
+			Map.entry(CTBItems.SNORT_POTTERY_SHERD.get(), texture("snort_pottery_pattern")),
+			Map.entry(CTBItems.FLOW_POTTERY_SHERD.get(), texture("flow_pottery_pattern")),
+			Map.entry(CTBItems.GUSTER_POTTERY_SHERD.get(), texture("guster_pottery_pattern")),
+			Map.entry(CTBItems.SCRAPE_POTTERY_SHERD.get(), texture("scrape_pottery_pattern")));
 
 	private final ModelPart neck;
 	private final ModelPart top;

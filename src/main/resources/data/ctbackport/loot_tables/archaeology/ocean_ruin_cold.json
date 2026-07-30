@@ -1,0 +1,55 @@
+{
+ "type": "minecraft:gift",
+ "pools": [
+  {
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:blade_pottery_sherd"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:explorer_pottery_sherd"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:mourner_pottery_sherd"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:plenty_pottery_sherd"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:iron_axe"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:emerald",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:wheat",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:wooden_hoe",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:coal",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:gold_nugget",
+     "weight": 2
+    }
+   ],
+   "rolls": 1.0
+  }
+ ]
+}

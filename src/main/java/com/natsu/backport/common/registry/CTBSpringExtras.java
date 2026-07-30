@@ -99,6 +99,8 @@ public final class CTBSpringExtras {
 	/** Biome path to the fallen tree placed features it gets, filled by register(). */
 	public static final Map<String, List<Holder<PlacedFeature>>> FALLEN_BY_BIOME = new HashMap<>();
 
+	public static Holder<PlacedFeature> ARCHAEOLOGY_SITES;
+	public static Holder<PlacedFeature> DRIED_GHAST_PATCH;
 	public static Holder<PlacedFeature> PATCH_CACTUS_DESERT;
 	public static Holder<PlacedFeature> PATCH_CACTUS_DECORATED;
 
@@ -127,6 +129,16 @@ public final class CTBSpringExtras {
 			});
 			FALLEN_BY_BIOME.computeIfAbsent(entry.biome, b -> new java.util.ArrayList<>()).add(feature);
 		}
+
+		ARCHAEOLOGY_SITES = PlacementUtils.register("ctbackport:archaeology_sites",
+				FeatureUtils.register("ctbackport:archaeology_sites",
+						CTBFeatures.ARCHAEOLOGY_SITE.get(),
+						net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration.INSTANCE));
+		DRIED_GHAST_PATCH = PlacementUtils.register("ctbackport:dried_ghast",
+				FeatureUtils.register("ctbackport:dried_ghast",
+						CTBFeatures.DRIED_GHAST_FEATURE.get(),
+						net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration.INSTANCE),
+				RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), BiomeFilter.biome());
 
 		// the 1.21.5 cactus column : one to three cactus, one in four topped by a flower
 		BlockState cactus = Blocks.CACTUS.defaultBlockState();

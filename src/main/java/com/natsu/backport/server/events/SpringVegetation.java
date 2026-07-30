@@ -76,6 +76,16 @@ public class SpringVegetation {
 				add(event, fallen);
 			}
 		}
+		// archaeology digs near the desert pyramids and the ocean ruins
+		if (vanilla && (path.equals("desert") || path.contains("ocean"))) {
+			event.getGeneration().addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES,
+					com.natsu.backport.common.registry.CTBSpringExtras.ARCHAEOLOGY_SITES);
+		}
+		// the dried ghasts sleeping in the soul sand valley
+		if (vanilla && path.equals("soul_sand_valley")) {
+			event.getGeneration().addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES,
+					com.natsu.backport.common.registry.CTBSpringExtras.DRIED_GHAST_PATCH);
+		}
 		// the 1.21.5 cactus tops some columns with a flower : swap the vanilla patches for ours
 		if (vanilla && CACTUS_BIOMES.contains(path)) {
 			event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION)

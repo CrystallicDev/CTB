@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "ctbackport:item/sheaf_pottery_sherd"
+ }
+}

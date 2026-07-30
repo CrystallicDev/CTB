@@ -134,6 +134,10 @@ public class CTBSounds {
 	public static final RegistryObject<SoundEvent> DRIED_GHAST_AMBIENT = simple("block.dried_ghast.ambient");
 	public static final RegistryObject<SoundEvent> DRIED_GHAST_AMBIENT_WATER = simple("block.dried_ghast.ambient_water");
 	public static final RegistryObject<SoundEvent> DRIED_GHAST_TRANSITION = simple("block.dried_ghast.transition");
+	public static final RegistryObject<SoundEvent> BRUSHING_SAND = simple("item.brush.brushing.sand");
+	public static final RegistryObject<SoundEvent> BRUSHING_SAND_COMPLETE = simple("item.brush.brushing.sand.complete");
+	public static final RegistryObject<SoundEvent> BRUSHING_GRAVEL = simple("item.brush.brushing.gravel");
+	public static final RegistryObject<SoundEvent> BRUSHING_GRAVEL_COMPLETE = simple("item.brush.brushing.gravel.complete");
 	public static final RegistryObject<SoundEvent> HARNESS_EQUIP = simple("item.harness.equip");
 	public static final RegistryObject<SoundEvent> HARNESS_UNEQUIP = simple("item.harness.unequip");
 	public static final RegistryObject<SoundEvent> HARNESS_GOGGLES_DOWN = simple("item.harness.goggles_down");

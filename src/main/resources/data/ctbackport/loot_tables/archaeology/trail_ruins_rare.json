@@ -1,0 +1,38 @@
+{
+ "type": "minecraft:gift",
+ "pools": [
+  {
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:burn_pottery_sherd"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:danger_pottery_sherd"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:friend_pottery_sherd"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:heart_pottery_sherd"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:heartbreak_pottery_sherd"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:howl_pottery_sherd"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:sheaf_pottery_sherd"
+    }
+   ],
+   "rolls": 1.0
+  }
+ ]
+}

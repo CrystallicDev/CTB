@@ -29,6 +29,11 @@ public class CTBBlockEntities {
 			() -> BlockEntityType.Builder.of(VaultBlockEntity::new, CTBBlocks.VAULT.get()).build(null)
 			);
 
+	public static final RegistryObject<BlockEntityType<com.natsu.backport.common.block.entity.BrushableBlockEntity>> BRUSHABLE_BLOCK =
+			BLOCK_ENTITIES.register("brushable_block", () -> BlockEntityType.Builder.of(
+					com.natsu.backport.common.block.entity.BrushableBlockEntity::new,
+					CTBBlocks.SUSPICIOUS_SAND.get(), CTBBlocks.SUSPICIOUS_GRAVEL.get()).build(null));
+
 	public static final RegistryObject<BlockEntityType<com.natsu.backport.common.block.entity.CrafterBlockEntity>> CRAFTER =
 			BLOCK_ENTITIES.register("crafter", () -> BlockEntityType.Builder.of(
 					com.natsu.backport.common.block.entity.CrafterBlockEntity::new,

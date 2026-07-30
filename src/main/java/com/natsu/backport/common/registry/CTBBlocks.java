@@ -318,6 +318,23 @@ public class CTBBlocks {
 					net.minecraft.world.level.block.state.BlockBehaviour.Properties
 							.of(net.minecraft.world.level.material.Material.DECORATION).instabreak().noOcclusion()));
 
+	public static final RegistryObject<Block> SUSPICIOUS_SAND = registerWithItem(BLOCKS, CTBItems.ITEMS, "suspicious_sand",
+			BLOCKS.register("suspicious_sand", () -> new com.natsu.backport.common.block.BrushableBlock(
+					() -> net.minecraft.world.level.block.Blocks.SAND,
+					() -> com.natsu.backport.common.registry.CTBSounds.BRUSHING_SAND.get(),
+					() -> com.natsu.backport.common.registry.CTBSounds.BRUSHING_SAND_COMPLETE.get(),
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.SAND).strength(0.25F)
+							.sound(net.minecraft.world.level.block.SoundType.SAND))));
+	public static final RegistryObject<Block> SUSPICIOUS_GRAVEL = registerWithItem(BLOCKS, CTBItems.ITEMS, "suspicious_gravel",
+			BLOCKS.register("suspicious_gravel", () -> new com.natsu.backport.common.block.BrushableBlock(
+					() -> net.minecraft.world.level.block.Blocks.GRAVEL,
+					() -> com.natsu.backport.common.registry.CTBSounds.BRUSHING_GRAVEL.get(),
+					() -> com.natsu.backport.common.registry.CTBSounds.BRUSHING_GRAVEL_COMPLETE.get(),
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.SAND).strength(0.25F)
+							.sound(net.minecraft.world.level.block.SoundType.GRAVEL))));
+
 	public static final RegistryObject<Block> DRIED_GHAST = BLOCKS.register("dried_ghast",
 			() -> new com.natsu.backport.common.block.DriedGhastBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties
 					.of(net.minecraft.world.level.material.Material.CLAY).strength(0.5F).noOcclusion()

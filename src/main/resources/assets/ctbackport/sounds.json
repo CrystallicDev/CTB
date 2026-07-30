@@ -1621,6 +1621,89 @@
    "ctbackport:block/potent_sulfur/sulfur_spring/eruption8"
   ]
  },
+ "item.brush.brushing.gravel": {
+  "sounds": [
+   {
+    "name": "ctbackport:item/brush/brushing_gravel1",
+    "pitch": 0.6,
+    "volume": 0.6
+   },
+   {
+    "name": "ctbackport:item/brush/brushing_gravel2",
+    "pitch": 0.6,
+    "volume": 0.6
+   },
+   {
+    "name": "ctbackport:item/brush/brushing_gravel3",
+    "pitch": 0.6,
+    "volume": 0.6
+   },
+   {
+    "name": "ctbackport:item/brush/brushing_gravel4",
+    "pitch": 0.6,
+    "volume": 0.6
+   }
+  ]
+ },
+ "item.brush.brushing.gravel.complete": {
+  "sounds": [
+   {
+    "name": "ctbackport:item/brush/brushing_gravel_complete1"
+   },
+   {
+    "name": "ctbackport:item/brush/brushing_gravel_complete2"
+   },
+   {
+    "name": "ctbackport:item/brush/brushing_gravel_complete3"
+   },
+   {
+    "name": "ctbackport:item/brush/brushing_gravel_complete4"
+   }
+  ]
+ },
+ "item.brush.brushing.sand": {
+  "sounds": [
+   {
+    "name": "ctbackport:item/brush/brushing_sand1",
+    "pitch": 0.6,
+    "volume": 0.6
+   },
+   {
+    "name": "ctbackport:item/brush/brushing_sand2",
+    "pitch": 0.6,
+    "volume": 0.6
+   },
+   {
+    "name": "ctbackport:item/brush/brushing_sand3",
+    "pitch": 0.6,
+    "volume": 0.6
+   },
+   {
+    "name": "ctbackport:item/brush/brushing_sand4",
+    "pitch": 0.6,
+    "volume": 0.6
+   }
+  ]
+ },
+ "item.brush.brushing.sand.complete": {
+  "sounds": [
+   {
+    "name": "ctbackport:item/brush/brush_sand_complete1"
+   },
+   {
+    "name": "ctbackport:item/brush/brush_sand_complete2"
+   },
+   {
+    "name": "ctbackport:item/brush/brush_sand_complete3"
+   },
+   {
+    "name": "ctbackport:item/brush/brush_sand_complete4"
+   },
+   {
+    "name": "ctbackport:item/brush/brush_sand_complete5"
+   }
+  ]
+ },
  "mace_smash_air": {
   "category": "player",
   "sounds": [

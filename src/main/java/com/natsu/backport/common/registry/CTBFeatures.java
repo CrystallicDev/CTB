@@ -15,6 +15,10 @@ public class CTBFeatures {
 
 	public static final RegistryObject<Feature<com.natsu.backport.common.worldgen.FallenTreeFeature.Config>> FALLEN_TREE =
 			FEATURES.register("fallen_tree", () -> new com.natsu.backport.common.worldgen.FallenTreeFeature(com.natsu.backport.common.worldgen.FallenTreeFeature.Config.CODEC));
+	public static final RegistryObject<Feature<NoneFeatureConfiguration>> ARCHAEOLOGY_SITE =
+			FEATURES.register("archaeology_site", () -> new com.natsu.backport.common.worldgen.ArchaeologySiteFeature(NoneFeatureConfiguration.CODEC));
+	public static final RegistryObject<Feature<NoneFeatureConfiguration>> DRIED_GHAST_FEATURE =
+			FEATURES.register("dried_ghast", () -> new com.natsu.backport.common.worldgen.DriedGhastFeature(NoneFeatureConfiguration.CODEC));
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> SULFUR_SPRING =
 			FEATURES.register("sulfur_spring", () -> new com.natsu.backport.common.worldgen.SulfurSpringFeature(NoneFeatureConfiguration.CODEC));
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> SULFUR_POOL =

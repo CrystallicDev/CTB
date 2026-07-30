@@ -148,6 +148,9 @@ public class CTBItems {
 	public static final RegistryObject<Item> BLACK_HARNESS = ITEMS.register("black_harness", () ->
 			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.BLACK,
 					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> BRUSH = ITEMS.register("brush", () ->
+			new com.natsu.backport.common.item.BrushItem(
+					new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).durability(64)));
 	public static final RegistryObject<Item> HAPPY_GHAST_SPAWN_EGG = ITEMS.register("happy_ghast_spawn_egg", () ->
 			new net.minecraftforge.common.ForgeSpawnEggItem(
 					com.natsu.backport.common.registry.CTBEntities.HAPPY_GHAST,
@@ -215,6 +218,46 @@ public class CTBItems {
 			new OminousBottleItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.UNCOMMON))
 			);
 
+	public static final RegistryObject<Item> ANGLER_POTTERY_SHERD = ITEMS.register("angler_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> ARCHER_POTTERY_SHERD = ITEMS.register("archer_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> ARMS_UP_POTTERY_SHERD = ITEMS.register("arms_up_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> BLADE_POTTERY_SHERD = ITEMS.register("blade_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> BREWER_POTTERY_SHERD = ITEMS.register("brewer_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> BURN_POTTERY_SHERD = ITEMS.register("burn_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> DANGER_POTTERY_SHERD = ITEMS.register("danger_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> EXPLORER_POTTERY_SHERD = ITEMS.register("explorer_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> FRIEND_POTTERY_SHERD = ITEMS.register("friend_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> HEART_POTTERY_SHERD = ITEMS.register("heart_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> HEARTBREAK_POTTERY_SHERD = ITEMS.register("heartbreak_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> HOWL_POTTERY_SHERD = ITEMS.register("howl_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> MINER_POTTERY_SHERD = ITEMS.register("miner_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> MOURNER_POTTERY_SHERD = ITEMS.register("mourner_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> PLENTY_POTTERY_SHERD = ITEMS.register("plenty_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> PRIZE_POTTERY_SHERD = ITEMS.register("prize_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> SHEAF_POTTERY_SHERD = ITEMS.register("sheaf_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> SHELTER_POTTERY_SHERD = ITEMS.register("shelter_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> SKULL_POTTERY_SHERD = ITEMS.register("skull_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> SNORT_POTTERY_SHERD = ITEMS.register("snort_pottery_sherd", () ->
+			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> FLOW_POTTERY_SHERD = ITEMS.register("flow_pottery_sherd", () ->
 			new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC))
 			);
