@@ -318,6 +318,40 @@ public class CTBBlocks {
 					net.minecraft.world.level.block.state.BlockBehaviour.Properties
 							.of(net.minecraft.world.level.material.Material.DECORATION).instabreak().noOcclusion()));
 
+	public static final RegistryObject<Block> SNIFFER_EGG = BLOCKS.register("sniffer_egg",
+			() -> new com.natsu.backport.common.block.SnifferEggBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties
+					.of(net.minecraft.world.level.material.Material.EGG).strength(0.5F).noOcclusion()
+					.sound(net.minecraft.world.level.block.SoundType.METAL)));
+	public static final RegistryObject<net.minecraft.world.item.Item> SNIFFER_EGG_BLOCK_ITEM = CTBItems.ITEMS.register("sniffer_egg",
+			() -> new net.minecraft.world.item.BlockItem(SNIFFER_EGG.get(),
+					new net.minecraft.world.item.Item.Properties().tab(net.minecraft.world.item.CreativeModeTab.TAB_DECORATIONS)));
+	public static final RegistryObject<Block> TORCHFLOWER = registerWithItem(BLOCKS, CTBItems.ITEMS, "torchflower",
+			BLOCKS.register("torchflower", () -> new net.minecraft.world.level.block.FlowerBlock(
+					net.minecraft.world.effect.MobEffects.NIGHT_VISION, 5,
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.PLANT).noCollission().instabreak()
+							.sound(net.minecraft.world.level.block.SoundType.GRASS))));
+	public static final RegistryObject<Block> POTTED_TORCHFLOWER = BLOCKS.register("potted_torchflower",
+			() -> new net.minecraft.world.level.block.FlowerPotBlock(
+					() -> (net.minecraft.world.level.block.FlowerPotBlock) net.minecraft.world.level.block.Blocks.FLOWER_POT,
+					TORCHFLOWER, net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.DECORATION).instabreak().noOcclusion()));
+	public static final RegistryObject<Block> TORCHFLOWER_CROP = BLOCKS.register("torchflower_crop",
+			() -> new com.natsu.backport.common.block.TorchflowerCropBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.PLANT).noCollission().randomTicks()
+							.instabreak().sound(net.minecraft.world.level.block.SoundType.CROP)));
+	public static final RegistryObject<Block> PITCHER_CROP = BLOCKS.register("pitcher_crop",
+			() -> new com.natsu.backport.common.block.PitcherCropBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.PLANT).noCollission().randomTicks()
+							.instabreak().sound(net.minecraft.world.level.block.SoundType.CROP)));
+	public static final RegistryObject<Block> PITCHER_PLANT = registerWithItem(BLOCKS, CTBItems.ITEMS, "pitcher_plant",
+			BLOCKS.register("pitcher_plant", () -> new net.minecraft.world.level.block.DoublePlantBlock(
+					net.minecraft.world.level.block.state.BlockBehaviour.Properties
+							.of(net.minecraft.world.level.material.Material.PLANT).noCollission().instabreak()
+							.sound(net.minecraft.world.level.block.SoundType.GRASS))));
+
 	public static final RegistryObject<Block> CRAFTER = BLOCKS.register("crafter",
 			() -> new com.natsu.backport.common.block.CrafterBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties
 					.of(net.minecraft.world.level.material.Material.STONE).strength(1.5F)

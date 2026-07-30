@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "age=0": {
+   "model": "ctbackport:block/pitcher_crop_bottom_stage_0"
+  },
+  "age=1": {
+   "model": "ctbackport:block/pitcher_crop_bottom_stage_1"
+  },
+  "age=2": {
+   "model": "ctbackport:block/pitcher_crop_bottom_stage_2"
+  },
+  "age=3": {
+   "model": "ctbackport:block/pitcher_crop_bottom_stage_3"
+  }
+ }
+}

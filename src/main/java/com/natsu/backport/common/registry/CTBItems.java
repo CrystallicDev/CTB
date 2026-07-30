@@ -100,6 +100,20 @@ public class CTBItems {
 					new Item.Properties().tab(CreativeModeTab.TAB_MISC))
 			);
 
+	public static final RegistryObject<Item> TORCHFLOWER_SEEDS = ITEMS.register("torchflower_seeds", () ->
+			new net.minecraft.world.item.ItemNameBlockItem(
+					com.natsu.backport.common.registry.CTBBlocks.TORCHFLOWER_CROP.get(),
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> PITCHER_POD = ITEMS.register("pitcher_pod", () ->
+			new net.minecraft.world.item.ItemNameBlockItem(
+					com.natsu.backport.common.registry.CTBBlocks.PITCHER_CROP.get(),
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> SNIFFER_EGG_ITEM = CTBBlocks.SNIFFER_EGG_BLOCK_ITEM;
+	public static final RegistryObject<Item> SNIFFER_SPAWN_EGG = ITEMS.register("sniffer_spawn_egg", () ->
+			new net.minecraftforge.common.ForgeSpawnEggItem(
+					com.natsu.backport.common.registry.CTBEntities.SNIFFER,
+					0x882E66, 0x25AB49,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> CAMEL_SPAWN_EGG = ITEMS.register("camel_spawn_egg", () ->
 			new net.minecraftforge.common.ForgeSpawnEggItem(
 					com.natsu.backport.common.registry.CTBEntities.CAMEL,

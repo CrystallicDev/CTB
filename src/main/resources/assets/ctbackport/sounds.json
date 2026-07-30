@@ -20,6 +20,58 @@
    "ctbackport:block/crafter/fail"
   ]
  },
+ "block.sniffer_egg.crack": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/turtle/egg/egg_crack1",
+    "pitch": 0.8
+   },
+   {
+    "name": "ctbackport:mob/turtle/egg/egg_crack2",
+    "pitch": 0.8
+   },
+   {
+    "name": "ctbackport:mob/turtle/egg/egg_crack3",
+    "pitch": 0.8
+   },
+   {
+    "name": "ctbackport:mob/turtle/egg/egg_crack4",
+    "pitch": 0.8
+   },
+   {
+    "name": "ctbackport:mob/turtle/egg/egg_crack5",
+    "pitch": 0.8
+   }
+  ]
+ },
+ "block.sniffer_egg.hatch": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/turtle/egg/egg_break1",
+    "pitch": 0.8
+   },
+   {
+    "name": "ctbackport:mob/turtle/egg/egg_break2",
+    "pitch": 0.8
+   }
+  ]
+ },
+ "block.sniffer_egg.plop": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/chicken/plop",
+    "pitch": 0.6
+   },
+   {
+    "name": "ctbackport:mob/chicken/plop",
+    "pitch": 0.7
+   },
+   {
+    "name": "ctbackport:mob/chicken/plop",
+    "pitch": 0.8
+   }
+  ]
+ },
  "bogged_ambient": {
   "category": "hostile",
   "sounds": [
@@ -952,6 +1004,234 @@
    }
   ],
   "subtitle": "subtitles.block.generic.footsteps"
+ },
+ "entity.sniffer.death": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/death1"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/death2"
+   }
+  ]
+ },
+ "entity.sniffer.digging": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/longdig1"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/longdig2"
+   }
+  ]
+ },
+ "entity.sniffer.digging_stop": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/digging_stop1"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/digging_stop2"
+   }
+  ]
+ },
+ "entity.sniffer.drop_seed": {
+  "sounds": [
+   {
+    "name": "ctbackport:random/pop",
+    "pitch": 0.6,
+    "volume": 0.8
+   },
+   {
+    "name": "ctbackport:random/pop",
+    "pitch": 0.7,
+    "volume": 0.8
+   },
+   {
+    "name": "ctbackport:random/pop",
+    "pitch": 0.8,
+    "volume": 0.8
+   }
+  ]
+ },
+ "entity.sniffer.eat": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/eat1",
+    "volume": 0.7
+   },
+   {
+    "name": "ctbackport:mob/sniffer/eat2",
+    "volume": 0.7
+   },
+   {
+    "name": "ctbackport:mob/sniffer/eat3",
+    "volume": 0.7
+   }
+  ]
+ },
+ "entity.sniffer.happy": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/happy1"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/happy2"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/happy3"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/happy4"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/happy5"
+   }
+  ]
+ },
+ "entity.sniffer.hurt": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/hurt1"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/hurt2"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/hurt3"
+   }
+  ]
+ },
+ "entity.sniffer.idle": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/idle1"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/idle2"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/idle3"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/idle4"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/idle5"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/idle6"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/idle7"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/idle8"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/idle9"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/idle10"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/idle11"
+   }
+  ]
+ },
+ "entity.sniffer.scenting": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/scenting1"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/scenting2"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/scenting3"
+   }
+  ]
+ },
+ "entity.sniffer.searching": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/searching1"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching1",
+    "volume": 0.8
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching2"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching2",
+    "volume": 0.8
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching3"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching3",
+    "volume": 0.8
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching4"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching4",
+    "volume": 0.8
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching5"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching5",
+    "volume": 0.8
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching6"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/searching6",
+    "volume": 0.8
+   }
+  ]
+ },
+ "entity.sniffer.sniffing": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/sniffing1"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/sniffing2"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/sniffing3"
+   }
+  ]
+ },
+ "entity.sniffer.step": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/sniffer/step1"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/step2"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/step3"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/step4"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/step5"
+   },
+   {
+    "name": "ctbackport:mob/sniffer/step6"
+   }
+  ]
  },
  "eyeblossom_close": {
   "category": "ambient",

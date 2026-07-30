@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:gift",
+ "pools": [
+  {
+   "rolls": 1.0,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:torchflower_seeds"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ctbackport:pitcher_pod"
+    }
+   ]
+  }
+ ]
+}

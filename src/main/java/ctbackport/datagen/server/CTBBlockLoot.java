@@ -61,6 +61,14 @@ public class CTBBlockLoot extends BlockLoot implements DataGenBlockItemHandler {
 		add(CTBBlocks.LEAF_LITTER.get(), block -> createSegmentedDrops(block,
 				com.natsu.backport.common.block.LeafLitterBlock.AMOUNT));
 		dropSelf(CTBBlocks.CRAFTER.get());
+		dropSelf(CTBBlocks.SNIFFER_EGG.get());
+		dropSelf(CTBBlocks.TORCHFLOWER.get());
+		add(CTBBlocks.POTTED_TORCHFLOWER.get(), createPotFlowerItemTable(CTBBlocks.TORCHFLOWER.get()));
+		add(CTBBlocks.TORCHFLOWER_CROP.get(), createSingleItemTable(com.natsu.backport.common.registry.CTBItems.TORCHFLOWER_SEEDS.get()));
+		add(CTBBlocks.PITCHER_CROP.get(), createSingleItemTable(com.natsu.backport.common.registry.CTBItems.PITCHER_POD.get()));
+		add(CTBBlocks.PITCHER_PLANT.get(), createSinglePropConditionTable(CTBBlocks.PITCHER_PLANT.get(),
+				net.minecraft.world.level.block.DoublePlantBlock.HALF,
+				net.minecraft.world.level.block.state.properties.DoubleBlockHalf.LOWER));
 		dropSelf(CTBBlocks.OAK_SHELF.get());
 		dropSelf(CTBBlocks.SPRUCE_SHELF.get());
 		dropSelf(CTBBlocks.BIRCH_SHELF.get());

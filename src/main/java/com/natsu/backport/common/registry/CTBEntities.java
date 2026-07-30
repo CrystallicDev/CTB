@@ -69,6 +69,11 @@ public class CTBEntities {
 			.build("parched")
 			);
 
+	public static final RegistryObject<EntityType<com.natsu.backport.common.entity.Sniffer>> SNIFFER =
+			ENTITIES.register("sniffer", () -> EntityType.Builder
+					.of(com.natsu.backport.common.entity.Sniffer::new, MobCategory.CREATURE)
+					.sized(1.9F, 1.75F).clientTrackingRange(10).build("sniffer"));
+
 	public static final RegistryObject<EntityType<com.natsu.backport.common.entity.Camel>> CAMEL =
 			ENTITIES.register("camel", () -> EntityType.Builder
 					.of(com.natsu.backport.common.entity.Camel::new, MobCategory.CREATURE)

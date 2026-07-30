@@ -1,0 +1,6 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "ctbackport:block/pitcher_crop_top"
+    }
+}

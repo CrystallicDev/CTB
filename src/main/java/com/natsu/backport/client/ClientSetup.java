@@ -49,6 +49,7 @@ public class ClientSetup {
 		event.registerEntityRenderer(CTBEntities.PARCHED.get(), ParchedRenderer::new);
 		event.registerEntityRenderer(CTBEntities.COPPER_GOLEM.get(), CopperGolemRenderer::new);
 		event.registerEntityRenderer(CTBEntities.CAMEL.get(), com.natsu.backport.client.render.CamelRenderer::new);
+		event.registerEntityRenderer(CTBEntities.SNIFFER.get(), com.natsu.backport.client.render.SnifferRenderer::new);
 		event.registerEntityRenderer(CTBEntities.CAMEL_HUSK.get(), com.natsu.backport.client.render.CamelRenderer::new);
 		net.minecraft.client.gui.screens.MenuScreens.register(
 				com.natsu.backport.common.registry.CTBMenus.NAUTILUS_INVENTORY.get(),
@@ -168,6 +169,11 @@ public class ClientSetup {
         			CTBBlocks.BUSH, CTBBlocks.FIREFLY_BUSH, CTBBlocks.CACTUS_FLOWER, CTBBlocks.SHORT_DRY_GRASS,
         			CTBBlocks.TALL_DRY_GRASS, CTBBlocks.WILDFLOWERS, CTBBlocks.LEAF_LITTER,
         			CTBBlocks.POTTED_PALE_OAK_SAPLING, CTBBlocks.POTTED_OPEN_EYEBLOSSOM, CTBBlocks.POTTED_CLOSED_EYEBLOSSOM)) {
+        		ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.cutout());
+        	}
+        	for (net.minecraftforge.registries.RegistryObject<net.minecraft.world.level.block.Block> b : java.util.List.of(
+        			CTBBlocks.TORCHFLOWER, CTBBlocks.POTTED_TORCHFLOWER, CTBBlocks.TORCHFLOWER_CROP,
+        			CTBBlocks.PITCHER_CROP, CTBBlocks.PITCHER_PLANT, CTBBlocks.SNIFFER_EGG)) {
         		ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.cutout());
         	}
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.GOLDEN_DANDELION.get(), RenderType.cutout());

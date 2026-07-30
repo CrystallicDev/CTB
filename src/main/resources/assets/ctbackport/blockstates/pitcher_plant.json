@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "ctbackport:block/pitcher_plant_bottom"
+    },
+    "half=upper": {
+      "model": "ctbackport:block/pitcher_plant_top"
+    }
+  }
+}
