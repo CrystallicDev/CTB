@@ -69,6 +69,11 @@ public class CTBEntities {
 			.build("parched")
 			);
 
+	public static final RegistryObject<EntityType<com.natsu.backport.common.entity.HappyGhast>> HAPPY_GHAST =
+			ENTITIES.register("happy_ghast", () -> EntityType.Builder
+					.of(com.natsu.backport.common.entity.HappyGhast::new, MobCategory.CREATURE)
+					.sized(4.0F, 4.0F).clientTrackingRange(10).build("happy_ghast"));
+
 	public static final RegistryObject<EntityType<com.natsu.backport.common.entity.Sniffer>> SNIFFER =
 			ENTITIES.register("sniffer", () -> EntityType.Builder
 					.of(com.natsu.backport.common.entity.Sniffer::new, MobCategory.CREATURE)

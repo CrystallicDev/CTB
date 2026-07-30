@@ -32,6 +32,10 @@ public class CTBTags {
 			return map;
 		}
 
+		public static final TagKey<net.minecraft.world.item.Item> HAPPY_GHAST_FOOD =
+				TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "happy_ghast_food"));
+		public static final TagKey<net.minecraft.world.item.Item> HAPPY_GHAST_TEMPT_ITEMS =
+				TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "happy_ghast_tempt_items"));
 		public static final TagKey<net.minecraft.world.item.Item> SNIFFER_FOOD =
 				TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CTBackport.MODID, "sniffer_food"));
 		public static final TagKey<net.minecraft.world.item.Item> CAMEL_FOOD =

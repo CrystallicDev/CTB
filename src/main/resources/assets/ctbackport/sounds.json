@@ -20,6 +20,119 @@
    "ctbackport:block/crafter/fail"
   ]
  },
+ "block.dried_ghast.ambient": {
+  "sounds": [
+   {
+    "name": "ctbackport:block/dried_ghast/ambient1"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/ambient2"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/ambient3"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/ambient4"
+   }
+  ]
+ },
+ "block.dried_ghast.ambient_water": {
+  "sounds": [
+   {
+    "name": "ctbackport:block/dried_ghast/ambient_water1"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/ambient_water2"
+   }
+  ]
+ },
+ "block.dried_ghast.break": {
+  "sounds": [
+   {
+    "name": "ctbackport:block/dried_ghast/break"
+   }
+  ]
+ },
+ "block.dried_ghast.fall": {
+  "sounds": [
+   {
+    "name": "ctbackport:block/dried_ghast/step1"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/step2"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/step3"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/step4"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/step5"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/step6"
+   }
+  ]
+ },
+ "block.dried_ghast.place": {
+  "sounds": [
+   {
+    "name": "ctbackport:block/dried_ghast/place1"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/place2"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/place3"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/place4"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/place5"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/place6"
+   }
+  ]
+ },
+ "block.dried_ghast.place_in_water": {
+  "sounds": [
+   {
+    "name": "ctbackport:block/dried_ghast/placeinwater"
+   }
+  ]
+ },
+ "block.dried_ghast.step": {
+  "sounds": [
+   {
+    "name": "ctbackport:block/dried_ghast/step1"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/step2"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/step3"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/step4"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/step5"
+   },
+   {
+    "name": "ctbackport:block/dried_ghast/step6"
+   }
+  ]
+ },
+ "block.dried_ghast.transition": {
+  "sounds": [
+   {
+    "name": "ctbackport:block/dried_ghast/transition"
+   }
+  ]
+ },
  "block.sniffer_egg.crack": {
   "sounds": [
    {
@@ -1004,6 +1117,180 @@
    }
   ],
   "subtitle": "subtitles.block.generic.footsteps"
+ },
+ "entity.ghastling.ambient": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/ghastling/ghastling1"
+   },
+   {
+    "name": "ctbackport:mob/ghastling/ghastling2"
+   },
+   {
+    "name": "ctbackport:mob/ghastling/ghastling3"
+   },
+   {
+    "name": "ctbackport:mob/ghastling/ghastling4"
+   },
+   {
+    "name": "ctbackport:mob/ghastling/ghastling5"
+   },
+   {
+    "name": "ctbackport:mob/ghastling/ghastling6"
+   },
+   {
+    "name": "ctbackport:mob/ghastling/ghastling7"
+   }
+  ]
+ },
+ "entity.ghastling.death": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/ghastling/death"
+   }
+  ]
+ },
+ "entity.ghastling.hurt": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/ghastling/hurt1"
+   },
+   {
+    "name": "ctbackport:mob/ghastling/hurt2"
+   },
+   {
+    "name": "ctbackport:mob/ghastling/hurt3"
+   },
+   {
+    "name": "ctbackport:mob/ghastling/hurt4"
+   },
+   {
+    "name": "ctbackport:mob/ghastling/hurt5"
+   }
+  ]
+ },
+ "entity.ghastling.spawn": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/ghastling/spawn"
+   }
+  ]
+ },
+ "entity.happy_ghast.ambient": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient1"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient2",
+    "weight": 3
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient3",
+    "weight": 2
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient4"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient5",
+    "weight": 2
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient6"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient7",
+    "weight": 2
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient8"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient9"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient10"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient11"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient12",
+    "weight": 2
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient13",
+    "weight": 2
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/ambient14"
+   }
+  ]
+ },
+ "entity.happy_ghast.death": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/happy_ghast/death"
+   }
+  ]
+ },
+ "entity.happy_ghast.equip": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/happy_ghast/harness_equip"
+   }
+  ]
+ },
+ "entity.happy_ghast.harness_goggles_down": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/happy_ghast/goggles_down"
+   }
+  ]
+ },
+ "entity.happy_ghast.harness_goggles_up": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/happy_ghast/goggles_up"
+   }
+  ]
+ },
+ "entity.happy_ghast.hurt": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/happy_ghast/hurt1"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/hurt2"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/hurt3"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/hurt4"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/hurt5"
+   },
+   {
+    "name": "ctbackport:mob/happy_ghast/hurt6"
+   }
+  ]
+ },
+ "entity.happy_ghast.riding": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/happy_ghast/ghast_ride"
+   }
+  ]
+ },
+ "entity.happy_ghast.unequip": {
+  "sounds": [
+   {
+    "name": "ctbackport:mob/happy_ghast/harness_unequip"
+   }
+  ]
  },
  "entity.sniffer.death": {
   "sounds": [

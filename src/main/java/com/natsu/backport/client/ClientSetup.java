@@ -50,6 +50,7 @@ public class ClientSetup {
 		event.registerEntityRenderer(CTBEntities.COPPER_GOLEM.get(), CopperGolemRenderer::new);
 		event.registerEntityRenderer(CTBEntities.CAMEL.get(), com.natsu.backport.client.render.CamelRenderer::new);
 		event.registerEntityRenderer(CTBEntities.SNIFFER.get(), com.natsu.backport.client.render.SnifferRenderer::new);
+		event.registerEntityRenderer(CTBEntities.HAPPY_GHAST.get(), com.natsu.backport.client.render.HappyGhastRenderer::new);
 		event.registerEntityRenderer(CTBEntities.CAMEL_HUSK.get(), com.natsu.backport.client.render.CamelRenderer::new);
 		net.minecraft.client.gui.screens.MenuScreens.register(
 				com.natsu.backport.common.registry.CTBMenus.NAUTILUS_INVENTORY.get(),
@@ -173,7 +174,7 @@ public class ClientSetup {
         	}
         	for (net.minecraftforge.registries.RegistryObject<net.minecraft.world.level.block.Block> b : java.util.List.of(
         			CTBBlocks.TORCHFLOWER, CTBBlocks.POTTED_TORCHFLOWER, CTBBlocks.TORCHFLOWER_CROP,
-        			CTBBlocks.PITCHER_CROP, CTBBlocks.PITCHER_PLANT, CTBBlocks.SNIFFER_EGG)) {
+        			CTBBlocks.PITCHER_CROP, CTBBlocks.PITCHER_PLANT, CTBBlocks.SNIFFER_EGG, CTBBlocks.DRIED_GHAST)) {
         		ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.cutout());
         	}
         	ItemBlockRenderTypes.setRenderLayer(CTBBlocks.GOLDEN_DANDELION.get(), RenderType.cutout());

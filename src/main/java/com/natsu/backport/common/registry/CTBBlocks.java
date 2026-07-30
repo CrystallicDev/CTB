@@ -318,6 +318,14 @@ public class CTBBlocks {
 					net.minecraft.world.level.block.state.BlockBehaviour.Properties
 							.of(net.minecraft.world.level.material.Material.DECORATION).instabreak().noOcclusion()));
 
+	public static final RegistryObject<Block> DRIED_GHAST = BLOCKS.register("dried_ghast",
+			() -> new com.natsu.backport.common.block.DriedGhastBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties
+					.of(net.minecraft.world.level.material.Material.CLAY).strength(0.5F).noOcclusion()
+					.sound(net.minecraft.world.level.block.SoundType.BONE_BLOCK)));
+	public static final RegistryObject<net.minecraft.world.item.Item> DRIED_GHAST_ITEM = CTBItems.ITEMS.register("dried_ghast",
+			() -> new net.minecraft.world.item.BlockItem(DRIED_GHAST.get(),
+					new net.minecraft.world.item.Item.Properties().tab(net.minecraft.world.item.CreativeModeTab.TAB_DECORATIONS)));
+
 	public static final RegistryObject<Block> SNIFFER_EGG = BLOCKS.register("sniffer_egg",
 			() -> new com.natsu.backport.common.block.SnifferEggBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties
 					.of(net.minecraft.world.level.material.Material.EGG).strength(0.5F).noOcclusion()

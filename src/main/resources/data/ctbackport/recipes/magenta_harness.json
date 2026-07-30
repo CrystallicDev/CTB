@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "LLL",
+  "G#G"
+ ],
+ "key": {
+  "L": {
+   "item": "minecraft:leather"
+  },
+  "G": {
+   "item": "minecraft:glass"
+  },
+  "#": {
+   "item": "minecraft:magenta_wool"
+  }
+ },
+ "result": {
+  "item": "ctbackport:magenta_harness"
+ }
+}

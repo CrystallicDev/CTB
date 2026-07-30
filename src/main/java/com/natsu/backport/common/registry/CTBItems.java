@@ -100,6 +100,59 @@ public class CTBItems {
 					new Item.Properties().tab(CreativeModeTab.TAB_MISC))
 			);
 
+	public static final RegistryObject<Item> WHITE_HARNESS = ITEMS.register("white_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.WHITE,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> ORANGE_HARNESS = ITEMS.register("orange_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.ORANGE,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> MAGENTA_HARNESS = ITEMS.register("magenta_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.MAGENTA,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> LIGHT_BLUE_HARNESS = ITEMS.register("light_blue_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.LIGHT_BLUE,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> YELLOW_HARNESS = ITEMS.register("yellow_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.YELLOW,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> LIME_HARNESS = ITEMS.register("lime_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.LIME,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> PINK_HARNESS = ITEMS.register("pink_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.PINK,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> GRAY_HARNESS = ITEMS.register("gray_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.GRAY,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> LIGHT_GRAY_HARNESS = ITEMS.register("light_gray_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.LIGHT_GRAY,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> CYAN_HARNESS = ITEMS.register("cyan_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.CYAN,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> PURPLE_HARNESS = ITEMS.register("purple_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.PURPLE,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> BLUE_HARNESS = ITEMS.register("blue_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.BLUE,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> BROWN_HARNESS = ITEMS.register("brown_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.BROWN,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> GREEN_HARNESS = ITEMS.register("green_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.GREEN,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> RED_HARNESS = ITEMS.register("red_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.RED,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> BLACK_HARNESS = ITEMS.register("black_harness", () ->
+			new com.natsu.backport.common.item.HarnessItem(net.minecraft.world.item.DyeColor.BLACK,
+					new Item.Properties().tab(CreativeModeTab.TAB_TRANSPORTATION).stacksTo(1)));
+	public static final RegistryObject<Item> HAPPY_GHAST_SPAWN_EGG = ITEMS.register("happy_ghast_spawn_egg", () ->
+			new net.minecraftforge.common.ForgeSpawnEggItem(
+					com.natsu.backport.common.registry.CTBEntities.HAPPY_GHAST,
+					0xF0F0F0, 0x8CAFE3,
+					new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> TORCHFLOWER_SEEDS = ITEMS.register("torchflower_seeds", () ->
 			new net.minecraft.world.item.ItemNameBlockItem(
 					com.natsu.backport.common.registry.CTBBlocks.TORCHFLOWER_CROP.get(),

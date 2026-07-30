@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  "ctbackport:white_harness",
+  "ctbackport:orange_harness",
+  "ctbackport:magenta_harness",
+  "ctbackport:light_blue_harness",
+  "ctbackport:yellow_harness",
+  "ctbackport:lime_harness",
+  "ctbackport:pink_harness",
+  "ctbackport:gray_harness",
+  "ctbackport:light_gray_harness",
+  "ctbackport:cyan_harness",
+  "ctbackport:purple_harness",
+  "ctbackport:blue_harness",
+  "ctbackport:brown_harness",
+  "ctbackport:green_harness",
+  "ctbackport:red_harness",
+  "ctbackport:black_harness"
+ ]
+}
