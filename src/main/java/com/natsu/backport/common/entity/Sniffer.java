@@ -383,6 +383,9 @@ public class Sniffer extends Animal implements IAnimatable {
 
 		@Override
 		public void tick() {
+			if (this.stage == null) {
+				return;
+			}
 			this.stageTicks++;
 			switch (this.stage) {
 				case SCENTING -> {
@@ -469,7 +472,7 @@ public class Sniffer extends Animal implements IAnimatable {
 				case RISING, FEELING_HAPPY -> event.getController().setAnimation(new AnimationBuilder()
 						.addAnimation("special.happy", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
 				default -> {
-					if (event.isMoving()) {
+					if (this.animationSpeed > 0.02F) {
 						event.getController().setAnimation(new AnimationBuilder()
 								.addAnimation("moove.walk", ILoopType.EDefaultLoopTypes.LOOP));
 					} else {

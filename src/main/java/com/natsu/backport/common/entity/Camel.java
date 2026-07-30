@@ -619,7 +619,7 @@ public class Camel extends AbstractHorse implements IAnimatable {
 						.addAnimation("special.standup", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
 				return PlayState.CONTINUE;
 			}
-			if (event.isMoving()) {
+			if (this.animationSpeed > 0.02F) {
 				// the walk cycle keeps up with the actual speed, sprint included
 				double speed = this.getDeltaMovement().horizontalDistance();
 				event.getController().setAnimationSpeed(Mth.clamp(speed / 0.09, 0.6, 3.0));
