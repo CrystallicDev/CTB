@@ -346,19 +346,22 @@ public class CopperGolem extends AbstractGolem implements IAnimatable {
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		AnimationBuilder builder = new AnimationBuilder();
+		// HOLD everywhere : a finished PLAY_ONCE re-set by the predicate restarts
+		// with a one tick bind pose snap, and STOP resets the whole skeleton
 		switch (this.getState()) {
-			case GETTING_ITEM -> builder.addAnimation("interact.chest_noitem_get", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
-			case GETTING_NO_ITEM -> builder.addAnimation("interact.chest_noitem_noget", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
-			case DROPPING_ITEM -> builder.addAnimation("interact.chest_item_drop", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
-			case DROPPING_NO_ITEM -> builder.addAnimation("interact.chest_item_nodrop", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
+			case GETTING_ITEM -> builder.addAnimation("interact.chest_noitem_get", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
+			case GETTING_NO_ITEM -> builder.addAnimation("interact.chest_noitem_noget", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
+			case DROPPING_ITEM -> builder.addAnimation("interact.chest_item_drop", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
+			case DROPPING_NO_ITEM -> builder.addAnimation("interact.chest_item_nodrop", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
 			default -> {
-				if (event.isMoving()) {
+				// isMoving() has a 0.15 limbSwing threshold the slow golem hovers around
+				if (this.animationSpeed > 0.02F) {
 					builder.addAnimation(this.getMainHandItem().isEmpty() ? "moove.walk" : "moove.walk_item", ILoopType.EDefaultLoopTypes.LOOP);
 				} else if (this.tickCount % 240 < 70) {
 					// the head spin plays now and then, not on a loop
-					builder.addAnimation("moove.idle", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
+					builder.addAnimation("moove.idle", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
 				} else {
-					return PlayState.STOP;
+					builder.addAnimation("none", ILoopType.EDefaultLoopTypes.LOOP);
 				}
 			}
 		}

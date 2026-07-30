@@ -68,6 +68,12 @@ public class HappyGhast extends Animal implements IAnimatable {
 	private static final EntityDataAccessor<Boolean> STAYS_STILL =
 			SynchedEntityData.defineId(HappyGhast.class, EntityDataSerializers.BOOLEAN);
 
+	/** Set by ClientSetup, lets the common code see the local player for collision. */
+	public static java.util.function.Supplier<Player> CLIENT_PLAYER = () -> null;
+
+	private static final java.lang.reflect.Field JUMPING_FIELD =
+			net.minecraftforge.fml.util.ObfuscationReflectionHelper.findField(LivingEntity.class, "f_20899_");
+
 	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private int serverStillTimeout;
 
@@ -212,7 +218,19 @@ public class HappyGhast extends Animal implements IAnimatable {
 	@Override
 	public boolean canBeCollidedWith() {
 		// the boat trick : a collidable entity is a platform you can stand on
-		return !this.isBaby() && this.isAlive() && this.isOnStillTimeout();
+		if (this.isBaby() || !this.isAlive()) {
+			return false;
+		}
+		// the 26.2 rule : on the client the ghast is always solid for the local
+		// player at or above its top, so landings and dismounts never sink into
+		// the box while the still flag makes its server round trip
+		if (this.level.isClientSide) {
+			Player local = CLIENT_PLAYER.get();
+			if (local != null && local.position().y >= this.getBoundingBox().maxY) {
+				return true;
+			}
+		}
+		return this.isOnStillTimeout();
 	}
 
 	@Override
@@ -338,9 +356,13 @@ public class HappyGhast extends Animal implements IAnimatable {
 				forward = cos;
 				up = sin;
 			}
+			if (isRiderJumping(rider)) {
+				up += 0.5F;
+			}
 			Vec3 ridden = new Vec3(strafe, up, forward)
 					.scale(3.9F * this.getAttributeValue(Attributes.FLYING_SPEED));
-			this.flyingTravel(ridden, 1.0F);
+			// the vanilla ridden speed : the same 5/3 flying factor as the wander
+			this.flyingTravel(ridden, (float) this.getAttributeValue(Attributes.FLYING_SPEED) * 5.0F / 3.0F);
 			return;
 		}
 		if (this.level.isClientSide && this.isVehicle()) {
@@ -353,6 +375,14 @@ public class HappyGhast extends Animal implements IAnimatable {
 			return;
 		}
 		this.flyingTravel(input, (float) this.getAttributeValue(Attributes.FLYING_SPEED) * 5.0F / 3.0F);
+	}
+
+	private static boolean isRiderJumping(Player rider) {
+		try {
+			return JUMPING_FIELD.getBoolean(rider);
+		} catch (IllegalAccessException e) {
+			return false;
+		}
 	}
 
 	/** The ghast float physics : direct impulse and air friction. */

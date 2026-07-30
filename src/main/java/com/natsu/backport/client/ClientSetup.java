@@ -160,6 +160,9 @@ public class ClientSetup {
 	@SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
+        	// the happy ghast platform collision needs to see the local player
+        	com.natsu.backport.common.entity.HappyGhast.CLIENT_PLAYER =
+        			() -> net.minecraft.client.Minecraft.getInstance().player;
         	CTBBlocks.BAMBOO_WOOD.setRenderTypes();
         	CTBBlocks.CHERRY_WOOD.setRenderTypes();
         	CTBBlocks.PALE_OAK_WOOD.setRenderTypes();
