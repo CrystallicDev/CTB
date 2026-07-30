@@ -40,6 +40,30 @@ public class ArmadilloRenderer extends GeoEntityRenderer<Armadillo> {
 
 	public static class ArmadilloModel extends AnimatedGeoModel<Armadillo> {
 
+		private static final String[] BODY_BONES =
+				{ "body", "tail", "head", "head_cube", "right_ear", "right_ear_cube", "left_ear",
+						"left_ear_cube", "right_hind_leg", "left_hind_leg", "right_front_leg", "left_front_leg" };
+		private static final String[] HEAD_BONES = { "head", "head_cube", "right_ear", "right_ear_cube",
+				"left_ear", "left_ear_cube" };
+
+		@Override
+		public void setCustomAnimations(Armadillo armadillo, int uniqueID,
+				software.bernie.geckolib3.core.event.predicate.AnimationEvent event) {
+			super.setCustomAnimations(armadillo, uniqueID, event);
+			// the ball cube swaps in for the body while fully rolled up
+			boolean balled = armadillo.getState() == Armadillo.State.SCARED;
+			boolean peeking = balled && armadillo.isPeeking();
+			this.getAnimationProcessor().getBone("cube").setHidden(!balled);
+			for (String bone : BODY_BONES) {
+				this.getAnimationProcessor().getBone(bone).setHidden(balled);
+			}
+			if (peeking) {
+				for (String bone : HEAD_BONES) {
+					this.getAnimationProcessor().getBone(bone).setHidden(false);
+				}
+			}
+		}
+
 		private static final ResourceLocation MODEL = new ResourceLocation(CTBackport.MODID, "geo/armadillo.geo.json");
 		private static final ResourceLocation ANIMATION = new ResourceLocation(CTBackport.MODID, "animations/armadillo.animation.json");
 		private static final ResourceLocation TEXTURE = new ResourceLocation(CTBackport.MODID, "textures/entity/armadillo.png");

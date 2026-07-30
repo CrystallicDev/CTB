@@ -323,6 +323,7 @@ public class HappyGhast extends Animal implements IAnimatable {
 	public void travel(Vec3 input) {
 		if (this.getControllingPassenger() instanceof Player controller) {
 			if (this.isControlledByLocalInstance()) {
+				this.setSpeed((float) this.getAttributeValue(Attributes.FLYING_SPEED));
 				// yaw eases toward the rider, pitch follows half the look
 				float wantedYRot = controller.getYRot();
 				float yRot = this.getYRot() + Mth.wrapDegrees(wantedYRot - this.getYRot()) * 0.08F;

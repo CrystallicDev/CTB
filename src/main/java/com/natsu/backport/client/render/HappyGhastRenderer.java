@@ -35,9 +35,9 @@ public class HappyGhastRenderer extends GeoEntityRenderer<HappyGhast> {
 	@Override
 	public void render(HappyGhast ghast, float entityYaw, float partialTick, PoseStack poseStack,
 			MultiBufferSource buffer, int packedLight) {
-		if (ghast.isBaby()) {
-			poseStack.scale(HappyGhast.BABY_SCALE, HappyGhast.BABY_SCALE, HappyGhast.BABY_SCALE);
-		}
+		// the model is authored at one block, the entity is four wide
+		float scale = 4.0F * (ghast.isBaby() ? HappyGhast.BABY_SCALE : 1.0F);
+		poseStack.scale(scale, scale, scale);
 		super.render(ghast, entityYaw, partialTick, poseStack, buffer, packedLight);
 	}
 

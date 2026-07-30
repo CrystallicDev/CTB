@@ -82,6 +82,9 @@ public class ClientSetup {
 
 	@net.minecraftforge.eventbus.api.SubscribeEvent
 	public static void registerBlockColors(net.minecraftforge.client.event.ColorHandlerEvent.Block event) {
+				// the 1.21.5 dry foliage tint, flattened to its colormap average
+		event.getBlockColors().register((state, level, pos, tintIndex) -> 0x96693E,
+				CTBBlocks.LEAF_LITTER.get());
 		event.getBlockColors().register((state, level, pos, tintIndex) ->
 				level != null && pos != null
 						? net.minecraft.client.renderer.BiomeColors.getAverageGrassColor(level, pos)
@@ -91,6 +94,8 @@ public class ClientSetup {
 
 	@net.minecraftforge.eventbus.api.SubscribeEvent
 	public static void registerItemColors(net.minecraftforge.client.event.ColorHandlerEvent.Item event) {
+				event.getItemColors().register((stack, tintIndex) -> 0x96693E,
+				CTBBlocks.LEAF_LITTER.get().asItem());
 		event.getItemColors().register((stack, tintIndex) -> net.minecraft.world.level.GrassColor.get(0.5, 1.0),
 				CTBBlocks.BUSH.get().asItem());
 	}

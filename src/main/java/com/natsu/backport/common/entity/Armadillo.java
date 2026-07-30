@@ -220,6 +220,10 @@ public class Armadillo extends Animal implements IAnimatable {
 		return this.random.nextInt(6000) + 6000;
 	}
 
+	public boolean isPeeking() {
+		return this.peekTicks > 0;
+	}
+
 	@Override
 	public void handleEntityEvent(byte id) {
 		if (id == EVENT_PEEK) {

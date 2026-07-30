@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/flowerbed_1",
-  "textures": {
-    "flowerbed": "ctbackport:block/pink_petals",
-    "stem": "ctbackport:block/pink_petals_stem"
-  }
+ "parent": "ctbackport:block/flowerbed_1",
+ "textures": {
+  "flowerbed": "ctbackport:block/pink_petals",
+  "stem": "ctbackport:block/pink_petals_stem"
+ }
 }
