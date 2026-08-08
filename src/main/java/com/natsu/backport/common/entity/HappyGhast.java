@@ -392,8 +392,12 @@ public class HappyGhast extends Animal implements IAnimatable {
 			return;
 		}
 		if (this.isOnStillTimeout()) {
-			this.setDeltaMovement(this.getDeltaMovement().scale(0.7));
-			this.move(MoverType.SELF, this.getDeltaMovement());
+			// hold perfectly still on the client : any local drift makes the box
+			// top breathe against the quantized sync and stutters standing players
+			if (!this.level.isClientSide) {
+				this.setDeltaMovement(this.getDeltaMovement().scale(0.7));
+				this.move(MoverType.SELF, this.getDeltaMovement());
+			}
 			return;
 		}
 		this.flyingTravel(input, (float) this.getAttributeValue(Attributes.FLYING_SPEED) * 5.0F / 3.0F);
@@ -419,6 +423,18 @@ public class HappyGhast extends Animal implements IAnimatable {
 			this.setDeltaMovement(this.getDeltaMovement().scale(0.91));
 		}
 		this.calculateEntityAnimation(this, false);
+	}
+
+	@Override
+	public void lerpTo(double x, double y, double z, float yRot, float xRot, int steps, boolean teleport) {
+		if (this.staysStill()) {
+			// a still platform must not ease toward the periodic resyncs : the
+			// three tick lerp slides the floor under standing players
+			this.setPos(x, y, z);
+			this.setRot(yRot, xRot);
+			return;
+		}
+		super.lerpTo(x, y, z, yRot, xRot, steps, teleport);
 	}
 
 	@Override
